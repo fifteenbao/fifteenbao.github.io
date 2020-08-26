@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Design," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="BAO'S BLOG" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="html5的发布让移动端web增添了很多新的能力，这些能力给我们带来了很多新的玩法，不知你知道了多少呢？下面我将结合案例罗列一些自H5发布以来出现的新玩法，给大家温故而知新。本文也适合大家在策划H5活动的时候作为参考，说不定在这儿就找到灵感了。">
+<meta name="keywords" content="Design">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「转」H5玩法知多少">
+<meta property="og:url" content="https://fifteenbao.github.io/2017/04/30/H5玩法知多少/index.html">
+<meta property="og:site_name" content="BAO&#39;S BLOG">
+<meta property="og:description" content="html5的发布让移动端web增添了很多新的能力，这些能力给我们带来了很多新的玩法，不知你知道了多少呢？下面我将结合案例罗列一些自H5发布以来出现的新玩法，给大家温故而知新。本文也适合大家在策划H5活动的时候作为参考，说不定在这儿就找到灵感了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/074821-98188.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090209-92460.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090302-51161.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090350-75456.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090422-39871.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090546-67266.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090607-35801.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/090705-15587.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081600-95595.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/092731-15345.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/092938-76528.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093007-1659.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093055-93165.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093123-31232.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093153-91443.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093224-76118.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093324-76338.jpeg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093455-25016.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093526-80401.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093552-93995.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093700-24241.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081722-87350.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093751-5320.png">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/093902-30625.png">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094138-88344.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094158-73503.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094231-33126.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094253-1806.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094339-86765.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/085346-98321.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/085641-22520.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081801-13546.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094553-9118.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081825-35493.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094720-11794.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/094752-1109.png">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075202-49021.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075216-24802.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075413-3852.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075431-68122.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075511-65818.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075539-13747.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/085847-68254.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075634-11982.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/075720-36442.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/080631-81877.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/080725-47133.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/080920-79323.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/080944-28010.png">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081026-62638.gif">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081044-36812.jpg">
+<meta property="og:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/081302-54958.gif">
+<meta property="og:updated_time" content="2018-10-01T17:02:43.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「转」H5玩法知多少">
+<meta name="twitter:description" content="html5的发布让移动端web增添了很多新的能力，这些能力给我们带来了很多新的玩法，不知你知道了多少呢？下面我将结合案例罗列一些自H5发布以来出现的新玩法，给大家温故而知新。本文也适合大家在策划H5活动的时候作为参考，说不定在这儿就找到灵感了。">
+<meta name="twitter:image" content="https://isux.tencent.com/wp-content/uploads/2017/08/074821-98188.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'FifteenBao'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://fifteenbao.github.io/2017/04/30/H5玩法知多少/"/>
+
+
+
+
+
+  <title>「转」H5玩法知多少 | BAO'S BLOG</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-106053455-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BAO'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">脑子是个好东西</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fifteenbao.github.io/2017/04/30/H5玩法知多少/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="FifteenBao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BAO'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">「转」H5玩法知多少</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T00:00:00+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>html5的发布让移动端web增添了很多新的能力，这些能力给我们带来了很多新的玩法，不知你知道了多少呢？下面我将结合案例罗列一些自H5发布以来出现的新玩法，给大家温故而知新。<strong>本文也适合大家在策划H5活动的时候作为参考</strong>，说不定在这儿就找到灵感了。<br><a id="more"></a><br>构思H5的玩法该从何入手呢？网上的H5五花八门，其玩法大多都可以归纳到<strong>基于传感器、基于触摸屏操作、基于画面呈现、基于内容</strong>这四类来考虑。它们既有基于其中一类来构思玩法，又有将多个类别组合起来创造更复杂丰富的玩法。与H5新能力相关的是前三种类型，本文也会从这三种类型进行展开，分别介绍一下各类型下有什么玩法，而基于内容的玩法主要是图文混排展示内容，答题类游戏等与内容强相关的玩法，实际上他们也会多多少少与另外三类搭上点关系的。</p>
+<p>接下来你将会看到这些玩法： </p>
+<p>基于传感器：</p>
+<p>类别玩法或适用场景陀螺仪、重力感应体感游戏、摇一摇、全景图/AR转换角度、转动手机制造视差效果地理位置提供周边生活服务、与运动结合、上班打卡功能、外勤人员的工作监控、类似QQ的AR红包和pokemon go玩法、展示附近的优惠和广告人脸识别体感游戏、将用户样貌与节日/游戏/电影等主题元素相结合进行宣传的场景、用户样貌与明星脸相似度测试、猜用户年龄、猜情绪、模拟化妆webRTC视频会议、视频聊天、在线教育、在线问诊等视频/音频通讯的场景基于触摸屏操作：</p>
+<p>类别玩法或适用场景全景交互虚拟全景展示、身临其境的实景展示或活动现场展示、商品360度展示多屏互动朋友间合作/竞技游戏、你画我猜、一问一答、情侣互动、多个屏幕拼起来看视频、投屏应用、线下现场观众互动单屏滚动公司主页、产品介绍、报告总结、邀请函等展示类场景手势操作商品图片放大查看场景、图片拖拽/旋转等编辑场景、手势解锁、拼图游戏基于画面呈现：</p>
+<p>类别玩法或适用场景视频/动画展示产品、节日、游戏、电影等宣传场景；内容比较丰富的场景图片裁剪和形变类似变形金刚、七巧板形式的图片转换效果展示场景 </p>
+<p>如果以场景为维度来展开推荐玩法，则可参考下图所示：</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/074821-98188.jpg" alt=""></p>
+<p>接着我会逐一介绍一下这些玩法，读者也可以直接跳到感兴趣的部分去阅读。除上表外还有一些目前还不太能用的H5能力，如手机震动、光线传感器、距离传感器等，由于边幅原因，暂不作展开介绍，读者可以自行查找相关资料。部分案例如没有贴上二维码，是因为该案例已下线了。</p>
+<h2 id="基于传感器"><a href="#基于传感器" class="headerlink" title="基于传感器"></a>基于传感器</h2><p>这类玩法依靠手机上的传感器实现，这些传感器有陀螺仪、gps、摄像头、麦克风、震动传感器、光线传感器、距离传感器等。大家在设计玩法的时候，要结合业务本身选用相关的合适的传感器，不要随意搭配或随意叠加多个传感器，避免画蛇添足。例如做周边生活类的需求，就应该选用gps传感器获取地理位置，做全景图的需求就选用陀螺仪来提供便捷的交互。</p>
+<h3 id="陀螺仪、重力感应"><a href="#陀螺仪、重力感应" class="headerlink" title="陀螺仪、重力感应"></a>陀螺仪、重力感应</h3><p>这类交互在体感游戏中比较常见，如控制射箭的方向、挥剑、打乒乓球等，而在H5中则可用于摇一摇、控制赛车左右前进、检查手机是否平躺/竖直、全景图/AR转换角度等，也可以用于制造视差效果（如王者荣耀的登录界面），使画面富有层次感。</p>
+<p>案例：</p>
+<p>降温摇可乐：</p>
+<p>该H5在模拟摇可乐的情景，玩家需要不停地摇动手机，尽快使可乐喷出来。个人认为可以换另一种玩法，让朋友互相传递手机摇，谁摇爆了可乐就算输。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090209-92460.jpg" alt=""></p>
+<p>来玩点耐心吧：</p>
+<p>这是腾讯互动娱乐2017年度发布会的预热H5，提倡用户做事要多点耐心，因而玩法是耐心地竖立手机，看着一幅漂亮繁复的画慢慢地画完。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090302-51161.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090350-75456.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090422-39871.jpg" alt=""></p>
+<p>一“陆”狂飙，极速挑战：</p>
+<p>该H5与速度与激情8联动，先播放一段在朋友圈上飚车的视频，然后开始赛车游戏，通过左右倾侧手机来控制赛车左右前进、躲避障碍，最后根据行使的距离进行排名和抽奖。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090546-67266.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090607-35801.jpg" alt=""></p>
+<p>天猫：地球上的另一个你</p>
+<p>该H5同时播放代表理想与现实的两个视频，利用重力感应来切换看到的画面，向上转动手机模拟抬头看到理想的画面，向下转动手机模拟低头看到现实的画面，也可以转到一半的位置同时看两个视频同时播放，比较有新意，也较好表达出理想和现实之间的对比。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/090705-15587.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081600-95595.gif" alt=""></p>
+<h3 id="地理位置"><a href="#地理位置" class="headerlink" title="地理位置"></a>地理位置</h3><p>这类H5结合用户所处的位置，可以提供比较方便的周边生活服务，如查找附近的摩拜单车、获取附近的餐饮信息和前往路线；也可以与运动结合，如记录用户的跑步轨迹。如果用于办公，则可以做上班打卡功能、外勤人员的工作监控等。如果用于游戏，则可以创造出类似pokemon go的玩法，在用户的位置附近散落奖品，让用户走到目的地收集奖励。</p>
+<p>案例：</p>
+<p>杜蕾斯全民抓喜鹊：</p>
+<p>该游戏H5类似pokemon go，在地图上散落各种喜鹊，用户需走到散落点附近，将喜鹊划入篮圈内，然后点击捕获，捕获够一定数量就可以兑换奖品。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/092731-15345.jpg" alt=""></p>
+<h3 id="人脸识别"><a href="#人脸识别" class="headerlink" title="人脸识别"></a>人脸识别</h3><p>顾名思义，就是用人脸和H5进行互动，玩法有根据人脸猜测年龄、猜情绪，测试与明星脸的匹配度，将人脸和游戏电影人物相结合，将人脸变成小时候的样子，根据人脸的动作做出反馈（如张嘴时从嘴里飞出企鹅、眨眼睛拍照）等，通常跟AR和图片合成技术搭配使用。这类方式比较适合用于游戏电影宣传、个性化用户样貌、图片类产品推广的场景。合成的图片可以在边角加上活动二维码，使得其他用户看到这张图片时也可以参与活动。</p>
+<p>相关技术主要是人脸识别和人脸动作捕捉的技术，腾讯有提供优图识别技术，微软也有提供人脸识别技术。</p>
+<p>案例：</p>
+<p>腾讯：我的魔兽我主演</p>
+<p>这个H5将人脸和魔兽电影相结合。用户上传自己的照片，选择喜欢的模板和添加一些刀疤之类的装饰后，就可以生成一张用自己脸制作出来的的魔兽海报了。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/092938-76528.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093007-1659.jpg" alt=""></p>
+<p>我的小学生证件照：</p>
+<p>用户上传照片生成小学生证件照，并可以通过”换基因“换一下生成的样子。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093055-93165.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093123-31232.jpg" alt=""></p>
+<p>QQ钱包三周年活动之扫脸获红包：</p>
+<p>用户在活动页张大嘴巴说”FUN开付“后，会有企鹅从嘴里探出来跳舞，然后发红包给用户。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093153-91443.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093224-76118.jpg" alt=""></p>
+<h3 id="webRTC"><a href="#webRTC" class="headerlink" title="webRTC"></a>webRTC</h3><p>webRTC是H5的一个新特性，它可以在web上访问摄像头和麦克风，进行视频和音频的实时通讯，用途有视频会议、视频聊天、在线教育、在线问诊等，以前只能客户端才能实现的视频类应用也可以应用到web上了。兼容性方面，移动端浏览器的支持程度很差，安卓5.x以上的chrome才支持，而ios直至safari11发布才终于得到了支持，但这个发展表明web端也逐渐具备这个能力了，我们可以预先想想这方面的策划，说不定不久的将来就能用上了。</p>
+<p>案例：</p>
+<p>Chatroulette：</p>
+<p>这是一个随机视频聊天网页，你可以随机和地球上的陌生人视频聊天，一般遇到的都是外国人，我也是从这个网页第一次真实地感受到真的有外国人的存在。可惜现在不能访问了。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093324-76338.jpeg" alt=""></p>
+<h2 id="基于触摸屏操作："><a href="#基于触摸屏操作：" class="headerlink" title="基于触摸屏操作："></a>基于触摸屏操作：</h2><p>除了利用传感器创造特别的玩法外，在触摸屏上的操作也有多种玩法，如单屏滚动、手势操作、全景交互及多屏互动。在触摸屏上的操作要符合用户的正常习惯，例如滑动屏幕可以翻页、移动场景，双指拉开表示放大操作。如果预料到用户可能不清楚如何操作，则需要提供操作示范。此外，可操作区域也要弄大些，方便用户操作，例如当前画面只是操作一只猫爪上下移动，那么除了可以在猫爪上滑动外，在其他空白区域上下滑动也应该可以让猫爪上下移动。</p>
+<h3 id="单屏滚动"><a href="#单屏滚动" class="headerlink" title="单屏滚动"></a>单屏滚动</h3><p>这是一种很常见的交互形式。如幻灯片一样，网页上的每一页内容都是占满全屏的。当用户滑动屏幕翻下一页后，当前整个屏幕的内容都会翻走，然后再展示下一页全屏的内容。翻屏时可以加上一些转换的动画，如渐入渐出，使得翻页效果生动不单调，也可以加上重力感应，让手机在转动时产生视差效果。单屏滚动的应用场景比较广泛，很多主页、产品介绍、报告总结、邀请函都应用了这种形式。</p>
+<p>案例：</p>
+<p>腾讯互娱发布会邀请函：</p>
+<p>邀请函采取单屏滚动的形式展示，同时利用重力感应，转动手机时会看到页面上的装饰图片也会跟着移动，制造视差，增添了乐趣。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093455-25016.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093526-80401.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093552-93995.jpg" alt=""></p>
+<p>王者荣耀S7赛季总结：</p>
+<p>该游戏总结报告也使用了单屏滚动的方式，展示了用户在该赛季各方面的成绩，如获得星数、本命英雄、给力搭档等。翻页时酷炫的动画效果使得这份报告更加生动有趣。该报告亦使用了重力感应，摆动手机时页内元素也会跟着摆动。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093700-24241.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081722-87350.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093751-5320.png" alt=""></p>
+<h3 id="手势操作"><a href="#手势操作" class="headerlink" title="手势操作"></a>手势操作</h3><p>我们和屏幕交互，除了有点击、滑动外，还有很多手势操作，如拖拽、双指拉开放大、双指画圈旋转物体，画图形表示某个动作等。手势操作可用于放大查看图片、对图片进行拖拽/放大/旋转等编辑、手势解锁、也可以用于游戏上，如拼图游戏时拖拽、旋转拼图碎片。</p>
+<p>在实现上，H5有一个手势操作库<a href="http://hammerjs.github.io/" target="_blank" rel="noopener">hammer.js</a>，可以实现常用的手势操作。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/093902-30625.png" alt=""></p>
+<h2 id="基于画面呈现："><a href="#基于画面呈现：" class="headerlink" title="基于画面呈现："></a>基于画面呈现：</h2><p>这类玩法一般就是展现一段比较酷炫有趣的画面内容，如视频、动画、特效，给用户带来视觉上的感官享受，用户也可以通过与画面内容互动，看自己想看的内容。</p>
+<h3 id="视频-动画展示"><a href="#视频-动画展示" class="headerlink" title="视频/动画展示"></a>视频/动画展示</h3><p>这类H5会播放一段时间较长但有趣生动的视频或动画来吸引用户关注其宣传内容。由于视频内容比较生动酷炫有趣味，以及常常有明星参与演出，用户一般不会太抗拒这样的广告，反而会喜欢点赞，甚至主动向朋友分享。有很多刷屏H5都是这个类型的，例如薛之谦XQQ动漫、韩寒X使命召唤等。这个玩法适合用于产品、节日、游戏、电影等宣传场景及叙述内容比较多的场景。</p>
+<p>这个玩法的主要制作方式有：</p>
+<p>1、视频。这种方式需要前期拍摄、后期使用专门的视频软件（如AE）制作，能制作出很炫的效果，但成本较高，用户通常只能被动地观看完整段视频。</p>
+<p>2、使用canvas制作，这种方式可以制作出像以前的flash一样的动画，效果没视频酷炫，但这类动画既可以看，又可以在播放途中自然地添加交互，相关组件有<a href="http://createjs.cc/" target="_blank" rel="noopener">createjs</a>、<a href="https://www.egret.com/" target="_blank" rel="noopener">egret</a>等。</p>
+<p>3、使用H5+css3制作，这种方式也能像方式2一样制作出动画，但制作难度和复杂度都比方式2大，而且也有可能带来性能问题。</p>
+<p>案例：</p>
+<p>薛之谦XQQ动漫：</p>
+<p>这支H5找来薛之谦拍视频，讲关于腾讯动漫作品的段子。视频内容十分有趣，成为了当时的现象级刷屏H5。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094138-88344.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094158-73503.jpg" alt=""></p>
+<p>生命之下，想象之上——2015年腾讯互动娱乐发布会品牌H5：</p>
+<p>这支H5使用createjs制作，以卡通动画的方式展示了男孩探寻想象力的旅程。动画分段播放，用户可以体会完每段动画的思想后，再点击继续播放下一段动画。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094231-33126.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094253-1806.jpg" alt=""></p>
+<p>这是成年人不敢打开的童年：</p>
+<p>这个H5动画属于一镜到底式的动画，用户一边滑动屏幕，动画一边顺序播放，而往相反方向滑动则会让动画倒序播放，滑动的速度会影响动画播放的速度，感觉就像是一边抽卷筒厕纸一边看到厕纸上画的逐格漫画一样。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094339-86765.jpg" alt=""></p>
+<p>费玉清唱诛仙主题曲：</p>
+<p>这个视频h5最大的特色是观看过程中长按按钮时会换了另一种魔性的画风，让用户不再只是被动地观看视频，而是通过操作发掘到更多有趣的内容，增强了用户的参与感和吸引力。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/085346-98321.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/085641-22520.jpg" alt=""></p>
+<h3 id="全景交互"><a href="#全景交互" class="headerlink" title="全景交互"></a>全景交互</h3><p>全景交互指将用户置于一个360度环绕的图片/视频环境下进行沉浸式的体验，用户可以通过转动手机或滑动屏幕来看这个环境里不同角度的内容并进行交互。如果将内容分成左右两个屏，带上VR眼镜，则可以进行VR体验。此玩法比较适合的场景有虚拟全景展示、身临其境的实景展示或活动现场展示。与此类似的还有商品的360度展示，用户拖动商品即可看到不同角度下商品的样子。</p>
+<p>相关技术主要是3d旋转操作、陀螺仪方面的技术，全景图插件有造物节使用的<a href="https://github.com/shrekshrek/css3d-engine" target="_blank" rel="noopener">css3d-engine</a> ，全景视频组件有<a href="http://flimshaw.github.io/Valiant360/" target="_blank" rel="noopener"> Valiant360</a> ，还有一些收费组件如<a href="https://krpano.com/" target="_blank" rel="noopener">krpano</a>。</p>
+<p>案例：</p>
+<p>小爷吴亦凡，凡心所向:</p>
+<p>之前很火的吴亦凡打篮球全景视频H5，通过旋转手机看他风骚地带球，镜头对着他代表正在防守他，结束后游戏会算出玩家的防守有效率。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081801-13546.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094553-9118.jpg" alt=""></p>
+<p>vivo-我们i音乐：</p>
+<p>类似造物节的案例，用户在一个360度的虚拟空间里拖动画面和旋转手机看各角度下的样子，并可点击里面的物品进行互动。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081825-35493.gif" alt=""></p>
+<p>深圳欢乐谷实景地图：</p>
+<p>在这个地图里，游客可以从高处欣赏欢乐谷的风景，切换各区域寻找游玩设施的位置，还可以发表评论留下足迹。该地图除了可以滑动、转动手机来浏览地图，还支持VR模式，将区域切换按钮移动到屏幕中间的锚点上一会儿便可切换游玩区域。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094720-11794.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/094752-1109.png" alt=""></p>
+<h3 id="多屏互动"><a href="#多屏互动" class="headerlink" title="多屏互动"></a>多屏互动</h3><p>多屏互动指在多个屏幕上体验活动，各自的操作会同时反应到其他屏幕上，一般以双屏互动为主。玩法有多人合作完成任务/互相竞技、你画我猜、一问一答、情侣互动小游戏、线下与现场观众互动、多个屏幕拼起来看视频等，也可以把手机屏幕当成控制器，用大屏幕来显示，例子有手机遥控器、谷歌的多人竞跑游戏。制作此类活动时，要注意兼顾好只有单人玩时的情况，此时可以将体验流程简单化，或者加上电脑一起参与。</p>
+<p>相关技术主要是通过websocket或轮询接口进行同步通信和更新画面的内容。</p>
+<p>案例：</p>
+<p>CF手游&amp;品客组队大战僵尸：</p>
+<p>这个游戏是用手榴弹炸僵尸，既可单人玩，也可双人玩，双人玩的时候一人负责装薯片弹药，一人负责扔手榴弹。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075202-49021.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075216-24802.jpg" alt=""></p>
+<p>奔驰抢车拔河：</p>
+<p>2人拼手速点击屏幕，将奔驰拉到自己那边为赢。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075413-3852.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075431-68122.jpg" alt=""></p>
+<p>爱9就在一起：</p>
+<p>一个关于爱情的视频，需要使用2台手机才能看到完整的内容，视频会在2台手机上同步播放。和心爱的TA一起把手机拼起来看吧。我觉得这个h5在只有一个手机观看的时候，应该提供一个滑动屏幕或转动手机时可以看到另一半视频的功能。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075511-65818.jpg" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075539-13747.jpg" alt=""></p>
+<p>微信线下多人飞机游戏：</p>
+<p>微信无现金日的活动现场提供了一个可以让多人同时玩的飞机游戏。游客用手机操作飞机射击，当达到了一定分数就可换取礼物。在大屏幕上会显示多人一起玩的游戏画面。这种方式增强了主办方与游客、游客之间的互动，也减少了游客的排队时间。飞机游戏的设计，也让人想起了第一款微信游戏就是飞机游戏，有一种回归初心的感觉。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/085847-68254.jpg" alt=""></p>
+<p>谷歌多人在线运动小游戏：</p>
+<p>总共有三个竞赛小游戏，分别是跑步、骑单车和游泳，最多能同时让四个人加入游戏。玩家在手机上按照操作指示去玩，电脑上则同时显示游戏画面。当只有单人玩的时候，会有电脑参与游戏。</p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075634-11982.jpg" alt=""></p>
+<embed align="middle" height="400" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&amp;v=20161117&amp;vid=d03292ovvzp&amp;auto=0" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; vertical-align: baseline; font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;" type="application/x-shockwave-flash" width="100%">
+
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/075720-36442.jpg" alt=""></p>
+<h3 id="图片裁剪和形变"><a href="#图片裁剪和形变" class="headerlink" title="图片裁剪和形变"></a>图片裁剪和形变</h3><p>css的clip-path和svg的clipPath方法可以使图形或图片裁剪成三角形、五边形等自定义的形状。利用这个能力，我们可以使图片如碎片似的组合起来或散开，或者将多边形像拼七巧板一样动态地组合成各种形状，或者将一个图标以动画的形式自然地转换到另一个图标。这个玩法适合用于图片的酷炫展示、切换及如变形金刚一样有变形需求的项目中。目前性能一般的手机运行这效果时并不太流畅。</p>
+<p>案例：</p>
+<p>pieces:</p>
+<p>这个网站用多边形动态地拼出各种很生动的动物，切换动物时多边形的变换过程也十分自然。访问地址：<a href="http://species-in-pieces.com/" target="_blank" rel="noopener">http://species-in-pieces.com</a></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/080631-81877.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/080725-47133.jpg" alt=""></p>
+<p>pasition：</p>
+<p>这是腾讯AlloyTeam发布的给图标制作酷炫过渡动画的插件，可以让图标以动画的形式自然地转换成另一个图标。访问地址：<a href="https://alloyteam.github.io/pasition/" target="_blank" rel="noopener">https://alloyteam.github.io/pasition/</a></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/080920-79323.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/080944-28010.png" alt=""></p>
+<p>SVG Morpheus：</p>
+<p>这个插件也是实现了如pasition的效果，但风格不相似的图标在转换时不够自然，会出现扭麻花似的强硬转换效果。访问地址：<a href="http://alexk111.github.io/SVG-Morpheus/" target="_blank" rel="noopener">http://alexk111.github.io/SVG-Morpheus/</a></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081026-62638.gif" alt=""></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081044-36812.jpg" alt=""></p>
+<h2 id="如何创意如泉涌？"><a href="#如何创意如泉涌？" class="headerlink" title="如何创意如泉涌？"></a>如何创意如泉涌？</h2><p>每个人都想在策划活动时能快速想出合适的方案，但方案不是说憋就能憋出来的。正所谓厚积薄发，要有好的想法，平时就要见多识广，多看看别人的案例，积累一定量的创意。在此推荐一下H5案例分享这个网站，它收录了很多比较优秀的H5，很多新出的较好的H5都会及时收录和点评，有空时可以多逛逛。此外，可以多尝试那些充满创意的游戏，例如任天堂的游戏。他的游戏IP经历了十多年依然经久不衰，就是因为他一直以来都在创造很多充满游戏性和创意的游戏。以最近推出的《1-2-switch》为例，其内置的28个体感游戏都十分有趣，有些游戏创意还是能应用到H5上的。大家可以从下面的视频里了解一下这些游戏的玩法。</p>
+<embed align="middle" height="400" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&amp;v=20161117&amp;vid=p0380bq3fsy&amp;auto=0" style="margin: 0px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; vertical-align: baseline; font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;" type="application/x-shockwave-flash" width="100%">
+
+<p>至于积累H5特效创意，大家可以访问一下fff这个网站，里面有一些酷炫有趣的特效可以参考，下次如果需要做H5的时候，产品就可以一脸傲娇的指着屏幕跟开发说：你看，就是要这个效果。而开发也可以偷偷在这参考和学习各种特效的制作方法，当你做出超出产品预期的酷炫的H5时，产品肯定会喜出望外，对你好感度大增，甚至暗许芳心。。。访问地址：<a href="http://fff.cmiscm.com/" target="_blank" rel="noopener">http://fff.cmiscm.com/</a></p>
+<p><img src="https://isux.tencent.com/wp-content/uploads/2017/08/081302-54958.gif" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>H5的出现让移动web具备了更多的能力，使我们有更多的空间去创作和策划。本文列举了一些H5带来的新能力及其带来的玩法，指出H5的玩法构思可以基于传感器、基于触摸屏操作、基于画面呈现、基于内容来考虑，接着对这些类别下列举的玩法从应用场景、案例方面进行介绍，意在给读者多一些玩法上的灵感。大家在构思策划活动时也可以翻看一下这篇文章，说不定在里面就找到合适的参考方案了。</p>
+<hr>
+<p><a href="https://isux.tencent.com/h5-play-ways.html" target="_blank" rel="noopener">原文</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Design/" rel="tag"># Design</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/28/CPR+AED急救笔记/" rel="next" title="CPR+AED急救笔记">
+                <i class="fa fa-chevron-left"></i> CPR+AED急救笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/16/Sketch_plugin_Craft/" rel="prev" title="在Sketch中用Json数据做设计">
+                在Sketch中用Json数据做设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="FifteenBao" />
+            
+              <p class="site-author-name" itemprop="name">FifteenBao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                再瞅瞅
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fifteenbao.com" title="Website" target="_blank">Website</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于传感器"><span class="nav-number">1.</span> <span class="nav-text">基于传感器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#陀螺仪、重力感应"><span class="nav-number">1.1.</span> <span class="nav-text">陀螺仪、重力感应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地理位置"><span class="nav-number">1.2.</span> <span class="nav-text">地理位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人脸识别"><span class="nav-number">1.3.</span> <span class="nav-text">人脸识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webRTC"><span class="nav-number">1.4.</span> <span class="nav-text">webRTC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于触摸屏操作："><span class="nav-number">2.</span> <span class="nav-text">基于触摸屏操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单屏滚动"><span class="nav-number">2.1.</span> <span class="nav-text">单屏滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手势操作"><span class="nav-number">2.2.</span> <span class="nav-text">手势操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于画面呈现："><span class="nav-number">3.</span> <span class="nav-text">基于画面呈现：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#视频-动画展示"><span class="nav-number">3.1.</span> <span class="nav-text">视频/动画展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全景交互"><span class="nav-number">3.2.</span> <span class="nav-text">全景交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多屏互动"><span class="nav-number">3.3.</span> <span class="nav-text">多屏互动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片裁剪和形变"><span class="nav-number">3.4.</span> <span class="nav-text">图片裁剪和形变</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何创意如泉涌？"><span class="nav-number">4.</span> <span class="nav-text">如何创意如泉涌？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FifteenBao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
