@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fifteenbao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="更新至第6课 对象模型。。。   Class 1 .操作五项要求： 操作前 可识别 结果可预知   操作中 及时反馈   操作后 结果有明示 可撤销">
+<meta name="keywords" content="Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「臭鱼」深大体验设计">
+<meta property="og:url" content="https://fifteenbao.github.io/2019/03/04/臭鱼深大体验设计/index.html">
+<meta property="og:site_name" content="十五的笔头">
+<meta property="og:description" content="更新至第6课 对象模型。。。   Class 1 .操作五项要求： 操作前 可识别 结果可预知   操作中 及时反馈   操作后 结果有明示 可撤销">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://hexo.fifteenbao.com/image/%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/image/%E7%AC%AC%E5%9B%9B%E8%AF%BE%E7%94%A8%E6%88%B7%E5%88%86%E5%B8%832.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E6%8C%89%E9%92%AE%E4%B8%8E%E9%93%BE%E6%8E%A5.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E4%BA%8C%E6%AC%A1%E7%A1%AE%E8%AE%A4.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E9%A1%B5%E7%AD%BE.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E6%A1%86%E6%9E%B6.png">
+<meta property="og:image" content="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E7%BF%BB%E9%A1%B5%E9%A1%B5%E7%A0%81.png">
+<meta property="og:updated_time" content="2019-07-25T07:20:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「臭鱼」深大体验设计">
+<meta name="twitter:description" content="更新至第6课 对象模型。。。   Class 1 .操作五项要求： 操作前 可识别 结果可预知   操作中 及时反馈   操作后 结果有明示 可撤销">
+<meta name="twitter:image" content="http://hexo.fifteenbao.com/image/%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%93%8D%E4%BD%9C.png">
+
+<link rel="canonical" href="https://fifteenbao.github.io/2019/03/04/臭鱼深大体验设计/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>「臭鱼」深大体验设计 | 十五的笔头</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">十五的笔头</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">🧠脑子是个好东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://fifteenbao.github.io/2019/03/04/臭鱼深大体验设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FifteenBao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="十五的笔头">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          「臭鱼」深大体验设计
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-03-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-04T00:00:00+08:00">2019-03-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-07-25 15:20:43" itemprop="dateModified" datetime="2019-07-25T15:20:43+08:00">2019-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Design/" itemprop="url" rel="index"><span itemprop="name">Design</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p> 更新至第6课 对象模型。。。</p>
+</blockquote>
+<hr>
+<h1 id="Class-1-操作"><a href="#Class-1-操作" class="headerlink" title="Class 1 .操作"></a>Class 1 .<strong>操作</strong></h1><h2 id="五项要求："><a href="#五项要求：" class="headerlink" title="五项要求："></a>五项要求：</h2><ul>
+<li>操作前<ol>
+<li>可识别</li>
+<li>结果可预知</li>
+</ol>
+</li>
+<li>操作中<ol start="3">
+<li>及时反馈</li>
+</ol>
+</li>
+<li>操作后<ol start="4">
+<li>结果有明示</li>
+<li>可撤销 <a id="more"></a> 
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="模型："><a href="#模型：" class="headerlink" title="模型："></a>模型：</h2><p><img src="http://hexo.fifteenbao.com/image/%E7%AC%AC%E4%B8%80%E8%AF%BE%E6%93%8D%E4%BD%9C.png" alt="操作模型"></p>
+<hr>
+<h1 id="Class-2-信息表达"><a href="#Class-2-信息表达" class="headerlink" title="Class 2 .信息表达"></a>Class 2 .<strong>信息表达</strong></h1><ul>
+<li><p>服务员设计法（形式追随内容）</p>
+<ol>
+<li>概括信息</li>
+<li>信息排序</li>
+<li>使用界面语言翻译</li>
+</ol>
+</li>
+<li><p>界面语言</p>
+<ol>
+<li><strong>文字</strong>（大小、位置、颜色、粗细 ） <strong>背景</strong>（颜色、样式） <strong>图</strong>（图表、图像）</li>
+<li><strong>排版布局</strong></li>
+<li><strong>页面间跳转</strong></li>
+<li><strong>互动操作</strong></li>
+<li><strong>白底黑字</strong></li>
+<li><strong>三个距离</strong> 边距 &gt; 行距 &gt; 字间距</li>
+<li><strong>技巧</strong> 结构化</li>
+<li><strong>禁忌</strong> 不要惊叹号，不要专业术语，不要冗余</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="Class3-数据可视化"><a href="#Class3-数据可视化" class="headerlink" title="Class3.数据可视化"></a>Class3.<strong>数据可视化</strong></h1><h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><ul>
+<li>表现多个项的占比</li>
+<li>善于表现某个极大树枝</li>
+<li>较接近的值之间不宜比较</li>
+</ul>
+<h2 id="雷达图"><a href="#雷达图" class="headerlink" title="雷达图"></a>雷达图</h2><ul>
+<li>展现一个主体多个维度的值</li>
+<li>4-8个维度</li>
+<li>每个维度可排序，值有限</li>
+<li>每个维度的单位可不相同</li>
+<li>单位精度如果过高不易于维度间比较</li>
+<li>可多组叠加用来比较</li>
+</ul>
+<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><ul>
+<li>适用于较小的数据集</li>
+<li>可横可竖</li>
+<li>用于各项之间的对比</li>
+<li>可成组</li>
+<li>横坐标连续不连续皆可</li>
+<li>时间维度通常是横坐标</li>
+</ul>
+<h3 id="柱状图-直方图"><a href="#柱状图-直方图" class="headerlink" title="柱状图-直方图"></a>柱状图-直方图</h3><ul>
+<li>横轴需要连续，宜等距</li>
+<li>面积表示量值</li>
+</ul>
+<h2 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h2><ul>
+<li>看趋势</li>
+<li>看异常</li>
+<li>非常多的数据</li>
+<li>横坐标是连续型的维度</li>
+<li>时间维度通常是横坐标</li>
+</ul>
+<hr>
+<h1 id="Class4-生手与熟手"><a href="#Class4-生手与熟手" class="headerlink" title="Class4.生手与熟手"></a>Class4.<strong>生手与熟手</strong></h1><h2 id="现实交流原则"><a href="#现实交流原则" class="headerlink" title="现实交流原则"></a>现实交流原则</h2><p>产品的内容表达与现实生活中的表达，评价标准是一致的。</p>
+<h3 id="第一性原理"><a href="#第一性原理" class="headerlink" title="第一性原理"></a>第一性原理</h3><blockquote>
+<p>是一个最基本的命题或假设<br>不能被省略或删除，也不能被违反</p>
+</blockquote>
+<h2 id="用户分布"><a href="#用户分布" class="headerlink" title="用户分布"></a>用户分布</h2><p> <img src="http://hexo.fifteenbao.com/image/%E7%AC%AC%E5%9B%9B%E8%AF%BE%E7%94%A8%E6%88%B7%E5%88%86%E5%B8%832.png" alt="用户分布"></p>
+<blockquote>
+<p> 生手产品：携程/银行App<br> 熟手产品：Wechat/QQ/Weibo</p>
+</blockquote>
+<h2 id="熟手产品-帮助生手"><a href="#熟手产品-帮助生手" class="headerlink" title="熟手产品 - 帮助生手"></a><strong>熟手产品 - 帮助生手</strong></h2><ul>
+<li>优化帮助中心</li>
+<li>优化新手指引</li>
+<li>事先写上内容</li>
+<li>新手教学持续穿插+复杂度逐增   </li>
+</ul>
+<h2 id="生手与熟手"><a href="#生手与熟手" class="headerlink" title="生手与熟手"></a>生手与熟手</h2><ul>
+<li>按钮展现：图标/文字</li>
+<li>颜色表意： 无效/有效</li>
+<li>位置信息：无效/有效</li>
+<li>提供功能：有形/无形</li>
+<li>任务引导：有/无</li>
+<li>展现信息：明确/高效</li>
+</ul>
+<hr>
+<h1 id="Class5-设计元素"><a href="#Class5-设计元素" class="headerlink" title="Class5. 设计元素"></a>Class5. <strong>设计元素</strong></h1><blockquote>
+<p> 参考链接 ：<br> <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzA4ODQ5MjYyMQ==&amp;hid=1&amp;sn=7ecd039ba72149b0d419927703d54135#wechat_redirect" target="_blank" rel="noopener">http://mp.weixin.qq.com/mp/homepage?__biz=MzA4ODQ5MjYyMQ==&amp;hid=1&amp;sn=7ecd039ba72149b0d419927703d54135#wechat_redirect</a></p>
+</blockquote>
+<h2 id="1-文字链接与按钮"><a href="#1-文字链接与按钮" class="headerlink" title="1. 文字链接与按钮"></a>1. <strong>文字链接与按钮</strong></h2><blockquote>
+<p>远古的PC web时代，文字链接标准的表现：蓝色+下划线。用于表示一个超链接，指向一个特定页面。按钮被定义为是具备特定功能的操作器，比如：下载、提交表单、删除…<br><strong>这样的区分是基于技术模型</strong>的，即，功能上，技术上有着本质的不同，所以表现上截然不同。<br>当今，设计逐渐成熟，<strong>文字链接与按钮也基本不再明确区分</strong>了。达到<strong>可识别，结果可预知，表达主次</strong>的效果即可。<br> <img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E6%8C%89%E9%92%AE%E4%B8%8E%E9%93%BE%E6%8E%A5.png" alt></p>
+<ul>
+<li>源于技术上的本质不同</li>
+<li>可识别，结果可预知，表达主次</li>
+</ul>
+</blockquote>
+<h2 id="2-二次确认"><a href="#2-二次确认" class="headerlink" title="2. 二次确认"></a>2. <strong>二次确认</strong></h2><blockquote>
+<p><strong>需要用户十分慎重的操作</strong>，例如：删除，可以使用二次确认，避免用户误操作。<strong>描述操作带来的后果，小心措辞</strong>。<br>二次确认最常见的形式是弹出窗口，但如果<strong>可以不使用模式化的弹出窗口，更好</strong>（IOS通知栏删除操作）。<br>即使提供了二次确认，代操作后如果需要，仍旧应该<strong>提供可撤销的功能</strong>，例如：删除后，可以找回已删除的文件。<br><img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E4%BA%8C%E6%AC%A1%E7%A1%AE%E8%AE%A4.png" alt></p>
+</blockquote>
+<ul>
+<li>需要用户十分慎重的操作</li>
+<li>描述操作带来的后果</li>
+<li>小心措辞</li>
+<li>不模式化更好</li>
+<li>仍旧可撤销</li>
+</ul>
+<h2 id="3-列表"><a href="#3-列表" class="headerlink" title="3. 列表"></a>3. <strong>列表</strong></h2><blockquote>
+<p> 列表是<strong>一篇篇详情叠落</strong>在一起。<br>列表中的每一项应具可以等量齐观。<br>一篇详情中的<strong>摘要显示于列表中</strong>。<br>详情中甄选摘要的依据：那些有助于用户判断应打开哪项的信息。<br><img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E5%88%97%E8%A1%A8.png" alt></p>
+</blockquote>
+<ul>
+<li>模型：纸张一张张叠落</li>
+<li>列表项里的更多/更少的内容</li>
+</ul>
+<h2 id="4-页签-Tabs"><a href="#4-页签-Tabs" class="headerlink" title="4. 页签 Tabs"></a>4. <strong>页签 Tabs</strong></h2><blockquote>
+<p>每一个页签项包含<strong>“当前态”</strong>和<strong>“非当前态”</strong>两种状态，需要不同的表现样式。对于PC网页，通常还需要再增加一种hover（鼠标移到其上）状态。<br>点击每个页签应对应在当前页面中打开此页签的页面，<strong>不应跳离当前的Tabs模式</strong>。<br>各个页签之间应存在一定的可理解的<strong>类比关系</strong>，但也不必须要求1=2+3+4+5，也不必须追求各个页签内的内容彼此不重叠。即，Tabs只是一种界面表现形式，它并不要求其中的内容必须存在某种特定的逻辑关系。<br><img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E9%A1%B5%E7%AD%BE.png" alt></p>
+</blockquote>
+<ul>
+<li>当前/非当前</li>
+<li>栏目之间的关系</li>
+<li>不应离开</li>
+</ul>
+<h2 id="5-框架-Frame"><a href="#5-框架-Frame" class="headerlink" title="5. 框架 Frame"></a>5. <strong>框架 Frame</strong></h2><ul>
+<li><strong>嵌套frame</strong><blockquote>
+<p>在页面中嵌套frame，可以方便的在局部呈现大量信息，不需要占用太多的页面空间。在PC网页这种比较大的界面上，出现frame更多。但嵌套frame也有一些负面问题：<br><img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E6%A1%86%E6%9E%B6.png" alt></p>
+<ol>
+<li>窗口套窗口，不易理解。如果是一个完整的页面，用户可以理解为这是一张长长的报纸，显示屏是窗口，滚动即可透过窗口看到上面或下面的内容。在这张报纸上再剪出个窟窿，能看到更后面的一张报纸… 这让认知更复杂了。</li>
+<li>小小的误操作。原本在用鼠标滚轮滚动页面，当frame区域移至光标位置后，再滚动滚轮将是滚动frame页面。</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><strong>触屏上的frame</strong></li>
+</ul>
+<blockquote>
+<p>对于触屏，上面说到的小小的误操作影响会更大。<br>屏幕更小，而手指又远比光标大，当屏幕中出现嵌套的frame时，想继续滚动整个页面会十分困难。所以触屏上创造出了<strong>横向滚动</strong>。对于嵌套在页面中的frame小页面，是横向滚动的。App Store中广泛使用了这种横向嵌套的frame。<br>我们常见的大图轮播，也可以被看做是这样的横frame。但这种横向滚动的frame却很难被用在PC网页上，因为鼠标没有横向滚轮。</p>
+</blockquote>
+<ul>
+<li><p><strong>双面板</strong></p>
+<blockquote>
+<p>在PC网页或pad这些比较大的界面上，甚至可以使用frame将整个页面分成多个窗口，典型的例子是：猫扑的大杂烩PC网页版，至今仍旧保留着左右两个窗口的效果。这种两个窗口的式样也被成为“双面板”，两个面板彼此独立滚动。<br>在更古老的网页、软件设计中，这种使用frame将一个界面切分成多个独立窗口的方式更为常见，因为可以更大限度的利用页面空间，承载更多信息，但这种式样对用户却是不够友好的。多个独立的窗口同时呈现，让用户更<strong>难对产品界面形成一个具象的认识</strong>。与上面提到的认知困难类似，多个独立滚动的窗口，就很难形成类似的心理模型了。因此，越来越少的产品使用这种双面板，多面板了。<br>能在较小的局部空间里展示更多的内容，嵌套frame有其价值，相比于“点击查看更多”，嵌套frame更容易操作（滚动比点击更易操作）。但嵌套窗口带来的认知负担，想要靠界面设计手段来缓解，不太容易。</p>
+</blockquote>
+</li>
+<li><p>节省空间</p>
+</li>
+<li>窗口套窗口，不易理解</li>
+<li>对滚动操作不友好</li>
+</ul>
+<h2 id="6-向下展开"><a href="#6-向下展开" class="headerlink" title="6. 向下展开"></a>6. <strong>向下展开</strong></h2><ul>
+<li>明确是展开/收起 谁</li>
+<li>可方便的收起</li>
+<li>位置固定*</li>
+</ul>
+<h2 id="7-向导式导航-wizard"><a href="#7-向导式导航-wizard" class="headerlink" title="7. 向导式导航 wizard"></a>7. <strong>向导式导航 wizard</strong></h2><ul>
+<li>用于复杂的流程，量大且重要的信息，新手教程，不熟悉的操作</li>
+<li>顶部的导航不可点击</li>
+<li>每一步是对一个内容的操作</li>
+<li>步骤不是越多越好</li>
+</ul>
+<h2 id="8-翻页页码"><a href="#8-翻页页码" class="headerlink" title="8. 翻页页码"></a>8. <strong>翻页页码</strong></h2><p><img src="http://hexo.fifteenbao.com/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0/%E8%AE%BE%E8%AE%A1%E5%85%83%E7%B4%A0-%E7%BF%BB%E9%A1%B5%E9%A1%B5%E7%A0%81.png" alt></p>
+<blockquote>
+<ul>
+<li>通常用于内容量很多的列表，将列表内容分页展示,<strong>避免列表无限制的长</strong>。</li>
+<li>通常空间不足以显示出所有页的页面，只<strong>显示当前页临近的前n页和后n页</strong>。</li>
+<li>为了能实现快速跳转到第一页或最后一页的能力，可以<strong>始终显示第一页和最后一页</strong>的页面，也可以使用“&lt;&lt;”“&gt;&gt;”按钮。</li>
+<li>为了<strong>更快速的跳转</strong>到特定页，还可以增加“跳转到[  ]页”功能。绝大多数时候，全部列表内容是不断增加的，所以，列表中的某项并不能固定在特定的页内，比如：某条新闻昨天是在第2页的第一条，今天可能已经在第8页了。即，用户并不能通过记住页码快速找到某项内容，翻页页码提供不了这种能力。</li>
+<li>目前，<strong>触屏设备更多的采用向下滑动</strong>屏幕则加载更多的方式，代替掉了翻页页码。因为对于触屏设备，翻页页码每个数字的热区通常太小了。但翻页页码仍旧有独特的价值。翻页页码的价值在于粗略的导航整个列表，比如，列表全部内容有200项，每页显示20项，共10页。用户可以点击第4页，快速跳转到61—80项。这比触屏的“向下滑，加载更多”效率要高很多。</li>
+<li>即使不考虑技术上的局限，一个相对长的列表也仍旧有好处：在一张大纸上看20项内容，总好过在4张小纸上，每张纸5项内容。当用户想要回头看之前的某项内容时，会回忆“是很靠前的内容”，而如果要用户给出明确的判断是“6-10项”中的某项？or“11-15项”中的某项？这是更难的。<strong>人的记忆并不是那么精确的，而页码是精确的，过度的使用页码避免滚屏并不好。</strong></li>
+</ul>
+</blockquote>
+<ul>
+<li>避免了列表无限制的长</li>
+<li>显示临近的页码</li>
+<li>第一页和最后一页始终显示</li>
+<li>可使用跳转到XX页</li>
+<li>触屏改用「向下滚动」</li>
+<li>为了不滚动而翻页，不可取</li>
+</ul>
+<h2 id="9-搜索器"><a href="#9-搜索器" class="headerlink" title="9. 搜索器"></a>9. <strong>搜索器</strong></h2><ul>
+<li>不要提供分类</li>
+<li>全局的搜索更好</li>
+<li>当前热门、关键字联想、搜索结果</li>
+</ul>
+<h2 id="10-表单-From"><a href="#10-表单-From" class="headerlink" title="10. 表单 From"></a>10. <strong>表单 From</strong></h2><ul>
+<li>提交/取消，不要应用、重置</li>
+<li>不是普通的内容展示</li>
+<li>提交/取消的措辞</li>
+<li>即时生效的单个表单原件</li>
+<li>避免嵌套</li>
+<li>取消有二次确认</li>
+</ul>
+<h2 id="11-单选按钮-Radio-Button"><a href="#11-单选按钮-Radio-Button" class="headerlink" title="11. 单选按钮 Radio Button"></a>11. <strong>单选按钮 Radio Button</strong></h2><ul>
+<li>多项之中选一项</li>
+<li>必有一项被选中</li>
+<li>不宜初始为空</li>
+</ul>
+<h2 id="12-复选框-Check-Box"><a href="#12-复选框-Check-Box" class="headerlink" title="12. 复选框 Check Box**"></a>12.<em> </em>复选框 Check Box**</h2><ul>
+<li>多项之中可选若干项</li>
+<li>多项之间不要求性质相似</li>
+<li>初始状态选中不选中皆可</li>
+</ul>
+<h2 id="13-开关"><a href="#13-开关" class="headerlink" title="13. 开关"></a>13. <strong>开关</strong></h2><ul>
+<li>语义：这项功能，开启/关闭</li>
+<li>功能描述要小心</li>
+<li>PC上也会用复选框当作开关</li>
+</ul>
+<h2 id="14-下拉菜单"><a href="#14-下拉菜单" class="headerlink" title="14. 下拉菜单"></a>14. <strong>下拉菜单</strong></h2><ul>
+<li>是一组收起来的单选项</li>
+<li>下拉列表中是全部备选项</li>
+<li>可提供手动输入</li>
+<li>PC Web上常见 移动端很少用</li>
+</ul>
+<h2 id="15-滚轮"><a href="#15-滚轮" class="headerlink" title="15. 滚轮"></a>15. <strong>滚轮</strong></h2><ul>
+<li>备选项量大</li>
+<li>需快速滑动</li>
+<li>适合有序的备选项</li>
+</ul>
+<h2 id="16-输入框"><a href="#16-输入框" class="headerlink" title="16. 输入框"></a>16. <strong>输入框</strong></h2><ul>
+<li>框内缺省文字可用于描述</li>
+<li>移动端样式比较不容易识别</li>
+</ul>
+<hr>
+<h1 id="Class-6-对象模型"><a href="#Class-6-对象模型" class="headerlink" title="Class 6 .对象模型"></a>Class 6 .<strong>对象模型</strong></h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"># Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/10/12/Wordpress添加Https不能登录后台/" rel="prev" title="Wordpress添加Https不能进入后台">
+      <i class="fa fa-chevron-left"></i> Wordpress添加Https不能进入后台
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/07/25/Design Source/" rel="next" title="Design Source">
+      Design Source <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-1-操作"><span class="nav-number">1.</span> <span class="nav-text">Class 1 .操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#五项要求："><span class="nav-number">1.1.</span> <span class="nav-text">五项要求：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型："><span class="nav-number">1.2.</span> <span class="nav-text">模型：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-2-信息表达"><span class="nav-number">2.</span> <span class="nav-text">Class 2 .信息表达</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class3-数据可视化"><span class="nav-number">3.</span> <span class="nav-text">Class3.数据可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#饼图"><span class="nav-number">3.1.</span> <span class="nav-text">饼图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#雷达图"><span class="nav-number">3.2.</span> <span class="nav-text">雷达图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#柱状图"><span class="nav-number">3.3.</span> <span class="nav-text">柱状图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#柱状图-直方图"><span class="nav-number">3.3.1.</span> <span class="nav-text">柱状图-直方图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图"><span class="nav-number">3.4.</span> <span class="nav-text">折线图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class4-生手与熟手"><span class="nav-number">4.</span> <span class="nav-text">Class4.生手与熟手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#现实交流原则"><span class="nav-number">4.1.</span> <span class="nav-text">现实交流原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一性原理"><span class="nav-number">4.1.1.</span> <span class="nav-text">第一性原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户分布"><span class="nav-number">4.2.</span> <span class="nav-text">用户分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#熟手产品-帮助生手"><span class="nav-number">4.3.</span> <span class="nav-text">熟手产品 - 帮助生手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生手与熟手"><span class="nav-number">4.4.</span> <span class="nav-text">生手与熟手</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class5-设计元素"><span class="nav-number">5.</span> <span class="nav-text">Class5. 设计元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文字链接与按钮"><span class="nav-number">5.1.</span> <span class="nav-text">1. 文字链接与按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-二次确认"><span class="nav-number">5.2.</span> <span class="nav-text">2. 二次确认</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-列表"><span class="nav-number">5.3.</span> <span class="nav-text">3. 列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-页签-Tabs"><span class="nav-number">5.4.</span> <span class="nav-text">4. 页签 Tabs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-框架-Frame"><span class="nav-number">5.5.</span> <span class="nav-text">5. 框架 Frame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-向下展开"><span class="nav-number">5.6.</span> <span class="nav-text">6. 向下展开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-向导式导航-wizard"><span class="nav-number">5.7.</span> <span class="nav-text">7. 向导式导航 wizard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-翻页页码"><span class="nav-number">5.8.</span> <span class="nav-text">8. 翻页页码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-搜索器"><span class="nav-number">5.9.</span> <span class="nav-text">9. 搜索器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-表单-From"><span class="nav-number">5.10.</span> <span class="nav-text">10. 表单 From</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-单选按钮-Radio-Button"><span class="nav-number">5.11.</span> <span class="nav-text">11. 单选按钮 Radio Button</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-复选框-Check-Box"><span class="nav-number">5.12.</span> <span class="nav-text">12. 复选框 Check Box**</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-开关"><span class="nav-number">5.13.</span> <span class="nav-text">13. 开关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-下拉菜单"><span class="nav-number">5.14.</span> <span class="nav-text">14. 下拉菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-滚轮"><span class="nav-number">5.15.</span> <span class="nav-text">15. 滚轮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-输入框"><span class="nav-number">5.16.</span> <span class="nav-text">16. 输入框</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-6-对象模型"><span class="nav-number">6.</span> <span class="nav-text">Class 6 .对象模型</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FifteenBao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FifteenBao</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

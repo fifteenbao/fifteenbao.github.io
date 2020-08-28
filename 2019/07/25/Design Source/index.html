@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fifteenbao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="DesignLanguage 平台规范 Frontend Guidelines 前端规范 BrandGuidelines品牌规范 Source 素材 Font 字体">
+<meta name="keywords" content="Source,Baike,Guideline">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Design Source">
+<meta property="og:url" content="https://fifteenbao.github.io/2019/07/25/Design Source/index.html">
+<meta property="og:site_name" content="十五的笔头">
+<meta property="og:description" content="DesignLanguage 平台规范 Frontend Guidelines 前端规范 BrandGuidelines品牌规范 Source 素材 Font 字体">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://uploads-ssl.webflow.com/5bff8886c3964a992e90d465/5c006187d9549d3368158d3d_mixes.gif">
+<meta property="og:image" content="https://evie.undraw.co/images/undraw_designer.svg">
+<meta property="og:image" content="https://camo.githubusercontent.com/fe03c062b73675cd8c025eb82885a98261810bd4/687474703a2f2f63646e2e72656d697869636f6e2e636f6d2f6c6f676f2d6769746875622e737667">
+<meta property="og:updated_time" content="2019-07-25T05:24:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Design Source">
+<meta name="twitter:description" content="DesignLanguage 平台规范 Frontend Guidelines 前端规范 BrandGuidelines品牌规范 Source 素材 Font 字体">
+<meta name="twitter:image" content="https://uploads-ssl.webflow.com/5bff8886c3964a992e90d465/5c006187d9549d3368158d3d_mixes.gif">
+
+<link rel="canonical" href="https://fifteenbao.github.io/2019/07/25/Design Source/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Design Source | 十五的笔头</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">十五的笔头</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">🧠脑子是个好东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://fifteenbao.github.io/2019/07/25/Design Source/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="FifteenBao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="十五的笔头">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Design Source
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-07-25 12:37:39 / Modified: 13:24:16" itemprop="dateCreated datePublished" datetime="2019-07-25T12:37:39+08:00">2019-07-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Design/" itemprop="url" rel="index"><span itemprop="name">Design</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p> DesignLanguage 平台规范<br> Frontend Guidelines 前端规范<br> BrandGuidelines品牌规范<br> Source 素材<br> Font 字体</p>
+</blockquote>
+<a id="more"></a> 
+<h1 id="DesignLanguage-平台规范"><a href="#DesignLanguage-平台规范" class="headerlink" title="DesignLanguage 平台规范"></a>DesignLanguage 平台规范</h1><ul>
+<li><h2 id="IOS-Human-Interface-Guidelines"><a href="#IOS-Human-Interface-Guidelines" class="headerlink" title="IOS Human Interface Guidelines"></a>IOS Human Interface Guidelines</h2><a href="https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/" target="_blank" rel="noopener">https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/</a></li>
+<li><h2 id="Material-Design"><a href="#Material-Design" class="headerlink" title="Material Design"></a>Material Design</h2><a href="https://material.io/" target="_blank" rel="noopener">https://material.io/</a></li>
+</ul>
+<h1 id="Frontend-Guidelines-前端规范"><a href="#Frontend-Guidelines-前端规范" class="headerlink" title="Frontend Guidelines 前端规范"></a>Frontend Guidelines 前端规范</h1><ul>
+<li><h2 id="Bootstrap"><a href="#Bootstrap" class="headerlink" title="Bootstrap"></a>Bootstrap</h2><p><a href="http://getbootstrap.com/components/" target="_blank" rel="noopener">http://getbootstrap.com/components/</a></p>
+</li>
+<li><h2 id="Ant-Deign"><a href="#Ant-Deign" class="headerlink" title="Ant Deign"></a>Ant Deign</h2><p><a href="https://ant.design/docs/spec/proximity-cn" target="_blank" rel="noopener">https://ant.design/docs/spec/proximity-cn</a></p>
+</li>
+<li><h2 id="Element-UI"><a href="#Element-UI" class="headerlink" title="Element UI"></a>Element UI</h2><p><a href="http://element-ui.cn/#/zh-CN/guide/design" target="_blank" rel="noopener">http://element-ui.cn/#/zh-CN/guide/design</a></p>
+</li>
+</ul>
+<h1 id="BrandGuidelines品牌规范"><a href="#BrandGuidelines品牌规范" class="headerlink" title="BrandGuidelines品牌规范"></a>BrandGuidelines品牌规范</h1><ul>
+<li><h2 id="LonelyPlanet"><a href="#LonelyPlanet" class="headerlink" title="LonelyPlanet"></a>LonelyPlanet</h2><a href="http://rizzo.lonelyplanet.com/styleguide/design-elements/colours" target="_blank" rel="noopener">http://rizzo.lonelyplanet.com/styleguide/design-elements/colours</a></li>
+<li><h2 id="任天堂角色设计规范（1993年）"><a href="#任天堂角色设计规范（1993年）" class="headerlink" title="任天堂角色设计规范（1993年）"></a>任天堂角色设计规范（1993年）</h2><p><a href="http://www.pressthebuttons.com/2014/12/mario-kirby-and-samus-aran-shine-in-the-nintendo-character-manual.html" target="_blank" rel="noopener">http://www.pressthebuttons.com/2014/12/mario-kirby-and-samus-aran-shine-in-the-nintendo-character-manual.html</a></p>
+</li>
+<li><h2 id="Dropbox"><a href="#Dropbox" class="headerlink" title="Dropbox"></a>Dropbox</h2><p><a href="https://www.dropbox.com/branding" target="_blank" rel="noopener">https://www.dropbox.com/branding</a></p>
+</li>
+<li><h2 id="Airbnb"><a href="#Airbnb" class="headerlink" title="Airbnb"></a>Airbnb</h2><p><a href="http://designairs.com/inside-brand-evolution/" target="_blank" rel="noopener">http://designairs.com/inside-brand-evolution/</a></p>
+</li>
+<li><h2 id="Uber"><a href="#Uber" class="headerlink" title="Uber"></a>Uber</h2><p><a href="http://brand.uber.com/#menu" target="_blank" rel="noopener">http://brand.uber.com/#menu</a></p>
+</li>
+<li><h2 id="美国国家航天局视觉标准手册（1976年）"><a href="#美国国家航天局视觉标准手册（1976年）" class="headerlink" title="美国国家航天局视觉标准手册（1976年）"></a>美国国家航天局视觉标准手册（1976年）</h2><p><a href="https://www.nasa.gov/sites/default/files/atoms/files/nasa_graphics_manual_nhb_1430-2_jan_1976.pdf" target="_blank" rel="noopener">https://www.nasa.gov/sites/default/files/atoms/files/nasa_graphics_manual_nhb_1430-2_jan_1976.pdf</a></p>
+</li>
+</ul>
+<ul>
+<li><h2 id="IBM"><a href="#IBM" class="headerlink" title="IBM"></a>IBM</h2><a href="http://www.ibm.com/design/language/framework/experience" target="_blank" rel="noopener">http://www.ibm.com/design/language/framework/experience</a></li>
+</ul>
+<h1 id="Source-素材"><a href="#Source-素材" class="headerlink" title="Source 素材"></a>Source 素材</h1><ul>
+<li><h2 id="Humaaans-Sketch插画"><a href="#Humaaans-Sketch插画" class="headerlink" title="Humaaans Sketch插画"></a>Humaaans Sketch插画</h2><p><img src="https://uploads-ssl.webflow.com/5bff8886c3964a992e90d465/5c006187d9549d3368158d3d_mixes.gif" alt="https://www.humaaans.com/"><br>Sketch插画库，自行修改、自行搭配<a href="https://www.humaaans.com/" target="_blank" rel="noopener">https://www.humaaans.com/</a></p>
+</li>
+<li><h2 id="Undraw-Illustrations-矢量插画"><a href="#Undraw-Illustrations-矢量插画" class="headerlink" title="Undraw Illustrations 矢量插画"></a>Undraw Illustrations 矢量插画</h2><p><img src="https://evie.undraw.co/images/undraw_designer.svg" alt><br><a href="https://undraw.co/illustrations" target="_blank" rel="noopener">https://undraw.co/illustrations</a></p>
+</li>
+<li><h2 id="UI-Sound"><a href="#UI-Sound" class="headerlink" title="UI Sound"></a>UI Sound</h2><p><a href="https://uisounds.prototypr.io/" target="_blank" rel="noopener">https://uisounds.prototypr.io/</a></p>
+</li>
+<li><h2 id="Simply-Delightful-Icon-System"><a href="#Simply-Delightful-Icon-System" class="headerlink" title="Simply Delightful Icon System"></a>Simply Delightful Icon System</h2><p><img src="https://camo.githubusercontent.com/fe03c062b73675cd8c025eb82885a98261810bd4/687474703a2f2f63646e2e72656d697869636f6e2e636f6d2f6c6f676f2d6769746875622e737667" alt><br><a href="https://remixicon.com/" target="_blank" rel="noopener">https://remixicon.com/</a></p>
+</li>
+</ul>
+<h1 id="Font-字体"><a href="#Font-字体" class="headerlink" title="Font 字体"></a>Font 字体</h1><ul>
+<li><h2 id="Apple-font"><a href="#Apple-font" class="headerlink" title="Apple font"></a>Apple font</h2><p><a href="https://developer.apple.com/fonts/" target="_blank" rel="noopener">https://developer.apple.com/fonts/</a></p>
+</li>
+<li><h2 id="思源黑体"><a href="#思源黑体" class="headerlink" title="思源黑体"></a>思源黑体</h2><p><a href="https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese" target="_blank" rel="noopener">https://fonts.adobe.com/fonts/source-han-sans-simplified-chinese</a></p>
+</li>
+<li><h2 id="思源宋体"><a href="#思源宋体" class="headerlink" title="思源宋体"></a>思源宋体</h2><p><a href="https://source.typekit.com/source-han-serif/" target="_blank" rel="noopener">https://source.typekit.com/source-han-serif/</a></p>
+</li>
+<li><h2 id="谷歌免费衬线字体"><a href="#谷歌免费衬线字体" class="headerlink" title="谷歌免费衬线字体"></a>谷歌免费衬线字体</h2><p><a href="https://fonts.google.com/?category=Serif" target="_blank" rel="noopener">https://fonts.google.com/?category=Serif</a></p>
+</li>
+<li><h2 id="谷歌免费非衬线字体"><a href="#谷歌免费非衬线字体" class="headerlink" title="谷歌免费非衬线字体"></a>谷歌免费非衬线字体</h2><p><a href="https://fonts.google.com/?category=Sans+Serif" target="_blank" rel="noopener">https://fonts.google.com/?category=Sans+Serif</a></p>
+</li>
+<li><h2 id="谷歌免费手写体"><a href="#谷歌免费手写体" class="headerlink" title="谷歌免费手写体"></a>谷歌免费手写体</h2><p><a href="https://fonts.google.com/?category=Handwriting" target="_blank" rel="noopener">https://fonts.google.com/?category=Handwriting</a></p>
+</li>
+<li><h2 id="跨平台-CSS-中文字体解决方案"><a href="#跨平台-CSS-中文字体解决方案" class="headerlink" title="跨平台 CSS 中文字体解决方案"></a>跨平台 CSS 中文字体解决方案</h2><p><a href="https://github.com/zenozeng/fonts.css" target="_blank" rel="noopener">https://github.com/zenozeng/fonts.css</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Source/" rel="tag"># Source</a>
+              <a href="/tags/Baike/" rel="tag"># Baike</a>
+              <a href="/tags/Guideline/" rel="tag"># Guideline</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/04/臭鱼深大体验设计/" rel="prev" title="「臭鱼」深大体验设计">
+      <i class="fa fa-chevron-left"></i> 「臭鱼」深大体验设计
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/28/那些千奇百怪的饮品都是什么/" rel="next" title="无用但有趣">
+      无用但有趣 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DesignLanguage-平台规范"><span class="nav-number">1.</span> <span class="nav-text">DesignLanguage 平台规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOS-Human-Interface-Guidelines"><span class="nav-number">1.1.</span> <span class="nav-text">IOS Human Interface Guidelines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-Design"><span class="nav-number">1.2.</span> <span class="nav-text">Material Design</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Frontend-Guidelines-前端规范"><span class="nav-number">2.</span> <span class="nav-text">Frontend Guidelines 前端规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap"><span class="nav-number">2.1.</span> <span class="nav-text">Bootstrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ant-Deign"><span class="nav-number">2.2.</span> <span class="nav-text">Ant Deign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element-UI"><span class="nav-number">2.3.</span> <span class="nav-text">Element UI</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BrandGuidelines品牌规范"><span class="nav-number">3.</span> <span class="nav-text">BrandGuidelines品牌规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LonelyPlanet"><span class="nav-number">3.1.</span> <span class="nav-text">LonelyPlanet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任天堂角色设计规范（1993年）"><span class="nav-number">3.2.</span> <span class="nav-text">任天堂角色设计规范（1993年）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropbox"><span class="nav-number">3.3.</span> <span class="nav-text">Dropbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Airbnb"><span class="nav-number">3.4.</span> <span class="nav-text">Airbnb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uber"><span class="nav-number">3.5.</span> <span class="nav-text">Uber</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美国国家航天局视觉标准手册（1976年）"><span class="nav-number">3.6.</span> <span class="nav-text">美国国家航天局视觉标准手册（1976年）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBM"><span class="nav-number">3.7.</span> <span class="nav-text">IBM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-素材"><span class="nav-number">4.</span> <span class="nav-text">Source 素材</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Humaaans-Sketch插画"><span class="nav-number">4.1.</span> <span class="nav-text">Humaaans Sketch插画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undraw-Illustrations-矢量插画"><span class="nav-number">4.2.</span> <span class="nav-text">Undraw Illustrations 矢量插画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI-Sound"><span class="nav-number">4.3.</span> <span class="nav-text">UI Sound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simply-Delightful-Icon-System"><span class="nav-number">4.4.</span> <span class="nav-text">Simply Delightful Icon System</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Font-字体"><span class="nav-number">5.</span> <span class="nav-text">Font 字体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Apple-font"><span class="nav-number">5.1.</span> <span class="nav-text">Apple font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思源黑体"><span class="nav-number">5.2.</span> <span class="nav-text">思源黑体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思源宋体"><span class="nav-number">5.3.</span> <span class="nav-text">思源宋体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌免费衬线字体"><span class="nav-number">5.4.</span> <span class="nav-text">谷歌免费衬线字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌免费非衬线字体"><span class="nav-number">5.5.</span> <span class="nav-text">谷歌免费非衬线字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌免费手写体"><span class="nav-number">5.6.</span> <span class="nav-text">谷歌免费手写体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨平台-CSS-中文字体解决方案"><span class="nav-number">5.7.</span> <span class="nav-text">跨平台 CSS 中文字体解决方案</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">FifteenBao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FifteenBao</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
