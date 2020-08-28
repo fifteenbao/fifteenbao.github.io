@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"fifteenbao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"fifteenbao.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="更新至第6课 对象模型。。。   Class 1 .操作五项要求： 操作前 可识别 结果可预知   操作中 及时反馈   操作后 结果有明示 可撤销">
@@ -57,6 +57,15 @@
 
   <title>「臭鱼」深大体验设计 | 十五的笔头</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106053455-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-106053455-1');
+      }
+    </script>
 
 
 
@@ -123,14 +132,29 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-design">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/categories/Design/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>Design</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-aha~">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/categories/Aha-moment/" rel="section"><i class="fa fa-lightbulb fa-fw"></i>Aha~</a>
+
+  </li>
+        <li class="menu-item menu-item-enjoy">
+
+    <a href="/categories/Life/" rel="section"><i class="fa fa-hand-spock fa-fw"></i>Enjoy</a>
+
+  </li>
+        <li class="menu-item menu-item-knowledge">
+
+    <a href="/categories/Knowledge/" rel="section"><i class="fa fa-book fa-fw"></i>Knowledge</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
   </ul>
@@ -164,7 +188,7 @@
     <link itemprop="mainEntityOfPage" href="https://fifteenbao.github.io/2019/03/04/臭鱼深大体验设计/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="http://hexo.fifteenbao.com/avatar.JPG">
       <meta itemprop="name" content="FifteenBao">
       <meta itemprop="description" content="">
     </span>
@@ -469,8 +493,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2018/10/12/Wordpress添加Https不能登录后台/" rel="prev" title="Wordpress添加Https不能进入后台">
-      <i class="fa fa-chevron-left"></i> Wordpress添加Https不能进入后台
+    <a href="/2018/09/30/《Criminal Mind》整理/" rel="prev" title="Criminal Minds S1-S10 收集">
+      <i class="fa fa-chevron-left"></i> Criminal Minds S1-S10 收集
     </a></div>
       <div class="post-nav-item">
     <a href="/2019/07/25/Design Source/" rel="next" title="Design Source">
@@ -540,15 +564,16 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="FifteenBao"
+      src="http://hexo.fifteenbao.com/avatar.JPG">
   <p class="site-author-name" itemprop="name">FifteenBao</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">13</span>
+          <a href="/archives">
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -559,11 +584,23 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+          
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="http://fifteenbao.com" title="Website → http://fifteenbao.com" rel="noopener" target="_blank"><i class="fa fa-laptop fa-fw"></i>Website</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fifteenbao@163.com" title="E-Mail → mailto:fifteenbao@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/fifteenbao/" title="Instagram → https://www.instagram.com/fifteenbao/" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
 
 
 
@@ -590,9 +627,9 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">FifteenBao</span>
+  <span class="author" itemprop="copyrightHolder">fifteenbao</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
   </div>
 
         
