@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Fifteen&#39;s blog</title>
+  <icon>https://fifteenbao.com/icon.png</icon>
+  <subtitle>你喜欢跑步吗？</subtitle>
+  <link href="https://fifteenbao.com/atom.xml" rel="self"/>
+  
+  <link href="https://fifteenbao.com/"/>
+  <updated>2022-10-22T17:07:37.715Z</updated>
+  <id>https://fifteenbao.com/</id>
+  
+  <author>
+    <name>十五的包子</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习到新名词-数字游民</title>
+    <link href="https://fifteenbao.com/2022/10/20/Digital%20Nomads/"/>
+    <id>https://fifteenbao.com/2022/10/20/Digital%20Nomads/</id>
+    <published>2022-10-19T16:16:43.123Z</published>
+    <updated>2022-10-22T17:07:37.715Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;数字游民是一种被数字信息技术赋能的全新生活方式，它的受众特指那些完全依靠互联网创造收入，并借此打破工作与工作地点间的强关系，达成地理位置自由和时间自由，并尽享地理套利红利，全球移动生活的人群。&lt;br&gt;&lt;a style=&quot;text-align: right;&quot; herf=&quot;https://jarodise.com/the-ultimate-guide-to-digital-nomad-lifestyle-2022-post-pandemic-version&quot;&gt;— 数字游民部落&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    
+    <category term="数字游民" scheme="https://fifteenbao.com/tags/%E6%95%B0%E5%AD%97%E6%B8%B8%E6%B0%91/"/>
+    
+    <category term="自由" scheme="https://fifteenbao.com/tags/%E8%87%AA%E7%94%B1/"/>
+    
+  </entry>
+  
+</feed>
