@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Fifteen&#39;s blog</title>
   <icon>https://fifteenbao.com/icon.png</icon>
-  <subtitle>你喜欢跑步吗？</subtitle>
+  <subtitle>输出变输入</subtitle>
   <link href="https://fifteenbao.com/atom.xml" rel="self"/>
   
   <link href="https://fifteenbao.com/"/>
-  <updated>2022-10-24T10:55:32.395Z</updated>
+  <updated>2022-11-17T08:53:51.492Z</updated>
   <id>https://fifteenbao.com/</id>
   
   <author>
@@ -21,10 +21,13 @@
     <link href="https://fifteenbao.com/2022/10/24/Design_principles/"/>
     <id>https://fifteenbao.com/2022/10/24/Design_principles/</id>
     <published>2022-10-24T10:04:38.893Z</published>
-    <updated>2022-10-24T10:55:32.395Z</updated>
+    <updated>2022-11-17T08:53:51.492Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;52个设计准则-小红书&quot;&gt;&lt;a href=&quot;#52个设计准则-小红书&quot; class=&quot;headerlink&quot; title=&quot;52个设计准则 - 小红书&quot;&gt;&lt;/a&gt;52个设计准则 - 小红书&lt;/h1&gt;&lt;p&gt;整理notion发现「小红书的52个设计准则网站」好不稳定……&lt;br&gt;互联网的东西还是要抄一份到本地才行……&lt;br&gt;52个设计准则摘抄自：&lt;a href=&quot;https://rpdc.xiaohongshu.com/52-design-principles&quot;&gt;https://rpdc.xiaohongshu.com/52-design-principles&lt;/a&gt;&lt;br&gt;感觉是想设计一副扑克牌，好奇大小王是什么呢？&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;设计十诫-迪特·拉姆斯（Dieter-Rams）&quot;&gt;&lt;a href=&quot;#设计十诫-迪特·拉姆斯（Dieter-Rams）&quot; class=&quot;headerlink&quot; title=&quot;设计十诫 - 迪特·拉姆斯（Dieter Rams）&quot;&gt;&lt;/a&gt;设计十诫 - 迪特·拉姆斯（Dieter Rams）&lt;/h1&gt;&lt;p&gt;推荐一个很喜欢的一个迪特·拉姆斯的纪录片，看完会非常喜欢这个严谨又古怪的老头子。&lt;/p&gt;
+&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=38191433&amp;bvid=BV1Jt411i781&amp;cid=67132557&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;   &gt; &lt;/iframe&gt;
+
+&lt;p&gt;硬糖工厂最近还联合keychron出了一款致敬「白雪公主」的机械键盘，足以证明其设计界举足轻重的地位了。&lt;/p&gt;</summary>
     
     
     
@@ -44,7 +47,7 @@
     <link href="https://fifteenbao.com/2022/10/20/Digital_Nomads/"/>
     <id>https://fifteenbao.com/2022/10/20/Digital_Nomads/</id>
     <published>2022-10-19T16:16:43.123Z</published>
-    <updated>2022-10-22T17:07:37.715Z</updated>
+    <updated>2022-10-24T11:04:08.922Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
