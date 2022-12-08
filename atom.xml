@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Fifteen&#39;s blog</title>
+  <title>Fifteenbao&#39;s blog</title>
   <icon>https://fifteenbao.com/icon.png</icon>
-  <subtitle>输出变输入</subtitle>
+  <subtitle>output to input</subtitle>
   <link href="https://fifteenbao.com/atom.xml" rel="self"/>
   
   <link href="https://fifteenbao.com/"/>
-  <updated>2022-11-17T08:53:51.492Z</updated>
+  <updated>2022-12-08T05:43:17.722Z</updated>
   <id>https://fifteenbao.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://fifteenbao.com/2022/10/24/Design_principles/"/>
     <id>https://fifteenbao.com/2022/10/24/Design_principles/</id>
     <published>2022-10-24T10:04:38.893Z</published>
-    <updated>2022-11-17T08:53:51.492Z</updated>
+    <updated>2022-12-08T05:43:17.722Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;设计十诫-迪特·拉姆斯（Dieter-Rams）&quot;&gt;&lt;a href=&quot;#设计十诫-迪特·拉姆斯（Dieter-Rams）&quot; class=&quot;headerlink&quot; title=&quot;设计十诫 - 迪特·拉姆斯（Dieter Rams）&quot;&gt;&lt;/a&gt;设计十诫 - 迪特·拉姆斯（Dieter Rams）&lt;/h1&gt;&lt;p&gt;推荐一个很喜欢的一个迪特·拉姆斯的纪录片，看完会非常喜欢这个严谨又古怪的老头子。&lt;/p&gt;
