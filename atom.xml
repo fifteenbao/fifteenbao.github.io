@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Fifteenbao&#39;s blog</title>
+  <title>Bao的博客</title>
   <icon>https://fifteenbao.com/icon.png</icon>
-  <subtitle>output to input</subtitle>
+  <subtitle>事已至此，先吃饭吧</subtitle>
   <link href="https://fifteenbao.com/atom.xml" rel="self"/>
   
   <link href="https://fifteenbao.com/"/>
-  <updated>2022-12-10T11:48:38.644Z</updated>
+  <updated>2022-12-11T05:37:19.353Z</updated>
   <id>https://fifteenbao.com/</id>
   
   <author>
@@ -21,12 +21,11 @@
     <link href="https://fifteenbao.com/2022/12/09/Impressionnisme/"/>
     <id>https://fifteenbao.com/2022/12/09/Impressionnisme/</id>
     <published>2022-12-08T17:30:10.440Z</published>
-    <updated>2022-12-10T11:48:38.644Z</updated>
+    <updated>2022-12-11T05:37:19.353Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在看一部介绍印象派的纪录片「印象派简史」（The Impressionists Miniseries），似乎开始理解了一些之前完全不了解的所谓「艺术」。&lt;/p&gt;
-&lt;p&gt;印象派（Impressionism）是指于1860年代法国开展的一种艺术运动或一种画风。莫内于1874年的画作《印象·日出》遭到学院派的攻击，并被评论家路易·乐华挖苦是“印象派”（起源）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://pic.baike.soso.com/ugc/baikepic2/0/20220623141008-454931792_png_813_564_912636.jpg/800&quot; alt=&quot;莫奈《日出·印象》&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;印象派（Impressionism）是指于1860年代法国开展的一种艺术运动或一种画风。莫内于1874年的画作《印象·日出》遭到学院派的攻击，并被评论家路易·乐华挖苦是“印象派”（起源）。&lt;/p&gt;</summary>
     
     
     
@@ -44,13 +43,10 @@
     <link href="https://fifteenbao.com/2022/10/24/Design_principles/"/>
     <id>https://fifteenbao.com/2022/10/24/Design_principles/</id>
     <published>2022-10-24T10:04:38.893Z</published>
-    <updated>2022-12-08T05:43:17.722Z</updated>
+    <updated>2022-12-11T05:37:40.557Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;设计十诫-迪特·拉姆斯（Dieter-Rams）&quot;&gt;&lt;a href=&quot;#设计十诫-迪特·拉姆斯（Dieter-Rams）&quot; class=&quot;headerlink&quot; title=&quot;设计十诫 - 迪特·拉姆斯（Dieter Rams）&quot;&gt;&lt;/a&gt;设计十诫 - 迪特·拉姆斯（Dieter Rams）&lt;/h1&gt;&lt;p&gt;推荐一个很喜欢的一个迪特·拉姆斯的纪录片，看完会非常喜欢这个严谨又古怪的老头子。&lt;/p&gt;
-&lt;iframe src=&quot;//player.bilibili.com/player.html?aid=38191433&amp;bvid=BV1Jt411i781&amp;cid=67132557&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;   &gt; &lt;/iframe&gt;
-
-&lt;p&gt;硬糖工厂最近还联合keychron出了一款致敬「白雪公主」的机械键盘，足以证明其设计界举足轻重的地位了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;设计十诫-迪特·拉姆斯（Dieter-Rams）&quot;&gt;&lt;a href=&quot;#设计十诫-迪特·拉姆斯（Dieter-Rams）&quot; class=&quot;headerlink&quot; title=&quot;设计十诫 - 迪特·拉姆斯（Dieter Rams）&quot;&gt;&lt;/a&gt;设计十诫 - 迪特·拉姆斯（Dieter Rams）&lt;/h1&gt;&lt;p&gt;推荐一个很喜欢的一个迪特·拉姆斯的纪录片，看完会非常喜欢这个严谨又古怪的老头子。&lt;br&gt;硬糖工厂最近还联合keychron出了一款致敬「白雪公主」的机械键盘，足以证明其设计界举足轻重的地位了。&lt;/p&gt;</summary>
     
     
     
@@ -70,11 +66,11 @@
     <link href="https://fifteenbao.com/2022/10/20/Digital_Nomads/"/>
     <id>https://fifteenbao.com/2022/10/20/Digital_Nomads/</id>
     <published>2022-10-19T16:16:43.123Z</published>
-    <updated>2022-10-24T11:04:08.922Z</updated>
+    <updated>2022-12-11T05:38:52.501Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;数字游民是一种被数字信息技术赋能的全新生活方式，它的受众特指那些完全依靠互联网创造收入，并借此打破工作与工作地点间的强关系，达成地理位置自由和时间自由，并尽享地理套利红利，全球移动生活的人群。&lt;br&gt;&lt;a style=&quot;text-align: right;&quot; herf=&quot;https://jarodise.com/the-ultimate-guide-to-digital-nomad-lifestyle-2022-post-pandemic-version&quot;&gt;— 数字游民部落&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;数字游民是一种被数字信息技术赋能的全新生活方式，它的受众特指那些完全依靠互联网创造收入，并借此打破工作与工作地点间的强关系，达成地理位置自由和时间自由，并尽享地理套利红利，全球移动生活的人群。&lt;br&gt;&lt;a herf=&quot;https://jarodise.com/the-ultimate-guide-to-digital-nomad-lifestyle-2022-post-pandemic-version&quot;&gt;— 数字游民部落&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
