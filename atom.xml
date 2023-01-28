@@ -6,7 +6,7 @@
   <link href="https://fifteenbao.com/atom.xml" rel="self"/>
   
   <link href="https://fifteenbao.com/"/>
-  <updated>2022-12-21T09:47:24.433Z</updated>
+  <updated>2023-01-28T09:28:31.469Z</updated>
   <id>https://fifteenbao.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四十问</title>
+    <link href="https://fifteenbao.com/2023/01/28/Question/"/>
+    <id>https://fifteenbao.com/2023/01/28/Question/</id>
+    <published>2023-01-28T08:23:32.571Z</published>
+    <updated>2023-01-28T09:28:31.469Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;看到了四十问，适合本理科生做个总结。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/kepano/40-questions/blob/master/translations/zh/year.md&quot;&gt;连接地址&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="2022" scheme="https://fifteenbao.com/tags/2022/"/>
+    
+    <category term="复盘" scheme="https://fifteenbao.com/tags/%E5%A4%8D%E7%9B%98/"/>
+    
+  </entry>
   
   <entry>
     <title>看印象派的一些感悟</title>
