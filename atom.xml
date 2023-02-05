@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Bao的博客</title>
   <icon>https://fifteenbao.com/icon.png</icon>
-  <subtitle>事已至此，先吃饭吧</subtitle>
+  <subtitle>思考中···</subtitle>
   <link href="https://fifteenbao.com/atom.xml" rel="self"/>
   
   <link href="https://fifteenbao.com/"/>
-  <updated>2023-01-28T09:28:31.469Z</updated>
+  <updated>2023-02-05T17:19:08.884Z</updated>
   <id>https://fifteenbao.com/</id>
   
   <author>
@@ -21,11 +21,10 @@
     <link href="https://fifteenbao.com/2023/01/28/Question/"/>
     <id>https://fifteenbao.com/2023/01/28/Question/</id>
     <published>2023-01-28T08:23:32.571Z</published>
-    <updated>2023-01-28T09:28:31.469Z</updated>
+    <updated>2023-02-05T17:19:08.884Z</updated>
     
     
-    <summary type="html">&lt;p&gt;看到了四十问，适合本理科生做个总结。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/kepano/40-questions/blob/master/translations/zh/year.md&quot;&gt;连接地址&lt;/a&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;看到了&lt;a href=&quot;https://github.com/kepano/40-questions/blob/master/translations/zh/year.md&quot;&gt;四十问&lt;/a&gt;，适合本打字困难户做个2022的总结。&lt;br&gt;流媒体泛滥成灾，一刷就是几个小时，卸载掉了几个强制戒断。2022一波又一波没啥营养&amp;#x2F;颠倒黑白的新闻炸的毁掉三观。年底又重新拾起了这个博客，希望我这个小破站认真记录、保持真实的自己。&lt;br&gt;2023年依旧努力生活。&lt;/p&gt;</summary>
     
     
     
