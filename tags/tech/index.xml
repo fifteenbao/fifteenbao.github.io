@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Bao | 十五的包子</title>
+    <link>/tags/tech/</link>
+    <description>Recent content in Tech on Bao | 十五的包子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这个网站是怎么弄的</title>
+      <link>/posts/start/</link>
+      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/start/</guid>
+      <description>ʕ •ᴥ•ʔ date: 2023-05-24 01:08:59 换成了hugo，好方便啊。
+date: 2022-10-19 21:49:59 I ‘m BAO ，
+偏科技向设计师一枚
+担心本来就拙略的文笔会退化，做个网站用来写一些笔记和思考。
+说起来网站也是兜兜转转改过很多次，最早用wordpress，还纯靠一腔热血改主题。后面觉得服务器太花钱，开始弄 Github Pages，去年（2021）七牛云的图床要备案了，放在上面的图片都看不到了。闲置许久，觉得还是打文字最靠谱，敲一敲自己的碎碎念，写的时候也不用担心被运营商锁定。
+网站的大概建立过程（没有代码基础的建议不要轻易尝试，Hexo文档好几年没有维护了）
+本地化部署看这个 主题我用了next，设置看这个 ssh设置参考这个 绑定域名可以参考这个 阅读时间以及字数这个 阅读次数以及评论这个 其他设置 联系我 E-mail：fifteenbao@163.com </description>
+    </item>
+    
+  </channel>
+</rss>
