@@ -126,7 +126,17 @@
 
   <div class="intro">
     <h1>A designer based in Shenzhen<span class="dot">.</span></h1>
-    <div class="intro-content"><p>ヽ (⁰⊖⁰)ﾉ</p>
+    <div class="intro-content"><script>
+var theText = "Hello,world";
+for (i = 0; i < theText.length; i++) {
+  delay = (i * 3) / theText.length;
+  var e = $("<span>" + theText[i] + "</span>");
+  $("div").append(e);
+  e.css("animation-delay", delay+"s");
+}
+</script>
+<div></div>
+ ヽ (⁰⊖⁰)ﾉ
 <p>雷猴，唔係包</p>
 <p>Just call me bao</p>
 </div>

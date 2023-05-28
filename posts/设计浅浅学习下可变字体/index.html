@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>【设计】浅浅学习下可变字体 - Bao | 十五的包子</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.png">
+  <link rel="canonical" href="/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/" />
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.4579cabf8f9155b2d35a36542bed7b597b1f64d0d467f464b24558e1b6e83fe6.css">
+  
+
+  
+    <meta name="description" content="description"/>
+    <meta property="og:title" content="【设计】浅浅学习下可变字体"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/"/>
+    
+    <meta property="og:description" content="description"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@c2b0fe6dfd7a49e"/>
+    <meta name="twitter:creator" content="@c2b0fe6dfd7a49e"/>
+  
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  <div id="menu-main-mobile" class="menu-main-mobile">
+    <ul class="menu">
+        
+        
+            
+                <li class="menu-item-home">
+                    <a href="/">Home</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-blog">
+                    <a href="/posts/">Blog</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-about">
+                    <a href="/about/">About</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-tags">
+                    <a href="/tags/">Tags</a>
+                </li>
+            
+        
+    </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <a class="header-logo" href="/">Bao | 十五的包子</a>
+  <div class="menu-main">
+    <ul>
+      
+      
+      
+      
+      <li class="menu-item-home ">
+        <a href="/">
+          
+          <span>Home</span>
+        </a>
+      </li>
+      
+      
+      
+      <li class="menu-item-blog active">
+        <a href="/posts/">
+          
+          <span>Blog</span>
+        </a>
+      </li>
+      
+      
+      
+      <li class="menu-item-about ">
+        <a href="/about/">
+          
+          <span>About</span>
+        </a>
+      </li>
+      
+      
+      
+      <li class="menu-item-tags ">
+        <a href="/tags/">
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
+    
+  <div class="blog">
+    
+    <div class="intro">
+      <h1>【设计】浅浅学习下可变字体<span class="dot">.</span></h1>
+      
+    </div>
+    <div class="content">
+      <blockquote>
+<p>Monotype：A variable font is a single font that acts as many:
+all the variations of <strong>width</strong> and <strong>weight</strong>, <strong>slant</strong>, and <strong>other attributes</strong>
+can be contained in a single, highly efficient compressed font file.</p>
+</blockquote>
+<p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。</p>
+<blockquote>
+<p><strong>微软可变字体简介：</strong>
+<img src="https://design.google/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fgd-prod%2Fimages%2F9d4a467f-4854-439a-af13-9f8d70aa5edf.799a99c1196c2fd4.gif&amp;w=3840&amp;q=75" alt="粗细和宽度两个轴">
+<a href="https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview">https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview</a></p>
+</blockquote>
+<h1 id="如何在web使用可变字体">如何在web使用可变字体</h1>
+<p><strong>可变字体（Variable fonts）</strong> 是 OpenType 字体规范上的演进，它允许将同一字体的多个变体统合进单独的字体文件中。从而无需再将不同字宽、字重或不同样式的字体分割成不同的字体文件。你只需通过 CSS 与一行 @font-face 引用，即可获取包含在这个单一文件中的各种字体变体。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@font-face {
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><hr>
+<h2 id="静态字体和可变字体的差异">静态字体和可变字体的差异</h2>
+<h3 id="标准静态字体">标准（静态）字体</h3>
+<p>过去，一个字体家族往往由大量独立字体文件组成，每个字体文件都代表某一特定的宽度/字重/样式的组合。因此你会看到有单独的字体文件叫做“Roboto Regular”、“Roboto Bold”，或是“Roboto Bold Italic”——这意味着你可能需要 20 或 30 个不同的字体文件才能算是有了一整个字体家族（对于有着不同宽度的大型字体来说，这个数量还要翻上几倍）。</p>
+<p>在这样的情景下，为了在一个单纯显示进行正文展示的页面中使用一个字体，你至少需要四个字体文件：常规、斜体、加粗、斜体加粗。如果你想添加更多的字重，比如让题注更轻或让额外强调的地方更重，意味着你需要更多文件。这就<strong>导致了更多大量 HTTP 请求的产生，同时也需要下载更多的数据</strong>（通常每个文件至少有 20k 或更多）。</p>
+<h3 id="可变字体">可变字体</h3>
+<p>通过使用可变字体，所有这些情况的排列组合都可以被装进一个文件中。这个文件可能比常规的单个字体文件大一些，但通常情况下，都不会大于，并且常常是小于你因为要展示正文所需要下载的四个文件的尺寸总和。使用可变字体的优势是你可以直接使用所有可用的字重、宽度和样式的字体，而不必像过去一样仅仅受限于使用其中单独的某一种。一个可变字体文件可以包含传统静态字体系列中的所有字体。 就原始文件大小而言，这是一个直接的胜利，因为它紧凑地打包了整个字体系列。 <strong>替换的静态字体越多，节省的空间就越大</strong>——对于非常大的字体系列，压缩甚至高达 70%。</p>
+<p>这允许使用常见的排版技术，例如在不同的字重中设置不同大小的标题，以便在每种大小下都具有更好的可读性，或者在数据密集展示时使用稍窄一点的字体宽度。相比之下，在杂志的印刷系统中，在整个出版物中使用 10-15 种或更多不同的字重和宽度组合是很典型的——这比目前在 web 上的典型样式提供了更广泛的样式范围 (或者仅<strong>从性能方面考虑确实很实用</strong>)。</p>
+<h3 id="关于字体系列字重和变体的说明">关于字体系列，字重和变体的说明</h3>
+<p>您可能注意到，我们一直在讨论为每种权重和样式 (即粗体，斜体以及斜体加粗) 创建特定的字体文件，而不是依赖于浏览器来合成它们。这样做的原因，是大多数字体对于粗体和斜体都有非常特殊的设计，它们通常包含完全不同的字符 (例如，小写字母的“a”和“g”在斜体中常常是完全不同的)。在使用非可变字体时，为了最准确地反映字体设计，避免浏览器之间的差异以及它们如何合成或不合成不同的样式，在需要的地方加载特定的字体文件会更为准确。</p>
+<p>您可能还会发现一些可变字体分为两个文件：一个用于正体及其所有变体，另一个包含斜体变体。有时这样做是为了在不需要或不使用斜体的情况下减小整体文件大小。在所有情况下，仍然可以通过通用的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-family"><code>font-family</code></a> 名称链接它们，以便您可以使用相同的 font-family 和相应的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/font-style"><code>font-style</code></a> 来调用它们。</p>
+<h2 id="可变轴">可变轴</h2>
+<p>可变字体新格式的核心是<strong>可变轴</strong>的概念，其描述了字体设计中某一特性的允许变化范围。
+例如： “字重轴”描述了字体的粗细； “宽度轴”描述了字体的宽窄； “斜体轴”描述是否使用斜体字形并且可相应地开关； 等。
+请注意，轴既可以是 <strong>范围选择</strong> 又可以是 <strong>开关选择</strong> 。</p>
+<ul>
+<li>字重可能在 1-999 之间，</li>
+<li>而斜体可能只是简单的 0 或 1（关闭或打开）。</li>
+</ul>
+<h3 id="如规范中所定义存在两种变形轴注册轴和自定义轴">如规范中所定义，存在两种变形轴，<strong>注册轴</strong>和<strong>自定义轴</strong>：</h3>
+<ul>
+<li><strong>注册轴</strong> 最为常见，常见到制定规范的作者认为有必要进行标准化。目前注册的五个轴是字重（weight），宽度（width），倾斜（Slant），斜体（Italic）和视觉尺寸（optical Size）。W3C 已经将它们映射到现有的 CSS 属性。</li>
+<li><strong>自定义轴</strong> 实际上是无限的：字体设计师可以定义和界定他们喜欢的任何轴，并且只需要给它一个四个字母的标签以在字体文件格式本身中识别它。您可以在 CSS 中使用这些四个字母的标签来指定沿该变化轴的点，您也将在下面的代码示例中看到。</li>
+</ul>
+<h3 id="注册轴">注册轴</h3>
+<p>Microsoft OpenType 规范本身目前有五个注册轴——粗细、宽度、斜体、倾斜和视觉尺寸。Registration 意味着轴设置被明确定义并在许多不同的字体中普遍使用，并且在字体之间切换时可以保留而不是丢弃它们的设置。到目前为止，Microsoft 已经定义了以下轴：</p>
+<ul>
+<li>字重（weight）值为 100 为细，400 为常规，800 为超粗</li>
+<li>字宽（width），其中 100 为正常宽度，200 为双宽度，50 为半宽度</li>
+<li>斜体（Italic），其中 0 表示罗马字母，1 表示斜体形式</li>
+<li>倾斜（Slant），其中值以度为单位设置倾斜角度</li>
+<li>视觉尺寸（optical Size），其中值设置设计可以响应的点大小</li>
+</ul>
+<h4 id="字重-weight-wght">字重 weight &lsquo;wght&rsquo;</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-weight: 375;
+</span></span><span class="line"><span class="cl">font-variation-settings: &#39;wght&#39; 375;
+</span></span></code></pre></div><h4 id="字宽-width-wdth">字宽 width &lsquo;wdth&rsquo;</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-stretch: 115%;
+</span></span><span class="line"><span class="cl">font-variation-settings: &#39;wdth&#39; 115;
+</span></span></code></pre></div><h4 id="斜体--italic-ital">斜体  Italic &lsquo;ital&rsquo;</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-style: italic;
+</span></span><span class="line"><span class="cl">font-variation-settings: &#39;ital&#39; 1;
+</span></span></code></pre></div><h4 id="倾斜-slant-slnt">倾斜 Slant &lsquo;slnt&rsquo;</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-style: oblique 14deg;
+</span></span><span class="line"><span class="cl">font-variation-settings: &#39;slnt&#39; 14;
+</span></span></code></pre></div><h4 id="视觉尺寸-optical-size-opsz">视觉尺寸 optical Size &lsquo;opsz&rsquo;</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-optical-sizing: auto;
+</span></span><span class="line"><span class="cl">font-variation-settings: &#39;opsz&#39; 36;
+</span></span></code></pre></div><h3 id="自定义轴">自定义轴</h3>
+<p>自定义轴可以是字体设计师想象的任何设计变化轴。可能有一些会变得相当普遍，甚至演变成注册轴。</p>
+<ul>
+<li>
+<p>“Recursive 使用其 Casual 轴来提供一系列个性，让您能够为任何上下文获得正确的基调。沿着这个轴，字体在笔划曲率、对比度和终端上进行调整，从坚固、理性的线性变为友好、充满活力的随意。” –<a href="http://recursive.design/">https://www.recursive.design/</a></p>
+</li>
+<li>
+<p>“Wonk 轴控制着‘wonky’字符的替换。这些替换会在较小尺寸（18 磅及以下）时自动切换，但可以在较大光学尺寸时手动切换。h、n 和 m 字形的“精简”是从温莎借来的一个特征。” – <a href="https://fraunces.undercase.xyz/">fraunces.undercase.xyz</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="font-face-使用">@font-face 使用</h2>
+<p><img src="https://design.google/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fgd-prod%2Fimages%2F00e61796-28af-4eeb-b7ba-a513a89d9be9.799a99c1196c2fd4.webp&amp;w=3840&amp;q=75" alt="使用 CSS font-variation-settings 属性设置四个轴：粗细、宽度和两个自定义轴">
+在 CSS 中，<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">font-weight</a>和<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch">font-stretch</a>直接使用数值控制 Weight 和 Width 轴。对于其他轴，新的<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings">font-variation-settings</a>属性可靠地设置任何轴值，尽管具有级联值，但它有助于使用 CSS 自定义属性。轴由它们的标签名称、四字符代码指定，例如“wght”表示重量，“wdth”表示宽度等。如果您想移交轴的控制权，请尝试使用<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range"></a>用于滑块和一些 JavaScript（如本<a href="https://codepen.io/lorp/pen/ZEbqGYG">CodePen</a>示例中所示）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@font-face {
+</span></span><span class="line"><span class="cl"> font-family: &#39;MyVariableFontName&#39;;
+</span></span><span class="line"><span class="cl"> src: &#39;path/to/font/file/myvariablefont.woff2&#39; format(&#39;woff2-variations&#39;);
+</span></span><span class="line"><span class="cl"> font-weight: 125 950;
+</span></span><span class="line"><span class="cl"> font-stretch: 75% 125%;
+</span></span><span class="line"><span class="cl"> font-variation-settings: &#39;slnt&#39; 14;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><hr>
+<p><strong>一些有趣的尝试：</strong></p>
+<ul>
+<li><a href="https://codepen.io/davelab6/pen/QWEJpWa">字体涟漪效果</a></li>
+<li><a href="https://m2.material.io/design/motion/understanding-motion.html#brand-expression">Google Motion过度</a></li>
+<li><a href="https://codepen.io/lorp/pen/PRdNYq/">一匹奔跑的马</a></li>
+</ul>
+<p><strong>资料来源：</strong></p>
+<ul>
+<li><a href="https://www.monotype.com/resources/expertise/variable-fonts-101">https://www.monotype.com/resources/expertise/variable-fonts-101</a></li>
+<li><a href="https://design.google/library/variable-fonts-are-here-to-stay">https://design.google/library/variable-fonts-are-here-to-stay</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_fonts/Variable_fonts_guide">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_fonts/Variable_fonts_guide</a></li>
+</ul>
+
+    </div>
+  </div>
+
+    <div class="footer">
+  
+  <div class="footer-social">
+    
+      <span class="social-icon social-icon-bilibili">
+        <a href="https://space.bilibili.com/8496141" title="bilibili" target="_blank" rel="noopener">
+          <img src="/images/social/bilibili.svg" width="24" height="24" alt="bilibili"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-instagram">
+        <a href="https://www.instagram.com/fifteenbao/" title="instagram" target="_blank" rel="noopener">
+          <img src="/images/social/instagram.svg" width="24" height="24" alt="instagram"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-dribbble">
+        <a href="https://dribbble.com/fifteenbao" title="dribbble" target="_blank" rel="noopener">
+          <img src="/images/social/dribbble.svg" width="24" height="24" alt="dribbble"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-behance">
+        <a href="https://www.behance.net/fifteenbao" title="behance" target="_blank" rel="noopener">
+          <img src="/images/social/behance.svg" width="24" height="24" alt="behance"/>
+        </a>
+      </span>
+    
+  
+</div>
+  </div>
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/bundle.min.5993fcb11c07dea925a3fbd58c03c7f1857197c35fccce3aa963a12c0b3c9960.js"></script>
+  
+
+  
+  
+
+  
+  
+  
+    
+      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFFM8KSR7F"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JFFM8KSR7F');
+      </script>
+    
+  
+
+  
+
+
+</body>
+</html>
