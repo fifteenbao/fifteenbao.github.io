@@ -6,20 +6,32 @@
     <description>Recent content in Tech on Bao | 十五的包子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>这个网站是怎么弄的</title>
-      <link>/posts/start/</link>
-      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      <title>浅浅学习下可变字体</title>
+      <link>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/start/</guid>
-      <description>ʕ •ᴥ•ʔ date: 2023-05-24 01:08:59 换成了hugo，好方便啊。
-date: 2022-10-19 21:49:59 I ‘m BAO ，
-偏科技向设计师一枚
-担心本来就拙略的文笔会退化，做个网站用来写一些笔记和思考。
-说起来网站也是兜兜转转改过很多次，最早用wordpress，还纯靠一腔热血改主题。后面觉得服务器太花钱，开始弄 Github Pages，去年（2021）七牛云的图床要备案了，放在上面的图片都看不到了。闲置许久，觉得还是打文字最靠谱，敲一敲自己的碎碎念，写的时候也不用担心被运营商锁定。
-网站的大概建立过程（没有代码基础的建议不要轻易尝试，Hexo文档好几年没有维护了）
-本地化部署看这个 主题我用了next，设置看这个 ssh设置参考这个 绑定域名可以参考这个 阅读时间以及字数这个 阅读次数以及评论这个 其他设置 联系我 E-mail：fifteenbao@163.com </description>
+      <guid>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</guid>
+      <description>Monotype：A variable font is a single font that acts as many: all the variations of width and weight, slant, and other attributes can be contained in a single, highly efficient compressed font file.
+OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。
+微软可变字体简介： https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
+如何在web使用可变字体 可变字体（Variable fonts） 是 OpenType 字体规范上的演进，它允许将同一字体的多个变体统合进单独的字体文件中。从而无需再将不同字宽、字重或不同样式的字体分割成不同的字体文件。你只需通过 CSS 与一行 @font-face 引用，即可获取包含在这个单一文件中的各种字体变体。
+@font-face { } 静态字体和可变字体的差异 标准（静态）字体 过去，一个字体家族往往由大量独立字体文件组成，每个字体文件都代表某一特定的宽度/字重/样式的组合。因此你会看到有单独的字体文件叫做“Roboto Regular”、“Roboto Bold”，或是“Roboto Bold Italic”——这意味着你可能需要 20 或 30 个不同的字体文件才能算是有了一整个字体家族（对于有着不同宽度的大型字体来说，这个数量还要翻上几倍）。
+在这样的情景下，为了在一个单纯显示进行正文展示的页面中使用一个字体，你至少需要四个字体文件：常规、斜体、加粗、斜体加粗。如果你想添加更多的字重，比如让题注更轻或让额外强调的地方更重，意味着你需要更多文件。这就导致了更多大量 HTTP 请求的产生，同时也需要下载更多的数据（通常每个文件至少有 20k 或更多）。
+可变字体 通过使用可变字体，所有这些情况的排列组合都可以被装进一个文件中。这个文件可能比常规的单个字体文件大一些，但通常情况下，都不会大于，并且常常是小于你因为要展示正文所需要下载的四个文件的尺寸总和。使用可变字体的优势是你可以直接使用所有可用的字重、宽度和样式的字体，而不必像过去一样仅仅受限于使用其中单独的某一种。一个可变字体文件可以包含传统静态字体系列中的所有字体。 就原始文件大小而言，这是一个直接的胜利，因为它紧凑地打包了整个字体系列。 替换的静态字体越多，节省的空间就越大——对于非常大的字体系列，压缩甚至高达 70%。</description>
+    </item>
+    
+    <item>
+      <title>在 Hugo 使用 Obsidian 编辑</title>
+      <link>/posts/tech%E5%9C%A8-hugo-%E4%BD%BF%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tech%E5%9C%A8-hugo-%E4%BD%BF%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91/</guid>
+      <description>导入 左侧边栏 导入其他库 &amp;gt; 打开库文件 ，导入 hugo文件夹，其实只有 /content/post 用得到，想直接使用hugo自定义的模版就导入所有目录。
+头字段 FrontMatter Markdown 最前面的头字段，类似于这样
+title = &amp;#39;spf13-vim 3.0 release and new website&amp;#39; date = &amp;#39;2023-05-24&amp;#39; categories = [&amp;#39;Development&amp;#39;, &amp;#39;VIM&amp;#39;] description = &amp;#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;#39; slug = &amp;#39;spf13-vim-3-0-release-and-new-website&amp;#39; tags = [&amp;#39;.vimrc&amp;#39;, &amp;#39;plugins&amp;#39;, &amp;#39;spf13-vim&amp;#39;, &amp;#39;vim&amp;#39;] 通常储模板文件存在 /archetypes 中，用hugo命令 hugo new posts/XXX.md 就会自动搜索和套用， HUgo 官方教程
+在 Obsidian 设置 &amp;gt; 核心插件 &amp;gt; 模版 添加 /archetypes ，就可以在左侧边栏直接插入头字段了。</description>
     </item>
     
   </channel>
