@@ -121,12 +121,14 @@
       
     </div>
     <div class="content">
-      <blockquote>
-<p>Monotype：A variable font is a single font that acts as many:
-all the variations of <strong>width</strong> and <strong>weight</strong>, <strong>slant</strong>, and <strong>other attributes</strong>
-can be contained in a single, highly efficient compressed font file.</p>
-</blockquote>
-<p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。</p>
+      <p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。
+可变字体的优势：</p>
+<ul>
+<li><strong>更小的文件体积</strong></li>
+<li><strong>更自由的设计空间</strong></li>
+<li><strong>更好的响应式网页适配性</strong></li>
+<li></li>
+</ul>
 <blockquote>
 <p><strong>微软可变字体简介：</strong>
 <img src="https://design.google/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fgd-prod%2Fimages%2F9d4a467f-4854-439a-af13-9f8d70aa5edf.799a99c1196c2fd4.gif&amp;w=3840&amp;q=75" alt="粗细和宽度两个轴">
@@ -164,16 +166,16 @@ can be contained in a single, highly efficient compressed font file.</p>
 <h3 id="注册轴">注册轴</h3>
 <p>Microsoft OpenType 规范本身目前有五个注册轴——粗细、宽度、斜体、倾斜和视觉尺寸。Registration 意味着轴设置被明确定义并在许多不同的字体中普遍使用，并且在字体之间切换时可以保留而不是丢弃它们的设置。到目前为止，Microsoft 已经定义了以下轴：</p>
 <ul>
-<li>字重（weight）值为 100 为细，400 为常规，800 为超粗</li>
-<li>字宽（width），其中 100 为正常宽度，200 为双宽度，50 为半宽度</li>
+<li>字重（Weight）值为 100 为细，400 为常规，800 为超粗</li>
+<li>字宽（Width），其中 100 为正常宽度，200 为双宽度，50 为半宽度</li>
 <li>斜体（Italic），其中 0 表示罗马字母，1 表示斜体形式</li>
 <li>倾斜（Slant），其中值以度为单位设置倾斜角度</li>
-<li>视觉尺寸（optical Size），其中值设置设计可以响应的点大小</li>
+<li>视觉尺寸（Optical Size），其中值设置设计可以响应的点大小</li>
 </ul>
-<h4 id="字重-weight-wght">字重 weight &lsquo;wght&rsquo;</h4>
+<h4 id="字重-weight-wght">字重 Weight &lsquo;wght&rsquo;</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-weight: 375;
 </span></span><span class="line"><span class="cl">font-variation-settings: &#39;wght&#39; 375;
-</span></span></code></pre></div><h4 id="字宽-width-wdth">字宽 width &lsquo;wdth&rsquo;</h4>
+</span></span></code></pre></div><h4 id="字宽-width-wdth">字宽 Width &lsquo;wdth&rsquo;</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-stretch: 115%;
 </span></span><span class="line"><span class="cl">font-variation-settings: &#39;wdth&#39; 115;
 </span></span></code></pre></div><h4 id="斜体--italic-ital">斜体  Italic &lsquo;ital&rsquo;</h4>
@@ -182,7 +184,10 @@ can be contained in a single, highly efficient compressed font file.</p>
 </span></span></code></pre></div><h4 id="倾斜-slant-slnt">倾斜 Slant &lsquo;slnt&rsquo;</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-style: oblique 14deg;
 </span></span><span class="line"><span class="cl">font-variation-settings: &#39;slnt&#39; 14;
-</span></span></code></pre></div><h4 id="视觉尺寸-optical-size-opsz">视觉尺寸 optical Size &lsquo;opsz&rsquo;</h4>
+</span></span></code></pre></div><h4 id="视觉尺寸-optical-size-opsz">视觉尺寸 Optical Size &lsquo;opsz&rsquo;</h4>
+<blockquote>
+<p>基于物理尺寸改变字形整体笔划厚度的实践，可以很好地转化为数字显示时补偿屏幕质量和物理尺寸渲染</p>
+</blockquote>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">font-optical-sizing: auto;
 </span></span><span class="line"><span class="cl">font-variation-settings: &#39;opsz&#39; 36;
 </span></span></code></pre></div><h3 id="自定义轴">自定义轴</h3>
@@ -207,13 +212,22 @@ can be contained in a single, highly efficient compressed font file.</p>
 </span></span><span class="line"><span class="cl"> font-variation-settings: &#39;slnt&#39; 14;
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></div><hr>
+<p><strong>Web</strong></p>
+<ol>
+<li><a href="https://variablefonts.io/">variablefonts</a> 字体设计入门</li>
+<li><a href="https://v-fonts.com/">v-fonts</a> 是一个简便好用的可变字体公用资源搜寻网站，它包含目前大部分公开可用的可变字体，并提供字体基本信息、制作者、版权信息和下载渠道，用来找免费可商用的可变字体非常方便。</li>
+<li><a href="https://www.axis-praxis.org/">Axis-Praxis</a> 是一个按时间顺序收集可变字体资源的网站，网站历史可以追溯到 1991 年，因此收集了很多珍贵的历史资料。在 Axis-Praxis 上我们可以在一个完整的版式内预览可变字体的不同样式，支持修改文字对齐方式和颜色，也支持上传本地可变字体文件进行预览。</li>
+<li><a href="https://fonts.google.com/variablefonts">Google variable fonts  列表</a></li>
+<li><a href="https://www.figma.com/typography/variable-fonts/#the-basics">Figma variable fonts 介绍</a></li>
+<li><a href="https://typogram.github.io/Anicons/use.html">Anicons  </a>基于 Material Icons的 可变/彩色 字体动画</li>
+</ol>
 <p><strong>一些有趣的尝试：</strong></p>
 <ul>
 <li><a href="https://codepen.io/davelab6/pen/QWEJpWa">字体涟漪效果</a></li>
 <li><a href="https://m2.material.io/design/motion/understanding-motion.html#brand-expression">Google Motion过度</a></li>
 <li><a href="https://codepen.io/lorp/pen/PRdNYq/">一匹奔跑的马</a></li>
 </ul>
-<p><strong>资料来源：</strong></p>
+<p><strong>扩展来源：</strong></p>
 <ul>
 <li><a href="https://www.monotype.com/resources/expertise/variable-fonts-101">https://www.monotype.com/resources/expertise/variable-fonts-101</a></li>
 <li><a href="https://design.google/library/variable-fonts-are-here-to-stay">https://design.google/library/variable-fonts-are-here-to-stay</a></li>
