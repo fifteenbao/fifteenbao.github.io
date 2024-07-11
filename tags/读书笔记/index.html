@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>在 Hugo 使用 Obsidian 编辑 - Bao | 十五的包子</title>
+  <title>读书笔记 - Bao | 十五的包子</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="/favicon.png">
-  <link rel="canonical" href="/posts/tech%E5%9C%A8-hugo-%E4%BD%BF%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91/" />
+  <link rel="icon" href="http://fifteenbao.github.io/favicon.png">
+  <link rel="canonical" href="http://fifteenbao.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
 
   
   
@@ -15,12 +15,12 @@
   
 
   
-    <meta name="description" content="一下子就顺畅起来了。优雅又省力"/>
-    <meta property="og:title" content="在 Hugo 使用 Obsidian 编辑"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="/posts/tech%E5%9C%A8-hugo-%E4%BD%BF%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91/"/>
     
-    <meta property="og:description" content="一下子就顺畅起来了。优雅又省力"/>
+    <meta property="og:title" content="读书笔记"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://fifteenbao.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@c2b0fe6dfd7a49e"/>
     <meta name="twitter:creator" content="@c2b0fe6dfd7a49e"/>
@@ -33,32 +33,32 @@
 
 
 
-<body class='page frame page-blog-single'>
+<body class='page frame page-default-list'>
   <div id="menu-main-mobile" class="menu-main-mobile">
     <ul class="menu">
         
         
             
                 <li class="menu-item-home">
-                    <a href="/">Home</a>
+                    <a href="http://fifteenbao.github.io/">Home</a>
                 </li>
             
         
             
                 <li class="menu-item-blog">
-                    <a href="/posts/">Blog</a>
+                    <a href="http://fifteenbao.github.io/posts/">Blog</a>
                 </li>
             
         
             
                 <li class="menu-item-about">
-                    <a href="/about/">About</a>
+                    <a href="http://fifteenbao.github.io/about/">About</a>
                 </li>
             
         
             
                 <li class="menu-item-tags">
-                    <a href="/tags/">Tags</a>
+                    <a href="http://fifteenbao.github.io/tags/">Tags</a>
                 </li>
             
         
@@ -82,7 +82,7 @@
       
       
       
-      <li class="menu-item-blog active">
+      <li class="menu-item-blog ">
         <a href="/posts/">
           
           <span>Blog</span>
@@ -114,33 +114,18 @@
   </div>
 </div>
     
-  <div class="blog">
+  <div class="intro">
+    <h1>读书笔记<span class="dot">.</span></h1>
     
-    <div class="intro">
-      <h1>在 Hugo 使用 Obsidian 编辑<span class="dot">.</span></h1>
-      
+  </div>
+  
+  <div class="taglist">
+    
+    <div class="tags">
+      <h2 class="tags-title"><a href="/posts/%E5%AD%A6%E4%B9%A0%E5%93%81%E7%89%8C%E6%98%AF%E8%AE%B0%E5%BF%86/">【学习】品牌是记忆<span class="dot">.</span></a></h2>
+      <p class="tags-description">做品牌，就是要把品牌做到好看、好玩、好用。</p>
     </div>
-    <div class="content">
-      <h1 id="导入">导入</h1>
-<p>左侧边栏 <code>导入其他库 &gt; 打开库文件</code> ，导入 <code>hugo</code>文件夹，其实只有 <code>/content/post</code> 用得到，想直接使用hugo自定义的模版就导入所有目录。</p>
-<h1 id="头字段-frontmatter">头字段 FrontMatter</h1>
-<p>Markdown 最前面的头字段，类似于这样</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">title = &#39;spf13-vim 3.0 release and new website&#39;
-</span></span><span class="line"><span class="cl">date = &#39;2023-05-24&#39; 
-</span></span><span class="line"><span class="cl">categories = [&#39;Development&#39;, &#39;VIM&#39;] 
-</span></span><span class="line"><span class="cl">description = &#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&#39; 
-</span></span><span class="line"><span class="cl">slug = &#39;spf13-vim-3-0-release-and-new-website&#39; 
-</span></span><span class="line"><span class="cl">tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;] 
-</span></span></code></pre></div><p>通常储模板文件存在 <code>/archetypes</code> 中，用hugo命令 <code>hugo new posts/XXX.md</code> 就会自动搜索和套用， <a href="https://gohugo.io/content-management/front-matter/">HUgo 官方教程</a></p>
-<p>在 Obsidian <code>设置 &gt; 核心插件 &gt; 模版</code> 添加  <code>/archetypes</code> ，就可以在左侧边栏直接插入头字段了。</p>
-<h1 id="其他设置">其他设置</h1>
-<p>还有一些第三方插件，应该会更方便一些</p>
-<ul>
-<li><code>Obsidian Git</code>  ：可以在 Obsidian 内就可以实现 git commit 以及 push 的操作，直接用 <code>command+p</code> 打开命令面板，分别执行 <code>git commit</code> 命令与 <code>git push</code> 即可。</li>
-<li><code>File Tree</code> ：目录右键<code>Focuse on Folder</code> 过滤文件夹</li>
-</ul>
-
-    </div>
+  
   </div>
 
     <div class="footer">

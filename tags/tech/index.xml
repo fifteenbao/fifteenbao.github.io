@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Bao | 十五的包子</title>
-    <link>/tags/tech/</link>
+    <link>http://fifteenbao.github.io/tags/tech/</link>
     <description>Recent content in Tech on Bao | 十五的包子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sun, 28 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://fifteenbao.github.io/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>浅浅学习下可变字体</title>
-      <link>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</link>
+      <link>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</link>
       <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</guid>
+      <guid>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</guid>
       <description>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。 可变字体的优势：
 更小的文件体积 更自由的设计空间 更好的响应式网页适配性 微软可变字体简介： https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
 如何在web使用可变字体 可变字体（Variable fonts） 是 OpenType 字体规范上的演进，它允许将同一字体的多个变体统合进单独的字体文件中。从而无需再将不同字宽、字重或不同样式的字体分割成不同的字体文件。你只需通过 CSS 与一行 @font-face 引用，即可获取包含在这个单一文件中的各种字体变体。
@@ -27,10 +27,10 @@
     
     <item>
       <title>在 Hugo 使用 Obsidian 编辑</title>
-      <link>/posts/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</link>
+      <link>http://fifteenbao.github.io/posts/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</link>
       <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</guid>
+      <guid>http://fifteenbao.github.io/posts/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</guid>
       <description>导入 左侧边栏 导入其他库 &amp;gt; 打开库文件 ，导入 hugo文件夹，其实只有 /content/post 用得到，想直接使用hugo自定义的模版就导入所有目录。
 头字段 FrontMatter Markdown 最前面的头字段，类似于这样
 title = &amp;#39;spf13-vim 3.0 release and new website&amp;#39; date = &amp;#39;2023-05-24&amp;#39; categories = [&amp;#39;Development&amp;#39;, &amp;#39;VIM&amp;#39;] description = &amp;#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;#39; slug = &amp;#39;spf13-vim-3-0-release-and-new-website&amp;#39; tags = [&amp;#39;.vimrc&amp;#39;, &amp;#39;plugins&amp;#39;, &amp;#39;spf13-vim&amp;#39;, &amp;#39;vim&amp;#39;] 通常储模板文件存在 /archetypes 中，用hugo命令 hugo new posts/XXX.md 就会自动搜索和套用， HUgo 官方教程

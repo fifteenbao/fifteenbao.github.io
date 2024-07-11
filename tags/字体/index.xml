@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>字体 on Bao | 十五的包子</title>
-    <link>/tags/%E5%AD%97%E4%BD%93/</link>
+    <link>http://fifteenbao.github.io/tags/%E5%AD%97%E4%BD%93/</link>
     <description>Recent content in 字体 on Bao | 十五的包子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 09 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://fifteenbao.github.io/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gotham｜Sharp Sans｜Optima 字体的背后</title>
-      <link>/posts/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</link>
+      <link>http://fifteenbao.github.io/posts/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</link>
       <pubDate>Fri, 09 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</guid>
+      <guid>http://fifteenbao.github.io/posts/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</guid>
       <description>之前在《从字体开始-设计改变的生活与社会》看到过 ‘Gotham’ 字体的介绍，当时并不以为意，觉得是某种提高档次的套路，晚上偶然看了一下 Gotham 字体的百科，哇哦～太有趣了！
 Gotham、Sharp Sans Display No.1、Optima 分别是奥巴马、希拉里和约翰麦凯恩在竞选时使用的无衬线字体，下面分别来看看这三种。
 Gotham Gotham是一个几何 无衬线字体 系列，由美国字体设计师 Tobias Frere-Jones 和 Jesse Ragan 设计，并于 2000 年通过 Hoefler &amp;amp; Frere-Jones 铸造厂发布。Gotham 的字体灵感来自 20世纪中叶的建筑标志示例。
@@ -26,10 +26,10 @@ Gotham 也是 Netflix 使用的字体，直到 2018 年，为了减少许可费�
     
     <item>
       <title>浅浅学习下可变字体</title>
-      <link>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</link>
+      <link>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</link>
       <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</guid>
+      <guid>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</guid>
       <description>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。 可变字体的优势：
 更小的文件体积 更自由的设计空间 更好的响应式网页适配性 微软可变字体简介： https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
 如何在web使用可变字体 可变字体（Variable fonts） 是 OpenType 字体规范上的演进，它允许将同一字体的多个变体统合进单独的字体文件中。从而无需再将不同字宽、字重或不同样式的字体分割成不同的字体文件。你只需通过 CSS 与一行 @font-face 引用，即可获取包含在这个单一文件中的各种字体变体。
@@ -44,10 +44,10 @@ Gotham 也是 Netflix 使用的字体，直到 2018 年，为了减少许可费�
     
     <item>
       <title>浅浅了解下字体设计</title>
-      <link>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
+      <link>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Thu, 09 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>http://fifteenbao.github.io/posts/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
       <description>字体分类 Roman Typeface（罗马正体/衬线体） Bracket Serif 括弧型衬线 Hairline Serif 极细型衬线 Slab Serif 粗衬线 Sans-serif（Sanserif） Typeface（无衬线体） Script Typeface（手写体） Blackletter Typeface（黑体/哥特体/破笔体） Italic Typeface（意大利斜体） 经常被使用的几种字体 Caslon - 美国独立宣言 犹豫不决时用的字体 Garamond 没有个性的字体 Courier 最出名的粗衬线字体 Times Roman 泰晤士报字体 Futura 德国字体，现代主义中性风格； LV Helvetica 最广泛使用 瑞士字体；FENDI 最近看了「从字体开始」这本书，The Type 编著。有意思的是感觉和印象派的发展如出一辙，字体设计的发展也体现了时代交织的另一面，例如香港颜楷的霓虹灯、字怀开口更大的英文无衬线字体的公路牌、中文识别度更高的宋体港铁、中文印刷术造成的喇叭口、Dyslexic 给学习障碍人士设计的字体。
 拉丁字母的欧洲发展史 文艺复兴时期： 看关于古腾堡的书籍，感觉欧洲的活字印刷更像独立成长起来的，很难说受到毕赣的影响，大学时期有抄写书籍的经验，最开始制作批量制作的赎罪铜镜，逐步演变成为铅字印刷。 这里想说一下古滕堡大学时期要完成基础的博雅教育，取得“自由七艺大师头衔”的头衔才开始真正的学习，即神学、医学或法学。 自由七艺 &amp;ldquo;la liberalaj artoj&amp;quot;的原意是自由人应该具有的学识和应该学习的七门学科，是相对于专业的、职业的和技术性的课程而言的，即七种人文学科 文法、修辞、辩证 (合称三艺)、算术、几何、天文和音乐 (合称四艺)。 感叹一下中世纪的教育已经这么先进了吗？ By the way，在正式开始大学前有个带动物面具被凉水泼到面具软化的过程，在当时的学者眼中没有上过大学的人只是动物&amp;hellip;这该死的仪式感…… 1455年古腾堡用哥特体风格的金属活字印刷了 42行圣经 （印刷一百八十份，前期有四十行和四十一行版本的调整版本），文艺复兴时期诗人皮特拉克（Petrarch）等人文主义者崇尚向古希腊罗马学习，歌颂人性的伟大。他认为哥特体难以辨别其本意也不是让人细读，而更多的展示宗教权威。圣经内页的红色首字母部分依旧采用人工书写的形式，书皮也是手工制作，所以每一本都是独一无二的，而且当时他觉得只有他们制作印刷书籍没有在书上印刷出版社。 By the way，似乎纳粹也很钟情哥特体 Fraktur，马丁·鲍曼1941年1月3日公文副本，禁止使用 Fraktur体来“代表元首” 。 新古典主义 是西方世界在19世纪对古代希腊罗马的艺术产生的复古和改造运动（介于洛可可和新艺术运动之间），路易十四执政期间，法国学者研究设计了国王罗马体，为后世的现代衬线体做了铺垫，同样思路影响力 Didot（被Vogue、时尚芭莎、ELLE、阿玛尼、巴宝莉使用） Bodoni（被华伦天奴使用）等字体的诞生 工业革命时期 工业化印刷出现了更多易读性跟高更夺人眼球的衬线体</description>
     </item>
