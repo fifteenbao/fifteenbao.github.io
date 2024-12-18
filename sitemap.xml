@@ -2,25 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/post/%E5%AD%A6%E4%B9%A0%E5%93%81%E7%89%8C%E6%98%AF%E8%AE%B0%E5%BF%86/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/2024/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/%E5%AD%A6%E4%B9%A0%E5%93%81%E7%89%8C%E6%98%AF%E8%AE%B0%E5%BF%86/</loc>
     <lastmod>2024-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%E5%93%81%E7%89%8C/</loc>
@@ -82,9 +79,6 @@
   </url><url>
     <loc>http://localhost:1313/post/%E7%94%B5%E5%BD%B1%E6%9C%9D%E5%9C%A3%E4%B9%8B%E8%B7%AFbuen-camino/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/pages/</loc>
   </url><url>
