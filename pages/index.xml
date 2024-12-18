@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on fifteenbao</title>
-    <link>http://localhost:1313/pages/</link>
+    <link>https://example.org/pages/</link>
     <description>Recent content in Pages on fifteenbao</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Who?</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://example.org/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;制作的动画&#34;&gt;制作的动画&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;自问自答&#34;&gt;自问自答&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-认为设计师最重要的品质是什么&#34;&gt;1. 认为设计师最重要的品质是什么？&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;一颗好奇心&lt;/strong&gt;，设计这个行业就是紧跟时代步伐而诞生的，尤其AI时代拥抱变化迎接变化还是很重要的一个心态，好的设计是需要在工业和美学之间找到一个合适的位置，拥有对社会变化的敏感度就是设计师的优势。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-喜欢的设计和设计师都有哪些&#34;&gt;2. 喜欢的设计和设计师都有哪些？&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://studionaeo.com/about&#34;&gt;立入禁止&lt;/a&gt;&lt;/strong&gt; ：就是那个给北京国际电影节设计海报被网暴的设计师，在港深建筑双年展看到了设计的猫窝，最近又偶然看到了一篇十年前文章，很喜欢刘治治老师的一段话 「我不会去刻意去追随所谓 &amp;ldquo;传统&amp;rdquo;，更不会去随意使用什么 &amp;ldquo;中国符号&amp;rdquo;，这并不代表我的作品中没有 &amp;ldquo;中国精神&amp;rdquo;，作为一个中国人从生下来，我们的思维方式、阅读的方块字、居住的环境，都决定我是当下的中国人，传统精髓必然自然的存在我的创作中，而不是刻意，否则就矫情了。」。有个性，我喜欢。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://tosche.net/profile&#34;&gt;大曲都市&lt;/a&gt;&lt;/strong&gt; ：前蒙纳字体设计师。字体设计师给我感觉是一个有趣与枯燥并存的行业，但个体意识又很强烈，有时候甚至可以从他们设计的字体中感受到设计师的性格，他的个人网站上有介绍他设计的几款字体的设计思路，就很严谨有趣。最近对蒙古文很感兴趣，发现谷歌苹果在用的官方字体 NotoSansMongolian 大部分来自大曲老师，是在找到的资料里面 Unicode 写的最好的设计师。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;联系我&#34;&gt;联系我&lt;/h2&gt;&#xA;&lt;p&gt;E-mail： &lt;a href=&#34;mailto:fifteenbao@163.com&#34;&gt;fifteenbao@163.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;WeChat：fifteenbao&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;还可以了解&#34;&gt;还可以了解&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/wechat.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://example.org/about/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;制作的动画&#34;&gt;制作的动画&lt;/h2&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;h2 id=&#34;自问自答&#34;&gt;自问自答&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-认为设计师最重要的品质是什么&#34;&gt;1. 认为设计师最重要的品质是什么？&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;一颗好奇心&lt;/strong&gt;，设计这个行业就是紧跟时代步伐而诞生的，尤其AI时代拥抱变化迎接变化还是很重要的一个心态，好的设计是需要在工业和美学之间找到一个合适的位置，拥有对社会变化的敏感度就是设计师的优势。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;2-喜欢的设计和设计师都有哪些&#34;&gt;2. 喜欢的设计和设计师都有哪些？&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://studionaeo.com/about&#34;&gt;立入禁止&lt;/a&gt;&lt;/strong&gt; ：就是那个给北京国际电影节设计海报被网暴的设计师，在港深建筑双年展看到了设计的猫窝，最近又偶然看到了一篇十年前文章，很喜欢刘治治老师的一段话 「我不会去刻意去追随所谓 &amp;ldquo;传统&amp;rdquo;，更不会去随意使用什么 &amp;ldquo;中国符号&amp;rdquo;，这并不代表我的作品中没有 &amp;ldquo;中国精神&amp;rdquo;，作为一个中国人从生下来，我们的思维方式、阅读的方块字、居住的环境，都决定我是当下的中国人，传统精髓必然自然的存在我的创作中，而不是刻意，否则就矫情了。」。有个性，我喜欢。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://tosche.net/profile&#34;&gt;大曲都市&lt;/a&gt;&lt;/strong&gt; ：前蒙纳字体设计师。字体设计师给我感觉是一个有趣与枯燥并存的行业，但个体意识又很强烈，有时候甚至可以从他们设计的字体中感受到设计师的性格，他的个人网站上有介绍他设计的几款字体的设计思路，就很严谨有趣。最近对蒙古文很感兴趣，发现谷歌苹果在用的官方字体 NotoSansMongolian 大部分来自大曲老师，是在找到的资料里面 Unicode 写的最好的设计师。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;联系我&#34;&gt;联系我&lt;/h2&gt;&#xA;&lt;p&gt;E-mail： &lt;a href=&#34;mailto:fifteenbao@163.com&#34;&gt;fifteenbao@163.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;WeChat：fifteenbao&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;还可以了解&#34;&gt;还可以了解&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://example.org/images/wechat.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
