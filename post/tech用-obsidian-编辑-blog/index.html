@@ -1,0 +1,335 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>在 Hugo 使用 Obsidian 编辑 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="导入
+左侧边栏 导入其他库 &gt; 打开库文件 ，导入 hugo文件夹，其实只有 /content/post 用得到，想直接使用hugo自定义的模版就导入所有目录。
+头字段 FrontMatter
+Markdown 最前面的头字段，类似于这样
+title = &#39;spf13-vim 3.0 release and new website&#39;
+date = &#39;2023-05-24&#39; 
+categories = [&#39;Development&#39;, &#39;VIM&#39;] 
+description = &#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&#39; 
+slug = &#39;spf13-vim-3-0-release-and-new-website&#39; 
+tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;] 
+通常储模板文件存在 /archetypes 中，用hugo命令 hugo new posts/XXX.md 就会自动搜索和套用， HUgo 官方教程
+在 Obsidian 设置 &gt; 核心插件 &gt; 模版 添加  /archetypes ，就可以在左侧边栏直接插入头字段了。
+其他设置
+还有一些第三方插件，应该会更方便一些" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.0">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="http://localhost:1313/"
+      >fifteenbao</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/post/"
+        >Blog</a
+      >
+      
+      <a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">在 Hugo 使用 Obsidian 编辑</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>May 24, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="导入">导入</h1>
+<p>左侧边栏 <code>导入其他库 &gt; 打开库文件</code> ，导入 <code>hugo</code>文件夹，其实只有 <code>/content/post</code> 用得到，想直接使用hugo自定义的模版就导入所有目录。</p>
+<h1 id="头字段-frontmatter">头字段 FrontMatter</h1>
+<p>Markdown 最前面的头字段，类似于这样</p>
+<pre tabindex="0"><code>title = &#39;spf13-vim 3.0 release and new website&#39;
+date = &#39;2023-05-24&#39; 
+categories = [&#39;Development&#39;, &#39;VIM&#39;] 
+description = &#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&#39; 
+slug = &#39;spf13-vim-3-0-release-and-new-website&#39; 
+tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;] 
+</code></pre><p>通常储模板文件存在 <code>/archetypes</code> 中，用hugo命令 <code>hugo new posts/XXX.md</code> 就会自动搜索和套用， <a href="https://gohugo.io/content-management/front-matter/">HUgo 官方教程</a></p>
+<p>在 Obsidian <code>设置 &gt; 核心插件 &gt; 模版</code> 添加  <code>/archetypes</code> ，就可以在左侧边栏直接插入头字段了。</p>
+<h1 id="其他设置">其他设置</h1>
+<p>还有一些第三方插件，应该会更方便一些</p>
+<ul>
+<li><code>Obsidian Git</code>  ：可以在 Obsidian 内就可以实现 git commit 以及 push 的操作，直接用 <code>command+p</code> 打开命令面板，分别执行 <code>git commit</code> 命令与 <code>git push</code> 即可。</li>
+<li><code>File Tree</code> ：目录右键<code>Focuse on Folder</code> 过滤文件夹</li>
+</ul>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="http://localhost:1313/tags/tech"
+      >Tech</a
+    >
+    
+  </footer>
+  
+
+  
+  
+  
+  
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  >
+    
+    <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>浅浅学习下可变字体</span></a
+    >
+    
+    
+    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/%E8%89%BA%E6%9C%AFsanssouci./"
+      ><span>SANS,SOUCI.</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    >
+    
+  </nav>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">fifteenbao</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>
