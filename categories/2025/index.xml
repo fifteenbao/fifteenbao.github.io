@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2025 on fifteenbao</title>
+    <link>http://localhost:1313/categories/2025/</link>
+    <description>Recent content in 2025 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <lastBuildDate>Tue, 07 Jan 2025 23:27:55 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>更新hugo的使用方1法</title>
+      <link>http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B91%E6%B3%95/</link>
+      <pubDate>Tue, 07 Jan 2025 23:27:55 +0800</pubDate>
+      <guid>http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B91%E6%B3%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
