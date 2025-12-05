@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tailwindcss on fifteenbao</title>
-    <link>http://localhost:1313/tags/tailwindcss/</link>
+    <link>https://fifteenbao.com/tags/tailwindcss/</link>
     <description>Recent content in Tailwindcss on fifteenbao</description>
     <generator>Hugo</generator>
     <language>cn</language>
     <copyright>©2025 fifteenbao</copyright>
     <lastBuildDate>Tue, 07 Jan 2025 23:27:55 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tailwindcss/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fifteenbao.com/tags/tailwindcss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>更新hugo的使用方法</title>
-      <link>http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>https://fifteenbao.com/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Tue, 07 Jan 2025 23:27:55 +0800</pubDate>
-      <guid>http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://fifteenbao.com/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;p&gt;又又又折腾了一下,&#xA;之前的hugo版本升级直接挂了……&#xA;域名还被劫持了…… 添加了一个txt的github -&amp;gt; setting -&amp;gt; pages 添加了一个域名验证&lt;/p&gt;&#xA;&lt;p&gt;换了一个有 TailwindCSS 的稳定一点的 &lt;a href=&#34;https://github.com/nanxiaobei/hugo-paper&#34;&gt;主题&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;升级需谨慎&lt;/p&gt;&#xA;&lt;p&gt;开始在 Cursor 里面弄各种东西了, 不懂的就 Add to Chat&lt;/p&gt;&#xA;&lt;p&gt;AI 取代人类真是迟早的事情啊……&lt;/p&gt;&#xA;&lt;p&gt;安装过程就草草带过吧…… 官网写的蛮清楚的&lt;/p&gt;&#xA;&lt;h2 id=&#34;常用命令&#34;&gt;常用命令&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hugo server //本地预览&#xA;hugo new content content/post/test.md  //新建文章&#xA;&#x9; draft = false //不显示内容&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
