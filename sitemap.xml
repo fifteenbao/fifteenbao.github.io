@@ -3,24 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fifteenbao.com/</loc>
-    <lastmod>2025-12-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/categories/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/post/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/tags/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/post/test/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/tags/test/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/categories/test/</loc>
+    <lastmod>2025-12-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/about/</loc>
     <lastmod>2025-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/categories/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/categories/commercial/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/methodology/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/post/</loc>
-    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/tags/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96/</loc>
@@ -29,7 +38,7 @@
     <loc>https://fifteenbao.com/tags/%E6%AE%B5%E6%B0%B8%E5%B9%B3/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7/</loc>
+    <loc>https://fifteenbao.com/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7-copy/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/hugo/</loc>
