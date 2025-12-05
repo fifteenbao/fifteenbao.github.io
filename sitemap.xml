@@ -2,96 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fifteenbao.com/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2025-12-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/commercial/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/methodology/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%AE%B5%E6%B0%B8%E5%B9%B3/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7/</loc>
+    <lastmod>2025-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2025-01-07T23:27:55+08:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/categories/</loc>
+    <loc>http://localhost:1313/tags/tailwindcss/</loc>
     <lastmod>2025-01-07T23:27:55+08:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/categories/css/</loc>
+    <loc>http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2025-01-07T23:27:55+08:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/hugo/</loc>
-    <lastmod>2025-01-07T23:27:55+08:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/post/</loc>
-    <lastmod>2025-01-07T23:27:55+08:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/tags/</loc>
-    <lastmod>2025-01-07T23:27:55+08:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/tags/tailwindcss/</loc>
-    <lastmod>2025-01-07T23:27:55+08:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2025-01-07T23:27:55+08:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/post/%E5%AD%A6%E4%B9%A0%E5%93%81%E7%89%8C%E6%98%AF%E8%AE%B0%E5%BF%86/</loc>
-    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/categories/2024/</loc>
-    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/tags/%E5%93%81%E7%89%8C/</loc>
-    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/categories/2023/</loc>
+    <loc>http://localhost:1313/categories/2023/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</loc>
+    <loc>http://localhost:1313/post/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E5%AD%97%E4%BD%93/</loc>
+    <loc>http://localhost:1313/tags/%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>http://localhost:1313/tags/%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E5%96%9D/</loc>
+    <loc>http://localhost:1313/tags/%E5%96%9D/</loc>
     <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/</loc>
+    <loc>http://localhost:1313/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/</loc>
     <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/guideline/</loc>
+    <loc>http://localhost:1313/tags/guideline/</loc>
     <lastmod>2023-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/tech/</loc>
+    <loc>http://localhost:1313/tags/tech/</loc>
     <lastmod>2023-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</loc>
+    <loc>http://localhost:1313/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2023-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</loc>
+    <loc>http://localhost:1313/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</loc>
     <lastmod>2023-05-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E8%89%BA%E6%9C%AFsanssouci./</loc>
+    <loc>http://localhost:1313/post/%E8%89%BA%E6%9C%AFsanssouci./</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3/</loc>
+    <loc>http://localhost:1313/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E8%89%BA%E6%9C%AF/</loc>
+    <loc>http://localhost:1313/tags/%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</loc>
+    <loc>http://localhost:1313/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2023-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%BA%9B%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/</loc>
+    <loc>http://localhost:1313/post/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%BA%9B%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/</loc>
     <lastmod>2023-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
+    <loc>http://localhost:1313/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
     <lastmod>2022-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E8%89%BA%E6%9C%AF%E7%9C%8B%E5%8D%B0%E8%B1%A1%E6%B4%BE/</loc>
+    <loc>http://localhost:1313/post/%E8%89%BA%E6%9C%AF%E7%9C%8B%E5%8D%B0%E8%B1%A1%E6%B4%BE/</loc>
     <lastmod>2022-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/%E7%94%B5%E5%BD%B1%E6%9C%9D%E5%9C%A3%E4%B9%8B%E8%B7%AFbuen-camino/</loc>
+    <loc>http://localhost:1313/post/%E7%94%B5%E5%BD%B1%E6%9C%9D%E5%9C%A3%E4%B9%8B%E8%B7%AFbuen-camino/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/about/</loc>
+    <loc>http://localhost:1313/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
   </url>
 </urlset>

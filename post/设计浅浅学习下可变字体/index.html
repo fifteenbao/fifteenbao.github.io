@@ -32,18 +32,34 @@
 
 
 
+
+  
+  
+    
+    
+  
+
+
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
   lang="cn"
   dir="ltr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
   />
 
   
@@ -98,22 +114,26 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   
   
   
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
   
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/theme.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/theme.png" />
 
   
   
   
   
+  <link rel="preload" as="image" href="http://localhost:1313/images/admin.gif" />
+  
   
 
   
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
   
   
 
@@ -121,7 +141,7 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   
   <script
     defer
-    src="https://fifteenbao.com/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -133,171 +153,432 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   
   <link
     rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
+    href="http://localhost:1313/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
+    href="http://localhost:1313/apple-touch-icon.png"
   />
 
   
   <meta name="generator" content="Hugo 0.140.0">
 
   
-  
-  
-  
-  
-  
-  <meta itemprop="name" content="浅浅学习下可变字体">
-  <meta itemprop="description" content="字重（weight），字宽（width），倾斜（Slant），斜体（Italic）和视觉尺寸（optical Size）">
-  <meta itemprop="datePublished" content="2023-05-28T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-05-28T00:00:00+00:00">
-  <meta itemprop="wordCount" content="236">
-  <meta itemprop="keywords" content="设计,Tech,字体,Guideline">
-  
-  <meta property="og:url" content="https://fifteenbao.com/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="浅浅学习下可变字体">
-  <meta property="og:description" content="字重（weight），字宽（width），倾斜（Slant），斜体（Italic）和视觉尺寸（optical Size）">
-  <meta property="og:locale" content="cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2023-05-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-05-28T00:00:00+00:00">
-    <meta property="article:tag" content="设计">
-    <meta property="article:tag" content="Tech">
-    <meta property="article:tag" content="字体">
-    <meta property="article:tag" content="Guideline">
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 
   
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="浅浅学习下可变字体">
-  <meta name="twitter:description" content="字重（weight），字宽（width），倾斜（Slant），斜体（Italic）和视觉尺寸（optical Size）">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/post/%E8%AE%BE%E8%AE%A1%E6%B5%85%E6%B5%85%E5%AD%A6%E4%B9%A0%E4%B8%8B%E5%8F%AF%E5%8F%98%E5%AD%97%E4%BD%93/" />
   
   
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
-    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
-  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-    <a class="-translate-y-[1px] text-2xl font-medium" href="https://fifteenbao.com/"
-      >fifteenbao</a
-    >
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
+        >fifteenbao</a
+      >
+    </div>
+
+
+    
     <div
-      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
       role="button"
-      aria-label="Dark"
+      aria-label="Menu"
     ></div>
-  </div>
-
-  <div
-    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  
-
-  <script>
-    
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
 
-    
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#faf8f1'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
-    };
-
-    
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
-    } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
-    }
-
-    
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
-    });
-
-    
-    const btnDark = document.querySelector('.btn-dark');
-    btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
-  >
-    
-    
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+    <script>
       
-      <a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      btnMenu.addEventListener('click', () => {
+        htmlClass.toggle('open');
+      });
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      if (htmlClass.contains('dark')) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem('dark');
+        setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+      }
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block text-center text-xl leading-[5rem] transition-opacity hover:opacity-70 lg:text-base lg:font-normal "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block text-center text-xl leading-[5rem] transition-opacity hover:opacity-70 lg:text-base lg:font-normal "
+          href="/categories/"
+          >Categories</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden mt-12 flex justify-center">
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      <nav
+        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
       >
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="hidden lg:flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
       
-      <a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/post/"
-        >Posts</a
-      >
-      
-    </nav>
-    
-
-    
+    </div>
   </div>
 </header>
 
 
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+
     <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
     >
       
 
-<article>
-  <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">浅浅学习下可变字体</h1>
-
-    
-    <div class="text-xs antialiased opacity-60">
-      
-      <time>May 28, 2023</time>
-      
-      
-      
-      
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#静态字体和可变字体的差异">静态字体和可变字体的差异</a>
+      <ul>
+        <li><a href="#标准静态字体">标准（静态）字体</a></li>
+        <li><a href="#可变字体">可变字体</a></li>
+        <li><a href="#关于字体系列字重和变体的说明">关于字体系列，字重和变体的说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#可变轴">可变轴</a>
+      <ul>
+        <li><a href="#如规范中所定义存在两种变形轴注册轴和自定义轴">如规范中所定义，存在两种变形轴，<strong>注册轴</strong>和<strong>自定义轴</strong>：</a></li>
+        <li><a href="#注册轴">注册轴</a></li>
+        <li><a href="#自定义轴">自定义轴</a></li>
+      </ul>
+    </li>
+    <li><a href="#font-face-使用">@font-face 使用</a></li>
+  </ul>
+</nav>
+      </div>
     </div>
-    
-  </header>
+  </aside>
+  
 
-  <section><p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">浅浅学习下可变字体</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>May 28, 2023</time>
+        
+        
+        
+        
+      </div>
+      
+    </header>
+
+    <section><p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。
 可变字体的优势：</p>
 <ul>
 <li><strong>更小的文件体积</strong></li>
@@ -412,69 +693,613 @@ font-variation-settings: &#39;opsz&#39; 36;
 </ul>
 </section>
 
+    
+    
+    <footer class="mt-12 flex flex-wrap">
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/%E8%AE%BE%E8%AE%A1"
+        >设计</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/tech"
+        >Tech</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/%E5%AD%97%E4%BD%93"
+        >字体</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/guideline"
+        >Guideline</a
+      >
+      
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>消暑饮品整理</span></a
+      >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/"
+        ><span>在 Hugo 使用 Obsidian 编辑</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<style>
   
-  
-  <footer class="mt-12 flex flex-wrap">
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);  
+    top: 0;
+    width: 240px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1400px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 260px);  
+      right: auto;
+      top: 8rem;  
+      width: 240px;
+      max-height: calc(100vh - 10rem);
+    }
+    
      
-    <a
-      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1"
-      >设计</a
-    >
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 260px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 1rem;  
+    line-height: 1.7;  
+  }
+
+  .article-content .prose p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 2em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.625em;  
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1.125em;  
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.9375rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.75em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1.125em;  
+    }
+  }
+
+
+  .toc-wrapper {
      
-    <a
-      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://fifteenbao.com/tags/tech"
-      >Tech</a
-    >
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  .toc-header {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5);  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    padding-top: 0.25rem;
+    margin-top: -0.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 20px 20px 0 0;  
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.8);  
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
      
-    <a
-      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://fifteenbao.com/tags/%E5%AD%97%E4%BD%93"
-      >字体</a
-    >
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
      
-    <a
-      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="https://fifteenbao.com/tags/guideline"
-      >Guideline</a
-    >
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.875rem;
+    opacity: 0.65;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.8125rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  @media (max-width: 1399px) {
+    .toc-sidebar {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 100%;
+      max-height: none;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding-right: 0;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script>
+  (function() {
     
-  </footer>
-  
-
-  
-  
-  
-  
-  <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  >
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
     
-    <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>消暑饮品整理</span></a
-    >
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
     
     
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/"
-      ><span>在 Hugo 使用 Obsidian 编辑</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    >
+    highlightTocLink();
+
     
-  </nav>
-  
-  
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
 
-  
-  
-
-  
-  
-
-  
-
-
-  
-</article>
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
 
 
     </main>
@@ -484,8 +1309,7 @@ font-variation-settings: &#39;opsz&#39; 36;
 >
   <div class="mr-auto">
   
-    &copy; 2025
-    <a class="link" href="https://fifteenbao.com/">fifteenbao</a>
+    ©2025 fifteenbao
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
