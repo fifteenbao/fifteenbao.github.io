@@ -7,15 +7,8 @@
     <generator>Hugo</generator>
     <language>cn</language>
     <copyright>©2025 fifteenbao</copyright>
-    <lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fifteenbao.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>test</title>
-      <link>https://fifteenbao.com/post/test/</link>
-      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/post/test/</guid>
-      <description>&lt;p&gt;test&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Who?</title>
       <link>https://fifteenbao.com/about/</link>

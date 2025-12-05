@@ -462,19 +462,92 @@ tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;]
           }
         }
       });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
     </script>
 
     <div
-      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
     >
       
       
-      <nav class="lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
         
         
         
         <a
-          class="block text-center text-xl leading-[5rem] transition-opacity hover:opacity-70 lg:text-base lg:font-normal "
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/about/"
           >About</a
         >
@@ -483,7 +556,7 @@ tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;]
         
         
         <a
-          class="block text-center text-xl leading-[5rem] transition-opacity hover:opacity-70 lg:text-base lg:font-normal "
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/categories/"
           >Categories</a
         >
@@ -498,7 +571,7 @@ tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;]
       
       <div class="lg:hidden mt-12 flex justify-center">
         <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
           role="button"
           aria-label="Dark"
         ></div>
@@ -522,7 +595,7 @@ tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;]
         
         <div class="hidden lg:flex items-center ml-2">
           <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
             role="button"
             aria-label="Dark"
           ></div>
@@ -980,6 +1053,13 @@ tags = [&#39;.vimrc&#39;, &#39;plugins&#39;, &#39;spf13-vim&#39;, &#39;vim&#39;]
       margin-top: 2rem;
       margin-bottom: 2rem;
       padding-right: 0;
+    }
+  }
+
+   
+  @media (max-width: 1024px) {
+    .toc-sidebar {
+      display: none !important;
     }
   }
 
