@@ -1,0 +1,1684 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="cn"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <title>PostHog 的公司手册 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="
+播客链接：## Vol.088 看不见的公司｜Posthog｜理想组织的运行方式
+
+
+PostHog 存在的意义是什么？我们的使命和战略
+我们的使命
+让每位开发者都能打造成功的产品。
+我们的策略
+
+成为所有产品上下文信息的权威来源
+为工程师提供构建成功产品所需的一切工具
+抢占先机
+实现迭代过程自动化
+
+我们如何获取用户
+
+围绕理想客户画像来打造产品，营销就是创造有用的内容
+
+我们为谁而建
+
+我们将产品的目标用户定义为 ICP（即公司）和 Persona（即实际使用产品的人）。
+
+我们目前的ICP
+也就是我们理想的客户画像。
+如何打造用户画像
+我们为那些在高增长型创业公司中打造产品的人们而打造产品。
+市场营销和客户成功团队应主要关注理想客户画像 (ICP)，但也应开发高潜力客户——即那些未来可能成为高增长客户的客户（例如 PostHog 在 YC 创业初期）。我们应该专注于维护业余爱好者用户，例如那些开发副业项目的工程师。我们希望成为技术型创始人添加到其产品中的首选工具。
+
+  
+      
+          高增长型初创企业
+          
+      
+  
+  
+      
+          描述
+          那些产品与市场契合，并且正在快速扩大规模，吸引新客户、招聘员工、增加收入的初创公司。
+      
+      
+          标准
+          - 员工人数：15-500人  - 月收入：10万美元以上_或_拥有庞大的用户群体  - 已获得知名投资者融资  - 尚未上市
+      
+      
+          它们为什么重要？
+          - 能够高效地实现盈利  - 销售周期极短  - 可作为早期创业公司/发展较慢公司的关键意见领袖  - 对客户需求有深刻的见解 - 帮助我们打造更好的产品
+      
+      
+          示例
+          PostHog 从 B 轮融资到 IPO 的任何阶段，Supabase，ElevenLabs
+      
+  
+
+1. ICP 和用户画像不是一回事。
+理想客户画像 (ICP) 定义了您的客户群体——即需要您产品的公司或团队。ICP 可以包含个人画像，但也应该包含以下内容：
+
+公司类型、 他们的客户是谁、他们有多少名员工、他们有多少用户、谁会使用您的产品、他们使用的工具或想要用你的产品替换的工具、他们重视的因素（例如设计、速度等）
+
+另一方面，用户画像则描述了特定用户的动机和痛点。
+为什么这很重要？ 用户画像不够具体。它无法帮助你制定市场推广策略，也无法帮助你确定产品定价。围绕用户画像构建业务，很容易打造出用户喜欢但却不愿付费的产品。" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/theme.png" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://fifteenbao.com/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://fifteenbao.com/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.0">
+
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="PostHog 的公司手册">
+  <meta itemprop="description" content="播客听到的一家公司，关于如何">
+  <meta itemprop="datePublished" content="2025-12-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-06T00:00:00+00:00">
+  <meta itemprop="wordCount" content="377">
+  <meta itemprop="keywords" content="Methodology,企业文化,PostHog">
+  
+  <meta property="og:url" content="https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/">
+  <meta property="og:site_name" content="fifteenbao">
+  <meta property="og:title" content="PostHog 的公司手册">
+  <meta property="og:description" content="播客听到的一家公司，关于如何">
+  <meta property="og:locale" content="cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-12-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-06T00:00:00+00:00">
+    <meta property="article:tag" content="Methodology">
+    <meta property="article:tag" content="企业文化">
+    <meta property="article:tag" content="PostHog">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PostHog 的公司手册">
+  <meta name="twitter:description" content="播客听到的一家公司，关于如何">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+        >fifteenbao</a
+      >
+    </div>
+
+
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    
+
+    <script>
+      
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      btnMenu.addEventListener('click', () => {
+        htmlClass.toggle('open');
+      });
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      if (htmlClass.contains('dark')) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem('dark');
+        setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+      }
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/categories/"
+          >Categories</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden mt-12 flex justify-center">
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      <nav
+        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+      >
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="hidden lg:flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#posthog-存在的意义是什么我们的使命和战略">PostHog 存在的意义是什么？我们的使命和战略</a>
+      <ul>
+        <li><a href="#我们的使命">我们的使命</a></li>
+        <li><a href="#我们的策略">我们的策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何获取用户">我们如何获取用户</a></li>
+    <li><a href="#我们为谁而建">我们为谁而建</a>
+      <ul>
+        <li><a href="#我们目前的icp">我们目前的ICP</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何让用户开心">我们如何让用户开心</a>
+      <ul>
+        <li><a href="#打造人们想要的产品">打造人们想要的产品</a></li>
+        <li><a href="#工程师与用户沟通并提供支持">工程师与用户沟通并提供支持</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何赚钱">我们如何赚钱</a>
+      <ul>
+        <li><a href="#我们的销售策略以为我们的-mark理想客户群体提供最佳体验mark-为基础">我们的销售策略以为我们的 <mark>理想客户群体提供最佳体验</mark> 为基础。</a></li>
+        <li><a href="#不要让价格成为阻碍">不要让价格成为阻碍</a></li>
+        <li><a href="#根据用户使用量收费并赋予用户控制权">根据用户使用量收费，并赋予用户控制权</a></li>
+        <li><a href="#每款产品都做到价格最低">每款产品都做到价格最低。</a></li>
+        <li><a href="#与大客户打交道的原则">与大客户打交道的原则</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们是一家业务范围广泛的公司旗下拥有多个小型团队">我们是一家业务范围广泛的公司，旗下拥有多个小型团队。</a>
+      <ul>
+        <li><a href="#速度">速度</a></li>
+        <li><a href="#小团队">小团队</a></li>
+        <li><a href="#最小层级">最小层级</a></li>
+        <li><a href="#根据你的工作内容而定的头衔">根据你的工作内容而定的头衔</a></li>
+        <li><a href="#目标设定">目标设定</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何打造一流的团队">我们如何打造一流的团队</a>
+      <ul>
+        <li><a href="#这里的人之所以能取得成功是因为他们具备以下性格特征">这里的人之所以能取得成功，是因为他们具备以下性格特征：</a></li>
+        <li><a href="#加入我们的绝佳和糟糕理由">加入我们的绝佳（和糟糕）理由</a></li>
+        <li><a href="#一小群更强壮的人和补偿">一小群更强壮的人和补偿</a></li>
+        <li><a href="#除了招聘之外团队建设也在不断壮大">除了招聘之外，团队建设也在不断壮大。</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们重视什么">我们重视什么？</a>
+      <ul>
+        <li><a href="#你是司机">你是司机</a></li>
+        <li><a href="#公开">公开</a></li>
+        <li><a href="#多做一些怪异的事">多做一些怪异的事</a></li>
+        <li><a href="#为什么现在不行">为什么现在不行？</a></li>
+        <li><a href="#天生乐观">天生乐观</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">PostHog 的公司手册</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>Dec 6, 2025</time>
+        
+        
+        
+        
+      </div>
+      
+    </header>
+
+    <section><blockquote>
+<p>播客链接：<a href="https://www.xiaoyuzhoufm.com/episode/69130ad0c6bbe1b6659a0f8c">## Vol.088 看不见的公司｜Posthog｜理想组织的运行方式</a></p>
+</blockquote>
+<hr>
+<h2 id="posthog-存在的意义是什么我们的使命和战略">PostHog 存在的意义是什么？我们的使命和战略</h2>
+<h3 id="我们的使命">我们的使命</h3>
+<p>让每位开发者都能打造成功的产品。</p>
+<h3 id="我们的策略">我们的策略</h3>
+<ol>
+<li>成为所有产品上下文信息的权威来源</li>
+<li>为工程师提供构建成功产品所需的一切工具</li>
+<li>抢占先机</li>
+<li>实现迭代过程自动化</li>
+</ol>
+<h2 id="我们如何获取用户">我们如何获取用户</h2>
+<blockquote>
+<p><mark>围绕理想客户画像来打造产品</mark>，营销就是创造有用的内容</p>
+</blockquote>
+<h2 id="我们为谁而建">我们为谁而建</h2>
+<blockquote>
+<p>我们将产品的目标用户定义为 ICP（即公司）和 Persona（即实际使用产品的人）。</p>
+</blockquote>
+<h3 id="我们目前的icp">我们目前的ICP</h3>
+<p>也就是我们<a href="https://posthog.com/newsletter/ideal-customer-profile-framework">理想的客户画像</a>。</p>
+<p><a href="https://posthog.com/product-engineers/how-to-create-user-personas">如何打造用户画像</a></p>
+<p><mark>我们为那些在高增长型创业公司<mark>中打造产品的人们而打造产品。</p>
+<p>市场营销和客户成功团队应主要关注理想客户画像 (ICP)，但也应开发<mark>高潜力客户<mark>——即那些未来可能成为高增长客户的客户（例如 PostHog 在 YC 创业初期）。我们应该专注于维护<mark>业余爱好者用户<mark>，例如那些开发副业项目的工程师。我们希望成为技术型创始人添加到其产品中的首选工具。</p>
+<table>
+  <thead>
+      <tr>
+          <th>高增长型初创企业</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><mark>描述<mark></td>
+          <td>那些产品与市场契合，并且正在快速扩大规模，吸引新客户、招聘员工、增加收入的初创公司。</td>
+      </tr>
+      <tr>
+          <td><mark>标准<mark></td>
+          <td>- 员工人数：15-500人  <br>- 月收入：10万美元以上_或_拥有庞大的用户群体  <br>- 已获得知名投资者融资  <br>- 尚未上市</td>
+      </tr>
+      <tr>
+          <td><mark>它们为什么重要？<mark></td>
+          <td>- 能够高效地实现盈利  <br>- 销售周期极短  <br>- 可作为早期创业公司/发展较慢公司的关键意见领袖  <br>- 对客户需求有深刻的见解 - 帮助我们打造更好的产品</td>
+      </tr>
+      <tr>
+          <td><mark>示例<mark></td>
+          <td>PostHog 从 B 轮融资到 IPO 的任何阶段，Supabase，ElevenLabs</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="1-icp-和用户画像不是一回事">1. ICP 和用户画像不是一回事。</h4>
+<p>理想客户画像 (ICP) 定义了您的客户群体——即需要您产品的公司或团队。ICP 可以包含个人画像，但也应该包含以下内容：</p>
+<ul>
+<li>公司类型、 他们的客户是谁、他们有多少名员工、他们有多少用户、谁会使用您的产品、他们使用的工具或想要用你的产品替换的工具、他们重视的因素（例如设计、速度等）</li>
+</ul>
+<p>另一方面，用户画像则描述了特定用户的动机和痛点。</p>
+<p><mark>为什么这很重要？<mark> 用户画像不够具体。它无法帮助你制定市场推广策略，也无法帮助你确定产品定价。围绕用户画像构建业务，很容易打造出用户喜欢但却不愿付费的产品。</p>
+<h4 id="2-你的整个策略都位于你的理想客户画像-icp-的下游">2. 你的整个策略都位于你的理想客户画像 (ICP) 的下游。</h4>
+<p><mark>为什么这很重要？<mark> 总的来说，我们的理想客户画像 (ICP) 是高增长的 B2B 初创公司，这些公司拥有产品与市场的契合度，并且工程师是决策者——更多详细信息请参阅我们的手册。</p>
+<p>因此，我们做出了以下一些决定：</p>
+<ul>
+<li>以工程为主导的文化</li>
+<li>卖的<a href="https://newsletter.posthog.com/p/why-we-sell-features-not-benefits">是功能，而不是好处</a></li>
+<li>透明的、<a href="https://posthog.com/founders/pricing-lessons">按使用量计费</a></li>
+<li>以产品为主导，不进行主动销售</li>
+<li><a href="https://posthog.com/blog/posthog-as-a-dev-tool">一个感觉像开发工具</a>而不是分析工具的用户界面</li>
+<li>专注于为工程师和创业者提供高质量内容</li>
+<li>不运行广告 cookie 和重定向广告活动</li>
+<li>一个充满代码片段和表情包的非传统网站</li>
+<li>构建面向开发者的功能（例如深色模式、SQL 查询、数据仓库）</li>
+</ul>
+<p>简而言之：你的 ICP 将影响你做出的每一个决定。</p>
+<h4 id="3-从你最好的猜测开始然后进行测试">3. 从你最好的猜测开始，然后进行测试。</h4>
+<p>在 PostHog 还只是一个自托管产品分析工具的时候，我们最初的理想客户画像 (ICP) 被分为三类：</p>
+<ol>
+<li>我们的客户需要什么</li>
+<li>我们客户拥有的东西</li>
+<li>我们的客户不需要的东西</li>
+</ol>
+<h4 id="4-想尽一切办法收集情报">4. 想尽一切办法收集情报</h4>
+<p>其他收集情报的方式包括：</p>
+<ol>
+<li><mark>在注册时询问一些问题</mark>，例如公司有多少员工，或者他们使用哪些工具。从中寻找规律。</li>
+<li><mark>比较</mark>不同类型公司和用户的留存率。</li>
+<li>通过分析谁最常使用产品或最常完成高价值事件，<mark>来确定您的核心用户。</mark></li>
+<li><mark>开展 NPS 或 PMF 调查</mark>，这将有助于您确定最喜欢您产品的职位和公司。</li>
+</ol>
+<p><mark>为什么这很重要？</mark>
+与用户交流固然重要，但你需要数据来支撑你的结论。如果你的理想用户画像 (ICP) 符合以下条件，那么你就走对了方向：</p>
+<ul>
+<li>比非ICP用户保留率更高</li>
+<li>在调查中给出的评分高于非ICP用户</li>
+<li>比非ICP用户更频繁地使用您的产品</li>
+<li>与非 ICP 用户相比，触发高价值事件的频率更高或速度更快。</li>
+</ul>
+<h4 id="5-学会识别真正的热情">5. 学会识别真正的热情</h4>
+<p>产品市场契合度和理想客户画像（ICP）中公司的标志基本相同。寻找符合以下条件的个人/公司：</p>
+<ul>
+<li>在演示产品时表现出明显的兴奋之情。</li>
+<li>在描述你正在解决的问题时，我非常同意。</li>
+<li>不断给你反馈，告诉你哪些方面可以改进。</li>
+<li>自发地邀请同事参加你的产品演示/使用你的产品。</li>
+<li>即使产品有点瑕疵，也要经常使用。</li>
+<li>推荐给其他有同样问题的人/公司。</li>
+<li>开始付费或积极想要付费（即使你还没有开始收费）。</li>
+<li>公开分享您的产品——例如在 Twitter、LinkedIn 等平台上。</li>
+</ul>
+<p>颅内压异常的迹象包括以下人群：</p>
+<ul>
+<li>用“有趣”、“酷炫”或“巧妙”来形容你的产品。</li>
+<li>使用您的产品进行非预期操作（需进一步调查）。</li>
+<li>使用该产品，但被问及时表示不会付费。</li>
+<li>把你转交给级别较低、没有决策权的人。</li>
+</ul>
+<p><mark>为什么这很重要？</mark> 大多数人都很有礼貌，所以他们会委婉地拒绝你。了解真正的热情和礼貌的冷漠之间的区别至关重要。</p>
+<h4 id="6-随着信心的增强添加更多细节">6. 随着信心的增强，添加更多细节</h4>
+<p>这个ICP对我们有效，因为它们：</p>
+<ol>
+<li>销售周期要非常短，这样我们才能高效增长。</li>
+<li>比我们 ICP 之外的人群更能激活和留住他们。</li>
+<li>他们对自身需求有强烈的意见，这有助于我们的产品团队。</li>
+<li>影响早期创业公司和发展较慢的公司，这有利于口碑传播。</li>
+</ol>
+<p>当符合您理想用户画像 (ICP) 的用户比不符合 ICP 的用户激活率和留存率更高时，您可以确信您的目标用户画像是正确的。如果两者仍然非常相似，则需要进行更具体的设定。</p>
+<p><mark>为什么这很重要？</mark> 一个真正有效的ICP必须非常具体才能起到指导作用。你可能会想稍微含糊其辞，给自己留点回旋余地。千万别这样做。如果你觉得ICP可能过于狭窄，这反而是个好兆头。要坚持这种感觉。</p>
+<h4 id="7-记住这些规则">7. 记住这些规则</h4>
+<h5 id="颅内压增高比没有颅内压更糟糕">颅内压增高比没有颅内压更糟糕🎯</h5>
+<h5 id="拖延太久会浪费你的时间">拖延太久会浪费你的时间🕣</h5>
+<h5 id="你需要几个月的时间才能完善你的icp">你需要几个月的时间才能完善你的ICP📆</h5>
+<h5 id="不要妄下结论">不要妄下结论🛑</h5>
+<h5 id="不要低估陌生拜访的重要性">不要低估陌生拜访的重要性📨</h5>
+<h2 id="我们如何让用户开心">我们如何让用户开心</h2>
+<p>用户满意度至关重要。我们如何才能实现这一点？</p>
+<h3 id="打造人们想要的产品">打造人们想要的产品</h3>
+<h3 id="工程师与用户沟通并提供支持">工程师与用户沟通并提供支持</h3>
+<p><a href="https://posthog.com/roadmap">Roadmap</a></p>
+<p>你应该尽可能贴近你的用户，感受他们的感受，这样你才能获得尽可能多的信息，从而打造出色的产品。
+对于有很多使用问题的成熟产品（例如，如何创建执行 X 的洞察），客户成功团队会提供帮助。
+在新产品开发之前，我们会将其添加到<a href="https://posthog.com/roadmap">公开的产品路线图</a>中。产品发布后，我们会利用自身的工具收集用户访谈、反馈和数据，并始终致力于与用户“闭环沟通”——通过以下方式回应：提交拉取请求、在 GitHub 上创建公开的 issue，或者解释我们为何无法实现他们提出的功能。</p>
+<h2 id="我们如何赚钱">我们如何赚钱</h2>
+<p>我们从那些拥有并喜欢我们产品的人身上赚钱。
+我们不从那些没有产品的人身上赚钱。</p>
+<h3 id="我们的销售策略以为我们的-mark理想客户群体提供最佳体验mark-为基础">我们的销售策略以为我们的 <mark>理想客户群体提供最佳体验</mark> 为基础。</h3>
+<h3 id="不要让价格成为阻碍">不要让价格成为阻碍</h3>
+<h3 id="根据用户使用量收费并赋予用户控制权">根据用户使用量收费，并赋予用户控制权</h3>
+<p>这些原则意味着他们的消费会比原本少，_但_同时也意味着他们会继续使用平台。我们不希望用户因为对消费不满意而流失；我们希望他们能够更好地管理自己对平台的使用。</p>
+<h3 id="每款产品都做到价格最低">每款产品都做到价格最低。</h3>
+<h3 id="与大客户打交道的原则">与大客户打交道的原则</h3>
+<p>最重要的是要专注于打造最好的产品，而不是满足某个大客户的需求。</p>
+<ul>
+<li>
+<p><mark>我们并不在意失去订单。</mark> 如果因为要在这些原则上做出妥协而不得不放弃某笔交易，我们也会毫不犹豫地这样做。我们之所以能够这样做，是因为我们拥有强大的增长引擎，这主要得益于我们与理想客户群体（ICP客户）的紧密联系。</p>
+</li>
+<li>
+<p><mark>我们不签订交付物合同，</mark> 尤其不签订在特定日期前交付交付物的合同。这是因为，从原则上讲，单个客户迫使我们开发产品。</p>
+</li>
+<li>
+<p><mark>我们会为大客户开发产品，前提是我们确信他们不会是该产品的唯一用户。</mark> 稍微调整一下产品路线图或许可行，但添加其他人不会使用的新功能则不然。</p>
+</li>
+<li>
+<p><mark>客户需要先试用 PostHog，才能期望我们做出任何更改。</mark> 我们非常重视客户的反馈，但我们不喜欢那些从未用过我们产品的人提交冗长的需求文档。</p>
+</li>
+</ul>
+<h2 id="我们是一家业务范围广泛的公司旗下拥有多个小型团队">我们是一家业务范围广泛的公司，旗下拥有多个小型团队。</h2>
+<p>我们的策略之一是提供所有用于评估功能成功与否的工具。</p>
+<h3 id="速度">速度</h3>
+<p>这意味着我们需要将_大量_产品整合到一个平台上。我们预计至少需要20种产品。这需要大量的工程工作。</p>
+<p>开始招聘之后，我们问自己一个问题——我们如何构建公司结构，才能将速度放在首位？</p>
+<p>我碰巧去听了Twilio首席执行官Jeff Lawson的一场精彩演讲。演讲后我意识到，我应该问的是：“初创公司和大型企业，谁的人均交付量更高？” 显然是前者。因此，我们将PostHog的架构设计成一系列初创公司。</p>
+<h3 id="小团队">小团队</h3>
+<p>我们决定将 PostHog 分成一系列<a href="https://posthog.com/teams">小团队</a>，每个团队都像自己的创业公司一样运作，并完全拥有我们至少一款产品。</p>
+<p>与所有初创公司一样，这些小型团队遵循的原则是：</p>
+<ul>
+<li>可以自行决定在其产品中构建哪些内容</li>
+<li>尽可能避免外界干扰，确保运输安全。
+<ul>
+<li>默认情况下不进行产品管理</li>
+<li><a href="https://posthog.com/handbook/brand/process">默认情况下不提供产品设计</a></li>
+</ul>
+</li>
+<li>应该直接与自己的用户合作（直到它在 PostHog 平台内实现产品市场契合）</li>
+<li>应该很小</li>
+</ul>
+<h3 id="最小层级">最小层级</h3>
+<p>在PostHog，我们刻意将层级和人员管理者的数量控制在尽可能低的水平。这最大限度地提高了团队成员的自主性_，并_加快了交付速度，因为绝大多数情况下，你无需上报经理或等待审批。</p>
+<p>这意味着，如果您需要任何帮助或需要反馈问题，我们强烈建议您_直接_与负责相关事宜的个人或团队沟通。我们希望尽可能避免通过经理层层上报。90% 的情况下，这种方式能让您更快地获得所需信息。10% 的情况下，如果您的需求与该团队的目标不太一致，可能会造成一些小小的困惑。我们认为这种权衡是可以接受的——我们会找到解决办法。</p>
+<p>我们的执行团队规模很小——以下是他们的职责：</p>
+<ul>
+<li>为 PostHog 制定总体方向和战略</li>
+<li>决定要生产哪些产品</li>
+<li>做出关键的人事决策（例如，招聘谁、薪酬、纪律处分等）。</li>
+<li>确保复杂的跨团队项目顺利进行（例如定价）</li>
+</ul>
+<p>至于_其他所有事项_，您和/或您的小团队应该能够自行决定，或者直接与相关团队沟通。这包括决定在特定产品中下一步开发哪个功能。我们相信您会根据项目规模，酌情引入合适的人才。</p>
+<p>PostHog不适合那些有领地意识、为了“效率”而要求所有沟通都必须经过自己处理的管理者。长此以往，这样做会削弱员工的自主性，并导致我们最优秀的人才离职！</p>
+<h3 id="根据你的工作内容而定的头衔">根据你的工作内容而定的头衔</h3>
+<p>公司授予员工的头衔主要体现了他们的资历。</p>
+<p>这意味着，按照目前普遍采用的职称体系，_资历_比工作表现更重要。我们认为，资历不应决定决策方式——员工应该对其业务领域的决策拥有自主权。我们信任每一位员工，相信他们能够全面负责其业务领域。</p>
+<p>当您被要求在 LinkedIn 等平台上填写您的职位时，请尽可能清晰地说明您的工作重点。请不要过分强调您的资历。您可以随意发挥，展现一些个性。</p>
+<p>换句话说，你的头衔不是“PostHog 高级工程师”（PostHog 根本没有这个头衔），而是“PostHog 产品分析工程师”。</p>
+<h3 id="目标设定">目标设定</h3>
+<p>从零开始打造一家初创公司，你会面临一场生存危机。今天你可能在建一家健身房，明天可能就要开发一款面向会计师的软件产品。问题总是在变化。在 PostHog，我们会给每个小团队分配一个产品进行开发。（James 和 Tim 负责决定我们应该开发_哪些_产品，因为它们通常需要按顺序进行。）</p>
+<p>在<a href="https://posthog.com/blog/product-market-fit-game">产品与市场契合</a>，并且用户达到15人左右之后，我们意识到需要设定一些目标。我们首先采用了OKR（目标与关键成果），因为它比较标准。</p>
+<p><em>然而</em>，有一天，我们的一位工程师告诉我：“我意识到我需要改变我的目标。于是我开始重写手册中的 OKR。我意识到我花了很多时间纠结于措辞，而这些措辞对我实际需要开发的产品没有任何影响。” 这听起来很荒谬，所以我们决定直接称它们为“目标”。我们刻意不去纠结于措辞。</p>
+<p>我们选择忽略的另一个最佳实践是“目标应该以结果为导向”。这听起来很有道理，但是当一个产品团队（几乎这里每个团队都是产品团队）设定了一个以结果为导向的目标，比如“将激活率提高 20%”时，会发生什么呢？</p>
+<p>团队要么会决定要开发哪些功能，要么就搞不清楚该开发什么来实现目标。无论哪种情况，如果团队知道要达成什么目标，就应该确定需要发布哪些功能，并把这些功能写下来。这样更清晰，也更快捷。</p>
+<p>如果这份清单最终证明对我们的指标没有帮助呢？那就把目标换成别的。</p>
+<h2 id="我们如何打造一流的团队">我们如何打造一流的团队</h2>
+<h3 id="这里的人之所以能取得成功是因为他们具备以下性格特征">这里的人之所以能取得成功，是因为他们具备以下性格特征：</h3>
+<h4 id="mark真正的建设者mark"><mark>真正的建设者。</mark></h4>
+<p>有些人只是为了钱而工作，而那些真正找到自己热爱的事业的人则强大得多。</p>
+<h4 id="mark我们团队氛围轻松友好mark"><mark>我们团队氛围轻松友好。</mark></h4>
+<p>那些谦逊低调、灵活应变、充满活力且积极乐观的人能够带动周围的人。我们通常（但并非总是如此）会优先聘用经验更丰富的人，因为他们更容易做出有意义的贡献。在这里，工作有时会_非常_艰难——无论是规模化发展、发布复杂产品、处理大量的支持请求，还是尝试发布一个涉及多个团队的项目。我们需要那些不会气馁、能够协作、迭代并最终克服一切困难的人。我们会积极奖励那些真正做到这一点的人，而不是那些自我推销的人。</p>
+<h4 id="mark加入我们共赴这段旅程mark"><mark>加入我们，共赴这段旅程。</mark></h4>
+<p>有些人能激励人心，鼓舞他人。PostHog 拥有_巨大的_发展机遇，我们常常感觉自己抓住了千载难逢的机会。在这个阶段加入公司的人，都有可能让这份工作成为我们所有人梦寐以求的职业。我们需要那些为了彼此而全力以赴、奋力拼搏的人。我们不招唯利是图之辈。我们需要感受到，在这里，每个人都在创造他们职业生涯中最优秀的作品。</p>
+<h4 id="mark我们需要的是主动型人才而不是被动型人才mark"><mark>我们需要的是主动型人才，而不是被动型人才。<mark/></h4>
+<p>我们需要的是能够全面负责项目并顺利完成（或确保获得帮助）的积极主动者。虽然<a href="https://posthog.com/blog/what-is-a-product-engineer">“产品工程师”</a>这个职位名称并不常见，但我们内部确实存在这样的概念——他们能够理解高层需求，决定开发什么产品，与客户合作开发，并不断迭代改进。</p>
+<h3 id="加入我们的绝佳和糟糕理由">加入我们的绝佳（和糟糕）理由</h3>
+<p>首先，我们来谈谈<mark>你为什么要加入：<mark></p>
+<ul>
+<li>你想和一群杰出的人一起打造一款卓越的产品。</li>
+<li>你渴望发挥影响力并拥有自主权，而且能够很好地应对不确定性。</li>
+</ul>
+<p><mark>你为什么不应该加入：<mark></p>
+<ul>
+<li>
+<p>把我们公司的名字写进你的简历。如果你只是为了自我推销而加入，（讽刺的是）你反而不会发展顺利！不如申请一家规模更大的公司，他们能为你提供更清晰的职业发展路径。</p>
+</li>
+<li>
+<p>获得加薪。我们薪资优厚，但你必须_热爱_建筑行业才能在这里过得开心。你需要在这里工作很长时间才能真正享受到期权带来的好处。</p>
+</li>
+<li>
+<p>主要目的是领导他人。不情愿当管理者的人往往最优秀。管理他人并不会让我们支付更高的薪水。我们希望员工以身作则，在个人工作中做到卓越。</p>
+</li>
+</ul>
+<h3 id="一小群更强壮的人和补偿">一小群更强壮的人和补偿</h3>
+<p>就薪酬导致的员工流失而言，公平性与薪酬绝对值同等重要。我们采用透明的薪酬体系，甚至<a href="https://posthog.com/handbook/people/compensation">将其公开</a>。我们的目标是做到薪酬优厚且公平。</p>
+<p>对于期权，我们提供<a href="https://posthog.com/handbook/people/share-options">尽可能优惠的条款，</a>因为我们认为这样做是正确的。我们相信，如果项目成功，这将最大程度地提高人们看到巨大收益的可能性（使融资更容易_，也_让人们更有可能真正获得资金）。这能激励所有人。</p>
+<p>打造高效团队最难的部分之一，就是当员工表现不佳时，如何果断地让他们离开。我们做事果断，速度也比很多公司快。如果因为绩效问题而解雇员工，我们会提供四个月的遣散费，让他们有更多时间适应新的工作安排——这样，如果需要调整，我们也能更轻松地做出改变。</p>
+<p>虽然我们会提供直接反馈，但如果在解雇某人之前，我们没有看到反馈得到及时回应，我们会选择终止合作，以便他们能够找到更适合自己的工作，同时我们也能找到更适合该职位的团队成员。最终目标是确保团队中的每个人都能做出有意义的贡献。</p>
+<h3 id="除了招聘之外团队建设也在不断壮大">除了招聘之外，团队建设也在不断壮大。</h3>
+<p>我们聘请了众多才华横溢的人才自主研发产品，但有时通过收购或人才引进来增强工程能力和专业知识，也能帮助我们更快地推进产品开发。这种情况并不常见，所以我们通常需要被动应对——但我们制定了明确的原则，确保我们能够始终如一地处理此类情况。</p>
+<h4 id="收购招聘">收购招聘</h4>
+<p>这是一种高效的方式，可以招募优秀的工程师，而无需经历收购的种种复杂流程。对我们而言，人才收购意味着关闭您原来的公司，您和您的团队纯粹作为人才加入 PostHog，我们会根据实际情况将您匹配到我们的产品团队中。</p>
+<ul>
+<li><mark>所有人都必须经过我们标准的面试流程，</mark> 没有任何例外，即使是团队申请也不例外，以便每个人都能在同一时间段内完成整个流程。</li>
+<li>我们不为收购式招聘付费——我们直接招聘员工。有时，如果支付额外费用能更方便地招聘多人，我们会支付。
+<ul>
+<li>对于 YC 的创始人，我们有时会支付额外费用。这笔费用将作为额外补偿，在 PostHog 标准股权激励计划之外分期授予（而非一次性支付）。</li>
+<li>对于工程师，我们支付正常工资，试用期后有可能获得酌情奖金。</li>
+</ul>
+</li>
+<li>如果您离开 PostHog 去创办自己的公司，我们将不会收购或重新聘用您（尽管我们欢迎前员工转型为创始人后，按照正常的招聘流程再次申请加入我们）。</li>
+<li>我们绝不收购规模大于一个小型团队的公司。</li>
+</ul>
+<h4 id="采购产品">采购产品</h4>
+<h5 id="posthog-内部的-ip">PostHog 内部的 IP</h5>
+<p>默认情况下，我们对收购知识产权不感兴趣。如果我们能自行开发，我们会选择自己开发。唯一的例外是那些具有深厚技术价值且我们认为无法在内部复制的知识产权。</p>
+<p>如果我们想在 PostHog 平台内集成某个产品，但缺乏相关领域的专业知识，我们可能会收购其背后的团队——期望他们能将产品原生移植到我们的平台并完成用户迁移。在这种情况下，由于缺乏领域知识，项目交付可能需要很长时间，甚至会被我们降低优先级。即便如此，我们也只会在价格合适的情况下才会这样做。我们通常不会支付溢价，因为价值在于团队的专业知识，而非原有产品本身。</p>
+<h5 id="posthog-外部的-ip">PostHog 外部的 IP</h5>
+<p>我们不会收购完全独立于我们平台之外的产品（例如集成开发环境）。我们的战略经常变化，收购一个脱离我们平台的产品会给我们带来维持其运营的压力。</p>
+<p>例外情况是，如果该产品在技术上存在于平台之外，但直接增强了 PostHog 的价值（例如，在终端中使用 PostHog 数据的新方法），在这种情况下，我们可能会考虑收购或支付溢价。</p>
+<h5 id="现有客户">现有客户</h5>
+<p>我们通常不希望直接将您现有的客户转化为 PostHog 的客户。他们可能与我们的理想客户画像 (ICP) 不同，这会给团队带来压力，迫使他们开发出与我们原计划不同的产品。</p>
+<p>当然，我们欢迎您的客户注册 PostHog 并使用我们现有的产品以及即将推出的新产品，但我们不会向这些客户承诺提供功能或支持他们现有的工作流程。</p>
+<h4 id="为营销而进行的收购">为营销而进行的收购</h4>
+<p>我们对收购公司仅仅为了获取受众或市场营销资源不感兴趣。那样会分散精力，而且我们对自身市场营销团队的实力充满信心。如果我们需要更多市场营销资源，我们会直接进行投资。</p>
+<h2 id="我们重视什么">我们重视什么？</h2>
+<p>价值观，这些是我们所重视的行为准则。</p>
+<h3 id="你是司机">你是司机</h3>
+<p>我们只聘用真正优秀的人才，然后放手让他们去做。没有截止日期，协调工作也极少，我们不会对你指手画脚。</p>
+<p>作为回报，我们要求员工具备极高的责任感。要想成功，你必须有内在动力。</p>
+<p>PostHog 的优秀员工能够接受非常高的指导，并快速发货，以便尽快了解我们的计划是否能够经受住与客户的接触！</p>
+<p>做主导者意味着要亲力亲为_。_我们曾让非技术人员用 C++ 编写代码来开发硬件产品，我们的设计师会编写 Tailwind 和 React 代码，而不是仅仅在 Figma 中创建文件。我们的销售人员无需工程师支持就能解答技术问题——如果他们不知道答案，他们会深入学习，以便下次能够解答。我们鼓励员工掌握全栈技术，以减少依赖关系。</p>
+<p>创业不是单打独斗。我们是<a href="https://en.wikipedia.org/wiki/Ted_Lasso">《泰德·拉索》</a>（虽然我还没看完，但我希望他们能赢），不是<a href="https://en.wikipedia.org/wiki/The_Wolf_of_Wall_Street_(2013_film)">《华尔街之狼》</a>。我们希望你对_公司_和_团队_的成功负起高度责任。这意味着，当你发现问题时，要及时纠正或直接反馈——眼睁睁看着同事失败是绝对不允许的。</p>
+<h3 id="公开">公开</h3>
+<p>我们所有工作的默认原则是透明。这意味着我们会公开很多信息：<a href="https://github.com/posthog/posthog">我们的代码</a>、手册、<a href="https://posthog.com/handbook/strategy/roadmap">路线图</a>、<a href="https://posthog.com/handbook/people/compensation">我们如何支付</a>（甚至<a href="https://posthog.com/handbook/people/offboarding">解雇</a>）员工、<a href="https://posthog.com/handbook/why-does-posthog-exist">我们的战略是什么</a>，以及<a href="https://posthog.com/handbook/strategy/investors">我们从哪些方面筹集了资金</a>。</p>
+<p>在公司内部，透明文化意味着管理者会告诉你直接向相关人员提出反馈意见，而不是替你解决问题；意味着在公开的 Slack 频道中调整团队；意味着提供详细的财务信息、筹款活动的实时更新以及董事会幻灯片访问权限。</p>
+<p>对外保持透明有助于我们实现使命——我们会公开我们的工作内容，让世界能够借鉴我们的经验，并更好地与我们合作。知道成千上万的人会阅读我们的手册，会促使我们更清晰地思考。而且，我们还能免费建立信任，而其他供应商却往往选择不这样做。</p>
+<blockquote>
+<p>有些信息我们内部是公开透明的，但不应该公开。任何与公司财务相关的信息都属于严格机密，不得对外披露，包括我们目前的收入数据、年度合同价值 (ACV)、资金消耗率等等。公开新闻稿中的内容则可以公开！</p>
+</blockquote>
+<h3 id="多做一些怪异的事">多做一些怪异的事</h3>
+<p>我们的工作方式有很多不同之处。</p>
+<p>怪异之处或许就在于我们愿意采取的那些荒谬举措。这可能意味着第五次重新设计一个已经世界一流的网站。也可能意味着由一到五人的团队，成功地与市值超过2000亿美元的公司竞争，推出_所有_与客户数据相关的产品。</p>
+<p>我们并非为了标新立异而标新立异。我们希望公司能够完美契合我们的战略。我们组建的团队规模很小，而其他公司很少这样做，因为我们计划开发 50 多款产品。我们甚至在广告牌上张贴创始人的照片，因为没人敢这么做，这样才能引人注目。就连一些小细节——比如在定价页面上直接标明_价格——也都体现了我们的匠心。_</p>
+<h3 id="为什么现在不行">为什么现在不行？</h3>
+<p>“为什么不现在就做？”意味着要积极主动地把事情做完。做事不需要达成共识——把精力集中在交付对客户和公司最有价值的东西上，然后负责把它变成现实，而不是去争取别人的支持。如果你的新想法比之前的目标更有意义，你当然不应该等到下个季度才开始行动。</p>
+<p>在 PostHog，我们学到的最清晰的经验都来自于实践，而不是空想。如果我们还在犹豫要不要做某件事，最好的学习方法就是去尝试。制定过多的计划很少能帮助我们判断某件事是否可行，而行动才是最终的答案。</p>
+<p>有时候，这种方法可能意味着你会发布一些其他人不认同的东西。你必须做好放弃一些工作的准备，因为好处在于——无需获得大量批准即可开展工作，并且能够承担更多风险——这意味着我们所有人的行动速度都更快，犯错的代价也更低。</p>
+<p>为什么现在不行？这不仅仅意味着发布大型产品功能。它也可能意味着迅速解决小型客户支持问题，让客户满意——这也是人们向他人推荐我们的主要原因之一。</p>
+<h3 id="天生乐观">天生乐观</h3>
+<p>我们对自身发展方向拥有很大的掌控权，而且每次做决定都力求做到最好，这让我们受益匪浅。你会听到我们说“要进攻，不要防守”、“如何让业绩增长十倍”、“如何才能在十年后赢得胜利”。追求最佳结果，即使有时会失败，也远胜于从未尝试。</p>
+<p>当我们思考新想法时，这一点尤其如此——任何重大的新事物，乍听起来都可能相当荒谬，这几乎是必然的。你会听到PostHog发出这样的呐喊：“我们还没有打造出我们的核心功能，也许这就是。”事实并非如此，但这_恰恰_是关键所在。我们已经完成的工作远不如我们接下来要做的事情重要。如果我们让新想法难以与他人分享，它们最终将不再涌现。</p>
+<p>简单来说，我们希望身边都是充满热情、积极向上、快乐的人。PostHog 是一个拥有共同目标、携手共进的团队。积极​​向上、互相鼓励的氛围意味着每个人都能从中获得更多乐趣，并能在这里留下来，体验完整的旅程。</p>
+<p>更确切地说，PostHog 的野心非常大，因此需要一定的乐观精神。你不可能在不相信自己能够改变世界的情况下改变世界。人们不相信自己能够改变世界，这或许比人们无法改变世界更糟糕。</p>
+</section>
+
+    
+    
+    <footer class="mt-12 flex flex-wrap">
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/methodology"
+        >Methodology</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96"
+        >企业文化</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/posthog"
+        >PostHog</a
+      >
+      
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7/"
+        ><span>段永平的10条商业智慧</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<style>
+  
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);  
+    top: 0;
+    width: 240px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1400px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 260px);  
+      right: auto;
+      top: 8rem;  
+      width: 240px;
+      max-height: calc(100vh - 10rem);
+    }
+    
+     
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 260px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 1rem;  
+    line-height: 1.7;  
+  }
+
+  .article-content .prose p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 2em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.625em;  
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1.125em;  
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.9375rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.75em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1.125em;  
+    }
+  }
+
+
+  .toc-wrapper {
+     
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  .toc-header {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5);  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    padding-top: 0.25rem;
+    margin-top: -0.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border-radius: 20px 20px 0 0;  
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.8);  
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
+     
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
+     
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.875rem;
+    opacity: 0.65;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.8125rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  @media (max-width: 1399px) {
+    .toc-sidebar {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 100%;
+      max-height: none;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding-right: 0;
+    }
+  }
+
+   
+  @media (max-width: 1024px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    ©2025 fifteenbao
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PostHog on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/posthog/</link>
+    <description>Recent content in PostHog on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025 fifteenbao</copyright>
+    <lastBuildDate>Sat, 06 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/posthog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostHog 的公司手册</title>
+      <link>https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/</link>
+      <pubDate>Sat, 06 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;播客链接：&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/69130ad0c6bbe1b6659a0f8c&#34;&gt;## Vol.088 看不见的公司｜Posthog｜理想组织的运行方式&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;posthog-存在的意义是什么我们的使命和战略&#34;&gt;PostHog 存在的意义是什么？我们的使命和战略&lt;/h2&gt;&#xA;&lt;h3 id=&#34;我们的使命&#34;&gt;我们的使命&lt;/h3&gt;&#xA;&lt;p&gt;让每位开发者都能打造成功的产品。&lt;/p&gt;&#xA;&lt;h3 id=&#34;我们的策略&#34;&gt;我们的策略&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;成为所有产品上下文信息的权威来源&lt;/li&gt;&#xA;&lt;li&gt;为工程师提供构建成功产品所需的一切工具&lt;/li&gt;&#xA;&lt;li&gt;抢占先机&lt;/li&gt;&#xA;&lt;li&gt;实现迭代过程自动化&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;我们如何获取用户&#34;&gt;我们如何获取用户&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;mark&gt;围绕理想客户画像来打造产品&lt;/mark&gt;，营销就是创造有用的内容&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;我们为谁而建&#34;&gt;我们为谁而建&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我们将产品的目标用户定义为 ICP（即公司）和 Persona（即实际使用产品的人）。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;我们目前的icp&#34;&gt;我们目前的ICP&lt;/h3&gt;&#xA;&lt;p&gt;也就是我们&lt;a href=&#34;https://posthog.com/newsletter/ideal-customer-profile-framework&#34;&gt;理想的客户画像&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://posthog.com/product-engineers/how-to-create-user-personas&#34;&gt;如何打造用户画像&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;mark&gt;我们为那些在高增长型创业公司&lt;mark&gt;中打造产品的人们而打造产品。&lt;/p&gt;&#xA;&lt;p&gt;市场营销和客户成功团队应主要关注理想客户画像 (ICP)，但也应开发&lt;mark&gt;高潜力客户&lt;mark&gt;——即那些未来可能成为高增长客户的客户（例如 PostHog 在 YC 创业初期）。我们应该专注于维护&lt;mark&gt;业余爱好者用户&lt;mark&gt;，例如那些开发副业项目的工程师。我们希望成为技术型创始人添加到其产品中的首选工具。&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;高增长型初创企业&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;mark&gt;描述&lt;mark&gt;&lt;/td&gt;&#xA;          &lt;td&gt;那些产品与市场契合，并且正在快速扩大规模，吸引新客户、招聘员工、增加收入的初创公司。&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;mark&gt;标准&lt;mark&gt;&lt;/td&gt;&#xA;          &lt;td&gt;- 员工人数：15-500人  &lt;br&gt;- 月收入：10万美元以上_或_拥有庞大的用户群体  &lt;br&gt;- 已获得知名投资者融资  &lt;br&gt;- 尚未上市&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;mark&gt;它们为什么重要？&lt;mark&gt;&lt;/td&gt;&#xA;          &lt;td&gt;- 能够高效地实现盈利  &lt;br&gt;- 销售周期极短  &lt;br&gt;- 可作为早期创业公司/发展较慢公司的关键意见领袖  &lt;br&gt;- 对客户需求有深刻的见解 - 帮助我们打造更好的产品&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;mark&gt;示例&lt;mark&gt;&lt;/td&gt;&#xA;          &lt;td&gt;PostHog 从 B 轮融资到 IPO 的任何阶段，Supabase，ElevenLabs&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h4 id=&#34;1-icp-和用户画像不是一回事&#34;&gt;1. ICP 和用户画像不是一回事。&lt;/h4&gt;&#xA;&lt;p&gt;理想客户画像 (ICP) 定义了您的客户群体——即需要您产品的公司或团队。ICP 可以包含个人画像，但也应该包含以下内容：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;公司类型、 他们的客户是谁、他们有多少名员工、他们有多少用户、谁会使用您的产品、他们使用的工具或想要用你的产品替换的工具、他们重视的因素（例如设计、速度等）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;另一方面，用户画像则描述了特定用户的动机和痛点。&lt;/p&gt;&#xA;&lt;p&gt;&lt;mark&gt;为什么这很重要？&lt;mark&gt; 用户画像不够具体。它无法帮助你制定市场推广策略，也无法帮助你确定产品定价。围绕用户画像构建业务，很容易打造出用户喜欢但却不愿付费的产品。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
