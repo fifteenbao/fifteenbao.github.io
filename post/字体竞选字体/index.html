@@ -100,10 +100,6 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
 
   
   
-  
-  
-  
-  <link rel="preload" as="image" href="https://fifteenbao.com/theme.png" />
 
   
   
@@ -144,6 +140,27 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
 
   
   <meta name="generator" content="Hugo 0.140.0">
+
+  
+  <script>
+    
+    
+    (function() {
+      if (typeof window !== 'undefined' && typeof window.__TAURI_METADATA__ === 'undefined') {
+        
+        try {
+          Object.defineProperty(window, '__TAURI_METADATA__', {
+            value: { __tauri_internal__: { windows: { main: null } } },
+            writable: true,
+            configurable: true
+          });
+        } catch (e) {
+          
+          window.__TAURI_METADATA__ = { __tauri_internal__: { windows: { main: null } } };
+        }
+      }
+    })();
+  </script>
 
   
   <script>
@@ -249,6 +266,15 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
         metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
         htmlClass[isDark ? 'add' : 'remove']('dark');
         localStorage.setItem('dark', isDark);
+        
+        
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
+          }
+        });
       };
 
       
@@ -573,7 +599,9 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       
       <div class="lg:hidden mt-12 flex justify-center">
         <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 "
+          style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+          data-theme-bg="png"
           role="button"
           aria-label="Dark"
         ></div>
@@ -597,7 +625,9 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
         
         <div class="hidden lg:flex items-center ml-2">
           <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 [background:url(/theme.png)_center/cover_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 "
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+            data-theme-bg="png"
             role="button"
             aria-label="Dark"
           ></div>
