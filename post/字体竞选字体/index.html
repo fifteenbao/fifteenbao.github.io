@@ -191,6 +191,20 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   
   
   
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYTD0RBTY');
+        }
+      </script>
   
   
   <meta itemprop="name" content="Gotham｜Sharp Sans｜Optima 字体的背后">
@@ -225,6 +239,15 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   <link rel="canonical" href="https://fifteenbao.com/post/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/" />
   
   
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4BYTD0RBTY');
+  </script>
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white">
@@ -236,7 +259,15 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       >
     </div>
 
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-4BYTD0RBTY');
+</script>
     
     <div
       class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
@@ -262,29 +293,78 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       
       const metaTheme = document.querySelector('meta[name="theme-color"]');
       const lightBg = '#faf8f1'.replace(/"/g, '');
+      
+      
+      const updateButtonPosition = (isDark) => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            
+            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
+          }
+        });
+      };
+      
       const setDark = (isDark) => {
         metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
         htmlClass[isDark ? 'add' : 'remove']('dark');
         localStorage.setItem('dark', isDark);
         
         
-        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
-        themeButtons.forEach(btn => {
-          const bgType = btn.getAttribute('data-theme-bg');
-          if (bgType === 'png') {
-            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
-          }
+        
+        requestAnimationFrame(() => {
+          updateButtonPosition(isDark);
         });
       };
 
       
       const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-      if (htmlClass.contains('dark')) {
-        setDark(true);
-      } else {
+      const initTheme = () => {
+        let shouldBeDark;
+        if (htmlClass.contains('dark')) {
+          shouldBeDark = true;
+        } else {
+          const darkVal = localStorage.getItem('dark');
+          shouldBeDark = darkVal ? darkVal === 'true' : darkScheme.matches;
+        }
+        setDark(shouldBeDark);
+      };
+      
+      
+      initTheme();
+      
+      
+      const ensureButtonPosition = () => {
         const darkVal = localStorage.getItem('dark');
-        setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+        const currentDark = darkVal === 'true' || (darkVal === null && darkScheme.matches);
+        updateButtonPosition(currentDark);
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ensureButtonPosition);
+      } else {
+        
+        requestAnimationFrame(ensureButtonPosition);
       }
+
+      
+      const styleEl = document.createElement('style');
+      styleEl.id = 'theme-toggle-style';
+      styleEl.textContent = `
+        /* Light mode: keep original colors */
+        .btn-dark[data-theme-bg="png"],
+        .btn-dark-mobile[data-theme-bg="png"] {
+          filter: none;
+        }
+        /* Dark mode: recolor moon to warm yellow */
+        html.dark .btn-dark[data-theme-bg="png"],
+        html.dark .btn-dark-mobile[data-theme-bg="png"] {
+          filter: grayscale(1) sepia(1) saturate(8) hue-rotate(-20deg) brightness(1.15);
+        }
+
+      `;
+      document.head.appendChild(styleEl);
 
       
       darkScheme.addEventListener('change', (event) => {
@@ -597,9 +677,9 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       
 
       
-      <div class="lg:hidden mt-12 flex justify-center">
+      <div class="lg:hidden mt-12 w-full flex items-center justify-center">
         <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 "
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
           style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
           data-theme-bg="png"
           role="button"
@@ -609,11 +689,11 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
 
       
       <nav
-        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
       >
         
         <a
-          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6 rss-icon"
           style="--url: url(./rss.svg)"
           href="https://fifteenbao.com/index.xml"
           target="_blank"
@@ -625,7 +705,7 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
         
         <div class="hidden lg:flex items-center ml-2">
           <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12 "
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
             style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
             data-theme-bg="png"
             role="button"
@@ -1004,39 +1084,29 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   .dark .toc-wrapper {
     background: rgba(0, 0, 0, 0.7);
     border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   }
 
    
   .toc-wrapper:hover {
     background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
   }
 
    
   .dark .toc-wrapper:hover {
     background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.4), 0 4px 8px -2px rgba(0, 0, 0, 0.3);
   }
 
   .toc-header {
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
+    margin: -1rem;
+    padding: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.5);  
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1;
-    padding-top: 0.25rem;
-    margin-top: -0.25rem;
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-radius: 20px 20px 0 0;  
+
   }
 
   .dark .toc-header {
@@ -1058,6 +1128,7 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
 
   .toc-content {
     line-height: 1.75;
+    margin-top: 2rem;
   }
 
   .toc-content ul {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on fifteenbao</title>
+    <link>https://fifteenbao.com/categories/tools/</link>
+    <description>Recent content in Tools on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025 fifteenbao</copyright>
+    <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iPhone &#43; 飞书自动化记账</title>
+      <link>https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/</guid>
+      <description>&lt;p&gt;最近又在折腾回了 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅&#xA;刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，&lt;a href=&#34;https://www.toocool.cc/p/2055&#34;&gt;卖iPhone自动记账快捷指令+飞书模板，赚了50万｜附教程&lt;/a&gt;，&#xA;咱也整理一下准备小红书上链接！赚它个五块十块！&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建飞书多维表格&#34;&gt;创建飞书多维表格&lt;/h2&gt;&#xA;&lt;p&gt;优化了一下教程中模版，并添加了仪表盘&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建机器人助手&#34;&gt;创建机器人助手&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;可直接参考50万教程&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;需要开通飞书机器人助手，点击链接&#xA;&lt;a href=&#34;https://botbuilder.feishu.cn/&#34;&gt;https://botbuilder.feishu.cn/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击Webhook触发，并在右侧弹出框中选择 &lt;mark&gt; Webhook触发 &lt;/mark&gt;：&lt;/p&gt;&#xA;&lt;p&gt;填写参数&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{&#xA;&amp;#34;amount&amp;#34;:100,&#xA;&amp;#34;category&amp;#34;:&amp;#34;购物&amp;#34;,&#xA;&amp;#34;note&amp;#34;:&amp;#34;hello&amp;#34;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;也尝试添加过 &lt;code&gt;date&lt;/code&gt; 之类的， 发现不如直接引用表格添加时间来的方便。&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建快捷指令&#34;&gt;创建快捷指令&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;mark&gt;把捷径中的地址修改成刚刚那个Webhook的地址&lt;/mark&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;设置触发&#34;&gt;设置触发&lt;/h2&gt;&#xA;&lt;p&gt;这里我用了侧边的操作按钮调用快捷方式&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在 Hugo 使用 Obsidian 编辑</title>
+      <link>https://fifteenbao.com/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</link>
+      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/tech%E7%94%A8-obsidian-%E7%BC%96%E8%BE%91-blog/</guid>
+      <description>&lt;h1 id=&#34;导入&#34;&gt;导入&lt;/h1&gt;&#xA;&lt;p&gt;左侧边栏 &lt;code&gt;导入其他库 &amp;gt; 打开库文件&lt;/code&gt; ，导入 &lt;code&gt;hugo&lt;/code&gt;文件夹，其实只有 &lt;code&gt;/content/post&lt;/code&gt; 用得到，想直接使用hugo自定义的模版就导入所有目录。&lt;/p&gt;&#xA;&lt;h1 id=&#34;头字段-frontmatter&#34;&gt;头字段 FrontMatter&lt;/h1&gt;&#xA;&lt;p&gt;Markdown 最前面的头字段，类似于这样&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;title = &amp;#39;spf13-vim 3.0 release and new website&amp;#39;&#xA;date = &amp;#39;2023-05-24&amp;#39; &#xA;categories = [&amp;#39;Development&amp;#39;, &amp;#39;VIM&amp;#39;] &#xA;description = &amp;#39;spf13-vim is a cross platform distribution of vim plugins and resources for Vim.&amp;#39; &#xA;slug = &amp;#39;spf13-vim-3-0-release-and-new-website&amp;#39; &#xA;tags = [&amp;#39;.vimrc&amp;#39;, &amp;#39;plugins&amp;#39;, &amp;#39;spf13-vim&amp;#39;, &amp;#39;vim&amp;#39;] &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通常储模板文件存在 &lt;code&gt;/archetypes&lt;/code&gt; 中，用hugo命令 &lt;code&gt;hugo new posts/XXX.md&lt;/code&gt; 就会自动搜索和套用， &lt;a href=&#34;https://gohugo.io/content-management/front-matter/&#34;&gt;HUgo 官方教程&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;在 Obsidian &lt;code&gt;设置 &amp;gt; 核心插件 &amp;gt; 模版&lt;/code&gt; 添加  &lt;code&gt;/archetypes&lt;/code&gt; ，就可以在左侧边栏直接插入头字段了。&lt;/p&gt;&#xA;&lt;h1 id=&#34;其他设置&#34;&gt;其他设置&lt;/h1&gt;&#xA;&lt;p&gt;还有一些第三方插件，应该会更方便一些&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

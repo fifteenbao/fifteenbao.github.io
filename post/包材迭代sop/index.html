@@ -1,0 +1,1902 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="cn"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <title>包材迭代SOP - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋
+制定目的
+
+  
+      
+          现有真实问题
+          本SOP V2.0解決措施
+      
+  
+  
+      
+          设计源文件缺失/被覆盖
+          四次强制存档&#43;V1.0永久归档点＋所有新版本回流同一目录
+      
+      
+          设计稿与大货BOM不匹配
+          Released版为唯一量产依据&#43;强制推ERP&#43;供应商回签
+      
+      
+          人员流动导致“人问人”
+          完整流程图＋标准归档结构＋电子流程
+      
+      
+          大客户需求清单未存档
+          KA路径强制输出并永久存档《客户需求确认单》
+      
+      
+          多语言文本缺失、手动改导致错误
+          M分支强制交付《多语言文案包Excel》，设计仅调用
+      
+  
+
+版本号语义规范
+
+X (Major Version - 主版本): 结构级变更。涉及刀模修改、材质变更、供应商更换。需要重新打样和测试。
+Y (Minor Version - 次版本): 内容级变更。涉及文案布局大改、新增语言、Logo 更新，但刀模不变。
+Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局部色值微调、二维码更新。
+
+
+  
+      
+          版本格式
+          含义
+          典型场景
+          是否需实物打
+      
+  
+  
+      
+          
+          初版 Draft
+          
+          ×
+      
+      
+          
+          迭代Review
+          
+          ×
+      
+      
+          Approved
+          审核通过 Approved
+          
+          
+      
+      
+          V1.0.0
+          
+          首次量产版 Released V1.0完整走全流程、设计源文件存档
+          
+      
+      
+          V1.0.1
+          修订版（Patch）
+          错别字、二维码、局部色值微调
+          
+      
+      
+          V1.1.0
+          次版本（Minor）
+          新增语言、合规图标、品牌色升级
+          
+      
+      
+          V2.0.0
+          主版本（Major）
+          
+          
+      
+  
+
+流程图
+%%{init: {
+  &#34;theme&#34;: &#34;base&#34;,
+  &#34;themeVariables&#34;: {
+    &#34;primaryColor&#34;: &#34;#e3f2fd&#34;,
+    &#34;primaryTextColor&#34;: &#34;#0d47a1&#34;,
+    &#34;primaryBorderColor&#34;: &#34;#1565c0&#34;,
+    &#34;lineColor&#34;: &#34;#1565c0&#34;
+  },
+  &#34;flowchart&#34;: {
+    &#34;layout&#34;: &#34;dagre&#34;
+  }
+}}%%
+flowchart TB
+  subgraph STD[&#34;标品路径&#34;]
+    STD3[&#34;内部兼容性测试&#34;]
+    STD2[&#34;调用标准A分支\n(Master刀模&#43;标准材质)&#34;]
+    STD1[&#34;PM定义产品矩阵&#34;]
+  end
+  subgraph KA[&#34;非标/KA路径&#34;]
+    KA3[&#34;客户签署确认单&#34;]
+    KA2[&#34;合并执行 M分支 &#43; 定制A分支\n(客户Logo&#43;专色&#43;指定结构/材质)&#34;]
+    KA1[&#34;销售/KA导入客户需求&#34;]
+  end
+  subgraph G[&#34;G分支：法规合规（标品&amp;非标通用）&#34;]
+    G3[&#34;BOM合规声明&#34;]
+    G2[&#34;输出合规清单&#34;]
+    G1[&#34;合规审核&#34;]
+  end
+  subgraph MainFlow[&#34;首次设计 → V1.0 量产发布&#34;]
+    direction TB
+    Design[&#34;设计执行&#34;]
+    Ready[&#34;所有输入就绪&#34;]
+    A1[&#34;存档 Draft V0.1~V0.8&#34;]
+    Review[&#34;多部门联合审核&#34;]
+    A2[&#34;存档 Review V0.9&#34;]
+    Sample[&#34;供应商打样&#34;]
+    QA[&#34;QA实物验证&#34;]
+    FinalGate[&#34;Final Gate终审&#34;]
+    Approved[&#34;Approved V1.0&#34;]
+    A3[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI&#43;PDF&#43;刀模&#43;字体&#43;签批扫描件&#34;]
+    Release[&#34;Released V1.0\nBOM冻结 → ERP &#43; 供应商&#34;]
+    A4[&#34;存档 Released版 &#43; 回执&#34;]
+  end
+  subgraph Trigger[&#34;ECR 变更触发&#34;]
+    direction LR
+    T1[&#34;G端：法规强制更新\n(Mandatory)&#34;]
+    T2[&#34;A端：结构/降本\n(Functional)&#34;]
+    T3[&#34;M端：文案/Logo迭代\n(Optional)&#34;]
+  end
+  subgraph PostV1[&#34;V1.0之后变更全流程（ECR → ECO → Cut-over）&#34;]
+    direction TB
+    Trigger
+    Stock[&#34;全球库存评估&#34;]
+    Impact{&#34;变更性质判定&#34;}
+    Major[&#34;重大变更\n(Major)&#34;]
+    Minor[&#34;一般变更\n(Minor)&#34;]
+    Mod[&#34;基于V1.0源文件修改\n→ V1.1 / V2.0 Draft&#34;]
+    Verify{&#34;验证方式&#34;}
+    Digital[&#34;数码样确认\n(仅视觉变更)&#34;]
+    Physical[&#34;实物打样&#43;试装\n(结构/工艺变更)&#34;]
+    ECO_Sign[&#34;ECO正式签发&#34;]
+    Scrap[&#34;强制报废旧库存\n(Scrap)&#34;]
+    Rework[&#34;库存重工\n(Rework)&#34;]
+    Running[&#34;自然切换\n(Running Change)&#34;]
+    NewRelease((&#34;Release V1.1或V2.0\n→ ERP &#43; 供应商&#34;))
+    n1[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI&#43;PDF&#43;刀模&#43;字体&#43;签批扫描件&#34;]
+  end
+  subgraph Version[&#34;设计稿状态总览&#34;]
+    direction LR
+    VRel[&#34;Released V1.0&#34;]
+    VA[&#34;Approved&#34;]
+    VR[&#34;Review&#34;]
+    VD[&#34;Draft&#34;]
+    VNew[&#34;V1.1 / V2.0\n(经ECO)&#34;]
+  end
+
+  STD1 --&gt; STD2
+  STD2 --&gt; STD3
+  KA1 --&gt; KA2
+  KA2 --&gt; KA3
+  G1 --&gt; G2
+  G2 --&gt; G3
+  Ready --&gt; Design &amp; G1
+  Design --&gt; A1
+  A1 --&gt; Review
+  Review -- NG --&gt; Design
+  Review -- OK --&gt; Sample
+  Sample --&gt; A2
+  QA -- NG --&gt; Design
+  QA -- OK --&gt; FinalGate
+  FinalGate --&gt; Approved
+  Approved --&gt; A3
+  A3 --&gt; Release
+  Release --&gt; A4
+  Start((&#34;项目立项&#34;)) --&gt; Decision{&#34;包材属性判定&#34;}
+  Decision -- 标品 --&gt; STD1
+  Decision -- 非标/KA --&gt; KA1
+  STD3 --&gt; Ready
+  KA3 --&gt; Ready
+  G3 --&gt; Design
+  A4 --&gt; Live((&#34;V1.0 在产\nLive Production&#34;))
+  Live --&gt; T1 &amp; T2 &amp; T3
+  T1 --&gt; Stock
+  T2 --&gt; Stock
+  T3 --&gt; Stock
+  Stock --&gt; Impact
+  Impact -- 结构/材质/法规强制 --&gt; Major
+  Impact -- 仅文案/视觉微调 --&gt; Minor
+  Major --&gt; Mod
+  Minor --&gt; Mod
+  Mod --&gt; Verify
+  Verify -- 结构/产线影响 --&gt; Physical
+  Verify -- 仅平面 --&gt; Digital
+  Physical --&gt; ECO_Sign
+  Digital --&gt; ECO_Sign
+  ECO_Sign -- 法规/安全/功能缺陷 --&gt; Scrap
+  ECO_Sign -- 成本可控 --&gt; Rework
+  ECO_Sign -- 非紧急 --&gt; Running
+  Scrap --&gt; NewRelease
+  Rework --&gt; NewRelease
+  Running --&gt; NewRelease
+  VD --&gt; VR
+  VR --&gt; VA
+  VA --&gt; VRel
+  VRel -.-&gt; VNew
+  VNew -.-&gt; VRel
+  A2 --&gt; QA
+  NewRelease --&gt; n1
+
+  STD3:::std
+  STD2:::std
+  STD1:::std
+  KA3:::ka
+  KA2:::ka
+  KA1:::ka
+  G3:::g
+  G2:::g
+  G1:::g
+  A1:::archive
+  A2:::archive
+  A3:::archive
+  A3:::critical
+  Release:::live
+  A4:::archive
+  T1:::change
+  T2:::change
+  T3:::change
+  Major:::change
+  Minor:::change
+  Scrap:::change
+  Rework:::change
+  Running:::change
+  NewRelease:::live
+  n1:::critical
+  Start:::start
+  Live:::start
+
+  classDef start fill:#1e88e5,stroke:#0d47a1,stroke-width:4px,color:#fff,font-weight:bold
+  classDef live fill:#4caf50,stroke:#2e7d32,stroke-width:4px,color:#fff,font-weight:bold
+  classDef archive fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px,color:#1b5e20,font-weight:bold
+  classDef std fill:#e8f5e8,stroke:#43a047
+  classDef ka fill:#fff3e0,stroke:#f57c00
+  classDef g fill:#fffde7,stroke:#f9a825,color:#e65100
+  classDef change fill:#fff3e0,stroke:#ef6c00
+  classDef critical fill:#ffebee,stroke:#c62828,stroke-width:4px,color:#b71c1c,font-weight:bold
+" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+
+  
+  
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://fifteenbao.com/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://fifteenbao.com/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.140.0">
+
+  
+  <script>
+    
+    
+    (function() {
+      if (typeof window !== 'undefined' && typeof window.__TAURI_METADATA__ === 'undefined') {
+        
+        try {
+          Object.defineProperty(window, '__TAURI_METADATA__', {
+            value: { __tauri_internal__: { windows: { main: null } } },
+            writable: true,
+            configurable: true
+          });
+        } catch (e) {
+          
+          window.__TAURI_METADATA__ = { __tauri_internal__: { windows: { main: null } } };
+        }
+      }
+    })();
+  </script>
+
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  
+  
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYTD0RBTY');
+        }
+      </script>
+  
+  
+  <meta itemprop="name" content="包材迭代SOP">
+  <meta itemprop="description" content="依旧是公司带我快速成长的日子">
+  <meta itemprop="datePublished" content="2025-12-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="436">
+  <meta itemprop="keywords" content="SOP,包装设计">
+  
+  <meta property="og:url" content="https://fifteenbao.com/post/%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/">
+  <meta property="og:site_name" content="fifteenbao">
+  <meta property="og:title" content="包材迭代SOP">
+  <meta property="og:description" content="依旧是公司带我快速成长的日子">
+  <meta property="og:locale" content="cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-12-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-09T00:00:00+00:00">
+    <meta property="article:tag" content="SOP">
+    <meta property="article:tag" content="包装设计">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="包材迭代SOP">
+  <meta name="twitter:description" content="依旧是公司带我快速成长的日子">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://fifteenbao.com/post/%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/" />
+  
+  
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4BYTD0RBTY');
+  </script>
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4BYTD0RBTY');
+</script>
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    
+
+    <script>
+      
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      btnMenu.addEventListener('click', () => {
+        htmlClass.toggle('open');
+      });
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      
+      
+      const updateButtonPosition = (isDark) => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            
+            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
+          }
+        });
+      };
+      
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+        
+        
+        
+        requestAnimationFrame(() => {
+          updateButtonPosition(isDark);
+        });
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const initTheme = () => {
+        let shouldBeDark;
+        if (htmlClass.contains('dark')) {
+          shouldBeDark = true;
+        } else {
+          const darkVal = localStorage.getItem('dark');
+          shouldBeDark = darkVal ? darkVal === 'true' : darkScheme.matches;
+        }
+        setDark(shouldBeDark);
+      };
+      
+      
+      initTheme();
+      
+      
+      const ensureButtonPosition = () => {
+        const darkVal = localStorage.getItem('dark');
+        const currentDark = darkVal === 'true' || (darkVal === null && darkScheme.matches);
+        updateButtonPosition(currentDark);
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ensureButtonPosition);
+      } else {
+        
+        requestAnimationFrame(ensureButtonPosition);
+      }
+
+      
+      const styleEl = document.createElement('style');
+      styleEl.id = 'theme-toggle-style';
+      styleEl.textContent = `
+        /* Light mode: keep original colors */
+        .btn-dark[data-theme-bg="png"],
+        .btn-dark-mobile[data-theme-bg="png"] {
+          filter: none;
+        }
+        /* Dark mode: recolor moon to warm yellow */
+        html.dark .btn-dark[data-theme-bg="png"],
+        html.dark .btn-dark-mobile[data-theme-bg="png"] {
+          filter: grayscale(1) sepia(1) saturate(8) hue-rotate(-20deg) brightness(1.15);
+        }
+
+      `;
+      document.head.appendChild(styleEl);
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/categories/"
+          >Categories</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden mt-12 w-full flex items-center justify-center">
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      <nav
+        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+      >
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6 rss-icon"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="hidden lg:flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#制定目的">制定目的</a></li>
+    <li><a href="#版本号语义规范">版本号语义规范</a></li>
+    <li><a href="#流程图">流程图</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">包材迭代SOP</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>Dec 9, 2025</time>
+        
+        
+        
+        
+      </div>
+      
+    </header>
+
+    <section><p>包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋</p>
+<h2 id="制定目的">制定目的</h2>
+<table>
+  <thead>
+      <tr>
+          <th>现有真实问题</th>
+          <th>本SOP V2.0解決措施</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>设计源文件缺失/被覆盖</td>
+          <td>四次强制存档+V1.0永久归档点＋所有新版本回流同一目录</td>
+      </tr>
+      <tr>
+          <td>设计稿与大货BOM不匹配</td>
+          <td>Released版为唯一量产依据+强制推ERP+供应商回签</td>
+      </tr>
+      <tr>
+          <td>人员流动导致“人问人”</td>
+          <td>完整流程图＋标准归档结构＋电子流程</td>
+      </tr>
+      <tr>
+          <td>大客户需求清单未存档</td>
+          <td>KA路径强制输出并永久存档《客户需求确认单》</td>
+      </tr>
+      <tr>
+          <td>多语言文本缺失、手动改导致错误</td>
+          <td>M分支强制交付《多语言文案包Excel》，设计仅调用</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="版本号语义规范">版本号语义规范</h2>
+<ul>
+<li>X (Major Version - 主版本): 结构级变更。涉及刀模修改、材质变更、供应商更换。需要重新打样和测试。</li>
+<li>Y (Minor Version - 次版本): 内容级变更。涉及文案布局大改、新增语言、Logo 更新，但刀模不变。</li>
+<li>Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局部色值微调、二维码更新。</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>版本格式</th>
+          <th>含义</th>
+          <th>典型场景</th>
+          <th>是否需实物打</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>初版 Draft</td>
+          <td></td>
+          <td>×</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>迭代Review</td>
+          <td></td>
+          <td>×</td>
+      </tr>
+      <tr>
+          <td>Approved</td>
+          <td>审核通过 Approved</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.0.0</td>
+          <td></td>
+          <td>首次量产版 Released V1.0完整走全流程、设计源文件存档</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.0.1</td>
+          <td>修订版（Patch）</td>
+          <td>错别字、二维码、局部色值微调</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.1.0</td>
+          <td>次版本（Minor）</td>
+          <td>新增语言、合规图标、品牌色升级</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V2.0.0</td>
+          <td>主版本（Major）</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="流程图">流程图</h2>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">%%{init: {
+  &#34;theme&#34;: &#34;base&#34;,
+  &#34;themeVariables&#34;: {
+    &#34;primaryColor&#34;: &#34;#e3f2fd&#34;,
+    &#34;primaryTextColor&#34;: &#34;#0d47a1&#34;,
+    &#34;primaryBorderColor&#34;: &#34;#1565c0&#34;,
+    &#34;lineColor&#34;: &#34;#1565c0&#34;
+  },
+  &#34;flowchart&#34;: {
+    &#34;layout&#34;: &#34;dagre&#34;
+  }
+}}%%
+flowchart TB
+  subgraph STD[&#34;标品路径&#34;]
+    STD3[&#34;内部兼容性测试&#34;]
+    STD2[&#34;调用标准A分支\n(Master刀模+标准材质)&#34;]
+    STD1[&#34;PM定义产品矩阵&#34;]
+  end
+  subgraph KA[&#34;非标/KA路径&#34;]
+    KA3[&#34;客户签署确认单&#34;]
+    KA2[&#34;合并执行 M分支 + 定制A分支\n(客户Logo+专色+指定结构/材质)&#34;]
+    KA1[&#34;销售/KA导入客户需求&#34;]
+  end
+  subgraph G[&#34;G分支：法规合规（标品&amp;非标通用）&#34;]
+    G3[&#34;BOM合规声明&#34;]
+    G2[&#34;输出合规清单&#34;]
+    G1[&#34;合规审核&#34;]
+  end
+  subgraph MainFlow[&#34;首次设计 → V1.0 量产发布&#34;]
+    direction TB
+    Design[&#34;设计执行&#34;]
+    Ready[&#34;所有输入就绪&#34;]
+    A1[&#34;存档 Draft V0.1~V0.8&#34;]
+    Review[&#34;多部门联合审核&#34;]
+    A2[&#34;存档 Review V0.9&#34;]
+    Sample[&#34;供应商打样&#34;]
+    QA[&#34;QA实物验证&#34;]
+    FinalGate[&#34;Final Gate终审&#34;]
+    Approved[&#34;Approved V1.0&#34;]
+    A3[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件&#34;]
+    Release[&#34;Released V1.0\nBOM冻结 → ERP + 供应商&#34;]
+    A4[&#34;存档 Released版 + 回执&#34;]
+  end
+  subgraph Trigger[&#34;ECR 变更触发&#34;]
+    direction LR
+    T1[&#34;G端：法规强制更新\n(Mandatory)&#34;]
+    T2[&#34;A端：结构/降本\n(Functional)&#34;]
+    T3[&#34;M端：文案/Logo迭代\n(Optional)&#34;]
+  end
+  subgraph PostV1[&#34;V1.0之后变更全流程（ECR → ECO → Cut-over）&#34;]
+    direction TB
+    Trigger
+    Stock[&#34;全球库存评估&#34;]
+    Impact{&#34;变更性质判定&#34;}
+    Major[&#34;重大变更\n(Major)&#34;]
+    Minor[&#34;一般变更\n(Minor)&#34;]
+    Mod[&#34;基于V1.0源文件修改\n→ V1.1 / V2.0 Draft&#34;]
+    Verify{&#34;验证方式&#34;}
+    Digital[&#34;数码样确认\n(仅视觉变更)&#34;]
+    Physical[&#34;实物打样+试装\n(结构/工艺变更)&#34;]
+    ECO_Sign[&#34;ECO正式签发&#34;]
+    Scrap[&#34;强制报废旧库存\n(Scrap)&#34;]
+    Rework[&#34;库存重工\n(Rework)&#34;]
+    Running[&#34;自然切换\n(Running Change)&#34;]
+    NewRelease((&#34;Release V1.1或V2.0\n→ ERP + 供应商&#34;))
+    n1[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件&#34;]
+  end
+  subgraph Version[&#34;设计稿状态总览&#34;]
+    direction LR
+    VRel[&#34;Released V1.0&#34;]
+    VA[&#34;Approved&#34;]
+    VR[&#34;Review&#34;]
+    VD[&#34;Draft&#34;]
+    VNew[&#34;V1.1 / V2.0\n(经ECO)&#34;]
+  end
+
+  STD1 --&gt; STD2
+  STD2 --&gt; STD3
+  KA1 --&gt; KA2
+  KA2 --&gt; KA3
+  G1 --&gt; G2
+  G2 --&gt; G3
+  Ready --&gt; Design &amp; G1
+  Design --&gt; A1
+  A1 --&gt; Review
+  Review -- NG --&gt; Design
+  Review -- OK --&gt; Sample
+  Sample --&gt; A2
+  QA -- NG --&gt; Design
+  QA -- OK --&gt; FinalGate
+  FinalGate --&gt; Approved
+  Approved --&gt; A3
+  A3 --&gt; Release
+  Release --&gt; A4
+  Start((&#34;项目立项&#34;)) --&gt; Decision{&#34;包材属性判定&#34;}
+  Decision -- 标品 --&gt; STD1
+  Decision -- 非标/KA --&gt; KA1
+  STD3 --&gt; Ready
+  KA3 --&gt; Ready
+  G3 --&gt; Design
+  A4 --&gt; Live((&#34;V1.0 在产\nLive Production&#34;))
+  Live --&gt; T1 &amp; T2 &amp; T3
+  T1 --&gt; Stock
+  T2 --&gt; Stock
+  T3 --&gt; Stock
+  Stock --&gt; Impact
+  Impact -- 结构/材质/法规强制 --&gt; Major
+  Impact -- 仅文案/视觉微调 --&gt; Minor
+  Major --&gt; Mod
+  Minor --&gt; Mod
+  Mod --&gt; Verify
+  Verify -- 结构/产线影响 --&gt; Physical
+  Verify -- 仅平面 --&gt; Digital
+  Physical --&gt; ECO_Sign
+  Digital --&gt; ECO_Sign
+  ECO_Sign -- 法规/安全/功能缺陷 --&gt; Scrap
+  ECO_Sign -- 成本可控 --&gt; Rework
+  ECO_Sign -- 非紧急 --&gt; Running
+  Scrap --&gt; NewRelease
+  Rework --&gt; NewRelease
+  Running --&gt; NewRelease
+  VD --&gt; VR
+  VR --&gt; VA
+  VA --&gt; VRel
+  VRel -.-&gt; VNew
+  VNew -.-&gt; VRel
+  A2 --&gt; QA
+  NewRelease --&gt; n1
+
+  STD3:::std
+  STD2:::std
+  STD1:::std
+  KA3:::ka
+  KA2:::ka
+  KA1:::ka
+  G3:::g
+  G2:::g
+  G1:::g
+  A1:::archive
+  A2:::archive
+  A3:::archive
+  A3:::critical
+  Release:::live
+  A4:::archive
+  T1:::change
+  T2:::change
+  T3:::change
+  Major:::change
+  Minor:::change
+  Scrap:::change
+  Rework:::change
+  Running:::change
+  NewRelease:::live
+  n1:::critical
+  Start:::start
+  Live:::start
+
+  classDef start fill:#1e88e5,stroke:#0d47a1,stroke-width:4px,color:#fff,font-weight:bold
+  classDef live fill:#4caf50,stroke:#2e7d32,stroke-width:4px,color:#fff,font-weight:bold
+  classDef archive fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px,color:#1b5e20,font-weight:bold
+  classDef std fill:#e8f5e8,stroke:#43a047
+  classDef ka fill:#fff3e0,stroke:#f57c00
+  classDef g fill:#fffde7,stroke:#f9a825,color:#e65100
+  classDef change fill:#fff3e0,stroke:#ef6c00
+  classDef critical fill:#ffebee,stroke:#c62828,stroke-width:4px,color:#b71c1c,font-weight:bold
+</code></pre></section>
+
+    
+    
+    <footer class="mt-12 flex flex-wrap">
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/sop"
+        >SOP</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/%E5%8C%85%E8%A3%85%E8%AE%BE%E8%AE%A1"
+        >包装设计</a
+      >
+      
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>iPhone &#43; 飞书自动化记账</span></a
+      >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/"
+        ><span>PostHog 的公司手册</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<script>
+  Array.from(document.getElementsByClassName('language-mermaid')).forEach(
+    (el) => {
+      el.parentElement.outerHTML = `<div class="mermaid [&_svg]:block [&_svg]:m-auto">${el.innerHTML}</div>`;
+    },
+  );
+</script>
+
+
+    
+  </article>
+</div>
+
+<style>
+  
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);  
+    top: 0;
+    width: 240px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1400px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 260px);  
+      right: auto;
+      top: 8rem;  
+      width: 240px;
+      max-height: calc(100vh - 10rem);
+    }
+    
+     
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 260px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 1rem;  
+    line-height: 1.7;  
+  }
+
+  .article-content .prose p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 2em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.625em;  
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1.125em;  
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.9375rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.75em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1.125em;  
+    }
+  }
+
+
+  .toc-wrapper {
+     
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .toc-header {
+    margin: -1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.8);  
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+    margin-top: 2rem;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
+     
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
+     
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.875rem;
+    opacity: 0.65;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.8125rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  @media (max-width: 1399px) {
+    .toc-sidebar {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 100%;
+      max-height: none;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      padding-right: 0;
+    }
+  }
+
+   
+  @media (max-width: 1024px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    ©2025 fifteenbao
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>
