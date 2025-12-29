@@ -100,9 +100,16 @@
 
 Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水、青柠檬、少量薄荷叶
 
+胶囊咖啡品牌推荐
 
-扩展阅读：
-那些千奇百怪的饮品都是什么-Youtube" />
+优先尝试经典品牌: 如果刚开始接触胶囊咖啡,建议从星巴克(适合奶咖)和 Nespresso(奶咖和美式都不错)入手,这两个品牌风味稳定,容易找到适合自己的口味。
+关注超市促销: Co-op、Tesco、Waitrose 等超市经常有折扣活动,黑色星期五和圣诞季折扣力度最大,是囤货的好时机。星巴克胶囊打折后一般£2.5-3,性价比很高。
+尝试不同品牌: 每个品牌都有自己的特色。Ueshima 的包装设计讨喜,品质接近 Nespresso;M&amp;S 有香草等调味款,适合喜欢甜味的朋友;Peet&rsquo;s Coffee 咖啡因含量足,提神效果好。
+使用风味指南: Nespresso 官网和第三方表单(如 3rd Party Nespresso Spreadsheet)可以帮助你根据烘焙度、强度、风味选择合适的胶囊。
+考虑使用场景: 如果是在工作场所公用,每人自带胶囊最方便;在家使用可以多囤几种口味,根据心情选择。
+
+Nespresso
+最常喝的品牌,口味丰富多样,总能找到适合自己的选择。黑色星期五期间有20%折扣,性价比很高。" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -227,7 +234,7 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
   <meta itemprop="description" content="吨吨吨">
   <meta itemprop="datePublished" content="2023-06-06T00:00:00+00:00">
   <meta itemprop="dateModified" content="2023-06-06T00:00:00+00:00">
-  <meta itemprop="wordCount" content="87">
+  <meta itemprop="wordCount" content="156">
   <meta itemprop="keywords" content="喝">
   
   <meta property="og:url" content="https://fifteenbao.com/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/">
@@ -293,9 +300,11 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
 
       
       const btnMenu = document.querySelector('.btn-menu');
-      btnMenu.addEventListener('click', () => {
-        htmlClass.toggle('open');
-      });
+      if (btnMenu) {
+        btnMenu.addEventListener('click', () => {
+          htmlClass.toggle('open');
+        });
+      }
 
       
       const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -308,7 +317,8 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
           const bgType = btn.getAttribute('data-theme-bg');
           if (bgType === 'png') {
             
-            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
+            
+            btn.style.setProperty('background-position', isDark ? 'right center' : 'left center', 'important');
           }
         });
       };
@@ -318,6 +328,8 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
         htmlClass[isDark ? 'add' : 'remove']('dark');
         localStorage.setItem('dark', isDark);
         
+        
+        updateButtonPosition(isDark);
         
         
         requestAnimationFrame(() => {
@@ -348,11 +360,22 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
         updateButtonPosition(currentDark);
       };
       
+      
+      const waitForButtons = () => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        if (themeButtons.length > 0) {
+          ensureButtonPosition();
+        } else {
+          
+          setTimeout(waitForButtons, 50);
+        }
+      };
+      
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', ensureButtonPosition);
+        document.addEventListener('DOMContentLoaded', waitForButtons);
       } else {
         
-        requestAnimationFrame(ensureButtonPosition);
+        waitForButtons();
       }
 
       
@@ -684,23 +707,12 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
       
 
       
-      <div class="lg:hidden mt-12 w-full flex items-center justify-center">
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
-      </div>
-
-      
-      <nav
-        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
-      >
+      <div class="lg:hidden flex flex-col items-start gap-4 mt-4">
+        
+        
         
         <a
-          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6 rss-icon"
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
           href="https://fifteenbao.com/index.xml"
           target="_blank"
@@ -710,10 +722,38 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
         </a>
         
         
-        <div class="hidden lg:flex items-center ml-2">
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5);"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="hidden lg:flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
           <div
             class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5);"
             data-theme-bg="png"
             role="button"
             aria-label="Dark"
@@ -756,6 +796,17 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
     <li><a href="#金酒">金酒</a></li>
     <li><a href="#啤酒">啤酒</a></li>
     <li><a href="#其他">其他</a></li>
+    <li><a href="#胶囊咖啡品牌推荐">胶囊咖啡品牌推荐</a>
+      <ul>
+        <li><a href="#nespresso">Nespresso</a></li>
+        <li><a href="#ueshima">Ueshima</a></li>
+        <li><a href="#星巴克">星巴克</a></li>
+        <li><a href="#marks--spencer">Marks &amp; Spencer</a></li>
+        <li><a href="#illylorcaffe-nero">Illy、L&rsquo;OR、Caffe Nero</a></li>
+        <li><a href="#monmouth-和-grind">Monmouth 和 GRIND</a></li>
+        <li><a href="#peets-coffee">Peet&rsquo;s Coffee</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -807,6 +858,34 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
 <ul>
 <li><strong>Mojito</strong> 白朗姆酒+糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水、青柠檬、少量薄荷叶</li>
 </ul>
+<h2 id="胶囊咖啡品牌推荐">胶囊咖啡品牌推荐</h2>
+<ul>
+<li><strong>优先尝试经典品牌:</strong> 如果刚开始接触胶囊咖啡,建议从星巴克(适合奶咖)和 Nespresso(奶咖和美式都不错)入手,这两个品牌风味稳定,容易找到适合自己的口味。</li>
+<li><strong>关注超市促销:</strong> Co-op、Tesco、Waitrose 等超市经常有折扣活动,黑色星期五和圣诞季折扣力度最大,是囤货的好时机。星巴克胶囊打折后一般£2.5-3,性价比很高。</li>
+<li><strong>尝试不同品牌:</strong> 每个品牌都有自己的特色。Ueshima 的包装设计讨喜,品质接近 Nespresso;M&amp;S 有香草等调味款,适合喜欢甜味的朋友;Peet&rsquo;s Coffee 咖啡因含量足,提神效果好。</li>
+<li><strong>使用风味指南:</strong> Nespresso 官网和第三方表单(如 <a href="https://docs.google.com/spreadsheets/d/1kAoms3QKc3H8E7L3xaHKPxKnYsPXhUGKZKrZmU1RzBU/edit#gid=0">3rd Party Nespresso Spreadsheet</a>)可以帮助你根据烘焙度、强度、风味选择合适的胶囊。</li>
+<li><strong>考虑使用场景:</strong> 如果是在工作场所公用,每人自带胶囊最方便;在家使用可以多囤几种口味,根据心情选择。</li>
+</ul>
+<h3 id="nespresso">Nespresso</h3>
+<p>最常喝的品牌,口味丰富多样,总能找到适合自己的选择。黑色星期五期间有20%折扣,性价比很高。</p>
+<ul>
+<li><strong>推荐做奶咖:</strong> Scuro、Festive Espresso 和 Tokyo</li>
+<li><strong>推荐做美式:</strong> Arpeggio 和 Ristretto Italiano</li>
+</ul>
+<p>💡 可参考 <a href="https://docs.google.com/spreadsheets/d/1kAoms3QKc3H8E7L3xaHKPxKnYsPXhUGKZKrZmU1RzBU/edit#gid=0">3rd Party Nespresso Spreadsheet</a> 选择适合自己的风味。</p>
+<h3 id="ueshima">Ueshima</h3>
+<p>非常惊喜的日本品牌,包装设计很讨喜。原价£5,打折时能到£3-4。味道比星巴克更好,品质接近 Nespresso,性价比出色。</p>
+<h3 id="星巴克">星巴克</h3>
+<p>Co-op 经常有折扣,原价£5,打折后一般£2.5-3。深烘的几款适合做日常奶咖,味道中规中矩,胜在价格实惠,适合日常消耗。</p>
+<h3 id="marks--spencer">Marks &amp; Spencer</h3>
+<p>日常价格不错,£3.50 左右。有额外的调味感,如果想喝甜甜的口感,可以试试 Vanilla Flavour 香草口味。</p>
+<h3 id="illylorcaffe-nero">Illy、L&rsquo;OR、Caffe Nero</h3>
+<p>各买过一次尝试,整体表现中规中矩,没有特别突出的记忆点。可以偶尔换换口味。</p>
+<h3 id="monmouth-和-grind">Monmouth 和 GRIND</h3>
+<p>这两家咖啡店在英国很受欢迎,但胶囊的风味表现并不突出,价格偏贵。建议偶尔尝试即可,有机会更推荐去实体店品尝现磨咖啡。</p>
+<h3 id="peets-coffee">Peet&rsquo;s Coffee</h3>
+<p>曾收到同事赠送,味道不错。但在英国购买渠道有限,不太方便日常购买。</p>
+<p>💰 <strong>省钱小贴士:</strong> 关注各大超市(Co-op、Tesco、Waitrose)的促销活动,黑色星期五和圣诞季折扣力度最大。囤货的好时机!</p>
 <hr>
 <p>扩展阅读：
 <a href="https://youtu.be/60iOvUr5DDQ">那些千奇百怪的饮品都是什么-Youtube</a></p>
@@ -1177,21 +1256,14 @@ Mojito 白朗姆酒&#43;糖/可尔必思啤酒/漂浮梅酒/雪碧、苏打水�
   }
 
    
-  @media (max-width: 1399px) {
+  @media (min-width: 1024px) and (max-width: 1399px) {
     .toc-sidebar {
-      position: relative;
-      left: auto;
-      top: auto;
-      width: 100%;
-      max-height: none;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      padding-right: 0;
+      display: none !important;
     }
   }
 
    
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     .toc-sidebar {
       display: none !important;
     }

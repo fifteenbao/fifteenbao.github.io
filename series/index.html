@@ -257,9 +257,11 @@
 
       
       const btnMenu = document.querySelector('.btn-menu');
-      btnMenu.addEventListener('click', () => {
-        htmlClass.toggle('open');
-      });
+      if (btnMenu) {
+        btnMenu.addEventListener('click', () => {
+          htmlClass.toggle('open');
+        });
+      }
 
       
       const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -272,7 +274,8 @@
           const bgType = btn.getAttribute('data-theme-bg');
           if (bgType === 'png') {
             
-            btn.style.backgroundPosition = isDark ? 'right center' : 'left center';
+            
+            btn.style.setProperty('background-position', isDark ? 'right center' : 'left center', 'important');
           }
         });
       };
@@ -282,6 +285,8 @@
         htmlClass[isDark ? 'add' : 'remove']('dark');
         localStorage.setItem('dark', isDark);
         
+        
+        updateButtonPosition(isDark);
         
         
         requestAnimationFrame(() => {
@@ -312,11 +317,22 @@
         updateButtonPosition(currentDark);
       };
       
+      
+      const waitForButtons = () => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        if (themeButtons.length > 0) {
+          ensureButtonPosition();
+        } else {
+          
+          setTimeout(waitForButtons, 50);
+        }
+      };
+      
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', ensureButtonPosition);
+        document.addEventListener('DOMContentLoaded', waitForButtons);
       } else {
         
-        requestAnimationFrame(ensureButtonPosition);
+        waitForButtons();
       }
 
       
@@ -648,23 +664,12 @@
       
 
       
-      <div class="lg:hidden mt-12 w-full flex items-center justify-center">
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
-      </div>
-
-      
-      <nav
-        class="mt-12 flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
-      >
+      <div class="lg:hidden flex flex-col items-start gap-4 mt-4">
+        
+        
         
         <a
-          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6 rss-icon"
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
           href="https://fifteenbao.com/index.xml"
           target="_blank"
@@ -674,10 +679,38 @@
         </a>
         
         
-        <div class="hidden lg:flex items-center ml-2">
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5);"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="hidden lg:flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
           <div
             class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; background-position: left center; transition: background-position 0.4s steps(5);"
+            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5);"
             data-theme-bg="png"
             role="button"
             aria-label="Dark"
