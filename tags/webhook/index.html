@@ -758,38 +758,59 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">iPhone &#43; 飞书自动化记账</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 10, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>最近又在折腾 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅
+刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，<a href="https://www.feishu.cn/community/article?id=7397335180702121986">飞书自动记账｜利用iPhone快捷指令+飞书实现高效记账</a>，
+咱也整理一下准备小红书上链接！赚它个五块十块！</p>
+<h2 id="创建飞书多维表格">创建飞书多维表格</h2>
+<p>优化了一下教程中模版，并添加了仪表盘</p>
+<h2 id="创建机器人助手">创建机器人助手</h2>
+<blockquote>
+<p>可直接参考教程</p>
+</blockquote>
+<p>需要开通飞书机器人助手，点击链接
+<a href="https://botbuilder.feishu.cn/">https://botbuilder.feishu.cn/</a></p>
+<p>点击Webhook触发，并在右侧弹出框中选择 <mark> Webhook触发 </mark>：</p>
+<p>填写参数</p>
+<pre tabindex="0"><code>{
+&#34;amount&#34;:100,
+&#34;category&#34;:&#34;购物&#34;,
+&#34;note&#34;:&#34;hello&#34;
+}
+</code></pre><p>也尝试添加过 <code>date</code> 之类的， 发现不如直接引用表格添加时间来的方便。</p>
+<h2 id="创建快捷指令">创建快捷指令</h2>
+<blockquote>
+<p>一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称</p>
+</blockquote>
+<p><mark>把捷径中的地址修改成刚刚那个Webhook的地址</mark></p>
+<h2 id="设置触发">设置触发</h2>
+<p>这里我用了侧边的操作按钮调用快捷方式，（记得打开蜂窝网络</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"
-      onclick="event.stopPropagation();"
-      >快捷方式</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F" onclick="event.stopPropagation();">快捷方式</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/webhook"
-      onclick="event.stopPropagation();"
-      >Webhook</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/webhook" onclick="event.stopPropagation();">Webhook</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E9%A3%9E%E4%B9%A6"
-      onclick="event.stopPropagation();"
-      >飞书</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E9%A3%9E%E4%B9%A6" onclick="event.stopPropagation();">飞书</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 10, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/">iPhone &#43; 飞书自动化记账</a>
 </section>
 

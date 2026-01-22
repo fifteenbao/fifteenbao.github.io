@@ -751,14 +751,9 @@
 
 <div class="-mt-2 mb-12 flex items-center">
   
-  <div
-    class="ltr:-ml-1 rtl:-mr-1 ltr:mr-5 rtl:ml-5 h-24 w-24 shrink-0 rounded-full "
-  >
-    <img
-      class="avatar-hover-rotate my-0 h-full w-full rounded-full !bg-black/5 dark:!bg-black/80"
-      src="https://fifteenbao.com/images/admin.gif"
-      alt="fifteenbao"
-    />
+  <div class="ltr:-ml-1 rtl:-mr-1 ltr:mr-5 rtl:ml-5 h-24 w-24 shrink-0 rounded-full ">
+    <img class="avatar-hover-rotate my-0 h-full w-full rounded-full !bg-black/5 dark:!bg-black/80"
+      src="https://fifteenbao.com/images/admin.gif" alt="fifteenbao" />
   </div>
   
   
@@ -783,30 +778,30 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">我的 Garmin 表盘</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Jan 22, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意.</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/diy"
-      onclick="event.stopPropagation();"
-      >DIY</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3"
-      onclick="event.stopPropagation();"
-      >无用但有趣</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3" onclick="event.stopPropagation();">无用但有趣</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Jan 22, 2026</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84garmin%E8%A1%A8%E7%9B%98/">我的 Garmin 表盘</a>
 </section>
 
@@ -817,30 +812,57 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">iPhone &#43; Notion自动化复盘</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 24, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>在折腾了飞书之后，又回来折腾notion，其实有考虑要不要整合在一个平台上，不过飞书webhhok似乎只能传输字段，再加上自定义的小组件没有那么全面，决定还是在Notion上面做复盘。</p>
+<h2 id="操作流程">操作流程</h2>
+<h3 id="前期准备">前期准备</h3>
+<p>首先需要获取 <a href="https://www.notion.so/my-integrations">Notion API</a> ,
+然后复制数据库的ID： <a href="https://www.notion.so">www.notion.so</a>{workspace_name}/{database_id}?v={view_id}</p>
+<h3 id="notion模版">Notion模版</h3>
+<p>复盘的模版参考了 <a href="https://premiumtemplates.notion.site/My-Journal-08975c106b7941eba5fa0be5d47e7478?utm_campaign=Landing%20Page%20or%20Form%20-%205085086&amp;utm_medium=email&amp;utm_source=convertkit">这个</a></p>
+<h3 id="苹果快捷方式">苹果快捷方式</h3>
+<p>添加获取URL参考：
+Notion API文档 <a href="https://developers.notion.com/reference/post-page">Create a page</a> 中 <code>shell</code> 的格式，<code>{}</code> 就是词典、<code>[]</code> 就是数组、<code>“”</code> 就是文本</p>
+<h2 id="复盘大纲">复盘大纲</h2>
+<p>至于复盘的内容，用 Gemini 写了一个大纲</p>
+<h3 id="第一阶段客观数据状态回顾">第一阶段：客观数据（状态回顾）</h3>
+<ul>
+<li>日期、领域、评分、是否锻炼、是否读书。</li>
+<li>作用：快速勾选，建立当天的基本面。</li>
+</ul>
+<h3 id="第二阶段主观感受复盘核心">第二阶段：主观感受（复盘核心）</h3>
+<ul>
+<li>今天的感受（Feelings）、出现问题（Problem）、继续保持（Keep）。</li>
+<li>建议：先写 Problem 再写 Keep。先面对问题，再用亮点收尾，心情会更积极。</li>
+</ul>
+<h3 id="第三阶段行动转化未来转化">第三阶段：行动转化（未来转化）</h3>
+<ul>
+<li>努力改善（Try）。</li>
+<li>作用：这是复盘的唯一输出物，必须是具体的动作。</li>
+</ul>
+<p>BTY, 把这个模版上架了，感觉操作起来比飞书难很多，还是值得 ¥1.88，期待有人下单。</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"
-      onclick="event.stopPropagation();"
-      >快捷方式</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F" onclick="event.stopPropagation();">快捷方式</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/notion"
-      onclick="event.stopPropagation();"
-      >Notion</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/notion" onclick="event.stopPropagation();">Notion</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 24, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/iphone-&#43;-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/">iPhone &#43; Notion自动化复盘</a>
 </section>
 
@@ -851,30 +873,84 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">关于我想做什么样的产品经理？</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 14, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <h2 id="什么是产品经理">什么是产品经理？</h2>
+<h3 id="国际视角下的产品角色">国际视角下的产品角色</h3>
+<ul>
+<li><strong>PMM（产品营销经理）：</strong> 负责向市场讲述产品故事，开发用户画像、研究竞争环境、制定上市策略</li>
+<li><strong>PM（项目经理 - Project Manager）：</strong> 负责单一项目的组织、计划和执行，对项目成败负责</li>
+<li><strong>PM（项目群经理 - Program Manager）：</strong> 负责并行多项目管理，规划项目进度、预算和目标，促进跨团队协作</li>
+</ul>
+<h3 id="国内软硬件产品经理的能力差异">国内软硬件产品经理的能力差异</h3>
+<p><strong>软件产品经理核心能力：</strong></p>
+<ul>
+<li>市场及用户研究（市场分析、竞品分析、用户分析）</li>
+<li>产品规划设计（产品规划、需求管理、产品设计、版本管理）</li>
+<li>开发及项目管理（需求确认、项目跟踪、产品测试）</li>
+<li>产品运营与市场推广</li>
+<li>强调MVP思维和敏捷开发，快速迭代</li>
+</ul>
+<p><strong>硬件产品经理核心能力：</strong></p>
+<ul>
+<li>市场调研（市场需求、竞品分析、系统应用、产品卖点定义）</li>
+<li>需求管理（需求分析、产品定义、差异化分析、解决方案）</li>
+<li>产品全生命周期管理（从0到1、从生到死）</li>
+<li>成本思维与商业模式思维（精打细算BOM成本、权衡投入产出比）</li>
+<li>更长的开发周期和更刚性的项目管理（模具开发、认证周期等不可压缩环节）</li>
+</ul>
+<hr>
+<h2 id="我认为的好的产品经理是什么样子的">我认为的好的产品经理是什么样子的？</h2>
+<h3 id="1-了解市场行情明确产品生态位">1. 了解市场行情、明确产品生态位</h3>
+<ul>
+<li><strong>深入理解市场动态：</strong> 持续追踪行业趋势、竞争格局、用户痛点和机会窗口</li>
+<li><strong>明确产品生态位：</strong> 确定产品在市场中的独特位置，回答&quot;我们为什么独特&quot;</li>
+<li><strong>撰写并阐述MRD：</strong> 确定理想客户画像(ICP)，明确客户需要什么、拥有什么、不需要什么</li>
+<li><strong>识别好生意：</strong> 遵循&quot;三好原则&quot;——好生意、好人、好价格</li>
+</ul>
+<p>所谓 GTM ，也是最近在和新领导学到的撰写PRD的重要部分；了解他们是谁以及我们有什么牌打。在段永平的商业智慧中也说到，三好原则：好生意、好人、好价格；确定一个好生意，是一件重要的事情，也是积极主动的开始。</p>
+<h4 id="了解市场">了解市场</h4>
+<p>好的 PM 必须深入理解市场动态、竞争格局和用户需求，形成清晰的<mark>产品定位（niche）</mark>。这不是浅层调研，而是持续追踪行业趋势、竞品功能、用户痛点和机会窗口。</p>
+<h4 id="提供差异化产品">提供差异化产品</h4>
+<p>好的 PM 会定期分析竞品，明确“<mark>我们为什么独特</mark>”（提供出你的用户群需要而别人没有或不能提供的“#差异化”的产品。）。</p>
+<h4 id="撰写并能够阐述mrd">撰写并能够阐述MRD</h4>
+<p>好的 PM 要有文档撰写能力以及与客户沟通的能力，</p>
+<ul>
+<li>确定理想客户画像 (ICP) ,我们的客户需要什么,我们客户拥有的东西,我们的客户不需要的东西</li>
+<li>能回答“我们的产品在生态中占据什么位置？谁是真正竞争对手？下一个增长点在哪里？”</li>
+<li>能回答“创新的必要性”</li>
+</ul>
+<h3 id="2-能够提供上下文">2. 能够提供上下文</h3>
+<ul>
+<li><strong>成为上下文专家：</strong> 收集并提炼客户、公司、行业信息，形成清晰、可行动的意见</li>
+<li><strong>赋能团队决策：</strong> 帮助团队（尤其是工程团队）基于充分信息做出独立决策，而非自己拍板</li>
+<li><strong>主动填补空白：</strong> 如果某些必要任务无人负责，PM要亲自上手确保产品交付</li>
+<li><strong>形成可行动的见解：</strong> 不只是提供数据，而是总结成&quot;基于这些反馈，我们应该优先X，因为它能带来Y影响&quot;</li>
+</ul>
+<p>这部分借鉴了 PostHog 手册中反复强调的核心特质，好的 PM 是“上下文专家”，收集并提炼客户、公司、行业信息，形成清晰、可行动的意见，赋能团队（尤其是工程）做出独立决策，而不是自己拍板。
+不只是扔数据，而是总结成“<mark>基于这些反馈，形成意见</mark>：我们应该优先 X，因为它能带来 Y 影响”。
+除此之外，如果某些必要任务无人负责，PM 亲自上手（只要是为了交付优秀产品）（Fill Gaps）。</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/pm"
-      onclick="event.stopPropagation();"
-      >PM</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/pm" onclick="event.stopPropagation();">PM</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/methodology"
-      onclick="event.stopPropagation();"
-      >Methodology</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/methodology" onclick="event.stopPropagation();">Methodology</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 14, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E5%85%B3%E4%BA%8E%E6%88%91%E6%83%B3%E5%81%9A%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/">关于我想做什么样的产品经理？</a>
 </section>
 
@@ -885,22 +961,44 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">CMF</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 12, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <h2 id="cmf-基本要素">CMF 基本要素</h2>
+<p><img src="https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg" alt="CMFPSE理论模型示意图"></p>
+<h2 id="一级结构">一级结构</h2>
+<h3 id="mf-材料与工艺">MF 材料与工艺</h3>
+<p>M（material）F（finishing）
+材料与工艺，代表学科：材料与工程，为工程创新价值</p>
+<h3 id="cp-色彩与图文">CP 色彩与图文</h3>
+<p>C（Color）、P（pattern）
+色彩与图文，代表学科：艺术与设计，为设计创新价值</p>
+<h3 id="se-感官与情感">SE 感官与情感</h3>
+<p>S（sense）、E（emotion）
+感官与情感，代表学科：生理与心理，为消费价值</p>
+<h2 id="二级结构tdm">二级结构（TDM）</h2>
+<h3 id="ttrend-趋势">T：trend 趋势</h3>
+<h3 id="ddesign-设计">D：design 设计</h3>
+<h3 id="mmanufacture-量产">M：Manufacture 量产</h3>
+<h2 id="三级结构bs">三级结构（BS）</h2>
+<h3 id="b商业价值">B：商业价值</h3>
+<h3 id="s社会价值">S：社会价值</h3>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/cmf"
-      onclick="event.stopPropagation();"
-      >CMF</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/cmf" onclick="event.stopPropagation();">CMF</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 12, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/cmf/">CMF</a>
 </section>
 
@@ -911,38 +1009,59 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">iPhone &#43; 飞书自动化记账</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 10, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>最近又在折腾 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅
+刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，<a href="https://www.feishu.cn/community/article?id=7397335180702121986">飞书自动记账｜利用iPhone快捷指令+飞书实现高效记账</a>，
+咱也整理一下准备小红书上链接！赚它个五块十块！</p>
+<h2 id="创建飞书多维表格">创建飞书多维表格</h2>
+<p>优化了一下教程中模版，并添加了仪表盘</p>
+<h2 id="创建机器人助手">创建机器人助手</h2>
+<blockquote>
+<p>可直接参考教程</p>
+</blockquote>
+<p>需要开通飞书机器人助手，点击链接
+<a href="https://botbuilder.feishu.cn/">https://botbuilder.feishu.cn/</a></p>
+<p>点击Webhook触发，并在右侧弹出框中选择 <mark> Webhook触发 </mark>：</p>
+<p>填写参数</p>
+<pre tabindex="0"><code>{
+&#34;amount&#34;:100,
+&#34;category&#34;:&#34;购物&#34;,
+&#34;note&#34;:&#34;hello&#34;
+}
+</code></pre><p>也尝试添加过 <code>date</code> 之类的， 发现不如直接引用表格添加时间来的方便。</p>
+<h2 id="创建快捷指令">创建快捷指令</h2>
+<blockquote>
+<p>一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称</p>
+</blockquote>
+<p><mark>把捷径中的地址修改成刚刚那个Webhook的地址</mark></p>
+<h2 id="设置触发">设置触发</h2>
+<p>这里我用了侧边的操作按钮调用快捷方式，（记得打开蜂窝网络</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"
-      onclick="event.stopPropagation();"
-      >快捷方式</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F" onclick="event.stopPropagation();">快捷方式</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/webhook"
-      onclick="event.stopPropagation();"
-      >Webhook</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/webhook" onclick="event.stopPropagation();">Webhook</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E9%A3%9E%E4%B9%A6"
-      onclick="event.stopPropagation();"
-      >飞书</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E9%A3%9E%E4%B9%A6" onclick="event.stopPropagation();">飞书</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 10, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/">iPhone &#43; 飞书自动化记账</a>
 </section>
 
@@ -953,30 +1072,288 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">包材迭代SOP</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 9, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋</p>
+<h2 id="制定目的">制定目的</h2>
+<table>
+  <thead>
+      <tr>
+          <th>现有真实问题</th>
+          <th>本SOP V2.0解決措施</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>设计源文件缺失/被覆盖</td>
+          <td>四次强制存档+V1.0永久归档点＋所有新版本回流同一目录</td>
+      </tr>
+      <tr>
+          <td>设计稿与大货BOM不匹配</td>
+          <td>Released版为唯一量产依据+强制推ERP+供应商回签</td>
+      </tr>
+      <tr>
+          <td>人员流动导致“人问人”</td>
+          <td>完整流程图＋标准归档结构＋电子流程</td>
+      </tr>
+      <tr>
+          <td>大客户需求清单未存档</td>
+          <td>KA路径强制输出并永久存档《客户需求确认单》</td>
+      </tr>
+      <tr>
+          <td>多语言文本缺失、手动改导致错误</td>
+          <td>M分支强制交付《多语言文案包Excel》，设计仅调用</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="版本号语义规范">版本号语义规范</h2>
+<ul>
+<li>X (Major Version - 主版本): 结构级变更。涉及刀模修改、材质变更、供应商更换。需要重新打样和测试。</li>
+<li>Y (Minor Version - 次版本): 内容级变更。涉及文案布局大改、新增语言、Logo 更新，但刀模不变。</li>
+<li>Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局部色值微调、二维码更新。</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>版本格式</th>
+          <th>含义</th>
+          <th>典型场景</th>
+          <th>是否需实物打</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td></td>
+          <td>初版 Draft</td>
+          <td></td>
+          <td>×</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>迭代Review</td>
+          <td></td>
+          <td>×</td>
+      </tr>
+      <tr>
+          <td>Approved</td>
+          <td>审核通过 Approved</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.0.0</td>
+          <td></td>
+          <td>首次量产版 Released V1.0完整走全流程、设计源文件存档</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.0.1</td>
+          <td>修订版（Patch）</td>
+          <td>错别字、二维码、局部色值微调</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V1.1.0</td>
+          <td>次版本（Minor）</td>
+          <td>新增语言、合规图标、品牌色升级</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>V2.0.0</td>
+          <td>主版本（Major）</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="流程图">流程图</h2>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">%%{init: {
+  &#34;theme&#34;: &#34;base&#34;,
+  &#34;themeVariables&#34;: {
+    &#34;primaryColor&#34;: &#34;#e3f2fd&#34;,
+    &#34;primaryTextColor&#34;: &#34;#0d47a1&#34;,
+    &#34;primaryBorderColor&#34;: &#34;#1565c0&#34;,
+    &#34;lineColor&#34;: &#34;#1565c0&#34;
+  },
+  &#34;flowchart&#34;: {
+    &#34;layout&#34;: &#34;dagre&#34;
+  }
+}}%%
+flowchart TB
+  subgraph STD[&#34;标品路径&#34;]
+    STD3[&#34;内部兼容性测试&#34;]
+    STD2[&#34;调用标准A分支\n(Master刀模+标准材质)&#34;]
+    STD1[&#34;PM定义产品矩阵&#34;]
+  end
+  subgraph KA[&#34;非标/KA路径&#34;]
+    KA3[&#34;客户签署确认单&#34;]
+    KA2[&#34;合并执行 M分支 + 定制A分支\n(客户Logo+专色+指定结构/材质)&#34;]
+    KA1[&#34;销售/KA导入客户需求&#34;]
+  end
+  subgraph G[&#34;G分支：法规合规（标品&amp;非标通用）&#34;]
+    G3[&#34;BOM合规声明&#34;]
+    G2[&#34;输出合规清单&#34;]
+    G1[&#34;合规审核&#34;]
+  end
+  subgraph MainFlow[&#34;首次设计 → V1.0 量产发布&#34;]
+    direction TB
+    Design[&#34;设计执行&#34;]
+    Ready[&#34;所有输入就绪&#34;]
+    A1[&#34;存档 Draft V0.1~V0.8&#34;]
+    Review[&#34;多部门联合审核&#34;]
+    A2[&#34;存档 Review V0.9&#34;]
+    Sample[&#34;供应商打样&#34;]
+    QA[&#34;QA实物验证&#34;]
+    FinalGate[&#34;Final Gate终审&#34;]
+    Approved[&#34;Approved V1.0&#34;]
+    A3[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件&#34;]
+    Release[&#34;Released V1.0\nBOM冻结 → ERP + 供应商&#34;]
+    A4[&#34;存档 Released版 + 回执&#34;]
+  end
+  subgraph Trigger[&#34;ECR 变更触发&#34;]
+    direction LR
+    T1[&#34;G端：法规强制更新\n(Mandatory)&#34;]
+    T2[&#34;A端：结构/降本\n(Functional)&#34;]
+    T3[&#34;M端：文案/Logo迭代\n(Optional)&#34;]
+  end
+  subgraph PostV1[&#34;V1.0之后变更全流程（ECR → ECO → Cut-over）&#34;]
+    direction TB
+    Trigger
+    Stock[&#34;全球库存评估&#34;]
+    Impact{&#34;变更性质判定&#34;}
+    Major[&#34;重大变更\n(Major)&#34;]
+    Minor[&#34;一般变更\n(Minor)&#34;]
+    Mod[&#34;基于V1.0源文件修改\n→ V1.1 / V2.0 Draft&#34;]
+    Verify{&#34;验证方式&#34;}
+    Digital[&#34;数码样确认\n(仅视觉变更)&#34;]
+    Physical[&#34;实物打样+试装\n(结构/工艺变更)&#34;]
+    ECO_Sign[&#34;ECO正式签发&#34;]
+    Scrap[&#34;强制报废旧库存\n(Scrap)&#34;]
+    Rework[&#34;库存重工\n(Rework)&#34;]
+    Running[&#34;自然切换\n(Running Change)&#34;]
+    NewRelease((&#34;Release V1.1或V2.0\n→ ERP + 供应商&#34;))
+    n1[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件&#34;]
+  end
+  subgraph Version[&#34;设计稿状态总览&#34;]
+    direction LR
+    VRel[&#34;Released V1.0&#34;]
+    VA[&#34;Approved&#34;]
+    VR[&#34;Review&#34;]
+    VD[&#34;Draft&#34;]
+    VNew[&#34;V1.1 / V2.0\n(经ECO)&#34;]
+  end
+
+  STD1 --&gt; STD2
+  STD2 --&gt; STD3
+  KA1 --&gt; KA2
+  KA2 --&gt; KA3
+  G1 --&gt; G2
+  G2 --&gt; G3
+  Ready --&gt; Design &amp; G1
+  Design --&gt; A1
+  A1 --&gt; Review
+  Review -- NG --&gt; Design
+  Review -- OK --&gt; Sample
+  Sample --&gt; A2
+  QA -- NG --&gt; Design
+  QA -- OK --&gt; FinalGate
+  FinalGate --&gt; Approved
+  Approved --&gt; A3
+  A3 --&gt; Release
+  Release --&gt; A4
+  Start((&#34;项目立项&#34;)) --&gt; Decision{&#34;包材属性判定&#34;}
+  Decision -- 标品 --&gt; STD1
+  Decision -- 非标/KA --&gt; KA1
+  STD3 --&gt; Ready
+  KA3 --&gt; Ready
+  G3 --&gt; Design
+  A4 --&gt; Live((&#34;V1.0 在产\nLive Production&#34;))
+  Live --&gt; T1 &amp; T2 &amp; T3
+  T1 --&gt; Stock
+  T2 --&gt; Stock
+  T3 --&gt; Stock
+  Stock --&gt; Impact
+  Impact -- 结构/材质/法规强制 --&gt; Major
+  Impact -- 仅文案/视觉微调 --&gt; Minor
+  Major --&gt; Mod
+  Minor --&gt; Mod
+  Mod --&gt; Verify
+  Verify -- 结构/产线影响 --&gt; Physical
+  Verify -- 仅平面 --&gt; Digital
+  Physical --&gt; ECO_Sign
+  Digital --&gt; ECO_Sign
+  ECO_Sign -- 法规/安全/功能缺陷 --&gt; Scrap
+  ECO_Sign -- 成本可控 --&gt; Rework
+  ECO_Sign -- 非紧急 --&gt; Running
+  Scrap --&gt; NewRelease
+  Rework --&gt; NewRelease
+  Running --&gt; NewRelease
+  VD --&gt; VR
+  VR --&gt; VA
+  VA --&gt; VRel
+  VRel -.-&gt; VNew
+  VNew -.-&gt; VRel
+  A2 --&gt; QA
+  NewRelease --&gt; n1
+
+  STD3:::std
+  STD2:::std
+  STD1:::std
+  KA3:::ka
+  KA2:::ka
+  KA1:::ka
+  G3:::g
+  G2:::g
+  G1:::g
+  A1:::archive
+  A2:::archive
+  A3:::archive
+  A3:::critical
+  Release:::live
+  A4:::archive
+  T1:::change
+  T2:::change
+  T3:::change
+  Major:::change
+  Minor:::change
+  Scrap:::change
+  Rework:::change
+  Running:::change
+  NewRelease:::live
+  n1:::critical
+  Start:::start
+  Live:::start
+
+  classDef start fill:#1e88e5,stroke:#0d47a1,stroke-width:4px,color:#fff,font-weight:bold
+  classDef live fill:#4caf50,stroke:#2e7d32,stroke-width:4px,color:#fff,font-weight:bold
+  classDef archive fill:#e8f5e8,stroke:#2e7d32,stroke-width:4px,color:#1b5e20,font-weight:bold
+  classDef std fill:#e8f5e8,stroke:#43a047
+  classDef ka fill:#fff3e0,stroke:#f57c00
+  classDef g fill:#fffde7,stroke:#f9a825,color:#e65100
+  classDef change fill:#fff3e0,stroke:#ef6c00
+  classDef critical fill:#ffebee,stroke:#c62828,stroke-width:4px,color:#b71c1c,font-weight:bold
+</code></pre>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/sop"
-      onclick="event.stopPropagation();"
-      >SOP</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/sop" onclick="event.stopPropagation();">SOP</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E5%8C%85%E8%A3%85%E8%AE%BE%E8%AE%A1"
-      onclick="event.stopPropagation();"
-      >包装设计</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%8C%85%E8%A3%85%E8%AE%BE%E8%AE%A1" onclick="event.stopPropagation();">包装设计</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 9, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/">包材迭代SOP</a>
 </section>
 
@@ -987,38 +1364,95 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">PostHog 的公司手册</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 6, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <blockquote>
+<p>手册地址：<a href="https://posthog.com/handbook">https://posthog.com/handbook</a></p>
+</blockquote>
+<p>现在的状态就像罗永浩学英语的时候买几麻袋励志鸡汤，学不动了就看几本打打鸡血 🤣🤣🤣</p>
+<hr>
+<h2 id="posthog-存在的意义是什么我们的使命和战略">PostHog 存在的意义是什么？我们的使命和战略</h2>
+<h3 id="我们的使命">我们的使命</h3>
+<p>让每位开发者都能打造成功的产品。</p>
+<h3 id="我们的策略">我们的策略</h3>
+<ol>
+<li>成为所有产品上下文信息的权威来源</li>
+<li>为工程师提供构建成功产品所需的一切工具</li>
+<li>抢占先机</li>
+<li>实现迭代过程自动化</li>
+</ol>
+<h2 id="我们如何获取用户">我们如何获取用户</h2>
+<blockquote>
+<p><mark>围绕理想客户画像来打造产品</mark>，营销就是创造有用的内容</p>
+</blockquote>
+<h2 id="我们为谁而建">我们为谁而建</h2>
+<blockquote>
+<p>我们将产品的目标用户定义为 ICP（即公司）和 Persona（即实际使用产品的人）。</p>
+</blockquote>
+<h3 id="我们目前的icp">我们目前的ICP</h3>
+<p>也就是我们<a href="https://posthog.com/newsletter/ideal-customer-profile-framework">理想的客户画像</a>。</p>
+<p><a href="https://posthog.com/product-engineers/how-to-create-user-personas">如何打造用户画像</a></p>
+<p><mark>我们为那些在高增长型创业公司</mark>中打造产品的人们而打造产品。</p>
+<p>市场营销和客户成功团队应主要关注理想客户画像 (ICP)，但也应开发<mark>高潜力客户</mark>——即那些未来可能成为高增长客户的客户（例如 PostHog 在 YC 创业初期）。我们应该专注于维护业余爱好者用户，例如那些开发副业项目的工程师。我们希望成为技术型创始人添加到其产品中的首选工具。</p>
+<table>
+  <thead>
+      <tr>
+          <th>高增长型初创企业</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><mark>描述</mark></td>
+          <td>那些产品与市场契合，并且正在快速扩大规模，吸引新客户、招聘员工、增加收入的初创公司。</td>
+      </tr>
+      <tr>
+          <td><mark>标准</mark></td>
+          <td>- 员工人数：15-500人  <br>- 月收入：10万美元以上或拥有庞大的用户群体  <br>- 已获得知名投资者融资  <br>- 尚未上市</td>
+      </tr>
+      <tr>
+          <td><mark>它们为什么重要？</mark></td>
+          <td>- 能够高效地实现盈利  <br>- 销售周期极短  <br>- 可作为早期创业公司/发展较慢公司的关键意见领袖  <br>- 对客户需求有深刻的见解 - 帮助我们打造更好的产品</td>
+      </tr>
+      <tr>
+          <td><mark>示例</mark></td>
+          <td>PostHog 从 B 轮融资到 IPO 的任何阶段，Supabase，ElevenLabs</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="1-icp-和用户画像不是一回事">1. ICP 和用户画像不是一回事。</h4>
+<p>理想客户画像 (ICP) 定义了您的客户群体——即需要您产品的公司或团队。ICP 可以包含个人画像，但也应该包含以下内容：</p>
+<ul>
+<li>公司类型、 他们的客户是谁、他们有多少名员工、他们有多少用户、谁会使用您的产品、他们使用的工具或想要用你的产品替换的工具、他们重视的因素（例如设计、速度等）</li>
+</ul>
+<p>另一方面，用户画像则描述了特定用户的动机和痛点。</p>
+<p><mark>为什么这很重要？</mark>
+用户画像不够具体。它无法帮助你制定市场推广策略，也无法帮助你确定产品定价。围绕用户画像构建业务，很容易打造出用户喜欢但却不愿付费的产品。</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E6%96%B9%E6%B3%95%E8%AE%BA"
-      onclick="event.stopPropagation();"
-      >方法论</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E6%96%B9%E6%B3%95%E8%AE%BA" onclick="event.stopPropagation();">方法论</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96"
-      onclick="event.stopPropagation();"
-      >企业文化</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96" onclick="event.stopPropagation();">企业文化</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/posthog"
-      onclick="event.stopPropagation();"
-      >PostHog</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/posthog" onclick="event.stopPropagation();">PostHog</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 6, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/">PostHog 的公司手册</a>
 </section>
 
@@ -1029,38 +1463,127 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">段永平的10条商业智慧</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 1, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>上个月公司风云变幻，疯狂裁员，人心惶惶；就开始看一些有的没的企业文化；
+积灰许久的博客又开始了新一轮的装修工程；</p>
+<blockquote>
+</blockquote>
+<p><a href="https://m.okjike.com/originalPosts/68d793c07f396a32bfd32df3">来源okjike</a></p>
+<p>看到评论说想到了vivo的企业文化，特地去问了朋友“vivo的企业文化是什么？”- “本分”；一个科技企业也是蛮令人意外的。想到了立讯的企业文化“务实”。</p>
+<h2 id="1-不为清单stop-doing-list">1. 不为清单（Stop Doing List）</h2>
+<blockquote>
+<p>成功不仅取决于做了什么，更在于不做什么。</p>
+</blockquote>
+<p>段永平认为避免某些行为比采取行动更重要，
+例如：</p>
+<ul>
+<li>不谈性价比（本质是为性能不足找借口）</li>
+<li>不打价格战（低价是最容易也最难走的路）</li>
+</ul>
+<h2 id="2-消费者导向">2. 消费者导向</h2>
+<blockquote>
+<p>企业经营的核心是满足用户真实需求，而非追求营销噱头或市场份额。</p>
+</blockquote>
+<p>关键观点：</p>
+<ul>
+<li>消费者导向即需求导向</li>
+<li>用户需求和体验是根本，其他皆为次要</li>
+</ul>
+<h2 id="3-差异化">3. 差异化</h2>
+<blockquote>
+<p>真正的差异化需满足两个条件：  用户需要但对手无法提供;</p>
+</blockquote>
+<ul>
+<li>本质是需求的差异化，而非自认为的产品/服务创新</li>
+</ul>
+<h2 id="4-企业文化是护城河">4. 企业文化是护城河</h2>
+<blockquote>
+<p>不可复制的核心竞争力：   企业文化=创始人思想+团队精神融合</p>
+</blockquote>
+<ul>
+<li>体现为“利润之上的追求”</li>
+<li>坏文化特征：说瞎话；好文化作用：降低沟通成本，引导做正确事</li>
+</ul>
+<h2 id="5-敢为天下后后中争先">5. 敢为天下后，后中争先</h2>
+<blockquote>
+<p>创新方法论的核心逻辑：   “敢为天下后”=选择正确方向（做对的事）</p>
+</blockquote>
+<ul>
+<li>“后中争先”=执行能力（把事情做对）</li>
+<li>盲目创新会导致失败，需明确创新必要性及自身能力</li>
+</ul>
+<h2 id="6平常心">6.平常心</h2>
+<ul>
+<li>本质是理性思考后的结论表现，而非佛系态度</li>
+<li>核心在于回归事物本源，认清什么是对的事情</li>
+<li>属于后天养成的思维习惯</li>
+</ul>
+<h2 id="7本分">7.本分</h2>
+<blockquote>
+<p>做对的事情 + 把事情做对</p>
+</blockquote>
+<p>关键原则：</p>
+<ul>
+<li>不干不该干的事（能力与作风的区分）</li>
+<li>该是谁就是谁（角色与责任的明确）</li>
+<li>典型反例：赚不该赚的钱</li>
+</ul>
+<h2 id="8投资本质">8.投资本质</h2>
+<ul>
+<li>核心理念：买股票=买公司未来现金流折现</li>
+<li>&ldquo;未来&quot;指企业整个生命周期（非3-5年短期）</li>
+<li>与巴菲特价值投资理念完全一致</li>
+<li>投资前提：必须能测算企业长期盈利能力</li>
+</ul>
+<h2 id="9三好原则">9.三好原则</h2>
+<h3 id="好生意对应商业模式">好生意（对应商业模式）</h3>
+<h3 id="好人对应企业文化">好人（对应企业文化）</h3>
+<h3 id="好价钱合适的价格">好价钱（合适的价格）</h3>
+<ul>
+<li>与巴菲特&quot;right business/people/price&quot;理念相通</li>
+<li>揭示商业本质：大道至简的决策框架</li>
+</ul>
+<h2 id="10智慧体系">10.智慧体系</h2>
+<p>做对的事三大支柱：</p>
+<ul>
+<li>消费者导向</li>
+<li>本分文化</li>
+<li>差异化</li>
+</ul>
+<p>把事做对四大方法：</p>
+<ul>
+<li>敢为天下后</li>
+<li>平常心</li>
+<li>三好原则</li>
+<li>不为清单<br>
+• 终极准则：发现错误立即停止，任何代价都是最小代价</li>
+</ul>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E6%96%B9%E6%B3%95%E8%AE%BA"
-      onclick="event.stopPropagation();"
-      >方法论</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E6%96%B9%E6%B3%95%E8%AE%BA" onclick="event.stopPropagation();">方法论</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96"
-      onclick="event.stopPropagation();"
-      >企业文化</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96" onclick="event.stopPropagation();">企业文化</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E6%AE%B5%E6%B0%B8%E5%B9%B3"
-      onclick="event.stopPropagation();"
-      >段永平</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E6%AE%B5%E6%B0%B8%E5%B9%B3" onclick="event.stopPropagation();">段永平</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Dec 1, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7/">段永平的10条商业智慧</a>
 </section>
 
@@ -1071,30 +1594,42 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">更新hugo的使用方法</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Jan 7, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>又又又折腾了一下,
+之前的hugo版本升级直接挂了……
+域名还被劫持了…… 添加了一个txt的github -&gt; setting -&gt; pages 添加了一个域名验证</p>
+<p>换了一个有 TailwindCSS 的稳定一点的 <a href="https://github.com/nanxiaobei/hugo-paper">主题</a></p>
+<p>升级需谨慎</p>
+<p>开始在 Cursor 里面弄各种东西了, 不懂的就 Add to Chat</p>
+<p>AI 取代人类真是迟早的事情啊……</p>
+<p>安装过程就草草带过吧…… 官网写的蛮清楚的</p>
+<h2 id="常用命令">常用命令</h2>
+<pre tabindex="0"><code>hugo server //本地预览
+hugo new content content/post/test.md  //新建文章
+	 draft = false //不显示内容
+</code></pre>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/tailwindcss"
-      onclick="event.stopPropagation();"
-      >tailwindcss</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/tailwindcss" onclick="event.stopPropagation();">tailwindcss</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/hugo"
-      onclick="event.stopPropagation();"
-      >hugo</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/hugo" onclick="event.stopPropagation();">hugo</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Jan 7, 2025</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">更新hugo的使用方法</a>
 </section>
 
@@ -1105,30 +1640,44 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   
   <h2 class="!my-0 mb-2">Gotham｜Sharp Sans｜Optima 字体的背后</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Jun 9, 2023</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>2024-7-26更新链接:
+<a href="https://www.toodaylab.com/82946"> 《从设计看美国大选：哈里斯标志一天内完成更新、各个环节都是“视觉锤”》</a></p>
+<hr>
+<p>2023-06-09</p>
+<p>之前在《从字体开始-设计改变的生活与社会》看到过 ‘Gotham’ 字体的介绍，当时并不以为意，觉得是某种提高档次的套路，晚上偶然看了一下 Gotham 字体的百科，哇哦～太有趣了！</p>
+<p>Gotham、Sharp Sans Display No.1、Optima 分别是奥巴马、希拉里和约翰麦凯恩在竞选时使用的无衬线字体，下面分别来看看这三种。</p>
+<h2 id="gotham">Gotham</h2>
+<p><img src="https://cba-design.com/united-states/wp-content/uploads/sites/3/2021/02/Gotham-Typeface-New-Images-LAYOUT-_converted4_201210_183516-1400x1032.gif" alt="Gotham"></p>
+<p>Gotham是一个几何 <strong>无衬线字体</strong> 系列，由美国字体设计师 <strong>Tobias Frere-Jones 和 Jesse Ragan 设计</strong>，并于 2000 年通过 Hoefler &amp; Frere-Jones 铸造厂发布。Gotham 的字体灵感来自 <strong>20世纪中叶的建筑标志示例</strong>。</p>
+<p>20世纪中叶，纽约城市建筑中很多手写体代表了纽约 “<strong>直率、坚韧、富有个性</strong>” 的特点， 设计师结合建筑铭牌、商店招牌、卡车上的文字、店铺广告等设计出了富有地域特色的字体 Gotham（哥谭）。</p>
+<p>自创建以来，Gotham 因其出现在许多著名的地方而备受瞩目。这包括奥巴马的 2008 年竞选活动、密歇根州立大学品牌推广活动，以及澳大利亚工党的2016 年联邦竞选活动。该字体还被用在纽约世贸中心一号大楼的基石上。它也是美国电影预告片的 MPAA 标题卡中当前使用的字体。</p>
+<p>Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节目《柯南》、《莫瑞》和《周六夜现场》 、翠贝卡电影节、Qwest广告和佐治亚州州长客户服务办公室都在徽标中使用了Gotham。佐治亚州政府引用 Gotham 的 “干净、清新的线条” 和 “为所有营销、广告和标牌应用提供多种选择” 的变体作为其使用的理由。星巴克在2008 年总统大选中使用了该字体向投票的人宣传免费咖啡。</p>
+<ul>
+<li>
+<p>2014 年 5 月 30 日，Twitter宣布，“从今天开始，我们将使用一种新字体，从 Helvetica Neue 移至 Gotham ”。该更改于 2014 年 9 月 3 日恢复。</p>
+  </div>
+  
+
   
   <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E5%AD%97%E4%BD%93"
-      onclick="event.stopPropagation();"
-      >字体</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%AD%97%E4%BD%93" onclick="event.stopPropagation();">字体</a>
     
     
-    <a
-      class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1"
-      onclick="event.stopPropagation();"
-      >设计</a
-    >
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1" onclick="event.stopPropagation();">设计</a>
     
   </div>
   
-  <div class="text-xs antialiased opacity-60">
-    <time class="whitespace-nowrap">Jun 9, 2023</time>
-  </div>
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E5%AD%97%E4%BD%93%E7%AB%9E%E9%80%89%E5%AD%97%E4%BD%93/">Gotham｜Sharp Sans｜Optima 字体的背后</a>
 </section>
 
@@ -1138,9 +1687,7 @@
 <nav class="mt-14 flex">
   
   
-  <a class="btn ml-auto" href="/post/page/2/"
-    > →</a
-  >
+  <a class="btn ml-auto" href="/post/page/2/"> →</a>
   
 </nav>
 
