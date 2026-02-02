@@ -72,7 +72,72 @@
   
   
   
-  <meta name="description" content="一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意." />
+  <meta name="description" content="
+23年的双十一换了 Garmin 的 Forerunner265S
+购买原因：
+1. 可以不带手机跑步和听音乐 
+2. 待机时间长 
+3. 显得专业
+
+想换《辐射》主题很久了…… 有看到喜欢的又没办法海外付款，最近试试用AI写了一个主题，目前还是比较满意的
+Pip-Boy 3000 表盘 - Garmin Forerunner 265s
+辐射（Fallout）系列游戏启发的Pip-Boy主题表盘，专为Garmin Forerunner 265s设计，采用标志性的绿色单色复古未来主义美学。
+功能特性
+
+复古Pip-Boy设计：经典绿色单色配色方案 (#00FF00)
+CRT屏幕效果：真实的扫描线叠加，呈现复古终端外观
+全面的数据显示：
+
+时间（时:分，带秒数）
+日期（日、月、年）
+步数计数器
+心率监测
+电池百分比
+消耗卡路里
+
+
+避难所男孩角色：标志性的辐射吉祥物
+Pip-Boy边框：带角落支架的技术边框
+
+安装说明
+前置要求
+
+
+安装 Connect IQ SDK Manager
+
+下载地址：https://developer.garmin.com/connect-iq/sdk/
+使用Garmin Connect账户登录
+
+
+
+安装 Visual Studio Code
+
+下载地址：https://code.visualstudio.com/
+
+
+
+安装 Monkey C 扩展
+
+
+
+官方文档 
+
+
+打开 VS Code
+进入扩展 (Cmd&#43;Shift&#43;X)
+搜索 &ldquo;Monkey C&rdquo;
+安装官方Garmin扩展
+
+
+生成开发者密钥（如果还没有）
+openssl genrsa -out developer_key.pem 4096
+openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+
+
+构建表盘
+
+
+使用 Visual Studio Code（推荐）：" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -197,7 +262,7 @@
   <meta itemprop="description" content="“一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意”">
   <meta itemprop="datePublished" content="2026-01-22T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-01-22T00:00:00+00:00">
-  <meta itemprop="wordCount" content="481">
+  <meta itemprop="wordCount" content="477">
   <meta itemprop="keywords" content="DIY,无用但有趣">
   
   <meta property="og:url" content="https://fifteenbao.com/post/%E6%88%91%E7%9A%84garmin%E8%A1%A8%E7%9B%98/">
@@ -801,8 +866,7 @@
       
     </header>
 
-    <section><p>一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意.</p>
-<p><img src="https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-15.02.25.60uqtu4kq7.webp" alt="我的表盘" title="我的表盘"></p>
+    <section><p><img src="https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-15.02.25.60uqtu4kq7.webp" alt="我的表盘" title="我的表盘"></p>
 <p>23年的双十一换了 Garmin 的 Forerunner265S</p>
 <p>购买原因：</p>
 <pre><code>1. 可以不带手机跑步和听音乐 
@@ -1025,7 +1089,8 @@ var darkGreen = 0x006600;  // 扫描线颜色
 比如步数超过9999会溢出，当步数超过此数值时，会切换成千分位 10.0k 显示</p>
 <p>时间符号 “：” 全字符很占小屏幕的位置，把小时和分钟布置成上下排列，减少占位</p>
 <p>目前看还是比较满意的
-AI Coding 上大分！</p></section>
+AI Coding 上大分！</p>
+</section>
 
     
     
@@ -1053,6 +1118,10 @@ AI Coding 上大分！</p></section>
     <nav
       class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
     >
+      
+      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5001/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>好奇心周报001</span></a
+      >
       
       
       <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/iphone-&#43;-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/"

@@ -765,7 +765,72 @@
 
   
   <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <p>一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意.</p>
+    <p><img src="https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-15.02.25.60uqtu4kq7.webp" alt="我的表盘" title="我的表盘"></p>
+<p>23年的双十一换了 Garmin 的 Forerunner265S</p>
+<p>购买原因：</p>
+<pre><code>1. 可以不带手机跑步和听音乐 
+2. 待机时间长 
+3. 显得专业
+</code></pre>
+<p>想换《辐射》主题很久了…… 有看到喜欢的又没办法海外付款，最近试试用AI写了一个主题，目前还是比较满意的</p>
+<h1 id="pip-boy-3000-表盘---garmin-forerunner-265s">Pip-Boy 3000 表盘 - Garmin Forerunner 265s</h1>
+<p>辐射（Fallout）系列游戏启发的Pip-Boy主题表盘，专为Garmin Forerunner 265s设计，采用标志性的绿色单色复古未来主义美学。</p>
+<h2 id="功能特性">功能特性</h2>
+<ul>
+<li><strong>复古Pip-Boy设计</strong>：经典绿色单色配色方案 (#00FF00)</li>
+<li><strong>CRT屏幕效果</strong>：真实的扫描线叠加，呈现复古终端外观</li>
+<li><strong>全面的数据显示</strong>：
+<ul>
+<li>时间（时:分，带秒数）</li>
+<li>日期（日、月、年）</li>
+<li>步数计数器</li>
+<li>心率监测</li>
+<li>电池百分比</li>
+<li>消耗卡路里</li>
+</ul>
+</li>
+<li><strong>避难所男孩角色</strong>：标志性的辐射吉祥物</li>
+<li><strong>Pip-Boy边框</strong>：带角落支架的技术边框</li>
+</ul>
+<h2 id="安装说明">安装说明</h2>
+<h3 id="前置要求">前置要求</h3>
+<ol>
+<li>
+<p><strong>安装 Connect IQ SDK Manager</strong></p>
+<ul>
+<li>下载地址：<a href="https://developer.garmin.com/connect-iq/sdk/">https://developer.garmin.com/connect-iq/sdk/</a></li>
+<li>使用Garmin Connect账户登录</li>
+</ul>
+</li>
+<li>
+<p><strong>安装 Visual Studio Code</strong></p>
+<ul>
+<li>下载地址：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>安装 Monkey C 扩展</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><a href="https://developer.garmin.com/connect-iq/core-topics/debugging/">官方文档 </a></p>
+</blockquote>
+<ul>
+<li>打开 VS Code</li>
+<li>进入扩展 (Cmd+Shift+X)</li>
+<li>搜索 &ldquo;Monkey C&rdquo;</li>
+<li>安装官方Garmin扩展</li>
+</ul>
+<ol start="4">
+<li><strong>生成开发者密钥</strong>（如果还没有）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out developer_key.pem <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="构建表盘">构建表盘</h3>
+<ol>
+<li>
+<p><strong>使用 Visual Studio Code</strong>（推荐）：</p>
   </div>
   
 
