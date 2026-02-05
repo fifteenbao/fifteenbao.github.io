@@ -192,8 +192,8 @@
   
   
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2026-01-31T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-01-31T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-02-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-02-05T00:00:00+00:00">
   
   <meta property="og:url" content="https://fifteenbao.com/post/">
   <meta property="og:site_name" content="fifteenbao">
@@ -770,6 +770,142 @@
 
 
 
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Feb 5, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>玩了三天风风火火的 OpenClaw/MoltBot/ClawdBot，还蛮好玩的，就是 Token 爆炸！
+尤其是那个 <code>qwen3 max</code> …… 随随便便一问，大几十万 token，问一下好几块…… 在此感谢阿里云送了150块优惠券🙏。</p>
+<h2 id="安装">安装</h2>
+<p>用了阿里云和腾讯云的轻量化服务器，阿里云大模型的api调用默认打开的，第一天莫名其妙欠费8块…… 腾讯云倒是不会，而且版本也很新，看起来更新很快，像要把 channel、skill都封装进去，就是莫名其妙崩！暂时弃掉腾讯云了…… 等我的 mac mini 退休吧，给我的bot安个家，这线上的支出太可怕了。</p>
+<h2 id="关于模型">关于模型</h2>
+<p>尝试了 <code>qwen3 max</code> / <code>deepseek r1/v3.2</code> / <code>GLM4.7</code> , 相对来说 qwen3好些（毕竟价钱在……）
+切换了模型之后似乎记忆也有些问题…… 可能没重启之类的。</p>
+<h2 id="channel">channel</h2>
+<h3 id="telegram">telegram</h3>
+<p>接入了telegram，帅呆！</p>
+<p>自定义了快捷菜单，目前看效果是不错，不知道会不会记忆混乱。感觉是个很不错的接入方式。</p>
+<table>
+  <thead>
+      <tr>
+          <th>机器人设置</th>
+          <th>快捷菜单</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.41.31.32iha4vjio.webp" alt=""></td>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.39.13.7p44atue27.webp" alt=""></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="飞书">飞书</h3>
+<p>飞书，总是挂…… 等等官方新版支持效果。</p>
+<p>目前可以支持机器人创建飞书文档…… 它不给我开权限也是个问题……</p>
+<table>
+  <thead>
+      <tr>
+          <th>创建飞书文档</th>
+          <th>倒是给我开个权限啊！</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3.2rvngzwtbp.webp" alt=""></td>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E9%A3%9E%E4%B9%A6%E6%9D%83%E9%99%90.2yyvcfiyrb.webp" alt=""></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="skill">skill</h2>
+<p>上午看了一个新的，<a href="https://github.com/VoltAgent/awesome-openclaw-skills/tree/main">awesome-openclaw-skills</a>
+我的bot帮我整理了一下</p>
+<p>👇</p>
+<pre tabindex="0"><code>
+
+🦞 OpenClaw 核心插件库
+
+消息与通信
+
+• bluebubbles - BlueBubbles 集成
+• discord - Discord 功能扩展
+• slack - Slack 集成
+• imsg - iMessage 支持
+• wacli - WhatsApp CLI 工具
+
+开发者工具
+
+• github - GitHub 集成（issue、PR、CI 等）
+• coding-agent - 编码助手
+• tmux - Tmux 会话管理
+• 1password - 1Password 集成
+
+媒体与内容
+
+• gemini - Google Gemini AI 集成
+• openai-image-gen - OpenAI 图像生成
+• openai-whisper - 语音转文字
+• spotify-player - Spotify 控制
+• songsee - 音乐识别
+• gifgrep - GIF 搜索
+
+生产力工具
+
+• gog - Google Workspace 集成（Gmail、日历、Drive 等）
+• notion - Notion 集成
+• obsidian - Obsidian 笔记
+• apple-notes - Apple Notes
+• apple-reminders - Apple 提醒事项
+• things-mac - Things 3 任务管理
+
+系统与设备控制
+
+• canvas - 实时画布控制
+• camsnap - 摄像头快照
+• openhue - Philips Hue 灯光控制
+• sonoscli - Sonos 音响控制
+• weather - 天气信息
+
+实用工具
+
+• clawhub - 插件管理 CLI
+• skill-creator - 技能创建工具
+• summarize - 内容摘要
+• model-usage - 模型使用统计
+• session-logs - 会话日志管理
+
+安装与管理
+
+通过 ClawHub CLI 可以轻松管理这些插件：
+</code></pre><p>还装了一些飞书相关的、都是bug…… 等官方更新吧</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/">OpenClaw 尝鲜记</a>
+</section>
 
 
 
