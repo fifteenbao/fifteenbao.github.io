@@ -73,8 +73,8 @@
   
   
   <meta name="description" content="
-
-暂不支持移动端显示，抱歉。" />
+🧠 SOUL — 人格与价值观
+雷猴，唔係包" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -199,7 +199,7 @@
   <meta itemprop="description" content="`Hugo, the world&#39;s fastest framework for building websites">
   <meta itemprop="datePublished" content="2025-12-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-12-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="92">
+  <meta itemprop="wordCount" content="139">
   
   <meta property="og:url" content="https://fifteenbao.com/about/">
   <meta property="og:site_name" content="fifteenbao">
@@ -750,99 +750,6 @@
     </header>
 
     <section><style>
-  #pipboy {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 14px;
-    border-radius: 32px;
-    /* 仿 Pip-Boy 3000 外壳的老旧橄榄绿色金属质感 */
-    background:
-      radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.12), transparent 55%),
-      radial-gradient(circle at 85% 90%, rgba(0, 0, 0, 0.6), transparent 65%),
-      radial-gradient(circle at 20% 20%, #6d7a5a 0, #414932 38%, #1a1f15 100%);
-    box-shadow:
-      0 18px 35px rgba(0, 0, 0, 0.75),
-      0 0 0 1px rgba(0, 0, 0, 0.85),
-      inset 0 0 0 2px rgba(255, 255, 255, 0.05),
-      inset 0 0 22px rgba(0, 0, 0, 0.9);
-  }
-
-  #pipboy::before {
-    content: "";
-    position: absolute;
-    inset: 10px;
-    border-radius: 26px;
-    border: 2px solid rgba(5, 10, 5, 0.9);
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-      /* 绿色内发光描边 */
-      inset 0 0 16px rgba(120, 255, 140, 0.2),
-      inset 0 0 32px rgba(80, 200, 110, 0.22);
-    pointer-events: none;
-  }
-
-  /* 4:3 屏幕区域 */
-  #pipboy .pipboy-screen {
-    position: relative;
-    aspect-ratio: 3 / 4;
-    border-radius: 22px;
-    overflow: hidden;
-    /* 冷绿色荧光屏 + 轻微噪点质感 */
-    background:
-      radial-gradient(circle at 20% 12%, rgba(180, 255, 210, 0.7), transparent 55%),
-      radial-gradient(circle at 80% 85%, rgba(0, 0, 0, 0.85), transparent 65%),
-      radial-gradient(circle at 50% 50%, #0c2314 0, #050b08 60%, #000 100%);
-    box-shadow:
-      /* 屏幕边缘压暗 + 绿色微光溢出 */
-      inset 0 0 40px rgba(0, 0, 0, 0.9),
-      inset 0 0 22px rgba(120, 255, 160, 0.16),
-      0 0 16px rgba(60, 160, 90, 0.35);
-  }
-
-  #pipboy iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: inherit;
-    background: transparent;
-  }
-
-  /* 移动端提示文案，默认隐藏，仅在小屏显示 */
-  #pipboy-mobile-msg {
-    display: none;
-    margin: 2rem auto;
-    max-width: 32rem;
-    text-align: center;
-    font-size: 0.95rem;
-    opacity: 0.75;
-  }
-
-  /* 在小于1025px时隐藏 pipboy，并显示提示文案 */
-  @media (max-width: 1024px) {
-    #pipboy {
-      display: none !important;
-    }
-
-    #pipboy-mobile-msg {
-      display: block;
-    }
-  }
-
-  @media (max-width: 640px) {
-    #pipboy {
-      max-width: 100%;
-      margin: 1.5rem auto;
-      padding: 14px;
-      border-radius: 24px;
-    }
-
-    #pipboy .pipboy-screen {
-      border-radius: 18px;
-    }
-  }
-
   /* 热力图样式 */
   #heatmap-container {
     margin: 2rem 0;
@@ -870,7 +777,7 @@
     display: flex;
     flex-direction: column;
     gap: 3px;
-    padding-top: 18px; /* 与月份标签对齐 */
+    padding-top: 18px;
     align-items: flex-end;
     flex: 0 0 auto;
   }
@@ -907,7 +814,6 @@
     white-space: nowrap;
   }
 
-  /* 53列（周）× 7行（星期），按列填充 */
   #heatmap {
     display: grid;
     grid-auto-flow: column;
@@ -1054,40 +960,62 @@
     }
   }
 </style>
-<!-- <div id="pipboy">
-  <div class="pipboy-screen">
-    <iframe
-      src="https://pipboy.lovable.app"
-      loading="lazy"
-      title="Pipboy"
-      referrerpolicy="no-referrer"
-    ></iframe>
-  </div>
-</div> -->
-<p id="pipboy-mobile-msg">暂不支持移动端显示，抱歉。</p>
-<!-- 最近半路出家在扫地机器人公司做产品经理
-
-## 为什么做产品经理？
-
-主观因素：发现自己喜欢并且擅长找东西，年头久了感觉有些自己的taste，做产品ROI更高；
-
-客观因素：GPT出来就没设计师什么事了🤷，可能很多职业都没什么事了。
-
-## 现在做了什么
-
-一年半的时间，断断续续弄了AI摄像头、机械臂、大语言模型，爬楼梯的扫地机等等杂七杂八的不赚钱业务。公司不景气都烂尾了，打击还蛮大的。
-目前在公司兼职点marketing、包装设计和ID设计。
-全栈型牛马
-
-## 未来想做什么
-
-产品经理，写了一篇文章可以了解下[关于我想做什么样的产品经理？](http://fifteenbao.com/post/%E5%85%B3%E4%BA%8E%E6%88%91%E6%83%B3%E5%81%9A%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/)
- -->
-<script type="application/json" id="post-dates-data">"[\"2026-02-24\",\"2026-02-05\",\"2026-01-31\",\"2026-01-22\",\"2025-12-24\",\"2025-12-14\",\"2025-12-12\",\"2025-12-10\",\"2025-12-09\",\"2025-12-06\",\"2025-12-01\",\"2025-01-07\",\"2023-06-09\",\"2023-06-06\",\"2023-05-28\",\"2023-05-24\",\"2023-05-20\",\"2023-03-09\",\"2023-02-22\",\"2022-12-09\",\"2022-02-22\"]"</script>
+<h2 id="-soul--人格与价值观">🧠 SOUL — 人格与价值观</h2>
+<p><strong>雷猴，唔係包</strong></p>
+<p>Status: 尝试在&quot;理性的工程逻辑&quot;与&quot;感性的设计审美&quot;之间，寻找具身智能的平衡点。</p>
+<p>Current Job: 扫地机器人公司兼职多岗的产品经理（各种 Bug 的第一目击证人）。</p>
+<ul>
+<li><strong>核心价值观</strong>：少，但更好 (Dieter Rams 信徒)</li>
+<li><strong>设计原则</strong>：像素对齐，天秤座的审美偏执</li>
+<li><strong>工作哲学</strong>：用 AI 解放重复劳动，让计算机完成所有无聊的事</li>
+</ul>
+<hr>
+<h2 id="-agents--操作手册与行为规范">📋 AGENTS — 操作手册与行为规范</h2>
+<p>产品经理的日常操作指南：</p>
+<ul>
+<li><strong>🐛 Bug 第一目击证人</strong>：发现问题，分析根因，协调解决</li>
+<li><strong>🤖 机器人产品实测</strong>：端侧视觉、ROS 实践、开源探索</li>
+<li><strong>🎨 跨界改装</strong>：Blender 建模，3D 打印，审美把控</li>
+<li><strong>⚡ 效率工程</strong>：脚本自动化，AI 工具集成</li>
+<li><strong>🏃 硬件维护</strong>：保持身心健康，支持长期战斗</li>
+</ul>
+<hr>
+<h2 id="-usermd--用户信息档案">👤 USER.md — 用户信息档案</h2>
+<ul>
+<li><strong>姓名</strong>：十五包 (fifteenbao)</li>
+<li><strong>职业</strong>：产品经理 / 设计师 / 开发者</li>
+<li><strong>公司</strong>：扫地机器人公司</li>
+<li><strong>技能栈</strong>：产品设计、视觉设计、3D 建模、前端开发、AI 工具</li>
+<li><strong>兴趣</strong>：机器人、AI、设计、开源、效率工具</li>
+<li><strong>座右铭</strong>：less, but better.</li>
+</ul>
+<hr>
+<h2 id="-skill--技能系统">🛠️ SKILL — 技能系统</h2>
+<h3 id="核心技能">核心技能</h3>
+<ul>
+<li><strong>产品经理</strong>：需求分析、项目管理、用户研究</li>
+<li><strong>视觉设计</strong>：UI/UX、品牌设计、包装设计</li>
+<li><strong>3D 设计</strong>：Blender、3D 打印、工业设计</li>
+</ul>
+<h3 id="技术技能">技术技能</h3>
+<ul>
+<li><strong>前端开发</strong>：HTML/CSS/JS、Hugo、TailwindCSS</li>
+<li><strong>AI/机器人</strong>：YOLO、ROS、LeRobot、OpenClaw</li>
+<li><strong>工具链</strong>：Illustrator 脚本、AI 自动化、效率工具</li>
+</ul>
+<h3 id="软技能">软技能</h3>
+<ul>
+<li><strong>跨界思维</strong>：工程逻辑 + 设计审美</li>
+<li><strong>问题解决</strong>：Bug 排查、系统优化</li>
+<li><strong>学习能力</strong>：持续探索新技术</li>
+</ul>
+<hr>
+<h2 id="-文章发布日历">📅 文章发布日历</h2>
+<script type="application/json" id="post-dates-data">"[\"2026-03-06\",\"2026-02-24\",\"2026-02-05\",\"2026-01-31\",\"2026-01-22\",\"2025-12-24\",\"2025-12-14\",\"2025-12-12\",\"2025-12-10\",\"2025-12-09\",\"2025-12-06\",\"2025-12-01\",\"2025-01-07\",\"2023-06-09\",\"2023-06-06\",\"2023-05-28\",\"2023-05-24\",\"2023-05-20\",\"2023-03-09\",\"2023-02-22\",\"2022-12-09\",\"2022-02-22\"]"</script>
 
 
 <div id="heatmap-container">
-  <div id="heatmap-title">文章发布活动</div>
+  <div id="heatmap-title">发布活动热力图</div>
   <div class="heatmap-wrapper">
     <div class="heatmap-weekdays" id="heatmap-weekdays"></div>
     <div class="heatmap-content-wrapper">
@@ -1442,55 +1370,44 @@
     init();
   }
 })();
-</script>
-<p>🤖
-雷猴，唔係包</p>
-<blockquote>
-<p><strong>Status:</strong> 尝试在“理性的工程逻辑”与“感性的设计审美”之间，寻找具身智能的平衡点。</p>
-<p><strong>Current Job:</strong> 扫地机器人公司兼职多岗的产品经理（各种 Bug 的第一目击证人）。</p>
-</blockquote>
-<hr>
-<h2 id="-核心驱动机器人产品实测">🛠️ 核心驱动：机器人产品实测</h2>
+</script> 
 <ul>
-<li>
-<p><strong>端侧视觉：</strong></p>
-</li>
-<li>
-<p>日常与 <strong>MR813 / MR536</strong> 交流感情。在算力吃紧的板子上跑 <strong>YOLO</strong>，目标是让机器人分清拖鞋和猫屎。</p>
-</li>
-<li>
-<p><strong>ROS 实践：</strong> - 在 <strong>RDK X5</strong> 上跑通了 <strong>LeRobot</strong> (ACT/RDT Transformer / Diffusion 模型)。</p>
-</li>
-<li>
-<p>在 <strong>NVIDIA Jetson</strong> 上指挥 <strong>xArm6</strong> 完成“从冰箱取可乐”的动作。</p>
-</li>
-<li>
-<p><strong>开源探索：</strong> 最近的业余时间主要贡献给了 <strong>OpenClaw</strong> 研究。</p>
-</li>
+<li><strong>⚡ 效率工程</strong>：脚本自动化，AI 工具集成</li>
+<li><strong>🏃 硬件维护</strong>：保持身心健康，支持长期战斗</li>
 </ul>
 <hr>
-<h2 id="-跨界改装设计师的余温">🎨 跨界改装：设计师的余温</h2>
-<p>虽然转型了，但审美这块儿还没向工程逻辑完全妥协。</p>
+<h2 id="-usermd">👤 USER.md</h2>
 <ul>
-<li><strong>Blender</strong> 主要用于给机械臂画改装件或给 Demo 搓个 3D 场景。</li>
-<li><strong>3D 打印：</strong> 家里的打印机除了不打印钱，什么都打印。</li>
-<li><strong>审美偏执：</strong> <strong>天秤座</strong>，对像素不对齐和配色混乱有生理性不适。</li>
-<li><strong>精神支柱：</strong> <strong>迪特·拉姆斯 (Dieter Rams)</strong> 的信徒。目前正在攒自己的“设计十诫”，进度：1/10。</li>
+<li><strong>姓名</strong>：fifteenbao</li>
+<li><strong>职业</strong>：产品经理 / 设计师</li>
+<li><strong>公司</strong>：扫地机器人公司</li>
+<li><strong>技能栈</strong>：产品设计、视觉设计、3D建模、AI 工具</li>
+<li><strong>兴趣</strong>：机器人、AI、设计、开源、效率工具</li>
+<li><strong>座右铭</strong>：less, but better.</li>
 </ul>
 <hr>
-<h2 id="-效率工程因为懒所以-ai">⚡ 效率工程：因为懒，所以 AI</h2>
-<p>致力于让计算机完成所有重复性劳动。</p>
+<h2 id="-skillmd">🛠️ SKILL.md</h2>
+<h3 id="核心技能-1">核心技能</h3>
 <ul>
-<li><strong>脚本自动化：</strong> * <strong>Illustrator：</strong> 既然能写脚本批量处理，就绝不点一下午鼠标。</li>
-<li><strong>BOM 排查：</strong> 用 AI 跑设计文档检查，比人工对表格更不容易眼花。</li>
-<li><strong>AI 狂热：</strong> 深度收集各类 AI 工具，目标是把产品经理的日常工作压缩到只需点一下“Run”。</li>
+<li><strong>产品经理</strong>：需求分析、项目管理、用户研究</li>
+<li><strong>视觉设计</strong>：UI/UX、品牌设计、包装设计</li>
+<li><strong>3D 设计</strong>：Blender、3D 打印、工业设计</li>
+</ul>
+<h3 id="技术技能-1">技术技能</h3>
+<ul>
+<li><strong>Blender</strong> 主要用于给机械臂画改装件或给 Demo 搓个3D 场景。</li>
+<li><strong>AI/机器人</strong>：YOLO、ROS、LeRobot、OpenClaw</li>
+<li><strong>工具链</strong>：Illustrator 脚本、AI 自动化、效率工具</li>
+<li>日常与 <strong>MR813 / MR536</strong> 交流感情。在算力吃紧的板子上跑 <strong>YOLO</strong>，目标是让机器人认出拖鞋和屎。</li>
+<li>虽然转型了，但审美这块儿还没向工程逻辑完全妥协。</li>
+</ul>
+<h3 id="软技能-1">软技能</h3>
+<ul>
+<li><strong>跨界思维</strong>：工程逻辑 + 设计审美</li>
+<li><strong>问题解决</strong>：Bug 排查、系统优化</li>
+<li><strong>学习能力</strong>：持续探索新技术</li>
 </ul>
 <hr>
-<h2 id="-硬件维护个人版">🏃 硬件维护（个人版）</h2>
-<ul>
-<li>🏃/🥊/🏋️</li>
-</ul>
-<p><em>&ldquo;less,but better. (少，但更好——但我 3D 打印的零件除外。)&rdquo;</em></p>
 </section>
 
     

@@ -63,7 +63,7 @@
   />
 
   
-  <title>Openclaw - fifteenbao</title>
+  <title>OpenClaw 尝鲜记 - 第二集 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -72,11 +72,42 @@
   
   
   
+  <meta name="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。
+展示一下跳舞的成果。
+模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
+“再跳一段新疆舞”
+
   
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+      
+          三倍速新疆舞
+          终端显示
+      
+  
+  
+      
+          
+          
+      
+  
+
+硬件配置以及校准：
+
+https://wiki.seeedstudio.com/lerobot_so100m_new/
+
+3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
+软件配置：
+使用官方提供的 openclaw 一键安装脚本进行部署：
+curl -fsSL https://openclaw.ai/install.sh | bash
+重启 Gateway：openclaw gateway restart
+skill 技能
+连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
+权限配置调整
+2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
+大概过程
+身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 
+
+
+上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -106,6 +137,12 @@
   
 
   
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
   
 
   
@@ -191,33 +228,57 @@
       </script>
   
   
-  <meta itemprop="name" content="Openclaw">
+  <meta itemprop="name" content="OpenClaw 尝鲜记 - 第二集">
+  <meta itemprop="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。 展示一下跳舞的成果。 模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
+“再跳一段新疆舞” 三倍速新疆舞 终端显示 硬件配置以及校准： https://wiki.seeedstudio.com/lerobot_so100m_new/
+3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
+软件配置： 使用官方提供的 openclaw 一键安装脚本进行部署： curl -fsSL https://openclaw.ai/install.sh | bash
+重启 Gateway：openclaw gateway restart
+skill 技能 连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
+权限配置调整 2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
+大概过程 身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……">
   <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="wordCount" content="76">
+  <meta itemprop="keywords" content="Openclaw,DIY">
   
-  <meta property="og:url" content="https://fifteenbao.com/tags/openclaw/">
+  <meta property="og:url" content="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0-copy/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="Openclaw">
+  <meta property="og:title" content="OpenClaw 尝鲜记 - 第二集">
+  <meta property="og:description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。 展示一下跳舞的成果。 模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
+“再跳一段新疆舞” 三倍速新疆舞 终端显示 硬件配置以及校准： https://wiki.seeedstudio.com/lerobot_so100m_new/
+3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
+软件配置： 使用官方提供的 openclaw 一键安装脚本进行部署： curl -fsSL https://openclaw.ai/install.sh | bash
+重启 Gateway：openclaw gateway restart
+skill 技能 连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
+权限配置调整 2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
+大概过程 身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……">
   <meta property="og:locale" content="cn">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
+    <meta property="article:tag" content="Openclaw">
+    <meta property="article:tag" content="DIY">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Openclaw">
+  <meta name="twitter:title" content="OpenClaw 尝鲜记 - 第二集">
+  <meta name="twitter:description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。 展示一下跳舞的成果。 模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
+“再跳一段新疆舞” 三倍速新疆舞 终端显示 硬件配置以及校准： https://wiki.seeedstudio.com/lerobot_so100m_new/
+3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
+软件配置： 使用官方提供的 openclaw 一键安装脚本进行部署： curl -fsSL https://openclaw.ai/install.sh | bash
+重启 Gateway：openclaw gateway restart
+skill 技能 连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
+权限配置调整 2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
+大概过程 身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……">
 
   
   
-  <link
-    rel="alternate"
-    type="application/rss&#43;xml"
-    href="https://fifteenbao.com/tags/openclaw/index.xml"
-    title="fifteenbao"
-  />
-  
 
   
-  <link rel="canonical" href="https://fifteenbao.com/tags/openclaw/" />
+  <link rel="canonical" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0-copy/" />
   
   
   
@@ -735,37 +796,55 @@
     >
       
 
-
-
-<h1 class="mb-14">#Openclaw</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+<div class="article-container">
   
-  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记 - 第二集</h2>
-
-  <div class="text-xs antialiased opacity-60 mb-2">
-    <time class="whitespace-nowrap">Mar 6, 2026</time>
-  </div>
-
   
-  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#再跳一段新疆舞">“再跳一段新疆舞”</a></li>
+      </ul>
+    </li>
+    <li><a href="#硬件配置以及校准">硬件配置以及校准：</a></li>
+    <li><a href="#软件配置">软件配置：</a>
+      <ul>
+        <li><a href="#skill-技能">skill 技能</a></li>
+        <li><a href="#权限配置调整">权限配置调整</a></li>
+        <li><a href="#大概过程">大概过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些参考链接">一些参考链接</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">OpenClaw 尝鲜记 - 第二集</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>Mar 6, 2026</time>
+        
+        
+        
+        
+      </div>
+      
+    </header>
+
+    <section><p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
 展示一下跳舞的成果。
 模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
 <h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
@@ -801,164 +880,594 @@
 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
 上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-  </div>
-  
-
-  
-  <div class="mb-2 flex flex-wrap gap-1.5">
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
-    
-  </div>
-  
-  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0-copy/">OpenClaw 尝鲜记 - 第二集</a>
+<p>跳了几个舞之后，它还给我分析了一下。</p>
+<p><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/duibi_dance.7lkjiushvf.webp" alt="舞步分析"></p>
+<h2 id="一些参考链接">一些参考链接</h2>
+<p>Token降本增效部分强烈建议阅读。</p>
+<p><a href="https://sspai.com/post/106232">OpenClaw：高强度使用两周，这个 AI 工具颠覆了我的工作流</a></p>
 </section>
 
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记</h2>
-
-  <div class="text-xs antialiased opacity-60 mb-2">
-    <time class="whitespace-nowrap">Feb 5, 2026</time>
-  </div>
-
-  
-  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <p>玩了三天风风火火的 OpenClaw/MoltBot/ClawdBot，还蛮好玩的，就是 Token 爆炸！
-尤其是那个 <code>qwen3 max</code> …… 随随便便一问，大几十万 token，问一下好几块…… 在此感谢阿里云送了150块优惠券🙏。</p>
-<h2 id="安装">安装</h2>
-<p>用了阿里云和腾讯云的轻量化服务器，阿里云大模型的api调用默认打开的，第一天莫名其妙欠费8块…… 腾讯云倒是不会，而且版本也很新，看起来更新很快，像要把 channel、skill都封装进去，就是莫名其妙崩！暂时弃掉腾讯云了…… 等我的 mac mini 退休吧，给我的bot安个家，这线上的支出太可怕了。</p>
-<h2 id="关于模型">关于模型</h2>
-<p>尝试了 <code>qwen3 max</code> / <code>deepseek r1/v3.2</code> / <code>GLM4.7</code> , 相对来说 qwen3好些（毕竟价钱在……）
-切换了模型之后似乎记忆也有些问题…… 可能没重启之类的。</p>
-<h2 id="channel">channel</h2>
-<h3 id="telegram">telegram</h3>
-<p>接入了telegram，帅呆！</p>
-<p>自定义了快捷菜单，目前看效果是不错，不知道会不会记忆混乱。感觉是个很不错的接入方式。</p>
-<table>
-  <thead>
-      <tr>
-          <th>机器人设置</th>
-          <th>快捷菜单</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.41.31.32iha4vjio.webp" alt=""></td>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.39.13.7p44atue27.webp" alt=""></td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="飞书">飞书</h3>
-<p>飞书，总是挂…… 等等官方新版支持效果。</p>
-<p>目前可以支持机器人创建飞书文档…… 它不给我开权限也是个问题……</p>
-<table>
-  <thead>
-      <tr>
-          <th>创建飞书文档</th>
-          <th>倒是给我开个权限啊！</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3.2rvngzwtbp.webp" alt=""></td>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E9%A3%9E%E4%B9%A6%E6%9D%83%E9%99%90.2yyvcfiyrb.webp" alt=""></td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="skill">skill</h2>
-<p>上午看了一个新的，<a href="https://github.com/VoltAgent/awesome-openclaw-skills/tree/main">awesome-openclaw-skills</a>
-我的bot帮我整理了一下</p>
-<p>👇</p>
-<pre tabindex="0"><code>
-
-🦞 OpenClaw 核心插件库
-
-消息与通信
-
-• bluebubbles - BlueBubbles 集成
-• discord - Discord 功能扩展
-• slack - Slack 集成
-• imsg - iMessage 支持
-• wacli - WhatsApp CLI 工具
-
-开发者工具
-
-• github - GitHub 集成（issue、PR、CI 等）
-• coding-agent - 编码助手
-• tmux - Tmux 会话管理
-• 1password - 1Password 集成
-
-媒体与内容
-
-• gemini - Google Gemini AI 集成
-• openai-image-gen - OpenAI 图像生成
-• openai-whisper - 语音转文字
-• spotify-player - Spotify 控制
-• songsee - 音乐识别
-• gifgrep - GIF 搜索
-
-生产力工具
-
-• gog - Google Workspace 集成（Gmail、日历、Drive 等）
-• notion - Notion 集成
-• obsidian - Obsidian 笔记
-• apple-notes - Apple Notes
-• apple-reminders - Apple 提醒事项
-• things-mac - Things 3 任务管理
-
-系统与设备控制
-
-• canvas - 实时画布控制
-• camsnap - 摄像头快照
-• openhue - Philips Hue 灯光控制
-• sonoscli - Sonos 音响控制
-• weather - 天气信息
-
-实用工具
-
-• clawhub - 插件管理 CLI
-• skill-creator - 技能创建工具
-• summarize - 内容摘要
-• model-usage - 模型使用统计
-• session-logs - 会话日志管理
-
-安装与管理
-
-通过 ClawHub CLI 可以轻松管理这些插件：
-</code></pre><p>还装了一些飞书相关的、都是bug…… 等官方更新吧</p>
-  </div>
-  
-
-  
-  <div class="mb-2 flex flex-wrap gap-1.5">
     
     
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
+    <footer class="mt-12 flex flex-wrap">
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/openclaw"
+        >openclaw</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="https://fifteenbao.com/tags/diy"
+        >DIY</a
+      >
+      
+    </footer>
+    
+
     
     
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
     
-  </div>
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/2026-%E6%8E%A2%E4%BA%B2%E8%AE%B0/"
+        ><span>2026 探亲记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<style>
   
-  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/">OpenClaw 尝鲜记</a>
-</section>
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);  
+    top: 0;
+    width: 240px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1400px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 260px);  
+      right: auto;
+      top: 8rem;  
+      width: 240px;
+      max-height: calc(100vh - 10rem);
+    }
+    
+     
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 260px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 1rem;  
+    line-height: 1.7;  
+  }
+
+  .article-content .prose p {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 2em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.625em;  
+    line-height: 1.4;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1.125em;  
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.9375rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.75em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1.125em;  
+    }
+  }
 
 
+  .toc-wrapper {
+     
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
 
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .toc-header {
+    margin: -1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.8);  
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+    margin-top: 2rem;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
+     
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
+     
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.875rem;
+    opacity: 0.65;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.8125rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  @media (min-width: 1024px) and (max-width: 1399px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  @media (max-width: 1023px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+</style>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
 
 
     </main>

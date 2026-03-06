@@ -192,8 +192,8 @@
   
   
   <meta itemprop="name" content="DIY">
-  <meta itemprop="datePublished" content="2026-02-05T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-02-05T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
   
   <meta property="og:url" content="https://fifteenbao.com/categories/diy/">
   <meta property="og:site_name" content="fifteenbao">
@@ -748,6 +748,75 @@
 
 
 
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记 - 第二集</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Mar 6, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
+展示一下跳舞的成果。
+模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
+<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
+<table>
+  <thead>
+      <tr>
+          <th>三倍速新疆舞</th>
+          <th>终端显示</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
+          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
+<blockquote>
+<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
+</blockquote>
+<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
+<h2 id="软件配置">软件配置：</h2>
+<p>使用官方提供的 openclaw 一键安装脚本进行部署：
+<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
+<p>重启 Gateway：openclaw gateway restart</p>
+<h3 id="skill-技能">skill 技能</h3>
+<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
+<h3 id="权限配置调整">权限配置调整</h3>
+<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
+<h3 id="大概过程">大概过程</h3>
+<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
+<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
+<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
+上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0-copy/">OpenClaw 尝鲜记 - 第二集</a>
+</section>
 
 
 
