@@ -6,9 +6,16 @@
     <description>Recent content in Categories on fifteenbao</description>
     <generator>Hugo</generator>
     <language>cn</language>
-    <copyright>©2025 fifteenbao</copyright>
-    <lastBuildDate>Fri, 06 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fifteenbao.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>游记</title>
+      <link>https://fifteenbao.com/categories/%E6%B8%B8%E8%AE%B0/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/categories/%E6%B8%B8%E8%AE%B0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>DIY</title>
       <link>https://fifteenbao.com/categories/diy/</link>

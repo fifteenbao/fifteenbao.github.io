@@ -72,8 +72,35 @@
   
   
   
-  <meta name="description" content="
-🧠 SOUL — 人格与价值观
+  <meta name="description" content="📅 Memory.md
+
+
+
+
+  
+  
+    
+    
+      
+      
+    
+  
+  
+    0
+    
+    1
+    
+    2
+    
+    3
+    
+    4&#43;
+    
+  
+  
+
+
+🧠 SOUL.md
 雷猴，唔係包" />
   <meta name="author" content="fifteenbao" />
   
@@ -199,7 +226,7 @@
   <meta itemprop="description" content="`Hugo, the world&#39;s fastest framework for building websites">
   <meta itemprop="datePublished" content="2025-12-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-12-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="139">
+  <meta itemprop="wordCount" content="92">
   
   <meta property="og:url" content="https://fifteenbao.com/about/">
   <meta property="og:site_name" content="fifteenbao">
@@ -749,293 +776,30 @@
       
     </header>
 
-    <section><style>
-  /* 热力图样式 */
-  #heatmap-container {
-    margin: 2rem 0;
-    padding: 1.5rem;
-    background: var(--theme-bg, #fff);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  #heatmap-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--theme-text, #333);
-  }
-
-  .heatmap-wrapper {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
-
-  .heatmap-weekdays {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding-top: 18px;
-    align-items: flex-end;
-    flex: 0 0 auto;
-  }
-
-  .heatmap-weekday {
-    height: 11px;
-    font-size: 0.7rem;
-    color: var(--theme-text-secondary, #666);
-    line-height: 11px;
-    text-align: right;
-    min-width: 16px;
-  }
-
-  .heatmap-content-wrapper {
-    flex: 1;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 4px;
-  }
-
-  .heatmap-months {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 4px;
-    line-height: 1;
-    width: fit-content;
-  }
-
-  .heatmap-month {
-    font-size: 0.7rem;
-    color: var(--theme-text-secondary, #666);
-    text-align: left;
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-
-  #heatmap {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(7, 11px);
-    grid-auto-columns: 11px;
-    gap: 3px;
-    width: fit-content;
-  }
-
-  .heatmap-day {
-    width: 11px;
-    height: 11px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-  }
-
-  .heatmap-day:hover {
-    transform: scale(1.2);
-    z-index: 10;
-    position: relative;
-  }
-
-  .heatmap-day[data-level="0"] {
-    background-color: #ebedf0;
-  }
-
-  .heatmap-day[data-level="1"] {
-    background-color: #9be9a8;
-  }
-
-  .heatmap-day[data-level="2"] {
-    background-color: #40c463;
-  }
-
-  .heatmap-day[data-level="3"] {
-    background-color: #30a14e;
-  }
-
-  .heatmap-day[data-level="4"] {
-    background-color: #216e39;
-  }
-
-  .heatmap-legend {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 4px;
-    font-size: 0.75rem;
-    color: var(--theme-text-secondary, #666);
-  }
-
-  .heatmap-legend-item {
-    width: 11px;
-    height: 11px;
-    border-radius: 2px;
-  }
-
-  .heatmap-tooltip {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    pointer-events: none;
-    z-index: 1000;
-    white-space: nowrap;
-    display: none;
-  }
-
-  .heatmap-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-    gap: 1rem;
-  }
-
-  .heatmap-nav-btn {
-    padding: 6px 12px;
-    background: var(--theme-bg-secondary, #f5f5f5);
-    border: 1px solid var(--theme-border, #ddd);
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-    color: var(--theme-text, #333);
-  }
-
-  .heatmap-nav-btn:hover:not(:disabled) {
-    background: var(--theme-bg-hover, #e5e5e5);
-  }
-
-  .heatmap-nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  .heatmap-period {
-    font-size: 0.875rem;
-    color: var(--theme-text-secondary, #666);
-    font-weight: 500;
-  }
-
-  @media (max-width: 640px) {
-    #heatmap-container {
-      padding: 1rem;
-    }
-
-    .heatmap-day {
-      width: 9px;
-      height: 9px;
-    }
-
-    .heatmap-legend-item {
-      width: 9px;
-      height: 9px;
-    }
-
-    .heatmap-weekday {
-      height: 9px;
-      line-height: 9px;
-      font-size: 0.65rem;
-      min-width: 14px;
-    }
-
-    .heatmap-month {
-      font-size: 0.65rem;
-    }
-
-    #heatmap {
-      grid-template-rows: repeat(7, 9px);
-      grid-auto-columns: 9px;
-    }
-
-    .heatmap-controls {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .heatmap-nav-btn {
-      width: 100%;
-    }
-  }
-</style>
-<h2 id="-soul--人格与价值观">🧠 SOUL — 人格与价值观</h2>
-<p><strong>雷猴，唔係包</strong></p>
-<p>Status: 尝试在&quot;理性的工程逻辑&quot;与&quot;感性的设计审美&quot;之间，寻找具身智能的平衡点。</p>
-<p>Current Job: 扫地机器人公司兼职多岗的产品经理（各种 Bug 的第一目击证人）。</p>
-<ul>
-<li><strong>核心价值观</strong>：少，但更好 (Dieter Rams 信徒)</li>
-<li><strong>设计原则</strong>：像素对齐，天秤座的审美偏执</li>
-<li><strong>工作哲学</strong>：用 AI 解放重复劳动，让计算机完成所有无聊的事</li>
-</ul>
-<hr>
-<h2 id="-agents--操作手册与行为规范">📋 AGENTS — 操作手册与行为规范</h2>
-<p>产品经理的日常操作指南：</p>
-<ul>
-<li><strong>🐛 Bug 第一目击证人</strong>：发现问题，分析根因，协调解决</li>
-<li><strong>🤖 机器人产品实测</strong>：端侧视觉、ROS 实践、开源探索</li>
-<li><strong>🎨 跨界改装</strong>：Blender 建模，3D 打印，审美把控</li>
-<li><strong>⚡ 效率工程</strong>：脚本自动化，AI 工具集成</li>
-<li><strong>🏃 硬件维护</strong>：保持身心健康，支持长期战斗</li>
-</ul>
-<hr>
-<h2 id="-usermd--用户信息档案">👤 USER.md — 用户信息档案</h2>
-<ul>
-<li><strong>姓名</strong>：十五包 (fifteenbao)</li>
-<li><strong>职业</strong>：产品经理 / 设计师 / 开发者</li>
-<li><strong>公司</strong>：扫地机器人公司</li>
-<li><strong>技能栈</strong>：产品设计、视觉设计、3D 建模、前端开发、AI 工具</li>
-<li><strong>兴趣</strong>：机器人、AI、设计、开源、效率工具</li>
-<li><strong>座右铭</strong>：less, but better.</li>
-</ul>
-<hr>
-<h2 id="-skill--技能系统">🛠️ SKILL — 技能系统</h2>
-<h3 id="核心技能">核心技能</h3>
-<ul>
-<li><strong>产品经理</strong>：需求分析、项目管理、用户研究</li>
-<li><strong>视觉设计</strong>：UI/UX、品牌设计、包装设计</li>
-<li><strong>3D 设计</strong>：Blender、3D 打印、工业设计</li>
-</ul>
-<h3 id="技术技能">技术技能</h3>
-<ul>
-<li><strong>前端开发</strong>：HTML/CSS/JS、Hugo、TailwindCSS</li>
-<li><strong>AI/机器人</strong>：YOLO、ROS、LeRobot、OpenClaw</li>
-<li><strong>工具链</strong>：Illustrator 脚本、AI 自动化、效率工具</li>
-</ul>
-<h3 id="软技能">软技能</h3>
-<ul>
-<li><strong>跨界思维</strong>：工程逻辑 + 设计审美</li>
-<li><strong>问题解决</strong>：Bug 排查、系统优化</li>
-<li><strong>学习能力</strong>：持续探索新技术</li>
-</ul>
-<hr>
-<h2 id="-文章发布日历">📅 文章发布日历</h2>
-<script type="application/json" id="post-dates-data">"[\"2026-03-06\",\"2026-02-24\",\"2026-02-05\",\"2026-01-31\",\"2026-01-22\",\"2025-12-24\",\"2025-12-14\",\"2025-12-12\",\"2025-12-10\",\"2025-12-09\",\"2025-12-06\",\"2025-12-01\",\"2025-01-07\",\"2023-06-09\",\"2023-06-06\",\"2023-05-28\",\"2023-05-24\",\"2023-05-20\",\"2023-03-09\",\"2023-02-22\",\"2022-12-09\",\"2022-02-22\"]"</script>
+    <section><h2 id="-memorymd">📅 Memory.md</h2>
+<script type="application/json" id="post-dates-data">"[\"2026-03-16\",\"2026-03-06\",\"2026-02-24\",\"2026-02-05\",\"2026-01-31\",\"2026-01-22\",\"2025-12-24\",\"2025-12-14\",\"2025-12-12\",\"2025-12-10\",\"2025-12-09\",\"2025-12-06\",\"2025-12-01\",\"2025-01-07\",\"2023-06-09\",\"2023-06-06\",\"2023-05-28\",\"2023-05-24\",\"2023-05-20\",\"2023-03-09\",\"2023-02-22\",\"2022-12-09\",\"2022-02-22\"]"</script>
 
 
 <div id="heatmap-container">
-  <div id="heatmap-title">发布活动热力图</div>
+  <div id="heatmap-title"></div>
   <div class="heatmap-wrapper">
-    <div class="heatmap-weekdays" id="heatmap-weekdays"></div>
+    <div class="heatmap-year-labels" id="heatmap-year-labels"></div>
     <div class="heatmap-content-wrapper">
-      <div class="heatmap-months" id="heatmap-months"></div>
-      <div id="heatmap"></div>
+      <div class="heatmap-week-labels" id="heatmap-week-labels"></div>
+      <div id="heatmap-grid"></div>
     </div>
   </div>
   <div class="heatmap-legend">
-    <span>少</span>
+    <span>0</span>
     <div class="heatmap-legend-item" data-level="0"></div>
+    <span>1</span>
     <div class="heatmap-legend-item" data-level="1"></div>
+    <span>2</span>
     <div class="heatmap-legend-item" data-level="2"></div>
+    <span>3</span>
     <div class="heatmap-legend-item" data-level="3"></div>
+    <span>4+</span>
     <div class="heatmap-legend-item" data-level="4"></div>
-    <span>多</span>
-  </div>
-  <div class="heatmap-controls">
-    <button class="heatmap-nav-btn" id="heatmap-prev">← </button>
-    <div class="heatmap-period" id="heatmap-period"></div>
-    <button class="heatmap-nav-btn" id="heatmap-next"> →</button>
   </div>
   <div class="heatmap-tooltip" id="heatmap-tooltip"></div>
 </div>
@@ -1055,23 +819,17 @@
         return [];
       }
       
-      // 如果内容是字符串格式的数组（被转义了），需要先处理
-      // 例如: "[\"2026-01-22\",\"2025-12-24\"]" -> ["2026-01-22","2025-12-24"]
       if (typeof content === 'string' && content.startsWith('"') && content.endsWith('"')) {
-        // 如果整个内容被引号包裹，先去掉外层引号
         content = content.slice(1, -1);
-        // 处理转义的引号和反斜杠
         content = content.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
       }
       
       let dates = JSON.parse(content);
       
-      // 如果解析后还是字符串，再解析一次
       if (typeof dates === 'string') {
         dates = JSON.parse(dates);
       }
       
-      // 确保返回的是数组
       if (Array.isArray(dates)) {
         console.log('Found post dates:', dates.length, dates);
         return dates;
@@ -1085,32 +843,42 @@
     }
   }
 
-  // 根据日期数组生成热力图数据
-  function generateHeatmapData(postDates, startDate, endDate) {
-    // 确保 postDates 是数组
-    if (!Array.isArray(postDates)) {
-      console.warn('postDates is not an array:', typeof postDates, postDates);
-      postDates = [];
-    }
-    
-    // 统计每天发布的文章数量
-    const dateCountMap = {};
+  // 将 Date 对象格式化为本地 ISO 日期字符串 (YYYY-MM-DD)
+  function toLocalDateString(d) {
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  }
+
+  // 获取指定年份的所有周的数据（按周为单位）
+  function getYearWeekData(postDates, year) {
+    // 统计每周发布的文章数量
+    const weekCountMap = {};
     postDates.forEach(dateStr => {
-      if (dateStr >= startDate && dateStr <= endDate) {
-        dateCountMap[dateStr] = (dateCountMap[dateStr] || 0) + 1;
+      const dateYear = parseInt(dateStr.split('-')[0]);
+      if (dateYear === year) {
+        const date = new Date(dateStr);
+        const weekNum = getWeekNumber(date);
+        weekCountMap[weekNum] = (weekCountMap[weekNum] || 0) + 1;
       }
     });
 
-    // 生成日期范围内的所有日期
-    const data = [];
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    
-    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-      const dateStr = d.toISOString().split('T')[0];
-      const count = dateCountMap[dateStr] || 0;
+    // 生成52-53周的数据
+    const weeks = [];
+    const jan1 = new Date(year, 0, 1);
+    const startSunday = new Date(jan1);
+    startSunday.setDate(jan1.getDate() - jan1.getDay());
+
+    // 生成一年的周数据（每周一个方块）
+    for (let week = 1; week <= 53; week++) {
+      const weekDate = new Date(startSunday);
+      weekDate.setDate(startSunday.getDate() + (week - 1) * 7);
       
-      // 根据文章数量确定级别 (0-4)
+      // 只统计该周在本年中的天数
+      const count = weekCountMap[week] || 0;
+      
+      // 确定级别：按周的文章数
       let level = 0;
       if (count > 0) {
         if (count === 1) level = 1;
@@ -1118,212 +886,127 @@
         else if (count <= 4) level = 3;
         else level = 4;
       }
-      
-      data.push({
-        date: dateStr,
+
+      weeks.push({
+        week: week,
         level: level,
-        count: count
+        count: count,
+        startDate: toLocalDateString(weekDate)
       });
     }
-    
-    return data;
+
+    return weeks;
   }
 
-  // 格式化日期范围显示
-  function formatPeriod(startDate, endDate) {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const startStr = start.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' });
-    const endStr = end.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long' });
-    return `${startStr} - ${endStr}`;
+  // 获取日期在该年的周数（1-53）
+  function getWeekNumber(date) {
+    const year = date.getFullYear();
+    const jan1 = new Date(year, 0, 1);
+    const startSunday = new Date(jan1);
+    startSunday.setDate(jan1.getDate() - jan1.getDay());
+    
+    const timeDiff = date - startSunday;
+    const weekNum = Math.floor(timeDiff / (7 * 24 * 60 * 60 * 1000)) + 1;
+    
+    return Math.max(1, Math.min(weekNum, 53));
   }
 
   // 渲染热力图
-  function renderHeatmap(pageIndex = 0) {
-    const container = document.getElementById('heatmap');
+  function renderHeatmap() {
+    const gridContainer = document.getElementById('heatmap-grid');
+    const yearLabelsEl = document.getElementById('heatmap-year-labels');
     const tooltip = document.getElementById('heatmap-tooltip');
-    const periodEl = document.getElementById('heatmap-period');
-    const prevBtn = document.getElementById('heatmap-prev');
-    const nextBtn = document.getElementById('heatmap-next');
+    const weekLabelsEl = document.getElementById('heatmap-week-labels');
     
-    if (!container) return;
+    if (!gridContainer) return;
 
     const postDates = getPostDates();
     
-    // 计算当前页的日期范围（每页12个月）
-    // 默认显示 2025年2月 - 2026年1月 (pageIndex = 0)
-    const monthsPerPage = 6;
-    const defaultStartYear = 2026;
-    const defaultStartMonth = 1; // 6月
+    // 获取最早和最晚的年份
+    let minYear = new Date().getFullYear();
+    let maxYear = minYear;
     
-    // 计算当前页的开始年月
-    const totalMonthsOffset = pageIndex * monthsPerPage;
-    let actualStartYear = defaultStartYear;
-    let actualStartMonth = defaultStartMonth;
+    postDates.forEach(dateStr => {
+      const year = parseInt(dateStr.split('-')[0]);
+      minYear = Math.min(minYear, year);
+      maxYear = Math.max(maxYear, year);
+    });
     
-    // 往前推月份
-    actualStartMonth -= totalMonthsOffset;
-    while (actualStartMonth <= 0) {
-      actualStartMonth += 6;
-      actualStartYear -= 1;
-    }
-    
-    // 计算结束年月（开始月份 + 11个月）
-    let actualEndYear = actualStartYear;
-    let actualEndMonth = actualStartMonth + 11;
-    while (actualEndMonth > 12) {
-      actualEndMonth -= 12;
-      actualEndYear += 1;
-    }
-    
-    // 设置开始和结束日期
-    const startDate = new Date(actualStartYear, actualStartMonth - 1, 1);
-    const endDate = new Date(actualEndYear, actualEndMonth, 0); // 该月最后一天
-    
-    const startDateStr = startDate.toISOString().split('T')[0];
-    const endDateStr = endDate.toISOString().split('T')[0];
-    
-    // 更新期间显示
-    if (periodEl) {
-      periodEl.textContent = formatPeriod(startDateStr, endDateStr);
-    }
-    
-    // 更新翻页按钮状态
-    if (prevBtn) {
-      prevBtn.disabled = false; // 可以根据需要限制
-    }
-    if (nextBtn) {
-      nextBtn.disabled = pageIndex >= 10; // 限制最多往前看10年
-    }
-    
-    const data = generateHeatmapData(postDates, startDateStr, endDateStr);
+    // 只显示 2025 年及以后的数据
+    maxYear = Math.max(maxYear, new Date().getFullYear());
+    minYear = 2025; // 只显示 2025 年及以后
     
     // 清空容器
-    container.innerHTML = '';
-    
-    // 计算需要显示的周数（53周）
-    const weeks = 53;
-    const daysPerWeek = 7;
-    
-    // 获取开始日期是星期几（0=周日，1=周一...）
-    const startDayOfWeek = startDate.getDay();
-    
-    // 创建数据映射
-    const dataMap = {};
-    data.forEach(item => {
-      dataMap[item.date] = item;
-    });
-    
-    // 生成所有日期（从该周的第一天开始）
-    const allDays = [];
-    const weekStart = new Date(startDate);
-    weekStart.setDate(startDate.getDate() - startDayOfWeek);
+    gridContainer.innerHTML = '';
+    yearLabelsEl.innerHTML = '';
 
-    // 渲染星期标签（纵坐标）
-    const weekdaysEl = document.getElementById('heatmap-weekdays');
-    if (weekdaysEl) {
-      weekdaysEl.innerHTML = '';
-      const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
-      weekdays.forEach((d) => {
-        const el = document.createElement('div');
-        el.className = 'heatmap-weekday';
-        el.textContent = d;
-        weekdaysEl.appendChild(el);
-      });
+    // 隐藏周标签
+    if (weekLabelsEl) {
+      weekLabelsEl.style.display = 'none';
     }
 
-    // 渲染月份标签（横坐标，按周跨度）
-    const monthsEl = document.getElementById('heatmap-months');
-    if (monthsEl) {
-      monthsEl.innerHTML = '';
-      const labels = [];
-      let lastKey = null;
-
-      for (let w = 0; w < weeks; w++) {
-        const d = new Date(weekStart);
-        d.setDate(weekStart.getDate() + w * 7);
-        const ds = d.toISOString().split('T')[0];
-        if (ds < startDateStr || ds > endDateStr) continue;
-
-        // 只在每月的前7天内出现时打标签，更接近 GitHub 的“贴近月初”
-        if (d.getDate() > 7) continue;
-
-        const key = `${d.getFullYear()}-${d.getMonth() + 1}`;
-        if (key === lastKey) continue;
-        lastKey = key;
-        labels.push({ year: d.getFullYear(), month: d.getMonth(), startWeek: w });
-      }
-
-      // 计算每个标签应占用的周宽度
-      const colSpanPx = 14; // 11px + 3px gap（移动端会略有偏差，但可接受）
-      for (let i = 0; i < labels.length; i++) {
-        const cur = labels[i];
-        const next = labels[i + 1];
-        const spanWeeks = next ? Math.max(next.startWeek - cur.startWeek, 1) : Math.max(weeks - cur.startWeek, 1);
-        const el = document.createElement('div');
-        el.className = 'heatmap-month';
-        el.textContent = `${cur.month + 1}月`;
-        el.style.width = (spanWeeks * colSpanPx - 3) + 'px';
-        monthsEl.appendChild(el);
-      }
-    }
-    
-    for (let i = 0; i < weeks * daysPerWeek; i++) {
-      const date = new Date(weekStart);
-      date.setDate(weekStart.getDate() + i);
-      const dateStr = date.toISOString().split('T')[0];
+    // 从高年份到低年份显示（最新的在上面）
+    for (let year = maxYear; year >= minYear; year--) {
+      const yearWeeks = getYearWeekData(postDates, year);
       
-      // 使用字符串比较日期，避免时区问题
-      if (dateStr >= startDateStr && dateStr <= endDateStr) {
-        const dayData = dataMap[dateStr] || { date: dateStr, level: 0, count: 0 };
-        allDays.push(dayData);
-      } else {
-        allDays.push(null);
-      }
-    }
-    
-    // 渲染每个日期方块
-    allDays.forEach((dayData) => {
-      const day = document.createElement('div');
-      day.className = 'heatmap-day';
+      // 添加年份标签
+      const yearLabel = document.createElement('div');
+      yearLabel.className = 'heatmap-year-label';
+      yearLabel.textContent = year;
+      yearLabelsEl.appendChild(yearLabel);
       
-      if (dayData) {
-        day.setAttribute('data-level', dayData.level);
-        day.setAttribute('data-date', dayData.date);
-        day.setAttribute('data-count', dayData.count);
+      // 添加该年的热力图网格
+      const yearGrid = document.createElement('div');
+      yearGrid.className = 'heatmap-year-grid';
+      
+      // 为每周添加一个方块（共53周，全部显示在一行）
+      yearWeeks.forEach(weekData => {
+        const weekBlock = document.createElement('div');
+        weekBlock.className = 'heatmap-day';
+        weekBlock.setAttribute('data-level', weekData.level);
+        weekBlock.setAttribute('data-week', weekData.week);
+        weekBlock.setAttribute('data-count', weekData.count);
+        weekBlock.title = `${year} W${weekData.week}: ${weekData.count} 篇文章`;
         
         // 鼠标悬停显示提示
-        day.addEventListener('mouseenter', function(e) {
+        weekBlock.addEventListener('mouseenter', function(e) {
           const rect = this.getBoundingClientRect();
-          const date = new Date(dayData.date);
-          const dateStr = date.toLocaleDateString('zh-CN', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          });
-          const countText = dayData.count > 0 
-            ? `${dayData.count} 篇文章` 
+          const countText = weekData.count > 0 
+            ? `${weekData.count} 篇文章` 
             : '无文章';
-          tooltip.textContent = `${countText} - ${dateStr}`;
+          tooltip.textContent = `${year} W${weekData.week}: ${countText}`;
           tooltip.style.display = 'block';
-          tooltip.style.left = (rect.left + rect.width / 2 - tooltip.offsetWidth / 2) + 'px';
-          tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
+          
+          // 使用 requestAnimationFrame 等待浏览器完成布局计算
+          requestAnimationFrame(() => {
+            // 计算水平位置（居中对齐方块）
+            let left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2;
+            
+            // 边界检查：水平
+            if (left < 0) {
+              left = 0;
+            } else if (left + tooltip.offsetWidth > window.innerWidth) {
+              left = window.innerWidth - tooltip.offsetWidth;
+            }
+            
+            // 垂直位置总是显示在上方
+            const top = rect.top - tooltip.offsetHeight - 8;
+            
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+          });
         });
         
-        day.addEventListener('mouseleave', function() {
+        weekBlock.addEventListener('mouseleave', function() {
           tooltip.style.display = 'none';
         });
-      } else {
-        day.setAttribute('data-level', '0');
-        day.style.opacity = '0.1';
-      }
+        
+        yearGrid.appendChild(weekBlock);
+      });
       
-      container.appendChild(day);
-    });
+      gridContainer.appendChild(yearGrid);
+    }
   }
-
-  // 页面状态管理
-  let currentPage = 0;
 
   // 初始化
   function init() {
@@ -1332,35 +1015,15 @@
       const dataScript = document.getElementById('post-dates-data');
       if (dataScript) {
         clearInterval(checkData);
-        renderHeatmap(currentPage);
+        renderHeatmap();
       }
     }, 100);
     
     // 10秒后超时
     setTimeout(() => {
       clearInterval(checkData);
-      renderHeatmap(currentPage);
+      renderHeatmap();
     }, 10000);
-    
-    // 绑定翻页按钮
-    const prevBtn = document.getElementById('heatmap-prev');
-    const nextBtn = document.getElementById('heatmap-next');
-    
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function() {
-        if (currentPage > 0) {
-          currentPage--;
-          renderHeatmap(currentPage);
-        }
-      });
-    }
-    
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function() {
-        currentPage++;
-        renderHeatmap(currentPage);
-      });
-    }
   }
 
   // 页面加载完成后初始化
@@ -1370,8 +1033,23 @@
     init();
   }
 })();
-</script> 
+</script>
+<h2 id="-soulmd">🧠 SOUL.md</h2>
+<p><strong>雷猴，唔係包</strong></p>
+<p>Status: 尝试在&quot;理性的工程逻辑&quot;与&quot;感性的设计审美&quot;之间，寻找具身智能的平衡点。</p>
+<p>Current Job: 扫地机器人公司兼职多岗的产品经理（各种 Bug 的第一目击证人）。</p>
 <ul>
+<li><strong>核心价值观</strong>：少，但更好 (Dieter Rams 信徒)</li>
+<li><strong>设计原则</strong>：像素对齐，天秤座的审美偏执</li>
+<li><strong>工作哲学</strong>：用 AI 解放重复劳动，让计算机完成所有无聊的事</li>
+<li><strong>精神支柱：</strong> <strong>迪特·拉姆斯 (Dieter Rams)</strong> 的信徒。目前正在攒自己的“设计十诫”，进度：1/10。</li>
+</ul>
+<hr>
+<h2 id="-agentsmd">📋 AGENTS.md</h2>
+<ul>
+<li><strong>🐛 Bug 第一目击证人</strong>：发现问题，分析根因，协调解决</li>
+<li><strong>🤖 机器人产品实测</strong>：端侧视觉、ROS 实践、开源探索</li>
+<li><strong>🎨 跨界改装</strong>：Blender 建模，3D 打印，审美把控</li>
 <li><strong>⚡ 效率工程</strong>：脚本自动化，AI 工具集成</li>
 <li><strong>🏃 硬件维护</strong>：保持身心健康，支持长期战斗</li>
 </ul>
@@ -1387,13 +1065,13 @@
 </ul>
 <hr>
 <h2 id="-skillmd">🛠️ SKILL.md</h2>
-<h3 id="核心技能-1">核心技能</h3>
+<h3 id="核心技能">核心技能</h3>
 <ul>
 <li><strong>产品经理</strong>：需求分析、项目管理、用户研究</li>
 <li><strong>视觉设计</strong>：UI/UX、品牌设计、包装设计</li>
 <li><strong>3D 设计</strong>：Blender、3D 打印、工业设计</li>
 </ul>
-<h3 id="技术技能-1">技术技能</h3>
+<h3 id="技术技能">技术技能</h3>
 <ul>
 <li><strong>Blender</strong> 主要用于给机械臂画改装件或给 Demo 搓个3D 场景。</li>
 <li><strong>AI/机器人</strong>：YOLO、ROS、LeRobot、OpenClaw</li>
@@ -1401,7 +1079,7 @@
 <li>日常与 <strong>MR813 / MR536</strong> 交流感情。在算力吃紧的板子上跑 <strong>YOLO</strong>，目标是让机器人认出拖鞋和屎。</li>
 <li>虽然转型了，但审美这块儿还没向工程逻辑完全妥协。</li>
 </ul>
-<h3 id="软技能-1">软技能</h3>
+<h3 id="软技能">软技能</h3>
 <ul>
 <li><strong>跨界思维</strong>：工程逻辑 + 设计审美</li>
 <li><strong>问题解决</strong>：Bug 排查、系统优化</li>
@@ -1973,7 +1651,7 @@
 >
   <div class="mr-auto">
   
-    ©2025 fifteenbao
+    ©2025-2026 fifteenbao
   
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
