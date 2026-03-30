@@ -26,10 +26,10 @@
     <loc>https://fifteenbao.com/categories/%E6%B8%B8%E8%AE%B0/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/diy/</loc>
+    <loc>https://fifteenbao.com/categories/diy/</loc>
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/categories/diy/</loc>
+    <loc>https://fifteenbao.com/tags/diy/</loc>
     <lastmod>2026-03-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/openclaw/</loc>
@@ -56,10 +56,10 @@
     <loc>https://fifteenbao.com/tags/dan_koe/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5/</loc>
+    <loc>https://fifteenbao.com/categories/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/categories/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5/</loc>
+    <loc>https://fifteenbao.com/tags/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5001/</loc>
@@ -95,10 +95,10 @@
     <loc>https://fifteenbao.com/post/%E5%85%B3%E4%BA%8E%E6%88%91%E6%83%B3%E5%81%9A%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/cmf/</loc>
+    <loc>https://fifteenbao.com/post/cmf/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/post/cmf/</loc>
+    <loc>https://fifteenbao.com/tags/cmf/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/</loc>
@@ -167,7 +167,13 @@
     <loc>https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2023-06-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://fifteenbao.com/tags/%E5%8D%9A%E7%89%A9%E9%A6%86/</loc>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://fifteenbao.com/tags/%E5%96%9D/</loc>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86-1/</loc>
     <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/%E7%94%9F%E6%B4%BB%E9%A5%AE%E5%93%81%E6%95%B4%E7%90%86/</loc>
@@ -209,10 +215,10 @@
     <loc>https://fifteenbao.com/tags/%E8%BF%AA%E7%89%B9%E6%8B%89%E5%A7%86%E6%96%AF/</loc>
     <lastmod>2023-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
+    <loc>https://fifteenbao.com/categories/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
     <lastmod>2022-12-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/categories/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
+    <loc>https://fifteenbao.com/tags/%E4%B9%A6%E5%BD%B1%E9%9F%B3/</loc>
     <lastmod>2022-12-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/%E8%89%BA%E6%9C%AF%E7%9C%8B%E5%8D%B0%E8%B1%A1%E6%B4%BE/</loc>
