@@ -231,7 +231,7 @@
   </script>
 </head>
 
-  <body class="text-slate-900 bg-white duration-200 ease-out dark:text-slate-100 dark:bg-slate-950">
+  <body class="text-black duration-200 ease-out dark:text-white">
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
@@ -730,7 +730,9 @@
 
 
 
-    <main class="mx-auto w-full max-w-3xl px-4 pt-24 pb-10 lg:px-6 lg:pt-28 prose prose-slate dark:prose-invert">
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
       
 
 
@@ -1058,19 +1060,24 @@
 
     </main>
 
-    <footer class="mx-auto w-full max-w-[--w] px-4 pb-8 pt-4 text-xs text-slate-500 dark:text-slate-300 lg:px-6">
-  <div class="flex flex-wrap items-center gap-2 text-slate-500 dark:text-slate-300">
-    <div class="mr-auto">
-      
-      ©2025-2026 fifteenbao
-      
-    </div>
-    <div class="flex items-center gap-2">
-      <a class="underline text-slate-600 dark:text-slate-200" href="https://gohugo.io/" rel="noopener" target="_blank">powered by Hugo</a>
-      <span class="text-slate-300">•</span>
-      <a class="underline text-slate-600 dark:text-slate-200" href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">hugo-paper</a>
-    </div>
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    ©2025-2026 fifteenbao
+  
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
 </footer>
 
   </body>
