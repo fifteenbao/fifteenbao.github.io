@@ -63,7 +63,7 @@
   />
 
   
-  <title>Who? - fifteenbao</title>
+  <title>开发 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -191,37 +191,33 @@
       </script>
   
   
-  <meta itemprop="name" content="Who?">
-  <meta itemprop="description" content="`Hugo, the world&#39;s fastest framework for building websites">
-  <meta itemprop="datePublished" content="2025-12-03T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-12-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="107">
+  <meta itemprop="name" content="开发">
+  <meta itemprop="datePublished" content="2026-04-06T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-04-06T00:00:00+00:00">
   
-  <meta property="og:url" content="https://fifteenbao.com/about/">
+  <meta property="og:url" content="https://fifteenbao.com/tags/%E5%BC%80%E5%8F%91/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="Who?">
-  <meta property="og:description" content="`Hugo, the world&#39;s fastest framework for building websites">
+  <meta property="og:title" content="开发">
   <meta property="og:locale" content="cn">
   <meta property="og:type" content="website">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Who?">
-  <meta name="twitter:description" content="`Hugo, the world&#39;s fastest framework for building websites">
+  <meta name="twitter:title" content="开发">
 
   
   
   <link
     rel="alternate"
     type="application/rss&#43;xml"
-    href="https://fifteenbao.com/about/index.xml"
+    href="https://fifteenbao.com/tags/%E5%BC%80%E5%8F%91/index.xml"
     title="fifteenbao"
   />
   
 
   
-  <link rel="canonical" href="https://fifteenbao.com/about/" />
+  <link rel="canonical" href="https://fifteenbao.com/tags/%E5%BC%80%E5%8F%91/" />
   
   
   
@@ -648,7 +644,7 @@
         
         
         <a
-          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 opacity-70"
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/about/"
           >About</a
         >
@@ -741,449 +737,100 @@
 
 
 
-<article class="mb-14">
-  <section><script type="application/json" id="post-dates-data">"[\"2026-04-06\",\"2026-03-29\",\"2026-03-16\",\"2026-03-06\",\"2026-02-24\",\"2026-02-05\",\"2026-01-31\",\"2026-01-22\",\"2025-12-24\",\"2025-12-14\",\"2025-12-12\",\"2025-12-10\",\"2025-12-09\",\"2025-12-06\",\"2025-12-01\",\"2025-01-07\",\"2023-06-09\",\"2023-06-06\",\"2023-05-28\",\"2023-05-20\",\"2023-03-09\",\"2023-02-22\",\"2022-12-09\",\"2022-02-22\"]"</script>
+<h1 class="mb-14">#开发</h1>
 
 
-<div id="about" class="about-page">
-<h2 id="-memorymd">📅 Memory.md</h2>
-<div id="heatmap-container">
-  <div id="heatmap-title"></div>
-  <div class="heatmap-wrapper">
-    <div class="heatmap-year-labels" id="heatmap-year-labels"></div>
-    <div class="heatmap-content-wrapper">
-      <div class="heatmap-week-labels" id="heatmap-week-labels"></div>
-      <div id="heatmap-grid"></div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">开发记 - bonflow 植物养护&amp;识别 App</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Apr 6, 2026</time>
   </div>
-  <div class="heatmap-legend">
-    <span>0</span>
-    <div class="heatmap-legend-item" data-level="0"></div>
-    <span>1</span>
-    <div class="heatmap-legend-item" data-level="1"></div>
-    <span>2</span>
-    <div class="heatmap-legend-item" data-level="2"></div>
-    <span>3</span>
-    <div class="heatmap-legend-item" data-level="3"></div>
-    <span>4+</span>
-    <div class="heatmap-legend-item" data-level="4"></div>
-  </div>
-  <div class="heatmap-tooltip" id="heatmap-tooltip"></div>
-</div>
-<script>
-(function() {
-  // 获取文章发布日期数据
-  function getPostDates() {
-    const dataScript = document.getElementById('post-dates-data');
-    if (!dataScript) {
-      console.warn('post-dates-data script not found');
-      return [];
-    }
-    try {
-      let content = dataScript.textContent.trim();
-      if (!content) {
-        console.warn('post-dates-data is empty');
-        return [];
-      }
-      
-      if (typeof content === 'string' && content.startsWith('"') && content.endsWith('"')) {
-        content = content.slice(1, -1);
-        content = content.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
-      }
-      
-      let dates = JSON.parse(content);
-      
-      if (typeof dates === 'string') {
-        dates = JSON.parse(dates);
-      }
-      
-      if (Array.isArray(dates)) {
-        console.log('Found post dates:', dates.length, dates);
-        return dates;
-      } else {
-        console.warn('post-dates-data is not an array:', typeof dates, dates);
-        return [];
-      }
-    } catch (e) {
-      console.error('Failed to parse post dates:', e, 'Content:', dataScript.textContent);
-      return [];
-    }
-  }
 
-  // 将 Date 对象格式化为本地 ISO 日期字符串 (YYYY-MM-DD)
-  function toLocalDateString(d) {
-    const yyyy = d.getFullYear();
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const dd = String(d.getDate()).padStart(2, '0');
-    return `${yyyy}-${mm}-${dd}`;
-  }
-
-  // 获取指定年份的所有周的数据（按周为单位）
-  function getYearWeekData(postDates, year) {
-    // 统计每周发布的文章数量
-    const weekCountMap = {};
-    postDates.forEach(dateStr => {
-      const dateYear = parseInt(dateStr.split('-')[0]);
-      if (dateYear === year) {
-        const date = new Date(dateStr);
-        const weekNum = getWeekNumber(date);
-        weekCountMap[weekNum] = (weekCountMap[weekNum] || 0) + 1;
-      }
-    });
-
-    // 生成52-53周的数据
-    const weeks = [];
-    const jan1 = new Date(year, 0, 1);
-    const startSunday = new Date(jan1);
-    startSunday.setDate(jan1.getDate() - jan1.getDay());
-
-    // 生成一年的周数据（每周一个方块）
-    for (let week = 1; week <= 53; week++) {
-      const weekDate = new Date(startSunday);
-      weekDate.setDate(startSunday.getDate() + (week - 1) * 7);
-      
-      // 只统计该周在本年中的天数
-      const count = weekCountMap[week] || 0;
-      
-      // 确定级别：按周的文章数
-      let level = 0;
-      if (count > 0) {
-        if (count === 1) level = 1;
-        else if (count === 2) level = 2;
-        else if (count <= 4) level = 3;
-        else level = 4;
-      }
-
-      weeks.push({
-        week: week,
-        level: level,
-        count: count,
-        startDate: toLocalDateString(weekDate)
-      });
-    }
-
-    return weeks;
-  }
-
-  // 获取日期在该年的周数（1-53）
-  function getWeekNumber(date) {
-    const year = date.getFullYear();
-    const jan1 = new Date(year, 0, 1);
-    const startSunday = new Date(jan1);
-    startSunday.setDate(jan1.getDate() - jan1.getDay());
-    
-    const timeDiff = date - startSunday;
-    const weekNum = Math.floor(timeDiff / (7 * 24 * 60 * 60 * 1000)) + 1;
-    
-    return Math.max(1, Math.min(weekNum, 53));
-  }
-
-  // 渲染热力图
-  function renderHeatmap() {
-    const gridContainer = document.getElementById('heatmap-grid');
-    const yearLabelsEl = document.getElementById('heatmap-year-labels');
-    const tooltip = document.getElementById('heatmap-tooltip');
-    const weekLabelsEl = document.getElementById('heatmap-week-labels');
-    
-    if (!gridContainer) return;
-
-    const postDates = getPostDates();
-    
-    // 获取最早和最晚的年份
-    let minYear = new Date().getFullYear();
-    let maxYear = minYear;
-    
-    postDates.forEach(dateStr => {
-      const year = parseInt(dateStr.split('-')[0]);
-      minYear = Math.min(minYear, year);
-      maxYear = Math.max(maxYear, year);
-    });
-    
-    // 只显示 2025 年及以后的数据
-    maxYear = Math.max(maxYear, new Date().getFullYear());
-    minYear = 2025; // 只显示 2025 年及以后
-    
-    // 清空容器
-    gridContainer.innerHTML = '';
-    yearLabelsEl.innerHTML = '';
-
-    // 隐藏周标签
-    if (weekLabelsEl) {
-      weekLabelsEl.style.display = 'none';
-    }
-
-    // 从高年份到低年份显示（最新的在上面）
-    for (let year = maxYear; year >= minYear; year--) {
-      const yearWeeks = getYearWeekData(postDates, year);
-      
-      // 添加年份标签
-      const yearLabel = document.createElement('div');
-      yearLabel.className = 'heatmap-year-label';
-      yearLabel.textContent = year;
-      yearLabelsEl.appendChild(yearLabel);
-      
-      // 添加该年的热力图网格
-      const yearGrid = document.createElement('div');
-      yearGrid.className = 'heatmap-year-grid';
-      
-      // 为每周添加一个方块（共53周，全部显示在一行）
-      yearWeeks.forEach(weekData => {
-        const weekBlock = document.createElement('div');
-        weekBlock.className = 'heatmap-day';
-        weekBlock.setAttribute('data-level', weekData.level);
-        weekBlock.setAttribute('data-week', weekData.week);
-        weekBlock.setAttribute('data-count', weekData.count);
-        weekBlock.title = `${year} W${weekData.week}: ${weekData.count} 篇文章`;
-        
-        // 鼠标悬停显示提示
-        weekBlock.addEventListener('mouseenter', function(e) {
-          const rect = this.getBoundingClientRect();
-          const countText = weekData.count > 0 
-            ? `${weekData.count} 篇文章` 
-            : '无文章';
-          tooltip.textContent = `${year} W${weekData.week}: ${countText}`;
-          tooltip.style.display = 'block';
-          
-          // 使用 requestAnimationFrame 等待浏览器完成布局计算
-          requestAnimationFrame(() => {
-            // 计算水平位置（居中对齐方块）
-            let left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2;
-            
-            // 边界检查：水平
-            if (left < 0) {
-              left = 0;
-            } else if (left + tooltip.offsetWidth > window.innerWidth) {
-              left = window.innerWidth - tooltip.offsetWidth;
-            }
-            
-            // 垂直位置总是显示在上方
-            const top = rect.top - tooltip.offsetHeight - 8;
-            
-            tooltip.style.left = left + 'px';
-            tooltip.style.top = top + 'px';
-          });
-        });
-        
-        weekBlock.addEventListener('mouseleave', function() {
-          tooltip.style.display = 'none';
-        });
-        
-        yearGrid.appendChild(weekBlock);
-      });
-      
-      gridContainer.appendChild(yearGrid);
-    }
-  }
-
-  // 初始化
-  function init() {
-    // 等待 shortcode 数据加载
-    const checkData = setInterval(() => {
-      const dataScript = document.getElementById('post-dates-data');
-      if (dataScript) {
-        clearInterval(checkData);
-        renderHeatmap();
-      }
-    }, 100);
-    
-    // 10秒后超时
-    setTimeout(() => {
-      clearInterval(checkData);
-      renderHeatmap();
-    }, 10000);
-  }
-
-  // 页面加载完成后初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
-<p><strong>雷猴，唔係包</strong></p>
-<blockquote>
-<p>尝试在&quot;理性的工程逻辑&quot;与&quot;感性的设计审美&quot;之间，寻找具身智能的平衡点。</p>
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <blockquote>
+<p><strong>Growth in order, rhythm in form.</strong></p>
+<p>在秩序中生长，在形式中律动。</p>
 </blockquote>
+<p>上个月的主要进度：完成了一款植物识别和生长记录 App，上周五已提交 App Store 审核，目前仅支持 iOS 18 以上设备。</p>
+<p>这是一个整合检验各种 AI 工具和近两年工作展示的 MVP（Minimum Viable Product）。主要是为了好玩，当然也是一个很好的简历展示项目。</p>
 <hr>
-<h2 id="-导航">📚 导航</h2>
-<table>
-  <thead>
-      <tr>
-          <th>文件</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><a href="/about/SOUL/"><strong>SOUL</strong></a></td>
-          <td>我是谁，核心原则，工作风格</td>
-      </tr>
-      <tr>
-          <td><a href="/about/AGENTS/"><strong>AGENTS</strong></a></td>
-          <td>角色定位，工作流程，技能栈</td>
-      </tr>
-      <tr>
-          <td><a href="/about/MEMORY/"><strong>MEMORY</strong></a></td>
-          <td>产品理念，学习笔记</td>
-      </tr>
-      <tr>
-          <td><a href="/about/TOOLS/"><strong>TOOLS</strong></a></td>
-          <td>工具配置，API，开发环境</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-关于我">🧠 关于我</h2>
-<table>
-  <thead>
-      <tr>
-          <th>维度</th>
-          <th>描述</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>行业</td>
-          <td>扫地机器人 / 服务机器人</td>
-      </tr>
-      <tr>
-          <td>角色</td>
-          <td>AI 硬件产品经理</td>
-      </tr>
-      <tr>
-          <td>坐标</td>
-          <td>深圳</td>
-      </tr>
-      <tr>
-          <td>专注</td>
-          <td>具身智能、端侧视觉、人机交互</td>
-      </tr>
-      <tr>
-          <td>信仰</td>
-          <td>Dieter Rams 信徒，less but better</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-最新文章">📚 最新文章</h2>
-<ul class="recent-posts-list"><li>
-    <a href="https://fifteenbao.com/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/">开发记 - bonflow 植物养护&amp;识别 App</a>
-    <span class="recent-posts-date">Apr 6, 2026</span>
-  </li><li>
-    <a href="https://fifteenbao.com/post/%E6%B9%BE%E5%8E%A6%E4%B8%A4%E6%97%A5%E6%B8%B8/">湾厦两日游</a>
-    <span class="recent-posts-date">Mar 29, 2026</span>
-  </li><li>
-    <a href="https://fifteenbao.com/post/%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/">大沙河公园游记</a>
-    <span class="recent-posts-date">Mar 16, 2026</span>
-  </li><li>
-    <a href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">OpenClaw 尝鲜记 - 第二集</a>
-    <span class="recent-posts-date">Mar 6, 2026</span>
-  </li><li>
-    <a href="https://fifteenbao.com/post/2026-%E6%8E%A2%E4%BA%B2%E8%AE%B0/">2026 探亲记</a>
-    <span class="recent-posts-date">Feb 24, 2026</span>
-  </li></ul>
-
-<style>
-.recent-posts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: inherit;
-}
-.recent-posts-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: inherit;
-}
-.dark .recent-posts-list li {
-  border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-.recent-posts-list li:last-child {
-  border-bottom: none;
-}
-.recent-posts-list a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: inherit;
-}
-.recent-posts-list a:hover {
-  color: #666;
-}
-.dark .recent-posts-list a:hover {
-  color: #aaa;
-}
-.recent-posts-date {
-  font-size: 0.85em;
-  opacity: 0.6;
-  white-space: nowrap;
-  margin-left: 1rem;
-}
-</style>
-
-<hr>
-<h2 id="-社交链接">🌐 社交链接</h2>
-<table>
-  <thead>
-      <tr>
-          <th>平台</th>
-          <th>链接</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>GitHub</td>
-          <td><a href="https://github.com/fifteenbao">@fifteenbao</a></td>
-      </tr>
-      <tr>
-          <td>Instagram</td>
-          <td><a href="https://www.instagram.com/fifteenbao">@fifteenbao</a></td>
-      </tr>
-      <tr>
-          <td>Behance</td>
-          <td><a href="https://www.behance.net/fifteenbao">@fifteenbao</a></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h2 id="-联系合作">📬 联系合作</h2>
-<blockquote>
-<p>📮 欢迎交流合作</p>
-</blockquote>
-<p><strong>开放合作</strong>：</p>
+<h2 id="-idea-的开始">💡 Idea 的开始</h2>
+<p>3 月是植物人的忙碌季。给大部分植物换了盆，沙漠玫瑰切了枝，还野心勃勃买了一颗 40 块的罗汉松。</p>
+<p>问题接踵而至：</p>
 <ul>
-<li>产品咨询：扫地机器人 / 具身智能 / AI 硬件</li>
-<li>技术讨论：OpenClaw / ROS / 端侧视觉</li>
-<li>设计交流：工业设计 / 改装设计 / 3D 打印</li>
+<li>换盆后的进度很难掌握，重剪后不知是否过度</li>
+<li>咖啡渣培育的土发现虫害，被迫更换营养土</li>
+<li>营养土不透气导致闷根（也可能最近天气过于潮湿）</li>
+<li>最后换成了赤玉土，才算暂时稳定</li>
 </ul>
+<p>忙活的过程中，我希望有一个可以记录植物生长的 App——不是简单的提醒浇水，而是完整记录每一次换土、修剪、施肥的决策和后续反馈。</p>
+<p>市面上的产品，要么丑、要么贵、要么没有国区。</p>
 <hr>
-<div class="last-updated">
-  <p>最后更新：<time>April 6, 2026</time></p>
-</div>
+<h2 id="-名字的诞生">🏷️ 名字的诞生</h2>
+<p>在 Gemini 的指导下，我描述了需求：</p>
+<blockquote>
+<p>&ldquo;我想起一个 App 的名字，用于记录植物的生长记录和日常护养，倾向于 rook、flow&rdquo;，<strong>试试结合 ぼんさい（Bonsai）</strong></p>
+</blockquote>
+<p>Gemini 的建议：</p>
+<blockquote>
+<p><strong>结构与音律的融合 (Structural Fusion)</strong>：直接将 &ldquo;Bonsai&rdquo; 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。</p>
+<ul>
+<li><strong>Bonflow</strong>：将&quot;盆 (Bon)&ldquo;与&quot;流动 (Flow)&ldquo;结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。</li>
+<li><strong>Sairook</strong>：取自&quot;栽 (Sai)&ldquo;与&quot;堡垒 (Rook)&quot;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。</li>
+<li><strong>Sai-Logic</strong>：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&quot;系统性&quot;记录的需求。</li>
+</ul>
+</blockquote>
+<p><strong>Bonflow</strong> 成功诞生。</p>
+<hr>
+<h2 id="-ios-历险记">📱 iOS 历险记</h2>
+<p>App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。</p>
+  </div>
+  
 
-<style>
-.last-updated {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.875rem;
-  opacity: 0.7;
-}
-.dark .last-updated {
-  border-top-color: rgba(255, 255, 255, 0.1);
-}
-.last-updated time {
-  font-weight: 500;
-}
-</style>
-
-</div>
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E5%BC%80%E5%8F%91" onclick="event.stopPropagation();">开发</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/ai" onclick="event.stopPropagation();">AI</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/ios" onclick="event.stopPropagation();">iOS</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98" onclick="event.stopPropagation();">项目复盘</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/">开发记 - bonflow 植物养护&amp;识别 App</a>
 </section>
-</article>
+
+
+
 
 
 

@@ -2,17 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fifteenbao.com/tags/ai/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://fifteenbao.com/</loc>
-    <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/categories/</loc>
-    <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/tags/ios/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/</loc>
-    <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/</loc>
-    <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/categories/%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/tags/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://fifteenbao.com/tags/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/</loc>
+    <lastmod>2026-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/%E5%8D%9A%E7%89%A9%E9%A6%86/</loc>
     <lastmod>2026-03-29T00:00:00+00:00</lastmod>
@@ -59,9 +77,6 @@
     <loc>https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://fifteenbao.com/tags/ai/</loc>
-    <lastmod>2026-01-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://fifteenbao.com/tags/dan_koe/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
   </url><url>
@@ -93,9 +108,6 @@
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/post/%E5%85%B3%E4%BA%8E%E6%88%91%E6%83%B3%E5%81%9A%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/</loc>
-    <lastmod>2025-12-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fifteenbao.com/categories/%E5%B7%A5%E4%BD%9C/</loc>
     <lastmod>2025-12-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://fifteenbao.com/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
