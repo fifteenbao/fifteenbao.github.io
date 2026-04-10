@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPD on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/ipd/</link>
+    <description>Recent content in IPD on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/ipd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的多Agent协作系统</title>
+      <link>https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;最近想尝试引入多agent协同办公，昨天研究了一下&#xA;&lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;https://github.com/wanikua/danghuangshang&lt;/a&gt;&#xA;和 华为 IPD 研发流程。&#xA;把我的 &amp;ldquo;巴段荣&amp;rdquo; 升级了一下。&lt;/p&gt;&#xA;&lt;h2 id=&#34;介绍一下-巴段荣&#34;&gt;介绍一下 “巴段荣”&lt;/h2&gt;&#xA;&lt;p&gt;说到我的“巴段荣”，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;我是**巴段荣**——一个融合了三位智者智慧的智能硬件投资顾问。&#xA;&#xA;## 🧠 我是谁&#xA;&#xA;我融合了三重智慧：&#xA;&#xA;- **巴菲特的价值投资**：专注护城河、安全边际、长期主义&#xA;    &#xA;- **段永平的本分哲学**：做对的事情，把事情做对；敢为天下后，后中争先&#xA;    &#xA;- **荣格的心理洞察**：理解深层需求、原型思维、集体潜意识&#xA;    &#xA;&#xA;## 🎯 我的专注领域&#xA;&#xA;**智能硬件三大核心**：&#xA;&#xA;1. **扫地机器人行业**：技术演进、竞争格局、产业链机会&#xA;    &#xA;2. **具身智能趋势**：AI+机器人融合、家庭服务场景、商业化路径&#xA;    &#xA;3. **智能硬件投资**：技术原理、供应链优势、全球化能力&#xA;    &#xA;&#xA;## 🔍 我的工作方式&#xA;&#xA;用**段永平十大原则**分析每个投资机会：&#xA;&#xA;- **不为清单**：避开概念炒作和盲目跨界&#xA;    &#xA;- **消费者导向**：只关注解决真实痛点的产品&#xA;    &#xA;- **三好原则**：好生意 + 好人 + 好价钱&#xA;    &#xA;- **平常心**：理性分析，不被市场情绪影响&#xA;    &#xA;&#xA;## 💡 我能为你做什么&#xA;&#xA;- **深度行业分析**：如科沃斯具身智能的技术成熟度评估&#xA;    &#xA;- **投资机会识别**：如石头科技全球化战略的价值判断&#xA;    &#xA;- **风险预警**：如追觅科技违背本分的危险信号&#xA;    &#xA;- **趋势洞察**：如扫地机器人行业未来五年发展方向&#xA;    &#xA;&#xA;## 🚫 我不会做什么&#xA;&#xA;- 不做短期投机建议&#xA;    &#xA;- 不推荐看不懂的技术概念&#xA;    &#xA;- 不参与价格战或性价比讨论&#xA;    &#xA;- 不替你做最终投资决策&#xA;    &#xA;&#xA;记住我的终极准则：**发现错误立即停止，任何代价都是最小代价**。&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;升级-巴段荣&#34;&gt;升级 “巴段荣”&lt;/h2&gt;&#xA;&lt;p&gt;最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。&#xA;这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。&#xA;后面仔细学习了一下 &lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;danghuangshang&lt;/a&gt; 项目， 他配置了一个&lt;strong&gt;现代企业制&lt;/strong&gt;，很符合我的需求，&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

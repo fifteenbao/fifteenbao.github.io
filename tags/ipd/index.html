@@ -63,7 +63,7 @@
   />
 
   
-  <title>Openclaw - fifteenbao</title>
+  <title>IPD - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -191,33 +191,33 @@
       </script>
   
   
-  <meta itemprop="name" content="Openclaw">
+  <meta itemprop="name" content="IPD">
   <meta itemprop="datePublished" content="2026-04-10T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-04-10T00:00:00+00:00">
   
-  <meta property="og:url" content="https://fifteenbao.com/tags/openclaw/">
+  <meta property="og:url" content="https://fifteenbao.com/tags/ipd/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="Openclaw">
+  <meta property="og:title" content="IPD">
   <meta property="og:locale" content="cn">
   <meta property="og:type" content="website">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Openclaw">
+  <meta name="twitter:title" content="IPD">
 
   
   
   <link
     rel="alternate"
     type="application/rss&#43;xml"
-    href="https://fifteenbao.com/tags/openclaw/index.xml"
+    href="https://fifteenbao.com/tags/ipd/index.xml"
     title="fifteenbao"
   />
   
 
   
-  <link rel="canonical" href="https://fifteenbao.com/tags/openclaw/" />
+  <link rel="canonical" href="https://fifteenbao.com/tags/ipd/" />
   
   
   
@@ -737,7 +737,7 @@
 
 
 
-<h1 class="mb-14">#Openclaw</h1>
+<h1 class="mb-14">#IPD</h1>
 
 
 
@@ -856,211 +856,6 @@
   </div>
   
   <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">我的多Agent协作系统</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记 - 第二集</h2>
-
-  <div class="text-xs antialiased opacity-60 mb-2">
-    <time class="whitespace-nowrap">Mar 6, 2026</time>
-  </div>
-
-  
-  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
-<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
-<table>
-  <thead>
-      <tr>
-          <th>三倍速新疆舞</th>
-          <th>终端显示</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
-<blockquote>
-<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
-</blockquote>
-<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
-<h2 id="软件配置">软件配置：</h2>
-<p>使用官方提供的 openclaw 一键安装脚本进行部署：
-<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
-<p>重启 Gateway：openclaw gateway restart</p>
-<h3 id="skill-技能">skill 技能</h3>
-<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
-<h3 id="权限配置调整">权限配置调整</h3>
-<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
-<h3 id="大概过程">大概过程</h3>
-<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-  </div>
-  
-
-  
-  <div class="mb-2 flex flex-wrap gap-1.5">
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
-    
-  </div>
-  
-  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">OpenClaw 尝鲜记 - 第二集</a>
-</section>
-
-
-
-
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  
-  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记</h2>
-
-  <div class="text-xs antialiased opacity-60 mb-2">
-    <time class="whitespace-nowrap">Feb 5, 2026</time>
-  </div>
-
-  
-  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-    <p>玩了三天风风火火的 OpenClaw/MoltBot/ClawdBot，还蛮好玩的，就是 Token 爆炸！
-尤其是那个 <code>qwen3 max</code> …… 随随便便一问，大几十万 token，问一下好几块…… 在此感谢阿里云送了150块优惠券🙏。</p>
-<h2 id="安装">安装</h2>
-<p>用了阿里云和腾讯云的轻量化服务器，阿里云大模型的api调用默认打开的，第一天莫名其妙欠费8块…… 腾讯云倒是不会，而且版本也很新，看起来更新很快，像要把 channel、skill都封装进去，就是莫名其妙崩！暂时弃掉腾讯云了…… 等我的 mac mini 退休吧，给我的bot安个家，这线上的支出太可怕了。</p>
-<h2 id="关于模型">关于模型</h2>
-<p>尝试了 <code>qwen3 max</code> / <code>deepseek r1/v3.2</code> / <code>GLM4.7</code> , 相对来说 qwen3好些（毕竟价钱在……）
-切换了模型之后似乎记忆也有些问题…… 可能没重启之类的。</p>
-<h2 id="channel">channel</h2>
-<h3 id="telegram">telegram</h3>
-<p>接入了telegram，帅呆！</p>
-<p>自定义了快捷菜单，目前看效果是不错，不知道会不会记忆混乱。感觉是个很不错的接入方式。</p>
-<table>
-  <thead>
-      <tr>
-          <th>机器人设置</th>
-          <th>快捷菜单</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.41.31.32iha4vjio.webp" alt=""></td>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.39.13.7p44atue27.webp" alt=""></td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="飞书">飞书</h3>
-<p>飞书，总是挂…… 等等官方新版支持效果。</p>
-<p>目前可以支持机器人创建飞书文档…… 它不给我开权限也是个问题……</p>
-<table>
-  <thead>
-      <tr>
-          <th>创建飞书文档</th>
-          <th>倒是给我开个权限啊！</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3.2rvngzwtbp.webp" alt=""></td>
-          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E9%A3%9E%E4%B9%A6%E6%9D%83%E9%99%90.2yyvcfiyrb.webp" alt=""></td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="skill">skill</h2>
-<p>上午看了一个新的，<a href="https://github.com/VoltAgent/awesome-openclaw-skills/tree/main">awesome-openclaw-skills</a>
-我的bot帮我整理了一下</p>
-<p>👇</p>
-<pre tabindex="0"><code>
-
-🦞 OpenClaw 核心插件库
-
-消息与通信
-
-• bluebubbles - BlueBubbles 集成
-• discord - Discord 功能扩展
-• slack - Slack 集成
-• imsg - iMessage 支持
-• wacli - WhatsApp CLI 工具
-
-开发者工具
-
-• github - GitHub 集成（issue、PR、CI 等）
-• coding-agent - 编码助手
-• tmux - Tmux 会话管理
-• 1password - 1Password 集成
-
-媒体与内容
-
-• gemini - Google Gemini AI 集成
-• openai-image-gen - OpenAI 图像生成
-• openai-whisper - 语音转文字
-• spotify-player - Spotify 控制
-• songsee - 音乐识别
-• gifgrep - GIF 搜索
-
-生产力工具
-
-• gog - Google Workspace 集成（Gmail、日历、Drive 等）
-• notion - Notion 集成
-• obsidian - Obsidian 笔记
-• apple-notes - Apple Notes
-• apple-reminders - Apple 提醒事项
-• things-mac - Things 3 任务管理
-
-系统与设备控制
-
-• canvas - 实时画布控制
-• camsnap - 摄像头快照
-• openhue - Philips Hue 灯光控制
-• sonoscli - Sonos 音响控制
-• weather - 天气信息
-
-实用工具
-
-• clawhub - 插件管理 CLI
-• skill-creator - 技能创建工具
-• summarize - 内容摘要
-• model-usage - 模型使用统计
-• session-logs - 会话日志管理
-
-安装与管理
-
-通过 ClawHub CLI 可以轻松管理这些插件：
-</code></pre><p>还装了一些飞书相关的、都是bug…… 等官方更新吧</p>
-  </div>
-  
-
-  
-  <div class="mb-2 flex flex-wrap gap-1.5">
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
-    
-    
-    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
-      href="https://fifteenbao.com/tags/diy" onclick="event.stopPropagation();">DIY</a>
-    
-  </div>
-  
-  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/">OpenClaw 尝鲜记</a>
 </section>
 
 
