@@ -46,7 +46,7 @@
   lang="cn"
   dir="ltr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -63,7 +63,7 @@
   />
 
   
-  <title>OpenClaw 尝鲜记 - 第二集 - fifteenbao</title>
+  <title>扫地机器人成本分析 Agent：技术选型与 BOM 拆解 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -72,42 +72,143 @@
   
   
   
-  <meta name="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
-“再跳一段新疆舞”
+  <meta name="description" content="
+最近公司基本停滞，无事可做的大家每天上午会讨论下可以利用 AI 做什么。这周尝试做了一个成本分析与技术选型的 Agent，目的是降低产品成本、弥补人员链路配置不足的问题，快速进行产品拆解与分析。
+
+项目地址：unit-bot
+
+项目框架
+unit-bot/
+├── SKILL.md                  # OpenClaw skill 清单与配置说明
+├── openclaw_bot.py            # Webhook 服务器（/hooks/agent）
+├── agent.py                   # BOM Agent 核心逻辑（Claude 工具调用循环）
+├── core/
+│   ├── db.py                  # 产品数据库 CRUD（深度合并 / 完整度追踪）
+│   ├── bom_loader.py          # 拆机 Excel 解析（自动识别 data/ 目录）
+│   ├── components_lib.py      # 标准件库 JSON CRUD
+│   └── feishu_sync.py         # 飞书多维表格同步（未配置时静默跳过）
+├── scripts/
+│   ├── build_components.py    # 拆机 Excel → teardown CSV &#43; 标准件库
+│   ├── import_products.py     # 产品数据库 xlsx 批量导入
+│   ├── gen_g30spro_teardown.py # AI 辅助拆机草稿生成（模板）
+│   └── start.py               # 服务启动入口
+├── data/
+│   ├── products_db.json        # 产品规格数据库（含 last_updated）
+│   ├── teardowns/              # 各机型拆机 CSV（含生成日期，历史版本保留）
+│   │   └── {机型}_teardown_{日期}.csv
+│   └── lib/
+│       └── components_lib.csv  # 标准件库（8桶分类，含 last_updated）
+├── .env.example
+└── requirements.txt
+核心功能
+
+8 桶 BOM 成本拆解表（含各桶估算金额与零售价占比）
+供应链分析：核心件供应商 &#43; 可降级替代方案 &#43; 节省金额
+
+
+8 桶成本分析框架
 
   
       
-          三倍速新疆舞
-          终端显示
+          #
+          子系统
+          核心内容
+          旗舰机基准占比
       
   
   
       
-          
-          
+          1
+          算力与电子
+          SoC 主板 · Wi-Fi/蓝牙模组 · 被动元件
+          10–12%
+      
+      
+          2
+          感知系统
+          LDS/dToF · 视觉摄像头 · IMU · 超声波
+          10–13%
+      
+      
+          3
+          动力与驱动
+          吸尘风机 · 驱动轮模组 · 底盘升降
+          10–12%
+      
+      
+          4
+          清洁功能
+          拖布驱动 · 水泵 · 水箱 · 边刷 · 滚刷
+          13–17%
+      
+      
+          5
+          基站系统
+          集尘 · 水路 · 加热 · 基站电控 · 基站结构
+          15–20%
+      
+      
+          6
+          能源系统
+          电芯 · BMS · 充电电控
+          7–9%
+      
+      
+          7
+          整机结构 CMF
+          外壳注塑 · 喷涂/IMD · 模具摊销
+          10–13%
+      
+      
+          8
+          MVA &#43; 软件授权
+          组装/测试人工 · 算法版税 · OS 授权 · 包材
+          9–13%
       
   
 
-硬件配置以及校准：
+关键指标
 
-https://wiki.seeedstudio.com/lerobot_so100m_new/
+整机 BOM 率：旗舰机约 48–55%（零售价），实际测试一般在30%左右，后续版本会优化一下。
+基站系统占比随档位差异显著：
 
-3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
-软件配置：
-使用官方提供的 openclaw 一键安装脚本进行部署：
-curl -fsSL https://openclaw.ai/install.sh | bash
-重启 Gateway：openclaw gateway restart
-skill 技能
-连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
-权限配置调整
-2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
-大概过程
-身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 
+入门机（¥2000–2500，仅充电&#43;集尘）5–8%
+中档机（¥2500–3500，自清洁&#43;水路）12–15%
+旗舰机（¥5000&#43;，加热/烘干/多泵）15–20%
 
 
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……" />
+
+
+数据获取与分析
+数据库结构
+
+  
+      
+          目录 / 文件
+          内容
+          时间戳
+      
+  
+  
+      
+          data/products_db.json
+          产品规格数据库
+          每条记录含 last_updated
+      
+      
+          data/teardowns/{机型}_teardown_{日期}.csv
+          各机型拆机数据
+          文件名含生成日期，历史版本自动保留
+      
+      
+          data/lib/components_lib.csv
+          标准件库（8桶分类）
+          每行含 last_updated 列
+      
+  
+
+
+统一汇总在飞书表格中调取，本地备份保存。重启服务后数据不丢失。" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -117,7 +218,7 @@ skill 技能
   
   
   
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
   
@@ -126,13 +227,13 @@ skill 技能
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="http://localhost:1313/images/admin.gif" />
   
   
 
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
   
   
 
@@ -140,7 +241,7 @@ skill 技能
   
   <script
     defer
-    src="https://fifteenbao.com/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -152,11 +253,11 @@ skill 技能
   
   <link
     rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
+    href="http://localhost:1313/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
+    href="http://localhost:1313/apple-touch-icon.png"
   />
 
   
@@ -212,55 +313,6 @@ skill 技能
   
   
   
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
-  
-  
-  <meta itemprop="name" content="OpenClaw 尝鲜记 - 第二集">
-  <meta itemprop="description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="wordCount" content="76">
-  <meta itemprop="keywords" content="OpenClaw,DIY">
-  
-  <meta property="og:url" content="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta property="og:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-  <meta property="og:locale" content="cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:tag" content="OpenClaw">
-    <meta property="article:tag" content="DIY">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta name="twitter:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/" />
-  
-  
-  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -275,7 +327,7 @@ skill 技能
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
         >fifteenbao</a
       >
     </div>
@@ -713,7 +765,7 @@ skill 技能
         <a
           class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -741,7 +793,7 @@ skill 技能
         <a
           class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -786,20 +838,28 @@ skill 技能
       <div class="toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#项目框架">项目框架</a>
       <ul>
-        <li><a href="#再跳一段新疆舞">“再跳一段新疆舞”</a></li>
+        <li><a href="#核心功能">核心功能</a></li>
       </ul>
     </li>
-    <li><a href="#硬件配置以及校准">硬件配置以及校准：</a></li>
-    <li><a href="#软件配置">软件配置：</a>
+    <li><a href="#8-桶成本分析框架">8 桶成本分析框架</a>
       <ul>
-        <li><a href="#skill-技能">skill 技能</a></li>
-        <li><a href="#权限配置调整">权限配置调整</a></li>
-        <li><a href="#大概过程">大概过程</a></li>
+        <li><a href="#关键指标">关键指标</a></li>
       </ul>
     </li>
-    <li><a href="#一些参考链接">一些参考链接</a></li>
+    <li><a href="#数据获取与分析">数据获取与分析</a>
+      <ul>
+        <li><a href="#数据库结构">数据库结构</a></li>
+        <li><a href="#数据来源与置信度">数据来源与置信度</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行效果">运行效果</a>
+      <ul>
+        <li><a href="#demo-示例">Demo 示例</a></li>
+        <li><a href="#实物拆机数据示例">实物拆机数据示例</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -809,12 +869,12 @@ skill 技能
 
   <article class="article-content">
     <header class="mb-12">
-      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">OpenClaw 尝鲜记 - 第二集</h1>
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">扫地机器人成本分析 Agent：技术选型与 BOM 拆解</h1>
 
       
       <div class="text-xs antialiased opacity-60">
         
-        <time>Mar 6, 2026</time>
+        <time>Apr 10, 2025</time>
         
         
         
@@ -826,47 +886,321 @@ skill 技能
       
     </header>
 
-    <section><p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
-<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
+    <section><blockquote>
+<p>最近公司基本停滞，无事可做的大家每天上午会讨论下可以利用 AI 做什么。这周尝试做了一个成本分析与技术选型的 Agent，目的是降低产品成本、弥补人员链路配置不足的问题，快速进行产品拆解与分析。</p>
+</blockquote>
+<p><strong>项目地址</strong>：<a href="https://github.com/fifteenbao/unit-bot">unit-bot</a></p>
+<hr>
+<h2 id="项目框架">项目框架</h2>
+<pre tabindex="0"><code>unit-bot/
+├── SKILL.md                  # OpenClaw skill 清单与配置说明
+├── openclaw_bot.py            # Webhook 服务器（/hooks/agent）
+├── agent.py                   # BOM Agent 核心逻辑（Claude 工具调用循环）
+├── core/
+│   ├── db.py                  # 产品数据库 CRUD（深度合并 / 完整度追踪）
+│   ├── bom_loader.py          # 拆机 Excel 解析（自动识别 data/ 目录）
+│   ├── components_lib.py      # 标准件库 JSON CRUD
+│   └── feishu_sync.py         # 飞书多维表格同步（未配置时静默跳过）
+├── scripts/
+│   ├── build_components.py    # 拆机 Excel → teardown CSV + 标准件库
+│   ├── import_products.py     # 产品数据库 xlsx 批量导入
+│   ├── gen_g30spro_teardown.py # AI 辅助拆机草稿生成（模板）
+│   └── start.py               # 服务启动入口
+├── data/
+│   ├── products_db.json        # 产品规格数据库（含 last_updated）
+│   ├── teardowns/              # 各机型拆机 CSV（含生成日期，历史版本保留）
+│   │   └── {机型}_teardown_{日期}.csv
+│   └── lib/
+│       └── components_lib.csv  # 标准件库（8桶分类，含 last_updated）
+├── .env.example
+└── requirements.txt
+</code></pre><h3 id="核心功能">核心功能</h3>
+<ul>
+<li>8 桶 BOM 成本拆解表（含各桶估算金额与零售价占比）</li>
+<li>供应链分析：核心件供应商 + 可降级替代方案 + 节省金额</li>
+</ul>
+<hr>
+<h2 id="8-桶成本分析框架">8 桶成本分析框架</h2>
 <table>
   <thead>
       <tr>
-          <th>三倍速新疆舞</th>
-          <th>终端显示</th>
+          <th>#</th>
+          <th>子系统</th>
+          <th>核心内容</th>
+          <th>旗舰机基准占比</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
+          <td>1</td>
+          <td><strong>算力与电子</strong></td>
+          <td>SoC 主板 · Wi-Fi/蓝牙模组 · 被动元件</td>
+          <td>10–12%</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><strong>感知系统</strong></td>
+          <td>LDS/dToF · 视觉摄像头 · IMU · 超声波</td>
+          <td>10–13%</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><strong>动力与驱动</strong></td>
+          <td>吸尘风机 · 驱动轮模组 · 底盘升降</td>
+          <td>10–12%</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><strong>清洁功能</strong></td>
+          <td>拖布驱动 · 水泵 · 水箱 · 边刷 · 滚刷</td>
+          <td>13–17%</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><strong>基站系统</strong></td>
+          <td>集尘 · 水路 · 加热 · 基站电控 · 基站结构</td>
+          <td>15–20%</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><strong>能源系统</strong></td>
+          <td>电芯 · BMS · 充电电控</td>
+          <td>7–9%</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><strong>整机结构 CMF</strong></td>
+          <td>外壳注塑 · 喷涂/IMD · 模具摊销</td>
+          <td>10–13%</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td><strong>MVA + 软件授权</strong></td>
+          <td>组装/测试人工 · 算法版税 · OS 授权 · 包材</td>
+          <td>9–13%</td>
       </tr>
   </tbody>
 </table>
-<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
+<h3 id="关键指标">关键指标</h3>
+<ul>
+<li><strong>整机 BOM 率</strong>：旗舰机约 <strong>48–55%</strong>（零售价），实际测试一般在30%左右，后续版本会优化一下。</li>
+<li><strong>基站系统占比</strong>随档位差异显著：
+<ul>
+<li>入门机（¥2000–2500，仅充电+集尘）<strong>5–8%</strong></li>
+<li>中档机（¥2500–3500，自清洁+水路）<strong>12–15%</strong></li>
+<li>旗舰机（¥5000+，加热/烘干/多泵）<strong>15–20%</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="数据获取与分析">数据获取与分析</h2>
+<h3 id="数据库结构">数据库结构</h3>
+<table>
+  <thead>
+      <tr>
+          <th>目录 / 文件</th>
+          <th>内容</th>
+          <th>时间戳</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>data/products_db.json</code></td>
+          <td>产品规格数据库</td>
+          <td>每条记录含 <code>last_updated</code></td>
+      </tr>
+      <tr>
+          <td><code>data/teardowns/{机型}_teardown_{日期}.csv</code></td>
+          <td>各机型拆机数据</td>
+          <td>文件名含生成日期，历史版本自动保留</td>
+      </tr>
+      <tr>
+          <td><code>data/lib/components_lib.csv</code></td>
+          <td>标准件库（8桶分类）</td>
+          <td>每行含 <code>last_updated</code> 列</td>
+      </tr>
+  </tbody>
+</table>
 <blockquote>
-<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
+<p>统一汇总在飞书表格中调取，本地备份保存。重启服务后数据不丢失。</p>
 </blockquote>
-<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
-<h2 id="软件配置">软件配置：</h2>
-<p>使用官方提供的 openclaw 一键安装脚本进行部署：
-<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
-<p>重启 Gateway：openclaw gateway restart</p>
-<h3 id="skill-技能">skill 技能</h3>
-<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
-<h3 id="权限配置调整">权限配置调整</h3>
-<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
-<h3 id="大概过程">大概过程</h3>
-<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-<p>跳了几个舞之后，它还给我分析了一下。</p>
-<p><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/duibi_dance.7lkjiushvf.webp" alt="舞步分析"></p>
-<h2 id="一些参考链接">一些参考链接</h2>
-<p>Token降本增效部分强烈建议阅读。</p>
-<p><a href="https://sspai.com/post/106232">OpenClaw：高强度使用两周，这个 AI 工具颠覆了我的工作流</a></p>
+<h3 id="数据来源与置信度">数据来源与置信度</h3>
+<table>
+  <thead>
+      <tr>
+          <th>来源</th>
+          <th><code>bom_source</code> 标注</th>
+          <th>适用层级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>实物拆机（飞书拆机表 / Excel）</td>
+          <td><code>teardown</code></td>
+          <td>PCB 芯片 / 电机 / 传感器</td>
+      </tr>
+      <tr>
+          <td>网络调研</td>
+          <td><code>web</code></td>
+          <td>规格层（吸力 / 续航 / 功能布尔值）</td>
+      </tr>
+      <tr>
+          <td>行业基准估算</td>
+          <td><code>estimate</code></td>
+          <td>BOM 成本（无拆机数据时）</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>PCB 级芯片型号通常无法从公开渠道获取，标注 <code>confidence: inferred</code> 的数据为同平台推断，需实物拆机核实后才能升级为 <code>confirmed</code>。</p>
+</blockquote>
+<hr>
+<h2 id="运行效果">运行效果</h2>
+<p>当用户发送 <strong>&ldquo;石头 P20 ultra pro，分析 BOM 成本&rdquo;</strong> 时，Agent 自动执行：</p>
+<table>
+  <thead>
+      <tr>
+          <th>步骤</th>
+          <th>动作</th>
+          <th>工具</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1 查库</td>
+          <td>检索产品数据库 + 拆机数据库，确认已有数据与缺口</td>
+          <td><code>get_product_detail</code> · <code>get_missing_data</code></td>
+      </tr>
+      <tr>
+          <td>2 网络检索</td>
+          <td>补全缺失规格（规格层）</td>
+          <td><code>crawl_product_specs</code> → <code>web_search</code></td>
+      </tr>
+      <tr>
+          <td>3 写入数据库</td>
+          <td>持久化，标注 bom_source</td>
+          <td><code>save_product</code></td>
+      </tr>
+      <tr>
+          <td>4 技术亮点</td>
+          <td>列出 3–5 个核心技术差异点</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td>5 BOM 估算</td>
+          <td>8桶结构成本预估表</td>
+          <td><code>generate_bom_estimate</code></td>
+      </tr>
+      <tr>
+          <td>6 供应链分析</td>
+          <td>核心件供应商 + 降级替代 + 节省金额</td>
+          <td><code>match_bom_to_library</code></td>
+      </tr>
+      <tr>
+          <td>7 差异分析</td>
+          <td>vs 数据库中定位相近产品 2–3 个关键差异</td>
+          <td><code>compare_by_spec</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="demo-示例">Demo 示例</h3>
+<blockquote>
+<p>石头p20 ultra plus,分析 BOM 成本</p>
+</blockquote>
+<pre tabindex="0"><code>石头 P20 Ultra Plus - BOM 成本分析 (本地拆机数据)
+
+数据来源：本地拆机数据库 (estimate)
+更新日期：2026-04-17
+零售价：¥4,999
+
+💰 成本概览
+
+|项目|金额|
+|---|---|
+|BOM 总成本|¥1,822|
+|BOM 率|36.4%|
+|零部件总数|56 件|
+
+📦 按类别分类
+
+|类别|金额 (¥)|占比|件数|
+|---|---|---|---|
+|基站系统|455|25.0%|8|
+|电机|310|17.0%|8|
+|电池|270|14.8%|6|
+|传感器|229|12.6%|9|
+|PCB|210|11.5%|11|
+|结构|178|9.8%|11|
+|MVA+ 软件|170|9.3%|3|
+
+🔍 高价值部件 TOP 5
+
+|排名|部件|型号|小计|
+|---|---|---|---|
+|1|18650 锂电|21700 5000mAh|¥180 (×4)|
+|2|LDS 激光雷达|定制|¥145|
+|3|驱动轮电机|直流无刷 35W|¥130 (×2)|
+|4|集尘风机|无刷 800W|¥120|
+|5|吸尘风机|无刷 180W|¥95|
+
+💡 降本机会
+
+1. 电池包 (¥270) — 评估二线电芯供应商，可省 ¥30-50
+2. LDS 雷达 (¥145) — 联合开发定制，目标降本 10%
+3. 基站系统 (¥455) — 简化加热模组配置，可省 ¥20-30
+4. 驱动轮电机 (¥130) — 批量议价，目标 ¥55/个
+
+预估降本空间：¥100-150/台（约 5-8%）
+
+文件已保存到：
+- 拆机数据：~/.openclaw/skills/unit-bot/data/teardowns/roborock_p20_ultra_plus_teardown_2026-04-17.csv
+- 产品规格：~/.openclaw/skills/unit-bot/data/products_db.json
+- 标准件库：~/.openclaw/skills/unit-bot/data/lib/components_lib.csv
+</code></pre><h3 id="实物拆机数据示例">实物拆机数据示例</h3>
+<pre tabindex="0"><code>类别，子类别，部件名称，型号，数量，单价，备注
+PCB,主板，CPU,MR813,1,85,MediaTek 扫地机专用 SoC
+PCB,主板，Flash,GD25B128,1,12,128Mb SPI Flash
+PCB,主板，DRAM,PSR25C128,1,18,128Mb PSRAM
+PCB,主板，Wi-Fi 模组，RTL8720CF,1,22,Realtek 双频 Wi-Fi
+PCB,主板，MCU,STM32G071,1,15,ST 主控 MCU
+PCB,主板，IMU,ICM-42688,1,28,TDK 6 轴 IMU
+PCB,主板，LED 驱动，WS2812B,4,3,RGB 指示灯
+PCB,主板，音频 codec,ES8388,1,18,语音交互
+电机，驱动轮，直流无刷电机，定制 35W,2,65,石头定制
+电机，吸尘，无刷风机，180W,1,95,主吸力
+电机，拖布，直流有刷电机，12W,2,18,旋转拖地
+电机，边刷，直流有刷电机，5W,2,12,单侧边刷
+电机，水泵，微型蠕动泵，3W,1,25,电控出水
+传感器，LDS 雷达，激光雷达，定制，1,145,石头定制 LDS
+传感器，dToF,深度传感器，VL53L5CX,1,35,ST 多区 ToF
+传感器，悬崖传感器，红外，GP2Y0A51,4,8,Sharp 防跌落
+传感器，墙传感器，红外，定制，2,6,沿墙清扫
+传感器，碰撞传感器，微动开关，定制，1,5,前撞检测
+电池，电芯，18650 锂电，21700 5000mAh,4,45,国产一线
+电池，BMS,电池管理，定制，1,35,过充过放保护
+电池，充电座，充电底座，定制，1,55,含触点
+结构，上盖，注塑件，ABS+PC,1,28,喷涂
+结构，下盖，注塑件，ABS+PC,1,25,喷涂
+结构，水箱，塑料件，TPC,1,18,400ml 电控水箱
+结构，尘盒，塑料件，ABS,1,15,600ml
+结构，滚刷，橡胶 + 毛刷，定制，1,22,双胶刷
+结构，拖布支架，塑料 + 磁吸，定制，2,12,可拆卸
+结构，轮子，TPR 包胶，定制，2,15,主驱动轮
+结构，边刷，尼龙毛刷，定制，2,8,可替换
+基站，集尘风机，无刷风机，800W,1,120,自动集尘
+基站，加热模组，PTC 加热，2000W,1,85,热水洗拖布
+基站，水泵，循环水泵，15W,1,45,基站水路
+基站，电控板，基站主控，定制，1,95,基站控制
+基站，外壳，注塑件，ABS+PC,1,65,基站主体
+基站，尘袋，无纺布，定制，3,15,3 个装
+MVA,组装测试，人工 + 设备，85,1,85,工厂组装
+MVA,包材，纸箱 + 泡沫，定制，1,35,零售包装
+MVA,软件授权，算法+OS,50,1,50,石头算法
+</code></pre><hr>
+<p><strong>相关链接</strong>：</p>
+<ul>
+<li><a href="https://github.com/fifteenbao/unit-bot">unit-bot 项目</a></li>
+</ul>
 </section>
 
     
@@ -875,14 +1209,32 @@ skill 技能
        
       <a
         class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-        href="https://fifteenbao.com/tags/openclaw"
-        >openclaw</a
+        href="http://localhost:1313/tags/openclaw"
+        >OpenClaw</a
       >
        
       <a
         class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-        href="https://fifteenbao.com/tags/diy"
-        >DIY</a
+        href="http://localhost:1313/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6"
+        >智能硬件</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90"
+        >成本分析</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"
+        >技术选型</a
+      >
+       
+      <a
+        class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+        href="http://localhost:1313/tags/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA"
+        >扫地机器人</a
       >
       
     </footer>
@@ -896,13 +1248,13 @@ skill 技能
       class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
     >
       
-      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/"
-        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>大沙河公园游记</span></a
+      <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/%E6%AE%B5%E6%B0%B8%E5%B9%B3%E7%9A%8410%E6%9D%A1%E5%95%86%E4%B8%9A%E6%99%BA%E6%85%A7/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>段永平的10条商业智慧</span></a
       >
       
       
-      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/2026-%E6%8E%A2%E4%BA%B2%E8%AE%B0/"
-        ><span>2026 探亲记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+        ><span>更新hugo的使用方法</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
       >
       
     </nav>
