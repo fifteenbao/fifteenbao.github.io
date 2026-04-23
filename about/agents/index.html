@@ -46,7 +46,7 @@
   lang="cn"
   dir="ltr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -173,7 +173,7 @@ Bug 排查
   
   
   
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
 
   
   
@@ -182,13 +182,13 @@ Bug 排查
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="http://localhost:1313/images/admin.gif" />
   
   
 
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
   
   
 
@@ -196,7 +196,7 @@ Bug 排查
   
   <script
     defer
-    src="https://fifteenbao.com/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -208,11 +208,11 @@ Bug 排查
   
   <link
     rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
+    href="http://localhost:1313/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
+    href="http://localhost:1313/apple-touch-icon.png"
   />
 
   
@@ -268,48 +268,6 @@ Bug 排查
   
   
   
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
-  
-  
-  <meta itemprop="name" content="AGENTS">
-  <meta itemprop="description" content="角色定位，工作流程，技能栈">
-  <meta itemprop="wordCount" content="95">
-  
-  <meta property="og:url" content="https://fifteenbao.com/about/agents/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="AGENTS">
-  <meta property="og:description" content="角色定位，工作流程，技能栈">
-  <meta property="og:locale" content="cn">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="about">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AGENTS">
-  <meta name="twitter:description" content="角色定位，工作流程，技能栈">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/about/agents/" />
-  
-  
-  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -324,7 +282,7 @@ Bug 排查
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
         >fifteenbao</a
       >
     </div>
@@ -762,7 +720,7 @@ Bug 排查
         <a
           class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -790,7 +748,7 @@ Bug 排查
         <a
           class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
           style="--url: url(./rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
