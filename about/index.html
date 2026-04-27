@@ -1,45 +1,4 @@
 <!doctype html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-    
-  
-
-
 <html
   class="not-ready lg:text-base"
   style="--bg: #faf8f1"
@@ -195,7 +154,7 @@
   <meta itemprop="description" content="`Hugo, the world&#39;s fastest framework for building websites">
   <meta itemprop="datePublished" content="2025-12-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-12-03T00:00:00+00:00">
-  <meta itemprop="wordCount" content="77">
+  <meta itemprop="wordCount" content="65">
   
   <meta property="og:url" content="https://fifteenbao.com/about/">
   <meta property="og:site_name" content="fifteenbao">
@@ -223,8 +182,6 @@
   
   <link rel="canonical" href="https://fifteenbao.com/about/" />
   
-  
-  
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -233,9 +190,10 @@
 
     gtag('config', 'G-4BYTD0RBTY');
   </script>
+  
 </head>
 
-  <body class="text-black duration-200 ease-out dark:text-white">
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
@@ -639,7 +597,7 @@
     </script>
 
     <div
-      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
     >
       
       
@@ -689,7 +647,7 @@
         
         <div
           class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5);"
+          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
           data-theme-bg="png"
           role="button"
           aria-label="Dark"
@@ -716,7 +674,7 @@
         <div class="flex items-center ml-2">
           <div
             class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5);"
+            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
             data-theme-bg="png"
             role="button"
             aria-label="Dark"
@@ -733,7 +691,6 @@
 <div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
 
 
-
     <main
       class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
     >
@@ -746,71 +703,46 @@
 
 
 <div id="about" class="about-page">
-<h2 id="-我的更新日志">📅 我的更新日志</h2>
+<p><strong>雷猴，唔係包</strong></p>
+<!-- ── 更新日志热力图 ── -->
 <div id="heatmap-container">
-  <div id="heatmap-title"></div>
+  <div class="heatmap-header">
+    <span class="heatmap-header-title">更新日志</span>
+    <span class="heatmap-header-meta" id="heatmap-meta"></span>
+  </div>
   <div class="heatmap-wrapper">
     <div class="heatmap-year-labels" id="heatmap-year-labels"></div>
     <div class="heatmap-content-wrapper">
-      <div class="heatmap-week-labels" id="heatmap-week-labels"></div>
       <div id="heatmap-grid"></div>
     </div>
   </div>
   <div class="heatmap-legend">
-    <span>0</span>
+    <span>少</span>
     <div class="heatmap-legend-item" data-level="0"></div>
-    <span>1</span>
     <div class="heatmap-legend-item" data-level="1"></div>
-    <span>2</span>
     <div class="heatmap-legend-item" data-level="2"></div>
-    <span>3</span>
     <div class="heatmap-legend-item" data-level="3"></div>
-    <span>4+</span>
     <div class="heatmap-legend-item" data-level="4"></div>
+    <span>多</span>
   </div>
   <div class="heatmap-tooltip" id="heatmap-tooltip"></div>
 </div>
 <script>
 (function() {
-  // 获取文章发布日期数据
   function getPostDates() {
     const dataScript = document.getElementById('post-dates-data');
-    if (!dataScript) {
-      console.warn('post-dates-data script not found');
-      return [];
-    }
+    if (!dataScript) return [];
     try {
       let content = dataScript.textContent.trim();
-      if (!content) {
-        console.warn('post-dates-data is empty');
-        return [];
+      if (content.startsWith('"') && content.endsWith('"')) {
+        content = content.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
       }
-      
-      if (typeof content === 'string' && content.startsWith('"') && content.endsWith('"')) {
-        content = content.slice(1, -1);
-        content = content.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
-      }
-      
       let dates = JSON.parse(content);
-      
-      if (typeof dates === 'string') {
-        dates = JSON.parse(dates);
-      }
-      
-      if (Array.isArray(dates)) {
-        console.log('Found post dates:', dates.length, dates);
-        return dates;
-      } else {
-        console.warn('post-dates-data is not an array:', typeof dates, dates);
-        return [];
-      }
-    } catch (e) {
-      console.error('Failed to parse post dates:', e, 'Content:', dataScript.textContent);
-      return [];
-    }
+      if (typeof dates === 'string') dates = JSON.parse(dates);
+      return Array.isArray(dates) ? dates : [];
+    } catch (e) { return []; }
   }
 
-  // 将 Date 对象格式化为本地 ISO 日期字符串 (YYYY-MM-DD)
   function toLocalDateString(d) {
     const yyyy = d.getFullYear();
     const mm = String(d.getMonth() + 1).padStart(2, '0');
@@ -818,191 +750,115 @@
     return `${yyyy}-${mm}-${dd}`;
   }
 
-  // 获取指定年份的所有周的数据（按周为单位）
-  function getYearWeekData(postDates, year) {
-    // 统计每周发布的文章数量
-    const weekCountMap = {};
-    postDates.forEach(dateStr => {
-      const dateYear = parseInt(dateStr.split('-')[0]);
-      if (dateYear === year) {
-        const date = new Date(dateStr);
-        const weekNum = getWeekNumber(date);
-        weekCountMap[weekNum] = (weekCountMap[weekNum] || 0) + 1;
-      }
-    });
-
-    // 生成52-53周的数据
-    const weeks = [];
-    const jan1 = new Date(year, 0, 1);
-    const startSunday = new Date(jan1);
-    startSunday.setDate(jan1.getDate() - jan1.getDay());
-
-    // 生成一年的周数据（每周一个方块）
-    for (let week = 1; week <= 53; week++) {
-      const weekDate = new Date(startSunday);
-      weekDate.setDate(startSunday.getDate() + (week - 1) * 7);
-      
-      // 只统计该周在本年中的天数
-      const count = weekCountMap[week] || 0;
-      
-      // 确定级别：按周的文章数
-      let level = 0;
-      if (count > 0) {
-        if (count === 1) level = 1;
-        else if (count === 2) level = 2;
-        else if (count <= 4) level = 3;
-        else level = 4;
-      }
-
-      weeks.push({
-        week: week,
-        level: level,
-        count: count,
-        startDate: toLocalDateString(weekDate)
-      });
-    }
-
-    return weeks;
-  }
-
-  // 获取日期在该年的周数（1-53）
   function getWeekNumber(date) {
-    const year = date.getFullYear();
-    const jan1 = new Date(year, 0, 1);
+    const jan1 = new Date(date.getFullYear(), 0, 1);
     const startSunday = new Date(jan1);
     startSunday.setDate(jan1.getDate() - jan1.getDay());
-    
-    const timeDiff = date - startSunday;
-    const weekNum = Math.floor(timeDiff / (7 * 24 * 60 * 60 * 1000)) + 1;
-    
+    const weekNum = Math.floor((date - startSunday) / (7 * 24 * 60 * 60 * 1000)) + 1;
     return Math.max(1, Math.min(weekNum, 53));
   }
 
-  // 渲染热力图
+  function getYearWeekData(postDates, year) {
+    const weekCountMap = {};
+    postDates.forEach(dateStr => {
+      if (parseInt(dateStr.split('-')[0]) === year) {
+        const wn = getWeekNumber(new Date(dateStr));
+        weekCountMap[wn] = (weekCountMap[wn] || 0) + 1;
+      }
+    });
+    const jan1 = new Date(year, 0, 1);
+    const startSunday = new Date(jan1);
+    startSunday.setDate(jan1.getDate() - jan1.getDay());
+    const weeks = [];
+    for (let w = 1; w <= 53; w++) {
+      const count = weekCountMap[w] || 0;
+      let level = 0;
+      if (count === 1) level = 1;
+      else if (count === 2) level = 2;
+      else if (count >= 3 && count <= 4) level = 3;
+      else if (count > 4) level = 4;
+      const weekDate = new Date(startSunday);
+      weekDate.setDate(startSunday.getDate() + (w - 1) * 7);
+      weeks.push({ week: w, level, count, startDate: toLocalDateString(weekDate) });
+    }
+    return weeks;
+  }
+
   function renderHeatmap() {
-    const gridContainer = document.getElementById('heatmap-grid');
+    const gridEl = document.getElementById('heatmap-grid');
     const yearLabelsEl = document.getElementById('heatmap-year-labels');
     const tooltip = document.getElementById('heatmap-tooltip');
-    const weekLabelsEl = document.getElementById('heatmap-week-labels');
-    
-    if (!gridContainer) return;
+    const metaEl = document.getElementById('heatmap-meta');
+    if (!gridEl) return;
 
     const postDates = getPostDates();
-    
-    // 获取最早和最晚的年份
-    let minYear = new Date().getFullYear();
-    let maxYear = minYear;
-    
-    postDates.forEach(dateStr => {
-      const year = parseInt(dateStr.split('-')[0]);
-      minYear = Math.min(minYear, year);
-      maxYear = Math.max(maxYear, year);
+    let minYear = new Date().getFullYear(), maxYear = minYear;
+    postDates.forEach(d => {
+      const y = parseInt(d.split('-')[0]);
+      minYear = Math.min(minYear, y);
+      maxYear = Math.max(maxYear, y);
     });
-    
-    // 只显示 2025 年及以后的数据
+    minYear = Math.max(minYear, 2025);
     maxYear = Math.max(maxYear, new Date().getFullYear());
-    minYear = 2025; // 只显示 2025 年及以后
-    
-    // 清空容器
-    gridContainer.innerHTML = '';
+
+    if (metaEl) metaEl.textContent = postDates.length + ' 篇文章';
+
+    gridEl.innerHTML = '';
     yearLabelsEl.innerHTML = '';
 
-    // 隐藏周标签
-    if (weekLabelsEl) {
-      weekLabelsEl.style.display = 'none';
-    }
-
-    // 从高年份到低年份显示（最新的在上面）
     for (let year = maxYear; year >= minYear; year--) {
-      const yearWeeks = getYearWeekData(postDates, year);
-      
-      // 添加年份标签
-      const yearLabel = document.createElement('div');
-      yearLabel.className = 'heatmap-year-label';
-      yearLabel.textContent = year;
-      yearLabelsEl.appendChild(yearLabel);
-      
-      // 添加该年的热力图网格
-      const yearGrid = document.createElement('div');
-      yearGrid.className = 'heatmap-year-grid';
-      
-      // 为每周添加一个方块（共53周，全部显示在一行）
-      yearWeeks.forEach(weekData => {
-        const weekBlock = document.createElement('div');
-        weekBlock.className = 'heatmap-day';
-        weekBlock.setAttribute('data-level', weekData.level);
-        weekBlock.setAttribute('data-week', weekData.week);
-        weekBlock.setAttribute('data-count', weekData.count);
-        weekBlock.title = `${year} W${weekData.week}: ${weekData.count} 篇文章`;
-        
-        // 鼠标悬停显示提示
-        weekBlock.addEventListener('mouseenter', function(e) {
+      const weeks = getYearWeekData(postDates, year);
+
+      const label = document.createElement('div');
+      label.className = 'heatmap-year-label';
+      label.textContent = year;
+      yearLabelsEl.appendChild(label);
+
+      const row = document.createElement('div');
+      row.className = 'heatmap-year-grid';
+
+      weeks.forEach(wd => {
+        const cell = document.createElement('div');
+        cell.className = 'heatmap-day';
+        cell.setAttribute('data-level', wd.level);
+        cell.addEventListener('mouseenter', function(e) {
           const rect = this.getBoundingClientRect();
-          const countText = weekData.count > 0 
-            ? `${weekData.count} 篇文章` 
-            : '无文章';
-          tooltip.textContent = `${year} W${weekData.week}: ${countText}`;
+          tooltip.textContent = wd.count > 0
+            ? `${year} W${wd.week} · ${wd.count} 篇`
+            : `${year} W${wd.week} · 无更新`;
           tooltip.style.display = 'block';
-          
-          // 使用 requestAnimationFrame 等待浏览器完成布局计算
           requestAnimationFrame(() => {
-            // 计算水平位置（居中对齐方块）
             let left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2;
-            
-            // 边界检查：水平
-            if (left < 0) {
-              left = 0;
-            } else if (left + tooltip.offsetWidth > window.innerWidth) {
-              left = window.innerWidth - tooltip.offsetWidth;
-            }
-            
-            // 垂直位置总是显示在上方
-            const top = rect.top - tooltip.offsetHeight - 8;
-            
+            left = Math.max(4, Math.min(left, window.innerWidth - tooltip.offsetWidth - 4));
             tooltip.style.left = left + 'px';
-            tooltip.style.top = top + 'px';
+            tooltip.style.top = (rect.top - tooltip.offsetHeight - 6) + 'px';
           });
         });
-        
-        weekBlock.addEventListener('mouseleave', function() {
-          tooltip.style.display = 'none';
-        });
-        
-        yearGrid.appendChild(weekBlock);
+        cell.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+        row.appendChild(cell);
       });
-      
-      gridContainer.appendChild(yearGrid);
+
+      gridEl.appendChild(row);
     }
   }
 
-  // 初始化
   function init() {
-    // 等待 shortcode 数据加载
-    const checkData = setInterval(() => {
-      const dataScript = document.getElementById('post-dates-data');
-      if (dataScript) {
-        clearInterval(checkData);
+    const check = setInterval(() => {
+      if (document.getElementById('post-dates-data')) {
+        clearInterval(check);
         renderHeatmap();
       }
     }, 100);
-    
-    // 10秒后超时
-    setTimeout(() => {
-      clearInterval(checkData);
-      renderHeatmap();
-    }, 10000);
+    setTimeout(() => { clearInterval(check); renderHeatmap(); }, 5000);
   }
 
-  // 页面加载完成后初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
 </script>
-<p><strong>雷猴，唔係包</strong></p>
-<h2 id="-关于我">🧠 关于我</h2>
+<!-- ── 关于我 ── -->
+<div class="about-section">
+  <div class="about-section-label">关于我</div>
 <table>
   <thead>
       <tr>
@@ -1029,8 +885,10 @@
       </tr>
   </tbody>
 </table>
-<hr>
-<h2 id="关于我的说明">关于我的说明</h2>
+</div>
+<!-- ── clone 说明 ── -->
+<div class="about-section">
+  <div class="about-section-label">关于我的说明</div>
 <blockquote>
 <p>clone 我的第二分身，点击对应文件了解相关内容。</p>
 </blockquote>
@@ -1060,9 +918,10 @@
       </tr>
   </tbody>
 </table>
-<hr>
-<hr>
-<h2 id="-最新文章">📚 最新文章</h2>
+</div>
+<!-- ── 最新文章 ── -->
+<div class="about-section">
+  <div class="about-section-label">最新文章</div>
 <ul class="recent-posts-list"><li>
     <a href="https://fifteenbao.com/post/ipd_agens/">IPD体系的多Agent协作</a>
     <span class="recent-posts-date">Apr 23, 2026</span>
@@ -1121,33 +980,18 @@
 }
 </style>
 
-<hr>
-<h2 id="-社交链接">🌐 社交链接</h2>
-<table>
-  <thead>
-      <tr>
-          <th>平台</th>
-          <th>链接</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>GitHub</td>
-          <td><a href="https://github.com/fifteenbao">@fifteenbao</a></td>
-      </tr>
-      <tr>
-          <td>Instagram</td>
-          <td><a href="https://www.instagram.com/fifteenbao">@fifteenbao</a></td>
-      </tr>
-      <tr>
-          <td>Behance</td>
-          <td><a href="https://www.behance.net/fifteenbao">@fifteenbao</a></td>
-      </tr>
-  </tbody>
-</table>
-<hr>
+</div>
+<!-- ── 社交链接 ── -->
+<div class="about-section">
+  <div class="about-section-label">社交</div>
+  <div class="about-social-links">
+    <a href="https://github.com/fifteenbao" class="about-social-link" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.instagram.com/fifteenbao" class="about-social-link" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.behance.net/fifteenbao" class="about-social-link" target="_blank" rel="noopener">Behance</a>
+  </div>
+</div>
 <div class="last-updated">
-  <p>最后更新：<time>April 23, 2026</time></p>
+  <p>最后更新：<time>April 27, 2026</time></p>
 </div>
 
 <style>
@@ -1173,26 +1017,10 @@
 
 
     </main>
-
-    <footer
-  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
->
-  <div class="mr-auto">
-  
-    ©2025-2026 fifteenbao
-  
-  </div>
-  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
-    >powered by hugo️️</a
-  >️
-  <a
-    class="link"
-    href="https://github.com/nanxiaobei/hugo-paper"
-    rel="noopener"
-    target="_blank"
-    >hugo-paper</a
-  >
-</footer>
-
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60">
+      <div class="mr-auto">©2025-2026 fifteenbao</div>
+      <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank">powered by hugo</a>
+      <a class="link" href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">hugo-paper</a>
+    </footer>
   </body>
 </html>

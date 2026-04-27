@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发 on fifteenbao</title>
+    <link>http://localhost:1313/tags/%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 开发 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Mon, 06 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开发记 - bonflow 植物养护&amp;识别 App</title>
+      <link>http://localhost:1313/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Growth in order, rhythm in form.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;在秩序中生长，在形式中律动。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;上个月的主要进度：完成了一款植物识别和生长记录 App，上周五已提交 App Store 审核，目前仅支持 iOS 18 以上设备。&lt;/p&gt;&#xA;&lt;p&gt;这是一个整合检验各种 AI 工具和近两年工作展示的 MVP（Minimum Viable Product）。主要是为了好玩，当然也是一个很好的简历展示项目。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-idea-的开始&#34;&gt;💡 Idea 的开始&lt;/h2&gt;&#xA;&lt;p&gt;3 月是植物人的忙碌季。给大部分植物换了盆，沙漠玫瑰切了枝，还野心勃勃买了一颗 40 块的罗汉松。&lt;/p&gt;&#xA;&lt;p&gt;问题接踵而至：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;换盆后的进度很难掌握，重剪后不知是否过度&lt;/li&gt;&#xA;&lt;li&gt;咖啡渣培育的土发现虫害，被迫更换营养土&lt;/li&gt;&#xA;&lt;li&gt;营养土不透气导致闷根（也可能最近天气过于潮湿）&lt;/li&gt;&#xA;&lt;li&gt;最后换成了赤玉土，才算暂时稳定&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;忙活的过程中，我希望有一个可以记录植物生长的 App——不是简单的提醒浇水，而是完整记录每一次换土、修剪、施肥的决策和后续反馈。&lt;/p&gt;&#xA;&lt;p&gt;市面上的产品，要么丑、要么贵、要么没有国区。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-名字的诞生&#34;&gt;🏷️ 名字的诞生&lt;/h2&gt;&#xA;&lt;p&gt;在 Gemini 的指导下，我描述了需求：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;我想起一个 App 的名字，用于记录植物的生长记录和日常护养，倾向于 rook、flow&amp;rdquo;，&lt;strong&gt;试试结合 ぼんさい（Bonsai）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Gemini 的建议：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;结构与音律的融合 (Structural Fusion)&lt;/strong&gt;：直接将 &amp;ldquo;Bonsai&amp;rdquo; 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Bonflow&lt;/strong&gt;：将&amp;quot;盆 (Bon)&amp;ldquo;与&amp;quot;流动 (Flow)&amp;ldquo;结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sairook&lt;/strong&gt;：取自&amp;quot;栽 (Sai)&amp;ldquo;与&amp;quot;堡垒 (Rook)&amp;quot;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Sai-Logic&lt;/strong&gt;：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&amp;quot;系统性&amp;quot;记录的需求。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Bonflow&lt;/strong&gt; 成功诞生。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-ios-历险记&#34;&gt;📱 iOS 历险记&lt;/h2&gt;&#xA;&lt;p&gt;App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

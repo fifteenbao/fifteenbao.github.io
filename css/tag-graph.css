@@ -1,149 +1,258 @@
-/* Custom styles for the tag graph visualization */
-.tag-graph-container {
+/* ── Full-screen graph: override main container ───────────────────────── */
+
+main:has(.graph-page) {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+
+main:has(.graph-page) ~ footer {
+  display: none;
+}
+
+/* ── Graph page wrapper ──────────────────────────────────────────────── */
+
+.graph-page {
+  margin: 0;
+  width: 100%;
+}
+
+/* ── Canvas ──────────────────────────────────────────────────────────── */
+
+#graph-canvas {
   position: relative;
   width: 100%;
-  height: 70vh;
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: calc(100vh - 7.5rem);
+  overflow: hidden;
+  /* Transparent so body::before dark overlay shows through */
+  background: transparent;
 }
 
-.graph-controls {
-  background: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: 1rem;
+@media (min-width: 1024px) {
+  #graph-canvas { height: calc(100vh - 8rem); }
 }
 
-.graph-node {
-  cursor: pointer;
-  transition: all 0.2s ease;
-  stroke: white;
-  stroke-width: 1.5px;
-}
+#graph { width: 100%; height: 100%; }
 
-.graph-node:hover {
-  stroke: #f59e0b;
-  stroke-width: 3px;
-  filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.5));
-}
+/* ── Overlay header ──────────────────────────────────────────────────── */
 
-.graph-node.popular {
-  /* More popular tags have darker blue */
-  fill: #1d4ed8;
-}
-
-.graph-node.medium-popularity {
-  fill: #3b82f6;
-}
-
-.graph-node.less-popular {
-  fill: #93c5fd;
-}
-
-.graph-link {
-  stroke: #cbd5e1;
-  stroke-opacity: 0.6;
-}
-
-.graph-link.active {
-  stroke: #4f46e5;
-  stroke-width: 2px;
-}
-
-.graph-label {
-  font-size: 0.75rem;
-  fill: #374151;
+.graph-overlay-header {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  z-index: 10;
   pointer-events: none;
-  font-weight: 500;
-  text-shadow: 0 1px 0 white;
 }
 
-.dark .graph-label {
-  fill: #d1d5db;
-  text-shadow: 0 1px 0 #1f2937;
+.graph-overlay-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
 }
 
-.tag-badge {
+.graph-overlay-meta {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+}
+
+/* ── Loading ─────────────────────────────────────────────────────────── */
+
+#graph-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  pointer-events: none;
+}
+
+/* ── Detail panel ────────────────────────────────────────────────────── */
+
+#tag-panel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 260px;
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: none;
+  z-index: 20;
+  scrollbar-width: thin;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: inherit;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  scrollbar-color: var(--card-border) transparent;
+}
+
+html.dark #tag-panel {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+#tag-panel::-webkit-scrollbar { width: 4px; }
+#tag-panel::-webkit-scrollbar-track { background: transparent; }
+#tag-panel::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 2px; }
+
+#tag-panel.visible {
+  display: block;
+  animation: panel-in 0.18s ease;
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateX(6px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.tp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tp-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.tp-meta {
+  margin-top: 3px;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.tp-close {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border: none;
+  border-radius: 50%;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-left: 6px;
+  color: var(--text-secondary);
+}
+.tp-close:hover { background: var(--card-border); }
+
+.tp-view-all {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s;
+  color: var(--accent);
+}
+.tp-view-all:hover { color: var(--accent-hover); }
+
+.tp-section-title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 12px 0 6px;
+  color: var(--text-secondary);
+}
+
+.tp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.tp-tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background-color: #f3f4f6;
-  color: #1f2836;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.7rem;
   cursor: pointer;
-  transition: all 0.2s;
-  transition-duration: 200ms;
+  transition: background 0.15s;
+  white-space: nowrap;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
 }
+.tp-tag:hover { background: var(--accent-bg-hover); }
 
-.dark .tag-badge {
-  background-color: #374151;
-  color: #e5e7eb;
+.tp-tag-count { font-size: 0.62rem; opacity: 0.6; }
+
+.tp-articles { display: flex; flex-direction: column; }
+
+.tp-article {
+  display: block;
+  padding: 5px 0;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--divider);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.15s;
+  color: var(--text-secondary);
 }
+.tp-article:last-child { border-bottom: none; }
+.tp-article:hover { color: var(--accent); }
 
-.tag-badge:hover {
-  transform: translateY(-0.125rem);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+/* ── Zoom controls ───────────────────────────────────────────────────── */
 
-.connected-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.tag-article-list {
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-.tag-article-list ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-.tag-article-list li {
-  margin-bottom: 0.25rem;
-}
-
-.graph-zoom-controls {
+#graph-controls {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  bottom: 16px;
+  right: 16px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  z-index: 10;
+  gap: 4px;
+  z-index: 20;
 }
 
-.graph-zoom-btn {
-  padding: 0.5rem;
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.graph-ctrl-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  backdrop-filter: blur(8px);
+}
+.graph-ctrl-btn:hover {
+  background: var(--card-border);
+  color: var(--text-primary);
 }
 
-.dark .graph-zoom-btn {
-  background-color: #1f2937;
-}
+/* ── Responsive ──────────────────────────────────────────────────────── */
 
-.graph-zoom-btn:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-@media (max-width: 768px) {
-  .tag-graph-container {
-    height: 60vh;
-  }
-
-  .graph-controls {
-    flex-direction: column;
-    gap: 1rem;
+@media (max-width: 640px) {
+  #tag-panel {
+    width: calc(100% - 28px);
+    top: auto;
+    bottom: 54px;
+    right: 14px;
+    max-height: 42vh;
   }
 }

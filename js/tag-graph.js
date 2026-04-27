@@ -1,384 +1,380 @@
-// tag-graph.js
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('graph');
-  if (!container) {
-    console.error('Graph container not found');
-    return;
+(function () {
+  'use strict';
+
+  // ── state ─────────────────────────────────────────────────────────────────
+  var svg, g, zoom, simulation;
+  var nodeEl, linkEl, labelEl;
+  var selected = null;
+
+  // ── theme helpers ─────────────────────────────────────────────────────────
+  function isDark() {
+    return document.documentElement.classList.contains('dark');
   }
 
-  // Remove loading message
-  const loadingMessage = document.getElementById('loading-message');
-  if (loadingMessage) {
-    loadingMessage.style.display = 'none';
+  // Read a CSS token from :root / html.dark — single source of truth
+  function token(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
 
-  // Get data from embedded script
-  initializeWithEmbeddedData();
-});
+  function nodeColor(d) {
+    if (d.count >= 7) return token('--heat-3');
+    if (d.count >= 5) return token('--heat-4');
+    if (d.count >= 3) return token('--accent');
+    if (d.count >= 2) return token('--heat-2');
+    return token('--heat-1');
+  }
 
-function initializeWithEmbeddedData() {
-  // This function will be filled with embedded data when Hugo renders the page
+  function nodeR(d) {
+    if (d.count >= 7) return 12;
+    if (d.count >= 5) return 9;
+    if (d.count >= 3) return 6.5;
+    if (d.count >= 2) return 5;
+    return 3.5;
+  }
 
-  // Get data from Hugo templates - these variables will be replaced during page rendering
-  const allPosts = [];
-  {{- range site.RegularPages -}}
-  {{- if isset .Params "tags" -}}
-  allPosts.push({
-    url: {{ .RelPermalink | jsonify }},
-    title: {{ .Title | jsonify }},
-    tags: {{ .Params.tags | jsonify }}
+  function linkStroke()       { return token('--accent-border'); }
+  function activeLinkStroke() { return token('--accent'); }
+  function nodeStroke()       { return isDark() ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.7)'; }
+  function glowFilter()       { return isDark() ? 'url(#glow-soft)' : 'none'; }
+  function labelFill(d) {
+    var hi = token('--text-primary');
+    var lo = token('--text-secondary');
+    return d.count >= 3 ? hi : lo;
+  }
+
+  // ── entry ─────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', function () {
+    var data = window.GRAPH_DATA;
+    if (!data || !data.tags || !data.tags.length) {
+      var el = document.getElementById('graph-loading');
+      if (el) el.textContent = '暂无标签数据';
+      return;
+    }
+
+    var nodes = data.tags.map(function (t) { return Object.assign({}, t); });
+    var links = buildLinks(nodes, data.posts || []);
+
+    var loadingEl = document.getElementById('graph-loading');
+    if (loadingEl) loadingEl.remove();
+
+    var statsEl = document.getElementById('graph-stats');
+    if (statsEl) statsEl.textContent = nodes.length + ' 个标签 · ' + links.length + ' 个关联';
+
+    renderGraph(nodes, links);
+
+    // Zoom controls
+    bindBtn('ctrl-zoom-in',  function () { svg.transition().duration(280).call(zoom.scaleBy, 1.35); });
+    bindBtn('ctrl-zoom-out', function () { svg.transition().duration(280).call(zoom.scaleBy, 0.75); });
+    bindBtn('ctrl-reset',    resetView);
+
+    // Watch for theme toggle
+    new MutationObserver(function () { updateColors(); })
+      .observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   });
-  {{- end -}}
-  {{- end -}}
 
-  const tagsData = [];
-  {{- range $name, $items := site.Taxonomies.tags -}}
-  tagsData.push({
-    id: {{ $name | jsonify }},
-    name: {{ $name | jsonify }},
-    count: {{ len $items }},
-    linkedTags: [],
-    articles: [
-      {{- range $index, $page := $items -}}
-      {{- if $index -}},{{- end -}}
-      {
-        title: {{ .Page.Title | jsonify }},
-        url: {{ .Page.RelPermalink | jsonify }}
-      }
-      {{- end -}}
-    ]
-  });
-  {{- end -}}
-
-  if (tagsData.length === 0) {
-    document.getElementById('graph').innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 70vh; font-size: 18px; color: #666;">暂无标签数据</div>';
-    return;
+  function bindBtn(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('click', fn);
   }
 
-  initializeGraph(tagsData, allPosts);
-}
-
-function initializeGraph(tagsData, allPosts) {
-  // Calculate tag relationships
-  tagsData.forEach(tag => {
-    tag.linkedTags = [];
-    allPosts.forEach(post => {
-      if (post.tags && post.tags.includes(tag.id)) {
-        if (post.tags && Array.isArray(post.tags)) {
-          post.tags.forEach(otherTag => {
-            if (otherTag !== tag.id && !tag.linkedTags.includes(otherTag)) {
-              tag.linkedTags.push(otherTag);
-            }
-          });
+  // ── co-occurrence links ───────────────────────────────────────────────────
+  function buildLinks(nodes, posts) {
+    var co = {};
+    posts.forEach(function (post) {
+      var tags = post.tags;
+      if (!tags || tags.length < 2) return;
+      for (var i = 0; i < tags.length; i++) {
+        for (var j = i + 1; j < tags.length; j++) {
+          var key = [tags[i], tags[j]].sort().join('\x00');
+          co[key] = (co[key] || 0) + 1;
         }
       }
     });
-  });
-
-  // Create links based on tag relationships
-  const links = [];
-  tagsData.forEach(tag => {
-    tag.linkedTags.forEach(linkedTagId => {
-      const linkedTag = tagsData.find(t => t.id === linkedTagId);
-      if (linkedTag) {
-        // Calculate link strength based on how many posts share these tags
-        let sharedCount = 0;
-        allPosts.forEach(post => {
-          if (post.tags && post.tags.includes(tag.id) && post.tags.includes(linkedTagId)) {
-            sharedCount++;
-          }
-        });
-
-        links.push({
-          source: tag.id,
-          target: linkedTagId,
-          value: sharedCount
-        });
+    var nodeIds = new Set(nodes.map(function (n) { return n.id; }));
+    return Object.keys(co).reduce(function (acc, key) {
+      var parts = key.split('\x00');
+      if (nodeIds.has(parts[0]) && nodeIds.has(parts[1])) {
+        acc.push({ source: parts[0], target: parts[1], value: co[key] });
       }
-    });
-  });
+      return acc;
+    }, []);
+  }
 
-  // Remove duplicate links
-  const uniqueLinks = [];
-  const linkSet = new Set();
-  links.forEach(link => {
-    const key = [link.source, link.target].sort().join('-');
-    if (!linkSet.has(key)) {
-      linkSet.add(key);
-      uniqueLinks.push(link);
+  // ── SVG glow filter ───────────────────────────────────────────────────────
+  function addGlowFilter(defs, id, blur) {
+    var f = defs.append('filter').attr('id', id)
+      .attr('x', '-100%').attr('y', '-100%')
+      .attr('width', '300%').attr('height', '300%');
+    f.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', blur).attr('result', 'blur');
+    var m = f.append('feMerge');
+    m.append('feMergeNode').attr('in', 'blur');
+    m.append('feMergeNode').attr('in', 'SourceGraphic');
+  }
+
+  // ── render ────────────────────────────────────────────────────────────────
+  function renderGraph(nodes, links) {
+    var container = document.getElementById('graph');
+    if (!container) return;
+
+    var W = container.clientWidth  || 900;
+    var H = container.clientHeight || 600;
+
+    d3.select('#graph').selectAll('*').remove();
+
+    svg = d3.select('#graph').append('svg')
+      .attr('width', W).attr('height', H)
+      .style('display', 'block');
+
+    var defs = svg.append('defs');
+    addGlowFilter(defs, 'glow-soft',     3);
+    addGlowFilter(defs, 'glow-selected', 7);
+    addGlowFilter(defs, 'glow-hover',    4.5);
+
+    zoom = d3.zoom()
+      .scaleExtent([0.1, 10])
+      .on('zoom', function (e) { g.attr('transform', e.transform); });
+
+    svg.call(zoom).on('click.deselect', function (e) {
+      if (e.target === svg.node()) deselect();
+    });
+
+    g = svg.append('g');
+
+    // ── Tighter physics ──────────────────────────────────────────────────
+    simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(function (d) { return d.id; })
+        // Shorter link distance → nodes pulled much closer together
+        .distance(function (d) { return Math.max(28, 60 - d.value * 8); })
+        .strength(0.7))
+      .force('charge', d3.forceManyBody()
+        // Reduced repulsion → tighter cluster
+        .strength(function (d) { return -80 - nodeR(d) * 10; }))
+      .force('center', d3.forceCenter(W / 2, H / 2))
+      // Extra gravity toward center → prevents nodes flying to edges
+      .force('x', d3.forceX(W / 2).strength(0.04))
+      .force('y', d3.forceY(H / 2).strength(0.04))
+      .force('collision', d3.forceCollide()
+        .radius(function (d) { return nodeR(d) + 8; }));
+
+    // Links
+    linkEl = g.append('g').attr('class', 'links')
+      .selectAll('line').data(links).enter().append('line')
+      .attr('stroke', linkStroke())
+      .attr('stroke-width', function (d) { return Math.max(0.8, d.value * 0.7); });
+
+    // Nodes
+    nodeEl = g.append('g').attr('class', 'nodes')
+      .selectAll('circle').data(nodes).enter().append('circle')
+      .attr('r', nodeR)
+      .attr('fill', nodeColor)
+      .attr('stroke', nodeStroke())
+      .attr('stroke-width', 1)
+      .style('cursor', 'pointer')
+      .style('filter', glowFilter())
+      .on('click', onNodeClick)
+      .on('mouseover', onHover)
+      .on('mouseout', onHoverOut)
+      .call(d3.drag()
+        .on('start', dragStart)
+        .on('drag',  dragged)
+        .on('end',   dragEnd));
+
+    // Labels
+    labelEl = g.append('g').attr('class', 'labels')
+      .selectAll('text').data(nodes).enter().append('text')
+      .text(function (d) { return d.name; })
+      .attr('fill', function (d) { return labelFill(d); })
+      .attr('font-size', function (d) { return d.count >= 4 ? '11.5px' : '9.5px'; })
+      .attr('font-family', 'system-ui, -apple-system, sans-serif')
+      .attr('font-weight', function (d) { return d.count >= 5 ? '500' : '400'; })
+      .attr('dx', function (d) { return nodeR(d) + 4; })
+      .attr('dy', '0.35em')
+      .style('pointer-events', 'none')
+      .style('user-select', 'none');
+
+    simulation.on('tick', function () {
+      linkEl
+        .attr('x1', function (d) { return d.source.x; }).attr('y1', function (d) { return d.source.y; })
+        .attr('x2', function (d) { return d.target.x; }).attr('y2', function (d) { return d.target.y; });
+      nodeEl.attr('cx', function (d) { return d.x; }).attr('cy', function (d) { return d.y; });
+      labelEl.attr('x', function (d) { return d.x; }).attr('y', function (d) { return d.y; });
+    });
+
+    window.addEventListener('resize', onResize);
+  }
+
+  // ── update colors on theme change ────────────────────────────────────────
+  function updateColors() {
+    if (!nodeEl) return;
+    var dark = isDark();
+    nodeEl
+      .style('filter', function (d) {
+        if (d === selected) return dark ? 'url(#glow-selected)' : 'none';
+        return dark ? 'url(#glow-soft)' : 'none';
+      })
+      .attr('stroke', function (d) {
+        if (d === selected) return '#f59e0b';
+        return nodeStroke();
+      });
+    linkEl.attr('stroke', function (l) {
+      if (selected && (l.source.id === selected.id || l.target.id === selected.id)) {
+        return activeLinkStroke();
+      }
+      return linkStroke();
+    });
+    labelEl.attr('fill', function (d) { return labelFill(d); });
+  }
+
+  // ── interactions ──────────────────────────────────────────────────────────
+  function selectNode(d) {
+    selected = d;
+    var dark = isDark();
+
+    var neighbors = new Set([d.id]);
+    linkEl.each(function (l) {
+      if (l.source.id === d.id) neighbors.add(l.target.id);
+      if (l.target.id === d.id) neighbors.add(l.source.id);
+    });
+
+    nodeEl
+      .attr('opacity',      function (n) { return neighbors.has(n.id) ? 1 : 0.12; })
+      .style('filter',      function (n) {
+        if (n.id === d.id) return dark ? 'url(#glow-selected)' : 'none';
+        return dark ? 'url(#glow-soft)' : 'none';
+      })
+      .attr('stroke',       function (n) { return n.id === d.id ? '#f59e0b' : nodeStroke(); })
+      .attr('stroke-width', function (n) { return n.id === d.id ? 2.5 : 1; });
+
+    linkEl
+      .attr('opacity', function (l) {
+        return (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.05;
+      })
+      .attr('stroke', function (l) {
+        return (l.source.id === d.id || l.target.id === d.id)
+          ? activeLinkStroke() : linkStroke();
+      });
+
+    labelEl.attr('opacity', function (n) { return neighbors.has(n.id) ? 1 : 0.08; });
+
+    showPanel(d);
+  }
+
+  function deselect() {
+    selected = null;
+    nodeEl
+      .attr('opacity', 1)
+      .style('filter', glowFilter())
+      .attr('stroke', nodeStroke())
+      .attr('stroke-width', 1);
+    linkEl.attr('opacity', 1).attr('stroke', linkStroke());
+    labelEl.attr('opacity', 1);
+    var panel = document.getElementById('tag-panel');
+    if (panel) panel.classList.remove('visible');
+  }
+
+  function onNodeClick(event, d) {
+    event.stopPropagation();
+    if (selected && selected.id === d.id) { deselect(); return; }
+    selectNode(d);
+  }
+
+  function onHover(event, d) {
+    if (d !== selected) {
+      d3.select(this)
+        .style('filter', isDark() ? 'url(#glow-hover)' : 'none')
+        .attr('stroke', isDark() ? 'rgba(255,255,255,0.5)' : 'rgba(79,70,229,0.6)');
     }
-  });
+  }
 
-  // Set up dimensions
-  const container = document.getElementById('graph');
-  const width = container.clientWidth;
-  const height = container.clientHeight;
+  function onHoverOut(event, d) {
+    if (d !== selected) {
+      d3.select(this)
+        .style('filter', glowFilter())
+        .attr('stroke', nodeStroke());
+    }
+  }
 
-  // Clear any existing SVG
-  d3.select("#graph").selectAll("svg").remove();
+  // ── detail panel ──────────────────────────────────────────────────────────
+  function showPanel(d) {
+    var panel = document.getElementById('tag-panel');
+    if (!panel) return;
+    panel.classList.add('visible');
 
-  // Set up SVG
-  const svg = d3.select("#graph")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("viewBox", [0, 0, width, height])
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  // Add zoom functionality
-  const g = svg.append("g");
-
-  // Add zoom behavior
-  const zoom = d3.zoom()
-    .scaleExtent([0.1, 8])
-    .on("zoom", (event) => {
-      g.attr("transform", event.transform);
+    var connected = [];
+    linkEl.each(function (l) {
+      if (l.source.id === d.id) connected.push(l.target);
+      if (l.target.id === d.id) connected.push(l.source);
     });
 
-  svg.call(zoom);
+    var html = '<div class="tp-header">'
+      + '<div><div class="tp-title">' + esc(d.name) + '</div>'
+      + '<div class="tp-meta">' + d.count + ' 篇 · ' + connected.length + ' 个关联</div></div>'
+      + '<button class="tp-close" onclick="(function(){document.getElementById(\'tag-panel\').classList.remove(\'visible\');})()">'
+      + '✕</button></div>';
 
-  // Add zoom controls
-  const zoomControls = svg.append("g")
-    .attr("class", "graph-zoom-controls");
+    if (d.url) {
+      html += '<a href="' + d.url + '" class="tp-view-all">查看全部文章 →</a>';
+    }
 
-  // Zoom buttons
-  const zoomInBtn = zoomControls.append("g")
-    .attr("class", "graph-zoom-btn")
-    .attr("transform", "translate(0, 0)")
-    .on("click", () => svg.transition().call(zoom.scaleBy, 1.2));
+    if (connected.length) {
+      html += '<div class="tp-section-title">关联标签</div><div class="tp-tags">';
+      connected.forEach(function (t) {
+        html += '<span class="tp-tag" data-id="' + escAttr(t.id) + '">'
+          + esc(t.name) + '<span class="tp-tag-count">' + t.count + '</span></span>';
+      });
+      html += '</div>';
+    }
 
-  zoomInBtn.append("text")
-    .attr("x", 8)
-    .attr("y", 18)
-    .text("+")
-    .style("font-size", "18px")
-    .style("font-weight", "bold")
-    .style("text-anchor", "middle")
-    .style("alignment-baseline", "middle");
+    if (d.articles && d.articles.length) {
+      html += '<div class="tp-section-title">相关文章</div><div class="tp-articles">';
+      d.articles.forEach(function (a) {
+        html += '<a href="' + a.url + '" class="tp-article">' + esc(a.title) + '</a>';
+      });
+      html += '</div>';
+    }
 
-  const zoomOutBtn = zoomControls.append("g")
-    .attr("class", "graph-zoom-btn")
-    .attr("transform", "translate(0, 35)")
-    .on("click", () => svg.transition().call(zoom.scaleBy, 0.8));
+    panel.innerHTML = html;
 
-  zoomOutBtn.append("text")
-    .attr("x", 8)
-    .attr("y", 18)
-    .text("−")
-    .style("font-size", "20px")
-    .style("font-weight", "bold")
-    .style("text-anchor", "middle")
-    .style("alignment-baseline", "middle");
+    panel.querySelectorAll('.tp-tag[data-id]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var id = this.getAttribute('data-id');
+        nodeEl.each(function (n) { if (n.id === id) selectNode(n); });
+      });
+    });
+  }
 
-  const zoomResetBtn = zoomControls.append("g")
-    .attr("class", "graph-zoom-btn")
-    .attr("transform", "translate(0, 70)")
-    .on("click", () => svg.transition().call(zoom.translateTo, width/2, height/2).call(zoom.scaleTo, 1));
+  // ── utilities ─────────────────────────────────────────────────────────────
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function escAttr(s) { return String(s).replace(/"/g,'&quot;'); }
 
-  zoomResetBtn.append("text")
-    .attr("x", 8)
-    .attr("y", 18)
-    .text("↺")
-    .style("font-size", "16px")
-    .style("font-weight", "bold")
-    .style("text-anchor", "middle")
-    .style("alignment-baseline", "middle");
+  function resetView() {
+    if (!svg) return;
+    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+  }
 
-  // Define simulation
-  const simulation = d3.forceSimulation(tagsData)
-    .force("link", d3.forceLink(uniqueLinks).id(d => d.id).distance(getLinkDistance))
-    .force("charge", d3.forceManyBody().strength(getChargeStrength))
-    .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collision", d3.forceCollide().radius(d => getNodeRadius(d) + 5));
-
-  // Add links
-  const link = g.append("g")
-    .attr("class", "links")
-    .selectAll("line")
-    .data(uniqueLinks)
-    .enter()
-    .append("line")
-    .attr("class", "graph-link")
-    .attr("stroke-width", d => Math.max(1, Math.sqrt(d.value)));
-
-  // Add nodes
-  const node = g.append("g")
-    .attr("class", "nodes")
-    .selectAll("circle")
-    .data(tagsData)
-    .enter()
-    .append("circle")
-    .attr("class", function(d) {
-      if (d.count > 5) return "graph-node popular";
-      else if (d.count > 2) return "graph-node medium-popularity";
-      else return "graph-node less-popular";
-    })
-    .attr("r", getNodeRadius)
-    .attr("stroke", "#fff")
-    .attr("stroke-width", 1.5)
-    .call(d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended));
-
-  // Add labels
-  const label = g.append("g")
-    .attr("class", "labels")
-    .selectAll("text")
-    .data(tagsData)
-    .enter()
-    .append("text")
-    .text(d => d.name)
-    .attr("class", "graph-label")
-    .attr("dx", d => getNodeRadius(d) + 5)
-    .attr("dy", 4);
-
-  // Update node positions on tick
-  simulation.on("tick", () => {
-    link
-      .attr("x1", d => d.source.x)
-      .attr("y1", d => d.source.y)
-      .attr("x2", d => d.target.x)
-      .attr("y2", d => d.target.y);
-
-    node
-      .attr("cx", d => d.x)
-      .attr("cy", d => d.y);
-
-    label
-      .attr("x", d => d.x)
-      .attr("y", d => d.y);
-  });
-
-  // Drag functions
-  function dragstarted(event, d) {
+  function dragStart(event, d) {
     if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
+    d.fx = d.x; d.fy = d.y;
   }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
+  function dragged(event, d)  { d.fx = event.x; d.fy = event.y; }
+  function dragEnd(event, d)  {
     if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
+    d.fx = null; d.fy = null;
   }
 
-  // Event listeners for controls
-  document.getElementById('nodeSize').addEventListener('input', updateNodeSize);
-  document.getElementById('linkDistance').addEventListener('input', updateLinkDistance);
-  document.getElementById('chargeStrength').addEventListener('input', updateChargeStrength);
-
-  function updateNodeSize() {
-    node.attr("r", getNodeRadius);
-    simulation.force("collision", d3.forceCollide().radius(d => getNodeRadius(d) + 5));
-    simulation.alpha(0.3).restart();
+  function onResize() {
+    if (!svg || !simulation) return;
+    var c = document.getElementById('graph');
+    if (!c) return;
+    var W = c.clientWidth, H = c.clientHeight;
+    svg.attr('width', W).attr('height', H);
+    simulation
+      .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('x', d3.forceX(W / 2).strength(0.04))
+      .force('y', d3.forceY(H / 2).strength(0.04))
+      .alpha(0.3).restart();
   }
 
-  function updateLinkDistance() {
-    simulation.force("link").distance(getLinkDistance);
-    simulation.alpha(0.3).restart();
-  }
-
-  function updateChargeStrength() {
-    simulation.force("charge").strength(getChargeStrength);
-    simulation.alpha(0.3).restart();
-  }
-
-  function getNodeRadius(d) {
-    const baseSize = parseInt(document.getElementById('nodeSize').value);
-    return Math.max(baseSize, baseSize * Math.log(d.count + 1) * 0.8);
-  }
-
-  function getLinkDistance() {
-    return parseInt(document.getElementById('linkDistance').value);
-  }
-
-  function getChargeStrength() {
-    return parseInt(document.getElementById('chargeStrength').value);
-  }
-
-  function restartSimulation() {
-    simulation.alpha(1).restart();
-  }
-
-  // Add click event to nodes
-  node.on('click', function(event, d) {
-    // Highlight clicked node and connected links
-    node.attr("stroke", "#fff").attr("stroke-width", 1.5);
-    d3.select(this).attr("stroke", "#f59e0b").attr("stroke-width", 3);
-
-    // Highlight related links
-    link.attr("class", "graph-link").attr("stroke", "#cbd5e1");
-    link.filter(l => l.source.id === d.id || l.target.id === d.id)
-         .attr("class", "graph-link active")
-         .attr("stroke", "#4f46e5");
-
-    // Show tag info
-    const tagDetails = document.getElementById('tag-details');
-    let tagDetailHTML = '<div class="flex items-start justify-between">';
-    tagDetailHTML += '<h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">' + d.name + ' <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(' + d.count + ' 篇文章)</span></h4>';
-    tagDetailHTML += '<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100">';
-    tagDetailHTML += d.linkedTags.length + ' 个连接';
-    tagDetailHTML += '</span></div>';
-
-    tagDetailHTML += '<div class="mb-4">';
-    tagDetailHTML += '<h5 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">相关标签:</h5>';
-    tagDetailHTML += '<div class="connected-tags">';
-
-    const limitedLinkedTags = d.linkedTags.slice(0, 15);
-    for (let i = 0; i < limitedLinkedTags.length; i++) {
-      tagDetailHTML += '<span class="tag-badge">' + limitedLinkedTags[i] + '</span>';
-    }
-
-    if (d.linkedTags.length > 15) {
-      tagDetailHTML += '<span class="text-xs text-gray-500">+' + (d.linkedTags.length - 15) + ' 更多</span>';
-    }
-
-    tagDetailHTML += '</div></div>';
-
-    tagDetailHTML += '<div><h5 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">相关文章:</h5>';
-    tagDetailHTML += '<div class="tag-article-list"><ul class="space-y-1">';
-
-    const limitedArticles = d.articles.slice(0, 8);
-    for (let i = 0; i < limitedArticles.length; i++) {
-      tagDetailHTML += '<li><a href="' + limitedArticles[i].url + '" class="text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300 text-sm block truncate">';
-      tagDetailHTML += limitedArticles[i].title;
-      tagDetailHTML += '</a></li>';
-    }
-
-    if (d.articles.length > 8) {
-      tagDetailHTML += '<li class="text-xs text-gray-500">+' + (d.articles.length - 8) + ' 更多文章</li>';
-    }
-
-    tagDetailHTML += '</ul></div></div>';
-
-    tagDetails.innerHTML = tagDetailHTML;
-  });
-
-  // Add tooltip on hover
-  node.append("title")
-    .text(function(d) { return d.name + " (" + d.count + " articles)"; });
-
-  // Handle window resize
-  window.addEventListener("resize", function() {
-    const newWidth = container.clientWidth;
-    const newHeight = container.clientHeight;
-
-    svg.attr("width", newWidth)
-       .attr("height", newHeight);
-
-    simulation.force("center", d3.forceCenter(newWidth / 2, newHeight / 2));
-    simulation.alpha(0.3).restart();
-  });
-
-  // Center the zoom controls
-  setTimeout(() => {
-    const controlsBB = zoomControls.node().getBBox();
-    zoomControls.attr("transform", "translate(" + (width - controlsBB.width - 10) + ", 10)");
-  }, 100);
-}
+})();

@@ -1,0 +1,2081 @@
+<!doctype html>
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <title>机巧司 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.158.0">
+
+  
+  <script>
+    
+    
+    (function() {
+      if (typeof window !== 'undefined' && typeof window.__TAURI_METADATA__ === 'undefined') {
+        
+        try {
+          Object.defineProperty(window, '__TAURI_METADATA__', {
+            value: { __tauri_internal__: { windows: { main: null } } },
+            writable: true,
+            configurable: true
+          });
+        } catch (e) {
+          
+          window.__TAURI_METADATA__ = { __tauri_internal__: { windows: { main: null } } };
+        }
+      }
+    })();
+  </script>
+
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    
+
+    <script>
+      
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      if (btnMenu) {
+        btnMenu.addEventListener('click', () => {
+          htmlClass.toggle('open');
+        });
+      }
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      
+      
+      const updateButtonPosition = (isDark) => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            
+            
+            btn.style.setProperty('background-position', isDark ? 'right center' : 'left center', 'important');
+          }
+        });
+      };
+      
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+        
+        
+        updateButtonPosition(isDark);
+        
+        
+        requestAnimationFrame(() => {
+          updateButtonPosition(isDark);
+        });
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const initTheme = () => {
+        let shouldBeDark;
+        if (htmlClass.contains('dark')) {
+          shouldBeDark = true;
+        } else {
+          const darkVal = localStorage.getItem('dark');
+          shouldBeDark = darkVal ? darkVal === 'true' : darkScheme.matches;
+        }
+        setDark(shouldBeDark);
+      };
+      
+      
+      initTheme();
+      
+      
+      const ensureButtonPosition = () => {
+        const darkVal = localStorage.getItem('dark');
+        const currentDark = darkVal === 'true' || (darkVal === null && darkScheme.matches);
+        updateButtonPosition(currentDark);
+      };
+      
+      
+      const waitForButtons = () => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        if (themeButtons.length > 0) {
+          ensureButtonPosition();
+        } else {
+          
+          setTimeout(waitForButtons, 50);
+        }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForButtons);
+      } else {
+        
+        waitForButtons();
+      }
+
+      
+      const styleEl = document.createElement('style');
+      styleEl.id = 'theme-toggle-style';
+      styleEl.textContent = `
+        /* Light mode: keep original colors */
+        .btn-dark[data-theme-bg="png"],
+        .btn-dark-mobile[data-theme-bg="png"] {
+          filter: none;
+        }
+        /* Dark mode: recolor moon to warm yellow */
+        html.dark .btn-dark[data-theme-bg="png"],
+        html.dark .btn-dark-mobile[data-theme-bg="png"] {
+          filter: grayscale(1) sepia(1) saturate(8) hue-rotate(-20deg) brightness(1.15);
+        }
+
+      `;
+      document.head.appendChild(styleEl);
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/tags/"
+          >Tags</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden flex flex-col items-start gap-4 mt-4">
+        
+        
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="hidden lg:flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">IPD体系的多Agent协作</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Apr 23, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>这篇文章主要是基于之前 <a href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">我的多Agent协作系统
+</a> 内容的具体展示，方便投简历的给面试官吹牛。</p>
+<h2 id="agents-布局">Agents 布局</h2>
+<pre tabindex="0"><code>用户（董事长）
+    │
+    ▼
+┌─────────────────────────────────────────────────┐
+│  Board / IPMT（战略决策层）                       │
+│  负责：DCP 投资决策、战略方向、资源授权              │
+└──────────────────┬──────────────────────────────┘
+                   │
+    ┌──────────────▼──────────────┐
+    │  CEO / IPD主控（执行编排层）  │
+    │  负责：制定执行方案、跨域协调  │
+    └──────────────┬──────────────┘
+                   │
+    ┌──────────────▼──────────────┐
+    │  COO / 流程守门（审核把关层） │  ← 制衡关键：有权打回 CEO 方案
+    │  负责：审核方案可行性         │
+    └──────────────┬──────────────┘
+                   │ 通过后下发
+    ┌──────────────┴──────────────────────────────┐
+    │                C-Level 执行层                 │
+    │  CTO（技术+TR评审）  CMO（市场）  CFO（财务）   │
+    │  CPO（产品/PRD）     PM（项目管理）             │
+    └─────────────────────────────────────────────┘
+</code></pre><p>智能拳击这个项目的简单市场调研、prd其实在过年之前都已经做过了，也在claude的帮助下 进行了硬件选型和app的搭建。</p>
+<p>以下部分为 多agent 的输出原始 markdown（未作任何修改）</p>
+<h2 id="boardmd">Board.md</h2>
+<pre tabindex="0"><code class="language-#" data-lang="#">
+| 字段 | 内容 |
+|------|------|
+| 产品名称 | 智能拳击传感器（暂定） |
+| 启动日期 | 2026-04-09 |
+| 当前阶段 | 概念阶段 |
+| 下一决策门 | CDCP → 有条件批准，待2个前置条件 |
+| 整体状态 | 🟡 At Risk（前置条件未完成） |
+| 硬件选型 | XIAO nRF52840 Sense + Edge Impulse（2026-04-09 确定） |
+
+---
+
+## 里程碑看板
+
+| # | 里程碑 | 计划日期 | 状态 |
+|---|--------|---------|------|
+| M0 | CDCP 有条件批准 | 2026-04-09 | 🟡 有条件 |
+| M1 | 前置条件完成（POC+用户访谈） | 2026-05-09 | ⏳ |
+| M2 | CDCP 正式通过 | 2026-05-15 | ⏳ |
+| M3 | Charter + PRD 完成 | TBD | ⏳ |
+| M4 | PDCP 通过（正式立项） | TBD | ⏳ |
+| M5 | EVT 样机 | TBD | ⏳ |
+| M6 | DVT 完成 | TBD | ⏳ |
+| M7 | 认证提交 | TBD | ⏳ |
+| M8 | PVT 小批量 | TBD | ⏳ |
+| M9 | GA 正式发布 | TBD | ⏳ |
+
+---
+
+## CDCP 前置条件（⚠️ 必须完成才能进入计划阶段）
+
+- [ ] **条件1**：CTO 完成 XIAO nRF52840 Sense + Edge Impulse POC，动作分类准确率 ≥ 85%，输出加速度饱和边界数据及 DVT 传感器选型建议
+  - 负责：CTO | 截止：2026-05-09 | 预计成本：&lt; ¥800
+- [ ] **条件2**：CMO 补充 30 个目标用户访谈摘要，验证 1599元 付费意愿假设
+  - 负责：CMO | 截止：2026-05-09
+
+---
+
+## POC 固件开发进度（CTO 条件1 子任务）
+
+| 任务 | 状态 | 说明 |
+|------|------|------|
+| 硬件选型确认（XIAO nRF52840 Sense） | ✅ 完成 | 2026-04-09 |
+| 马达选型（Switch LRA + DRV2605L） | ✅ 完成 | Joy-Con 拆机马达，校准通过 |
+| 基础出拳检测（ArduinoBLE_L） | ✅ 完成 | 5档阈值，BLE 推送 |
+| Edge Impulse 拳型识别（ArduinoBLE_R） | ✅ 完成 | 100Hz 环形缓冲，推理集成 |
+| 动态阈值优化（替换 350ms 冷却盲区） | ✅ 完成 | 2026-04-09，震动中阈值提升至 4.5g |
+| 省电模式（5分钟无活动 → 低功耗） | ✅ 完成 | 2026-04-09，sd_app_evt_wait + 10Hz 采样 |
+| Edge Impulse 模型训练（≥85% 准确率） | ⏳ 待完成 | 需采集直拳/摆拳/勾拳训练数据 |
+| ±16g 饱和边界数据记录 | ⏳ 待完成 | POC 实验输出，DVT 选型依据 |
+
+---
+
+## 活跃风险
+
+| ID | 风险 | 级别 | 应对措施 |
+|----|------|------|---------|
+| ~~R001~~ | ~~AI纠姿算法 TRL 仅5~~ | ✅ 消除 | Edge Impulse 解决，TRL升至7-8 |
+| R002 | LSM6DS3TR-C ±16g饱和，力度测量失真 | 🟡 中→低 | 核心用户为初学者空击，峰值通常5-10g，不触及饱和；POC仍需记录边界以备DVT决策 |
+| R003 | 1599元付费意愿未验证 | 🟡 中 | 用户访谈，CDCP条件之一 |
+| R004 | 防汗/防水密封（XIAO本身无防水） | 🟡 中 | 自有PCB版做IP54设计，TR3前完成防水测试 |
+| R005 | XIAO开发板不可量产，需自有PCB | 🟡 中 | POC/EVT用XIAO；DVT切换自有PCB（nRF52840模组方案） |
+| R006 | BLE多人同时使用干扰 | 🟢 低 | BLE5.0点对点，场馆场景专项测试 |
+| ~~R007~~ | ~~马达震动干扰IMU（350ms盲区）~~ | ✅ 消除 | 动态阈值替代冷却屏蔽，2026-04-09 已修复 |
+| ~~R008~~ | ~~无省电模式，续航仅半天~~ | ✅ 消除 | sd_app_evt_wait + 10Hz idle，2026-04-09 已修复 |
+</code></pre><h2 id="01-market-analysis">01-market-analysis</h2>
+<pre tabindex="0"><code># 商业可行性报告 · 智能拳击硬件
+
+**输出方**：CFO/财务总监 | **日期**：2026-04-09 | **版本**：v0.1 草稿
+
+---
+
+## 执行摘要
+
+总投资约718万元，基准情景下 2.5年回收，5年 NPV +2140万元，IRR 47%。即使悲观情景（销量-40%），NPV 仍为正（+580万）。BOM 成本21.7%，定价空间充足。**商业可行性：高。**
+
+---
+
+## 1. BOM 成本拆解（单套2个传感器）
+
+| 物料类别 | 单价（元） | 占比 | 备注 |
+|---------|----------|------|------|
+| IMU传感器×2（9轴，ICM-42688类） | 48 | 14% | 主流器件，多家供货 |
+| MCU（Nordic nRF52840 或同类） | 36 | 10% | BLE5.0，成熟生态 |
+| 电池+充电管理IC | 30 | 9% | 200mAh锂电，USB-C充电 |
+| 结构件/腕带/硅胶护套 | 65 | 19% | 模具成本已摊销 |
+| PCB+SMT贴片 | 45 | 13% | 双面板，含测试费 |
+| 蓝牙天线+射频器件 | 18 | 5% | 含FPC天线 |
+| 包装+说明书+贴纸 | 22 | 6% | 精品盒，增强品牌感 |
+| 其他（螺丝/线缆/标签等） | 15 | 4% | |
+| **BOM合计** | **279元** | **80%** | |
+| 整机组装+测试 | 68 | 20% | 含产测夹具摊销 |
+| **出厂成本** | **347元** | — | |
+
+&gt; BOM占目标售价(1599元)比：**21.7%** ✅ 健康范围内，有充足利润空间
+
+&gt; ⚠️ 假设：量产规模≥5000台/批次；实际BOM需向供应商询价确认
+
+---
+
+## 2. 总投资预算
+
+| 投资类别 | 金额（万元） | 说明 |
+|---------|-----------|------|
+| 研发人力（4人×12个月） | 240 | 硬件2+固件1+APP1，按20万/人年 |
+| EVT/DVT/PVT打样（3轮） | 35 | 含PCB+组装+测试 |
+| 模具费用（腕带+外壳） | 40 | 硅胶+塑胶模具，约3副 |
+| 认证费用（3C+BQB+SRRC） | 25 | 含测试费，预留余量 |
+| APP开发（iOS+Android） | 60 | 外包或内招，含后台 |
+| 首批备货（5000台×347元） | 173 | 最小起订量，控制库存风险 |
+| 市场推广（发布期KOL+活动） | 80 | 首发活动+KOL种草 |
+| 备用金（10%） | 65 | 应对超支/计划外费用 |
+| **总投资** | **718万元** | |
+
+---
+
+## 3. 五年财务预测
+
+### 基准情景
+
+| 指标 | Y1 | Y2 | Y3 | Y4 | Y5 |
+|------|----|----|----|----|-----|
+| 销量（万台） | 0.5 | 1.8 | 4.2 | 7.0 | 9.5 |
+| ASP（元，含税） | 1599 | 1499 | 1399 | 1299 | 1199 |
+| 营收（万元） | 800 | 2698 | 5876 | 9093 | 11390 |
+| 毛利率 | 54% | 56% | 58% | 60% | 61% |
+| 净利润（万元） | -290 | 320 | 1050 | 1820 | 2280 |
+| 累计净利润 | -290 | 30 | 1080 | 2900 | 5180 |
+
+&gt; 销量假设依据：Y1 专精垂直渠道首发；Y2-3 电商爆量；Y4-5 品牌效应稳定增长
+
+### 敏感性分析
+
+| 情景 | 销量假设 | 回收期 | 5年NPV |
+|------|---------|-------|-------|
+| 悲观（-40%） | Y3仅2.5万台 | 4.2年 | +580万 |
+| **基准** | Y3共4.2万台 | **2.5年** | **+2140万** |
+| 乐观（+40%） | Y3达5.9万台 | 1.8年 | +4100万 |
+
+---
+
+## 4. 投资回报分析
+
+| 指标 | 数值 | 评级 |
+|------|------|------|
+| 总投资 | 718万元 | — |
+| NPV（5年，折现率12%） | +2,140万元 | ✅ 良好 |
+| IRR | 47% | ✅ 优秀 |
+| 投资回收期 | 约2.5年 | ✅ 合理 |
+| 盈亏平衡销量 | ~2.6万台（Y2Q3） | ✅ 可达 |
+
+---
+
+## 5. 定价策略
+
+| 渠道 | 出厂价 | 渠道价 | 建议零售价 | 毛利率 |
+|------|-------|-------|----------|-------|
+| 直销（官网/抖音） | 347 | — | 1599（首发）→1299 | 73%→62% |
+| 电商（京东/天猫） | 347 | 1150 | 1299 | 66% |
+| 经销商 | 347 | 900 | 1299 | 62% |
+
+**定价逻辑**：
+- 对标 FightCamp（¥8000+），强调&#34;1/5价格，同等数据精度&#34;
+- 与¥299入门款拉开品质感知距离
+- 首发价¥1599营造锚定效应，常规价¥1299更具性价比
+
+---
+
+## 6. 财务风险
+
+| 风险 | 影响 | 缓解措施 |
+|------|------|---------|
+| BOM成本上涨20%（IMU/MCU涨价） | 毛利率降至约44% | 提前锁价合同；备选器件方案 |
+| 首批5000台滞销 | 库存损失约173万 | 小批量首发（2000台）验证市场 |
+| APP开发超期 | 影响发布节点 | 早期外包+内部接手，MVP优先上线 |
+| 汇率波动（进口芯片） | BOM成本±5-8% | 结汇套保；优先国产替代器件 |
+
+---
+
+## 7. 关键假设
+
+1. 量产规模5000台/批次，BOM按此规模估算（如低于此，成本上涨约15%）
+2. APP开发外包，未计入长期维护成本（建议Y2后内建团队）
+3. 首年市场推广费80万，实际可能需要更多（视竞争态势）
+4. 未计入专利申请费用（建议预留10-15万）
+</code></pre><h2 id="03-tech-feasibility">03-tech-feasibility</h2>
+<pre tabindex="0"><code># 技术可行性报告 · 智能拳击硬件
+
+**输出方**：CTO/技术总监 | **日期**：2026-04-09 | **版本**：v0.2（更新：XIAO nRF52840 Sense + Edge Impulse 选型评估）
+
+---
+
+## 执行摘要
+
+确定硬件选型为 **Seeed Studio XIAO nRF52840 Sense + Edge Impulse** 后，技术风险格局发生重要变化：AI 动作识别风险从 TRL 5 大幅提升至 TRL 7-8（Edge Impulse 托管工作流），但新增一个高优先级风险——**板载 LSM6DS3TR-C 加速度计量程仅 ±16g，拳击出拳峰值可达 50-100g，将导致力度测量严重失真**。推荐两阶段方案：POC 用 XIAO 验证动作分类可行性，DVT 阶段外接高量程加速度计（H3LIS331DL ±400g）补足力度测量。整体可行性维持高评级，POC 成本从原估算 0.5-1万降至 &lt; 0.1万元。
+
+---
+
+## 1. 硬件选型：XIAO nRF52840 Sense 规格确认
+
+| 参数 | 数值 | 对拳击场景评估 |
+|------|------|--------------|
+| MCU | nRF52840，Cortex-M4 @ 64MHz | ✅ 足够跑 TFLite Micro 推理（2-5ms/次） |
+| Flash / RAM | 1MB / 256KB | ✅ Edge Impulse 模型通常 10-50KB，够用 |
+| IMU | LSM6DS3TR-C（**6轴**：加速度+陀螺仪） | ⚠️ 无磁力计（非9轴），拳击场景可接受 |
+| 加速度计量程 | 最大 **±16g** | 🔴 **关键限制**：出拳峰值 50-100g，会饱和 |
+| 陀螺仪量程 | 最大 ±2000 dps | ✅ 足够捕捉出拳旋转速度 |
+| BLE | 5.0，板载天线 | ✅ Nordic nRF52840 BLE 生态最完善 |
+| 尺寸 | 21 × 17.5 mm | ✅ 非常适合腕带封装 |
+| 功耗 | ~5mA 工作，~5μA 深睡 | ✅ 100mAh 电池可支撑约 15h |
+| 充电 | 板载 USB-C 充电管理 | ✅ 直接使用，无需额外设计 |
+| 价格 | ¥80-120/片 | ✅ POC 成本极低 |
+
+---
+
+## 2. 核心技术栈评估（v0.2 更新）
+
+| 模块 | TRL | 方案 | 风险 | 说明 |
+|------|-----|------|------|------|
+| MCU + BLE | 9 | XIAO 一体集成 | 🟢 低 | nRF52840 行业标准，BLE5.0生态完整 |
+| 姿势/动作分类（直/勾/摆/防守） | **8** | **Edge Impulse 托管** | 🟢 **低**（原TRL 6，大幅提升） | EI 工作流成熟：采集→标注→训练→部署C++库，约2-3周 |
+| AI纠姿 | **7** | **Edge Impulse 模型** | 🟡 中（原TRL 5，显著改善） | V1可用EI分类器实现动作评分；数据采集是主要工作量 |
+| 出拳速度检测 | 7 | 陀螺仪+算法 | 🟢 低 | 陀螺仪±2000dps充裕，速度积分算法成熟 |
+| 出拳力度检测 | 5 | **需换传感器** | 🔴 **高**（新增风险） | ±16g饱和问题，DVT阶段需外接H3LIS331DL（±400g） |
+| 低功耗固件 | 9 | nRF52840 SDK + EI库 | 🟢 低 | Edge Impulse 自动生成推理C++代码，nRF52840官方支持 |
+| iOS/Android APP | 8 | 自研 | 🟢 低 | 标准BLE协议，技术风险低 |
+| 云端存储 | 8 | 外采云服务 | 🟢 低 | 标准方案 |
+
+---
+
+## 3. 🔴 关键风险：加速度计 ±16g 饱和问题
+
+**问题说明**：
+
+
+实际出拳加速度
+   100g ─────────────────────── 职业拳手峰值
+    50g ─────────────  /\
+    16g ──────────── /──\──── ← LSM6DS3TR-C 上限（超出被截断）
+     0  ────────── /────\──
+        时间→      冲击   回收
+
+
+- 业余拳手出拳：20-40g（轻拳会饱和，发力拳必饱和）
+- 专业拳手出拳：50-100g（几乎所有拳都饱和）
+- 结果：力度数值在中等发力时就已失真，无法用于准确的力度评估
+
+**两阶段应对方案（推荐）**：
+
+| 阶段 | 做法 | 说明 |
+|------|------|------|
+| **POC 阶段** | 接受饱和限制，专注验证**动作分类**（速度+姿势），不主打力度 | 快速验证 Edge Impulse 工作流，成本最低 |
+| **DVT 阶段** | 外接 **H3LIS331DL**（±400g，I2C，¥8/片）专用力度测量 | 与 LSM6DS3TR-C 并行：EI模型用6轴数据，力度用高量程传感器 |
+
+&gt; H3LIS331DL 是 STMicro 专为冲击测量设计的器件，±100g/±200g/±400g 可选，I2C 接口直接连 XIAO，设计简单。
+
+---
+
+## 4. Edge Impulse 工作流评估
+
+**这是本次选型最大的正向贡献**，原 T001（AI算法TRL 5）风险基本消除：
+
+
+数据采集（XIAO串口/手机BLE直连EI）
+    ↓
+在线标注（5类：直拳/勾拳/摆拳/防守/静止）
+    ↓
+特征提取（谱分析/时域特征，EI自动推荐）
+    ↓
+神经网络训练（EI云端，免费套餐够用）
+    ↓
+一键部署为 nRF52840 C++ 库
+    ↓
+设备端推理：&lt; 10ms/次，内存占用 &lt; 30KB
+
+
+**关键指标**：
+- 每类动作需约 300-500 个样本，5类 ≈ 2000 个样本总量
+- 数据采集周期：**2-3 周**（原自研算法方案需 2-3 个月）
+- 社区参考准确率：**88-93%**（拳击/格斗动作分类类似项目）
+- 推理延迟：&lt; 10ms（nRF52840 Cortex-M4）
+
+---
+
+## 5. 更新后的技术风险矩阵
+
+| ID | 风险 | 可能性 | 影响 | 级别 | 应对措施 |
+|----|------|-------|------|------|---------|
+| ~~T001~~ | ~~AI算法精度不足~~ | — | — | ✅ 消除 | Edge Impulse 解决，TRL升至7-8 |
+| **T002** | **加速度计±16g饱和，力度测量失真** | 确定 | 高 | 🔴 | POC明确产品不主打力度；DVT接H3LIS331DL（±400g） |
+| T003 | 戴手套时传感器数据变化 | 中 | 低 | 🟢 | EI采集时直接戴手套录制，模型自然学会补偿 |
+| T004 | 防汗/防水密封 | 中 | 中 | 🟡 | XIAO无防水，PCB版需IP54密封设计，TR3前完成测试 |
+| T005 | XIAO是开发板，不能直接量产 | 确定 | 中 | 🟡 | POC/EVT用XIAO；DVT/MP设计自有PCB（基于nRF52840模组） |
+| T006 | BLE多人干扰 | 低 | 中 | 🟢 | nRF52840 BLE5.0点对点，方向正确 |
+
+---
+
+## 6. 修正后的 POC 实验方案
+
+**目标调整**：不再验证&#34;力度测量精度&#34;，转为验证&#34;Edge Impulse 动作分类可行性&#34;并**同时摸清饱和边界**。
+
+1. 购买 3 片 XIAO nRF52840 Sense（¥300）
+2. Edge Impulse 注册，将 XIAO 连接为数据采集设备
+3. **戴手套**录制 5 类动作各 300 个样本（直/勾/摆/防守/静止）
+4. 训练分类模型，目标准确率 ≥ 85%
+5. 记录不同发力程度的加速度峰值，**找到 ±16g 饱和临界点**（用于DVT传感器选型决策）
+6. 验证推理延迟（&lt; 50ms）和续航（&gt; 3h）
+
+**通过标准**：动作分类准确率 ≥ 85%；推理延迟 &lt; 50ms；完成饱和边界记录
+
+**周期**：2-3 周 | **成本**：&lt; ¥800（含开发板）—— 比原方案节省约 **90%**
+
+---
+
+## 6. 预计研发周期
+
+
+月  1    2    3    4    5    6    7    8    9    10   11   12
+    ├────────┤
+    POC实验
+         ├──────────────┤
+         系统设计+选型（TR1-TR2）
+                        ├──────────────┤
+                        原理图+PCB+固件（TR3）
+                                       ├──────────┤
+                                       EVT打样调试（TR4）
+                                                  ├──────┤
+                                                  DVT（TR5）
+                                                       ├──┤
+                                                       认证+PVT（TR6）
+
+
+**总研发周期**：约 12-14 个月（含认证，认证通常是关键路径）
+
+---
+
+## 7. 振动马达专项评估（v0.3 新增）
+
+### 问题1：延迟与准确性
+
+**关键结论：马达类型选错，再好的算法也会让用户体验很差。**
+
+出拳信号链延迟分解：
+
+| 环节 | ERM马达 | LRA马达 |
+|------|---------|---------|
+| IMU采样 | 1-5ms | 1-5ms |
+| 硬件中断检测（路径A） | &lt; 5ms | &lt; 5ms |
+| 马达物理启动 | **50-200ms** 🔴 | **&lt; 10ms** ✅ |
+| **用户感受到震动** | **~100-250ms** | **~15ms** |
+
+- **ERM（偏心转子/Coin马达）**：机械启动延迟 50-200ms，出拳击中沙袋后手都收回来了才感受到震动，用户体验极差，**不推荐**
+- **LRA（线性谐振马达）**：&lt; 10ms 响应，配合 LSM6DS3TR-C 硬件冲击中断（&lt; 5ms），总延迟 &lt; 15ms，用户感受为&#34;同步&#34;，**推荐**
+
+**两条检测路径**（须同时使用）：
+
+| 路径 | 机制 | 延迟 | 用途 |
+|------|------|------|------|
+| A：硬件中断 | LSM6DS3TR-C 内置 Tap/Shock 检测 → 中断触发马达 | &lt; 15ms | 出拳即时震动（计数/确认） |
+| B：EI推理 | 滑窗500-1000ms → Edge Impulse 推理 → APP通知 | 500-1000ms | 拳型分析（训练结束后汇总，不做即时震动） |
+
+路径B 的 500ms+ 延迟不适合做即时振动反馈，应该只用于 APP 端的训练分析展示。
+
+### 问题2：耗电量与电池配置
+
+**训练场景振动占空比假设**：60-100拳/分钟，每次震动80ms → 占空比约 **8%**
+
+| 组件 | 电流 |
+|------|------|
+| nRF52840 + IMU（基础） | 6mA |
+| LRA马达（60mA × 8%） | 4.8mA |
+| **训练模式总平均** | **~11mA** |
+
+**电池推荐：150mAh LiPo**
+- 续航：~13 小时（PRD要求3小时，留4×余量）✅
+- 尺寸：约 35×20×4mm，腕带可容纳
+- 充电：XIAO板载USB-C，50mA充电电流，约3小时充满
+
+### 振动马达选型结论（v0.3 更新：确认使用 Switch ERM 马达）
+
+**选用器件**：Switch 手柄替换振动马达（ERM，4×8mm，3V，60-80mA，¥3-8/个）
+
+| 使用场景 | Switch ERM 适用性 | 说明 |
+|---------|-----------------|------|
+| 精准打击即时反馈 | ⚠️ 有 50-150ms 延迟 | 打完拳手收回时才震，时序有错位感 |
+| 节奏引导提示 | ✅ 可用 | 用户有预期，延迟可接受 |
+| 训练强度提示 | ✅ 可用 | — |
+| **POC 阶段验证需求** | **✅ 完全够用** | **低成本验证&#34;用户是否需要振动&#34;** |
+
+**分阶段策略**：
+- **POC/EVT**：Switch ERM（¥5）+ NMOS驱动（¥1），验证振动需求
+- **DVT**：根据用户测试反馈决定是否升级 LRA（+¥24/套），有数据再决策
+
+**驱动电路**：nRF52840 GPIO → 100Ω → NMOS(2N7002) → 马达；续流二极管(1N4148)保护
+
+### BOM 成本影响
+
+| 新增器件 | POC/EVT（Switch ERM） | DVT升级（LRA方案） |
+|---------|---------------------|-----------------|
+| 振动马达 | ¥5 | ¥20 |
+| 驱动电路 | NMOS+二极管 ¥1 | DRV2605L ¥10 |
+| 电池升级至150mAh | +¥5 | +¥5 |
+| **合计新增** | **¥11/套** | **¥35/套** |
+
+&gt; POC阶段出厂成本：347 + 11 = **¥358**；如DVT升级LRA：347 + 35 = **¥382**。对目标售价1599元影响极小。CFO 需在 DVT 决策后更新财务模型。
+
+---
+
+## 8. 技术可行性结论（v0.2）
+
+| 维度 | 原评估 | 新评估 | 变化 |
+|------|-------|-------|------|
+| 整体技术可行性 | 高 | **高**（维持） | — |
+| 最大风险 | AI算法 TRL 5 | **加速度计±16g饱和** | 🔄 风险项切换，但可解决 |
+| AI动作识别 | 高风险，需自研 | **Edge Impulse，低风险** | ⬆️ 大幅改善 |
+| POC 成本 | 0.5-1万元 | **&lt; 0.1万元** | ⬆️ 降低90% |
+| POC 周期 | 2-3周 | **2-3周**（维持，内容更丰富） | — |
+| V1 功能能力 | 规则算法分类 | **EI模型分类，精度更高** | ⬆️ 提升 |
+| 量产路径 | 直接产品PCB | **XIAO→自有PCB（两阶段）** | 🟡 需规划 |
+| 团队能力需求 | 需IMU算法专家 | **需嵌入式+Edge Impulse经验**（门槛更低）| ⬆️ 降低 |
+
+### 对 CDCP 前置条件的影响
+
+原 CDCP 前置条件 C1：&#34;CTO 完成戴手套 IMU 标定实验，验证力度误差 &lt; 15%&#34;
+
+**建议更新为**：
+&gt; CTO 完成 XIAO nRF52840 Sense + Edge Impulse POC，验证动作分类准确率 ≥ 85%，并记录加速度饱和边界数据，输出 DVT 传感器选型建议。
+</code></pre><h2 id="04-cdcp-review">04-cdcp-review</h2>
+<pre tabindex="0"><code># CDCP 评审报告 · 智能拳击硬件
+
+**输出方**：Board/IPMT | **日期**：2026-04-09 | **评审类型**：CDCP（概念决策评审点）
+
+---
+
+## 材料完整性检查
+
+| 材料 | 状态 | 质量 |
+|------|------|------|
+| 市场分析报告（CMO） | ✅ 已提交 | 良好，需用户访谈验证 |
+| 技术可行性报告（CTO） | ✅ 已提交 | 良好，POC实验待完成 |
+| 商业可行性报告（CFO） | ✅ 已提交 | 良好，部分假设待验证 |
+| Charter/PRD | — | 计划阶段产出，本次不要求 |
+| 项目计划 | — | 计划阶段产出，本次不要求 |
+
+---
+
+## 评审打分
+
+| 维度 | 得分 | 评审意见 |
+|------|------|---------|
+| 战略契合度 | 4/5 | 智能运动硬件赛道，符合消费升级方向；拳击垂直品类具有强社区属性，有利于品牌建立 |
+| 市场吸引力 | 4/5 | 细分蓝海，1000-2000元段位真空清晰；SAM数字需验证，但方向判断可信 |
+| 商业可行性 | 4/5 | IRR 47%，2.5年回收，悲观情景NPV仍为正；BOM成本21.7%，定价空间健康 |
+| 执行可信度 | 3/5 | AI纠姿是核心卖点但TRL仅5，V1降级后差异化需重新验证；POC实验未完成 |
+| 风险可控性 | 3/5 | 主要技术风险已识别并有应对方案；市场付费意愿未经一手调研验证 |
+| **总分** | **18/25** | 超过CDCP通过门槛（≥15分）✅ |
+
+---
+
+## 关键发现
+
+### 支持立项的理由
+
+1. **市场空白明确**：FightCamp（¥8000+）与入门款（¥299）之间存在真实价格/功能断层，¥1599精准数据定位清晰
+2. **核心传感技术成熟**：IMU+BLE方案 TRL 8-9，主要风险在算法层且可通过V1降级处理
+3. **财务下行风险可控**：悲观情景下NPV仍为正（+580万），投资损失风险低
+4. **进入窗口存在**：国内目前尚无强势品牌，12个月内是最佳进入时间
+
+### 主要担忧
+
+1. **AI纠姿是核心差异化卖点，但TRL仅5**：V1降级后，产品差异化是否仍足够驱动¥1599的购买决策？期望 CPO 在 PDCP 前重新定义V1的价值主张
+2. **戴手套IMU标定实验未完成**：这是整个算法的前提假设，尚未经实验验证
+3. **付费意愿假设未经一手调研**：¥1599的价格敏感度需要30个用户访谈验证
+
+---
+
+## 决策结果
+
+### ⚠️ 有条件批准
+
+授权进入概念阶段深化，满足以下2个前置条件后**自动进入计划阶段**，无需重新召开评审：
+
+| # | 条件 | 通过标准 | 负责人 | 截止日期 |
+|---|------|---------|-------|---------|
+| C1 | 完成戴手套 IMU 标定 POC 实验 | 力度误差 &lt; 15%，速度误差 &lt; 10% | CTO | 2026-05-09 |
+| C2 | 完成30个目标用户访谈 | 验证¥1599付费意愿，形成访谈摘要报告 | CMO | 2026-05-09 |
+
+### 若条件未达成
+- C1 未通过（误差&gt;15%）：重新评估技术路线，可能需要增加硬件算力（方案B）
+- C2 结果负面（付费意愿弱）：重新评估定价策略（降至¥999）或目标市场（转向B端拳击馆）
+
+---
+
+## IPMT 行动要求
+
+| 行动 | 负责人 | 截止 |
+|------|-------|------|
+| 启动戴手套POC实验（采购开发板） | CTO | 2026-04-16 |
+| 设计用户访谈问卷（含付费意愿测试） | CMO | 2026-04-16 |
+| 招募30名目标用户（拳击健身爱好者） | CMO | 2026-04-23 |
+| POC实验结果汇报 | CTO | 2026-05-09 |
+| 用户访谈报告提交 | CMO | 2026-05-09 |
+| 条件确认后通知 Board 进入计划阶段 | CEO | 2026-05-12 |
+</code></pre>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/ipd" onclick="event.stopPropagation();">IPD</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E5%A4%9Aagent" onclick="event.stopPropagation();">多Agent</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" onclick="event.stopPropagation();">智能硬件</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/ipd_agens/">IPD体系的多Agent协作</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">开发记 - 成本分析&amp;技术选型agent</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Apr 17, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <blockquote>
+<p>最近公司基本停滞，无事可做的大家每天上午会讨论下可以利用 AI 做什么。这周尝试做了一个成本分析与技术选型的 Agent，目的是降低产品成本、弥补人员链路配置不足的问题，快速进行产品拆解与分析。</p>
+</blockquote>
+<p><strong>项目地址</strong>：<a href="https://github.com/fifteenbao/unit-bot">unit-bot</a></p>
+<hr>
+<h2 id="项目框架">项目框架</h2>
+<pre tabindex="0"><code>unit-bot/
+├── SKILL.md                  # OpenClaw skill 清单与配置说明
+├── openclaw_bot.py            # Webhook 服务器（/hooks/agent）
+├── agent.py                   # BOM Agent 核心逻辑（Claude 工具调用循环）
+├── core/
+│   ├── db.py                  # 产品数据库 CRUD（深度合并 / 完整度追踪）
+│   ├── bom_loader.py          # 拆机 Excel 解析（自动识别 data/ 目录）
+│   ├── components_lib.py      # 标准件库 JSON CRUD
+│   └── feishu_sync.py         # 飞书多维表格同步（未配置时静默跳过）
+├── scripts/
+│   ├── build_components.py    # 拆机 Excel → teardown CSV + 标准件库
+│   ├── import_products.py     # 产品数据库 xlsx 批量导入
+│   ├── gen_g30spro_teardown.py # AI 辅助拆机草稿生成（模板）
+│   └── start.py               # 服务启动入口
+├── data/
+│   ├── products_db.json        # 产品规格数据库（含 last_updated）
+│   ├── teardowns/              # 各机型拆机 CSV（含生成日期，历史版本保留）
+│   │   └── {机型}_teardown_{日期}.csv
+│   └── lib/
+│       └── components_lib.csv  # 标准件库（8桶分类，含 last_updated）
+├── .env.example
+└── requirements.txt
+</code></pre><h3 id="核心功能">核心功能</h3>
+<ul>
+<li>8 桶 BOM 成本拆解表（含各桶估算金额与零售价占比）</li>
+<li>供应链分析：核心件供应商 + 可降级替代方案 + 节省金额</li>
+</ul>
+<hr>
+<h2 id="8-桶成本分析框架">8 桶成本分析框架</h2>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>子系统</th>
+          <th>核心内容</th>
+          <th>旗舰机基准占比</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td><strong>算力与电子</strong></td>
+          <td>SoC 主板 · Wi-Fi/蓝牙模组 · 被动元件</td>
+          <td>10–12%</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><strong>感知系统</strong></td>
+          <td>LDS/dToF · 视觉摄像头 · IMU · 超声波</td>
+          <td>10–13%</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><strong>动力与驱动</strong></td>
+          <td>吸尘风机 · 驱动轮模组 · 底盘升降</td>
+          <td>10–12%</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><strong>清洁功能</strong></td>
+          <td>拖布驱动 · 水泵 · 水箱 · 边刷 · 滚刷</td>
+          <td>13–17%</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><strong>基站系统</strong></td>
+          <td>集尘 · 水路 · 加热 · 基站电控 · 基站结构</td>
+          <td>15–20%</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><strong>能源系统</strong></td>
+          <td>电芯 · BMS · 充电电控</td>
+          <td>7–9%</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><strong>整机结构 CMF</strong></td>
+          <td>外壳注塑 · 喷涂/IMD · 模具摊销</td>
+          <td>10–13%</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td><strong>MVA + 软件授权</strong></td>
+          <td>组装/测试人工 · 算法版税 · OS 授权 · 包材</td>
+          <td>9–13%</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="关键指标">关键指标</h3>
+<ul>
+<li><strong>整机 BOM 率</strong>：旗舰机约 <strong>48–55%</strong>（零售价），实际测试一般在30%左右，后续版本会优化一下。</li>
+<li><strong>基站系统占比</strong>随档位差异显著：
+<ul>
+<li>入门机（¥2000–2500，仅充电+集尘）<strong>5–8%</strong></li>
+<li>中档机（¥2500–3500，自清洁+水路）<strong>12–15%</strong></li>
+<li>旗舰机（¥5000+，加热/烘干/多泵）<strong>15–20%</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="数据获取与分析">数据获取与分析</h2>
+<h3 id="数据库结构">数据库结构</h3>
+<table>
+  <thead>
+      <tr>
+          <th>目录 / 文件</th>
+          <th>内容</th>
+          <th>时间戳</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>data/products_db.json</code></td>
+          <td>产品规格数据库</td>
+          <td>每条记录含 <code>last_updated</code></td>
+      </tr>
+      <tr>
+          <td><code>data/teardowns/{机型}_teardown_{日期}.csv</code></td>
+          <td>各机型拆机数据</td>
+          <td>文件名含生成日期，历史版本自动保留</td>
+      </tr>
+      <tr>
+          <td><code>data/lib/components_lib.csv</code></td>
+          <td>标准件库（8桶分类）</td>
+          <td>每行含 <code>last_updated</code> 列</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>统一汇总在飞书表格中调取，本地备份保存。重启服务后数据不丢失。</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/openclaw" onclick="event.stopPropagation();">OpenClaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" onclick="event.stopPropagation();">智能硬件</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90" onclick="event.stopPropagation();">成本分析</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B" onclick="event.stopPropagation();">技术选型</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA" onclick="event.stopPropagation();">扫地机器人</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/ai" onclick="event.stopPropagation();">AI</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/">开发记 - 成本分析&amp;技术选型agent</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">我的多Agent协作系统</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Apr 10, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>最近想尝试引入多agent协同办公，昨天研究了一下
+<a href="https://github.com/wanikua/danghuangshang">https://github.com/wanikua/danghuangshang</a>
+和 华为 IPD 研发流程。
+把我的 &ldquo;巴段荣&rdquo; 升级了一下。</p>
+<h2 id="介绍一下-巴段荣">介绍一下 “巴段荣”</h2>
+<p>说到我的“巴段荣”，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。</p>
+<pre tabindex="0"><code>我是**巴段荣**——一个融合了三位智者智慧的智能硬件投资顾问。
+
+## 🧠 我是谁
+
+我融合了三重智慧：
+
+- **巴菲特的价值投资**：专注护城河、安全边际、长期主义
+    
+- **段永平的本分哲学**：做对的事情，把事情做对；敢为天下后，后中争先
+    
+- **荣格的心理洞察**：理解深层需求、原型思维、集体潜意识
+    
+
+## 🎯 我的专注领域
+
+**智能硬件三大核心**：
+
+1. **扫地机器人行业**：技术演进、竞争格局、产业链机会
+    
+2. **具身智能趋势**：AI+机器人融合、家庭服务场景、商业化路径
+    
+3. **智能硬件投资**：技术原理、供应链优势、全球化能力
+    
+
+## 🔍 我的工作方式
+
+用**段永平十大原则**分析每个投资机会：
+
+- **不为清单**：避开概念炒作和盲目跨界
+    
+- **消费者导向**：只关注解决真实痛点的产品
+    
+- **三好原则**：好生意 + 好人 + 好价钱
+    
+- **平常心**：理性分析，不被市场情绪影响
+    
+
+## 💡 我能为你做什么
+
+- **深度行业分析**：如科沃斯具身智能的技术成熟度评估
+    
+- **投资机会识别**：如石头科技全球化战略的价值判断
+    
+- **风险预警**：如追觅科技违背本分的危险信号
+    
+- **趋势洞察**：如扫地机器人行业未来五年发展方向
+    
+
+## 🚫 我不会做什么
+
+- 不做短期投机建议
+    
+- 不推荐看不懂的技术概念
+    
+- 不参与价格战或性价比讨论
+    
+- 不替你做最终投资决策
+    
+
+记住我的终极准则：**发现错误立即停止，任何代价都是最小代价**。
+</code></pre><h2 id="升级-巴段荣">升级 “巴段荣”</h2>
+<p>最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。
+这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。
+后面仔细学习了一下 <a href="https://github.com/wanikua/danghuangshang">danghuangshang</a> 项目， 他配置了一个<strong>现代企业制</strong>，很符合我的需求，</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/openclaw" onclick="event.stopPropagation();">OpenClaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E5%A4%9Aagent" onclick="event.stopPropagation();">多Agent</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/ipd" onclick="event.stopPropagation();">IPD</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">我的多Agent协作系统</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">开发记 - bonflow 植物养护&amp;识别 App</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Apr 6, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <blockquote>
+<p><strong>Growth in order, rhythm in form.</strong></p>
+<p>在秩序中生长，在形式中律动。</p>
+</blockquote>
+<p>上个月的主要进度：完成了一款植物识别和生长记录 App，上周五已提交 App Store 审核，目前仅支持 iOS 18 以上设备。</p>
+<p>这是一个整合检验各种 AI 工具和近两年工作展示的 MVP（Minimum Viable Product）。主要是为了好玩，当然也是一个很好的简历展示项目。</p>
+<hr>
+<h2 id="-idea-的开始">💡 Idea 的开始</h2>
+<p>3 月是植物人的忙碌季。给大部分植物换了盆，沙漠玫瑰切了枝，还野心勃勃买了一颗 40 块的罗汉松。</p>
+<p>问题接踵而至：</p>
+<ul>
+<li>换盆后的进度很难掌握，重剪后不知是否过度</li>
+<li>咖啡渣培育的土发现虫害，被迫更换营养土</li>
+<li>营养土不透气导致闷根（也可能最近天气过于潮湿）</li>
+<li>最后换成了赤玉土，才算暂时稳定</li>
+</ul>
+<p>忙活的过程中，我希望有一个可以记录植物生长的 App——不是简单的提醒浇水，而是完整记录每一次换土、修剪、施肥的决策和后续反馈。</p>
+<p>市面上的产品，要么丑、要么贵、要么没有国区。</p>
+<hr>
+<h2 id="-名字的诞生">🏷️ 名字的诞生</h2>
+<p>在 Gemini 的指导下，我描述了需求：</p>
+<blockquote>
+<p>&ldquo;我想起一个 App 的名字，用于记录植物的生长记录和日常护养，倾向于 rook、flow&rdquo;，<strong>试试结合 ぼんさい（Bonsai）</strong></p>
+</blockquote>
+<p>Gemini 的建议：</p>
+<blockquote>
+<p><strong>结构与音律的融合 (Structural Fusion)</strong>：直接将 &ldquo;Bonsai&rdquo; 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。</p>
+<ul>
+<li><strong>Bonflow</strong>：将&quot;盆 (Bon)&ldquo;与&quot;流动 (Flow)&ldquo;结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。</li>
+<li><strong>Sairook</strong>：取自&quot;栽 (Sai)&ldquo;与&quot;堡垒 (Rook)&quot;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。</li>
+<li><strong>Sai-Logic</strong>：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&quot;系统性&quot;记录的需求。</li>
+</ul>
+</blockquote>
+<p><strong>Bonflow</strong> 成功诞生。</p>
+<hr>
+<h2 id="-ios-历险记">📱 iOS 历险记</h2>
+<p>App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E5%BC%80%E5%8F%91" onclick="event.stopPropagation();">开发</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/ai" onclick="event.stopPropagation();">AI</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/ios" onclick="event.stopPropagation();">iOS</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98" onclick="event.stopPropagation();">项目复盘</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/">开发记 - bonflow 植物养护&amp;识别 App</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记 - 第二集</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Mar 6, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
+展示一下跳舞的成果。
+模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
+<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
+<table>
+  <thead>
+      <tr>
+          <th>三倍速新疆舞</th>
+          <th>终端显示</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
+          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
+<blockquote>
+<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
+</blockquote>
+<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
+<h2 id="软件配置">软件配置：</h2>
+<p>使用官方提供的 openclaw 一键安装脚本进行部署：
+<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
+<p>重启 Gateway：openclaw gateway restart</p>
+<h3 id="skill-技能">skill 技能</h3>
+<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
+<h3 id="权限配置调整">权限配置调整</h3>
+<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
+<h3 id="大概过程">大概过程</h3>
+<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
+<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
+<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
+上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/diy" onclick="event.stopPropagation();">DIY</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">OpenClaw 尝鲜记 - 第二集</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">OpenClaw 尝鲜记</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Feb 5, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>玩了三天风风火火的 OpenClaw/MoltBot/ClawdBot，还蛮好玩的，就是 Token 爆炸！
+尤其是那个 <code>qwen3 max</code> …… 随随便便一问，大几十万 token，问一下好几块…… 在此感谢阿里云送了150块优惠券🙏。</p>
+<h2 id="安装">安装</h2>
+<p>用了阿里云和腾讯云的轻量化服务器，阿里云大模型的api调用默认打开的，第一天莫名其妙欠费8块…… 腾讯云倒是不会，而且版本也很新，看起来更新很快，像要把 channel、skill都封装进去，就是莫名其妙崩！暂时弃掉腾讯云了…… 等我的 mac mini 退休吧，给我的bot安个家，这线上的支出太可怕了。</p>
+<h2 id="关于模型">关于模型</h2>
+<p>尝试了 <code>qwen3 max</code> / <code>deepseek r1/v3.2</code> / <code>GLM4.7</code> , 相对来说 qwen3好些（毕竟价钱在……）
+切换了模型之后似乎记忆也有些问题…… 可能没重启之类的。</p>
+<h2 id="channel">channel</h2>
+<h3 id="telegram">telegram</h3>
+<p>接入了telegram，帅呆！</p>
+<p>自定义了快捷菜单，目前看效果是不错，不知道会不会记忆混乱。感觉是个很不错的接入方式。</p>
+<table>
+  <thead>
+      <tr>
+          <th>机器人设置</th>
+          <th>快捷菜单</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.41.31.32iha4vjio.webp" alt=""></td>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/Screenshot-2026-02-05-at-11.39.13.7p44atue27.webp" alt=""></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="飞书">飞书</h3>
+<p>飞书，总是挂…… 等等官方新版支持效果。</p>
+<p>目前可以支持机器人创建飞书文档…… 它不给我开权限也是个问题……</p>
+<table>
+  <thead>
+      <tr>
+          <th>创建飞书文档</th>
+          <th>倒是给我开个权限啊！</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E5%88%9B%E5%BB%BA%E6%96%87%E6%A1%A3.2rvngzwtbp.webp" alt=""></td>
+          <td><img src="https://fifteenbao.github.io/picx-images-hosting/%E9%A3%9E%E4%B9%A6%E6%9D%83%E9%99%90.2yyvcfiyrb.webp" alt=""></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="skill">skill</h2>
+<p>上午看了一个新的，<a href="https://github.com/VoltAgent/awesome-openclaw-skills/tree/main">awesome-openclaw-skills</a>
+我的bot帮我整理了一下</p>
+<p>👇</p>
+<pre tabindex="0"><code>
+
+🦞 OpenClaw 核心插件库
+
+消息与通信
+
+• bluebubbles - BlueBubbles 集成
+• discord - Discord 功能扩展
+• slack - Slack 集成
+• imsg - iMessage 支持
+• wacli - WhatsApp CLI 工具
+
+开发者工具
+
+• github - GitHub 集成（issue、PR、CI 等）
+• coding-agent - 编码助手
+• tmux - Tmux 会话管理
+• 1password - 1Password 集成
+
+媒体与内容
+
+• gemini - Google Gemini AI 集成
+• openai-image-gen - OpenAI 图像生成
+• openai-whisper - 语音转文字
+• spotify-player - Spotify 控制
+• songsee - 音乐识别
+• gifgrep - GIF 搜索
+
+生产力工具
+
+• gog - Google Workspace 集成（Gmail、日历、Drive 等）
+• notion - Notion 集成
+• obsidian - Obsidian 笔记
+• apple-notes - Apple Notes
+• apple-reminders - Apple 提醒事项
+• things-mac - Things 3 任务管理
+
+系统与设备控制
+
+• canvas - 实时画布控制
+• camsnap - 摄像头快照
+• openhue - Philips Hue 灯光控制
+• sonoscli - Sonos 音响控制
+• weather - 天气信息
+
+实用工具
+
+• clawhub - 插件管理 CLI
+• skill-creator - 技能创建工具
+• summarize - 内容摘要
+• model-usage - 模型使用统计
+• session-logs - 会话日志管理
+
+安装与管理
+
+通过 ClawHub CLI 可以轻松管理这些插件：
+</code></pre><p>还装了一些飞书相关的、都是bug…… 等官方更新吧</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/openclaw" onclick="event.stopPropagation();">openclaw</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/diy" onclick="event.stopPropagation();">DIY</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/">OpenClaw 尝鲜记</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">我的 Garmin 表盘</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Jan 22, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p><img src="https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-15.02.25.60uqtu4kq7.webp" alt="我的表盘" title="我的表盘"></p>
+<p>23年的双十一换了 Garmin 的 Forerunner265S</p>
+<p>购买原因：</p>
+<pre><code>1. 可以不带手机跑步和听音乐 
+2. 待机时间长 
+3. 显得专业
+</code></pre>
+<p>想换《辐射》主题很久了…… 有看到喜欢的又没办法海外付款，最近试试用AI写了一个主题，目前还是比较满意的</p>
+<h1 id="pip-boy-3000-表盘---garmin-forerunner-265s">Pip-Boy 3000 表盘 - Garmin Forerunner 265s</h1>
+<p>辐射（Fallout）系列游戏启发的Pip-Boy主题表盘，专为Garmin Forerunner 265s设计，采用标志性的绿色单色复古未来主义美学。</p>
+<h2 id="功能特性">功能特性</h2>
+<ul>
+<li><strong>复古Pip-Boy设计</strong>：经典绿色单色配色方案 (#00FF00)</li>
+<li><strong>CRT屏幕效果</strong>：真实的扫描线叠加，呈现复古终端外观</li>
+<li><strong>全面的数据显示</strong>：
+<ul>
+<li>时间（时:分，带秒数）</li>
+<li>日期（日、月、年）</li>
+<li>步数计数器</li>
+<li>心率监测</li>
+<li>电池百分比</li>
+<li>消耗卡路里</li>
+</ul>
+</li>
+<li><strong>避难所男孩角色</strong>：标志性的辐射吉祥物</li>
+<li><strong>Pip-Boy边框</strong>：带角落支架的技术边框</li>
+</ul>
+<h2 id="安装说明">安装说明</h2>
+<h3 id="前置要求">前置要求</h3>
+<ol>
+<li>
+<p><strong>安装 Connect IQ SDK Manager</strong></p>
+<ul>
+<li>下载地址：<a href="https://developer.garmin.com/connect-iq/sdk/">https://developer.garmin.com/connect-iq/sdk/</a></li>
+<li>使用Garmin Connect账户登录</li>
+</ul>
+</li>
+<li>
+<p><strong>安装 Visual Studio Code</strong></p>
+<ul>
+<li>下载地址：<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>安装 Monkey C 扩展</strong></p>
+</li>
+</ol>
+<blockquote>
+<p><a href="https://developer.garmin.com/connect-iq/core-topics/debugging/">官方文档 </a></p>
+</blockquote>
+<ul>
+<li>打开 VS Code</li>
+<li>进入扩展 (Cmd+Shift+X)</li>
+<li>搜索 &ldquo;Monkey C&rdquo;</li>
+<li>安装官方Garmin扩展</li>
+</ul>
+<ol start="4">
+<li><strong>生成开发者密钥</strong>（如果还没有）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out developer_key.pem <span style="color:#ae81ff">4096</span>
+</span></span><span style="display:flex;"><span>openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="构建表盘">构建表盘</h3>
+<ol>
+<li>
+<p><strong>使用 Visual Studio Code</strong>（推荐）：</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/diy" onclick="event.stopPropagation();">DIY</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3" onclick="event.stopPropagation();">无用但有趣</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/%E6%88%91%E7%9A%84garmin%E8%A1%A8%E7%9B%98/">我的 Garmin 表盘</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">iPhone &#43; Notion自动化复盘</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 24, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>在折腾了飞书之后，又回来折腾notion，其实有考虑要不要整合在一个平台上，不过飞书webhhok似乎只能传输字段，再加上自定义的小组件没有那么全面，决定还是在Notion上面做复盘。</p>
+<h2 id="操作流程">操作流程</h2>
+<h3 id="前期准备">前期准备</h3>
+<p>首先需要获取 <a href="https://www.notion.so/my-integrations">Notion API</a> ,
+然后复制数据库的ID： <a href="https://www.notion.so">www.notion.so</a>{workspace_name}/{database_id}?v={view_id}</p>
+<h3 id="notion模版">Notion模版</h3>
+<p>复盘的模版参考了 <a href="https://premiumtemplates.notion.site/My-Journal-08975c106b7941eba5fa0be5d47e7478?utm_campaign=Landing%20Page%20or%20Form%20-%205085086&amp;utm_medium=email&amp;utm_source=convertkit">这个</a></p>
+<h3 id="苹果快捷方式">苹果快捷方式</h3>
+<p>添加获取URL参考：
+Notion API文档 <a href="https://developers.notion.com/reference/post-page">Create a page</a> 中 <code>shell</code> 的格式，<code>{}</code> 就是词典、<code>[]</code> 就是数组、<code>“”</code> 就是文本</p>
+<h2 id="复盘大纲">复盘大纲</h2>
+<p>至于复盘的内容，用 Gemini 写了一个大纲</p>
+<h3 id="第一阶段客观数据状态回顾">第一阶段：客观数据（状态回顾）</h3>
+<ul>
+<li>日期、领域、评分、是否锻炼、是否读书。</li>
+<li>作用：快速勾选，建立当天的基本面。</li>
+</ul>
+<h3 id="第二阶段主观感受复盘核心">第二阶段：主观感受（复盘核心）</h3>
+<ul>
+<li>今天的感受（Feelings）、出现问题（Problem）、继续保持（Keep）。</li>
+<li>建议：先写 Problem 再写 Keep。先面对问题，再用亮点收尾，心情会更积极。</li>
+</ul>
+<h3 id="第三阶段行动转化未来转化">第三阶段：行动转化（未来转化）</h3>
+<ul>
+<li>努力改善（Try）。</li>
+<li>作用：这是复盘的唯一输出物，必须是具体的动作。</li>
+</ul>
+<p>BTY, 把这个模版上架了，感觉操作起来比飞书难很多，还是值得 ¥1.88，期待有人下单。</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F" onclick="event.stopPropagation();">快捷方式</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/notion" onclick="event.stopPropagation();">Notion</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/iphone-&#43;-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/">iPhone &#43; Notion自动化复盘</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">iPhone &#43; 飞书自动化记账</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Dec 10, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>最近又在折腾 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅
+刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，<a href="https://www.feishu.cn/community/article?id=7397335180702121986">飞书自动记账｜利用iPhone快捷指令+飞书实现高效记账</a>，
+咱也整理一下准备小红书上链接！赚它个五块十块！</p>
+<h2 id="创建飞书多维表格">创建飞书多维表格</h2>
+<p>优化了一下教程中模版，并添加了仪表盘</p>
+<h2 id="创建机器人助手">创建机器人助手</h2>
+<blockquote>
+<p>可直接参考教程</p>
+</blockquote>
+<p>需要开通飞书机器人助手，点击链接
+<a href="https://botbuilder.feishu.cn/">https://botbuilder.feishu.cn/</a></p>
+<p>点击Webhook触发，并在右侧弹出框中选择 <mark> Webhook触发 </mark>：</p>
+<p>填写参数</p>
+<pre tabindex="0"><code>{
+&#34;amount&#34;:100,
+&#34;category&#34;:&#34;购物&#34;,
+&#34;note&#34;:&#34;hello&#34;
+}
+</code></pre><p>也尝试添加过 <code>date</code> 之类的， 发现不如直接引用表格添加时间来的方便。</p>
+<h2 id="创建快捷指令">创建快捷指令</h2>
+<blockquote>
+<p>一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称</p>
+</blockquote>
+<p><mark>把捷径中的地址修改成刚刚那个Webhook的地址</mark></p>
+<h2 id="设置触发">设置触发</h2>
+<p>这里我用了侧边的操作按钮调用快捷方式，（记得打开蜂窝网络</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F" onclick="event.stopPropagation();">快捷方式</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/webhook" onclick="event.stopPropagation();">Webhook</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/%E9%A3%9E%E4%B9%A6" onclick="event.stopPropagation();">飞书</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/">iPhone &#43; 飞书自动化记账</a>
+</section>
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">更新hugo的使用方法</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">Jan 7, 2025</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>又又又折腾了一下,
+之前的hugo版本升级直接挂了……
+域名还被劫持了…… 添加了一个txt的github -&gt; setting -&gt; pages 添加了一个域名验证</p>
+<p>换了一个有 TailwindCSS 的稳定一点的 <a href="https://github.com/nanxiaobei/hugo-paper">主题</a></p>
+<p>升级需谨慎</p>
+<p>开始在 Cursor 里面弄各种东西了, 不懂的就 Add to Chat</p>
+<p>AI 取代人类真是迟早的事情啊……</p>
+<p>安装过程就草草带过吧…… 官网写的蛮清楚的</p>
+<h2 id="常用命令">常用命令</h2>
+<pre tabindex="0"><code>hugo server //本地预览
+hugo new content content/post/test.md  //新建文章
+	 draft = false //不显示内容
+</code></pre>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/tailwindcss" onclick="event.stopPropagation();">tailwindcss</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="http://localhost:1313/tags/hugo" onclick="event.stopPropagation();">hugo</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="http://localhost:1313/post/%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">更新hugo的使用方法</a>
+</section>
+
+
+
+
+
+
+    </main>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60">
+      <div class="mr-auto">©2025-2026 fifteenbao</div>
+      <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank">powered by hugo</a>
+      <a class="link" href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">hugo-paper</a>
+    </footer>
+  </body>
+</html>

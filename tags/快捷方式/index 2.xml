@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>快捷方式 on fifteenbao</title>
+    <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</link>
+    <description>Recent content in 快捷方式 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Wed, 24 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iPhone &#43; Notion自动化复盘</title>
+      <link>http://localhost:1313/post/iphone-&#43;-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/</link>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/iphone-&#43;-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/</guid>
+      <description>&lt;p&gt;在折腾了飞书之后，又回来折腾notion，其实有考虑要不要整合在一个平台上，不过飞书webhhok似乎只能传输字段，再加上自定义的小组件没有那么全面，决定还是在Notion上面做复盘。&lt;/p&gt;&#xA;&lt;h2 id=&#34;操作流程&#34;&gt;操作流程&lt;/h2&gt;&#xA;&lt;h3 id=&#34;前期准备&#34;&gt;前期准备&lt;/h3&gt;&#xA;&lt;p&gt;首先需要获取 &lt;a href=&#34;https://www.notion.so/my-integrations&#34;&gt;Notion API&lt;/a&gt; ,&#xA;然后复制数据库的ID： &lt;a href=&#34;https://www.notion.so&#34;&gt;www.notion.so&lt;/a&gt;{workspace_name}/{database_id}?v={view_id}&lt;/p&gt;&#xA;&lt;h3 id=&#34;notion模版&#34;&gt;Notion模版&lt;/h3&gt;&#xA;&lt;p&gt;复盘的模版参考了 &lt;a href=&#34;https://premiumtemplates.notion.site/My-Journal-08975c106b7941eba5fa0be5d47e7478?utm_campaign=Landing%20Page%20or%20Form%20-%205085086&amp;amp;utm_medium=email&amp;amp;utm_source=convertkit&#34;&gt;这个&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;苹果快捷方式&#34;&gt;苹果快捷方式&lt;/h3&gt;&#xA;&lt;p&gt;添加获取URL参考：&#xA;Notion API文档 &lt;a href=&#34;https://developers.notion.com/reference/post-page&#34;&gt;Create a page&lt;/a&gt; 中 &lt;code&gt;shell&lt;/code&gt; 的格式，&lt;code&gt;{}&lt;/code&gt; 就是词典、&lt;code&gt;[]&lt;/code&gt; 就是数组、&lt;code&gt;“”&lt;/code&gt; 就是文本&lt;/p&gt;&#xA;&lt;h2 id=&#34;复盘大纲&#34;&gt;复盘大纲&lt;/h2&gt;&#xA;&lt;p&gt;至于复盘的内容，用 Gemini 写了一个大纲&lt;/p&gt;&#xA;&lt;h3 id=&#34;第一阶段客观数据状态回顾&#34;&gt;第一阶段：客观数据（状态回顾）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;日期、领域、评分、是否锻炼、是否读书。&lt;/li&gt;&#xA;&lt;li&gt;作用：快速勾选，建立当天的基本面。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;第二阶段主观感受复盘核心&#34;&gt;第二阶段：主观感受（复盘核心）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;今天的感受（Feelings）、出现问题（Problem）、继续保持（Keep）。&lt;/li&gt;&#xA;&lt;li&gt;建议：先写 Problem 再写 Keep。先面对问题，再用亮点收尾，心情会更积极。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;第三阶段行动转化未来转化&#34;&gt;第三阶段：行动转化（未来转化）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;努力改善（Try）。&lt;/li&gt;&#xA;&lt;li&gt;作用：这是复盘的唯一输出物，必须是具体的动作。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;BTY, 把这个模版上架了，感觉操作起来比飞书难很多，还是值得 ¥1.88，期待有人下单。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>iPhone &#43; 飞书自动化记账</title>
+      <link>http://localhost:1313/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/</guid>
+      <description>&lt;p&gt;最近又在折腾 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅&#xA;刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，&lt;a href=&#34;https://www.feishu.cn/community/article?id=7397335180702121986&#34;&gt;飞书自动记账｜利用iPhone快捷指令+飞书实现高效记账&lt;/a&gt;，&#xA;咱也整理一下准备小红书上链接！赚它个五块十块！&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建飞书多维表格&#34;&gt;创建飞书多维表格&lt;/h2&gt;&#xA;&lt;p&gt;优化了一下教程中模版，并添加了仪表盘&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建机器人助手&#34;&gt;创建机器人助手&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;可直接参考教程&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;需要开通飞书机器人助手，点击链接&#xA;&lt;a href=&#34;https://botbuilder.feishu.cn/&#34;&gt;https://botbuilder.feishu.cn/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;点击Webhook触发，并在右侧弹出框中选择 &lt;mark&gt; Webhook触发 &lt;/mark&gt;：&lt;/p&gt;&#xA;&lt;p&gt;填写参数&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{&#xA;&amp;#34;amount&amp;#34;:100,&#xA;&amp;#34;category&amp;#34;:&amp;#34;购物&amp;#34;,&#xA;&amp;#34;note&amp;#34;:&amp;#34;hello&amp;#34;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;也尝试添加过 &lt;code&gt;date&lt;/code&gt; 之类的， 发现不如直接引用表格添加时间来的方便。&lt;/p&gt;&#xA;&lt;h2 id=&#34;创建快捷指令&#34;&gt;创建快捷指令&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;mark&gt;把捷径中的地址修改成刚刚那个Webhook的地址&lt;/mark&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;设置触发&#34;&gt;设置触发&lt;/h2&gt;&#xA;&lt;p&gt;这里我用了侧边的操作按钮调用快捷方式，（记得打开蜂窝网络&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
