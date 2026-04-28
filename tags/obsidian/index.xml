@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obsidian on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/obsidian/</link>
+    <description>Recent content in Obsidian on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网站装修小记</title>
+      <link>https://fifteenbao.com/post/%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/</guid>
+      <description>&lt;p&gt;又又又更新网站了，这次主要更新了 tags 页面，高仿 obsidian。&lt;/p&gt;&#xA;&lt;h2 id=&#34;分类&#34;&gt;分类&lt;/h2&gt;&#xA;&lt;p&gt;分类设置参考了我在 OpenClaw 上三省六部的数据库设计，分为以下六大板块：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;命名&lt;/th&gt;&#xA;          &lt;th&gt;网站板块&lt;/th&gt;&#xA;          &lt;th&gt;解读&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;机巧司&lt;/td&gt;&#xA;          &lt;td&gt;工具开发 / 项目&lt;/td&gt;&#xA;          &lt;td&gt;对应网智能硬件、扫地机器人、机械臂等内容&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;格物斋&lt;/td&gt;&#xA;          &lt;td&gt;学习 / 技术笔记&lt;/td&gt;&#xA;          &lt;td&gt;推演逻辑、沉淀方法论的实验场&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;长物阁&lt;/td&gt;&#xA;          &lt;td&gt;咖啡 / 审美 / 收藏&lt;/td&gt;&#xA;          &lt;td&gt;「非必要但能提升灵魂」的审美&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;舆地考&lt;/td&gt;&#xA;          &lt;td&gt;旅游记录 / 摄影&lt;/td&gt;&#xA;          &lt;td&gt;游记&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;起居札记&lt;/td&gt;&#xA;          &lt;td&gt;日常随笔 / 思考&lt;/td&gt;&#xA;          &lt;td&gt;生活感悟&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;述职书&lt;/td&gt;&#xA;          &lt;td&gt;关于我 / Profile&lt;/td&gt;&#xA;          &lt;td&gt;关于我&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;将每个分类作为 Tags 的一个标签进行记述，形成一个分工为单位的标签图谱。&#xA;可以点 &lt;a href=&#34;https://fifteenbao.com/tags/&#34;&gt;&lt;strong&gt;Tags&lt;/strong&gt;&lt;/a&gt; 页面体验下&lt;/p&gt;&#xA;&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;&#xA;&lt;p&gt;按照 agent 配置 更新 SOUL / MEMORY / AGENTS / TOOLS&#xA;适配投简历的需求&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;文件&lt;/th&gt;&#xA;          &lt;th&gt;这个文件讲了哪些内容&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://fifteenbao.com/about/soul/&#34;&gt;&lt;strong&gt;SOUL&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;⬅ 我是谁，核心原则，工作风格&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://fifteenbao.com/about/memory/&#34;&gt;&lt;strong&gt;MEMORY&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;⬅ 关于我的工作经历&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://fifteenbao.com/about/agents/&#34;&gt;&lt;strong&gt;AGENTS&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;⬅ 工作流程，技能栈&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;a href=&#34;https://fifteenbao.com/about/tools/&#34;&gt;&lt;strong&gt;TOOLS&lt;/strong&gt;&lt;/a&gt;&lt;/td&gt;&#xA;          &lt;td&gt;⬅ 工具配置&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+    </item>
+  </channel>
+</rss>

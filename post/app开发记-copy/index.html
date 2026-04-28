@@ -1,0 +1,1964 @@
+<!doctype html>
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="cn"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <title>开发记 - bonflow 植物养护&amp;识别 App - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="
+Growth in order, rhythm in form.
+在秩序中生长，在形式中律动。
+
+上个月的主要进度：完成了一款植物识别和生长记录 App，上周五已提交 App Store 审核，目前仅支持 iOS 18 以上设备。
+这是一个整合检验各种 AI 工具和近两年工作展示的 MVP（Minimum Viable Product）。主要是为了好玩，当然也是一个很好的简历展示项目。
+
+💡 Idea 的开始
+3 月是植物人的忙碌季。给大部分植物换了盆，沙漠玫瑰切了枝，还野心勃勃买了一颗 40 块的罗汉松。
+问题接踵而至：
+
+换盆后的进度很难掌握，重剪后不知是否过度
+咖啡渣培育的土发现虫害，被迫更换营养土
+营养土不透气导致闷根（也可能最近天气过于潮湿）
+最后换成了赤玉土，才算暂时稳定
+
+忙活的过程中，我希望有一个可以记录植物生长的 App——不是简单的提醒浇水，而是完整记录每一次换土、修剪、施肥的决策和后续反馈。
+市面上的产品，要么丑、要么贵、要么没有国区。
+
+🏷️ 名字的诞生
+在 Gemini 的指导下，我描述了需求：
+
+&ldquo;我想起一个 App 的名字，用于记录植物的生长记录和日常护养，倾向于 rook、flow&rdquo;，试试结合 ぼんさい（Bonsai）
+
+Gemini 的建议：
+
+结构与音律的融合 (Structural Fusion)：直接将 &ldquo;Bonsai&rdquo; 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。
+
+Bonflow：将&quot;盆 (Bon)&ldquo;与&quot;流动 (Flow)&ldquo;结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。
+Sairook：取自&quot;栽 (Sai)&ldquo;与&quot;堡垒 (Rook)&quot;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。
+Sai-Logic：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&quot;系统性&quot;记录的需求。
+
+
+Bonflow 成功诞生。
+
+📱 iOS 历险记
+App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="http://localhost:1313/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.158.0">
+
+  
+  <script>
+    
+    
+    (function() {
+      if (typeof window !== 'undefined' && typeof window.__TAURI_METADATA__ === 'undefined') {
+        
+        try {
+          Object.defineProperty(window, '__TAURI_METADATA__', {
+            value: { __tauri_internal__: { windows: { main: null } } },
+            writable: true,
+            configurable: true
+          });
+        } catch (e) {
+          
+          window.__TAURI_METADATA__ = { __tauri_internal__: { windows: { main: null } } };
+        }
+      }
+    })();
+  </script>
+
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    
+
+    <script>
+      
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      if (btnMenu) {
+        btnMenu.addEventListener('click', () => {
+          htmlClass.toggle('open');
+        });
+      }
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      
+      
+      const updateButtonPosition = (isDark) => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            
+            
+            btn.style.setProperty('background-position', isDark ? 'right center' : 'left center', 'important');
+          }
+        });
+      };
+      
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+        
+        
+        updateButtonPosition(isDark);
+        
+        
+        requestAnimationFrame(() => {
+          updateButtonPosition(isDark);
+        });
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const initTheme = () => {
+        let shouldBeDark;
+        if (htmlClass.contains('dark')) {
+          shouldBeDark = true;
+        } else {
+          const darkVal = localStorage.getItem('dark');
+          shouldBeDark = darkVal ? darkVal === 'true' : darkScheme.matches;
+        }
+        setDark(shouldBeDark);
+      };
+      
+      
+      initTheme();
+      
+      
+      const ensureButtonPosition = () => {
+        const darkVal = localStorage.getItem('dark');
+        const currentDark = darkVal === 'true' || (darkVal === null && darkScheme.matches);
+        updateButtonPosition(currentDark);
+      };
+      
+      
+      const waitForButtons = () => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        if (themeButtons.length > 0) {
+          ensureButtonPosition();
+        } else {
+          
+          setTimeout(waitForButtons, 50);
+        }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForButtons);
+      } else {
+        
+        waitForButtons();
+      }
+
+      
+      const styleEl = document.createElement('style');
+      styleEl.id = 'theme-toggle-style';
+      styleEl.textContent = `
+        /* Light mode: keep original colors */
+        .btn-dark[data-theme-bg="png"],
+        .btn-dark-mobile[data-theme-bg="png"] {
+          filter: none;
+        }
+        /* Dark mode: recolor moon to warm yellow */
+        html.dark .btn-dark[data-theme-bg="png"],
+        html.dark .btn-dark-mobile[data-theme-bg="png"] {
+          filter: grayscale(1) sepia(1) saturate(8) hue-rotate(-20deg) brightness(1.15);
+        }
+
+      `;
+      document.head.appendChild(styleEl);
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/tags/"
+          >Tags</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden flex flex-col items-start gap-4 mt-4">
+        
+        
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="hidden lg:flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="http://localhost:1313/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-idea-的开始">💡 Idea 的开始</a></li>
+    <li><a href="#-名字的诞生">🏷️ 名字的诞生</a></li>
+    <li><a href="#-ios-历险记">📱 iOS 历险记</a>
+      <ul>
+        <li><a href="#网站备案">网站备案</a></li>
+        <li><a href="#app-备案">App 备案</a></li>
+      </ul>
+    </li>
+    <li><a href="#-使用的工具">🛠️ 使用的工具</a>
+      <ul>
+        <li><a href="#claude-code">Claude Code</a></li>
+        <li><a href="#stitch">Stitch</a></li>
+        <li><a href="#obsidian">Obsidian</a></li>
+      </ul>
+    </li>
+    <li><a href="#-关于植物的识别">🌿 关于植物的识别</a>
+      <ul>
+        <li><a href="#端侧识别">端侧识别</a></li>
+        <li><a href="#云端识别">云端识别</a></li>
+      </ul>
+    </li>
+    <li><a href="#-成本计算">💰 成本计算</a>
+      <ul>
+        <li><a href="#开发期一次性投入">开发期（一次性投入）</a></li>
+        <li><a href="#运营期按年">运营期（按年）</a></li>
+        <li><a href="#后期-api-成本预估">后期 API 成本（预估）</a></li>
+        <li><a href="#总览">总览</a></li>
+      </ul>
+    </li>
+    <li><a href="#-总结">📝 总结</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">开发记 - bonflow 植物养护&amp;识别 App</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>Apr 6, 2026</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
+      </div>
+      
+    </header>
+
+    <section><blockquote>
+<p><strong>Growth in order, rhythm in form.</strong></p>
+<p>在秩序中生长，在形式中律动。</p>
+</blockquote>
+<p>上个月的主要进度：完成了一款植物识别和生长记录 App，上周五已提交 App Store 审核，目前仅支持 iOS 18 以上设备。</p>
+<p>这是一个整合检验各种 AI 工具和近两年工作展示的 MVP（Minimum Viable Product）。主要是为了好玩，当然也是一个很好的简历展示项目。</p>
+<hr>
+<h2 id="-idea-的开始">💡 Idea 的开始</h2>
+<p>3 月是植物人的忙碌季。给大部分植物换了盆，沙漠玫瑰切了枝，还野心勃勃买了一颗 40 块的罗汉松。</p>
+<p>问题接踵而至：</p>
+<ul>
+<li>换盆后的进度很难掌握，重剪后不知是否过度</li>
+<li>咖啡渣培育的土发现虫害，被迫更换营养土</li>
+<li>营养土不透气导致闷根（也可能最近天气过于潮湿）</li>
+<li>最后换成了赤玉土，才算暂时稳定</li>
+</ul>
+<p>忙活的过程中，我希望有一个可以记录植物生长的 App——不是简单的提醒浇水，而是完整记录每一次换土、修剪、施肥的决策和后续反馈。</p>
+<p>市面上的产品，要么丑、要么贵、要么没有国区。</p>
+<hr>
+<h2 id="-名字的诞生">🏷️ 名字的诞生</h2>
+<p>在 Gemini 的指导下，我描述了需求：</p>
+<blockquote>
+<p>&ldquo;我想起一个 App 的名字，用于记录植物的生长记录和日常护养，倾向于 rook、flow&rdquo;，<strong>试试结合 ぼんさい（Bonsai）</strong></p>
+</blockquote>
+<p>Gemini 的建议：</p>
+<blockquote>
+<p><strong>结构与音律的融合 (Structural Fusion)</strong>：直接将 &ldquo;Bonsai&rdquo; 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。</p>
+<ul>
+<li><strong>Bonflow</strong>：将&quot;盆 (Bon)&ldquo;与&quot;流动 (Flow)&ldquo;结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。</li>
+<li><strong>Sairook</strong>：取自&quot;栽 (Sai)&ldquo;与&quot;堡垒 (Rook)&quot;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。</li>
+<li><strong>Sai-Logic</strong>：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&quot;系统性&quot;记录的需求。</li>
+</ul>
+</blockquote>
+<p><strong>Bonflow</strong> 成功诞生。</p>
+<hr>
+<h2 id="-ios-历险记">📱 iOS 历险记</h2>
+<p>App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。</p>
+<p>比较麻烦的是国内的备案。</p>
+<h3 id="网站备案">网站备案</h3>
+<p>大概花了一周。</p>
+<p>审核需要提供隐私政策链接，就先弄了个网站：阿里云注册了 <code>bonflow.com.cn</code> 域名（¥38/年），买了个 ¥99/年的云服务器，写了个七七八八的内容直接在阿里云上申请网站备案。</p>
+<blockquote>
+<p>⚠️ <strong>事后诸葛亮</strong>：其实有链接就可以，直接在 Notion 链接挂过去就行……这一步有点没太大必要，就当作练手了。</p>
+</blockquote>
+<p>有了备案号之后在网站页脚加了一下，还要去公安部备个案（装了好几个 App 还有各种平台认证，这一步还没弄完……）</p>
+<h3 id="app-备案">App 备案</h3>
+<p>这一步大概也是一周。把一些 Developer 的证书内容填一填就差不多。</p>
+<p><strong>注意</strong>：申请的名字要和 App 本身的名字完全一致（包括大小写），不然在开发者平台无法添加申请下来的备案号。</p>
+<hr>
+<h2 id="-使用的工具">🛠️ 使用的工具</h2>
+<h3 id="claude-code">Claude Code</h3>
+<p>最开始尝试了三方 API（太贵），试了 Qwen Coding Plan（太烂），后面买了一个 Claude Pro。</p>
+<p>5 小时限额之后就歇一歇，梳理文档、整理逻辑或者去调整设计稿，整个一个劳逸结合。</p>
+<h3 id="stitch">Stitch</h3>
+<p>MCP 直接接入 Claude Code，但效果并不十分理想。每次叫 Stitch 更新一下设计规范，它就会生成一份新的，导致文件本身有很多份设计规范。</p>
+<p>后面我会手动把 <code>DESIGN.md</code> 文件复制到 VS Code 里面，并告诉 Claude Code：</p>
+<blockquote>
+<p>&ldquo;你的设计规范在这里&rdquo;</p>
+</blockquote>
+<p>主要的设计页面会打包到一个文件夹，告诉 Claude Code：</p>
+<blockquote>
+<p>&ldquo;你的设计稿在这里&rdquo;</p>
+</blockquote>
+<h3 id="obsidian">Obsidian</h3>
+<p>对于一些逻辑比较复杂、会出现 Bug 的页面，我会叫 Claude 先根据现在的逻辑整理一份 Markdown，然后在接入阿里云 Coding Plan（量大管饱）的 Obsidian 中慢慢梳理，再导入回 VS Code。</p>
+<hr>
+<h2 id="-关于植物的识别">🌿 关于植物的识别</h2>
+<p>识别部分主要有两部分内容：端侧识别和云端识别。</p>
+<h3 id="端侧识别">端侧识别</h3>
+<p>端侧部署了一个可以识别 66 种植物的 YOLO11n 分类模型。</p>
+<p>最开始尝试 YOLOv26 去做训练，发现我的 Mac Mini 速度实在太慢（大概是 26 混合了两种模型的算法，算起来会很乱），而且精度并没有提高。就回到了 v11 版本，目前 YOLO11n 的识别过程大概在 2s 左右。还存在一些识别不准、素材校准的问题。</p>
+<h4 id="模型大小筛选">模型大小筛选</h4>
+<p>按照 iPhone 12 以上的算力筛选（iPhone 12 搭载 A14 Bionic，有 16 TOPS 的 Neural Engine），经过 CoreML 转换后的实际可用范围大致是：</p>
+<table>
+  <thead>
+      <tr>
+          <th>型号</th>
+          <th>参数量</th>
+          <th>模型大小</th>
+          <th>iPhone 12 预估 FPS</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>YOLO11n</td>
+          <td>2.6M</td>
+          <td>~6MB</td>
+          <td>30–60 FPS</td>
+          <td>实时摄像头</td>
+      </tr>
+      <tr>
+          <td>YOLO11s</td>
+          <td>9.4M</td>
+          <td>~18MB</td>
+          <td>20–35 FPS</td>
+          <td>实时摄像头</td>
+      </tr>
+      <tr>
+          <td><strong>YOLO11m</strong></td>
+          <td><strong>20.1M</strong></td>
+          <td><strong>~40MB</strong></td>
+          <td><strong>10–20 FPS</strong></td>
+          <td><strong>拍照识别（推荐）</strong></td>
+      </tr>
+      <tr>
+          <td>YOLO11l</td>
+          <td>25.3M</td>
+          <td>~50MB</td>
+          <td>5–12 FPS</td>
+          <td>可用但偏慢</td>
+      </tr>
+      <tr>
+          <td>YOLO11x</td>
+          <td>56.9M</td>
+          <td>~110MB</td>
+          <td>&lt;5 FPS</td>
+          <td>不适合</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="yolo11n-cls-目录结构">YOLO11n-cls 目录结构</h4>
+<pre tabindex="0"><code>plant_classify/
+├── data.yaml
+├── train/
+│   ├── pothos/                    # 绿萝
+│   │   ├── pothos_001.jpg
+│   │   ├── pothos_002.jpg
+│   │   └── ...  (≥200 张)
+│   ├── heartleaf_philodendron/    # 心叶蔓绿绒
+│   ├── monstera_deliciosa/        # 龟背竹
+│   └── ... (66 类)
+├── val/                           # 结构同 train，约 20% 数量
+└── test/                          # 结构同 train，约 10% 数量
+</code></pre><h4 id="识别的种类">识别的种类</h4>
+<p>共 66 类，按科属分类：</p>
+<table>
+  <thead>
+      <tr>
+          <th>科属</th>
+          <th>种类数</th>
+          <th>代表植物</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>天南星科</td>
+          <td>13</td>
+          <td>龟背竹、绿萝、心叶蔓绿绒、白掌、合果芋</td>
+      </tr>
+      <tr>
+          <td>榕属</td>
+          <td>5</td>
+          <td>橡皮树、琴叶榕、垂叶榕</td>
+      </tr>
+      <tr>
+          <td>龙血树属</td>
+          <td>4</td>
+          <td>富贵竹、巴西铁树、龙血树</td>
+      </tr>
+      <tr>
+          <td>棕榈科</td>
+          <td>4</td>
+          <td>散尾葵、袖珍椰子</td>
+      </tr>
+      <tr>
+          <td>虎皮兰属</td>
+          <td>3</td>
+          <td>虎皮兰、金边虎皮兰</td>
+      </tr>
+      <tr>
+          <td>竹芋科</td>
+          <td>5</td>
+          <td>彩虹竹芋、孔雀竹芋</td>
+      </tr>
+      <tr>
+          <td>小型观叶</td>
+          <td>9</td>
+          <td>吊兰、网纹草、镜面草</td>
+      </tr>
+      <tr>
+          <td>蕨类</td>
+          <td>4</td>
+          <td>波士顿蕨、铁线蕨</td>
+      </tr>
+      <tr>
+          <td>开花类</td>
+          <td>7</td>
+          <td>蝴蝶兰、兰花、长寿花</td>
+      </tr>
+      <tr>
+          <td>木本盆栽</td>
+          <td>5</td>
+          <td>发财树、鸭脚木</td>
+      </tr>
+      <tr>
+          <td>多肉/仙人掌</td>
+          <td>6</td>
+          <td>芦荟、玉露、石莲花</td>
+      </tr>
+      <tr>
+          <td>气生</td>
+          <td>1</td>
+          <td>空气凤梨</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="数据集">数据集</h4>
+<p>Claude 帮我按照识别难易程度配置数据数量：</p>
+<table>
+  <thead>
+      <tr>
+          <th>难度</th>
+          <th>代表种类</th>
+          <th>每类最少张数</th>
+          <th>建议张数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>⭐ 易识别</td>
+          <td>龟背竹、虎皮兰、芦荟</td>
+          <td>150 张</td>
+          <td>300 张</td>
+      </tr>
+      <tr>
+          <td>⭐⭐ 易混淆</td>
+          <td>绿萝 vs 心叶蔓绿绒</td>
+          <td>300 张</td>
+          <td>500 张</td>
+      </tr>
+      <tr>
+          <td>⭐⭐⭐ 品种多</td>
+          <td>竹芋类、石莲花</td>
+          <td>500 张</td>
+          <td>800 张</td>
+      </tr>
+  </tbody>
+</table>
+<p>根据版权和常见室内植物的数量建议写了爬虫自动爬取。</p>
+<h4 id="训练">训练</h4>
+<p>依旧是 Claude 的指导。</p>
+<p><strong>YOLO11s-cls 的模块结构与 freeze 值对照：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><code>freeze</code> 值</th>
+          <th>冻结到哪里</th>
+          <th>效果</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>freeze=0</code></td>
+          <td>不冻结</td>
+          <td>Full fine-tune</td>
+          <td>数据 &gt;500 张/类</td>
+      </tr>
+      <tr>
+          <td><code>freeze=2</code></td>
+          <td>冻结前 2 个 Conv</td>
+          <td>保留最基础边缘检测</td>
+          <td>数据较多</td>
+      </tr>
+      <tr>
+          <td><code>freeze=5</code></td>
+          <td>冻结前 5 个模块</td>
+          <td>保留低级特征（边缘/纹理）</td>
+          <td>数据中等，200–500 张/类</td>
+      </tr>
+      <tr>
+          <td><code>freeze=9</code></td>
+          <td>冻结到 SPPF 前</td>
+          <td>保留大部分 backbone</td>
+          <td>数据较少，100–200 张/类</td>
+      </tr>
+      <tr>
+          <td><code>freeze=11</code></td>
+          <td>冻结整个 backbone</td>
+          <td>只训练分类头</td>
+          <td>数据极少，&lt;100 张/类</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 训练命令</span>
+</span></span><span style="display:flex;"><span>yolo classify train <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    model<span style="color:#f92672">=</span>yolo11s-cls.pt <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    data<span style="color:#f92672">=</span>plant_classify/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    imgsz<span style="color:#f92672">=</span><span style="color:#ae81ff">224</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    freeze<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>    lr0<span style="color:#f92672">=</span>0.001
+</span></span></code></pre></div><h3 id="云端识别">云端识别</h3>
+<p>写了 3 个 Prompt，模型依旧使用量大管饱的阿里云 Coding Plan，返回时间大概 30-40s。</p>
+<p><strong>三个 Prompt 的调用时机汇总：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Prompt</th>
+          <th>触发时机</th>
+          <th>调用频率</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>植物识别与健康分析</td>
+          <td>用户拍照时</td>
+          <td>按需，用户主动触发</td>
+      </tr>
+      <tr>
+          <td>历史养护记录建议</td>
+          <td>用户查看植物详情页 / 添加养护记录后</td>
+          <td>每次添加记录后更新</td>
+      </tr>
+      <tr>
+          <td>今日环境推荐</td>
+          <td>每天早上 8 点推送 / 用户打开首页</td>
+          <td>每天一次，缓存当天结果</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-成本计算">💰 成本计算</h2>
+<h3 id="开发期一次性投入">开发期（一次性投入）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>费用</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Token 消耗</td>
+          <td>~$80 (≈¥580)</td>
+          <td>前期直接调取三方 API，账单爆表</td>
+      </tr>
+      <tr>
+          <td>Claude Pro</td>
+          <td>$20 (≈¥145)</td>
+          <td>1 个月，5 小时/天限额</td>
+      </tr>
+      <tr>
+          <td>Coding Plan</td>
+          <td>¥40</td>
+          <td>1 个月，阿里云，量大管饱</td>
+      </tr>
+      <tr>
+          <td>备案时间</td>
+          <td>~20 天</td>
+          <td>网站+App 前后</td>
+      </tr>
+      <tr>
+          <td><strong>小计</strong></td>
+          <td><strong>~¥765</strong></td>
+          <td>开发期一次性投入</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="运营期按年">运营期（按年）</h3>
+<table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>费用</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Apple 开发者账户</td>
+          <td>¥688/年</td>
+          <td>必须</td>
+      </tr>
+      <tr>
+          <td>域名</td>
+          <td>¥38/年</td>
+          <td>bonflow.com.cn</td>
+      </tr>
+      <tr>
+          <td>云服务器</td>
+          <td>¥99/年</td>
+          <td>阿里云轻量应用服务器</td>
+      </tr>
+      <tr>
+          <td><strong>小计</strong></td>
+          <td><strong>¥825/年</strong></td>
+          <td>固定运营成本</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="后期-api-成本预估">后期 API 成本（预估）</h3>
+<p>切换回 API 后，按日活用户和调用频率预估：</p>
+<table>
+  <thead>
+      <tr>
+          <th>场景</th>
+          <th>单次 Token</th>
+          <th>日调用次数</th>
+          <th>月成本预估</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>植物识别（按需）</td>
+          <td>~500</td>
+          <td>10 次/用户</td>
+          <td>¥0.5/用户</td>
+      </tr>
+      <tr>
+          <td>养护记录建议</td>
+          <td>~800</td>
+          <td>1 次/用户</td>
+          <td>¥0.3/用户</td>
+      </tr>
+      <tr>
+          <td>每日环境推荐</td>
+          <td>~300</td>
+          <td>1 次/用户</td>
+          <td>¥0.2/用户</td>
+      </tr>
+      <tr>
+          <td><strong>合计</strong></td>
+          <td>-</td>
+          <td>-</td>
+          <td><strong>~¥1/用户/月</strong></td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>假设 100 日活用户，月 API 成本约 ¥100；1000 日活用户约 ¥1000/月。</p>
+</blockquote>
+<hr>
+<h3 id="总览">总览</h3>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>费用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>开发期（一次性）</td>
+          <td>~¥765</td>
+      </tr>
+      <tr>
+          <td>运营期（首年）</td>
+          <td>¥825</td>
+      </tr>
+      <tr>
+          <td><strong>首年总计</strong></td>
+          <td><strong>~¥1,590</strong></td>
+      </tr>
+      <tr>
+          <td>次年（仅运营）</td>
+          <td>¥825/年</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-总结">📝 总结</h2>
+<p>目前 App 还有很多问题：</p>
+<ul>
+<li>端侧识别率不高</li>
+<li>API 调取时间过长</li>
+<li>FLOW 部分的设想没有十分完善</li>
+</ul>
+<p>但作为一个近两年学习成果的展示，还是蛮不错的 Demo。可以展示：</p>
+<ul>
+<li>端侧部署能力（CoreML + YOLO）</li>
+<li>云端 API 集成</li>
+<li>AI 工具的运用（Claude Code、Stitch、Obsidian）</li>
+<li>完整的产品思维和执行能力</li>
+</ul>
+<p>是个蛮好的面试展示项目。</p>
+<p>下一步计划：</p>
+<ol>
+<li>优化端侧模型准确率（增加训练数据、调整阈值）</li>
+<li>缩短云端 API 响应时间（优化 Prompt、考虑缓存策略）</li>
+<li>完善 FLOW 页面的时间滑块和生长曲线可视化</li>
+</ol>
+<hr>
+<p><strong>项目地址</strong>：<a href="http://bonflow.com.cn/docs/about/bonflow/">bonflow.com.cn</a></p>
+<p><strong>App Store</strong>：待上架 🚧</p>
+</section>
+
+    
+    <footer class="post-tags-footer">
+      <div class="post-tags-header">
+        <span class="post-tags-label">标签</span>
+        
+        <span class="post-tags-related">3 篇文章有相同标签组合</span>
+        
+        <a href="http://localhost:1313/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+      </div>
+      <div class="post-tags-list">
+        <a href="http://localhost:1313/tags/%E5%BC%80%E5%8F%91" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">开发</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="http://localhost:1313/tags/ai" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">AI</span>
+          <span class="post-tag-count">5</span>
+        </a>
+        <a href="http://localhost:1313/tags/ios" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">iOS</span>
+          <span class="post-tag-count">2</span>
+        </a>
+        <a href="http://localhost:1313/tags/%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">项目复盘</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="http://localhost:1313/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">机巧司</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        
+      </div>
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      <a class="ltr:pr-3 rtl:pl-3" href="http://localhost:1313/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>我的多Agent协作系统</span></a
+      >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="http://localhost:1313/post/app%E5%BC%80%E5%8F%91%E8%AE%B0/"
+        ><span>开发记 - bonflow 植物养护&amp;识别 App</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<style>
+  
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);
+    top: 0;
+    width: 220px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1280px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 240px);
+      right: auto;
+      top: 8rem;
+      width: 220px;
+      max-height: calc(100vh - 10rem);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 240px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 0.9375rem;  
+    line-height: 1.75;
+  }
+
+  .article-content .prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 1.75em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.15em;  
+    line-height: 1.4;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1em;  
+    line-height: 1.5;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.875rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.1em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1em;  
+    }
+  }
+
+
+  .toc-wrapper {
+     
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .toc-header {
+    margin: -1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.6875rem;
+    color: rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+    margin-top: 2rem;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
+     
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
+     
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.8125rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.6875rem;
+    opacity: 0.55;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+   
+  @media (max-width: 1279px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+   
+
+  .post-tags-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .dark .post-tags-footer {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .post-tags-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-tags-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(0, 0, 0, 0.35);
+  }
+
+  .dark .post-tags-label {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .post-tags-related {
+    font-size: 0.7rem;
+    color: rgba(99, 102, 241, 0.6);
+    padding: 1px 7px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 99px;
+  }
+
+  .dark .post-tags-related {
+    color: rgba(165, 180, 252, 0.65);
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.2);
+  }
+
+  .post-tags-graph-link {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.25);
+    transition: color 0.15s;
+  }
+
+  .post-tags-graph-link:hover {
+    color: rgba(99, 102, 241, 0.75);
+  }
+
+  .dark .post-tags-graph-link {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .post-tags-graph-link:hover {
+    color: rgba(165, 180, 252, 0.75);
+  }
+
+  .post-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .post-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px 4px 8px;
+    border-radius: 99px;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+     
+    background: rgba(99, 102, 241, 0.07);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    color: #4338ca;
+  }
+
+  .post-tag-pill:hover {
+    background: rgba(99, 102, 241, 0.13);
+    border-color: rgba(99, 102, 241, 0.32);
+    transform: translateY(-1px);
+  }
+
+  .dark .post-tag-pill {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.22);
+    color: #a5b4fc;
+  }
+
+  .dark .post-tag-pill:hover {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .post-tag-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
+
+  .post-tag-name {
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .post-tag-count {
+    font-size: 0.68rem;
+    opacity: 0.45;
+    font-weight: 400;
+    line-height: 1;
+  }
+</style>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 text-xs uppercase tracking-wider opacity-60">
+      <div>©2025-2026 fifteenbao</div>
+    </footer>
+  </body>
+</html>

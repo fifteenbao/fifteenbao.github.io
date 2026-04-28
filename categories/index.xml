@@ -7,12 +7,12 @@
     <generator>Hugo</generator>
     <language>cn</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fifteenbao.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>机巧司</title>
       <link>https://fifteenbao.com/categories/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/categories/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</guid>
       <description></description>
     </item>
@@ -42,6 +42,13 @@
       <link>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>起居注</title>
+      <link>https://fifteenbao.com/categories/%E8%B5%B7%E5%B1%85%E6%B3%A8/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/categories/%E8%B5%B7%E5%B1%85%E6%B3%A8/</guid>
       <description></description>
     </item>
   </channel>

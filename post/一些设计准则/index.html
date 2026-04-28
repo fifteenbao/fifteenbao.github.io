@@ -223,7 +223,7 @@
   <meta itemprop="datePublished" content="2023-02-22T00:00:00+00:00">
   <meta itemprop="dateModified" content="2023-02-22T00:00:00+00:00">
   <meta itemprop="wordCount" content="499">
-  <meta itemprop="keywords" content="长物阁原则,迪特·拉姆斯,长物阁">
+  <meta itemprop="keywords" content="迪特·拉姆斯,设计准则,长物阁">
   
   <meta property="og:url" content="https://fifteenbao.com/post/%E4%B8%80%E4%BA%9B%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99/">
   <meta property="og:site_name" content="fifteenbao">
@@ -234,8 +234,8 @@
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2023-02-22T00:00:00+00:00">
     <meta property="article:modified_time" content="2023-02-22T00:00:00+00:00">
-    <meta property="article:tag" content="长物阁原则">
     <meta property="article:tag" content="迪特·拉姆斯">
+    <meta property="article:tag" content="设计准则">
     <meta property="article:tag" content="长物阁">
 
   
@@ -715,7 +715,7 @@
         
         <div
           class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') center center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
           data-theme-bg="png"
           role="button"
           aria-label="Dark"
@@ -742,7 +742,7 @@
         <div class="flex items-center ml-2">
           <div
             class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') center center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
             data-theme-bg="png"
             role="button"
             aria-label="Dark"
@@ -1210,24 +1210,17 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">7 篇文章有相同标签组合</span>
-        
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/%E9%95%BF%E7%89%A9%E9%98%81" class="post-tag-pill no-underline">
-          <span class="post-tag-dot"></span>
-          <span class="post-tag-name">长物阁</span>
-          <span class="post-tag-count">0</span>
-        </a>
-        <a href="https://fifteenbao.com/tags/%E9%95%BF%E7%89%A9%E9%98%81%E5%8E%9F%E5%88%99" class="post-tag-pill no-underline">
-          <span class="post-tag-dot"></span>
-          <span class="post-tag-name">长物阁原则</span>
-          <span class="post-tag-count">0</span>
-        </a>
         <a href="https://fifteenbao.com/tags/%E8%BF%AA%E7%89%B9%E6%8B%89%E5%A7%86%E6%96%AF" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
           <span class="post-tag-name">迪特·拉姆斯</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1%E5%87%86%E5%88%99" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">设计准则</span>
           <span class="post-tag-count">0</span>
         </a>
         <a href="https://fifteenbao.com/tags/%E9%95%BF%E7%89%A9%E9%98%81" class="post-tag-pill no-underline">
@@ -1290,26 +1283,25 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
    
   .toc-sidebar {
     position: absolute;
-    right: calc(100% + 1rem);  
+    right: calc(100% + 1rem);
     top: 0;
-    width: 240px;
+    width: 220px;
     max-height: calc(100vh - 8rem);
     overflow-y: auto;
     overflow-x: hidden;
   }
 
    
-  @media (min-width: 1400px) {
+  @media (min-width: 1280px) {
     .toc-sidebar {
       position: fixed;
-      left: calc((100vw - var(--w)) / 2 - 260px);  
+      left: calc((100vw - var(--w)) / 2 - 240px);
       right: auto;
-      top: 8rem;  
-      width: 240px;
+      top: 8rem;
+      width: 220px;
       max-height: calc(100vh - 10rem);
     }
-    
-     
+
     .article-content {
       width: 100%;
       max-width: none;
@@ -1319,23 +1311,23 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
    
   @media (min-width: 1600px) {
     .toc-sidebar {
-      left: calc((100vw - var(--w)) / 2 - 260px);
+      left: calc((100vw - var(--w)) / 2 - 240px);
     }
   }
 
    
   .article-content .prose {
-    font-size: 1rem;  
-    line-height: 1.7;  
+    font-size: 0.9375rem;  
+    line-height: 1.75;
   }
 
   .article-content .prose p {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
   }
 
   .article-content .prose h1 {
-    font-size: 2em;  
+    font-size: 1.75em;  
     line-height: 1.3;
     margin-top: 0;
     margin-bottom: 0.5em;
@@ -1343,14 +1335,6 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
   }
 
   .article-content .prose h2 {
-    font-size: 1.625em;  
-    line-height: 1.4;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    font-weight: 600;
-  }
-
-  .article-content .prose h3 {
     font-size: 1.375em;  
     line-height: 1.4;
     margin-top: 1.75em;
@@ -1358,10 +1342,18 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
     font-weight: 600;
   }
 
-  .article-content .prose h4 {
-    font-size: 1.125em;  
-    line-height: 1.5;
+  .article-content .prose h3 {
+    font-size: 1.15em;  
+    line-height: 1.4;
     margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1em;  
+    line-height: 1.5;
+    margin-top: 1.25em;
     margin-bottom: 0.5em;
     font-weight: 600;
   }
@@ -1394,24 +1386,24 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
 
   @media (max-width: 768px) {
     .article-content .prose {
-      font-size: 0.9375rem;  
+      font-size: 0.875rem;  
       line-height: 1.65;
     }
 
     .article-content .prose h1 {
-      font-size: 1.75em;  
-    }
-
-    .article-content .prose h2 {
       font-size: 1.5em;  
     }
 
-    .article-content .prose h3 {
+    .article-content .prose h2 {
       font-size: 1.25em;  
     }
 
+    .article-content .prose h3 {
+      font-size: 1.1em;  
+    }
+
     .article-content .prose h4 {
-      font-size: 1.125em;  
+      font-size: 1em;  
     }
   }
 
@@ -1474,8 +1466,8 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
 
   .toc-title {
     font-weight: 600;
-    font-size: 0.75rem;
-    color: rgba(0, 0, 0, 0.8);  
+    font-size: 0.6875rem;
+    color: rgba(0, 0, 0, 0.8);
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
@@ -1566,14 +1558,14 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
    
   .toc-content > ul > li > a {
     font-weight: 500;
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
   }
 
    
   .toc-content > ul > li > ul > li > a {
     font-weight: 400;
-    font-size: 0.875rem;
-    opacity: 0.65;
+    font-size: 0.75rem;
+    opacity: 0.6;
   }
 
   .toc-content > ul > li > ul > li > a.active {
@@ -1583,8 +1575,8 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
    
   .toc-content > ul > li > ul > li > ul > li > a {
     font-weight: 400;
-    font-size: 0.8125rem;
-    opacity: 0.6;
+    font-size: 0.6875rem;
+    opacity: 0.55;
   }
 
   .toc-content > ul > li > ul > li > ul > li > a.active {
@@ -1592,14 +1584,8 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
   }
 
    
-  @media (min-width: 1024px) and (max-width: 1399px) {
-    .toc-sidebar {
-      display: none !important;
-    }
-  }
-
    
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px) {
     .toc-sidebar {
       display: none !important;
     }
@@ -1933,10 +1919,8 @@ IBM 的研究员沃尔特·多尔蒂（Walter Doherty）通过一系列的研究
 
 
     </main>
-    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60">
-      <div class="mr-auto">©2025-2026 fifteenbao</div>
-      <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank">powered by hugo</a>
-      <a class="link" href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">hugo-paper</a>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 text-xs uppercase tracking-wider opacity-60">
+      <div>©2025-2026 fifteenbao</div>
     </footer>
   </body>
 </html>
