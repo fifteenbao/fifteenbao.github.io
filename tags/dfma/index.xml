@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFMA on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/dfma/</link>
+    <description>Recent content in DFMA on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>cn</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/dfma/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开发记 - 扫地机器人BOM成本分析平台</title>
+      <link>https://fifteenbao.com/post/%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;项目地址&lt;/strong&gt;：&lt;a href=&#34;https://github.com/fifteenbao/unit-bot&#34;&gt;unit-bot&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://fifteenbao.com/post/%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/&#34;&gt;上一篇&lt;/a&gt;记录了项目的起因、框架设计和核心功能。最近一次迭代把能力拆成了三条独立命令，各司其职：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;/bom&lt;/code&gt; 计算成本、&lt;code&gt;/dfma&lt;/code&gt; 降本方案、&lt;code&gt;/fcc find/ocr&lt;/code&gt; 采集数据&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;核心命令&#34;&gt;核心命令&lt;/h2&gt;&#xA;&lt;p&gt;三条命令覆盖了从「数据采集 → 成本计算 → 降本分析」的完整链路：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;用户&lt;/th&gt;&#xA;          &lt;th&gt;核心命令&lt;/th&gt;&#xA;          &lt;th&gt;用途&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;产品 / 成本团队&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/bom 石头 G30S Pro&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;8 桶占比报告 + 供应链/风险提示——回答「成本是什么」&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;DFMA / 设计降本&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/dfma 卧安 K10+&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;功能-成本矩阵 + DFMA 抓手 + 降本潜力——回答「该改什么、能省多少」&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;拆机数据采集&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/fcc find&lt;/code&gt; + &lt;code&gt;/fcc ocr&lt;/code&gt;&lt;/td&gt;&#xA;          &lt;td&gt;FCC 文档检索 + 视觉 OCR 识别 PCB 芯片丝印&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;&lt;strong&gt;数据维护&lt;/strong&gt;&lt;/td&gt;&#xA;          &lt;td&gt;见下方「数据库」章节&lt;/td&gt;&#xA;          &lt;td&gt;维护三类数据库：产品库 / 拆机档案 / 标准件库&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;成本计算-bom&#34;&gt;成本计算 &lt;code&gt;/bom&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;命令参考&#34;&gt;命令参考&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;code&gt;/bom &amp;lt;品牌&amp;gt; &amp;lt;型号&amp;gt;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/bom 石头 G30S Pro&#xA;/bom 追觅 X40 Ultra&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Agent 按 7 步流程自动执行：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
