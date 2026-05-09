@@ -7,27 +7,55 @@
     <generator>Hugo</generator>
     <language>cn</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fifteenbao.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AI</title>
-      <link>https://fifteenbao.com/tags/ai/</link>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/tags/ai/</guid>
+      <title>Agent</title>
+      <link>https://fifteenbao.com/tags/agent/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/tags/agent/</guid>
       <description></description>
     </item>
     <item>
       <title>Bom</title>
       <link>https://fifteenbao.com/tags/bom/</link>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/tags/bom/</guid>
       <description></description>
     </item>
     <item>
       <title>DFMA</title>
       <link>https://fifteenbao.com/tags/dfma/</link>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/tags/dfma/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TRIZ</title>
+      <link>https://fifteenbao.com/tags/triz/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/tags/triz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>机巧司</title>
+      <link>https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>降本设计</title>
+      <link>https://fifteenbao.com/tags/%E9%99%8D%E6%9C%AC%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/tags/%E9%99%8D%E6%9C%AC%E8%AE%BE%E8%AE%A1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://fifteenbao.com/tags/ai/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
@@ -66,24 +94,10 @@
       <description></description>
     </item>
     <item>
-      <title>机巧司</title>
-      <link>https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</link>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>网站</title>
       <link>https://fifteenbao.com/tags/%E7%BD%91%E7%AB%99/</link>
       <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/tags/%E7%BD%91%E7%AB%99/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Agent</title>
-      <link>https://fifteenbao.com/tags/agent/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/tags/agent/</guid>
       <description></description>
     </item>
     <item>

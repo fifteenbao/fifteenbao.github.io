@@ -1,0 +1,2640 @@
+<!doctype html>
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="cn"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <title>unit-bot更新记 PLANTS价值设计流程 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 unit-bot, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。
+这次更新明确了 PLANTS价值设计流程，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。
+顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。
+PLANS 价值设计流程
+
+P 现状研究  →  L 精益设计  →  A 先进裁剪  →  N 价值创新  →  S 体系建设
+3 agent       2 agent (DFMA)  2 agent (TRIZ)  3 agent       2 agent
+PLANS 价值设计流程
+
+一条从现状研究到体系建设的极致降本路径。
+
+
+  
+      
+          阶段
+          全称
+          核心方法
+          关键活动
+          产出
+      
+  
+  
+      
+          P
+          现状研究
+          拆解分析 · 对标研究 · MVP 分析
+          产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集
+          事实基线文档、拆解报告、最少件清单、问题清单
+      
+      
+          L
+          精益设计
+          DFA 9 项 · DFM 5 项 · Should Cost
+          DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模）
+          DFA/DFM 优化方案、降本潜力估算、采购谈判数据
+      
+      
+          A
+          先进裁剪 · TRIZ
+          功能分析 · 三级裁剪 · 矛盾矩阵
+          逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离）
+          裁剪路径方案、矛盾解决方向
+      
+      
+          N
+          价值创新
+          FOS · 专利规避 · S 曲线
+          跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断
+          创新机会地图、替代方案池
+      
+      
+          S
+          体系建设
+          平台化 · 复杂性管理 · 五维成本体系
+          产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程
+          平台化方案、成本管理流程、组织能力固化方案
+      
+  
+
+命令一览
+
+命令统一接受 &lt;品牌&gt; &lt;型号&gt; 格式（如 石头 G30 Pro、追觅 X50 Ultra）。" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/main.min.css" />
+
+  
+  
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://fifteenbao.com/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://fifteenbao.com/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.158.0">
+
+  
+  <script>
+    
+    
+    (function() {
+      if (typeof window !== 'undefined' && typeof window.__TAURI_METADATA__ === 'undefined') {
+        
+        try {
+          Object.defineProperty(window, '__TAURI_METADATA__', {
+            value: { __tauri_internal__: { windows: { main: null } } },
+            writable: true,
+            configurable: true
+          });
+        } catch (e) {
+          
+          window.__TAURI_METADATA__ = { __tauri_internal__: { windows: { main: null } } };
+        }
+      }
+    })();
+  </script>
+
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      
+      document.querySelectorAll('.fade-in-up-observed').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  
+  
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYTD0RBTY');
+        }
+      </script>
+  
+  
+  <meta itemprop="name" content="unit-bot更新记 PLANTS价值设计流程">
+  <meta itemprop="description" content="昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 unit-bot, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。
+这次更新明确了 PLANTS价值设计流程，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。 顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。
+PLANS 价值设计流程 P 现状研究 → L 精益设计 → A 先进裁剪 → N 价值创新 → S 体系建设 3 agent 2 agent (DFMA) 2 agent (TRIZ) 3 agent 2 agent PLANS 价值设计流程
+一条从现状研究到体系建设的极致降本路径。
+阶段 全称 核心方法 关键活动 产出 P 现状研究 拆解分析 · 对标研究 · MVP 分析 产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集 事实基线文档、拆解报告、最少件清单、问题清单 L 精益设计 DFA 9 项 · DFM 5 项 · Should Cost DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化
+DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模） DFA/DFM 优化方案、降本潜力估算、采购谈判数据 A 先进裁剪 · TRIZ 功能分析 · 三级裁剪 · 矛盾矩阵 逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离） 裁剪路径方案、矛盾解决方向 N 价值创新 FOS · 专利规避 · S 曲线 跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断 创新机会地图、替代方案池 S 体系建设 平台化 · 复杂性管理 · 五维成本体系 产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程 平台化方案、成本管理流程、组织能力固化方案 命令一览 命令统一接受 &lt;品牌&gt; &lt;型号&gt; 格式（如 石头 G30 Pro、追觅 X50 Ultra）。">
+  <meta itemprop="datePublished" content="2026-05-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1263">
+  <meta itemprop="keywords" content="TRIZ,机巧司,Bom,DFMA,Agent,降本设计">
+  
+  <meta property="og:url" content="https://fifteenbao.com/post/%E5%AD%A6%E4%B9%A0%E8%AE%B0plans%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B/">
+  <meta property="og:site_name" content="fifteenbao">
+  <meta property="og:title" content="unit-bot更新记 PLANTS价值设计流程">
+  <meta property="og:description" content="昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 unit-bot, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。
+这次更新明确了 PLANTS价值设计流程，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。 顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。
+PLANS 价值设计流程 P 现状研究 → L 精益设计 → A 先进裁剪 → N 价值创新 → S 体系建设 3 agent 2 agent (DFMA) 2 agent (TRIZ) 3 agent 2 agent PLANS 价值设计流程
+一条从现状研究到体系建设的极致降本路径。
+阶段 全称 核心方法 关键活动 产出 P 现状研究 拆解分析 · 对标研究 · MVP 分析 产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集 事实基线文档、拆解报告、最少件清单、问题清单 L 精益设计 DFA 9 项 · DFM 5 项 · Should Cost DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化
+DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模） DFA/DFM 优化方案、降本潜力估算、采购谈判数据 A 先进裁剪 · TRIZ 功能分析 · 三级裁剪 · 矛盾矩阵 逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离） 裁剪路径方案、矛盾解决方向 N 价值创新 FOS · 专利规避 · S 曲线 跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断 创新机会地图、替代方案池 S 体系建设 平台化 · 复杂性管理 · 五维成本体系 产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程 平台化方案、成本管理流程、组织能力固化方案 命令一览 命令统一接受 &lt;品牌&gt; &lt;型号&gt; 格式（如 石头 G30 Pro、追觅 X50 Ultra）。">
+  <meta property="og:locale" content="cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-05-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-09T00:00:00+00:00">
+    <meta property="article:tag" content="TRIZ">
+    <meta property="article:tag" content="机巧司">
+    <meta property="article:tag" content="Bom">
+    <meta property="article:tag" content="DFMA">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="降本设计">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="unit-bot更新记 PLANTS价值设计流程">
+  <meta name="twitter:description" content="昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 unit-bot, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。
+这次更新明确了 PLANTS价值设计流程，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。 顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。
+PLANS 价值设计流程 P 现状研究 → L 精益设计 → A 先进裁剪 → N 价值创新 → S 体系建设 3 agent 2 agent (DFMA) 2 agent (TRIZ) 3 agent 2 agent PLANS 价值设计流程
+一条从现状研究到体系建设的极致降本路径。
+阶段 全称 核心方法 关键活动 产出 P 现状研究 拆解分析 · 对标研究 · MVP 分析 产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集 事实基线文档、拆解报告、最少件清单、问题清单 L 精益设计 DFA 9 项 · DFM 5 项 · Should Cost DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化
+DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模） DFA/DFM 优化方案、降本潜力估算、采购谈判数据 A 先进裁剪 · TRIZ 功能分析 · 三级裁剪 · 矛盾矩阵 逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离） 裁剪路径方案、矛盾解决方向 N 价值创新 FOS · 专利规避 · S 曲线 跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断 创新机会地图、替代方案池 S 体系建设 平台化 · 复杂性管理 · 五维成本体系 产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程 平台化方案、成本管理流程、组织能力固化方案 命令一览 命令统一接受 &lt;品牌&gt; &lt;型号&gt; 格式（如 石头 G30 Pro、追觅 X50 Ultra）。">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://fifteenbao.com/post/%E5%AD%A6%E4%B9%A0%E8%AE%B0plans%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B/" />
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4BYTD0RBTY');
+  </script>
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] text-2xl font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    
+
+    <script>
+      
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove('not-ready');
+      }, 10);
+
+      
+      const btnMenu = document.querySelector('.btn-menu');
+      if (btnMenu) {
+        btnMenu.addEventListener('click', () => {
+          htmlClass.toggle('open');
+        });
+      }
+
+      
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      const lightBg = '#faf8f1'.replace(/"/g, '');
+      
+      
+      const updateButtonPosition = (isDark) => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        themeButtons.forEach(btn => {
+          const bgType = btn.getAttribute('data-theme-bg');
+          if (bgType === 'png') {
+            
+            
+            btn.style.setProperty('background-position', isDark ? 'right center' : 'left center', 'important');
+          }
+        });
+      };
+      
+      const setDark = (isDark) => {
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+        localStorage.setItem('dark', isDark);
+        
+        
+        updateButtonPosition(isDark);
+        
+        
+        requestAnimationFrame(() => {
+          updateButtonPosition(isDark);
+        });
+      };
+
+      
+      const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const initTheme = () => {
+        let shouldBeDark;
+        if (htmlClass.contains('dark')) {
+          shouldBeDark = true;
+        } else {
+          const darkVal = localStorage.getItem('dark');
+          shouldBeDark = darkVal ? darkVal === 'true' : darkScheme.matches;
+        }
+        setDark(shouldBeDark);
+      };
+      
+      
+      initTheme();
+      
+      
+      const ensureButtonPosition = () => {
+        const darkVal = localStorage.getItem('dark');
+        const currentDark = darkVal === 'true' || (darkVal === null && darkScheme.matches);
+        updateButtonPosition(currentDark);
+      };
+      
+      
+      const waitForButtons = () => {
+        const themeButtons = document.querySelectorAll('.btn-dark, .btn-dark-mobile');
+        if (themeButtons.length > 0) {
+          ensureButtonPosition();
+        } else {
+          
+          setTimeout(waitForButtons, 50);
+        }
+      };
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForButtons);
+      } else {
+        
+        waitForButtons();
+      }
+
+      
+      const styleEl = document.createElement('style');
+      styleEl.id = 'theme-toggle-style';
+      styleEl.textContent = `
+        /* Light mode: keep original colors */
+        .btn-dark[data-theme-bg="png"],
+        .btn-dark-mobile[data-theme-bg="png"] {
+          filter: none;
+        }
+        /* Dark mode: recolor moon to warm yellow */
+        html.dark .btn-dark[data-theme-bg="png"],
+        html.dark .btn-dark-mobile[data-theme-bg="png"] {
+          filter: grayscale(1) sepia(1) saturate(8) hue-rotate(-20deg) brightness(1.15);
+        }
+
+      `;
+      document.head.appendChild(styleEl);
+
+      
+      darkScheme.addEventListener('change', (event) => {
+        setDark(event.matches);
+      });
+
+      
+      const toggleTheme = (event) => {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        
+        const currentDark = localStorage.getItem('dark') === 'true';
+        const newDark = !currentDark;
+        setDark(newDark);
+        
+        
+        const animateButton = (btn) => {
+          if (btn) {
+            btn.classList.add('animating');
+            setTimeout(() => {
+              btn.classList.remove('animating');
+            }, 600);
+          }
+        };
+        
+        
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        animateButton(btnDark);
+        animateButton(btnDarkMobile);
+      };
+      
+      
+      const attachThemeListeners = () => {
+        const btnDark = document.querySelector('.btn-dark');
+        const btnDarkMobile = document.querySelector('.btn-dark-mobile');
+        
+        if (btnDark) {
+          btnDark.removeEventListener('click', toggleTheme); 
+          btnDark.addEventListener('click', toggleTheme);
+        }
+        if (btnDarkMobile) {
+          btnDarkMobile.removeEventListener('click', toggleTheme); 
+          btnDarkMobile.addEventListener('click', toggleTheme);
+        }
+      };
+      
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachThemeListeners);
+      } else {
+        attachThemeListeners();
+      }
+      
+      
+      document.addEventListener('click', (e) => {
+        const target = e.target.closest('.btn-dark, .btn-dark-mobile');
+        if (target) {
+          toggleTheme(e);
+        }
+      }, true); 
+
+      
+      const header = document.getElementById('main-header');
+      let lastScroll = 0;
+      let ticking = false;
+      
+      function updateHeader() {
+        const currentScroll = window.pageYOffset;
+        
+        
+        if (currentScroll > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+      
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      });
+      
+      
+      setTimeout(() => {
+        header.classList.add('header-visible');
+      }, 100);
+
+      
+      
+      let debugMode = false;
+      let debugPanel = null;
+      
+      function getBreakpoint() {
+        const width = window.innerWidth;
+        if (width <= 480) return 'Small Mobile (≤480px)';
+        if (width <= 768) return 'Mobile (≤768px)';
+        if (width <= 1024) return 'Tablet (≤1024px)';
+        if (width >= 1440) return 'Large Desktop (≥1440px)';
+        return 'Desktop (1024px-1440px)';
+      }
+      
+      function createDebugPanel() {
+        if (debugPanel) return debugPanel;
+        
+        debugPanel = document.createElement('div');
+        debugPanel.id = 'header-debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #fff;
+          padding: 16px;
+          border-radius: 8px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          min-width: 250px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      
+      function updateDebugInfo() {
+        if (!debugMode || !debugPanel) return;
+        
+        const header = document.getElementById('main-header');
+        const headerRect = header.getBoundingClientRect();
+        const computedStyle = window.getComputedStyle(header);
+        const rootStyle = window.getComputedStyle(document.documentElement);
+        const cssW = rootStyle.getPropertyValue('--w').trim();
+        
+        
+        const viewportWidth = window.innerWidth;
+        const headerWidth = headerRect.width;
+        const expectedLeft = (viewportWidth - headerWidth) / 2;
+        const actualLeft = headerRect.left;
+        const isCentered = Math.abs(actualLeft - expectedLeft) < 2; 
+        
+        debugPanel.innerHTML = `
+          <div style="margin-bottom: 8px; font-weight: bold; border-bottom: 1px solid #444; padding-bottom: 8px;">
+            Header Debug Info
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Viewport:</strong> ${viewportWidth} × ${window.innerHeight}px</div>
+          <div style="margin-bottom: 4px;"><strong>Breakpoint:</strong> ${getBreakpoint()}</div>
+          <div style="margin-bottom: 4px;"><strong>CSS --w:</strong> ${cssW}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Position:</strong> ${actualLeft.toFixed(1)}, ${headerRect.top.toFixed(1)}</div>
+          <div style="margin-bottom: 4px;"><strong>Header Size:</strong> ${headerWidth.toFixed(0)} × ${headerRect.height.toFixed(0)}px</div>
+          <div style="margin-bottom: 4px;"><strong>Expected Center:</strong> ${expectedLeft.toFixed(1)}px</div>
+          <div style="margin-bottom: 4px; color: ${isCentered ? '#4ade80' : '#f87171'};">
+            <strong>Centered:</strong> ${isCentered ? '✓ Yes' : '✗ No'} (diff: ${Math.abs(actualLeft - expectedLeft).toFixed(1)}px)
+          </div>
+          <div style="margin-bottom: 4px;"><strong>Max Width:</strong> ${computedStyle.maxWidth}</div>
+          <div style="margin-bottom: 4px;"><strong>Width:</strong> ${computedStyle.width}</div>
+          <div style="margin-bottom: 4px;"><strong>Left:</strong> ${computedStyle.left}</div>
+          <div style="margin-bottom: 4px;"><strong>Transform:</strong> ${computedStyle.transform}</div>
+          <div style="margin-bottom: 4px;"><strong>Border Radius:</strong> ${computedStyle.borderRadius}</div>
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #444; font-size: 10px; color: #aaa;">
+            Press 'D' to toggle debug
+          </div>
+        `;
+      }
+      
+      function toggleDebugMode() {
+        debugMode = !debugMode;
+        if (debugMode) {
+          createDebugPanel();
+          updateDebugInfo();
+          window.addEventListener('resize', updateDebugInfo);
+          window.addEventListener('scroll', updateDebugInfo);
+        } else {
+          if (debugPanel) {
+            debugPanel.remove();
+            debugPanel = null;
+          }
+          window.removeEventListener('resize', updateDebugInfo);
+          window.removeEventListener('scroll', updateDebugInfo);
+        }
+      }
+      
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'd' || e.key === 'D') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleDebugMode();
+          }
+        }
+      });
+
+      
+      let menuDebugPanel = null;
+      let menuDebugEnabled = false;
+      const navWrapper = document.querySelector('.nav-wrapper');
+
+      function renderMenuDebug() {
+        if (!menuDebugEnabled) return;
+        if (!menuDebugPanel) {
+          menuDebugPanel = document.createElement('div');
+          menuDebugPanel.id = 'menu-debug-panel';
+          menuDebugPanel.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 9999;
+            min-width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+          `;
+          document.body.appendChild(menuDebugPanel);
+        }
+        if (!navWrapper) return;
+        const rect = navWrapper.getBoundingClientRect();
+        const isOpen = document.documentElement.classList.contains('open');
+        const styles = window.getComputedStyle(navWrapper);
+        menuDebugPanel.innerHTML = `
+          <div style="font-weight:bold; margin-bottom:6px; border-bottom:1px solid #444; padding-bottom:6px;">Menu Debug</div>
+          <div>Open: ${isOpen ? 'Yes' : 'No'}</div>
+          <div>Width: ${rect.width.toFixed(0)}px</div>
+          <div>Height: ${rect.height.toFixed(0)}px</div>
+          <div>Top: ${rect.top.toFixed(0)}px</div>
+          <div>Opacity: ${styles.opacity}</div>
+          <div>Overflow Y: ${styles.overflowY}</div>
+          <div>Padding: ${styles.padding}</div>
+          <div style="margin-top:6px; font-size:10px; color:#aaa;">Press 'M' to toggle</div>
+        `;
+      }
+
+      function toggleMenuDebug() {
+        menuDebugEnabled = !menuDebugEnabled;
+        if (!menuDebugEnabled) {
+          if (menuDebugPanel) {
+            menuDebugPanel.remove();
+            menuDebugPanel = null;
+          }
+          return;
+        }
+        renderMenuDebug();
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' || e.key === 'M') {
+          if (!e.ctrlKey && !e.metaKey && !e.altKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleMenuDebug();
+          }
+        }
+      });
+
+      
+      ['resize','scroll'].forEach(evt => {
+        window.addEventListener(evt, renderMenuDebug);
+      });
+      const menuObserver = new MutationObserver(renderMenuDebug);
+      if (navWrapper) {
+        menuObserver.observe(navWrapper, { attributes: true, attributeFilter: ['style','class'] });
+      }
+    </script>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 text-xl lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 lg:text-base rtl:space-x-reverse">
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/about/"
+          >About</a
+        >
+        
+        
+        
+        
+        <a
+          class="block w-full text-left text-xl leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:text-base lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/tags/"
+          >Tags</a
+        >
+        
+        
+        
+        
+        
+      </nav>
+      
+
+      
+      <div class="lg:hidden flex flex-col items-start gap-4 mt-4">
+        
+        
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="hidden lg:flex justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(./rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plans-价值设计流程">PLANS 价值设计流程</a></li>
+    <li><a href="#命令一览">命令一览</a>
+      <ul>
+        <li><a href="#plans-12-子-agent--每个-agent-单一职责">PLANS 12 子 agent — 每个 agent 单一职责</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据架构">数据架构</a></li>
+    <li><a href="#plans-多-agent-执行方案">PLANS 多 Agent 执行方案</a>
+      <ul>
+        <li><a href="#架构总览">架构总览</a></li>
+        <li><a href="#agent-清单">Agent 清单</a></li>
+        <li><a href="#数据流与依赖关系">数据流与依赖关系</a></li>
+        <li><a href="#编排器-plans-工作流">编排器 <code>/plans</code> 工作流</a></li>
+      </ul>
+    </li>
+    <li><a href="#dfma-学习笔记">DFMA 学习笔记</a>
+      <ul>
+        <li><a href="#一内容范围">一、内容范围</a></li>
+        <li><a href="#二三大降本途径"><strong>二、三大降本途径</strong></a></li>
+        <li><a href="#三dfa-核心原则"><strong>三、DFA 核心原则</strong></a></li>
+        <li><a href="#四dfm-核心原则"><strong>四、DFM 核心原则</strong></a></li>
+        <li><a href="#五dfma-实施流程"><strong>五、DFMA 实施流程</strong></a></li>
+        <li><a href="#六dfma-与其他工具的关系"><strong>六、DFMA 与其他工具的关系</strong></a></li>
+        <li><a href="#七常见工艺的-dfma-速查"><strong>七、常见工艺的 DFMA 速查</strong></a></li>
+        <li><a href="#八新兴趋势2025-2026"><strong>八、新兴趋势（2025-2026）</strong></a></li>
+        <li><a href="#九快速参考表"><strong>九、快速参考表</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#扩展阅读">扩展阅读</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">unit-bot更新记 PLANTS价值设计流程</h1>
+
+      
+      <div class="text-xs antialiased opacity-60">
+        
+        <time>May 9, 2026</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
+      </div>
+      
+    </header>
+
+    <section><p>昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 <a href="https://github.com/fifteenbao/unit-bot">unit-bot</a>, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。</p>
+<p>这次更新明确了 <strong>PLANTS价值设计流程</strong>，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。
+顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。</p>
+<h2 id="plans-价值设计流程">PLANS 价值设计流程</h2>
+<hr>
+<pre tabindex="0"><code>P 现状研究  →  L 精益设计  →  A 先进裁剪  →  N 价值创新  →  S 体系建设
+3 agent       2 agent (DFMA)  2 agent (TRIZ)  3 agent       2 agent
+</code></pre><p><strong>PLANS 价值设计流程</strong></p>
+<blockquote>
+<p>一条从现状研究到体系建设的极致降本路径。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>全称</th>
+          <th>核心方法</th>
+          <th>关键活动</th>
+          <th>产出</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>P</strong></td>
+          <td>现状研究</td>
+          <td>拆解分析 · 对标研究 · MVP 分析</td>
+          <td>产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集</td>
+          <td>事实基线文档、拆解报告、最少件清单、问题清单</td>
+      </tr>
+      <tr>
+          <td><strong>L</strong></td>
+          <td>精益设计</td>
+          <td>DFA 9 项 · DFM 5 项 · Should Cost</td>
+          <td>DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化<br>DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模）</td>
+          <td>DFA/DFM 优化方案、降本潜力估算、采购谈判数据</td>
+      </tr>
+      <tr>
+          <td><strong>A</strong></td>
+          <td>先进裁剪 · TRIZ</td>
+          <td>功能分析 · 三级裁剪 · 矛盾矩阵</td>
+          <td>逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离）</td>
+          <td>裁剪路径方案、矛盾解决方向</td>
+      </tr>
+      <tr>
+          <td><strong>N</strong></td>
+          <td>价值创新</td>
+          <td>FOS · 专利规避 · S 曲线</td>
+          <td>跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断</td>
+          <td>创新机会地图、替代方案池</td>
+      </tr>
+      <tr>
+          <td><strong>S</strong></td>
+          <td>体系建设</td>
+          <td>平台化 · 复杂性管理 · 五维成本体系</td>
+          <td>产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程</td>
+          <td>平台化方案、成本管理流程、组织能力固化方案</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="命令一览">命令一览</h2>
+<blockquote>
+<p>命令统一接受 <code>&lt;品牌&gt; &lt;型号&gt;</code> 格式（如 <code>石头 G30 Pro</code>、<code>追觅 X50 Ultra</code>）。</p>
+</blockquote>
+<h3 id="plans-12-子-agent--每个-agent-单一职责">PLANS 12 子 agent — 每个 agent 单一职责</h3>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>命令</th>
+          <th>Agent 角色</th>
+          <th>上游依赖</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>P</strong> 现状研究</td>
+          <td><code>/research &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>产品研究员</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/teardown &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>拆解分析师</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/issues &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>问题诊断师</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><strong>L</strong> 精益设计</td>
+          <td><code>/dfa &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>DFA 优化师</td>
+          <td><code>/teardown</code> + <code>/issues</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/dfm &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>DFM 优化师（含 Should Cost）</td>
+          <td><code>/teardown</code></td>
+      </tr>
+      <tr>
+          <td><strong>A</strong> 先进裁剪</td>
+          <td><code>/function &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>功能建模师（TRIZ）</td>
+          <td><code>/dfa</code> + <code>/dfm</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/trim &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>裁剪策略师（TRIZ 矛盾）</td>
+          <td><code>/function</code></td>
+      </tr>
+      <tr>
+          <td><strong>N</strong> 价值创新</td>
+          <td><code>/fos &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>功能创新搜索师</td>
+          <td><code>/trim</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/patent &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>专利规避师 ⚠️非法律意见</td>
+          <td><code>/fos</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/trend &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>趋势分析师（S 曲线）</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><strong>S</strong> 体系建设</td>
+          <td><code>/platform &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>平台架构师</td>
+          <td><code>/trim</code> + <code>/fos</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>/costsystem &lt;品牌&gt; &lt;型号&gt;</code></td>
+          <td>成本体系构建师</td>
+          <td><code>/trim</code> + <code>/fos</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="数据架构">数据架构</h2>
+<p>系统维护 9 个数据库，分工明确：</p>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>数据库</th>
+          <th>文件</th>
+          <th>回答的问题</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>①</td>
+          <td>产品规格库</td>
+          <td><code>data/products/products_db.json</code></td>
+          <td>这台机器<strong>是什么</strong></td>
+      </tr>
+      <tr>
+          <td>②</td>
+          <td>拆机档案</td>
+          <td><code>data/teardowns/{slug}_*.csv</code> + <code>fcc/{slug}/</code></td>
+          <td>这台机器<strong>用了什么件</strong></td>
+      </tr>
+      <tr>
+          <td>③</td>
+          <td>标准件库</td>
+          <td><code>data/lib/components_lib.csv</code></td>
+          <td>这类件<strong>值多少钱</strong></td>
+      </tr>
+      <tr>
+          <td>④</td>
+          <td>材料库</td>
+          <td><code>data/lib/materials.csv</code></td>
+          <td>原材料<strong>怎么定价</strong></td>
+      </tr>
+      <tr>
+          <td>⑤</td>
+          <td>供应商应该成本库</td>
+          <td><code>data/lib/suppliers.csv</code></td>
+          <td><strong>谁在供货</strong>、应该成本是多少</td>
+      </tr>
+      <tr>
+          <td>⑥</td>
+          <td>工艺库</td>
+          <td><code>data/lib/processes.csv</code> <em>(待建)</em></td>
+          <td>这个件<strong>怎么做出来</strong>、工时多少</td>
+      </tr>
+      <tr>
+          <td>⑦</td>
+          <td>模具库</td>
+          <td><code>data/lib/molds.csv</code> <em>(待建)</em></td>
+          <td>模具<strong>摊销多少</strong>、寿命多少</td>
+      </tr>
+      <tr>
+          <td>⑧</td>
+          <td>加工工具库</td>
+          <td><code>data/lib/tooling.csv</code> <em>(待建)</em></td>
+          <td>用什么<strong>夹具/刀具</strong>、单件折旧多少</td>
+      </tr>
+      <tr>
+          <td>⑨</td>
+          <td>PLANS 研究库</td>
+          <td><code>data/plans/plans_db.json</code> + <code>{slug}/*.md</code></td>
+          <td>我们做过哪些<strong>降本研究</strong></td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>⑥/⑦/⑧ 三库是 <code>/dfm</code> 应该成本（Should Cost）建模的关键输入：
+<strong>应该成本 = 材料（④）+ 加工工时×费率（⑥工艺）+ 模具摊销（⑦）+ 工具折旧（⑧）+ 合理利润</strong>
+三库 schema 设计中，先以 <code>/dfm</code> 子 agent 推理 + 行业基准估算填充，逐步沉淀。</p>
+</blockquote>
+<h2 id="plans-多-agent-执行方案">PLANS 多 Agent 执行方案</h2>
+<blockquote>
+<p>参照 <a href="https://github.com/fifteenbao/unit-bot">unit-bot</a> 的命令驱动 Agent 模式设计——每个 Agent 边界清晰（做什么 / 不做什么），下游依赖上游产出，形成一条可编排的降本分析流水线。</p>
+</blockquote>
+<h3 id="架构总览">架构总览</h3>
+<pre tabindex="0"><code>                    ┌──────────────────────┐
+                    │   /plans &lt;product&gt;    │  ← 编排器
+                    │   全流程串联执行        │
+                    └──────────┬───────────┘
+                               │
+        ┌──────────────────────┼──────────────────────┐
+        ▼                      ▼                      ▼
+   ┌─────────┐           ┌─────────┐           ┌─────────┐
+   │ P 阶段   │           │ L 阶段   │           │ A 阶段   │
+   │ 3 Agent │ ────────▶ │ 2 Agent │ ────────▶ │ 2 Agent │
+   └─────────┘           └─────────┘           └─────────┘
+        │                      │                      │
+        └──────────────────────┼──────────────────────┘
+                               │
+                    ┌──────────┴───────────┐
+                    ▼                      ▼
+               ┌─────────┐           ┌─────────┐
+               │ N 阶段   │           │ S 阶段   │
+               │ 3 Agent │ ────────▶ │ 2 Agent │
+               └─────────┘           └─────────┘
+</code></pre><h3 id="agent-清单">Agent 清单</h3>
+<h4 id="p-阶段现状研究-3-agent">P 阶段（现状研究）— 3 Agent</h4>
+<table>
+<tr><th>命令</th><th>Agent</th><th>做什么</th><th>不做什么</th></tr>
+<tr>
+<td><code>/research &lt;product&gt;</code></td>
+<td>产品研究员</td>
+<td>多源采集产品定位、客户需求（MVP 分析）、对标竞品、关键指标</td>
+<td>不做成本分析、不做拆解</td>
+</tr>
+<tr>
+<td><code>/teardown &lt;product&gt;</code></td>
+<td>拆解分析师</td>
+<td>产品拆解流程记录、装配流程逆向分析、最少件清单、装配问题清单</td>
+<td>不计算成本、不给优化建议</td>
+</tr>
+<tr>
+<td><code>/issues &lt;product&gt;</code></td>
+<td>问题诊断师</td>
+<td>质量问题清单、维修维护问题清单、改善机会识别</td>
+<td>不给解决方案</td>
+</tr>
+</table>
+<h4 id="l-阶段精益设计-2-agent">L 阶段（精益设计）— 2 Agent</h4>
+<blockquote>
+<p>⚠️ 上游依赖：需先跑过 P 阶段的 <code>/teardown</code> 和 <code>/issues</code></p>
+</blockquote>
+<table>
+<tr><th>命令</th><th>Agent</th><th>做什么</th><th>不做什么</th></tr>
+<tr>
+<td><code>/dfa &lt;product&gt;</code></td>
+<td>DFA 优化师</td>
+<td>最小件合并、紧固件减少、自定位防呆、自固定设计、过约束/欠约束检查、装配动作消除、焊接粘接螺纹紧固替代、人体工学评估、标准化建议</td>
+<td>不做材料/工艺分析（那是 DFM 的活）</td>
+</tr>
+<tr>
+<td><code>/dfm &lt;product&gt;</code></td>
+<td>DFM 优化师</td>
+<td>材料替代方案、工艺改变评估、加工精度放宽建议、表面处理简化、结构简化</td>
+<td>不做装配分析（那是 DFA 的活）</td>
+</tr>
+</table>
+<h4 id="a-阶段先进裁剪--triz-2-agent">A 阶段（先进裁剪 · TRIZ）— 2 Agent</h4>
+<blockquote>
+<p>⚠️ 上游依赖：需先跑过 L 阶段的 <code>/dfa</code> 和 <code>/dfm</code>
+💡 <strong>方法论</strong>：A 阶段以 <strong>TRIZ</strong> 为核心方法论，包含功能分析、裁剪（Trimming）、技术矛盾（矛盾矩阵 39×39）、物理矛盾（时间/空间/条件分离）、物场分析等工具。</p>
+</blockquote>
+<table>
+<tr><th>命令</th><th>Agent</th><th>做什么</th><th>不做什么</th></tr>
+<tr>
+<td><code>/function &lt;product&gt;</code></td>
+<td>功能建模师</td>
+<td>功能建模（逆向）、功能价值分析（价值/成本比）、功能缺陷识别</td>
+<td>不做具体裁剪决策</td>
+</tr>
+<tr>
+<td><code>/trim &lt;product&gt;</code></td>
+<td>裁剪策略师</td>
+<td>裁剪功能缺陷、裁剪价值&lt;1 的组件、激进裁剪路线规划、技术矛盾分析（TRIZ）、物理矛盾分析、关键功能缺陷补救方案</td>
+<td>不做新材料/新工艺推荐（那是 N 阶段的活）</td>
+</tr>
+</table>
+<h4 id="n-阶段价值创新-3-agent">N 阶段（价值创新）— 3 Agent</h4>
+<blockquote>
+<p>⚠️ 上游依赖：需先跑过 A 阶段的 <code>/function</code> 和 <code>/trim</code></p>
+</blockquote>
+<table>
+<tr><th>命令</th><th>Agent</th><th>做什么</th><th>不做什么</th></tr>
+<tr>
+<td><code>/fos &lt;function&gt;</code></td>
+<td>功能创新搜索师</td>
+<td>跨领域搜索功能替代方案（FOS）、筛选可行方案、落实功能实现新方案</td>
+<td>不做专利法律判断</td>
+</tr>
+<tr>
+<td><code>/patent &lt;solution&gt;</code></td>
+<td>专利规避师</td>
+<td>专利检索、权利要求映射、规避方案设计</td>
+<td>不提供法律意见、不判断侵权</td>
+</tr>
+<tr>
+<td><code>/trend &lt;tech&gt;</code></td>
+<td>趋势分析师</td>
+<td>S 曲线分析（判断技术成熟度）、系统进化趋势分析、创新方向规划、四新设计机会（新材料/新工艺/新造型/新控制）</td>
+<td>不评价具体供应商</td>
+</tr>
+</table>
+<h4 id="s-阶段体系建设-2-agent">S 阶段（体系建设）— 2 Agent</h4>
+<blockquote>
+<p>⚠️ 阶段级依赖：需所有前序阶段产出</p>
+</blockquote>
+<table>
+<tr><th>命令</th><th>Agent</th><th>做什么</th><th>不做什么</th></tr>
+<tr>
+<td><code>/platform &lt;product&gt;</code></td>
+<td>平台架构师</td>
+<td>产品复杂性分析、平台化模块化方案设计、共用模块识别、复杂性管理流程建议</td>
+<td>不做具体零件设计</td>
+</tr>
+<tr>
+<td><code>/costsystem &lt;product&gt;</code></td>
+<td>成本体系构建师</td>
+<td>组织建设方案、设施建设规划（拆解实验室等）、能力建设路线、成本数据库架构、流程嵌入方案（PLANS → NPI）</td>
+<td>不做即时成本核算</td>
+</tr>
+</table>
+<hr>
+<h3 id="数据流与依赖关系">数据流与依赖关系</h3>
+<pre tabindex="0"><code>P: /research ─┬─▶ /teardown ─┬─▶ L: /dfa ──┬─▶ A: /function ──┬─▶ N: /fos ──┬─▶ S: /platform
+              │              │             │                  │             │
+              └─▶ /issues ───┘             ├─▶ /dfm ──┼──────┤             ├─▶ /patent ──┤
+                                          │          │      │             │             │
+                                          │          └─▶ /trim ───┼─────────┤             ├─▶ /costsystem
+                                          │                        │         │             │
+                                          │                        │         └─▶ /trend ───┘
+                                          │                        │
+                                          └─ 采购降本（Should Cost 谈判）◀────────┘
+</code></pre><blockquote>
+<p><strong>关键约束</strong>：每个命令都是幂等的——可单独重新运行而不影响已产出的下游结果，只要上游输入未变。</p>
+</blockquote>
+<hr>
+<h3 id="编排器-plans-工作流">编排器 <code>/plans</code> 工作流</h3>
+<pre tabindex="0"><code>/plans &lt;product&gt;
+
+  ┌─ Phase P ─────────────────────────────────────────┐
+  │  /research &lt;product&gt;  ──→  产品定位 &amp; 对标报告      │
+  │  /teardown &lt;product&gt;  ──→  拆解 &amp; 装配流程报告       │
+  │  /issues &lt;product&gt;    ──→  问题清单                 │
+  │  产出：事实基线文档                                  │
+  └────────────────────────────────────────────────────┘
+                          │
+  ┌─ Phase L ─────────────────────────────────────────┐
+  │  /dfa &lt;product&gt;  ──→  DFA 优化方案                 │
+  │  /dfm &lt;product&gt;  ──→  DFM 优化方案                 │
+  │  产出：精益设计报告 + 降本潜力估算                    │
+  └────────────────────────────────────────────────────┘
+                          │
+  ┌─ Phase A ─────────────────────────────────────────┐
+  │  /function &lt;product&gt;  ──→  功能价值矩阵             │
+  │  /trim &lt;product&gt;      ──→  裁剪方案 + TRIZ 分析     │
+  │  产出：裁剪路径 + 矛盾解决方向                        │
+  └────────────────────────────────────────────────────┘
+                          │
+  ┌─ Phase N ─────────────────────────────────────────┐
+  │  /fos &lt;function&gt;  ──→  替代方案池                  │
+  │  /patent &lt;solution&gt; ──→  规避方案                   │
+  │  /trend &lt;tech&gt;     ──→  技术趋势 + 四新方向          │
+  │  产出：创新机会地图                                  │
+  └────────────────────────────────────────────────────┘
+                          │
+  ┌─ Phase S ─────────────────────────────────────────┐
+  │  /platform &lt;product&gt;  ──→  平台化方案               │
+  │  /costsystem &lt;product&gt; ──→  体系建设方案             │
+  │  产出：组织能力固化方案                               │
+  └────────────────────────────────────────────────────┘
+                          │
+                          ▼
+              最终产出：PLANS 综合降本报告
+</code></pre><hr>
+<h2 id="dfma-学习笔记">DFMA 学习笔记</h2>
+<p>DFMA 全称 <strong>Design for Manufacture and Assembly</strong>（面向制造及装配的设计），是 <strong>Boothroyd-Dewhurst 公司</strong> 开发的 <strong>结构性方法</strong>，核心思路是：<strong>通过简化设计，实现低成本、高质量的生产制造。</strong></p>
+<p>DFMA 包含两个相互协同的子领域：</p>
+<table>
+  <thead>
+      <tr>
+          <th>子领域</th>
+          <th>全称</th>
+          <th>关注点</th>
+          <th>目标</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DFM</strong></td>
+          <td>Design for Manufacturing</td>
+          <td>单个零件的制造工艺性</td>
+          <td>让每个零件易于加工、成本可控</td>
+      </tr>
+      <tr>
+          <td><strong>DFA</strong></td>
+          <td>Design for Assembly</td>
+          <td>零件之间的装配过程</td>
+          <td>减少零件数量、简化装配动作</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>核心数据</strong>：产品生命周期成本的 <strong>70%~80%</strong> 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。</p>
+</blockquote>
+<blockquote>
+<p>目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。</p>
+</blockquote>
+<h3 id="一内容范围">一、内容范围</h3>
+<h4 id="dfa-优化面向装配的设计"><strong>DFA 优化（面向装配的设计）</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>优化方向</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>最小件为核心的合并</td>
+          <td>以减少零件数量为核心，合并可合并的零件</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>紧固件的减少</td>
+          <td>消除不必要的螺钉、螺栓、铆钉</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>自定位及防呆设计</td>
+          <td>Poka-Yoke，物理上杜绝装错</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>自固定设计</td>
+          <td>消除额外固定件，零件自身完成固定</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>防止欠约束及过约束</td>
+          <td>刚好约束，不多不少</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>单独装配动作的消除</td>
+          <td>合并步骤，减少工时</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>焊接/粘接/螺纹紧固的消除</td>
+          <td>用卡扣、压配、一体成型替代</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>解决人体工学问题</td>
+          <td>减少操作疲劳和损伤</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>标准化设计</td>
+          <td>通用零件、统一接口</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="dfm-优化面向制造的设计"><strong>DFM 优化（面向制造的设计）</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>优化方向</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>材料替代</td>
+          <td>更便宜、更易加工的材料</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>工艺改变</td>
+          <td>从高成本工艺转向低成本工艺</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>加工精度放宽</td>
+          <td>只保留功能必要的公差</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>表面处理简化</td>
+          <td>减少不必要的涂装/电镀</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>结构简化</td>
+          <td>减少加工步骤和装夹次数</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="采购降本"><strong>采购降本</strong></h4>
+<p>基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。</p>
+<h3 id="二三大降本途径"><strong>二、三大降本途径</strong></h3>
+<p>DFMA 提供了一套 <strong>数据驱动的工具集合</strong>，主要通过以下三种方式实现降本：</p>
+<h4 id="1-设计简化降本"><strong>1. 设计简化降本</strong></h4>
+<blockquote>
+<p>通过分析装配环节，寻找减少零件数量的机会。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>做法</strong></td>
+          <td>对现有设计进行 DFA 分析，逐一审视每个零件存在的必要性</td>
+      </tr>
+      <tr>
+          <td><strong>工具</strong></td>
+          <td>Boothroyd-Dewhurst 三问法、装配流程图</td>
+      </tr>
+      <tr>
+          <td><strong>案例</strong></td>
+          <td>某产品零件数从 <strong>19 个减至 7 个</strong>，产品总成本降低 <strong>46%</strong></td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="2-材料及工艺优化降本"><strong>2. 材料及工艺优化降本</strong></h5>
+<blockquote>
+<p>计算并比较不同工艺和材料的成本，找到直接生产环节的省钱空间。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>做法</strong></td>
+          <td>对不同工艺路线（如砂铸 vs 压铸）进行成本建模和对比</td>
+      </tr>
+      <tr>
+          <td><strong>工具</strong></td>
+          <td>工艺成本模型、材料单价数据库、制造周期估算</td>
+      </tr>
+      <tr>
+          <td><strong>关键</strong></td>
+          <td>在概念阶段做出正确的工艺选择，避免后期被迫接受高成本方案</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="3-商务谈判降本应该成本计算"><strong>3. 商务谈判降本（应该成本计算）</strong></h5>
+<blockquote>
+<p>精确计算出零部件的「<strong>应该成本</strong>（Should Cost）」，使企业在供应商谈判中获得主动权和竞争优势。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>做法</strong></td>
+          <td>基于材料成本 + 加工工时 + 合理利润，从零建模零件的理论成本</td>
+      </tr>
+      <tr>
+          <td><strong>价值</strong></td>
+          <td>不再是「供应商报多少是多少」，而是拿着数据去谈判</td>
+      </tr>
+      <tr>
+          <td><strong>效果</strong></td>
+          <td>识别报价虚高、推动供应商优化、建立长期定价基准</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>三者关系</strong>：设计简化解决「能不能不做」的问题，工艺优化解决「怎么做更便宜」的问题，应该成本解决「花多少钱才合理」的问题——三层递进，覆盖产品从设计到采购的全链路降本。</p>
+</blockquote>
+<h3 id="三dfa-核心原则"><strong>三、DFA 核心原则</strong></h3>
+<h4 id="1-最小化零件数量最重要原则"><strong>1. 最小化零件数量（最重要原则）</strong></h4>
+<blockquote>
+<p><strong>这是 DFMA 中影响最大的单一技术。</strong></p>
+</blockquote>
+<p>使用 <strong>Boothroyd-Dewhurst 三问法</strong> 审视每一个零件：</p>
+<table>
+  <thead>
+      <tr>
+          <th>#</th>
+          <th>问题</th>
+          <th>如果「否」则考虑合并/消除</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>该零件是否相对相邻零件有运动？</td>
+          <td>可合并</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>该零件是否必须使用不同材料？</td>
+          <td>可合并</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>该零件是否必须分离以便装配或维修？</td>
+          <td>可合并</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>效果</strong>：行业数据表明，零件数量通常可减少 <strong>30%~70%</strong>。</p>
+<p><strong>案例</strong>：某产品原有 200+ 个零件，经过 DFA 分析后减少到 80 个，装配时间缩短了 60%。</p>
+<h4 id="2-自上而下z-轴装配"><strong>2. 自上而下（Z 轴）装配</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>原则</strong></td>
+          <td>零件沿着重力方向从上向下堆叠</td>
+      </tr>
+      <tr>
+          <td><strong>好处</strong></td>
+          <td>利用重力自动定位、减少翻转和重新定向</td>
+      </tr>
+      <tr>
+          <td><strong>关键</strong></td>
+          <td>尽量让所有零件在同一方向装配</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>实例</strong>：电子产品的「三明治」堆叠结构——底壳 → PCB → 屏幕 → 面板 → 顶壳，全部自上而下装配。</p>
+<h4 id="3-防错设计-poka-yoke"><strong>3. 防错设计 (Poka-Yoke)</strong></h4>
+<blockquote>
+<p><strong>通过物理结构让错误装配变得不可能。</strong></p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>技术</th>
+          <th>说明</th>
+          <th>示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>不对称几何</td>
+          <td>只有正确方向才能装进去</td>
+          <td>USB-A 接口（仅单向插入）</td>
+      </tr>
+      <tr>
+          <td>键位/缺口</td>
+          <td>用不同凸起防错位</td>
+          <td>不同 PIN 数的排针对应不同孔位</td>
+      </tr>
+      <tr>
+          <td>导引特征</td>
+          <td>倒角、喇叭口引导装配</td>
+          <td>连接器上的导引槽</td>
+      </tr>
+      <tr>
+          <td>颜色/标识</td>
+          <td>视觉区分接口</td>
+          <td>不同颜色的线束接头</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="4-减少紧固件"><strong>4. 减少紧固件</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>传统方式</th>
+          <th>替代方案</th>
+          <th>优势</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>螺钉/螺栓</td>
+          <td>卡扣 (Snap-fit)</td>
+          <td>免工具、快速</td>
+      </tr>
+      <tr>
+          <td>螺母+垫圈</td>
+          <td>压配合 (Press-fit)</td>
+          <td>减少零件</td>
+      </tr>
+      <tr>
+          <td>金属支架</td>
+          <td>一体成型的塑料结构</td>
+          <td>消除 + 减轻重量</td>
+      </tr>
+      <tr>
+          <td>螺钉固定盖板</td>
+          <td>活铰链 (Living hinge)</td>
+          <td>零额外的零件</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>经验法则</strong>：每个螺钉的装配时间约 6~10 秒，一个产品有 20 颗螺钉就意味着近 3 分钟的装配成本。</p>
+<h4 id="5-标准化与模块化"><strong>5. 标准化与模块化</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>策略</th>
+          <th>做法</th>
+          <th>价值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>标准化</strong></td>
+          <td>使用通用紧固件、轴承、弹簧等</td>
+          <td>减少 SKU、批量采购折扣</td>
+      </tr>
+      <tr>
+          <td><strong>优选零件库</strong></td>
+          <td>建立经验证的标准件清单</td>
+          <td>减少设计时间、降低错误</td>
+      </tr>
+      <tr>
+          <td><strong>模块化</strong></td>
+          <td>公共子组件跨产品复用</td>
+          <td>规模效应、简化维修</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>实例</strong>：汽车平台化——大众 MQB 平台，不同车型共享大量子组件，大幅降低开发和制造成本。</p>
+<h3 id="四dfm-核心原则"><strong>四、DFM 核心原则</strong></h3>
+<h4 id="1-功能公差-functional-tolerancing"><strong>1. 功能公差 (Functional Tolerancing)</strong></h4>
+<blockquote>
+<p><strong>只在功能必要的特征上施加严格公差。过度标注公差是最常见的成本驱动因素之一。</strong></p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>公差等级</th>
+          <th>加工方法</th>
+          <th>相对成本</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>±0.5mm</td>
+          <td>通用加工</td>
+          <td>1×</td>
+      </tr>
+      <tr>
+          <td>±0.1mm</td>
+          <td>精密加工</td>
+          <td>3~5×</td>
+      </tr>
+      <tr>
+          <td>±0.01mm</td>
+          <td>研磨/精磨</td>
+          <td>10~20×</td>
+      </tr>
+      <tr>
+          <td>±0.001mm</td>
+          <td>超精密加工</td>
+          <td>50×+</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键问题</strong>：这个公差真的影响功能吗？还是只是「习惯性标注」？</p>
+<h4 id="2-材料选择与工艺匹配"><strong>2. 材料选择与工艺匹配</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>工艺</th>
+          <th>典型材料</th>
+          <th>设计要点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>注塑成型</strong></td>
+          <td>ABS、PC、PP、PA</td>
+          <td>均匀壁厚、拔模斜度 1°~3°、避免底切</td>
+      </tr>
+      <tr>
+          <td><strong>CNC 加工</strong></td>
+          <td>铝、钢、黄铜</td>
+          <td>避免尖内角（加圆角 R≥刀具半径）、深腔用大径刀具</td>
+      </tr>
+      <tr>
+          <td><strong>钣金</strong></td>
+          <td>钢板、铝板</td>
+          <td>弯曲半径≥板厚、孔边距≥板厚、避免密集孔</td>
+      </tr>
+      <tr>
+          <td><strong>压铸</strong></td>
+          <td>锌合金、铝合金</td>
+          <td>与注塑类似但有最小壁厚要求</td>
+      </tr>
+      <tr>
+          <td><strong>3D 打印</strong></td>
+          <td>PLA、ABS、树脂、金属粉末</td>
+          <td>考虑方向效应、支撑移除、封闭空腔排粉</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="3-多功能零件"><strong>3. 多功能零件</strong></h4>
+<blockquote>
+<p><strong>一个精心设计的零件可以承担多个角色，减少额外的分隔件、支架和对齐特征。</strong></p>
+</blockquote>
+<p><strong>实例</strong>：</p>
+<ul>
+<li>电池仓盖同时作为加强筋 → 消除单独的加强件</li>
+<li>卡扣同时实现固定 + 定位 + 电气接地</li>
+<li>外壳同时是散热器（散热鳍片一体成型）</li>
+</ul>
+<h4 id="4-制造工艺约束优先"><strong>4. 制造工艺约束优先</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>工艺</th>
+          <th>关键约束</th>
+          <th>设计红线</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>注塑</td>
+          <td>模具分型面</td>
+          <td>避免倒扣（undercut）在分型方向之外</td>
+      </tr>
+      <tr>
+          <td>CNC 车削</td>
+          <td>旋转对称</td>
+          <td>非轴对称特征需要铣削工序</td>
+      </tr>
+      <tr>
+          <td>钣金冲压</td>
+          <td>材料拉伸极限</td>
+          <td>深度/直径比不超过材料延伸率</td>
+      </tr>
+      <tr>
+          <td>铸造</td>
+          <td>金属流动</td>
+          <td>壁厚不能太薄（流动性不足）</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="五dfma-实施流程"><strong>五、DFMA 实施流程</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>关键活动</th>
+          <th>产出物</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>概念设计</strong></td>
+          <td>工艺路线评估、初始成本建模</td>
+          <td>制造策略方案</td>
+      </tr>
+      <tr>
+          <td><strong>详细设计</strong></td>
+          <td>零件合并、公差分析、CAD 可制造性检查</td>
+          <td>优化后的 BOM</td>
+      </tr>
+      <tr>
+          <td><strong>原型验证</strong></td>
+          <td>实物装配试验、工时测定、人机工程测试</td>
+          <td>装配可行性报告</td>
+      </tr>
+      <tr>
+          <td><strong>供应商导入</strong></td>
+          <td>早期供应商介入 (ESI)、CM 反馈</td>
+          <td>对齐制造能力的设计</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>关键时机</strong>：DFMA 必须<strong>尽早介入</strong>，而不是作为设计冻结后的「过关审核」。越早应用，收益越大。</p>
+</blockquote>
+<h3 id="六dfma-与其他工具的关系"><strong>六、DFMA 与其他工具的关系</strong></h3>
+<h4 id="dfma--dfmea--pfmea-三位一体"><strong>DFMA + DFMEA + PFMEA 三位一体</strong></h4>
+<table>
+  <thead>
+      <tr>
+          <th>工具</th>
+          <th>关注点</th>
+          <th>问题</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DFMA</strong></td>
+          <td>可制造性 + 可装配性</td>
+          <td>「能不能做？能不能装？」</td>
+      </tr>
+      <tr>
+          <td><strong>DFMEA</strong></td>
+          <td>设计失效模式</td>
+          <td>「设计哪里会出问题？」</td>
+      </tr>
+      <tr>
+          <td><strong>PFMEA</strong></td>
+          <td>过程失效模式</td>
+          <td>「制造过程中哪里会出问题？」</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>最佳实践</strong>：三者在设计评审中联动使用——DFMA 优化结构和工艺，DFMEA 识别设计风险，PFMEA 保障量产可靠性。</p>
+<h3 id="七常见工艺的-dfma-速查"><strong>七、常见工艺的 DFMA 速查</strong></h3>
+<h4 id="注塑件-dfm-要点"><strong>注塑件 DFM 要点</strong></h4>
+<ul>
+<li>✅ 均匀壁厚（±25% 以内），避免缩痕</li>
+<li>✅ 拔模斜度 1°~3°（每 25mm 深度至少 1°）</li>
+<li>✅ 避免尖角，圆角半径 ≥ 0.5mm</li>
+<li>✅ 筋位厚度 ≤ 名义壁厚的 60%</li>
+<li>✅ 浇口位置避免影响外观面</li>
+</ul>
+<h4 id="钣金件-dfm-要点"><strong>钣金件 DFM 要点</strong></h4>
+<ul>
+<li>✅ 最小弯曲内半径 ≥ 材料厚度</li>
+<li>✅ 孔到折弯边距离 ≥ 1.5× 材料厚度 + 弯曲半径</li>
+<li>✅ 避免过小的凸台/凸缘</li>
+<li>✅ 考虑材料回弹（尤其不锈钢）</li>
+</ul>
+<h4 id="cnc-加工-dfm-要点"><strong>CNC 加工 DFM 要点</strong></h4>
+<ul>
+<li>✅ 内直角加圆角（R ≥ 刀具半径）</li>
+<li>✅ 孔深/孔径比 ≤ 4:1（标准），≤ 10:1（深孔钻）</li>
+<li>✅ 避免薄壁（最小壁厚 ≥ 0.8mm 金属，≥ 1.5mm 塑料）</li>
+<li>✅ 减少装夹次数（尽量一次装夹完成所有加工面）</li>
+</ul>
+<h3 id="八新兴趋势2025-2026"><strong>八、新兴趋势（2025-2026）</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th>趋势</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>供应链韧性</strong></td>
+          <td>DFMA 通过标准化和简化 BOM，减少对单一供应商的依赖</td>
+      </tr>
+      <tr>
+          <td><strong>回流制造</strong></td>
+          <td>通过自动化友好设计降低人工占比，支撑制造回流</td>
+      </tr>
+      <tr>
+          <td><strong>3D 打印扩展</strong></td>
+          <td>DFMA 原则延伸到增材制造，考虑打印方向、支撑、排粉</td>
+      </tr>
+      <tr>
+          <td><strong>AI + DFMA</strong></td>
+          <td>CAD 集成软件可自动检测可制造性问题并给出改进建议</td>
+      </tr>
+      <tr>
+          <td><strong>数字线</strong></td>
+          <td>全链路数字模型，设计师在设计阶段即可模拟制造过程</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="九快速参考表"><strong>九、快速参考表</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th>原则</th>
+          <th>一句话总结</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>减少零件数量</td>
+          <td>消除一切非必要零件</td>
+          <td>⭐⭐⭐ 最高</td>
+      </tr>
+      <tr>
+          <td>自上而下装配</td>
+          <td>重力辅助、单轴堆叠</td>
+          <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>Poka-Yoke</td>
+          <td>物理防错，杜绝装反</td>
+          <td>⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td>功能公差</td>
+          <td>只在必要时紧公差</td>
+          <td>⭐⭐</td>
+      </tr>
+      <tr>
+          <td>标准化</td>
+          <td>通用零件优先</td>
+          <td>⭐⭐</td>
+      </tr>
+      <tr>
+          <td>减少紧固件</td>
+          <td>卡扣、压配替代螺钉</td>
+          <td>⭐⭐</td>
+      </tr>
+      <tr>
+          <td>模块化</td>
+          <td>子组件跨产品复用</td>
+          <td>⭐⭐</td>
+      </tr>
+      <tr>
+          <td>多功能零件</td>
+          <td>一个零件多个角色</td>
+          <td>⭐</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="扩展阅读">扩展阅读</h2>
+<p>完整文件树和各模块说明见 <a href="https://github.com/fifteenbao/unit-bot/blob/main/%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8BPLANS.md">agents/README.md</a> 和 <a href="https://github.com/fifteenbao/unit-bot/blob/main/docs/agents_architecture.md">docs/agents_architecture.md</a>。</p>
+</section>
+
+    
+    <footer class="post-tags-footer">
+      <div class="post-tags-header">
+        <span class="post-tags-label">标签</span>
+        
+        <span class="post-tags-related">1 篇文章有相同标签组合</span>
+        
+        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+      </div>
+      <div class="post-tags-list">
+        <a href="https://fifteenbao.com/tags/triz" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">TRIZ</span>
+          <span class="post-tag-count">1</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">机巧司</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/bom" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">bom</span>
+          <span class="post-tag-count">2</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/dfma" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">DFMA</span>
+          <span class="post-tag-count">2</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/agent" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">agent</span>
+          <span class="post-tag-count">2</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E9%99%8D%E6%9C%AC%E8%AE%BE%E8%AE%A1" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">降本设计</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        
+      </div>
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav
+      class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    >
+      
+      
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/"
+        ><span>开发记 - 扫地机器人BOM成本分析平台</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      >
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<style>
+  
+
+  .article-container {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .article-content {
+    width: 100%;
+    max-width: none;
+  }
+
+   
+  .toc-sidebar {
+    position: absolute;
+    right: calc(100% + 1rem);
+    top: 0;
+    width: 220px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+   
+  @media (min-width: 1280px) {
+    .toc-sidebar {
+      position: fixed;
+      left: calc((100vw - var(--w)) / 2 - 240px);
+      right: auto;
+      top: 8rem;
+      width: 220px;
+      max-height: calc(100vh - 10rem);
+    }
+
+    .article-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+   
+  @media (min-width: 1600px) {
+    .toc-sidebar {
+      left: calc((100vw - var(--w)) / 2 - 240px);
+    }
+  }
+
+   
+  .article-content .prose {
+    font-size: 0.9375rem;  
+    line-height: 1.75;
+  }
+
+  .article-content .prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .article-content .prose h1 {
+    font-size: 1.75em;  
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h2 {
+    font-size: 1.375em;  
+    line-height: 1.4;
+    margin-top: 1.75em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h3 {
+    font-size: 1.15em;  
+    line-height: 1.4;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+  .article-content .prose h4 {
+    font-size: 1em;  
+    line-height: 1.5;
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+
+   
+  .article-content .prose ul,
+  .article-content .prose ol {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .article-content .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .article-content .prose blockquote {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .article-content .prose blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .article-content .prose {
+      font-size: 0.875rem;  
+      line-height: 1.65;
+    }
+
+    .article-content .prose h1 {
+      font-size: 1.5em;  
+    }
+
+    .article-content .prose h2 {
+      font-size: 1.25em;  
+    }
+
+    .article-content .prose h3 {
+      font-size: 1.1em;  
+    }
+
+    .article-content .prose h4 {
+      font-size: 1em;  
+    }
+  }
+
+
+  .toc-wrapper {
+     
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;  
+    padding: 1.25rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: tocFadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes tocFadeIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+   
+  .dark .toc-wrapper {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+   
+  .toc-wrapper:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+  }
+
+   
+  .dark .toc-wrapper:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .toc-header {
+    margin: -1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);  
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+
+  }
+
+  .dark .toc-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-title {
+    font-weight: 600;
+    font-size: 0.6875rem;
+    color: rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .dark .toc-title {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .toc-content {
+    line-height: 1.75;
+    margin-top: 2rem;
+  }
+
+  .toc-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .toc-content ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);  
+  }
+
+  .dark .toc-content ul ul {
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .toc-content li {
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .toc-content li:first-child {
+    margin-top: 0;
+  }
+
+  .toc-content a {
+    color: rgba(0, 0, 0, 0.7);  
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    position: relative;
+    border-radius: 8px;
+  }
+
+  .toc-content a:hover {
+    color: rgba(0, 0, 0, 0.9);  
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(4px);
+    padding-left: 1rem;
+  }
+
+  .dark .toc-content a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .dark .toc-content a:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .toc-content a:visited {
+    color: inherit;
+  }
+
+   
+  .toc-content a.active {
+    color: rgba(0, 0, 0, 1);  
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.08);
+     
+    padding-left: calc(0.75rem - 3px);
+    transform: translateX(4px);
+  }
+  
+
+  .dark .toc-content a.active {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.15);
+     
+  }
+
+   
+  .toc-content > ul > li > a {
+    font-weight: 500;
+    font-size: 0.8125rem;
+  }
+
+   
+  .toc-content > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .toc-content > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+  .toc-content > ul > li > ul > li > ul > li > a {
+    font-weight: 400;
+    font-size: 0.6875rem;
+    opacity: 0.55;
+  }
+
+  .toc-content > ul > li > ul > li > ul > li > a.active {
+    opacity: 1;
+  }
+
+   
+   
+  @media (max-width: 1279px) {
+    .toc-sidebar {
+      display: none !important;
+    }
+  }
+
+   
+  .toc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);  
+    border-radius: 3px;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);  
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);  
+  }
+
+  .dark .toc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+   
+
+  .post-tags-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .dark .post-tags-footer {
+    border-top-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .post-tags-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .post-tags-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(0, 0, 0, 0.35);
+  }
+
+  .dark .post-tags-label {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .post-tags-related {
+    font-size: 0.7rem;
+    color: rgba(99, 102, 241, 0.6);
+    padding: 1px 7px;
+    background: rgba(99, 102, 241, 0.06);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 99px;
+  }
+
+  .dark .post-tags-related {
+    color: rgba(165, 180, 252, 0.65);
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.2);
+  }
+
+  .post-tags-graph-link {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.25);
+    transition: color 0.15s;
+  }
+
+  .post-tags-graph-link:hover {
+    color: rgba(99, 102, 241, 0.75);
+  }
+
+  .dark .post-tags-graph-link {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .post-tags-graph-link:hover {
+    color: rgba(165, 180, 252, 0.75);
+  }
+
+  .post-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .post-tag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px 4px 8px;
+    border-radius: 99px;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+     
+    background: rgba(99, 102, 241, 0.07);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    color: #4338ca;
+  }
+
+  .post-tag-pill:hover {
+    background: rgba(99, 102, 241, 0.13);
+    border-color: rgba(99, 102, 241, 0.32);
+    transform: translateY(-1px);
+  }
+
+  .dark .post-tag-pill {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.22);
+    color: #a5b4fc;
+  }
+
+  .dark .post-tag-pill:hover {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .post-tag-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
+
+  .post-tag-name {
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .post-tag-count {
+    font-size: 0.68rem;
+    opacity: 0.45;
+    font-weight: 400;
+    line-height: 1;
+  }
+</style>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 text-xs uppercase tracking-wider opacity-60">
+      <div>©2025-2026 fifteenbao</div>
+    </footer>
+  </body>
+</html>

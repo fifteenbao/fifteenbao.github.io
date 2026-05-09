@@ -151,8 +151,8 @@
   
   
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2026-04-28T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-04-28T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-05-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-09T00:00:00+00:00">
   
   <meta property="og:url" content="https://fifteenbao.com/post/">
   <meta property="og:site_name" content="fifteenbao">
@@ -727,6 +727,117 @@
 
 
 
+
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 mb-2">unit-bot更新记 PLANTS价值设计流程</h2>
+
+  <div class="text-xs antialiased opacity-60 mb-2">
+    <time class="whitespace-nowrap">May 9, 2026</time>
+  </div>
+
+  
+  <div class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+    <p>昨天听了一个分享《AI时代的产品创新与设计降本》 分享会，主要是智慧芽利用专利数据库整合 TRIZ 流程做的，赶紧来优化一下我的 <a href="https://github.com/fifteenbao/unit-bot">unit-bot</a>, 其实之前这个 /dfma 部分就是从朱老师的《降本设计：面向产品成本的创新设计之路》改过来的，不晓得是不是国内只有他们在做这个……出现的频率也太高了。</p>
+<p>这次更新明确了 <strong>PLANTS价值设计流程</strong>，将 5个节点 【现状研究-精益设计-先进裁剪 · TRIZ-价值创新-体系建设】分配为 12个 子agent，将之前的 竞品产品调研、拆机成本核算、降本优化建议脚本分配到了5个对应节点下面。
+顺便还找到了2023年科理咨询给公司做的 workshop 的资料，参考了一下数据库的配置，在之前市场数据库、拆机数据库、标准组件库 的基础上补充了 材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。</p>
+<h2 id="plans-价值设计流程">PLANS 价值设计流程</h2>
+<hr>
+<pre tabindex="0"><code>P 现状研究  →  L 精益设计  →  A 先进裁剪  →  N 价值创新  →  S 体系建设
+3 agent       2 agent (DFMA)  2 agent (TRIZ)  3 agent       2 agent
+</code></pre><p><strong>PLANS 价值设计流程</strong></p>
+<blockquote>
+<p>一条从现状研究到体系建设的极致降本路径。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>全称</th>
+          <th>核心方法</th>
+          <th>关键活动</th>
+          <th>产出</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>P</strong></td>
+          <td>现状研究</td>
+          <td>拆解分析 · 对标研究 · MVP 分析</td>
+          <td>产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集</td>
+          <td>事实基线文档、拆解报告、最少件清单、问题清单</td>
+      </tr>
+      <tr>
+          <td><strong>L</strong></td>
+          <td>精益设计</td>
+          <td>DFA 9 项 · DFM 5 项 · Should Cost</td>
+          <td>DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化<br>DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模）</td>
+          <td>DFA/DFM 优化方案、降本潜力估算、采购谈判数据</td>
+      </tr>
+      <tr>
+          <td><strong>A</strong></td>
+          <td>先进裁剪 · TRIZ</td>
+          <td>功能分析 · 三级裁剪 · 矛盾矩阵</td>
+          <td>逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾39×39 / 物理矛盾分离）</td>
+          <td>裁剪路径方案、矛盾解决方向</td>
+      </tr>
+      <tr>
+          <td><strong>N</strong></td>
+          <td>价值创新</td>
+          <td>FOS · 专利规避 · S 曲线</td>
+          <td>跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断</td>
+          <td>创新机会地图、替代方案池</td>
+      </tr>
+      <tr>
+          <td><strong>S</strong></td>
+          <td>体系建设</td>
+          <td>平台化 · 复杂性管理 · 五维成本体系</td>
+          <td>产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程</td>
+          <td>平台化方案、成本管理流程、组织能力固化方案</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="命令一览">命令一览</h2>
+<blockquote>
+<p>命令统一接受 <code>&lt;品牌&gt; &lt;型号&gt;</code> 格式（如 <code>石头 G30 Pro</code>、<code>追觅 X50 Ultra</code>）。</p>
+  </div>
+  
+
+  
+  <div class="mb-2 flex flex-wrap gap-1.5">
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/triz" onclick="event.stopPropagation();">TRIZ</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" onclick="event.stopPropagation();">机巧司</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/bom" onclick="event.stopPropagation();">bom</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/dfma" onclick="event.stopPropagation();">DFMA</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/agent" onclick="event.stopPropagation();">agent</a>
+    
+    
+    <a class="post-tag rounded-lg bg-black/[3%] text-xs font-medium no-underline transition-all hover:bg-black/[6%] hover:opacity-100 hover:scale-105 dark:bg-white/[8%] dark:hover:bg-white/[12%] ltr:mr-2 rtl:ml-2 mt-1 mb-1"
+      href="https://fifteenbao.com/tags/%E9%99%8D%E6%9C%AC%E8%AE%BE%E8%AE%A1" onclick="event.stopPropagation();">降本设计</a>
+    
+  </div>
+  
+  <a class="absolute inset-0 text-[0]" href="https://fifteenbao.com/post/%E5%AD%A6%E4%B9%A0%E8%AE%B0plans%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B/">unit-bot更新记 PLANTS价值设计流程</a>
+</section>
 
 
 
