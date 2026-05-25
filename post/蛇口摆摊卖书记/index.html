@@ -22,7 +22,7 @@
   />
 
   
-  <title>OpenClaw 尝鲜记 - 第二集 - fifteenbao</title>
+  <title>蛇口摆摊卖书记 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -31,42 +31,10 @@
   
   
   
-  <meta name="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
-“再跳一段新疆舞”
-
-  
-      
-          三倍速新疆舞
-          终端显示
-      
-  
-  
-      
-          
-          
-      
-  
-
-硬件配置以及校准：
-
-https://wiki.seeedstudio.com/lerobot_so100m_new/
-
-3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
-软件配置：
-使用官方提供的 openclaw 一键安装脚本进行部署：
-curl -fsSL https://openclaw.ai/install.sh | bash
-重启 Gateway：openclaw gateway restart
-skill 技能
-连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
-权限配置调整
-2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
-大概过程
-身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 
-
-
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……" />
+  <meta name="description" content="周五和周六两天去了蛇口南海意库帮朋友摆摊，“请慢用”阅读街。最近越来越喜欢蛇口了，上一次在湾厦听了 Christiane M. Herr 关于亲自然设计 和 吴文媛老师关于蛇口无车日的分享，感觉蛇口好宜居，我爱蛇口！
+今年摆摊和以往比就显得自在了很多，可能和蛇口的活动一直比较松散有关系，也可能本身就有知名度的关系 不需要太多的宣传，只需要在买书的时候问一下“之前有了解过四开吗？”，“有看过哪些呢？”收集一些简单的用户画像。摊位的对面是一家男士理发店 barbershop，墙上挂满了热值，还有鱼和🐶，除了天气闷热潮湿以外，舒适程度拉满。
+最近看一些有的没的，关于AI带来的改变，我认为是削弱人对于工作的成就感，减少人在工作这件事情消耗的时间，人可能会有更多的时间去思考 “自己到底想去做什么？” ，与现实世界的交互会变得不可替代。就像周末的活动一样，线下的物理世界永远充满了迷人的魅力。
+摆摊看《孢子城市》的时候，看到了一个主题 “一期一会”，意思是在茶会时领悟到这次相会无法重来，是一辈子只有一次的相会，故宾主须各尽其诚意。位置、天气、时间、不同的兴趣爱好、人物背景一起才构成了这次相遇的机会。妙不可言。" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -187,37 +155,37 @@ skill 技能
       </script>
   
   
-  <meta itemprop="name" content="OpenClaw 尝鲜记 - 第二集">
-  <meta itemprop="description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="wordCount" content="76">
-  <meta itemprop="keywords" content="OpenClaw,DIY,机巧司">
+  <meta itemprop="name" content="蛇口摆摊卖书记">
+  <meta itemprop="description" content="“周五和周六两天去了蛇口南海意库帮朋友摆摊，[**“请慢用”阅读街**](https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A)。最近越来越喜欢蛇口了”">
+  <meta itemprop="datePublished" content="2026-05-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="15">
+  <meta itemprop="keywords" content="深圳,摆摊,起居注">
   
-  <meta property="og:url" content="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">
+  <meta property="og:url" content="https://fifteenbao.com/post/%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta property="og:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta property="og:title" content="蛇口摆摊卖书记">
+  <meta property="og:description" content="“周五和周六两天去了蛇口南海意库帮朋友摆摊，[**“请慢用”阅读街**](https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A)。最近越来越喜欢蛇口了”">
   <meta property="og:locale" content="cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:tag" content="OpenClaw">
-    <meta property="article:tag" content="DIY">
-    <meta property="article:tag" content="机巧司">
+    <meta property="article:published_time" content="2026-05-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-25T00:00:00+00:00">
+    <meta property="article:tag" content="深圳">
+    <meta property="article:tag" content="摆摊">
+    <meta property="article:tag" content="起居注">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta name="twitter:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta name="twitter:title" content="蛇口摆摊卖书记">
+  <meta name="twitter:description" content="“周五和周六两天去了蛇口南海意库帮朋友摆摊，[**“请慢用”阅读街**](https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A)。最近越来越喜欢蛇口了”">
 
   
   
 
   
-  <link rel="canonical" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/" />
+  <link rel="canonical" href="https://fifteenbao.com/post/%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
@@ -742,24 +710,7 @@ skill 技能
         <span class="toc-title">目录</span>
       </div>
       <div class="toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#再跳一段新疆舞">“再跳一段新疆舞”</a></li>
-      </ul>
-    </li>
-    <li><a href="#硬件配置以及校准">硬件配置以及校准：</a></li>
-    <li><a href="#软件配置">软件配置：</a>
-      <ul>
-        <li><a href="#skill-技能">skill 技能</a></li>
-        <li><a href="#权限配置调整">权限配置调整</a></li>
-        <li><a href="#大概过程">大概过程</a></li>
-      </ul>
-    </li>
-    <li><a href="#一些参考链接">一些参考链接</a></li>
-  </ul>
-</nav>
+        <nav id="TableOfContents"></nav>
       </div>
     </div>
   </aside>
@@ -767,12 +718,12 @@ skill 技能
 
   <article class="article-content">
     <header class="mb-12">
-      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">OpenClaw 尝鲜记 - 第二集</h1>
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">蛇口摆摊卖书记</h1>
 
       
       <div class="text-xs antialiased opacity-60">
         
-        <time>Mar 6, 2026</time>
+        <time>May 25, 2026</time>
         
         
         
@@ -784,47 +735,10 @@ skill 技能
       
     </header>
 
-    <section><p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
-<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
-<table>
-  <thead>
-      <tr>
-          <th>三倍速新疆舞</th>
-          <th>终端显示</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
-<blockquote>
-<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
-</blockquote>
-<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
-<h2 id="软件配置">软件配置：</h2>
-<p>使用官方提供的 openclaw 一键安装脚本进行部署：
-<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
-<p>重启 Gateway：openclaw gateway restart</p>
-<h3 id="skill-技能">skill 技能</h3>
-<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
-<h3 id="权限配置调整">权限配置调整</h3>
-<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
-<h3 id="大概过程">大概过程</h3>
-<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-<p>跳了几个舞之后，它还给我分析了一下。</p>
-<p><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/duibi_dance.7lkjiushvf.webp" alt="舞步分析"></p>
-<h2 id="一些参考链接">一些参考链接</h2>
-<p>Token降本增效部分强烈建议阅读。</p>
-<p><a href="https://sspai.com/post/106232">OpenClaw：高强度使用两周，这个 AI 工具颠覆了我的工作流</a></p>
+    <section><p>周五和周六两天去了蛇口南海意库帮朋友摆摊，<a href="https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A"><strong>“请慢用”阅读街</strong></a>。最近越来越喜欢蛇口了，上一次在湾厦听了 Christiane M. Herr 关于<a href="https://mp.weixin.qq.com/s/9h1e4oWwldXcxXsBd9ThOQ"><strong>亲自然设计</strong></a> 和 吴文媛老师关于蛇口无车日的分享，感觉蛇口好宜居，我爱蛇口！</p>
+<p>今年摆摊和以往比就显得自在了很多，可能和蛇口的活动一直比较松散有关系，也可能本身就有知名度的关系 不需要太多的宣传，只需要在买书的时候问一下“之前有了解过四开吗？”，“有看过哪些呢？”收集一些简单的用户画像。摊位的对面是一家男士理发店 barbershop，墙上挂满了热值，还有鱼和🐶，除了天气闷热潮湿以外，舒适程度拉满。
+最近看一些有的没的，关于AI带来的改变，我认为是削弱人对于工作的成就感，减少人在工作这件事情消耗的时间，人可能会有更多的时间去思考 “自己到底想去做什么？” ，与现实世界的交互会变得不可替代。就像周末的活动一样，线下的物理世界永远充满了迷人的魅力。</p>
+<p>摆摊看《孢子城市》的时候，看到了一个主题 “一期一会”，意思是在茶会时领悟到这次相会无法重来，是一辈子只有一次的相会，故宾主须各尽其诚意。位置、天气、时间、不同的兴趣爱好、人物背景一起才构成了这次相遇的机会。妙不可言。</p>
 </section>
 
     
@@ -837,19 +751,19 @@ skill 技能
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/openclaw" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E6%B7%B1%E5%9C%B3" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">openclaw</span>
-          <span class="post-tag-count">4</span>
+          <span class="post-tag-name">深圳</span>
+          <span class="post-tag-count">0</span>
         </a>
-        <a href="https://fifteenbao.com/tags/diy" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E6%91%86%E6%91%8A" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">DIY</span>
-          <span class="post-tag-count">3</span>
+          <span class="post-tag-name">摆摊</span>
+          <span class="post-tag-count">0</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E8%B5%B7%E5%B1%85%E6%B3%A8" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">机巧司</span>
+          <span class="post-tag-name">起居注</span>
           <span class="post-tag-count">0</span>
         </a>
         
@@ -865,13 +779,9 @@ skill 技能
       class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
     >
       
-      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/"
-        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>大沙河公园游记</span></a
-      >
       
-      
-      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/2026-%E6%8E%A2%E4%BA%B2%E8%AE%B0/"
-        ><span>2026 探亲记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/%E5%AD%A6%E4%B9%A0%E8%AE%B0plans%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B/"
+        ><span>unit-bot更新记 PLANTS价值设计流程</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
       >
       
     </nav>
