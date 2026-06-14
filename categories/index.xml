@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>cn</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Mon, 25 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://fifteenbao.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>长物阁</title>
+      <link>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</link>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</guid>
+      <description></description>
+    </item>
     <item>
       <title>起居注</title>
       <link>https://fifteenbao.com/categories/%E8%B5%B7%E5%B1%85%E6%B3%A8/</link>
@@ -35,13 +42,6 @@
       <link>https://fifteenbao.com/categories/%E6%A0%BC%E7%89%A9%E6%96%8B/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://fifteenbao.com/categories/%E6%A0%BC%E7%89%A9%E6%96%8B/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>长物阁</title>
-      <link>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</link>
-      <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/categories/%E9%95%BF%E7%89%A9%E9%98%81/</guid>
       <description></description>
     </item>
   </channel>
