@@ -22,7 +22,7 @@
   />
 
   
-  <title>OpenClaw 尝鲜记 - 第二集 - fifteenbao</title>
+  <title>如何获得人机协作中的主动控制感 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -31,42 +31,56 @@
   
   
   
-  <meta name="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
-“再跳一段新疆舞”
+  <meta name="description" content="昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。
+大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR） 这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。
+结果表明，在互动调整行为的能力上，人-人/机器人 （HH/HR）的的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。
+与机器人协作时，对方的“意图性”需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。
+Know
+📈 Solo vs. HH vs. HR 对比
 
   
       
-          三倍速新疆舞
-          终端显示
+          对比维度
+          主要研究发现
+          关键心理机制与解释
       
   
   
       
-          
-          
+          任务绩效
+          1.  HH &gt; Solo并非绝对：仅在团队能自发形成角色分工时才成立；否则，独自一人可能表现更好。2.  Solo ≥ HH/HR：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。3.  HR性能优势未统一，安全有优势：部分HH在产出上优于HR，但HR能显著降低操作风险（如改善人体工学）。4.  AI组合的平均表现可能逊色：一项包含370个效应量的元分析表明，人-AI组合的平均表现要差于最佳一方（人或AI）的表现。
+          - 角色分化是HH的关键，这对HR也具指导意义。- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。- 这强调了“如何合作”比“与谁合作”更重要；以及综合考虑绩效与安全，HR有其独特价值。
+      
+      
+          心理负荷 &amp; 用户体验
+          1.  HH/HR都显著优于Solo：合作普遍更能降低认知负担。2.  HR在情绪和主观体验上更胜一筹：尤其在吸引力、刺激感和原创性方面评分更高，引发更强烈的情感投入。
+          HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。
+      
+      
+          信任动态
+          1.  任务复杂度是关键调节变量：人们更倾向于在非常简单或高度复杂的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。2.  信任建立过程可能相似：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。3.  信任修复存在差异：违反信任后的情绪反应在HH和HR中有所不同。
+          在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。
+      
+      
+          主动性 &amp; 自主性
+          1.  HR合作伴随着控制感变化：与聊天机器人合作后转入单人任务，控制感会恢复但内在动机下降、无聊感增加。2.  常规技术与人类合作，心理成本更低：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。
+          这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。
+      
+      
+          神经活动机制
+          1.  人人协作诱发了独特脑间同步：与人合作时，大脑多个区域会出现“脑间同步”（BBS），产生“我们模式”（we-mode）。2.  这种同步在单人任务中较弱。
+          脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。
+      
+      
+          人-AI协同的局限性
+          平均而言，人-AI组合并非“全能神器”：一项覆盖106项研究的元分析发现，人-AI组合的平均表现显著差于最佳一方。- 决策任务中普遍存在损失：需要判断和选择的“决策任务”，人-AI合作常常拖后腿，导致整体表现不如最佳一方。 - 内容创造任务中存在增益：在文本生成、创意构思等“内容创造”任务中，人-AI合作能带来增益，产生更好的效果。- 人类主导时增益明显：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行“合作”反而会让整体表现变差。
+          这揭示了人-AI协作的核心：关键在于“何时用”。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域“反客为主”时，可能会造成干扰。
       
   
 
-硬件配置以及校准：
-
-https://wiki.seeedstudio.com/lerobot_so100m_new/
-
-3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
-软件配置：
-使用官方提供的 openclaw 一键安装脚本进行部署：
-curl -fsSL https://openclaw.ai/install.sh | bash
-重启 Gateway：openclaw gateway restart
-skill 技能
-连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
-权限配置调整
-2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
-大概过程
-身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 
-
-
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……" />
+HOW
+意图可见性
+让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -187,37 +201,39 @@ skill 技能
       </script>
   
   
-  <meta itemprop="name" content="OpenClaw 尝鲜记 - 第二集">
-  <meta itemprop="description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="wordCount" content="76">
-  <meta itemprop="keywords" content="OpenClaw,DIY,机巧司">
+  <meta itemprop="name" content="如何获得人机协作中的主动控制感">
+  <meta itemprop="description" content="“如何获得人机协作中的主动控制感”">
+  <meta itemprop="datePublished" content="2026-06-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-06-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="114">
+  <meta itemprop="keywords" content="AI,协作,起居注,长物阁,人机交互">
   
-  <meta property="og:url" content="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">
+  <meta property="og:url" content="https://fifteenbao.com/post/agent/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta property="og:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta property="og:title" content="如何获得人机协作中的主动控制感">
+  <meta property="og:description" content="“如何获得人机协作中的主动控制感”">
   <meta property="og:locale" content="cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:tag" content="OpenClaw">
-    <meta property="article:tag" content="DIY">
-    <meta property="article:tag" content="机巧司">
+    <meta property="article:published_time" content="2026-06-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-06-14T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="协作">
+    <meta property="article:tag" content="起居注">
+    <meta property="article:tag" content="长物阁">
+    <meta property="article:tag" content="人机交互">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta name="twitter:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta name="twitter:title" content="如何获得人机协作中的主动控制感">
+  <meta name="twitter:description" content="“如何获得人机协作中的主动控制感”">
 
   
   
 
   
-  <link rel="canonical" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/" />
+  <link rel="canonical" href="https://fifteenbao.com/post/agent/" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
@@ -744,20 +760,27 @@ skill 技能
       <div class="toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#know">Know</a>
       <ul>
-        <li><a href="#再跳一段新疆舞">“再跳一段新疆舞”</a></li>
+        <li><a href="#-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</a></li>
       </ul>
     </li>
-    <li><a href="#硬件配置以及校准">硬件配置以及校准：</a></li>
-    <li><a href="#软件配置">软件配置：</a>
+    <li><a href="#how">HOW</a>
       <ul>
-        <li><a href="#skill-技能">skill 技能</a></li>
-        <li><a href="#权限配置调整">权限配置调整</a></li>
-        <li><a href="#大概过程">大概过程</a></li>
+        <li><a href="#意图可见性">意图可见性</a></li>
+        <li><a href="#因果透明度">因果透明度</a></li>
+        <li><a href="#主动沟通">主动沟通</a></li>
       </ul>
     </li>
-    <li><a href="#一些参考链接">一些参考链接</a></li>
+    <li><a href="#别让人觉得自己是旁观者">别让人觉得自己是旁观者</a>
+      <ul>
+        <li><a href="#设计人在回路节点">设计「人在回路」节点</a></li>
+        <li><a href="#保留用户的否决权">保留用户的「否决权」</a></li>
+        <li><a href="#归因反馈">归因反馈</a></li>
+        <li><a href="#避免过度自动化">避免过度自动化</a></li>
+      </ul>
+    </li>
+    <li><a href="#主动控制感低没人负责">主动控制感低=没人负责</a></li>
   </ul>
 </nav>
       </div>
@@ -767,12 +790,12 @@ skill 技能
 
   <article class="article-content">
     <header class="mb-12">
-      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">OpenClaw 尝鲜记 - 第二集</h1>
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">如何获得人机协作中的主动控制感</h1>
 
       
       <div class="text-xs antialiased opacity-60">
         
-        <time>Mar 6, 2026</time>
+        <time>Jun 14, 2026</time>
         
         
         
@@ -784,47 +807,75 @@ skill 技能
       
     </header>
 
-    <section><p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
-<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
+    <section><p>昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。
+大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR） 这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。
+结果表明，在互动调整行为的能力上，人-人/机器人 （HH/HR）的的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。
+与机器人协作时，对方的“意图性”需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。</p>
+<h2 id="know">Know</h2>
+<h3 id="-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</h3>
 <table>
   <thead>
       <tr>
-          <th>三倍速新疆舞</th>
-          <th>终端显示</th>
+          <th style="text-align: left">对比维度</th>
+          <th style="text-align: left">主要研究发现</th>
+          <th style="text-align: left">关键心理机制与解释</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
+          <td style="text-align: left"><strong>任务绩效</strong></td>
+          <td style="text-align: left">1.  <strong>HH &gt; Solo并非绝对</strong>：仅在团队能自发形成<strong>角色分工</strong>时才成立；否则，独自一人可能表现更好。<br>2.  <strong>Solo ≥ HH/HR</strong>：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。<br>3.  <strong>HR性能优势未统一，安全有优势</strong>：部分HH在产出上优于HR，但HR能显著<strong>降低操作风险</strong>（如改善人体工学）。<br>4.  <strong>AI组合的平均表现可能逊色</strong>：一项包含370个效应量的元分析表明，<strong>人-AI组合的平均表现要差于最佳一方（人或AI）的表现</strong>。</td>
+          <td style="text-align: left">- <strong>角色分化</strong>是HH的关键，这对HR也具指导意义。<br>- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。<br>- 这强调了“如何合作”比“与谁合作”更重要；以及综合考虑绩效与安全，HR有其独特价值。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>心理负荷 &amp; 用户体验</strong></td>
+          <td style="text-align: left">1.  <strong>HH/HR都显著优于Solo</strong>：合作普遍更能降低认知负担。<br>2.  <strong>HR在情绪和主观体验上更胜一筹</strong>：尤其在<strong>吸引力、刺激感和原创性</strong>方面评分更高，引发更强烈的<strong>情感投入</strong>。</td>
+          <td style="text-align: left">HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>信任动态</strong></td>
+          <td style="text-align: left">1.  <strong>任务复杂度是关键调节变量</strong>：人们更倾向于在<strong>非常简单或高度复杂</strong>的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。<br>2.  <strong>信任建立过程可能相似</strong>：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。<br>3.  <strong>信任修复存在差异</strong>：违反信任后的情绪反应在HH和HR中有所不同。</td>
+          <td style="text-align: left">在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>主动性 &amp; 自主性</strong></td>
+          <td style="text-align: left">1.  <strong>HR合作伴随着控制感变化</strong>：与聊天机器人合作后转入单人任务，控制感会<strong>恢复但内在动机下降、无聊感增加</strong>。<br>2.  <strong>常规技术与人类合作，心理成本更低</strong>：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。</td>
+          <td style="text-align: left">这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>神经活动机制</strong></td>
+          <td style="text-align: left">1.  <strong>人人协作诱发了独特脑间同步</strong>：与人合作时，大脑多个区域会出现“脑间同步”（BBS），产生“我们模式”（we-mode）。<br>2.  <strong>这种同步在单人任务中较弱</strong>。</td>
+          <td style="text-align: left">脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>人-AI协同的局限性</strong></td>
+          <td style="text-align: left"><strong>平均而言，人-AI组合并非“全能神器”</strong>：一项覆盖106项研究的元分析发现，人-AI组合的<strong>平均表现显著差于最佳一方</strong>。<br>- <strong>决策任务中普遍存在损失</strong>：需要判断和选择的“决策任务”，人-AI合作常常拖后腿，导致整体表现不如最佳一方。 <br>- <strong>内容创造任务中存在增益</strong>：在文本生成、创意构思等“内容创造”任务中，人-AI合作能带来增益，产生更好的效果。<br>- <strong>人类主导时增益明显</strong>：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行“合作”反而会让整体表现变差。</td>
+          <td style="text-align: left">这揭示了人-AI协作的核心：关键在于“何时用”。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域“反客为主”时，可能会造成干扰。</td>
       </tr>
   </tbody>
 </table>
-<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
-<blockquote>
-<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
-</blockquote>
-<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
-<h2 id="软件配置">软件配置：</h2>
-<p>使用官方提供的 openclaw 一键安装脚本进行部署：
-<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
-<p>重启 Gateway：openclaw gateway restart</p>
-<h3 id="skill-技能">skill 技能</h3>
-<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
-<h3 id="权限配置调整">权限配置调整</h3>
-<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
-<h3 id="大概过程">大概过程</h3>
-<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-<p>跳了几个舞之后，它还给我分析了一下。</p>
-<p><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/duibi_dance.7lkjiushvf.webp" alt="舞步分析"></p>
-<h2 id="一些参考链接">一些参考链接</h2>
-<p>Token降本增效部分强烈建议阅读。</p>
-<p><a href="https://sspai.com/post/106232">OpenClaw：高强度使用两周，这个 AI 工具颠覆了我的工作流</a></p>
+<h2 id="how">HOW</h2>
+<h3 id="意图可见性">意图可见性</h3>
+<p>让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令</p>
+<h3 id="因果透明度">因果透明度</h3>
+<p>用户操作一机器人反应一 清晰映射，建立动作-结果联系</p>
+<h3 id="主动沟通">主动沟通</h3>
+<p>机器人主动告知意图：「我接下来要&hellip;.」，而非静默执行</p>
+<h2 id="别让人觉得自己是旁观者">别让人觉得自己是旁观者</h2>
+<p>AI 越强大，用户自我主动控制感下降的风险越高</p>
+<h3 id="设计人在回路节点">设计「人在回路」节点</h3>
+<p>在关键决策点强制让用户确认，而不是全自动执行</p>
+<h3 id="保留用户的否决权">保留用户的「否决权」</h3>
+<p>让用户清楚知道自己随时可以推翻AI的建议</p>
+<h3 id="归因反馈">归因反馈</h3>
+<p>系统明确告知「这个结果是基于您的决定」，强化主导感</p>
+<h3 id="避免过度自动化">避免过度自动化</h3>
+<p>在重复操作中保留适度摩擦，维持掌控感</p>
+<h2 id="主动控制感低没人负责">主动控制感低=没人负责</h2>
+<p>当所有人都觉得“反正不是我决定的” 意味着出了问题就没人负责。
+解法：主动控制感设计 = 责任感设计</p>
+<p>扩展阅读：
+<a href="https://learn.microsoft.com/zh-cn/azure/machine-learning/concept-responsible-ai?view=azureml-api-2">Microsoft Build 2026 大会 - 什么是负责任 AI？</a></p>
 </section>
 
     
@@ -832,24 +883,32 @@ skill 技能
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">2 篇文章有相同标签组合</span>
-        
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/openclaw" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">openclaw</span>
-          <span class="post-tag-count">4</span>
+          <span class="post-tag-name">AI</span>
+          <span class="post-tag-count">6</span>
         </a>
-        <a href="https://fifteenbao.com/tags/diy" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E5%8D%8F%E4%BD%9C" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">DIY</span>
-          <span class="post-tag-count">3</span>
+          <span class="post-tag-name">协作</span>
+          <span class="post-tag-count">0</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E8%B5%B7%E5%B1%85%E6%B3%A8" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">机巧司</span>
+          <span class="post-tag-name">起居注</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E9%95%BF%E7%89%A9%E9%98%81" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">长物阁</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">人机交互</span>
           <span class="post-tag-count">0</span>
         </a>
         
@@ -865,13 +924,13 @@ skill 技能
       class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
     >
       
-      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/"
-        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>大沙河公园游记</span></a
+      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/20260708%E4%BC%8F%E8%A7%81%E6%B8%85%E9%85%92%E4%B9%8B%E6%97%85/"
+        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>伏见清酒之旅</span></a
       >
       
       
-      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/"
-        ><span>OpenClaw 尝鲜记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/"
+        ><span>蛇口摆摊卖书记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
       >
       
     </nav>
