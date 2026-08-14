@@ -22,7 +22,7 @@
   />
 
   
-  <title>OpenClaw 尝鲜记 - 第二集 - fifteenbao</title>
+  <title>调酒入门：认识六大基酒 - fifteenbao</title>
 
   
   <meta name="theme-color" />
@@ -31,42 +31,41 @@
   
   
   
-  <meta name="description" content="更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 so-arm-100 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan qwen3 max，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。
-“再跳一段新疆舞”
+  <meta name="description" content="大概有四个部分，常见酒单放在了前面，方便后面找；六大基酒介绍；常见的配角以及一些基本工具手法。
+酒单
 
-  
-      
-          三倍速新疆舞
-          终端显示
-      
-  
-  
-      
-          
-          
-      
-  
+配比按总量 100ml 左右估算（单位 ml）；「搭」指搭配的柑橘/装饰
 
-硬件配置以及校准：
+金酒
 
-https://wiki.seeedstudio.com/lerobot_so100m_new/
+金汤力：金酒 25 &#43; 汤力水 75（1:3）（搭：青柠角）
+尼格罗尼：金酒 33 &#43; 甜味美思 33 &#43; 金巴利 33（1:1:1）（搭：橙皮）
+马天尼（Martini）：金酒 75 &#43; 干味美思 25（3:1）（搭：柠檬皮/橄榄）
 
-3D打印以及机械臂组装，按照 seeed 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。
-软件配置：
-使用官方提供的 openclaw 一键安装脚本进行部署：
-curl -fsSL https://openclaw.ai/install.sh | bash
-重启 Gateway：openclaw gateway restart
-skill 技能
-连接了 notion ，并在 telegram对话 成功创建notion页面。准备用作定期的数据备份。
-权限配置调整
-2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。
-大概过程
-身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 
+伏特加
 
+螺丝刀：伏特加 25 &#43; 橙汁 75（1:3）（搭：橙片）
+血腥玛丽：伏特加 33 &#43; 番茄汁 67 &#43; 香料少许（搭：黄柠角）
 
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……" />
+威士忌
+
+教父：苏格兰威士忌 66 &#43; 阿玛雷托 33（2:1）（搭：橙皮）
+古典：威士忌 60 &#43; 方糖 1 块 &#43; 苦精 3 滴 &#43; 少量水（短饮，不按满杯计）（搭：橙皮 &#43; 樱桃）
+曼哈顿（Manhattan）：威士忌 66 &#43; 甜味美思 33 &#43; 安高天娜苦精 2 滴（2:1）（搭：樱桃）
+威士忌酸（Whiskey Sour）：波本 50 &#43; 黄柠汁 25 &#43; 单糖浆 25（2:1:1，可选蛋清）（搭：黄
+柠片/樱桃）
+萨泽拉克（Sazerac）：黑麦威士忌 60 &#43; 方糖 1 块 &#43; 裴乔氏苦精 3 滴 &#43; 苦艾酒洗杯（短饮
+）（搭：柠檬皮）
+
+朗姆酒
+
+莫吉托：白朗姆 40 &#43; 青柠汁 20 &#43; 糖/薄荷 &#43; 苏打水约 40（搭：青柠、薄荷）
+自由古巴（Cuba Libre）：黑朗姆 30 &#43; 青柠汁 10 &#43; 可乐 60（搭：青柠角）
+代基里（Daiquiri）：白朗姆 50 &#43; 青柠汁 33 &#43; 单糖浆 17（3:2:1）（搭：青柠角）
+
+Tiki 鸡尾酒
+
+以朗姆为主角的热带风格：多朗姆混搭 &#43; 果汁 &#43; 糖浆，碎冰大杯、装饰华丽；以下按 100ml 估算" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -187,37 +186,38 @@ skill 技能
       </script>
   
   
-  <meta itemprop="name" content="OpenClaw 尝鲜记 - 第二集">
-  <meta itemprop="description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
-  <meta itemprop="datePublished" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-03-06T00:00:00+00:00">
-  <meta itemprop="wordCount" content="76">
-  <meta itemprop="keywords" content="OpenClaw,DIY,机巧司">
+  <meta itemprop="name" content="调酒入门：认识六大基酒">
+  <meta itemprop="description" content="报名了600块四节的调酒课，钱不能白花，写点东西。">
+  <meta itemprop="datePublished" content="2026-08-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-08-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="549">
+  <meta itemprop="keywords" content="调酒,鸡尾酒,饮品,长物阁">
   
-  <meta property="og:url" content="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/">
+  <meta property="og:url" content="https://fifteenbao.com/post/20260814%E8%B0%83%E9%85%92%E5%85%A5%E9%97%A8/">
   <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta property="og:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta property="og:title" content="调酒入门：认识六大基酒">
+  <meta property="og:description" content="报名了600块四节的调酒课，钱不能白花，写点东西。">
   <meta property="og:locale" content="cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-03-06T00:00:00+00:00">
-    <meta property="article:tag" content="OpenClaw">
-    <meta property="article:tag" content="DIY">
-    <meta property="article:tag" content="机巧司">
+    <meta property="article:published_time" content="2026-08-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-08-14T00:00:00+00:00">
+    <meta property="article:tag" content="调酒">
+    <meta property="article:tag" content="鸡尾酒">
+    <meta property="article:tag" content="饮品">
+    <meta property="article:tag" content="长物阁">
 
   
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OpenClaw 尝鲜记 - 第二集">
-  <meta name="twitter:description" content="尝试了一下控制机械臂硬件，还是硬件好玩啊！">
+  <meta name="twitter:title" content="调酒入门：认识六大基酒">
+  <meta name="twitter:description" content="报名了600块四节的调酒课，钱不能白花，写点东西。">
 
   
   
 
   
-  <link rel="canonical" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B02/" />
+  <link rel="canonical" href="https://fifteenbao.com/post/20260814%E8%B0%83%E9%85%92%E5%85%A5%E9%97%A8/" />
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
   <script>
@@ -744,20 +744,50 @@ skill 技能
       <div class="toc-content">
         <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#酒单">酒单</a>
       <ul>
-        <li><a href="#再跳一段新疆舞">“再跳一段新疆舞”</a></li>
+        <li><a href="#金酒">金酒</a></li>
+        <li><a href="#伏特加">伏特加</a></li>
+        <li><a href="#威士忌">威士忌</a></li>
+        <li><a href="#朗姆酒">朗姆酒</a></li>
+        <li><a href="#龙舌兰">龙舌兰</a></li>
+        <li><a href="#白兰地">白兰地</a></li>
+        <li><a href="#利口酒--其他">利口酒 / 其他</a></li>
       </ul>
     </li>
-    <li><a href="#硬件配置以及校准">硬件配置以及校准：</a></li>
-    <li><a href="#软件配置">软件配置：</a>
+    <li><a href="#六大基酒">六大基酒</a>
       <ul>
-        <li><a href="#skill-技能">skill 技能</a></li>
-        <li><a href="#权限配置调整">权限配置调整</a></li>
-        <li><a href="#大概过程">大概过程</a></li>
+        <li><a href="#什么是六大基酒">什么是六大基酒</a></li>
+        <li><a href="#一金酒gin">一、金酒（Gin）🍸</a></li>
+        <li><a href="#二威士忌whisky--whiskey">二、威士忌（Whisky / Whiskey）🥃</a></li>
+        <li><a href="#三白兰地brandy">三、白兰地（Brandy）🍾</a></li>
+        <li><a href="#四伏特加vodka">四、伏特加（Vodka）🧊</a></li>
+        <li><a href="#五朗姆酒rum">五、朗姆酒（Rum）🏝️</a></li>
+        <li><a href="#六龙舌兰tequila">六、龙舌兰（Tequila）🌵</a></li>
       </ul>
     </li>
-    <li><a href="#一些参考链接">一些参考链接</a></li>
+    <li><a href="#鸡尾酒的其他部分">鸡尾酒的其他部分</a>
+      <ul>
+        <li><a href="#味美思vermouth">味美思（Vermouth）</a></li>
+        <li><a href="#橙味利口酒orange-liqueur">橙味利口酒（Orange Liqueur）</a></li>
+        <li><a href="#苦味利口酒意大利系">苦味利口酒（意大利系）</a></li>
+        <li><a href="#杏仁--香料类">杏仁 / 香料类</a></li>
+        <li><a href="#苦精bitters">苦精（Bitters）</a></li>
+        <li><a href="#糖浆syrup">糖浆（Syrup）</a></li>
+        <li><a href="#果汁与气泡水">果汁与气泡水</a></li>
+      </ul>
+    </li>
+    <li><a href="#吧台基本功器具与手法">吧台基本功：器具与手法</a>
+      <ul>
+        <li><a href="#量杯jigger">量杯（Jigger）</a></li>
+        <li><a href="#冰杯预冷酒杯">冰杯（预冷酒杯）</a></li>
+        <li><a href="#冰块">冰块</a></li>
+        <li><a href="#吧勺与搅拌stir">吧勺与搅拌（Stir）</a></li>
+        <li><a href="#摇壶与摇荡shake">摇壶与摇荡（Shake）</a></li>
+        <li><a href="#搅拌-or-摇荡怎么选">搅拌 or 摇荡，怎么选</a></li>
+        <li><a href="#收尾小细节">收尾小细节</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </div>
@@ -767,12 +797,12 @@ skill 技能
 
   <article class="article-content">
     <header class="mb-12">
-      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">OpenClaw 尝鲜记 - 第二集</h1>
+      <h1 class="!my-0 pb-3 text-3xl font-semibold leading-tight">调酒入门：认识六大基酒</h1>
 
       
       <div class="text-xs antialiased opacity-60">
         
-        <time>Mar 6, 2026</time>
+        <time>Aug 14, 2026</time>
         
         
         
@@ -784,47 +814,355 @@ skill 技能
       
     </header>
 
-    <section><p>更新一下最近玩 openclaw 的进展。部署到了 RDK X5 的板子上，esp32 连接了一个 <code>so-arm-100</code> 机械臂，并实现了语义控制。
-展示一下跳舞的成果。
-模型用的 阿里云 7.9/月的 coding-plan <code>qwen3 max</code>，发傻的时候就切换到贵一点的claude，调试通了，再切回来便宜的。</p>
-<h3 id="再跳一段新疆舞">“再跳一段新疆舞”</h3>
+    <section><p>大概有四个部分，常见酒单放在了前面，方便后面找；六大基酒介绍；常见的配角以及一些基本工具手法。</p>
+<h2 id="酒单">酒单</h2>
+<blockquote>
+<p>配比按总量 100ml 左右估算（单位 ml）；「搭」指搭配的柑橘/装饰</p>
+</blockquote>
+<h3 id="金酒">金酒</h3>
+<ul>
+<li>金汤力：金酒 25 + 汤力水 75（1:3）（搭：青柠角）</li>
+<li>尼格罗尼：金酒 33 + 甜味美思 33 + 金巴利 33（1:1:1）（搭：橙皮）</li>
+<li>马天尼（Martini）：金酒 75 + 干味美思 25（3:1）（搭：柠檬皮/橄榄）</li>
+</ul>
+<h3 id="伏特加">伏特加</h3>
+<ul>
+<li>螺丝刀：伏特加 25 + 橙汁 75（1:3）（搭：橙片）</li>
+<li>血腥玛丽：伏特加 33 + 番茄汁 67 + 香料少许（搭：黄柠角）</li>
+</ul>
+<h3 id="威士忌">威士忌</h3>
+<ul>
+<li>教父：苏格兰威士忌 66 + 阿玛雷托 33（2:1）（搭：橙皮）</li>
+<li>古典：威士忌 60 + 方糖 1 块 + 苦精 3 滴 + 少量水（短饮，不按满杯计）（搭：橙皮 + 樱桃）</li>
+<li>曼哈顿（Manhattan）：威士忌 66 + 甜味美思 33 + 安高天娜苦精 2 滴（2:1）（搭：樱桃）</li>
+<li>威士忌酸（Whiskey Sour）：波本 50 + 黄柠汁 25 + 单糖浆 25（2:1:1，可选蛋清）（搭：黄
+柠片/樱桃）</li>
+<li>萨泽拉克（Sazerac）：黑麦威士忌 60 + 方糖 1 块 + 裴乔氏苦精 3 滴 + 苦艾酒洗杯（短饮
+）（搭：柠檬皮）</li>
+</ul>
+<h3 id="朗姆酒">朗姆酒</h3>
+<ul>
+<li>莫吉托：白朗姆 40 + 青柠汁 20 + 糖/薄荷 + 苏打水约 40（搭：青柠、薄荷）</li>
+<li>自由古巴（Cuba Libre）：黑朗姆 30 + 青柠汁 10 + 可乐 60（搭：青柠角）</li>
+<li>代基里（Daiquiri）：白朗姆 50 + 青柠汁 33 + 单糖浆 17（3:2:1）（搭：青柠角）</li>
+</ul>
+<h4 id="tiki-鸡尾酒">Tiki 鸡尾酒</h4>
+<blockquote>
+<p>以朗姆为主角的热带风格：多朗姆混搭 + 果汁 + 糖浆，碎冰大杯、装饰华丽；以下按 100ml 估算</p>
+</blockquote>
+<ul>
+<li>迈泰（Mai Tai）：陈年朗姆 40 + 农业朗姆 5 + 青柠汁 27 + 橙皮甜酒 14 + 杏仁糖浆 7 + 糖浆 7（搭：青柠 + 薄荷）</li>
+<li>椰林飘香（Piña Colada）：白朗姆 25 + 椰浆 25 + 菠萝汁 50（搭：菠萝角）</li>
+<li>止痛剂（Painkiller）：朗姆 25 + 菠萝汁 45 + 橙汁 15 + 椰浆 15（搭：肉豆蔻 + 橙片）</li>
+<li>僵尸（Zombie）：白朗姆 40 + 黑朗姆 30 + 青柠汁 20 + 石榴糖浆 10（搭：青柠角 + 薄荷）</li>
+</ul>
+<h3 id="龙舌兰">龙舌兰</h3>
+<ul>
+<li>玛格丽特：龙舌兰 50 + 君度 25 + 青柠汁 25（2:1:1）（搭：青柠角 + 盐边）</li>
+</ul>
+<h3 id="白兰地">白兰地</h3>
+<ul>
+<li>边车：白兰地 50 + 君度 25 + 柠檬汁 25（2:1:1）（搭：黄柠皮/橙皮 twist）</li>
+</ul>
+<h3 id="利口酒--其他">利口酒 / 其他</h3>
+<ul>
+<li>金巴利苏打（Campari &amp; Soda）：金巴利 33 + 苏打水 67（1:2）（搭：橙片）</li>
+</ul>
+<h2 id="六大基酒">六大基酒</h2>
+<h3 id="什么是六大基酒">什么是六大基酒</h3>
+<p>绝大多数鸡尾酒都以某一种烈酒为主角，这个主角就叫「基酒」。鸡尾酒界公认的六大基酒是：</p>
+<blockquote>
+<p><strong>金酒 · 威士忌 · 白兰地 · 伏特加 · 朗姆酒 · 龙舌兰</strong></p>
+</blockquote>
 <table>
   <thead>
       <tr>
-          <th>三倍速新疆舞</th>
-          <th>终端显示</th>
+          <th>基酒</th>
+          <th>原料</th>
+          <th>核心产区</th>
+          <th>代表调酒</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.86u754hti1.gif" alt="执行效果"></td>
-          <td><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/xinjiang_dance.2oc2oytlwg.webp" alt="终端显示"></td>
+          <td>金酒</td>
+          <td>谷物 + 杜松子等植物</td>
+          <td>英国 / 荷兰</td>
+          <td>金汤力、马天尼、内格罗尼</td>
+      </tr>
+      <tr>
+          <td>威士忌</td>
+          <td>谷物 + 橡木桶陈年</td>
+          <td>苏格兰 / 美国 / 日本</td>
+          <td>老式、曼哈顿、威士忌酸</td>
+      </tr>
+      <tr>
+          <td>白兰地</td>
+          <td>葡萄（及其他水果）</td>
+          <td>法国干邑 / 雅文邑</td>
+          <td>边车、白兰地亚历山大</td>
+      </tr>
+      <tr>
+          <td>伏特加</td>
+          <td>谷物 / 土豆</td>
+          <td>俄罗斯 / 波兰 / 瑞典</td>
+          <td>莫斯科骡子、血腥玛丽</td>
+      </tr>
+      <tr>
+          <td>朗姆酒</td>
+          <td>甘蔗</td>
+          <td>加勒比 / 巴西</td>
+          <td>莫吉托、代基里、自由古巴</td>
+      </tr>
+      <tr>
+          <td>龙舌兰</td>
+          <td>蓝色韦伯龙舌兰</td>
+          <td>墨西哥哈利斯科州</td>
+          <td>玛格丽特、龙舌兰日出</td>
       </tr>
   </tbody>
 </table>
-<h2 id="硬件配置以及校准">硬件配置以及校准：</h2>
+<hr>
+<h3 id="一金酒gin">一、金酒（Gin）🍸</h3>
+<p>又称杜松子酒，鸡尾酒界使用最广的基酒，被称为「鸡尾酒的心脏」。</p>
+<ul>
+<li><strong>成分</strong>：以谷物（大麦、玉米、黑麦等）酿制的中性烈酒为基础，用杜松子（Juniper）为主、辅以芫荽籽、当归、橙皮、柠檬皮、肉桂、鸢尾根等数十种植物进行加香蒸馏。法规要求杜松子风味必须在感官上占主导。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>伦敦干金酒（London Dry）：最经典，风味干净、以杜松子为主，不得添加人工甜味剂</li>
+<li>老汤姆金酒（Old Tom）：微甜，介于伦敦干金与荷兰金酒之间</li>
+<li>荷兰金酒（Genever）：麦芽味重、口感更厚实，是金酒的鼻祖</li>
+<li>普利茅斯金酒（Plymouth Gin）：法定仅产自英国普利茅斯，口感更圆润</li>
+<li>新式金酒（New Western / Contemporary）：弱化杜松子，突出其他植物风味</li>
+</ul>
+</li>
+<li><strong>产区</strong>：荷兰为发源地，英国发扬光大并成为生产重镇；美国、西班牙、德国等全球各地都有出色酒厂。金酒是「不挑产地」的烈酒，几乎随处可产。</li>
+<li><strong>主要品牌</strong>：添加利（Tanqueray）、必富达（Beefeater）、哥顿（Gordon&rsquo;s）、孟买蓝宝石（Bombay Sapphire）、亨德里克斯（Hendrick&rsquo;s）、猴王47（Monkey 47）、植物学家（The Botanist）</li>
+<li><strong>代表调酒</strong>：金汤力（Gin &amp; Tonic）、马天尼（Martini）、内格罗尼（Negroni）、新加坡司令（Singapore Sling）、吉姆雷特（Gimlet）</li>
+</ul>
+<hr>
+<h3 id="二威士忌whisky--whiskey">二、威士忌（Whisky / Whiskey）🥃</h3>
+<p>谷物蒸馏烈酒中风味最丰富、最讲究产区与陈年的一类。拼写区别：苏格兰写 Whisky，爱尔兰与美国写 Whiskey。</p>
+<ul>
+<li><strong>成分</strong>：以大麦、玉米、黑麦、小麦等谷物为原料，经糖化、发酵、蒸馏后在橡木桶中陈年。原料、泥煤、橡木桶类型共同决定风味（花果、烟熏、海盐、焦糖……）。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>按原料：
+<ul>
+<li>麦芽威士忌（Malt）：只用麦芽酿制，苏格兰单一麦芽是代表，风味最鲜明</li>
+<li>谷物威士忌（Grain）：麦芽+玉米等谷物，口感轻盈，多用于调和</li>
+<li>调和威士忌（Blended）：麦芽与谷物勾兑，占市场主流（如尊尼获加）</li>
+<li>波本（Bourbon）：玉米≥51%，美国肯塔基代表，带香草焦糖甜</li>
+<li>黑麦威士忌（Rye）：黑麦≥51%，辛香料感更重</li>
+</ul>
+</li>
+<li>按产区：苏格兰（Scotch）、爱尔兰（Irish）、美国波本/田纳西、日本、加拿大</li>
+</ul>
+</li>
+<li><strong>产区</strong>：苏格兰（斯佩塞、高地、艾雷岛、低地、坎贝尔镇等，风格各异）、爱尔兰、美国肯塔基州（波本重镇）、日本（山崎、白州、余市）、加拿大，台湾噶玛兰近年也声名鹊起。</li>
+<li><strong>主要品牌</strong>：
+<ul>
+<li>苏格兰：尊尼获加（Johnnie Walker）、芝华士（Chivas Regal）、麦卡伦（Macallan）、格兰菲迪（Glenfiddich）、拉弗格（Laphroaig，泥煤代表）</li>
+<li>美国：杰克丹尼（Jack Daniel&rsquo;s）、占边（Jim Beam）、四玫瑰（Four Roses）</li>
+<li>日本：山崎（Yamazaki）、白州（Hakushu）</li>
+<li>爱尔兰：詹姆森（Jameson）</li>
+</ul>
+</li>
+<li><strong>代表调酒</strong>：老式（Old Fashioned）、曼哈顿（Manhattan）、威士忌酸（Whiskey Sour）、薄荷朱利普（Mint Julep）、威士忌高球（Highball）</li>
+</ul>
+<hr>
+<h3 id="三白兰地brandy">三、白兰地（Brandy）🍾</h3>
+<p>以水果为原料蒸馏的烈酒统称，通常指葡萄白兰地。法国干邑是其王冠。</p>
+<ul>
+<li><strong>成分</strong>：以葡萄（干邑使用白玉霓 Ugni Blanc 等品种）发酵后蒸馏，再于橡木桶中陈年。苹果、樱桃、梨等其他水果也能蒸馏出白兰地。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>按陈年/颜色（由浅到深）：
+<ul>
+<li>未陈年：透明无色，果香清新（如葡萄生命之水 Eau-de-vie）</li>
+<li>陈年：橡木桶酿出琥珀色，带香草、果干、木质香</li>
+<li>陈年等级：VS（≥2年）→ VSOP（≥4年）→ XO（新规≥10年）</li>
+</ul>
+</li>
+<li>按产地/原料：
+<ul>
+<li>干邑（Cognac）：法国法定产区，工艺与产区双重限定，最为知名</li>
+<li>雅文邑（Armagnac）：历史更古老，风格更粗犷厚实</li>
+<li>卡尔瓦多斯（Calvados）：苹果白兰地，产自法国诺曼底</li>
+<li>格拉帕（Grappa）：用葡萄渣酿造的意大利白兰地</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>产区</strong>：法国干邑（大香槟区、小香槟区等六区）、雅文邑、诺曼底；西班牙、美国加州、秘鲁（皮斯科）等地亦有产出。</li>
+<li><strong>主要品牌</strong>：轩尼诗（Hennessy）、人头马（Rémy Martin）、马爹利（Martell）、拿破仑（Courvoisier）、卡慕（Camus）</li>
+<li><strong>代表调酒</strong>：边车（Sidecar）、白兰地亚历山大（Brandy Alexander）、法国情怀（French Connection）、B&amp;B</li>
+</ul>
+<hr>
+<h3 id="四伏特加vodka">四、伏特加（Vodka）🧊</h3>
+<p>追求纯净无味的「中性烈酒」，作为基酒几乎不抢味，调酒师最爱用它来承载其他风味。</p>
+<ul>
+<li><strong>成分</strong>：传统上用谷物（小麦、黑麦、大麦、玉米）或土豆为原料，现代亦有甜菜糖蜜等；经多次蒸馏与活性炭过滤，追求清冽纯净。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>按原料：
+<ul>
+<li>谷物伏特加：小麦、黑麦、大麦等谷物酿制，最常见</li>
+<li>土豆伏特加：口感更圆润、带奶油感（如雪树）</li>
+<li>葡萄伏特加：果味更清爽（如灰雁）</li>
+</ul>
+</li>
+<li>按风格：标准伏特加 vs 精品/工艺伏特加（Craft）；调味伏特加（Flavoured）</li>
+<li>原产地法规：部分国家对「伏特加」一词有产地限定（如波兰、瑞典）</li>
+</ul>
+</li>
+<li><strong>产区</strong>：俄罗斯、波兰（品质公认出众）、瑞典、芬兰、法国、美国</li>
+<li><strong>主要品牌</strong>：绝对（Absolut，瑞典）、灰雁（Grey Goose，法国）、斯米诺夫（Smirnoff）、雪树（Belvedere，波兰）、白鲸（Beluga，俄罗斯）、芬兰（Finlandia）</li>
+<li><strong>代表调酒</strong>：莫斯科骡子（Moscow Mule）、螺丝刀（Screwdriver）、血腥玛丽（Bloody Mary）、白色俄罗斯（White Russian）、大都会（Cosmopolitan）</li>
+</ul>
+<hr>
+<h3 id="五朗姆酒rum">五、朗姆酒（Rum）🏝️</h3>
+<p>甘蔗的烈酒，自带加勒比海的甜润与热带气息，是热带鸡尾酒的灵魂。</p>
+<ul>
+<li><strong>成分</strong>：以甘蔗汁、糖蜜（molasses）或甘蔗糖浆为原料发酵蒸馏，再按风格选择是否陈年。甘蔗的「贵贱」与蒸馏方式决定了风味走向。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>按颜色/陈年：
+<ul>
+<li>白朗姆（White / Silver）：未陈年或陈年极短，活性炭过滤去掉颜色，酒体清澈透明、风味干净清淡，几乎不抢味，适合清爽鸡尾酒（莫吉托、代基里）</li>
+<li>黑朗姆（Dark）：多经橡木桶陈年，颜色深（有的还会加焦糖调色），风味浓郁厚重，带焦糖、红糖、香草气息，适合重口味调酒（自由古巴、迈泰）或纯饮</li>
+<li>金朗姆（Gold）、陈年朗姆（Aged）：介于白黑之间，属中度陈年</li>
+</ul>
+</li>
+<li>按产地风格：英式重酯重味（牙买加）、法式农业朗姆（Rhum Agricole，甘蔗汁酿制，马提尼克岛有 AOC 认证）、西式清淡（古巴、波多黎各）、巴西卡莎萨（Cachaça，甘蔗汁酿制）</li>
+<li>其他：香料朗姆（Spiced）、高度朗姆（Overproof，酒精度高）</li>
+</ul>
+</li>
+<li><strong>产区</strong>：加勒比群岛（古巴、牙买加、波多黎各、巴巴多斯、马提尼克）、巴西、中南美洲、东南亚（菲律宾）</li>
+<li><strong>主要品牌</strong>：百加得（Bacardi）、哈瓦那俱乐部（Havana Club）、摩根船长（Captain Morgan）、外交官（Diplomático）、阿普尔顿（Appleton，牙买加）、戈斯林（Gosling&rsquo;s，百慕大）</li>
+<li><strong>代表调酒</strong>：莫吉托（Mojito）、代基里（Daiquiri）、自由古巴（Cuba Libre）、椰林飘香（Piña Colada）、迈泰（Mai Tai）</li>
+</ul>
+<hr>
+<h3 id="六龙舌兰tequila">六、龙舌兰（Tequila）🌵</h3>
+<p>墨西哥的骄傲，以「龙舌兰」这种植物为原料，是唯一把「墨西哥」写进名号的六大基酒。</p>
+<ul>
+<li><strong>成分</strong>：以蓝色韦伯龙舌兰（Blue Weber Agave）的茎心（长得像凤梨的 piña）蒸煮、榨汁、发酵、蒸馏而成。纯正的龙舌兰酒标榜「100% de Agave」。</li>
+<li><strong>分类</strong>：
+<ul>
+<li>按陈年：
+<ul>
+<li>白/银色（Blanco）：未陈年或≤2个月，透明清澈，风味最纯粹</li>
+<li>微陈（Reposado）：2个月–1年，轻度桶味</li>
+<li>陈年（Añejo）：1–3年，琥珀色、木桶香明显</li>
+<li>特级陈年（Extra Añejo）：&gt;3年，醇厚接近威士忌</li>
+</ul>
+</li>
+<li>按颜色（金/银）：银（Silver / Blanco，未陈年，透明清澈、最纯粹）、金（Gold / Oro，极短陈年或添加焦糖色调色，呈金黄、微甜）</li>
+<li>按纯度：100% 龙舌兰 vs 混合龙舌兰（Mixto，含龙舌兰糖≥51%，其余为其他糖类）</li>
+<li>近亲：梅斯卡尔（Mezcal），可用 200 多种龙舌兰酿造，地炉烘烤带来标志性烟熏味；核心产区瓦哈卡（Oaxaca），分级同龙舌兰（Joven / Reposado / Añejo）</li>
+</ul>
+</li>
+<li><strong>产区</strong>：墨西哥哈利斯科州（Jalisco）为核心产区，另有纳亚里特、瓜纳华托等法定区域；拥有原产地命名保护（DO），只有指定区域的产品才能叫 Tequila。</li>
+<li><strong>主要品牌</strong>：豪帅快活（José Cuervo）、唐胡里奥（Don Julio）、培恩（Patrón）、埃雷杜拉（Herradura）、卡萨米戈斯（Casamigos）、1800</li>
+<li><strong>代表调酒</strong>：玛格丽特（Margarita）、龙舌兰日出（Tequila Sunrise）、帕洛玛（Paloma）、墨西哥骡子（Mexican Mule）</li>
+</ul>
+<hr>
+<h2 id="鸡尾酒的其他部分">鸡尾酒的其他部分</h2>
 <blockquote>
-<p><a href="https://wiki.seeedstudio.com/lerobot_so100m_new/">https://wiki.seeedstudio.com/lerobot_so100m_new/</a></p>
+<p>基酒是主角，其余都是「配角」——味美思、利口酒、苦精、糖浆、果汁，负责甜、苦、香、酸这些层次</p>
 </blockquote>
-<p>3D打印以及机械臂组装，按照 <code>seeed</code> 的教程安装了本地环境，并进行了机械校准（很重要！坏了两个电机🤷），并把校准文件地址提供给 openclaw 参考执行。</p>
-<h2 id="软件配置">软件配置：</h2>
-<p>使用官方提供的 openclaw 一键安装脚本进行部署：
-<code>curl -fsSL https://openclaw.ai/install.sh | bash</code></p>
-<p>重启 Gateway：openclaw gateway restart</p>
-<h3 id="skill-技能">skill 技能</h3>
-<p>连接了 notion ，并在 <code>telegram对话</code> 成功创建notion页面。准备用作定期的数据备份。<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%88%AA%E5%B1%8F2026-03-06-16.39.55.5trkny0mm0.webp" alt="创建notion"></p>
-<h3 id="权限配置调整">权限配置调整</h3>
-<p>2026.3.2版本龙虾，默认只有 message 权限了直接去改 openclaw.json 配置文件，把 tools.profile 的 message 修改为 full，重启 OpenClaw。</p>
-<h3 id="大概过程">大概过程</h3>
-<p>身份设定。把 openclaw 设置为在 rdk x5 上通过esp32控制运行的机械臂，描述基础硬件配置信息。提供 github 上的工程链接，以及本地配置环境，尝试调用单个电机文件测试驱动，多电机联动测试。 Tool.md 扩充。摄像头安装，通过飞书实现图片调取。 <img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E7%94%B5%E6%9C%BA%E6%B5%8B%E8%AF%95.2yywi6ct9d.webp" alt="电机测试">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%91%84%E5%83%8F%E5%A4%B4%E9%85%8D%E7%BD%AE.9rjy4n30ob.webp" alt="摄像头配置">
-<img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%9C%BA%E6%A2%B0%E8%87%82%E4%B8%8B%E6%8C%87%E4%BB%A4.1hsrgf8oiu.webp" alt="机械臂下指令">
-上面这些步骤差不多完成后，我又给它配置一个24位的led灯环，想让舞蹈看起来更热闹些。不晓得什么问题板子凉了，再也没连接上。本来还想开个直播在线跳舞的……还可以多打印几个机械臂，在线点模特……可惜了……</p>
-<p>跳了几个舞之后，它还给我分析了一下。</p>
-<p><img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/duibi_dance.7lkjiushvf.webp" alt="舞步分析"></p>
-<h2 id="一些参考链接">一些参考链接</h2>
-<p>Token降本增效部分强烈建议阅读。</p>
-<p><a href="https://sspai.com/post/106232">OpenClaw：高强度使用两周，这个 AI 工具颠覆了我的工作流</a></p>
+<h3 id="味美思vermouth">味美思（Vermouth）</h3>
+<blockquote>
+<p>强化葡萄酒 + 草本香料浸渍</p>
+</blockquote>
+<ul>
+<li>甜味美思（Sweet / Rosso）：红色、甜润带草药苦香（代表：Carpano Antica、Martini Rosso）（用在哪：尼格罗尼、曼哈顿）</li>
+<li>干味美思（Dry）：透明干爽（代表：Noilly Prat）（用在哪：马天尼）</li>
+<li>白味美思（Bianco）：介于两者之间，微甜清爽（用在哪：马天尼的柔和变体）</li>
+</ul>
+<h3 id="橙味利口酒orange-liqueur">橙味利口酒（Orange Liqueur）</h3>
+<ul>
+<li>君度（Cointreau）：透明、甜橙皮香纯净（用在哪：玛格丽特、边车、大都会）</li>
+<li>橙皮甜酒（Triple Sec / Curacao）：常呈蓝色库拉索（用在哪：迈泰）</li>
+<li>柑曼怡（Grand Marnier）：干邑 + 橙皮，更醇厚（用在哪：边车变体、热饮/纯饮）</li>
+</ul>
+<h3 id="苦味利口酒意大利系">苦味利口酒（意大利系）</h3>
+<ul>
+<li>金巴利（Campari）：橙皮 + 草药，苦中带甜、猩红色（用在哪：尼格罗尼、金巴利苏打）</li>
+<li>阿佩罗（Aperol）：比金巴利更甜更淡（用在哪：阿佩罗橙光 Spritz）</li>
+<li>费奈特（Fernet-Branca）：极苦草药（用在哪：餐后纯饮）</li>
+</ul>
+<h3 id="杏仁--香料类">杏仁 / 香料类</h3>
+<ul>
+<li>阿玛雷托（Amaretto）：杏仁香（用在哪：教父、法国情怀）</li>
+<li>杏仁糖浆（Orgeat）：无酒精杏仁糖浆（用在哪：迈泰、僵尸）</li>
+<li>Falernum：朗姆 + 杏仁 + 香料糖浆（用在哪：僵尸）</li>
+</ul>
+<h3 id="苦精bitters">苦精（Bitters）</h3>
+<ul>
+<li>安高天娜（Angostura）：最通用（用在哪：古典、曼哈顿）</li>
+<li>裴乔氏（Peychaud&rsquo;s）：萨泽拉克专用</li>
+<li>橙味苦精：橙香点缀（用在哪：马天尼、尼格罗尼）</li>
+</ul>
+<h3 id="糖浆syrup">糖浆（Syrup）</h3>
+<ul>
+<li>单糖浆（1:1 糖:水）：调酸酒的基础甜度（用在哪：威士忌酸、代基里）</li>
+<li>石榴糖浆（Grenadine）：红色甜浆（用在哪：僵尸、龙舌兰日出）</li>
+<li>蜂蜜糖浆 / 枫糖浆（用在哪：威士忌酸变体、热饮）</li>
+</ul>
+<h3 id="果汁与气泡水">果汁与气泡水</h3>
+<ul>
+<li>柑橘汁：青柠（莫吉托、玛格丽特）、黄柠（边车、威士忌酸）、橙、葡萄柚</li>
+<li>气泡：苏打水（莫吉托、金菲士）、汤力水（金汤力）、姜汁啤酒、可乐（自由古巴）</li>
+</ul>
+<hr>
+<h2 id="吧台基本功器具与手法">吧台基本功：器具与手法</h2>
+<h3 id="量杯jigger">量杯（Jigger）</h3>
+<blockquote>
+<p>计量的关键：先量准，再倒入</p>
+</blockquote>
+<ul>
+<li>两头杯型，常见 30/45ml、20/40ml 规格</li>
+<li>倒法：酒瓶口贴量杯内壁，倒至满杯缘即停，不洒不漏</li>
+<li>量完贴着摇壶/杯壁倒入，中间不隔手</li>
+</ul>
+<h3 id="冰杯预冷酒杯">冰杯（预冷酒杯）</h3>
+<ul>
+<li>作用：让酒液保持低温、少化水；短饮（马天尼、古典、尼格罗尼）尤其重要</li>
+<li>做法：搅拌/摇荡前先在杯里装满冰（或冰+水），上桌前倒掉冰水、擦干</li>
+</ul>
+<h3 id="冰块">冰块</h3>
+<ul>
+<li>大块冰 / 老冰：化水慢，搅拌类用（马天尼、古典、尼格罗尼）</li>
+<li>碎冰 / 刨冰：化水快，Tiki、莫吉托用（要快喝）</li>
+<li>大冰球：纯饮 / 古典，融化最慢</li>
+<li>原则：冰宁多勿少——冰越多，化水越慢，酒越不容易稀</li>
+</ul>
+<h3 id="吧勺与搅拌stir">吧勺与搅拌（Stir）</h3>
+<ul>
+<li>吧勺：长柄螺旋勺，专供搅拌</li>
+<li>手法：勺背贴杯壁、绕圈轻搅 10–20 圈，不出气泡</li>
+<li>目的：充分混合 + 冰镇 + 轻微稀释</li>
+</ul>
+<h3 id="摇壶与摇荡shake">摇壶与摇荡（Shake）</h3>
+<ul>
+<li>摇壶：波士顿壶（大杯+小杯，专业常用）、三段式 Cobbler（自带滤网，家用顺手）</li>
+<li>手法：双手握壶、虎口压紧，快速上下摇 10–15 秒，冰约占壶 2/3</li>
+<li>硬摇：先不加冰摇出泡沫（酸酒、代基里）</li>
+<li>目的：充分混合 + 迅速降温 + 打出泡沫</li>
+</ul>
+<h3 id="搅拌-or-摇荡怎么选">搅拌 or 摇荡，怎么选</h3>
+<ul>
+<li>搅拌：配料全是酒（烈酒 + 利口酒/味美思），不含果汁——马天尼、尼格罗尼、曼哈顿、古典</li>
+<li>摇荡：配料含果汁/蛋/奶/糖浆，需要打散乳化——玛格丽特、边车、莫吉托、代基里、Tiki 类</li>
+<li>口诀：<strong>全酒搅拌，有汁就摇</strong></li>
+</ul>
+<h3 id="收尾小细节">收尾小细节</h3>
+<ul>
+<li>滤冰：摇/拌后先滤冰再倒入杯</li>
+<li>装饰：青柠角/橙皮先擦杯口再入杯，逼出香气</li>
+<li>倒酒：瓶口贴杯、吧勺引流，避免滴漏</li>
+</ul>
 </section>
 
     
@@ -832,24 +1170,29 @@ skill 技能
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">2 篇文章有相同标签组合</span>
+        <span class="post-tags-related">1 篇文章有相同标签组合</span>
         
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/openclaw" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E8%B0%83%E9%85%92" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">openclaw</span>
-          <span class="post-tag-count">4</span>
+          <span class="post-tag-name">调酒</span>
+          <span class="post-tag-count">0</span>
         </a>
-        <a href="https://fifteenbao.com/tags/diy" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E9%B8%A1%E5%B0%BE%E9%85%92" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">DIY</span>
-          <span class="post-tag-count">3</span>
+          <span class="post-tag-name">鸡尾酒</span>
+          <span class="post-tag-count">0</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%9C%BA%E5%B7%A7%E5%8F%B8" class="post-tag-pill no-underline">
+        <a href="https://fifteenbao.com/tags/%E9%A5%AE%E5%93%81" class="post-tag-pill no-underline">
           <span class="post-tag-dot"></span>
-          <span class="post-tag-name">机巧司</span>
+          <span class="post-tag-name">饮品</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E9%95%BF%E7%89%A9%E9%98%81" class="post-tag-pill no-underline">
+          <span class="post-tag-dot"></span>
+          <span class="post-tag-name">长物阁</span>
           <span class="post-tag-count">0</span>
         </a>
         
@@ -865,13 +1208,9 @@ skill 技能
       class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
     >
       
-      <a class="ltr:pr-3 rtl:pl-3" href="https://fifteenbao.com/post/%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/"
-        ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>大沙河公园游记</span></a
-      >
       
-      
-      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/openclaw%E5%B0%9D%E9%B2%9C%E8%AE%B0/"
-        ><span>OpenClaw 尝鲜记</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+      <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="https://fifteenbao.com/post/20260708%E4%BC%8F%E8%A7%81%E6%B8%85%E9%85%92%E4%B9%8B%E6%97%85/"
+        ><span>伏见清酒之旅</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
       >
       
     </nav>
