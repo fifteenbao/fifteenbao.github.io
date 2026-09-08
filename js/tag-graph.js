@@ -35,7 +35,9 @@
   function linkStroke()       { return token('--accent-border'); }
   function activeLinkStroke() { return token('--accent'); }
   function nodeStroke()       { return isDark() ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.7)'; }
-  function glowFilter()       { return isDark() ? 'url(#glow-soft)' : 'none'; }
+  // Keep the graph crisp in both themes; a glow made low-count tags muddy on
+  // the dark canvas and competed with the labels.
+  function glowFilter()       { return 'none'; }
   function labelFill(d) {
     var hi = token('--text-primary');
     var lo = token('--text-secondary');
@@ -184,9 +186,15 @@
       .selectAll('text').data(nodes).enter().append('text')
       .text(function (d) { return d.name; })
       .attr('fill', function (d) { return labelFill(d); })
-      .attr('font-size', function (d) { return d.count >= 4 ? '11.5px' : '9.5px'; })
+      // Single size off the type scale's 辅助 rung (--text-xs) instead of the
+      // old 11.5/9.5px pair — node radius and the font-weight step below
+      // already encode count, so the extra size wasn't carrying information.
+      .attr('font-size', 'var(--text-xs)')
       .attr('font-family', 'system-ui, -apple-system, sans-serif')
-      .attr('font-weight', function (d) { return d.count >= 5 ? '500' : '400'; })
+      .attr('font-weight', function (d) {
+        return d.count >= 7 ? '700' : d.count >= 3 ? '600' : '400';
+      })
+      .style('opacity', function (d) { return d.count >= 2 ? 1 : 0.72; })
       .attr('dx', function (d) { return nodeR(d) + 4; })
       .attr('dy', '0.35em')
       .style('pointer-events', 'none')

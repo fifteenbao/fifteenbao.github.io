@@ -1,0 +1,163 @@
+<!doctype html><html class=not-ready style=--bg:#faf8f1 lang=zh dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>unit bot agent - 成本分析&技术选型 - fifteenbao</title><meta name=theme-color><meta name=description content="DFMA 学习笔记
+DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
+DFMA 包含两个相互协同的子领域：
+
+  
+      
+          子领域
+          全称
+          关注点
+          目标
+      
+  
+  
+      
+          DFM
+          Design for Manufacturing
+          单个零件的制造工艺性
+          让每个零件易于加工、成本可控
+      
+      
+          DFA
+          Design for Assembly
+          零件之间的装配过程
+          减少零件数量、简化装配动作
+      
+  
+
+
+核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
+
+
+目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
+
+一、内容范围
+DFA 优化（面向装配的设计）
+
+  
+      
+          #
+          优化方向
+          说明
+      
+  
+  
+      
+          1
+          最小件为核心的合并
+          以减少零件数量为核心，合并可合并的零件
+      
+      
+          2
+          紧固件的减少
+          消除不必要的螺钉、螺栓、铆钉
+      
+      
+          3
+          自定位及防呆设计
+          Poka-Yoke，物理上杜绝装错
+      
+      
+          4
+          自固定设计
+          消除额外固定件，零件自身完成固定
+      
+      
+          5
+          防止欠约束及过约束
+          刚好约束，不多不少
+      
+      
+          6
+          单独装配动作的消除
+          合并步骤，减少工时
+      
+      
+          7
+          焊接/粘接/螺纹紧固的消除
+          用卡扣、压配、一体成型替代
+      
+      
+          8
+          解决人体工学问题
+          减少操作疲劳和损伤
+      
+      
+          9
+          标准化设计
+          通用零件、统一接口
+      
+  
+
+DFM 优化（面向制造的设计）
+
+  
+      
+          #
+          优化方向
+          说明
+      
+  
+  
+      
+          1
+          材料替代
+          更便宜、更易加工的材料
+      
+      
+          2
+          工艺改变
+          从高成本工艺转向低成本工艺
+      
+      
+          3
+          加工精度放宽
+          只保留功能必要的公差
+      
+      
+          4
+          表面处理简化
+          减少不必要的涂装/电镀
+      
+      
+          5
+          结构简化
+          减少加工步骤和装夹次数
+      
+  
+
+采购降本
+基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。"><meta name=author content="fifteenbao"><link rel="preload stylesheet" as=style href=https://fifteenbao.com/css/site.min.css><script defer src=https://fifteenbao.com/js/site.min.js></script><script defer src=https://fifteenbao.com/js/heatmap.min.js></script><link rel=preload as=image href=https://fifteenbao.com/images/admin.gif><link rel=preload as=image href=https://fifteenbao.com/rss.svg><script defer src=https://fifteenbao.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://fifteenbao.com/favicon.ico><link rel=apple-touch-icon href=https://fifteenbao.com/apple-touch-icon.png><meta name=generator content="Hugo 0.158.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script><meta itemprop=name content="unit bot agent - 成本分析&技术选型"><meta itemprop=description content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
+DFMA 包含两个相互协同的子领域：
+子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
+目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
+一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。"><meta itemprop=datePublished content="2026-04-17T00:00:00+00:00"><meta itemprop=dateModified content="2026-04-17T00:00:00+00:00"><meta itemprop=wordCount content="528"><meta itemprop=keywords content="AI,Openclaw,智能硬件,成本分析,技术选型,扫地机器人,才"><meta property="og:url" content="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/"><meta property="og:site_name" content="fifteenbao"><meta property="og:title" content="unit bot agent - 成本分析&技术选型"><meta property="og:description" content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
+DFMA 包含两个相互协同的子领域：
+子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
+目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
+一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-04-17T00:00:00+00:00"><meta property="article:modified_time" content="2026-04-17T00:00:00+00:00"><meta property="article:tag" content="AI"><meta property="article:tag" content="Openclaw"><meta property="article:tag" content="智能硬件"><meta property="article:tag" content="成本分析"><meta property="article:tag" content="技术选型"><meta property="article:tag" content="扫地机器人"><meta property="og:see_also" content="https://fifteenbao.com/post/20260428%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/"><meta name=twitter:card content="summary"><meta name=twitter:title content="unit bot agent - 成本分析&技术选型"><meta name=twitter:description content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
+DFMA 包含两个相互协同的子领域：
+子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
+目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
+一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。"><link rel=canonical href=https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/></head><body class="text-black duration-200 ease-out dark:text-white" style=background:var(--bg)><header class="header-blur fixed z-50 transition-all duration-300 header-fade" id=main-header data-bg=#faf8f1 style="width:calc(min(100% - 2rem,var(--w)));max-width:var(--w)"><div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center"><div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center"><a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href=https://fifteenbao.com/>fifteenbao</a></div><div class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden" role=button aria-label=Menu></div><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"><nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse"><a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/post/>Blog</a>
+<a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/tags/>Tags</a></nav><div class="header-social-mobile flex-col items-start gap-4 mt-4"><a class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.7rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div><nav class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"><a class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="flex items-center ml-2"><div class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.5rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div></nav></div></div></header><div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div><main class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"><div class=article-container><aside class=toc-sidebar><div class=toc-wrapper><div class=toc-header><span class=toc-title>目录</span></div><div class=toc-content><nav id=TableOfContents><ul><li><a href=#dfma-学习笔记>DFMA 学习笔记</a><ul><li><a href=#一内容范围>一、内容范围</a></li><li><a href=#二三大降本途径>二、三大降本途径</a></li><li><a href=#三dfa-核心原则>三、DFA 核心原则</a></li><li><a href=#四dfm-核心原则>四、DFM 核心原则</a></li><li><a href=#五dfma-实施流程>五、DFMA 实施流程</a></li><li><a href=#六dfma-与其他工具的关系>六、DFMA 与其他工具的关系</a></li><li><a href=#七常见工艺的-dfma-速查>七、常见工艺的 DFMA 速查</a></li><li><a href=#八新兴趋势2025-2026>八、新兴趋势（2025-2026）</a></li><li><a href=#九快速参考表>九、快速参考表</a></li></ul></li><li><a href=#扩展阅读>扩展阅读</a></li></ul></nav></div></div></aside><article class=article-content><header class=mb-12><h1 class="!my-0 pb-3 page-title font-semibold leading-tight">unit bot agent - 成本分析&技术选型</h1><div class="type-xs antialiased opacity-60"><time>2026年4月17日</time>
+<span class=mx-1>&#183;</span>
+<span>fifteenbao</span></div><div class="mt-3 flex flex-wrap gap-x-3 gap-y-1"><a class="post-tag-pill no-underline" href=https://fifteenbao.com/series/unit-bot-%E5%BC%80%E5%8F%91%E8%AE%B0><span class=post-tag-name>系列 · unit bot 开发记</span></a></div></header><section><h2 id=dfma-学习笔记>DFMA 学习笔记</h2><p>DFMA 全称 <strong>Design for Manufacture and Assembly</strong>（面向制造及装配的设计），是 <strong>Boothroyd-Dewhurst 公司</strong> 开发的 <strong>结构性方法</strong>，核心思路是：<strong>通过简化设计，实现低成本、高质量的生产制造。</strong></p><p>DFMA 包含两个相互协同的子领域：</p><table><thead><tr><th>子领域</th><th>全称</th><th>关注点</th><th>目标</th></tr></thead><tbody><tr><td><strong>DFM</strong></td><td>Design for Manufacturing</td><td>单个零件的制造工艺性</td><td>让每个零件易于加工、成本可控</td></tr><tr><td><strong>DFA</strong></td><td>Design for Assembly</td><td>零件之间的装配过程</td><td>减少零件数量、简化装配动作</td></tr></tbody></table><blockquote><p><strong>核心数据</strong>：产品生命周期成本的 <strong>70%~80%</strong> 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。</p></blockquote><blockquote><p>目标：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。</p></blockquote><h3 id=一内容范围>一、内容范围</h3><h4 id=dfa-优化面向装配的设计>DFA 优化（面向装配的设计）</h4><table><thead><tr><th>#</th><th>优化方向</th><th>说明</th></tr></thead><tbody><tr><td>1</td><td>最小件为核心的合并</td><td>以减少零件数量为核心，合并可合并的零件</td></tr><tr><td>2</td><td>紧固件的减少</td><td>消除不必要的螺钉、螺栓、铆钉</td></tr><tr><td>3</td><td>自定位及防呆设计</td><td>Poka-Yoke，物理上杜绝装错</td></tr><tr><td>4</td><td>自固定设计</td><td>消除额外固定件，零件自身完成固定</td></tr><tr><td>5</td><td>防止欠约束及过约束</td><td>刚好约束，不多不少</td></tr><tr><td>6</td><td>单独装配动作的消除</td><td>合并步骤，减少工时</td></tr><tr><td>7</td><td>焊接/粘接/螺纹紧固的消除</td><td>用卡扣、压配、一体成型替代</td></tr><tr><td>8</td><td>解决人体工学问题</td><td>减少操作疲劳和损伤</td></tr><tr><td>9</td><td>标准化设计</td><td>通用零件、统一接口</td></tr></tbody></table><h4 id=dfm-优化面向制造的设计>DFM 优化（面向制造的设计）</h4><table><thead><tr><th>#</th><th>优化方向</th><th>说明</th></tr></thead><tbody><tr><td>1</td><td>材料替代</td><td>更便宜、更易加工的材料</td></tr><tr><td>2</td><td>工艺改变</td><td>从高成本工艺转向低成本工艺</td></tr><tr><td>3</td><td>加工精度放宽</td><td>只保留功能必要的公差</td></tr><tr><td>4</td><td>表面处理简化</td><td>减少不必要的涂装/电镀</td></tr><tr><td>5</td><td>结构简化</td><td>减少加工步骤和装夹次数</td></tr></tbody></table><h4 id=采购降本>采购降本</h4><p>基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。</p><h3 id=二三大降本途径>二、三大降本途径</h3><p>DFMA 提供了一套 <strong>数据驱动的工具集合</strong>，主要通过以下三种方式实现降本：</p><h4 id=1-设计简化降本>1. 设计简化降本</h4><blockquote><p>通过分析装配环节，寻找减少零件数量的机会。</p></blockquote><table><thead><tr><th>维度</th><th>说明</th></tr></thead><tbody><tr><td><strong>做法</strong></td><td>对现有设计进行 DFA 分析，逐一审视每个零件存在的必要性</td></tr><tr><td><strong>工具</strong></td><td>Boothroyd-Dewhurst 三问法、装配流程图</td></tr><tr><td><strong>案例</strong></td><td>某产品零件数从 <strong>19 个减至 7 个</strong>，产品总成本降低 <strong>46%</strong></td></tr></tbody></table><h4 id=2-材料及工艺优化降本>2. 材料及工艺优化降本</h4><blockquote><p>计算并比较不同工艺和材料的成本，找到直接生产环节的省钱空间。</p></blockquote><table><thead><tr><th>维度</th><th>说明</th></tr></thead><tbody><tr><td><strong>做法</strong></td><td>对不同工艺路线（如砂铸 vs 压铸）进行成本建模和对比</td></tr><tr><td><strong>工具</strong></td><td>工艺成本模型、材料单价数据库、制造周期估算</td></tr><tr><td><strong>关键</strong></td><td>在概念阶段做出正确的工艺选择，避免后期被迫接受高成本方案</td></tr></tbody></table><h4 id=3-商务谈判降本应该成本计算>3. 商务谈判降本（应该成本计算）</h4><blockquote><p>精确计算出零部件的「<strong>应该成本</strong>（Should Cost）」，使企业在供应商谈判中获得主动权和竞争优势。</p></blockquote><table><thead><tr><th>维度</th><th>说明</th></tr></thead><tbody><tr><td><strong>做法</strong></td><td>基于材料成本 + 加工工时 + 合理利润，从零建模零件的理论成本</td></tr><tr><td><strong>价值</strong></td><td>不再是「供应商报多少是多少」，而是拿着数据去谈判</td></tr><tr><td><strong>效果</strong></td><td>识别报价虚高、推动供应商优化、建立长期定价基准</td></tr></tbody></table><blockquote><p><strong>三者关系</strong>：设计简化解决「能不能不做」的问题，工艺优化解决「怎么做更便宜」的问题，应该成本解决「花多少钱才合理」的问题——三层递进，覆盖产品从设计到采购的全链路降本。</p></blockquote><h3 id=三dfa-核心原则>三、DFA 核心原则</h3><h4 id=1-最小化零件数量最重要原则>1. 最小化零件数量（最重要原则）</h4><blockquote><p><strong>这是 DFMA 中影响最大的单一技术。</strong></p></blockquote><p>使用 <strong>Boothroyd-Dewhurst 三问法</strong> 审视每一个零件：</p><table><thead><tr><th>#</th><th>问题</th><th>如果「否」则考虑合并/消除</th></tr></thead><tbody><tr><td>1</td><td>该零件是否相对相邻零件有运动？</td><td>可合并</td></tr><tr><td>2</td><td>该零件是否必须使用不同材料？</td><td>可合并</td></tr><tr><td>3</td><td>该零件是否必须分离以便装配或维修？</td><td>可合并</td></tr></tbody></table><p><strong>效果</strong>：行业数据表明，零件数量通常可减少 <strong>30%~70%</strong>。</p><p><strong>案例</strong>：某产品原有 200+ 个零件，经过 DFA 分析后减少到 80 个，装配时间缩短了 60%。</p><h4 id=2-自上而下z-轴装配>2. 自上而下（Z 轴）装配</h4><table><thead><tr><th>维度</th><th>说明</th></tr></thead><tbody><tr><td><strong>原则</strong></td><td>零件沿着重力方向从上向下堆叠</td></tr><tr><td><strong>好处</strong></td><td>利用重力自动定位、减少翻转和重新定向</td></tr><tr><td><strong>关键</strong></td><td>尽量让所有零件在同一方向装配</td></tr></tbody></table><p><strong>实例</strong>：电子产品的「三明治」堆叠结构——底壳 → PCB → 屏幕 → 面板 → 顶壳，全部自上而下装配。</p><h4 id=3-防错设计-poka-yoke>3. 防错设计 (Poka-Yoke)</h4><blockquote><p><strong>通过物理结构让错误装配变得不可能。</strong></p></blockquote><table><thead><tr><th>技术</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td>不对称几何</td><td>只有正确方向才能装进去</td><td>USB-A 接口（仅单向插入）</td></tr><tr><td>键位/缺口</td><td>用不同凸起防错位</td><td>不同 PIN 数的排针对应不同孔位</td></tr><tr><td>导引特征</td><td>倒角、喇叭口引导装配</td><td>连接器上的导引槽</td></tr><tr><td>颜色/标识</td><td>视觉区分接口</td><td>不同颜色的线束接头</td></tr></tbody></table><h4 id=4-减少紧固件>4. 减少紧固件</h4><table><thead><tr><th>传统方式</th><th>替代方案</th><th>优势</th></tr></thead><tbody><tr><td>螺钉/螺栓</td><td>卡扣 (Snap-fit)</td><td>免工具、快速</td></tr><tr><td>螺母+垫圈</td><td>压配合 (Press-fit)</td><td>减少零件</td></tr><tr><td>金属支架</td><td>一体成型的塑料结构</td><td>消除 + 减轻重量</td></tr><tr><td>螺钉固定盖板</td><td>活铰链 (Living hinge)</td><td>零额外的零件</td></tr></tbody></table><p><strong>经验法则</strong>：每个螺钉的装配时间约 6~10 秒，一个产品有 20 颗螺钉就意味着近 3 分钟的装配成本。</p><h4 id=5-标准化与模块化>5. 标准化与模块化</h4><table><thead><tr><th>策略</th><th>做法</th><th>价值</th></tr></thead><tbody><tr><td><strong>标准化</strong></td><td>使用通用紧固件、轴承、弹簧等</td><td>减少 SKU、批量采购折扣</td></tr><tr><td><strong>优选零件库</strong></td><td>建立经验证的标准件清单</td><td>减少设计时间、降低错误</td></tr><tr><td><strong>模块化</strong></td><td>公共子组件跨产品复用</td><td>规模效应、简化维修</td></tr></tbody></table><p><strong>实例</strong>：汽车平台化——大众 MQB 平台，不同车型共享大量子组件，大幅降低开发和制造成本。</p><h3 id=四dfm-核心原则>四、DFM 核心原则</h3><h4 id=1-功能公差-functional-tolerancing>1. 功能公差 (Functional Tolerancing)</h4><blockquote><p><strong>只在功能必要的特征上施加严格公差。过度标注公差是最常见的成本驱动因素之一。</strong></p></blockquote><table><thead><tr><th>公差等级</th><th>加工方法</th><th>相对成本</th></tr></thead><tbody><tr><td>±0.5mm</td><td>通用加工</td><td>1×</td></tr><tr><td>±0.1mm</td><td>精密加工</td><td>3~5×</td></tr><tr><td>±0.01mm</td><td>研磨/精磨</td><td>10~20×</td></tr><tr><td>±0.001mm</td><td>超精密加工</td><td>50×+</td></tr></tbody></table><p><strong>关键问题</strong>：这个公差真的影响功能吗？还是只是「习惯性标注」？</p><h4 id=2-材料选择与工艺匹配>2. 材料选择与工艺匹配</h4><table><thead><tr><th>工艺</th><th>典型材料</th><th>设计要点</th></tr></thead><tbody><tr><td><strong>注塑成型</strong></td><td>ABS、PC、PP、PA</td><td>均匀壁厚、拔模斜度 1°~3°、避免底切</td></tr><tr><td><strong>CNC 加工</strong></td><td>铝、钢、黄铜</td><td>避免尖内角（加圆角 R≥刀具半径）、深腔用大径刀具</td></tr><tr><td><strong>钣金</strong></td><td>钢板、铝板</td><td>弯曲半径≥板厚、孔边距≥板厚、避免密集孔</td></tr><tr><td><strong>压铸</strong></td><td>锌合金、铝合金</td><td>与注塑类似但有最小壁厚要求</td></tr><tr><td><strong>3D 打印</strong></td><td>PLA、ABS、树脂、金属粉末</td><td>考虑方向效应、支撑移除、封闭空腔排粉</td></tr></tbody></table><h4 id=3-多功能零件>3. 多功能零件</h4><blockquote><p><strong>一个精心设计的零件可以承担多个角色，减少额外的分隔件、支架和对齐特征。</strong></p></blockquote><p><strong>实例</strong>：</p><ul><li>电池仓盖同时作为加强筋 → 消除单独的加强件</li><li>卡扣同时实现固定 + 定位 + 电气接地</li><li>外壳同时是散热器（散热鳍片一体成型）</li></ul><h4 id=4-制造工艺约束优先>4. 制造工艺约束优先</h4><table><thead><tr><th>工艺</th><th>关键约束</th><th>设计红线</th></tr></thead><tbody><tr><td>注塑</td><td>模具分型面</td><td>避免倒扣（undercut）在分型方向之外</td></tr><tr><td>CNC 车削</td><td>旋转对称</td><td>非轴对称特征需要铣削工序</td></tr><tr><td>钣金冲压</td><td>材料拉伸极限</td><td>深度/直径比不超过材料延伸率</td></tr><tr><td>铸造</td><td>金属流动</td><td>壁厚不能太薄（流动性不足）</td></tr></tbody></table><h3 id=五dfma-实施流程>五、DFMA 实施流程</h3><table><thead><tr><th>阶段</th><th>关键活动</th><th>产出物</th></tr></thead><tbody><tr><td><strong>概念设计</strong></td><td>工艺路线评估、初始成本建模</td><td>制造策略方案</td></tr><tr><td><strong>详细设计</strong></td><td>零件合并、公差分析、CAD 可制造性检查</td><td>优化后的 BOM</td></tr><tr><td><strong>原型验证</strong></td><td>实物装配试验、工时测定、人机工程测试</td><td>装配可行性报告</td></tr><tr><td><strong>供应商导入</strong></td><td>早期供应商介入 (ESI)、CM 反馈</td><td>对齐制造能力的设计</td></tr></tbody></table><blockquote><p><strong>关键时机</strong>：DFMA 必须<strong>尽早介入</strong>，而不是作为设计冻结后的「过关审核」。越早应用，收益越大。</p></blockquote><h3 id=六dfma-与其他工具的关系>六、DFMA 与其他工具的关系</h3><h4 id=dfma--dfmea--pfmea-三位一体>DFMA + DFMEA + PFMEA 三位一体</h4><table><thead><tr><th>工具</th><th>关注点</th><th>问题</th></tr></thead><tbody><tr><td><strong>DFMA</strong></td><td>可制造性 + 可装配性</td><td>「能不能做？能不能装？」</td></tr><tr><td><strong>DFMEA</strong></td><td>设计失效模式</td><td>「设计哪里会出问题？」</td></tr><tr><td><strong>PFMEA</strong></td><td>过程失效模式</td><td>「制造过程中哪里会出问题？」</td></tr></tbody></table><p><strong>最佳实践</strong>：三者在设计评审中联动使用——DFMA 优化结构和工艺，DFMEA 识别设计风险，PFMEA 保障量产可靠性。</p><h3 id=七常见工艺的-dfma-速查>七、常见工艺的 DFMA 速查</h3><h4 id=注塑件-dfm-要点>注塑件 DFM 要点</h4><ul><li>✅ 均匀壁厚（±25% 以内），避免缩痕</li><li>✅ 拔模斜度 1°~3°（每 25mm 深度至少 1°）</li><li>✅ 避免尖角，圆角半径 ≥ 0.5mm</li><li>✅ 筋位厚度 ≤ 名义壁厚的 60%</li><li>✅ 浇口位置避免影响外观面</li></ul><h4 id=钣金件-dfm-要点>钣金件 DFM 要点</h4><ul><li>✅ 最小弯曲内半径 ≥ 材料厚度</li><li>✅ 孔到折弯边距离 ≥ 1.5× 材料厚度 + 弯曲半径</li><li>✅ 避免过小的凸台/凸缘</li><li>✅ 考虑材料回弹（尤其不锈钢）</li></ul><h4 id=cnc-加工-dfm-要点>CNC 加工 DFM 要点</h4><ul><li>✅ 内直角加圆角（R ≥ 刀具半径）</li><li>✅ 孔深/孔径比 ≤ 4:1（标准），≤ 10:1（深孔钻）</li><li>✅ 避免薄壁（最小壁厚 ≥ 0.8mm 金属，≥ 1.5mm 塑料）</li><li>✅ 减少装夹次数（尽量一次装夹完成所有加工面）</li></ul><h3 id=八新兴趋势2025-2026>八、新兴趋势（2025-2026）</h3><table><thead><tr><th>趋势</th><th>说明</th></tr></thead><tbody><tr><td><strong>供应链韧性</strong></td><td>DFMA 通过标准化和简化 BOM，减少对单一供应商的依赖</td></tr><tr><td><strong>回流制造</strong></td><td>通过自动化友好设计降低人工占比，支撑制造回流</td></tr><tr><td><strong>3D 打印扩展</strong></td><td>DFMA 原则延伸到增材制造，考虑打印方向、支撑、排粉</td></tr><tr><td><strong>AI + DFMA</strong></td><td>CAD 集成软件可自动检测可制造性问题并给出改进建议</td></tr><tr><td><strong>数字线</strong></td><td>全链路数字模型，设计师在设计阶段即可模拟制造过程</td></tr></tbody></table><h3 id=九快速参考表>九、快速参考表</h3><table><thead><tr><th>原则</th><th>一句话总结</th><th>优先级</th></tr></thead><tbody><tr><td>减少零件数量</td><td>消除一切非必要零件</td><td>⭐⭐⭐ 最高</td></tr><tr><td>自上而下装配</td><td>重力辅助、单轴堆叠</td><td>⭐⭐⭐</td></tr><tr><td>Poka-Yoke</td><td>物理防错，杜绝装反</td><td>⭐⭐⭐</td></tr><tr><td>功能公差</td><td>只在必要时紧公差</td><td>⭐⭐</td></tr><tr><td>标准化</td><td>通用零件优先</td><td>⭐⭐</td></tr><tr><td>减少紧固件</td><td>卡扣、压配替代螺钉</td><td>⭐⭐</td></tr><tr><td>模块化</td><td>子组件跨产品复用</td><td>⭐⭐</td></tr><tr><td>多功能零件</td><td>一个零件多个角色</td><td>⭐</td></tr></tbody></table><hr><h2 id=扩展阅读>扩展阅读</h2><p>完整文件树和各模块说明见 <a href=https://github.com/fifteenbao/unit-bot/blob/main/%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8BPLANS.md>agents/README.md</a> 和 <a href=https://github.com/fifteenbao/unit-bot/blob/main/docs/agents_architecture.md>docs/agents_architecture.md</a>。</p></section><footer class=post-tags-footer><div class=post-tags-header><span class=post-tags-label>标签</span>
+<span class=post-tags-related>6 篇文章有相同标签组合</span>
+<a href=https://fifteenbao.com/tags/ class="post-tags-graph-link no-underline">图谱 →</a></div><div class=post-tags-list><a href=https://fifteenbao.com/tags/ai class="post-tag-pill no-underline"><span class=post-tag-name>#AI</span>
+<span class=post-tag-count>9</span>
+</a><a href=https://fifteenbao.com/tags/openclaw class="post-tag-pill no-underline"><span class=post-tag-name>#openclaw</span>
+<span class=post-tag-count>4</span>
+</a><a href=https://fifteenbao.com/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6 class="post-tag-pill no-underline"><span class=post-tag-name>#智能硬件</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90 class="post-tag-pill no-underline"><span class=post-tag-name>#成本分析</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B class="post-tag-pill no-underline"><span class=post-tag-name>#技术选型</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA class="post-tag-pill no-underline"><span class=post-tag-name>#扫地机器人</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E6%89%8D class="post-tag-pill no-underline"><span class=post-tag-name>#才</span>
+<span class=post-tag-count>0</span></a></div></footer><nav class=post-navigation aria-label=文章翻页><a class="post-nav-link post-nav-previous" href=https://fifteenbao.com/post/20260423ipd_agens/ rel=prev><span class=post-nav-direction><span class=post-nav-arrow aria-hidden=true>←</span> 上一篇</span>
+<span class=post-nav-title>IPD agents实践-智能拳击硬件项目</span>
+</a><a class="post-nav-link post-nav-next" href=https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/ rel=next><span class=post-nav-direction>下一篇 <span class=post-nav-arrow aria-hidden=true>→</span></span>
+<span class=post-nav-title>我的 openclaw Agents 协作系统</span></a></nav></article></div><script>(function(){const e=document.querySelectorAll("article h2, article h3, article h4"),n=document.querySelectorAll(".toc-content a");if(e.length===0||n.length===0)return;const t=new Map,i=new Map;e.forEach(e=>{const s=e.id||e.getAttribute("id");s&&n.forEach(n=>{const o=n.getAttribute("href");o&&(o==="#"+s||o.endsWith("#"+s))&&(t.set(e,n),i.set(n,e))})});function s(){n.forEach(e=>e.classList.remove("active"));const o=window.scrollY,r=window.scrollY+window.innerHeight,i=120;let s=null,a=1/0;if(e.forEach(e=>{const n=e.getBoundingClientRect(),t=window.scrollY+n.top,r=t+n.height;if(t<=o+i){const n=Math.abs(t-(o+i));n<a&&(a=n,s=e)}}),s||e.forEach(e=>{const t=e.getBoundingClientRect();t.top>=0&&t.top<window.innerHeight&&(s||(s=e))}),s&&t.has(s)){{const n=t.get(s);n.classList.add("active");const e=document.querySelector(".toc-sidebar");if(e){const t=n.getBoundingClientRect(),s=e.getBoundingClientRect(),o=e.scrollTop;t.top<s.top?e.scrollTo({top:o+(t.top-s.top)-20,behavior:"smooth"}):t.bottom>s.bottom&&e.scrollTo({top:o+(t.bottom-s.bottom)+20,behavior:"smooth"})}}}else if(window.scrollY<100&&e.length>0){const n=e[0];t.has(n)&&t.get(n).classList.add("active")}}let o=!1;function a(){o||(window.requestAnimationFrame(()=>{s(),o=!1}),o=!0)}window.addEventListener("scroll",a,{passive:!0}),s(),n.forEach(e=>{e.addEventListener("click",function(e){const t=this.getAttribute("href");if(t&&t.startsWith("#")){const o=t.substring(1),n=document.getElementById(o);if(n){e.preventDefault();const o=100,i=n.getBoundingClientRect().top+window.scrollY-o;window.scrollTo({top:i,behavior:"smooth"}),history.pushState(null,"",t),setTimeout(()=>{s()},100)}}})}),window.addEventListener("hashchange",()=>{const e=window.location.hash;if(e){const t=document.querySelector(e);if(t){const e=100,n=t.getBoundingClientRect().top+window.scrollY-e;window.scrollTo({top:n,behavior:"smooth"}),setTimeout(()=>s(),100)}}})})()</script></main><footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60"><div>©2025-2026 fifteenbao</div></footer></body></html>

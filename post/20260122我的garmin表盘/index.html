@@ -1,0 +1,126 @@
+<!doctype html><html class=not-ready style=--bg:#faf8f1 lang=zh dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>我的 Garmin 表盘 - fifteenbao</title><meta name=theme-color><meta name=description content="我的 Garmin 表盘
+
+23年的双十一换了 Garmin 的 Forerunner265S
+购买原因：
+
+可以不带手机跑步和听音乐
+待机时间长
+显得专业
+
+想换《辐射》主题很久了…… 有看到喜欢的又没办法海外付款，最近试试用AI写了一个主题，目前还是比较满意的
+Pip-Boy 3000 表盘 - Garmin Forerunner 265s
+辐射（Fallout）系列游戏启发的Pip-Boy主题表盘，专为Garmin Forerunner 265s设计，采用标志性的绿色单色复古未来主义美学。
+功能特性
+
+复古Pip-Boy设计：经典绿色单色配色方案 (#00FF00)
+CRT屏幕效果：真实的扫描线叠加，呈现复古终端外观
+全面的数据显示：
+
+时间（时:分，带秒数）
+日期（日、月、年）
+步数计数器
+心率监测
+电池百分比
+消耗卡路里
+
+
+避难所男孩角色：标志性的辐射吉祥物
+Pip-Boy边框：带角落支架的技术边框
+
+安装说明
+前置要求：
+
+安装 Connect IQ SDK Manager
+
+下载地址：https://developer.garmin.com/connect-iq/sdk/
+使用Garmin Connect账户登录
+
+
+安装 Visual Studio Code
+
+下载地址：https://code.visualstudio.com/
+
+
+安装 Monkey C 扩展
+
+打开 VS Code，进入扩展 (Cmd+Shift+X)，搜索 &ldquo;Monkey C&rdquo;，安装官方Garmin扩展
+
+
+生成开发者密钥（如果还没有）
+openssl genrsa -out developer_key.pem 4096
+openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+
+
+构建表盘："><meta name=author content="fifteenbao"><link rel="preload stylesheet" as=style href=https://fifteenbao.com/css/site.min.css><script defer src=https://fifteenbao.com/js/site.min.js></script><script defer src=https://fifteenbao.com/js/heatmap.min.js></script><link rel=preload as=image href=https://fifteenbao.com/images/admin.gif><link rel=preload as=image href=https://fifteenbao.com/rss.svg><script defer src=https://fifteenbao.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://fifteenbao.com/favicon.ico><link rel=apple-touch-icon href=https://fifteenbao.com/apple-touch-icon.png><meta name=generator content="Hugo 0.158.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script><meta itemprop=name content="我的 Garmin 表盘"><meta itemprop=description content="“一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意”"><meta itemprop=datePublished content="2026-01-22T00:00:00+00:00"><meta itemprop=dateModified content="2026-01-22T00:00:00+00:00"><meta itemprop=wordCount content="431"><meta itemprop=keywords content="才,技术,DIY,无用但有趣,运动"><meta property="og:url" content="https://fifteenbao.com/post/20260122%E6%88%91%E7%9A%84garmin%E8%A1%A8%E7%9B%98/"><meta property="og:site_name" content="fifteenbao"><meta property="og:title" content="我的 Garmin 表盘"><meta property="og:description" content="“一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意”"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-01-22T00:00:00+00:00"><meta property="article:modified_time" content="2026-01-22T00:00:00+00:00"><meta property="article:tag" content="才"><meta property="article:tag" content="技术"><meta property="article:tag" content="DIY"><meta property="article:tag" content="无用但有趣"><meta property="article:tag" content="运动"><meta name=twitter:card content="summary"><meta name=twitter:title content="我的 Garmin 表盘"><meta name=twitter:description content="“一直想换一个 《辐射》主题的表盘…… ，没有什么好看的，海外的又没办法付款…… 用谷歌的antigravity写了一个，效果还不错，目前还比较满意”"><link rel=canonical href=https://fifteenbao.com/post/20260122%E6%88%91%E7%9A%84garmin%E8%A1%A8%E7%9B%98/></head><body class="text-black duration-200 ease-out dark:text-white" style=background:var(--bg)><header class="header-blur fixed z-50 transition-all duration-300 header-fade" id=main-header data-bg=#faf8f1 style="width:calc(min(100% - 2rem,var(--w)));max-width:var(--w)"><div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center"><div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center"><a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href=https://fifteenbao.com/>fifteenbao</a></div><div class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden" role=button aria-label=Menu></div><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"><nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse"><a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/post/>Blog</a>
+<a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/tags/>Tags</a></nav><div class="header-social-mobile flex-col items-start gap-4 mt-4"><a class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.7rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div><nav class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"><a class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="flex items-center ml-2"><div class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.5rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div></nav></div></div></header><div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div><main class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"><div class=article-container><aside class=toc-sidebar><div class=toc-wrapper><div class=toc-header><span class=toc-title>目录</span></div><div class=toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#pip-boy-3000-表盘---garmin-forerunner-265s>Pip-Boy 3000 表盘 - Garmin Forerunner 265s</a></li><li><a href=#一些修改过程>一些修改过程</a></li></ul></li></ul></nav></div></div></aside><article class=article-content><header class=mb-12><h1 class="!my-0 pb-3 page-title font-semibold leading-tight">我的 Garmin 表盘</h1><div class="type-xs antialiased opacity-60"><time>2026年1月22日</time>
+<span class=mx-1>&#183;</span>
+<span>fifteenbao</span></div></header><section><p><strong>我的 Garmin 表盘</strong></p><p><img src=https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-15.02.25.60uqtu4kq7.webp alt=我的表盘 title=我的表盘></p><p>23年的双十一换了 Garmin 的 Forerunner265S</p><p>购买原因：</p><ol><li>可以不带手机跑步和听音乐</li><li>待机时间长</li><li>显得专业</li></ol><p>想换《辐射》主题很久了…… 有看到喜欢的又没办法海外付款，最近试试用AI写了一个主题，目前还是比较满意的</p><h3 id=pip-boy-3000-表盘---garmin-forerunner-265s>Pip-Boy 3000 表盘 - Garmin Forerunner 265s</h3><p>辐射（Fallout）系列游戏启发的Pip-Boy主题表盘，专为Garmin Forerunner 265s设计，采用标志性的绿色单色复古未来主义美学。</p><h4 id=功能特性>功能特性</h4><ul><li><strong>复古Pip-Boy设计</strong>：经典绿色单色配色方案 (#00FF00)</li><li><strong>CRT屏幕效果</strong>：真实的扫描线叠加，呈现复古终端外观</li><li><strong>全面的数据显示</strong>：<ul><li>时间（时:分，带秒数）</li><li>日期（日、月、年）</li><li>步数计数器</li><li>心率监测</li><li>电池百分比</li><li>消耗卡路里</li></ul></li><li><strong>避难所男孩角色</strong>：标志性的辐射吉祥物</li><li><strong>Pip-Boy边框</strong>：带角落支架的技术边框</li></ul><h4 id=安装说明>安装说明</h4><p><strong>前置要求：</strong></p><ol><li><strong>安装 Connect IQ SDK Manager</strong><ul><li>下载地址：https://developer.garmin.com/connect-iq/sdk/</li><li>使用Garmin Connect账户登录</li></ul></li><li><strong>安装 Visual Studio Code</strong><ul><li>下载地址：https://code.visualstudio.com/</li></ul></li><li><strong>安装 Monkey C 扩展</strong><ul><li>打开 VS Code，进入扩展 (Cmd+Shift+X)，搜索 &ldquo;Monkey C&rdquo;，安装官方Garmin扩展</li></ul></li><li><strong>生成开发者密钥</strong>（如果还没有）<pre tabindex=0><code>openssl genrsa -out developer_key.pem 4096
+openssl pkcs8 -topk8 -inform PEM -outform DER -in developer_key.pem -out developer_key.der -nocrypt
+</code></pre></li></ol><p><strong>构建表盘：</strong></p><ol><li><p><strong>使用 Visual Studio Code</strong>（推荐）：</p><ul><li>在VS Code中打开此项目文件夹</li><li>按 <code>Ctrl+Shift+P</code>（Mac上为 <code>Cmd+Shift+P</code>）</li><li>输入 &ldquo;Monkey C: Build for Device&rdquo;</li><li>选择 &ldquo;fr265s&rdquo; (Forerunner 265s)</li><li><code>.prg</code> 文件将在 <code>bin</code> 文件夹中生成</li></ul></li><li><p><strong>使用命令行</strong>：</p><pre tabindex=0><code># 确保 monkeyc 编译器在你的 PATH 中
+# -o: 输出文件
+# -f: Jungle 配置文件
+# -y: 开发者密钥
+# -d: 目标设备 (fr265s)
+# -w: 显示警告
+monkeyc -o bin/garmin.prg -f monkey.jungle -y developer_key.der -d fr265s -w
+</code></pre></li></ol><p><strong>在模拟器中测试：</strong></p><ol><li><strong>使用 VS Code</strong>：按 <code>Ctrl+Shift+P</code> → 输入 &ldquo;Monkey C: Run&rdquo; → 选择 &ldquo;fr265s&rdquo;</li><li><strong>使用命令行（推荐）</strong>：<ul><li>第一步：启动模拟器（新终端运行，需保持运行）：<code>connectiq</code></li><li>第二步：编译并推送：</li></ul><pre tabindex=0><code>monkeyc -o bin/garmin.prg -f monkey.jungle -y developer_key.der -d fr265s -w
+monkeydo bin/garmin.prg fr265s
+</code></pre><blockquote><p><strong>提示</strong>: 如果 <code>monkeyc</code> 命令未找到，主要需要在 PATH 中添加 SDK 的 <code>bin</code> 目录。Mac 默认路径通常为: <code>~/Library/Application Support/Garmin/ConnectIQ/Sdks/connectiq-sdk-mac-x.x.x/bin</code></p></blockquote></li></ol><p><strong>安装到手表：</strong></p><ol><li><strong>通过 Garmin Express</strong>（电脑）：将Forerunner 265s连接到电脑，打开Garmin Express，将 <code>.prg</code> 文件复制到手表的 <code>GARMIN/APPS</code> 文件夹</li><li><strong>通过 Connect IQ 手机应用</strong>：在VS Code中将项目导出为 <code>.iq</code> 文件，传输到手机，使用Connect IQ应用安装到手表</li></ol><h4 id=项目结构>项目结构</h4><pre tabindex=0><code>gamini/
+├── manifest.xml                          # 应用清单和设备配置
+├── monkey.jungle                         # 构建配置
+├── source/
+│   ├── PipBoyWatchFaceApp.mc            # 主应用入口点
+│   └── PipBoyWatchFaceView.mc           # 表盘视图和渲染逻辑
+└── resources/
+    ├── strings/
+    │   └── strings.xml                   # 本地化字符串
+    ├── layouts/
+    │   └── layout.xml                    # UI布局定义
+    └── drawables/
+        ├── drawables.xml                 # 可绘制资源定义
+        ├── launcher_icon.png             # 应用启动图标
+        ├── vault_boy_walk1.png     # 走路动画1
+        ├── vault_boy_walk2.png     # 走路动画2
+        └── vault_boy.png           # 避难所男孩待机精灵图
+</code></pre><h4 id=自定义>自定义</h4><ul><li><strong>更改颜色</strong>：编辑 <code>PipBoyWatchFaceView.mc</code> 并修改变量：<pre tabindex=0><code>var pipboyGreen = 0x00FF00;  // 主Pip-Boy绿色
+var backgroundColor = 0x000000;  // 黑色背景
+var darkGreen = 0x006600;  // 扫描线颜色
+</code></pre></li><li><strong>调整数据字段</strong>：修改 <code>drawStats()</code> 函数来更改显示的健身指标或它们的位置</li><li><strong>动画</strong>：通过修改 <code>drawVaultBoy()</code> 函数增强避难所男孩角色的动画效果，根据不同状态（心率区间、活动水平等）使用精灵图像</li></ul><h4 id=技术细节>技术细节</h4><ul><li><strong>目标设备</strong>：Garmin Forerunner 265s（416x416 AMOLED显示屏）</li><li><strong>最低API级别</strong>：3.2.0</li><li><strong>语言</strong>：Monkey C</li><li><strong>权限</strong>：SensorHistory, UserProfile</li></ul><h4 id=致谢>致谢</h4><ul><li>灵感来自辐射游戏系列的Pip-Boy界面</li><li>为Garmin Connect IQ平台创建</li><li>避难所男孩角色 © Bethesda Softworks</li></ul><h4 id=许可>许可</h4><p>这是一个粉丝制作的表盘，仅供个人使用。</p><h4 id=支持>支持</h4><ul><li>官方文档：https://developer.garmin.com/connect-iq/</li><li>开发者论坛：https://forums.garmin.com/developer/</li></ul><hr><h3 id=一些修改过程>一些修改过程</h3><p><strong>添加唤醒走路动画</strong></p><p>添加了一个手表唤醒之后行走的动画，会在 <code>drawables.xml</code> 文件制定图片资源：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;resources&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;bitmap</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;LauncherIcon&#34;</span> <span style=color:#a6e22e>filename=</span><span style=color:#e6db74>&#34;launcher_icon.png&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;bitmap</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;VaultBoy&#34;</span> <span style=color:#a6e22e>filename=</span><span style=color:#e6db74>&#34;vault_boy.png&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;bitmap</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;VaultBoyWalk1&#34;</span> <span style=color:#a6e22e>filename=</span><span style=color:#e6db74>&#34;vault_boy_walk1.png&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;bitmap</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;VaultBoyWalk2&#34;</span> <span style=color:#a6e22e>filename=</span><span style=color:#e6db74>&#34;vault_boy_walk2.png&#34;</span> <span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/resources&gt;</span>
+</span></span></code></pre></div><p>在 <code>PipBoyWatchFaceView.mc</code> 中定义动画：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-monkeyc data-lang=monkeyc><span style=display:flex><span><span style=color:#75715e>// --- Center: Vault Boy ---
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>var</span> bmpToDraw <span style=color:#f92672>=</span> vaultBoyBitmap;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (isAwake <span style=color:#f92672>&amp;&amp;</span> vaultBoyWalk1Bitmap <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> vaultBoyWalk2Bitmap <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>var</span> nowMs <span style=color:#f92672>=</span> System.getTimer();
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Play animation for 2 seconds
+</span></span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (nowMs <span style=color:#f92672>-</span> animStartTime <span style=color:#f92672>&lt;</span> ANIM_DURATION) {
+</span></span><span style=display:flex><span>                <span style=color:#75715e>// Cycle every 250ms (Walking speed)
+</span></span></span><span style=display:flex><span>                <span style=color:#75715e>// 3 Frames: 0=Stand, 1=Walk1, 2=Walk2
+</span></span></span><span style=display:flex><span>                <span style=color:#66d9ef>var</span> frame <span style=color:#f92672>=</span> (nowMs <span style=color:#f92672>/</span> <span style=color:#ae81ff>250</span>) <span style=color:#f92672>%</span> <span style=color:#ae81ff>3</span>;
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (frame <span style=color:#f92672>==</span> <span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>                    bmpToDraw <span style=color:#f92672>=</span> vaultBoyWalk1Bitmap;
+</span></span><span style=display:flex><span>                } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (frame <span style=color:#f92672>==</span> <span style=color:#ae81ff>2</span>) {
+</span></span><span style=display:flex><span>                    bmpToDraw <span style=color:#f92672>=</span> vaultBoyWalk2Bitmap;
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span></code></pre></div><p>动画效果：<img src=https://fifteenbao.github.io/picx-images-hosting/fallout.92qmv1p7v1.gif alt=走路效果 title=走路效果></p><p><strong>字体</strong></p><p>字体使用了谷歌的开源字体：<a href=https://fonts.google.com/specimen/Share+Tech+Mono>Share Tech Mono</a>。从AI写的工程来看，会提取使用的字符形成 <code>fnt</code> 格式的文档。</p><p><img src=https://fifteenbao.github.io/picx-images-hosting/%E6%88%AA%E5%B1%8F2026-01-22-14.30.00.9ddgo7r55x.webp alt=font文件>
+<img src=https://fifteenbao.github.io/picx-images-hosting/ShareTechMonoTime.45i617yqpc.webp alt=ShareTechMonoTime></p><p>还优化了一些字符的显示，比如步数超过9999会溢出，当步数超过此数值时，会切换成千分位 10.0k 显示。时间符号 &ldquo;：&rdquo; 全字符很占小屏幕的位置，把小时和分钟布置成上下排列，减少占位。</p><p>目前看还是比较满意的。<strong>AI Coding 上大分！</strong></p></section><footer class=post-tags-footer><div class=post-tags-header><span class=post-tags-label>标签</span>
+<span class=post-tags-related>5 篇文章有相同标签组合</span>
+<a href=https://fifteenbao.com/tags/ class="post-tags-graph-link no-underline">图谱 →</a></div><div class=post-tags-list><a href=https://fifteenbao.com/tags/%E6%89%8D class="post-tag-pill no-underline"><span class=post-tag-name>#才</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E6%8A%80%E6%9C%AF class="post-tag-pill no-underline"><span class=post-tag-name>#技术</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/diy class="post-tag-pill no-underline"><span class=post-tag-name>#DIY</span>
+<span class=post-tag-count>5</span>
+</a><a href=https://fifteenbao.com/tags/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3 class="post-tag-pill no-underline"><span class=post-tag-name>#无用但有趣</span>
+<span class=post-tag-count>0</span>
+</a><a href=https://fifteenbao.com/tags/%E8%BF%90%E5%8A%A8 class="post-tag-pill no-underline"><span class=post-tag-name>#运动</span>
+<span class=post-tag-count>0</span></a></div></footer><nav class=post-navigation aria-label=文章翻页><a class="post-nav-link post-nav-previous" href=https://fifteenbao.com/post/20260131%E5%A5%BD%E5%A5%87%E5%BF%83%E5%91%A8%E6%8A%A5001/ rel=prev><span class=post-nav-direction><span class=post-nav-arrow aria-hidden=true>←</span> 上一篇</span>
+<span class=post-nav-title>好奇心周报001</span>
+</a><a class="post-nav-link post-nav-next" href=https://fifteenbao.com/post/20251224iphone-+-notion%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%8D%E7%9B%98/ rel=next><span class=post-nav-direction>下一篇 <span class=post-nav-arrow aria-hidden=true>→</span></span>
+<span class=post-nav-title>iPhone + Notion自动化复盘</span></a></nav></article></div><script>(function(){const e=document.querySelectorAll("article h2, article h3, article h4"),n=document.querySelectorAll(".toc-content a");if(e.length===0||n.length===0)return;const t=new Map,i=new Map;e.forEach(e=>{const s=e.id||e.getAttribute("id");s&&n.forEach(n=>{const o=n.getAttribute("href");o&&(o==="#"+s||o.endsWith("#"+s))&&(t.set(e,n),i.set(n,e))})});function s(){n.forEach(e=>e.classList.remove("active"));const o=window.scrollY,r=window.scrollY+window.innerHeight,i=120;let s=null,a=1/0;if(e.forEach(e=>{const n=e.getBoundingClientRect(),t=window.scrollY+n.top,r=t+n.height;if(t<=o+i){const n=Math.abs(t-(o+i));n<a&&(a=n,s=e)}}),s||e.forEach(e=>{const t=e.getBoundingClientRect();t.top>=0&&t.top<window.innerHeight&&(s||(s=e))}),s&&t.has(s)){{const n=t.get(s);n.classList.add("active");const e=document.querySelector(".toc-sidebar");if(e){const t=n.getBoundingClientRect(),s=e.getBoundingClientRect(),o=e.scrollTop;t.top<s.top?e.scrollTo({top:o+(t.top-s.top)-20,behavior:"smooth"}):t.bottom>s.bottom&&e.scrollTo({top:o+(t.bottom-s.bottom)+20,behavior:"smooth"})}}}else if(window.scrollY<100&&e.length>0){const n=e[0];t.has(n)&&t.get(n).classList.add("active")}}let o=!1;function a(){o||(window.requestAnimationFrame(()=>{s(),o=!1}),o=!0)}window.addEventListener("scroll",a,{passive:!0}),s(),n.forEach(e=>{e.addEventListener("click",function(e){const t=this.getAttribute("href");if(t&&t.startsWith("#")){const o=t.substring(1),n=document.getElementById(o);if(n){e.preventDefault();const o=100,i=n.getBoundingClientRect().top+window.scrollY-o;window.scrollTo({top:i,behavior:"smooth"}),history.pushState(null,"",t),setTimeout(()=>{s()},100)}}})}),window.addEventListener("hashchange",()=>{const e=window.location.hash;if(e){const t=document.querySelector(e);if(t){const e=100,n=t.getBoundingClientRect().top+window.scrollY-e;window.scrollTo({top:n,behavior:"smooth"}),setTimeout(()=>s(),100)}}})})()</script></main><footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60"><div>©2025-2026 fifteenbao</div></footer></body></html>

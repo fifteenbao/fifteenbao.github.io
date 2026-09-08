@@ -1,3 +1,6 @@
+/* 字号一律取 custom.css :root 的 5 档 type scale —— 这张图谱页原本自带
+   0.62 / 0.65 / 0.7 / 0.72 / 0.75 / 0.875 / 1rem / 11px / 16px 九种独立
+   字号, 全部归并到 --text-xs(辅助) 和 --text-base(面板标题/正文)两档。*/
 /* ── Full-screen graph: override main container ───────────────────────── */
 
 main:has(.graph-page) {
@@ -56,7 +59,7 @@ main:has(.graph-page) ~ footer {
 }
 
 .graph-overlay-title {
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -64,7 +67,7 @@ main:has(.graph-page) ~ footer {
 }
 
 .graph-overlay-meta {
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   color: var(--text-tertiary);
 }
 
@@ -76,7 +79,7 @@ main:has(.graph-page) ~ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
+  font-size: var(--text-base);
   letter-spacing: 0.05em;
   color: var(--text-tertiary);
   pointer-events: none;
@@ -91,23 +94,17 @@ main:has(.graph-page) ~ footer {
   width: 260px;
   max-height: calc(100% - 28px);
   overflow-y: auto;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 14px 16px;
   display: none;
   z-index: 20;
   scrollbar-width: thin;
 
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--card-border);
   color: inherit;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
   scrollbar-color: var(--card-border) transparent;
-}
-
-html.dark #tag-panel {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 #tag-panel::-webkit-scrollbar { width: 4px; }
@@ -132,14 +129,14 @@ html.dark #tag-panel {
 }
 
 .tp-title {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   line-height: 1.3;
 }
 
 .tp-meta {
   margin-top: 3px;
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   color: var(--text-secondary);
 }
 
@@ -153,7 +150,7 @@ html.dark #tag-panel {
   background: var(--card-bg);
   border: none;
   border-radius: 50%;
-  font-size: 11px;
+  font-size: var(--text-xs);
   cursor: pointer;
   transition: background 0.15s;
   margin-left: 6px;
@@ -164,7 +161,7 @@ html.dark #tag-panel {
 .tp-view-all {
   display: inline-block;
   margin-bottom: 12px;
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.15s;
@@ -173,7 +170,7 @@ html.dark #tag-panel {
 .tp-view-all:hover { color: var(--accent-hover); }
 
 .tp-section-title {
-  font-size: 0.65rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -189,7 +186,7 @@ html.dark #tag-panel {
   gap: 4px;
   padding: 2px 8px;
   border-radius: 99px;
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   cursor: pointer;
   transition: background 0.15s;
   white-space: nowrap;
@@ -199,14 +196,14 @@ html.dark #tag-panel {
 }
 .tp-tag:hover { background: var(--accent-bg-hover); }
 
-.tp-tag-count { font-size: 0.62rem; opacity: 0.6; }
+.tp-tag-count { font-size: var(--text-xs); opacity: 0.6; }
 
 .tp-articles { display: flex; flex-direction: column; }
 
 .tp-article {
   display: block;
   padding: 5px 0;
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   text-decoration: none;
   border-bottom: 1px solid var(--divider);
   overflow: hidden;
@@ -236,15 +233,14 @@ html.dark #tag-panel {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 0;
+  font-size: var(--text-base);
   line-height: 1;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
-  background: var(--card-bg);
+  background: var(--surface);
   border: 1px solid var(--card-border);
   color: var(--text-secondary);
-  backdrop-filter: blur(8px);
 }
 .graph-ctrl-btn:hover {
   background: var(--card-border);
