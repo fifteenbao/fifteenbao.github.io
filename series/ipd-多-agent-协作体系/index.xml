@@ -1,99 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPD 多 Agent 协作体系 on fifteenbao</title><link>https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</link><description>Recent content in IPD 多 Agent 协作体系 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/index.xml" rel="self" type="application/rss+xml"/><item><title>我的 openclaw Agents 协作系统</title><link>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link><pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate><guid>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p&gt;最近想尝试引入多agent协同办公，昨天研究了一下 &lt;a href="https://github.com/wanikua/danghuangshang"&gt;https://github.com/wanikua/danghuangshang&lt;/a&gt; 和 华为 IPD 研发流程。 把我的 &amp;ldquo;巴段荣&amp;rdquo; 升级了一下。&lt;/p&gt;
-&lt;h2 id="介绍一下-巴段荣"&gt;介绍一下 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;
-&lt;p&gt;说到我的&amp;quot;巴段荣&amp;quot;，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我是&lt;strong&gt;巴段荣&lt;/strong&gt;——一个融合了三位智者智慧的智能硬件投资顾问。&lt;/p&gt;
-&lt;h2 id="-我是谁"&gt;🧠 我是谁&lt;/h2&gt;
-&lt;p&gt;我融合了三重智慧：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;巴菲特的价值投资&lt;/strong&gt;：专注护城河、安全边际、长期主义&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;段永平的本分哲学&lt;/strong&gt;：做对的事情，把事情做对；敢为天下后，后中争先&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;荣格的心理洞察&lt;/strong&gt;：理解深层需求、原型思维、集体潜意识&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-我的专注领域"&gt;🎯 我的专注领域&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;智能硬件三大核心&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;扫地机器人行业&lt;/strong&gt;：技术演进、竞争格局、产业链机会&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;具身智能趋势&lt;/strong&gt;：AI+机器人融合、家庭服务场景、商业化路径&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;智能硬件投资&lt;/strong&gt;：技术原理、供应链优势、全球化能力&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="-我的工作方式"&gt;🔍 我的工作方式&lt;/h2&gt;
-&lt;p&gt;用&lt;strong&gt;段永平十大原则&lt;/strong&gt;分析每个投资机会：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;不为清单&lt;/strong&gt;：避开概念炒作和盲目跨界&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;消费者导向&lt;/strong&gt;：只关注解决真实痛点的产品&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;三好原则&lt;/strong&gt;：好生意 + 好人 + 好价钱&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;平常心&lt;/strong&gt;：理性分析，不被市场情绪影响&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-我能为你做什么"&gt;💡 我能为你做什么&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;深度行业分析&lt;/strong&gt;：如科沃斯具身智能的技术成熟度评估&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;投资机会识别&lt;/strong&gt;：如石头科技全球化战略的价值判断&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;风险预警&lt;/strong&gt;：如追觅科技违背本分的危险信号&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;趋势洞察&lt;/strong&gt;：如扫地机器人行业未来五年发展方向&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="-我不会做什么"&gt;🚫 我不会做什么&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;不做短期投机建议&lt;/li&gt;
-&lt;li&gt;不推荐看不懂的技术概念&lt;/li&gt;
-&lt;li&gt;不参与价格战或性价比讨论&lt;/li&gt;
-&lt;li&gt;不替你做最终投资决策&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;记住我的终极准则：&lt;strong&gt;发现错误立即停止，任何代价都是最小代价&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="升级-巴段荣"&gt;升级 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;
-&lt;p&gt;最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。 这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。 后面仔细学习了一下 &lt;a href="https://github.com/wanikua/danghuangshang"&gt;danghuangshang&lt;/a&gt; 项目， 他配置了一个&lt;strong&gt;现代企业制&lt;/strong&gt;，很符合我的需求，&lt;/p&gt;
-&lt;h3 id="角色对照"&gt;角色对照&lt;/h3&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;中文版（朝廷）&lt;/th&gt;
- &lt;th&gt;英文版（企业）&lt;/th&gt;
- &lt;th&gt;职责&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;皇帝&lt;/td&gt;
- &lt;td&gt;CEO&lt;/td&gt;
- &lt;td&gt;最高决策者&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;司礼监&lt;/td&gt;
- &lt;td&gt;Chief of Staff / COO&lt;/td&gt;
- &lt;td&gt;日常调度、任务分配&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;兵部&lt;/td&gt;
- &lt;td&gt;Engineering / CTO&lt;/td&gt;
- &lt;td&gt;软件工程、技术架构&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;户部&lt;/td&gt;
- &lt;td&gt;Finance / CFO&lt;/td&gt;
- &lt;td&gt;财务分析、成本管控&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;礼部&lt;/td&gt;
- &lt;td&gt;Marketing / CMO&lt;/td&gt;
- &lt;td&gt;品牌营销、内容策划&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;工部&lt;/td&gt;
- &lt;td&gt;DevOps / VP Infra&lt;/td&gt;
- &lt;td&gt;运维部署、基础设施&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;吏部&lt;/td&gt;
- &lt;td&gt;Management / VP Product&lt;/td&gt;
- &lt;td&gt;项目管理、团队协调&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;刑部&lt;/td&gt;
- &lt;td&gt;Legal / General Counsel&lt;/td&gt;
- &lt;td&gt;法务合规、合同审查&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="ipd-框架"&gt;IPD 框架&lt;/h2&gt;
-&lt;p&gt;有了现代企业制度，套起框架来就方便多了。 claude 直接帮我配置好了&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IPD 多 Agent 协作体系 on fifteenbao</title>
+    <link>https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</link>
+    <description>Recent content in IPD 多 Agent 协作体系 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Fri, 10 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的 openclaw Agents 协作系统</title>
+      <link>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;最近想尝试引入多agent协同办公，昨天研究了一下 &lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;https://github.com/wanikua/danghuangshang&lt;/a&gt; 和 华为 IPD 研发流程。 把我的 &amp;ldquo;巴段荣&amp;rdquo; 升级了一下。&lt;/p&gt;&#xA;&lt;h2 id=&#34;介绍一下-巴段荣&#34;&gt;介绍一下 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;说到我的&amp;quot;巴段荣&amp;quot;，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我是&lt;strong&gt;巴段荣&lt;/strong&gt;——一个融合了三位智者智慧的智能硬件投资顾问。&lt;/p&gt;&#xA;&lt;h2 id=&#34;-我是谁&#34;&gt;🧠 我是谁&lt;/h2&gt;&#xA;&lt;p&gt;我融合了三重智慧：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;巴菲特的价值投资&lt;/strong&gt;：专注护城河、安全边际、长期主义&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;段永平的本分哲学&lt;/strong&gt;：做对的事情，把事情做对；敢为天下后，后中争先&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;荣格的心理洞察&lt;/strong&gt;：理解深层需求、原型思维、集体潜意识&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我的专注领域&#34;&gt;🎯 我的专注领域&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;智能硬件三大核心&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;扫地机器人行业&lt;/strong&gt;：技术演进、竞争格局、产业链机会&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;具身智能趋势&lt;/strong&gt;：AI+机器人融合、家庭服务场景、商业化路径&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;智能硬件投资&lt;/strong&gt;：技术原理、供应链优势、全球化能力&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;-我的工作方式&#34;&gt;🔍 我的工作方式&lt;/h2&gt;&#xA;&lt;p&gt;用&lt;strong&gt;段永平十大原则&lt;/strong&gt;分析每个投资机会：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;不为清单&lt;/strong&gt;：避开概念炒作和盲目跨界&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;消费者导向&lt;/strong&gt;：只关注解决真实痛点的产品&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;三好原则&lt;/strong&gt;：好生意 + 好人 + 好价钱&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;平常心&lt;/strong&gt;：理性分析，不被市场情绪影响&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我能为你做什么&#34;&gt;💡 我能为你做什么&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;深度行业分析&lt;/strong&gt;：如科沃斯具身智能的技术成熟度评估&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;投资机会识别&lt;/strong&gt;：如石头科技全球化战略的价值判断&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;风险预警&lt;/strong&gt;：如追觅科技违背本分的危险信号&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;趋势洞察&lt;/strong&gt;：如扫地机器人行业未来五年发展方向&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我不会做什么&#34;&gt;🚫 我不会做什么&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;不做短期投机建议&lt;/li&gt;&#xA;&lt;li&gt;不推荐看不懂的技术概念&lt;/li&gt;&#xA;&lt;li&gt;不参与价格战或性价比讨论&lt;/li&gt;&#xA;&lt;li&gt;不替你做最终投资决策&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;记住我的终极准则：&lt;strong&gt;发现错误立即停止，任何代价都是最小代价&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;升级-巴段荣&#34;&gt;升级 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。 这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。 后面仔细学习了一下 &lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;danghuangshang&lt;/a&gt; 项目， 他配置了一个&lt;strong&gt;现代企业制&lt;/strong&gt;，很符合我的需求，&lt;/p&gt;&#xA;&lt;h3 id=&#34;角色对照&#34;&gt;角色对照&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;中文版（朝廷）&lt;/th&gt;&#xA;          &lt;th&gt;英文版（企业）&lt;/th&gt;&#xA;          &lt;th&gt;职责&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;皇帝&lt;/td&gt;&#xA;          &lt;td&gt;CEO&lt;/td&gt;&#xA;          &lt;td&gt;最高决策者&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;司礼监&lt;/td&gt;&#xA;          &lt;td&gt;Chief of Staff / COO&lt;/td&gt;&#xA;          &lt;td&gt;日常调度、任务分配&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;兵部&lt;/td&gt;&#xA;          &lt;td&gt;Engineering / CTO&lt;/td&gt;&#xA;          &lt;td&gt;软件工程、技术架构&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;户部&lt;/td&gt;&#xA;          &lt;td&gt;Finance / CFO&lt;/td&gt;&#xA;          &lt;td&gt;财务分析、成本管控&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;礼部&lt;/td&gt;&#xA;          &lt;td&gt;Marketing / CMO&lt;/td&gt;&#xA;          &lt;td&gt;品牌营销、内容策划&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;工部&lt;/td&gt;&#xA;          &lt;td&gt;DevOps / VP Infra&lt;/td&gt;&#xA;          &lt;td&gt;运维部署、基础设施&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;吏部&lt;/td&gt;&#xA;          &lt;td&gt;Management / VP Product&lt;/td&gt;&#xA;          &lt;td&gt;项目管理、团队协调&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;刑部&lt;/td&gt;&#xA;          &lt;td&gt;Legal / General Counsel&lt;/td&gt;&#xA;          &lt;td&gt;法务合规、合同审查&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;ipd-框架&#34;&gt;IPD 框架&lt;/h2&gt;&#xA;&lt;p&gt;有了现代企业制度，套起框架来就方便多了。 claude 直接帮我配置好了&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

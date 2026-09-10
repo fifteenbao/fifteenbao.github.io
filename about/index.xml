@@ -1,1 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Who? on fifteenbao</title><link>https://fifteenbao.com/about/</link><description>Recent content in Who? on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate/><atom:link href="https://fifteenbao.com/about/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Who? on fifteenbao</title>
+    <link>https://fifteenbao.com/about/</link>
+    <description>Recent content in Who? on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://fifteenbao.com/about/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

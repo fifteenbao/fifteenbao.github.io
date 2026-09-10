@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>fifteenbao · 3D 人物初稿</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;background:#eeecf8;color:#24232c;font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;transition:background .2s,color .2s}
+  body.dark{background:#20202a;color:#f0edf5}main{max-width:1100px;margin:auto;padding:28px}header{display:flex;align-items:center;justify-content:space-between;gap:20px}h1{font-size:22px;margin:0}p{margin:6px 0;opacity:.7}a{color:inherit}button,.download{font:inherit;color:inherit;border:1px solid #8886;border-radius:999px;background:transparent;padding:9px 18px;text-decoration:none;cursor:pointer}button:hover,.download:hover{background:#8882}button:focus-visible,a:focus-visible{outline:2px solid currentColor;outline-offset:4px}model-viewer{width:100%;height:min(72vh,760px);min-height:360px;--progress-bar-color:#8c6945}footer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.status{text-align:center;font-size:13px;margin:12px 0 20px} @media(max-width:600px){main{padding:20px}h1{font-size:18px}header{align-items:flex-start}model-viewer{height:64vh}}
+</style>
+<main>
+  <header><div><h1>fifteenbao · 3D 人物初稿</h1><p>短发、圆框眼镜、中领无袖上衣</p></div><button id="theme" type="button" aria-pressed="false">深色背景</button></header>
+  <model-viewer id="avatar" src="../models/avatar-bust.glb" alt="短发、圆框眼镜、米白色无袖上衣的立体卡通人物" camera-controls touch-action="pan-y" camera-orbit="0deg 82deg auto" field-of-view="30deg" environment-image="neutral" exposure="1" shadow-intensity="0" interaction-prompt="none"></model-viewer>
+  <p class="status" id="status" role="status">正在加载立体模型…</p>
+  <footer><button id="front" type="button">回到正面</button><a class="download" href="../models/avatar-bust.glb" download>下载 GLB 模型</a><a class="download" href="../">返回首页</a></footer>
+</main>
+<script type="module">
+  const model=document.querySelector('#avatar'),status=document.querySelector('#status');
+  model.addEventListener('load',()=>status.textContent='拖动旋转 · 滚轮或双指缩放');
+  model.addEventListener('error',()=>status.textContent='模型加载失败，可以下载 GLB 在 Blender 中查看。');
+  document.querySelector('#front').onclick=()=>{model.cameraOrbit='0deg 82deg auto';model.jumpCameraToGoal();};
+  document.querySelector('#theme').onclick=(event)=>{const dark=document.body.classList.toggle('dark');event.target.setAttribute('aria-pressed',dark);event.target.textContent=dark?'浅色背景':'深色背景';};
+  import('../vendor/model-viewer.min.js').catch(()=>status.textContent='3D 查看器未能加载，可以下载模型在 Blender 中查看。');
+</script>
+</html>

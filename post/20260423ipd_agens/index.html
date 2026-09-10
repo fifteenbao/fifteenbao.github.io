@@ -1,4 +1,31 @@
-<!doctype html><html class=not-ready style=--bg:#faf8f1 lang=zh dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>IPD agents实践-智能拳击硬件项目 - fifteenbao</title><meta name=theme-color><meta name=description content='这篇文章是 我的多Agent协作系统 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。
+<!doctype html>
+<html
+  class="not-ready"
+  style="--bg: #faf8f1"
+  lang="zh"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  
+  <title>IPD agents实践-智能拳击硬件项目 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="这篇文章是 我的多Agent协作系统 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。
 完整的 Agent 体系已开源：fifteenbao/IPD_agents
 智能硬件 IPD 多 Agent 协作体系
 把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。
@@ -7,10 +34,10 @@
 它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。
 时代命题（为什么要做这件事）
 AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。
-在这种时代结构下，智能硬件的角色是"体验基础设施"：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。
-更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类"还剩下什么"？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。
-因此，本体系设计决策的锚点并非"把更多工作自动化"，而是"把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量"。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。
-详见 SOUL 的"时代命题"章节。
+在这种时代结构下，智能硬件的角色是&quot;体验基础设施&quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。
+更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&quot;还剩下什么&quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。
+因此，本体系设计决策的锚点并非&quot;把更多工作自动化&quot;，而是&quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。
+详见 SOUL 的&quot;时代命题&quot;章节。
 三层架构
     ┌─────────────────────────────────────────┐
     │ Agent 层（角色身份）— 谁来做              │
@@ -55,10 +82,313 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
       
   
 
-设计原则：角色 ≠ 方法论。CMO 是身份，KANO 是方法。把 KANO 焊在 cmo.md 里，会让其他 agent 无法复用。'><meta name=author content="fifteenbao"><link rel="preload stylesheet" as=style href=https://fifteenbao.com/css/site.min.css><script defer src=https://fifteenbao.com/js/site.min.js></script><script defer src=https://fifteenbao.com/js/heatmap.min.js></script><link rel=preload as=image href=https://fifteenbao.com/images/admin.gif><link rel=preload as=image href=https://fifteenbao.com/rss.svg><script defer src=https://fifteenbao.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://fifteenbao.com/favicon.ico><link rel=apple-touch-icon href=https://fifteenbao.com/apple-touch-icon.png><meta name=generator content="Hugo 0.158.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script><meta itemprop=name content="IPD agents实践-智能拳击硬件项目"><meta itemprop=description content="华为IPD在智能拳击硬件上的应用"><meta itemprop=datePublished content="2026-04-23T00:00:00+00:00"><meta itemprop=dateModified content="2026-04-23T00:00:00+00:00"><meta itemprop=wordCount content="2541"><meta itemprop=keywords content="AI,IPD,Agent,智能硬件,拳击,才"><meta property="og:url" content="https://fifteenbao.com/post/20260423ipd_agens/"><meta property="og:site_name" content="fifteenbao"><meta property="og:title" content="IPD agents实践-智能拳击硬件项目"><meta property="og:description" content="华为IPD在智能拳击硬件上的应用"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-04-23T00:00:00+00:00"><meta property="article:modified_time" content="2026-04-23T00:00:00+00:00"><meta property="article:tag" content="AI"><meta property="article:tag" content="IPD"><meta property="article:tag" content="Agent"><meta property="article:tag" content="智能硬件"><meta property="article:tag" content="拳击"><meta property="article:tag" content="才"><meta name=twitter:card content="summary"><meta name=twitter:title content="IPD agents实践-智能拳击硬件项目"><meta name=twitter:description content="华为IPD在智能拳击硬件上的应用"><link rel=canonical href=https://fifteenbao.com/post/20260423ipd_agens/></head><body class="text-black duration-200 ease-out dark:text-white" style=background:var(--bg)><header class="header-blur fixed z-50 transition-all duration-300 header-fade" id=main-header data-bg=#faf8f1 style="width:calc(min(100% - 2rem,var(--w)));max-width:var(--w)"><div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center"><div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center"><a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href=https://fifteenbao.com/>fifteenbao</a></div><div class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden" role=button aria-label=Menu></div><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"><nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse"><a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/post/>Blog</a>
-<a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/tags/>Tags</a></nav><div class="header-social-mobile flex-col items-start gap-4 mt-4"><a class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.7rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div><nav class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"><a class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="flex items-center ml-2"><div class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.5rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div></nav></div></div></header><div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div><main class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"><div class=article-container><aside class=toc-sidebar><div class=toc-wrapper><div class=toc-header><span class=toc-title>目录</span></div><div class=toc-content><nav id=TableOfContents><ul><li><a href=#智能硬件-ipd-多-agent-协作体系>智能硬件 IPD 多 Agent 协作体系</a><ul><li><a href=#这是什么>这是什么</a></li></ul></li><li><a href=#时代命题为什么要做这件事>时代命题（为什么要做这件事）</a></li><li><a href=#三层架构>三层架构</a></li><li><a href=#组织架构与权力体系>组织架构与权力体系</a></li><li><a href=#ipd-阶段--agent-协作>IPD 阶段 × Agent 协作</a></li><li><a href=#实际案例智能拳击硬件-cdcp>实际案例：智能拳击硬件 CDCP</a></li><li><a href=#boardmd--项目工作台>Board.md — 项目工作台</a></li><li><a href=#cfo-产出商业可行性报告>CFO 产出：商业可行性报告</a></li><li><a href=#cto-产出技术可行性报告>CTO 产出：技术可行性报告</a></li><li><a href=#board-产出cdcp-评审报告>Board 产出：CDCP 评审报告</a></li><li><a href=#总结>总结</a></li></ul></nav></div></div></aside><article class=article-content><header class=mb-12><h1 class="!my-0 pb-3 page-title font-semibold leading-tight">IPD agents实践-智能拳击硬件项目</h1><div class="type-xs antialiased opacity-60"><time>2026年4月23日</time>
-<span class=mx-1>&#183;</span>
-<span>fifteenbao</span></div><div class="mt-3 flex flex-wrap gap-x-3 gap-y-1"><a class="post-tag-pill no-underline" href=https://fifteenbao.com/series/ipd-agents-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB><span class=post-tag-name>系列 · IPD Agents 协作体系</span></a></div></header><section><p>这篇文章是 <a href=https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/>我的多Agent协作系统</a> 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。</p><p>完整的 Agent 体系已开源：<a href=https://github.com/fifteenbao/IPD_agents><strong>fifteenbao/IPD_agents</strong></a></p><h2 id=智能硬件-ipd-多-agent-协作体系>智能硬件 IPD 多 Agent 协作体系</h2><p>把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。</p><h3 id=这是什么>这是什么</h3><p>一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。</p><p>它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。</p><h2 id=时代命题为什么要做这件事>时代命题（为什么要做这件事）</h2><p>AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。</p><p>在这种时代结构下，智能硬件的角色是"体验基础设施"：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。</p><p>更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类"还剩下什么"？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。</p><p>因此，本体系设计决策的锚点并非"把更多工作自动化"，而是"把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量"。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。</p><p>详见 <a href=/SOUL>SOUL</a> 的"时代命题"章节。</p><h2 id=三层架构>三层架构</h2><pre tabindex=0><code>    ┌─────────────────────────────────────────┐
+设计原则：角色 ≠ 方法论。CMO 是身份，KANO 是方法。把 KANO 焊在 cmo.md 里，会让其他 agent 无法复用。" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/css/site.min.css" />
+  
+
+  
+  
+  <script defer src="https://fifteenbao.com/js/site.min.js"></script>
+
+  
+  
+  <script defer src="https://fifteenbao.com/js/heatmap.min.js"></script>
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://fifteenbao.com/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://fifteenbao.com/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.158.0">
+
+  
+  
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYTD0RBTY');
+        }
+      </script>
+  
+  
+  <meta itemprop="name" content="IPD agents实践-智能拳击硬件项目">
+  <meta itemprop="description" content="华为IPD在智能拳击硬件上的应用">
+  <meta itemprop="datePublished" content="2026-04-23T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-04-23T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2541">
+  <meta itemprop="keywords" content="AI,IPD,Agent,智能硬件,拳击,才">
+  
+  <meta property="og:url" content="https://fifteenbao.com/post/20260423ipd_agens/">
+  <meta property="og:site_name" content="fifteenbao">
+  <meta property="og:title" content="IPD agents实践-智能拳击硬件项目">
+  <meta property="og:description" content="华为IPD在智能拳击硬件上的应用">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-04-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-23T00:00:00+00:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="IPD">
+    <meta property="article:tag" content="Agent">
+    <meta property="article:tag" content="智能硬件">
+    <meta property="article:tag" content="拳击">
+    <meta property="article:tag" content="才">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IPD agents实践-智能拳击硬件项目">
+  <meta name="twitter:description" content="华为IPD在智能拳击硬件上的应用">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://fifteenbao.com/post/20260423ipd_agens/" />
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse">
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/post/"
+          >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/tags/"
+          >Tags</a
+        >
+        
+      </nav>
+      
+
+      
+      <div class="header-social-mobile flex-col items-start gap-4 mt-4">
+        
+        
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(https://fifteenbao.com/rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(https://fifteenbao.com/rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  
+  
+  <aside class="toc-sidebar">
+    <div class="toc-wrapper">
+      <div class="toc-header">
+        <span class="toc-title">目录</span>
+      </div>
+      <div class="toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#智能硬件-ipd-多-agent-协作体系">智能硬件 IPD 多 Agent 协作体系</a>
+      <ul>
+        <li><a href="#这是什么">这是什么</a></li>
+      </ul>
+    </li>
+    <li><a href="#时代命题为什么要做这件事">时代命题（为什么要做这件事）</a></li>
+    <li><a href="#三层架构">三层架构</a></li>
+    <li><a href="#组织架构与权力体系">组织架构与权力体系</a></li>
+    <li><a href="#ipd-阶段--agent-协作">IPD 阶段 × Agent 协作</a></li>
+    <li><a href="#实际案例智能拳击硬件-cdcp">实际案例：智能拳击硬件 CDCP</a></li>
+    <li><a href="#boardmd--项目工作台">Board.md — 项目工作台</a></li>
+    <li><a href="#cfo-产出商业可行性报告">CFO 产出：商业可行性报告</a></li>
+    <li><a href="#cto-产出技术可行性报告">CTO 产出：技术可行性报告</a></li>
+    <li><a href="#board-产出cdcp-评审报告">Board 产出：CDCP 评审报告</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </aside>
+  
+
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">IPD agents实践-智能拳击硬件项目</h1>
+
+      
+      <div class="type-xs antialiased opacity-60">
+        
+        <time>2026年4月23日</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
+      </div>
+      
+
+      
+      
+      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+        
+        
+        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/ipd-agents-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB">
+          <span class="post-tag-name">系列 · IPD Agents 协作体系</span>
+        </a>
+        
+      </div>
+      
+    </header>
+
+    <section><p>这篇文章是 <a href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">我的多Agent协作系统</a> 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。</p>
+<p>完整的 Agent 体系已开源：<a href="https://github.com/fifteenbao/IPD_agents"><strong>fifteenbao/IPD_agents</strong></a></p>
+<h2 id="智能硬件-ipd-多-agent-协作体系">智能硬件 IPD 多 Agent 协作体系</h2>
+<p>把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。</p>
+<h3 id="这是什么">这是什么</h3>
+<p>一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。</p>
+<p>它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。</p>
+<h2 id="时代命题为什么要做这件事">时代命题（为什么要做这件事）</h2>
+<p>AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。</p>
+<p>在这种时代结构下，智能硬件的角色是&quot;体验基础设施&quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。</p>
+<p>更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&quot;还剩下什么&quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。</p>
+<p>因此，本体系设计决策的锚点并非&quot;把更多工作自动化&quot;，而是&quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。</p>
+<p>详见 <a href="/SOUL">SOUL</a> 的&quot;时代命题&quot;章节。</p>
+<h2 id="三层架构">三层架构</h2>
+<pre tabindex="0"><code>    ┌─────────────────────────────────────────┐
     │ Agent 层（角色身份）— 谁来做              │
     │   Board / CEO / COO / CTO / CMO         │
     │   CFO / CPO / PM                        │
@@ -75,7 +405,35 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     │ Command 层（端到端工作流）— 何时跑       │
     │   /cdcp-review、/pdcp-review、…         │
     └─────────────────────────────────────────┘
-</code></pre><table><thead><tr><th>层</th><th>触发方式</th><th>文件位置</th></tr></thead><tbody><tr><td>Agent</td><td>任务匹配自动调用</td><td><code>/agents/</code></td></tr><tr><td>Skill</td><td>Agent 内部引用</td><td><code>/skills/</code></td></tr><tr><td>Command</td><td>用户显式</td><td><code>/commands/</code></td></tr></tbody></table><p>设计原则：<strong>角色 ≠ 方法论</strong>。CMO 是身份，KANO 是方法。把 KANO 焊在 <code>cmo.md</code> 里，会让其他 agent 无法复用。</p><h2 id=组织架构与权力体系>组织架构与权力体系</h2><pre tabindex=0><code>    用户（董事长）
+</code></pre><table>
+  <thead>
+      <tr>
+          <th>层</th>
+          <th>触发方式</th>
+          <th>文件位置</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Agent</td>
+          <td>任务匹配自动调用</td>
+          <td><code>/agents/</code></td>
+      </tr>
+      <tr>
+          <td>Skill</td>
+          <td>Agent 内部引用</td>
+          <td><code>/skills/</code></td>
+      </tr>
+      <tr>
+          <td>Command</td>
+          <td>用户显式</td>
+          <td><code>/commands/</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>设计原则：<strong>角色 ≠ 方法论</strong>。CMO 是身份，KANO 是方法。把 KANO 焊在 <code>cmo.md</code> 里，会让其他 agent 无法复用。</p>
+<h2 id="组织架构与权力体系">组织架构与权力体系</h2>
+<pre tabindex="0"><code>    用户（董事长）
         │
         ▼
     Board / IPMT（战略决策层）
@@ -90,7 +448,72 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     C-Level 执行层
        CTO（技术）  CMO（市场）  CFO（财务）
        CPO（产品）  PM（项目管理）
-</code></pre><p><strong>制衡类比</strong>：CEO（草拟方案）→ COO（审核驳回）→ Board/IPMT（最终裁决）</p><h2 id=ipd-阶段--agent-协作>IPD 阶段 × Agent 协作</h2><table><thead><tr><th>阶段</th><th>决策门</th><th>主导 Agent</th><th>输入提供</th><th>审核</th></tr></thead><tbody><tr><td>概念</td><td>CDCP</td><td>CEO</td><td>CMO + CFO + CTO</td><td>COO → Board</td></tr><tr><td>计划</td><td>PDCP</td><td>CPO</td><td>CPO（Charter+PRD）+ CTO + CFO</td><td>COO → Board</td></tr><tr><td>开发</td><td>TR1-4</td><td>CTO</td><td>PM + CTO</td><td>COO</td></tr><tr><td>验证</td><td>TR5-6</td><td>CTO</td><td>CTO + PM</td><td>COO → Board</td></tr><tr><td>发布</td><td>GA</td><td>CEO</td><td>PM</td><td>Board</td></tr><tr><td>生命周期</td><td>—</td><td>PM</td><td>CMO</td><td>CEO</td></tr></tbody></table><hr><h2 id=实际案例智能拳击硬件-cdcp>实际案例：智能拳击硬件 CDCP</h2><p>智能拳击这个项目，简单来说就是做一个戴在手腕上的传感器，通过 IMU 捕捉出拳数据（类型、速度、力度），配合 APP 做训练分析和纠姿反馈。前期市场调研和 PRD 在过年之前已经做完，硬件选型和 APP 搭建也在 Claude 的协助下完成了。</p><p>以下流程触发 <code>/cdcp-review</code> 后，CEO 制定执行方案，分发给各 C-Level 并行产出，COO 审核，Board 最终评分——全程未做人工修改。</p><p>注：文中的所有文档（市场分析、技术可行性、财务模型、评审报告）均由 Agent 体系自动产出，未做任何修改。</p><hr><h2 id=boardmd--项目工作台>Board.md — 项目工作台</h2><p>Board 是整个体系的仪表盘。它不产出内容，而是<strong>追踪状态、暴露风险、记录决策</strong>。每次 CDCP 评审前，CEO 先把现状同步到 Board，确保所有人看到的是同一张图。</p><pre tabindex=0><code>    | 字段 | 内容 |
+</code></pre><p><strong>制衡类比</strong>：CEO（草拟方案）→ COO（审核驳回）→ Board/IPMT（最终裁决）</p>
+<h2 id="ipd-阶段--agent-协作">IPD 阶段 × Agent 协作</h2>
+<table>
+  <thead>
+      <tr>
+          <th>阶段</th>
+          <th>决策门</th>
+          <th>主导 Agent</th>
+          <th>输入提供</th>
+          <th>审核</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>概念</td>
+          <td>CDCP</td>
+          <td>CEO</td>
+          <td>CMO + CFO + CTO</td>
+          <td>COO → Board</td>
+      </tr>
+      <tr>
+          <td>计划</td>
+          <td>PDCP</td>
+          <td>CPO</td>
+          <td>CPO（Charter+PRD）+ CTO + CFO</td>
+          <td>COO → Board</td>
+      </tr>
+      <tr>
+          <td>开发</td>
+          <td>TR1-4</td>
+          <td>CTO</td>
+          <td>PM + CTO</td>
+          <td>COO</td>
+      </tr>
+      <tr>
+          <td>验证</td>
+          <td>TR5-6</td>
+          <td>CTO</td>
+          <td>CTO + PM</td>
+          <td>COO → Board</td>
+      </tr>
+      <tr>
+          <td>发布</td>
+          <td>GA</td>
+          <td>CEO</td>
+          <td>PM</td>
+          <td>Board</td>
+      </tr>
+      <tr>
+          <td>生命周期</td>
+          <td>—</td>
+          <td>PM</td>
+          <td>CMO</td>
+          <td>CEO</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="实际案例智能拳击硬件-cdcp">实际案例：智能拳击硬件 CDCP</h2>
+<p>智能拳击这个项目，简单来说就是做一个戴在手腕上的传感器，通过 IMU 捕捉出拳数据（类型、速度、力度），配合 APP 做训练分析和纠姿反馈。前期市场调研和 PRD 在过年之前已经做完，硬件选型和 APP 搭建也在 Claude 的协助下完成了。</p>
+<p>以下流程触发 <code>/cdcp-review</code> 后，CEO 制定执行方案，分发给各 C-Level 并行产出，COO 审核，Board 最终评分——全程未做人工修改。</p>
+<p>注：文中的所有文档（市场分析、技术可行性、财务模型、评审报告）均由 Agent 体系自动产出，未做任何修改。</p>
+<hr>
+<h2 id="boardmd--项目工作台">Board.md — 项目工作台</h2>
+<p>Board 是整个体系的仪表盘。它不产出内容，而是<strong>追踪状态、暴露风险、记录决策</strong>。每次 CDCP 评审前，CEO 先把现状同步到 Board，确保所有人看到的是同一张图。</p>
+<pre tabindex="0"><code>    | 字段 | 内容 |
     |------|------|
     | 产品名称 | 智能拳击传感器（暂定） |
     | 启动日期 | 2026-04-09 |
@@ -154,7 +577,10 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     | R006 | BLE多人同时使用干扰 | 🟢 低 | BLE5.0点对点，场馆场景专项测试 |
     | ~~R007~~ | ~~马达震动干扰IMU（350ms盲区）~~ | ✅ 消除 | 动态阈值替代冷却屏蔽，2026-04-09 已修复 |
     | ~~R008~~ | ~~无省电模式，续航仅半天~~ | ✅ 消除 | sd_app_evt_wait + 10Hz idle，2026-04-09 已修复 |
-</code></pre><hr><h2 id=cfo-产出商业可行性报告>CFO 产出：商业可行性报告</h2><p>CFO 负责回答「这事能赚钱吗」。它基于 CMO 的市场规模和 CTO 的 BOM 成本，自己跑 NPV/IRR 模型和敏感性分析。这份报告的核心结论：悲观情景下 NPV 仍为正，下行风险可控——这是 Board 最终批准的关键依据。</p><pre tabindex=0><code>    **输出方**：CFO/财务总监 | **日期**：2026-04-09 | **版本**：v0.1 草稿
+</code></pre><hr>
+<h2 id="cfo-产出商业可行性报告">CFO 产出：商业可行性报告</h2>
+<p>CFO 负责回答「这事能赚钱吗」。它基于 CMO 的市场规模和 CTO 的 BOM 成本，自己跑 NPV/IRR 模型和敏感性分析。这份报告的核心结论：悲观情景下 NPV 仍为正，下行风险可控——这是 Board 最终批准的关键依据。</p>
+<pre tabindex="0"><code>    **输出方**：CFO/财务总监 | **日期**：2026-04-09 | **版本**：v0.1 草稿
     
     ---
     
@@ -271,7 +697,10 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     2. APP开发外包，未计入长期维护成本（建议Y2后内建团队）
     3. 首年市场推广费80万，实际可能需要更多（视竞争态势）
     4. 未计入专利申请费用（建议预留10-15万）
-</code></pre><hr><h2 id=cto-产出技术可行性报告>CTO 产出：技术可行性报告</h2><p>CTO 负责回答「技术上能不能做出来」。这份报告最有价值的部分是<strong>发现了 ±16g 加速度计饱和问题</strong>——这是在选型 XIAO nRF52840 Sense 之后自动暴露的关键风险。如果人工做技术评审，很可能遗漏这个点。</p><pre tabindex=0><code>    **输出方**：CTO/技术总监 | **日期**：2026-04-09 | **版本**：v0.2（更新：XIAO nRF52840 Sense + Edge Impulse 选型评估）
+</code></pre><hr>
+<h2 id="cto-产出技术可行性报告">CTO 产出：技术可行性报告</h2>
+<p>CTO 负责回答「技术上能不能做出来」。这份报告最有价值的部分是<strong>发现了 ±16g 加速度计饱和问题</strong>——这是在选型 XIAO nRF52840 Sense 之后自动暴露的关键风险。如果人工做技术评审，很可能遗漏这个点。</p>
+<pre tabindex="0"><code>    **输出方**：CTO/技术总监 | **日期**：2026-04-09 | **版本**：v0.2（更新：XIAO nRF52840 Sense + Edge Impulse 选型评估）
     
     ---
     
@@ -510,7 +939,10 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     
     **建议更新为**：
     &gt; CTO 完成 XIAO nRF52840 Sense + Edge Impulse POC，验证动作分类准确率 ≥ 85%，并记录加速度饱和边界数据，输出 DVT 传感器选型建议。
-</code></pre><hr><h2 id=board-产出cdcp-评审报告>Board 产出：CDCP 评审报告</h2><p>所有 C-Level 的输出汇集到 Board。Board 不重写内容，而是<strong>打分、找矛盾、做决策</strong>。这里最值得注意的是执行可信度评分只有 3/5——Board 明确指出「AI 纠姿 TRL 仅 5，V1 降级后差异化需重新验证」。这个判断很关键，直接影响了 CDCP 的「有条件批准」结论。</p><pre tabindex=0><code>    **输出方**：Board/IPMT | **日期**：2026-04-09 | **评审类型**：CDCP（概念决策评审点）
+</code></pre><hr>
+<h2 id="board-产出cdcp-评审报告">Board 产出：CDCP 评审报告</h2>
+<p>所有 C-Level 的输出汇集到 Board。Board 不重写内容，而是<strong>打分、找矛盾、做决策</strong>。这里最值得注意的是执行可信度评分只有 3/5——Board 明确指出「AI 纠姿 TRL 仅 5，V1 降级后差异化需重新验证」。这个判断很关键，直接影响了 CDCP 的「有条件批准」结论。</p>
+<pre tabindex="0"><code>    **输出方**：Board/IPMT | **日期**：2026-04-09 | **评审类型**：CDCP（概念决策评审点）
     
     ---
     
@@ -583,20 +1015,272 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     | POC实验结果汇报 | CTO | 2026-05-09 |
     | 用户访谈报告提交 | CMO | 2026-05-09 |
     | 条件确认后通知 Board 进入计划阶段 | CEO | 2026-05-12 |
-</code></pre><hr><h2 id=总结>总结</h2><p>这次实践的 key takeaways：</p><ol><li><p><strong>制衡机制真的有价值</strong>。COO 作为独立审核节点，多次打回 CEO 方案要求补充细节（比如 CFO 的成本假设没有列明前提条件）。单 agent 很难自己挑自己的刺。</p></li><li><p><strong>Agent 拆得越细，输出质量越高</strong>。一开始只拆了 3 个角色（CEO/CTO/CMO），发现 CFO 的 BOM 分析经常被 CTO 带偏（过于乐观）。拆出独立 CFO 后，财务模型明显更保守、更可信。</p></li><li><p><strong>IPD 决策门是很好的流程脊梁</strong>。它不是增加流程负担，而是把「什么时候该做什么分析」这件事标准化了。每个 agent 知道自己在这个阶段该产出什么，不需要 CEO 反复提醒。</p></li><li><p><strong>Agent 输出的质量取决于输入的清晰度</strong>。Board 的项目工作台是所有 agent 的共同「上下文锚点」——状态、里程碑、风险全部透明。如果没有这个仪表盘，不同 agent 的输出会基于不同的假设，最后 Board 评审时发现根本不在同一个维度讨论。</p></li></ol><p>完整的 Agent 体系、Skill 库和 Command 工作流已开源在 <a href=https://github.com/fifteenbao/IPD_agents>fifteenbao/IPD_agents</a>，欢迎试用和 PR。</p></section><footer class=post-tags-footer><div class=post-tags-header><span class=post-tags-label>标签</span>
-<span class=post-tags-related>6 篇文章有相同标签组合</span>
-<a href=https://fifteenbao.com/tags/ class="post-tags-graph-link no-underline">图谱 →</a></div><div class=post-tags-list><a href=https://fifteenbao.com/tags/ai class="post-tag-pill no-underline"><span class=post-tag-name>#AI</span>
-<span class=post-tag-count>9</span>
-</a><a href=https://fifteenbao.com/tags/ipd class="post-tag-pill no-underline"><span class=post-tag-name>#IPD</span>
-<span class=post-tag-count>2</span>
-</a><a href=https://fifteenbao.com/tags/agent class="post-tag-pill no-underline"><span class=post-tag-name>#Agent</span>
-<span class=post-tag-count>3</span>
-</a><a href=https://fifteenbao.com/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6 class="post-tag-pill no-underline"><span class=post-tag-name>#智能硬件</span>
-<span class=post-tag-count>0</span>
-</a><a href=https://fifteenbao.com/tags/%E6%8B%B3%E5%87%BB class="post-tag-pill no-underline"><span class=post-tag-name>#拳击</span>
-<span class=post-tag-count>0</span>
-</a><a href=https://fifteenbao.com/tags/%E6%89%8D class="post-tag-pill no-underline"><span class=post-tag-name>#才</span>
-<span class=post-tag-count>0</span></a></div></footer><nav class=post-navigation aria-label=文章翻页><a class="post-nav-link post-nav-previous" href=https://fifteenbao.com/post/20260428%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/ rel=prev><span class=post-nav-direction><span class=post-nav-arrow aria-hidden=true>←</span> 上一篇</span>
-<span class=post-nav-title>网站装修小记</span>
-</a><a class="post-nav-link post-nav-next" href=https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/ rel=next><span class=post-nav-direction>下一篇 <span class=post-nav-arrow aria-hidden=true>→</span></span>
-<span class=post-nav-title>unit bot agent - 成本分析&技术选型</span></a></nav></article></div><script>(function(){const e=document.querySelectorAll("article h2, article h3, article h4"),n=document.querySelectorAll(".toc-content a");if(e.length===0||n.length===0)return;const t=new Map,i=new Map;e.forEach(e=>{const s=e.id||e.getAttribute("id");s&&n.forEach(n=>{const o=n.getAttribute("href");o&&(o==="#"+s||o.endsWith("#"+s))&&(t.set(e,n),i.set(n,e))})});function s(){n.forEach(e=>e.classList.remove("active"));const o=window.scrollY,r=window.scrollY+window.innerHeight,i=120;let s=null,a=1/0;if(e.forEach(e=>{const n=e.getBoundingClientRect(),t=window.scrollY+n.top,r=t+n.height;if(t<=o+i){const n=Math.abs(t-(o+i));n<a&&(a=n,s=e)}}),s||e.forEach(e=>{const t=e.getBoundingClientRect();t.top>=0&&t.top<window.innerHeight&&(s||(s=e))}),s&&t.has(s)){{const n=t.get(s);n.classList.add("active");const e=document.querySelector(".toc-sidebar");if(e){const t=n.getBoundingClientRect(),s=e.getBoundingClientRect(),o=e.scrollTop;t.top<s.top?e.scrollTo({top:o+(t.top-s.top)-20,behavior:"smooth"}):t.bottom>s.bottom&&e.scrollTo({top:o+(t.bottom-s.bottom)+20,behavior:"smooth"})}}}else if(window.scrollY<100&&e.length>0){const n=e[0];t.has(n)&&t.get(n).classList.add("active")}}let o=!1;function a(){o||(window.requestAnimationFrame(()=>{s(),o=!1}),o=!0)}window.addEventListener("scroll",a,{passive:!0}),s(),n.forEach(e=>{e.addEventListener("click",function(e){const t=this.getAttribute("href");if(t&&t.startsWith("#")){const o=t.substring(1),n=document.getElementById(o);if(n){e.preventDefault();const o=100,i=n.getBoundingClientRect().top+window.scrollY-o;window.scrollTo({top:i,behavior:"smooth"}),history.pushState(null,"",t),setTimeout(()=>{s()},100)}}})}),window.addEventListener("hashchange",()=>{const e=window.location.hash;if(e){const t=document.querySelector(e);if(t){const e=100,n=t.getBoundingClientRect().top+window.scrollY-e;window.scrollTo({top:n,behavior:"smooth"}),setTimeout(()=>s(),100)}}})})()</script></main><footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60"><div>©2025-2026 fifteenbao</div></footer></body></html>
+</code></pre><hr>
+<h2 id="总结">总结</h2>
+<p>这次实践的 key takeaways：</p>
+<ol>
+<li>
+<p><strong>制衡机制真的有价值</strong>。COO 作为独立审核节点，多次打回 CEO 方案要求补充细节（比如 CFO 的成本假设没有列明前提条件）。单 agent 很难自己挑自己的刺。</p>
+</li>
+<li>
+<p><strong>Agent 拆得越细，输出质量越高</strong>。一开始只拆了 3 个角色（CEO/CTO/CMO），发现 CFO 的 BOM 分析经常被 CTO 带偏（过于乐观）。拆出独立 CFO 后，财务模型明显更保守、更可信。</p>
+</li>
+<li>
+<p><strong>IPD 决策门是很好的流程脊梁</strong>。它不是增加流程负担，而是把「什么时候该做什么分析」这件事标准化了。每个 agent 知道自己在这个阶段该产出什么，不需要 CEO 反复提醒。</p>
+</li>
+<li>
+<p><strong>Agent 输出的质量取决于输入的清晰度</strong>。Board 的项目工作台是所有 agent 的共同「上下文锚点」——状态、里程碑、风险全部透明。如果没有这个仪表盘，不同 agent 的输出会基于不同的假设，最后 Board 评审时发现根本不在同一个维度讨论。</p>
+</li>
+</ol>
+<p>完整的 Agent 体系、Skill 库和 Command 工作流已开源在 <a href="https://github.com/fifteenbao/IPD_agents">fifteenbao/IPD_agents</a>，欢迎试用和 PR。</p>
+</section>
+
+    
+    <footer class="post-tags-footer">
+      <div class="post-tags-header">
+        <span class="post-tags-label">标签</span>
+        
+        <span class="post-tags-related">6 篇文章有相同标签组合</span>
+        
+        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+      </div>
+      <div class="post-tags-list">
+        <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#AI</span>
+          <span class="post-tag-count">9</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/ipd" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#IPD</span>
+          <span class="post-tag-count">2</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/agent" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#Agent</span>
+          <span class="post-tag-count">3</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#智能硬件</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E6%8B%B3%E5%87%BB" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#拳击</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E6%89%8D" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#才</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        
+      </div>
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav class="post-navigation" aria-label="文章翻页">
+      
+      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20260428%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/" rel="prev">
+        <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
+        <span class="post-nav-title">网站装修小记</span>
+      </a>
+      
+      
+      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/" rel="next">
+        <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
+        <span class="post-nav-title">unit bot agent - 成本分析&amp;技术选型</span>
+      </a>
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<script>
+  (function() {
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60">
+      <div>©2025-2026 fifteenbao</div>
+    </footer>
+  </body>
+</html>
