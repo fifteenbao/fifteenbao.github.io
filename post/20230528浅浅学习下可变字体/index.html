@@ -86,7 +86,7 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
@@ -144,8 +144,8 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   
   <meta itemprop="name" content="浅浅学习下可变字体">
   <meta itemprop="description" content="字重（weight），字宽（width），倾斜（Slant），斜体（Italic）和视觉尺寸（optical Size）">
-  <meta itemprop="datePublished" content="2023-05-28T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-05-28T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2023-05-28T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-05-28T00:00:00+08:00">
   <meta itemprop="wordCount" content="236">
   <meta itemprop="keywords" content="字体,可变字体,才">
   
@@ -156,8 +156,8 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2023-05-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-05-28T00:00:00+00:00">
+    <meta property="article:published_time" content="2023-05-28T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-05-28T00:00:00+08:00">
     <meta property="article:tag" content="字体">
     <meta property="article:tag" content="可变字体">
     <meta property="article:tag" content="才">
@@ -203,6 +203,12 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/post/"
           >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
         >
         
         <a
@@ -283,38 +289,6 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
       
 
 <div class="article-container">
-  
-  
-  <aside class="toc-sidebar">
-    <div class="toc-wrapper">
-      <div class="toc-header">
-        <span class="toc-title">目录</span>
-      </div>
-      <div class="toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#静态字体和可变字体的差异">静态字体和可变字体的差异</a>
-      <ul>
-        <li><a href="#标准静态字体">标准（静态）字体</a></li>
-        <li><a href="#可变字体">可变字体</a></li>
-        <li><a href="#关于字体系列字重和变体的说明">关于字体系列，字重和变体的说明</a></li>
-      </ul>
-    </li>
-    <li><a href="#可变轴">可变轴</a>
-      <ul>
-        <li><a href="#如规范中所定义存在两种变形轴注册轴和自定义轴">如规范中所定义，存在两种变形轴，<strong>注册轴</strong>和<strong>自定义轴</strong>：</a></li>
-        <li><a href="#注册轴">注册轴</a></li>
-        <li><a href="#自定义轴">自定义轴</a></li>
-      </ul>
-    </li>
-    <li><a href="#font-face-使用">@font-face 使用</a></li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </aside>
-  
-
   <article class="article-content">
     <header class="mb-12">
       <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">浅浅学习下可变字体</h1>
@@ -336,6 +310,38 @@ https://learn.microsoft.com/en-us/typography/opentype/spec/otvaroverview
       
       
     </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#静态字体和可变字体的差异">静态字体和可变字体的差异</a>
+      <ul>
+        <li><a href="#标准静态字体">标准（静态）字体</a></li>
+        <li><a href="#可变字体">可变字体</a></li>
+        <li><a href="#关于字体系列字重和变体的说明">关于字体系列，字重和变体的说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#可变轴">可变轴</a>
+      <ul>
+        <li><a href="#如规范中所定义存在两种变形轴注册轴和自定义轴">如规范中所定义，存在两种变形轴，<strong>注册轴</strong>和<strong>自定义轴</strong>：</a></li>
+        <li><a href="#注册轴">注册轴</a></li>
+        <li><a href="#自定义轴">自定义轴</a></li>
+      </ul>
+    </li>
+    <li><a href="#font-face-使用">@font-face 使用</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
 
     <section><p>OpenType可变字体（英语：OpenType variable fonts）是字体格式OpenType在1.8版规范中引入的扩展规范，由苹果、微软、谷歌和Adobe联合开发，于2016年9月14日正式发布。
 可变字体的优势：</p>
@@ -515,6 +521,14 @@ font-variation-settings: &#39;opsz&#39; 36;
 
 <script>
   (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
     
     const headings = document.querySelectorAll('article h2, article h3, article h4');
     const tocLinks = document.querySelectorAll('.toc-content a');

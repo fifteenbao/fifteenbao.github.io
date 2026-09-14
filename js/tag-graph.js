@@ -5,6 +5,37 @@
   var svg, g, zoom, simulation;
   var nodeEl, linkEl, labelEl;
   var selected = null;
+  var defaultScale = 1.2;
+
+  // Collide the whole node + label rectangle, not only its small circle.
+  function labelCollision() {
+    var items = [];
+    function force() {
+      for (var pass = 0; pass < 3; pass++) {
+        for (var i = 0; i < items.length; i++) {
+          for (var j = i + 1; j < items.length; j++) {
+            var a = items[i], b = items[j];
+            var dx = (b.x + b.vx) - (a.x + a.vx);
+            var dy = (b.y + b.vy) - (a.y + a.vy);
+            var ox = (a.labelWidth + b.labelWidth) / 2 + 18 - Math.abs(dx);
+            var oy = nodeR(a) + nodeR(b) + 34 - Math.abs(dy);
+            if (ox <= 0 || oy <= 0) continue;
+            if (ox < oy) {
+              var sx = (dx >= 0 ? 1 : -1) * ox * .5;
+              if (a.fx == null) a.vx -= sx;
+              if (b.fx == null) b.vx += sx;
+            } else {
+              var sy = (dy >= 0 ? 1 : -1) * oy * .5;
+              if (a.fy == null) a.vy -= sy;
+              if (b.fy == null) b.vy += sy;
+            }
+          }
+        }
+      }
+    }
+    force.initialize = function (nodes) { items = nodes; };
+    return force;
+  }
 
   // ── theme helpers ─────────────────────────────────────────────────────────
   function isDark() {
@@ -120,6 +151,12 @@
 
     var W = container.clientWidth  || 900;
     var H = container.clientHeight || 600;
+    var measure = document.createElement('canvas').getContext('2d');
+    var fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize) * .75;
+    nodes.forEach(function (d) {
+      measure.font = (d.count >= 7 ? '700' : d.count >= 3 ? '600' : '400') + ' ' + fontSize + 'px system-ui';
+      d.labelWidth = Math.max(nodeR(d) * 2, measure.measureText(d.name).width);
+    });
 
     d3.select('#graph').selectAll('*').remove();
 
@@ -142,27 +179,26 @@
 
     g = svg.append('g');
 
-    // ── Tighter physics ──────────────────────────────────────────────────
+    // ── Label-aware physics ──────────────────────────────────────────────────
     simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(function (d) { return d.id; })
-        // Shorter link distance → nodes pulled much closer together
-        .distance(function (d) { return Math.max(28, 60 - d.value * 8); })
-        .strength(0.7))
+        // Longer links leave room for labels; D3 defaults balance hub degree.
+        .distance(function (d) { return 100 + Math.max(d.source.labelWidth, d.target.labelWidth) * .3; }))
       .force('charge', d3.forceManyBody()
-        // Reduced repulsion → tighter cluster
-        .strength(function (d) { return -80 - nodeR(d) * 10; }))
+        // Moderate repulsion keeps the expanded view within reach.
+        .strength(function (d) { return -90 - nodeR(d) * 8; }))
       .force('center', d3.forceCenter(W / 2, H / 2))
       // Extra gravity toward center → prevents nodes flying to edges
-      .force('x', d3.forceX(W / 2).strength(0.04))
-      .force('y', d3.forceY(H / 2).strength(0.04))
-      .force('collision', d3.forceCollide()
-        .radius(function (d) { return nodeR(d) + 8; }));
+      .force('x', d3.forceX(W / 2).strength(0.06))
+      .force('y', d3.forceY(H / 2).strength(0.09))
+      .force('collision', labelCollision());
 
     // Links
     linkEl = g.append('g').attr('class', 'links')
       .selectAll('line').data(links).enter().append('line')
       .attr('stroke', linkStroke())
-      .attr('stroke-width', function (d) { return Math.max(0.8, d.value * 0.7); });
+      .attr('stroke-opacity', 0.4)
+      .attr('stroke-width', function (d) { return Math.min(1.8, Math.max(0.7, d.value * 0.4)); });
 
     // Nodes
     nodeEl = g.append('g').attr('class', 'nodes')
@@ -194,9 +230,12 @@
       .attr('font-weight', function (d) {
         return d.count >= 7 ? '700' : d.count >= 3 ? '600' : '400';
       })
-      .style('opacity', function (d) { return d.count >= 2 ? 1 : 0.72; })
-      .attr('dx', function (d) { return nodeR(d) + 4; })
-      .attr('dy', '0.35em')
+      .style('opacity', function (d) { return d.count >= 2 ? 1 : 0.9; })
+      .attr('text-anchor', 'middle')
+      .attr('dy', function (d) { return nodeR(d) + 16; })
+      .style('paint-order', 'stroke')
+      .style('stroke', 'var(--canvas)')
+      .style('stroke-width', '3px')
       .style('pointer-events', 'none')
       .style('user-select', 'none');
 
@@ -208,6 +247,8 @@
       labelEl.attr('x', function (d) { return d.x; }).attr('y', function (d) { return d.y; });
     });
 
+    simulation.tick(180);
+    svg.call(zoom.transform, d3.zoomIdentity.translate(W * (1 - defaultScale) / 2, H * (1 - defaultScale) / 2).scale(defaultScale));
     window.addEventListener('resize', onResize);
   }
 
@@ -359,7 +400,9 @@
 
   function resetView() {
     if (!svg) return;
-    svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity);
+    var W = +svg.attr('width'), H = +svg.attr('height');
+    svg.transition().duration(500).call(zoom.transform,
+      d3.zoomIdentity.translate(W * (1 - defaultScale) / 2, H * (1 - defaultScale) / 2).scale(defaultScale));
   }
 
   function dragStart(event, d) {
@@ -380,8 +423,8 @@
     svg.attr('width', W).attr('height', H);
     simulation
       .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('x', d3.forceX(W / 2).strength(0.04))
-      .force('y', d3.forceY(H / 2).strength(0.04))
+      .force('x', d3.forceX(W / 2).strength(0.06))
+      .force('y', d3.forceY(H / 2).strength(0.09))
       .alpha(0.3).restart();
   }
 

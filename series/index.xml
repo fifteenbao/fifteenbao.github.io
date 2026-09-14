@@ -7,47 +7,54 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://fifteenbao.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Unit Bot 开发记</title>
-      <link>https://fifteenbao.com/series/unit-bot-%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
-      <pubDate>Tue, 28 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/series/unit-bot-%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
+      <title>DIY</title>
+      <link>https://fifteenbao.com/series/diy/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/diy/</guid>
       <description></description>
     </item>
     <item>
-      <title>IPD Agents 协作体系</title>
-      <link>https://fifteenbao.com/series/ipd-agents-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/series/ipd-agents-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</guid>
+      <title>吨吨吨</title>
+      <link>https://fifteenbao.com/series/%E5%90%A8%E5%90%A8%E5%90%A8/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/%E5%90%A8%E5%90%A8%E5%90%A8/</guid>
       <description></description>
     </item>
     <item>
-      <title>IPD 多 Agent 协作体系</title>
-      <link>https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</link>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://fifteenbao.com/series/ipd-%E5%A4%9A-agent-%E5%8D%8F%E4%BD%9C%E4%BD%93%E7%B3%BB/</guid>
+      <title>AI笔记</title>
+      <link>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agents</title>
+      <link>https://fifteenbao.com/series/agents/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/agents/</guid>
       <description></description>
     </item>
     <item>
       <title>Bonflow 开发记</title>
       <link>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
-      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0800</pubDate>
       <guid>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>游记</title>
       <link>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</link>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0800</pubDate>
       <guid>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenClaw 尝鲜记</title>
       <link>https://fifteenbao.com/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</link>
-      <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
       <guid>https://fifteenbao.com/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</guid>
       <description></description>
     </item>

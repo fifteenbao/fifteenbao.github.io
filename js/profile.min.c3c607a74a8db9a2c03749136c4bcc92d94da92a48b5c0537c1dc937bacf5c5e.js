@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("profile-print");if(!e)return;e.hidden=!1,e.addEventListener("click",()=>window.print())})()

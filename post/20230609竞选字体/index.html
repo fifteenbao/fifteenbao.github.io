@@ -68,7 +68,7 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
@@ -126,8 +126,8 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   
   <meta itemprop="name" content="Gotham｜Sharp Sans｜Optima 字体的背后">
   <meta itemprop="description" content="Gotham、Sharp Sans Display No.1、Optima 分别是奥巴马、希拉里和约翰麦凯恩在08年竞选时使用的无衬线字体，无衬线的选择反映了电子化的时代背景，也反映出人物背后的有趣故事。">
-  <meta itemprop="datePublished" content="2023-06-09T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-06-09T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2023-06-09T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-06-09T00:00:00+08:00">
   <meta itemprop="wordCount" content="235">
   <meta itemprop="keywords" content="字体,竞选字体,才">
   
@@ -138,8 +138,8 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2023-06-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-06-09T00:00:00+00:00">
+    <meta property="article:published_time" content="2023-06-09T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-06-09T00:00:00+08:00">
     <meta property="article:tag" content="字体">
     <meta property="article:tag" content="竞选字体">
     <meta property="article:tag" content="才">
@@ -185,6 +185,12 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/post/"
           >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
         >
         
         <a
@@ -265,26 +271,6 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       
 
 <div class="article-container">
-  
-  
-  <aside class="toc-sidebar">
-    <div class="toc-wrapper">
-      <div class="toc-header">
-        <span class="toc-title">目录</span>
-      </div>
-      <div class="toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#gotham">Gotham</a></li>
-    <li><a href="#baskerville-sharp-sans">Baskerville &amp; Sharp Sans</a></li>
-    <li><a href="#optima">Optima</a></li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </aside>
-  
-
   <article class="article-content">
     <header class="mb-12">
       <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">Gotham｜Sharp Sans｜Optima 字体的背后</h1>
@@ -306,6 +292,26 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
       
       
     </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gotham">Gotham</a></li>
+    <li><a href="#baskerville-sharp-sans">Baskerville &amp; Sharp Sans</a></li>
+    <li><a href="#optima">Optima</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
 
     <section><p>2024-7-26更新链接:
 <a href="https://www.toodaylab.com/82946"> 《从设计看美国大选：哈里斯标志一天内完成更新、各个环节都是“视觉锤”》</a></p>
@@ -467,6 +473,14 @@ Gotham 也找到了进入其他商业媒体的途径。可口可乐、电视节�
 
 <script>
   (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
     
     const headings = document.querySelectorAll('article h2, article h3, article h4');
     const tocLinks = document.querySelectorAll('.toc-content a');

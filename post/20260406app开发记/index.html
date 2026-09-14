@@ -90,7 +90,7 @@ App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计�
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
@@ -160,10 +160,10 @@ Gemini 的建议：
 结构与音律的融合 (Structural Fusion)：直接将 “Bonsai” 的词根与你喜欢的词结合，创造出一种类似高端硬件品牌的命名感。
 Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常顺滑，寓意植物在器皿中展现出的生命韵律。 Sairook：取自&#34;栽 (Sai)“与&#34;堡垒 (Rook)&#34;。给人一种非常扎实、可靠的记录感，像是一个守护植物生长的坚固容器。 Sai-Logic：栽种逻辑。听起来像是一个精密、工程化的养护工具，符合你对&#34;系统性&#34;记录的需求。 Bonflow 成功诞生。
 📱 iOS 历险记 App 的开发从 iOS 开始。年前做过一个拳击硬件的 App，就设计规范和开发文档来说，感觉是个比较容易让 AI 协助的平台。">
-  <meta itemprop="datePublished" content="2026-04-06T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-04-06T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-04-06T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-04-06T00:00:00+08:00">
   <meta itemprop="wordCount" content="574">
-  <meta itemprop="keywords" content="IOS,植物,DIY,App,软件,Bonflow,PM,AI,才">
+  <meta itemprop="keywords" content="IOS,植物,DIY,App,软件,Bonflow,PM,AI,智">
   
   <meta property="og:url" content="https://fifteenbao.com/post/20260406app%E5%BC%80%E5%8F%91%E8%AE%B0/">
   <meta property="og:site_name" content="fifteenbao">
@@ -184,8 +184,8 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-04-06T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-04-06T00:00:00+00:00">
+    <meta property="article:published_time" content="2026-04-06T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-04-06T00:00:00+08:00">
     <meta property="article:tag" content="IOS">
     <meta property="article:tag" content="植物">
     <meta property="article:tag" content="DIY">
@@ -246,6 +246,12 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/post/"
           >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
         >
         
         <a
@@ -326,15 +332,46 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
       
 
 <div class="article-container">
-  
-  
-  <aside class="toc-sidebar">
-    <div class="toc-wrapper">
-      <div class="toc-header">
-        <span class="toc-title">目录</span>
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">开发记 - bonflow 植物养护&amp;识别 App</h1>
+
+      
+      <div class="type-xs antialiased opacity-60">
+        
+        <time>2026年4月6日</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
       </div>
-      <div class="toc-content">
-        <nav id="TableOfContents">
+      
+
+      
+      
+      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+        
+        
+        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0">
+          <span class="post-tag-name">系列 · bonflow 开发记</span>
+        </a>
+        
+      </div>
+      
+    </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
   <ul>
     <li><a href="#-idea-的开始">💡 Idea 的开始</a></li>
     <li><a href="#-名字的诞生">🏷️ 名字的诞生</a></li>
@@ -368,41 +405,10 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
     <li><a href="#-总结">📝 总结</a></li>
   </ul>
 </nav>
-      </div>
-    </div>
-  </aside>
-  
-
-  <article class="article-content">
-    <header class="mb-12">
-      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">开发记 - bonflow 植物养护&amp;识别 App</h1>
-
-      
-      <div class="type-xs antialiased opacity-60">
-        
-        <time>2026年4月6日</time>
-        
-        
-        
-        
-        <span class="mx-1">&middot;</span>
-        <span>fifteenbao</span>
-        
-      </div>
-      
-
-      
-      
-      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-        
-        
-        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0">
-          <span class="post-tag-name">系列 · bonflow 开发记</span>
-        </a>
-        
-      </div>
-      
-    </header>
+        </div>
+      </details>
+    </aside>
+    
 
     <section><blockquote>
 <p><strong>Growth in order, rhythm in form.</strong>
@@ -897,7 +903,7 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">8 篇文章有相同标签组合</span>
+        <span class="post-tags-related">9 篇文章有相同标签组合</span>
         
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
@@ -932,10 +938,10 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
         </a>
         <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
           <span class="post-tag-name">#AI</span>
-          <span class="post-tag-count">9</span>
+          <span class="post-tag-count">10</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%89%8D" class="post-tag-pill no-underline">
-          <span class="post-tag-name">#才</span>
+        <a href="https://fifteenbao.com/tags/%E6%99%BA" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#智</span>
           <span class="post-tag-count">0</span>
         </a>
         
@@ -979,6 +985,14 @@ Bonflow：将&#34;盆 (Bon)“与&#34;流动 (Flow)“结合。听起来非常�
 
 <script>
   (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
     
     const headings = document.querySelectorAll('article h2, article h3, article h4');
     const tocLinks = document.querySelectorAll('.toc-content a');

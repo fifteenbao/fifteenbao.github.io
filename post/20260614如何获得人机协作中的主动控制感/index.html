@@ -1,0 +1,696 @@
+<!doctype html>
+<html
+  class="not-ready"
+  style="--bg: #faf8f1"
+  lang="zh"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+
+  
+  <title>如何获得人机协作中的主动控制感 - fifteenbao</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR）这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。结果表明，在互动调整行为的能力上，人-人/机器人（HH/HR）的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。与机器人协作时，对方的&quot;意图性&quot;需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。
+Know
+📈 Solo vs. HH vs. HR 对比
+
+  
+      
+          对比维度
+          主要研究发现
+          关键心理机制与解释
+      
+  
+  
+      
+          任务绩效
+          1. HH &gt; Solo并非绝对：仅在团队能自发形成角色分工时才成立；否则，独自一人可能表现更好。2. Solo ≥ HH/HR：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。3. HR性能优势未统一，安全有优势：部分HH在产出上优于HR，但HR能显著降低操作风险（如改善人体工学）。4. AI组合的平均表现可能逊色：一项包含370个效应量的元分析表明，人-AI组合的平均表现要差于最佳一方（人或AI）的表现。
+          - 角色分化是HH的关键，这对HR也具指导意义。- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。- 这强调了&quot;如何合作&quot;比&quot;与谁合作&quot;更重要；以及综合考虑绩效与安全，HR有其独特价值。
+      
+      
+          心理负荷 &amp; 用户体验
+          1. HH/HR都显著优于Solo：合作普遍更能降低认知负担。2. HR在情绪和主观体验上更胜一筹：尤其在吸引力、刺激感和原创性方面评分更高，引发更强烈的情感投入。
+          HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。
+      
+      
+          信任动态
+          1. 任务复杂度是关键调节变量：人们更倾向于在非常简单或高度复杂的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。2. 信任建立过程可能相似：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。3. 信任修复存在差异：违反信任后的情绪反应在HH和HR中有所不同。
+          在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。
+      
+      
+          主动性 &amp; 自主性
+          1. HR合作伴随着控制感变化：与聊天机器人合作后转入单人任务，控制感会恢复但内在动机下降、无聊感增加。2. 常规技术与人类合作，心理成本更低：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。
+          这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。
+      
+      
+          神经活动机制
+          1. 人人协作诱发了独特脑间同步：与人合作时，大脑多个区域会出现&quot;脑间同步&quot;（BBS），产生&quot;我们模式&quot;（we-mode）。2. 这种同步在单人任务中较弱。
+          脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。
+      
+      
+          人-AI协同的局限性
+          平均而言，人-AI组合并非&quot;全能神器&quot;：一项覆盖106项研究的元分析发现，人-AI组合的平均表现显著差于最佳一方。- 决策任务中普遍存在损失：需要判断和选择的&quot;决策任务&quot;，人-AI合作常常拖后腿，导致整体表现不如最佳一方。- 内容创造任务中存在增益：在文本生成、创意构思等&quot;内容创造&quot;任务中，人-AI合作能带来增益，产生更好的效果。- 人类主导时增益明显：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行&quot;合作&quot;反而会让整体表现变差。
+          这揭示了人-AI协作的核心：关键在于&quot;何时用&quot;。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域&quot;反客为主&quot;时，可能会造成干扰。
+      
+  
+
+HOW
+意图可见性
+让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令
+因果透明度
+用户操作一机器人反应一 清晰映射，建立动作-结果联系
+主动沟通
+机器人主动告知意图：「我接下来要….」，而非静默执行" />
+  <meta name="author" content="fifteenbao" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/css/site.min.css" />
+  
+
+  
+  
+  <script defer src="https://fifteenbao.com/js/site.min.js"></script>
+
+  
+  
+  <script defer src="https://fifteenbao.com/js/heatmap.min.js"></script>
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="https://fifteenbao.com/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://fifteenbao.com/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://fifteenbao.com/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.158.0">
+
+  
+  
+  
+  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4BYTD0RBTY');
+        }
+      </script>
+  
+  
+  <meta itemprop="name" content="如何获得人机协作中的主动控制感">
+  <meta itemprop="description" content="“如何获得人机协作中的主动控制感”">
+  <meta itemprop="datePublished" content="2026-06-14T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2026-06-14T00:00:00+08:00">
+  <meta itemprop="wordCount" content="109">
+  <meta itemprop="keywords" content="AI,协作,人机交互,智">
+  
+  <meta property="og:url" content="https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/">
+  <meta property="og:site_name" content="fifteenbao">
+  <meta property="og:title" content="如何获得人机协作中的主动控制感">
+  <meta property="og:description" content="“如何获得人机协作中的主动控制感”">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2026-06-14T00:00:00+08:00">
+    <meta property="article:modified_time" content="2026-06-14T00:00:00+08:00">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="协作">
+    <meta property="article:tag" content="人机交互">
+    <meta property="article:tag" content="智">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何获得人机协作中的主动控制感">
+  <meta name="twitter:description" content="“如何获得人机协作中的主动控制感”">
+
+  
+  
+
+  
+  <link rel="canonical" href="https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/" />
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
+    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+        >fifteenbao</a
+      >
+    </div>
+
+    
+    <div
+      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+      role="button"
+      aria-label="Menu"
+    ></div>
+
+    <div
+      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
+    >
+      
+      
+      <nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse">
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/post/"
+          >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/tags/"
+          >Tags</a
+        >
+        
+      </nav>
+      
+
+      
+      <div class="header-social-mobile flex-col items-start gap-4 mt-4">
+        
+        
+        
+        <a
+          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(https://fifteenbao.com/rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        
+        
+        <div
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+          data-theme-bg="png"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+
+      
+      
+      <nav
+        class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
+      >
+        
+        <a
+          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
+          style="--url: url(https://fifteenbao.com/rss.svg)"
+          href="https://fifteenbao.com/index.xml"
+          target="_blank"
+          rel="alternate"
+        >
+          rss
+        </a>
+        
+        
+        <div class="flex items-center ml-2">
+          <div
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
+            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
+            data-theme-bg="png"
+            role="button"
+            aria-label="Dark"
+          ></div>
+        </div>
+      </nav>
+      
+    </div>
+  </div>
+</header>
+
+
+
+<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">如何获得人机协作中的主动控制感</h1>
+
+      
+      <div class="type-xs antialiased opacity-60">
+        
+        <time>2026年6月14日</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
+      </div>
+      
+
+      
+      
+      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+        
+        
+        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0">
+          <span class="post-tag-name">系列 · AI笔记</span>
+        </a>
+        
+      </div>
+      
+    </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#know">Know</a>
+      <ul>
+        <li><a href="#-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#how">HOW</a>
+      <ul>
+        <li><a href="#意图可见性">意图可见性</a></li>
+        <li><a href="#因果透明度">因果透明度</a></li>
+        <li><a href="#主动沟通">主动沟通</a></li>
+      </ul>
+    </li>
+    <li><a href="#别让人觉得自己是旁观者">别让人觉得自己是旁观者</a>
+      <ul>
+        <li><a href="#设计人在回路节点">设计「人在回路」节点</a></li>
+        <li><a href="#保留用户的否决权">保留用户的「否决权」</a></li>
+        <li><a href="#归因反馈">归因反馈</a></li>
+        <li><a href="#避免过度自动化">避免过度自动化</a></li>
+      </ul>
+    </li>
+    <li><a href="#主动控制感低没人负责">主动控制感低=没人负责</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
+
+    <section><p>昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR）这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。结果表明，在互动调整行为的能力上，人-人/机器人（HH/HR）的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。与机器人协作时，对方的&quot;意图性&quot;需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。</p>
+<h2 id="know">Know</h2>
+<h3 id="-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</h3>
+<table>
+  <thead>
+      <tr>
+          <th>对比维度</th>
+          <th>主要研究发现</th>
+          <th>关键心理机制与解释</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>任务绩效</strong></td>
+          <td>1. <strong>HH &gt; Solo并非绝对</strong>：仅在团队能自发形成<strong>角色分工</strong>时才成立；否则，独自一人可能表现更好。<br>2. <strong>Solo ≥ HH/HR</strong>：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。<br>3. <strong>HR性能优势未统一，安全有优势</strong>：部分HH在产出上优于HR，但HR能显著<strong>降低操作风险</strong>（如改善人体工学）。<br>4. <strong>AI组合的平均表现可能逊色</strong>：一项包含370个效应量的元分析表明，<strong>人-AI组合的平均表现要差于最佳一方（人或AI）的表现</strong>。</td>
+          <td>- <strong>角色分化</strong>是HH的关键，这对HR也具指导意义。<br>- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。<br>- 这强调了&quot;如何合作&quot;比&quot;与谁合作&quot;更重要；以及综合考虑绩效与安全，HR有其独特价值。</td>
+      </tr>
+      <tr>
+          <td><strong>心理负荷 &amp; 用户体验</strong></td>
+          <td>1. <strong>HH/HR都显著优于Solo</strong>：合作普遍更能降低认知负担。<br>2. <strong>HR在情绪和主观体验上更胜一筹</strong>：尤其在<strong>吸引力、刺激感和原创性</strong>方面评分更高，引发更强烈的<strong>情感投入</strong>。</td>
+          <td>HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。</td>
+      </tr>
+      <tr>
+          <td><strong>信任动态</strong></td>
+          <td>1. <strong>任务复杂度是关键调节变量</strong>：人们更倾向于在<strong>非常简单或高度复杂</strong>的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。<br>2. <strong>信任建立过程可能相似</strong>：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。<br>3. <strong>信任修复存在差异</strong>：违反信任后的情绪反应在HH和HR中有所不同。</td>
+          <td>在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。</td>
+      </tr>
+      <tr>
+          <td><strong>主动性 &amp; 自主性</strong></td>
+          <td>1. <strong>HR合作伴随着控制感变化</strong>：与聊天机器人合作后转入单人任务，控制感会<strong>恢复但内在动机下降、无聊感增加</strong>。<br>2. <strong>常规技术与人类合作，心理成本更低</strong>：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。</td>
+          <td>这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。</td>
+      </tr>
+      <tr>
+          <td><strong>神经活动机制</strong></td>
+          <td>1. <strong>人人协作诱发了独特脑间同步</strong>：与人合作时，大脑多个区域会出现&quot;脑间同步&quot;（BBS），产生&quot;我们模式&quot;（we-mode）。<br>2. <strong>这种同步在单人任务中较弱</strong>。</td>
+          <td>脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。</td>
+      </tr>
+      <tr>
+          <td><strong>人-AI协同的局限性</strong></td>
+          <td><strong>平均而言，人-AI组合并非&quot;全能神器&quot;</strong>：一项覆盖106项研究的元分析发现，人-AI组合的<strong>平均表现显著差于最佳一方</strong>。<br>- <strong>决策任务中普遍存在损失</strong>：需要判断和选择的&quot;决策任务&quot;，人-AI合作常常拖后腿，导致整体表现不如最佳一方。<br>- <strong>内容创造任务中存在增益</strong>：在文本生成、创意构思等&quot;内容创造&quot;任务中，人-AI合作能带来增益，产生更好的效果。<br>- <strong>人类主导时增益明显</strong>：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行&quot;合作&quot;反而会让整体表现变差。</td>
+          <td>这揭示了人-AI协作的核心：关键在于&quot;何时用&quot;。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域&quot;反客为主&quot;时，可能会造成干扰。</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="how">HOW</h2>
+<h3 id="意图可见性">意图可见性</h3>
+<p>让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令</p>
+<h3 id="因果透明度">因果透明度</h3>
+<p>用户操作一机器人反应一 清晰映射，建立动作-结果联系</p>
+<h3 id="主动沟通">主动沟通</h3>
+<p>机器人主动告知意图：「我接下来要….」，而非静默执行</p>
+<h2 id="别让人觉得自己是旁观者">别让人觉得自己是旁观者</h2>
+<p>AI 越强大，用户自我主动控制感下降的风险越高</p>
+<h3 id="设计人在回路节点">设计「人在回路」节点</h3>
+<p>在关键决策点强制让用户确认，而不是全自动执行</p>
+<h3 id="保留用户的否决权">保留用户的「否决权」</h3>
+<p>让用户清楚知道自己随时可以推翻AI的建议</p>
+<h3 id="归因反馈">归因反馈</h3>
+<p>系统明确告知「这个结果是基于您的决定」，强化主导感</p>
+<h3 id="避免过度自动化">避免过度自动化</h3>
+<p>在重复操作中保留适度摩擦，维持掌控感</p>
+<h2 id="主动控制感低没人负责">主动控制感低=没人负责</h2>
+<p>当所有人都觉得&quot;反正不是我决定的&quot; 意味着出了问题就没人负责。
+解法：主动控制感设计 = 责任感设计</p>
+<p><strong>扩展阅读:</strong> <a href="https://learn.microsoft.com/zh-cn/azure/machine-learning/concept-responsible-ai?view=azureml-api-2">Microsoft Build 2026 大会 - 什么是负责任 AI？</a>
+<img src="https://learn.microsoft.com/zh-cn/azure/machine-learning/media/concept-responsible-ai/concept-responsible-ml.png?view=azureml-api-2" alt=""></p>
+</section>
+
+    
+    <footer class="post-tags-footer">
+      <div class="post-tags-header">
+        <span class="post-tags-label">标签</span>
+        
+        <span class="post-tags-related">8 篇文章有相同标签组合</span>
+        
+        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+      </div>
+      <div class="post-tags-list">
+        <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#AI</span>
+          <span class="post-tag-count">10</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E5%8D%8F%E4%BD%9C" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#协作</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#人机交互</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        <a href="https://fifteenbao.com/tags/%E6%99%BA" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#智</span>
+          <span class="post-tag-count">0</span>
+        </a>
+        
+      </div>
+    </footer>
+    
+
+    
+    
+    
+    
+    <nav class="post-navigation" aria-label="文章翻页">
+      
+      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20260708%E4%BC%8F%E8%A7%81%E6%B8%85%E9%85%92%E4%B9%8B%E6%97%85/" rel="prev">
+        <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
+        <span class="post-nav-title">伏见清酒之旅</span>
+      </a>
+      
+      
+      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/" rel="next">
+        <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
+        <span class="post-nav-title">蛇口摆摊卖书记</span>
+      </a>
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+
+    
+  </article>
+</div>
+
+<script>
+  (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
+    
+    const headings = document.querySelectorAll('article h2, article h3, article h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    if (headings.length === 0 || tocLinks.length === 0) return;
+
+    
+    const headingToLinkMap = new Map();
+    const linkToHeadingMap = new Map();
+    
+    headings.forEach(heading => {
+      const id = heading.id || heading.getAttribute('id');
+      if (id) {
+        tocLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href === '#' + id || href.endsWith('#' + id))) {
+            headingToLinkMap.set(heading, link);
+            linkToHeadingMap.set(link, heading);
+          }
+        });
+      }
+    });
+
+    
+    function highlightTocLink() {
+      
+      tocLinks.forEach(link => link.classList.remove('active'));
+
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const offset = 120; 
+
+      let activeHeading = null;
+      let minDistance = Infinity;
+
+      
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        const headingTop = window.scrollY + rect.top;
+        const headingBottom = headingTop + rect.height;
+
+        
+        if (headingTop <= viewportTop + offset) {
+          const distance = Math.abs(headingTop - (viewportTop + offset));
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeHeading = heading;
+          }
+        }
+      });
+
+      
+      if (!activeHeading) {
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top < window.innerHeight) {
+            if (!activeHeading) {
+              activeHeading = heading;
+            }
+          }
+        });
+      }
+
+      
+      if (activeHeading && headingToLinkMap.has(activeHeading)) {
+        const link = headingToLinkMap.get(activeHeading);
+        link.classList.add('active');
+        
+        
+        const tocSidebar = document.querySelector('.toc-sidebar');
+        if (tocSidebar) {
+          const linkRect = link.getBoundingClientRect();
+          const sidebarRect = tocSidebar.getBoundingClientRect();
+          const sidebarScrollTop = tocSidebar.scrollTop;
+          
+          
+          if (linkRect.top < sidebarRect.top) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
+              behavior: 'smooth'
+            });
+          } else if (linkRect.bottom > sidebarRect.bottom) {
+            tocSidebar.scrollTo({
+              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      } else if (window.scrollY < 100 && headings.length > 0) {
+        
+        const firstHeading = headings[0];
+        if (headingToLinkMap.has(firstHeading)) {
+          headingToLinkMap.get(firstHeading).classList.add('active');
+        }
+      }
+    }
+
+    
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          highlightTocLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    
+    highlightTocLink();
+
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            
+            
+            const headerHeight = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            
+            history.pushState(null, '', href);
+            
+            
+            setTimeout(() => {
+              highlightTocLink();
+            }, 100);
+          }
+        }
+      });
+    });
+
+    
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+          const headerHeight = 100;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+          setTimeout(() => highlightTocLink(), 100);
+        }
+      }
+    });
+  })();
+</script>
+
+
+    </main>
+    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60">
+      <div>©2025-2026 fifteenbao</div>
+    </footer>
+  </body>
+</html>

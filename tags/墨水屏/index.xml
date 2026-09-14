@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>墨水屏 on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/%E5%A2%A8%E6%B0%B4%E5%B1%8F/</link>
+    <description>Recent content in 墨水屏 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/%E5%A2%A8%E6%B0%B4%E5%B1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>墨水屏股市信息自动更新展示</title>
+      <link>https://fifteenbao.com/post/20260914%E5%A2%A8%E6%B0%B4%E5%B1%8F%E6%9B%B4%E6%96%B0%E8%82%A1%E5%B8%82%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260914%E5%A2%A8%E6%B0%B4%E5%B1%8F%E6%9B%B4%E6%96%B0%E8%82%A1%E5%B8%82%E4%BF%A1%E6%81%AF/</guid>
+      <description>&lt;p&gt;周六参加了 OPENElab x seeedstudio 墨水屏创意工作坊，用Hermes生成了一个html网页，用seeed的在线小工具投屏了一下，意外获得了最佳UI设计奖。不做UI了，但获得了UI设计奖，还得了一个 XIAO ESP32-S3 sense，人生充满了惊喜和意外啊。&lt;/p&gt;&#xA;&lt;h2 id=&#34;切换-hermes&#34;&gt;切换 Hermes&lt;/h2&gt;&#xA;&lt;p&gt;最近我的2核2G服务器的龙虾在上总是跑不动挂掉，就顺手切换到了Hermes，操作丝滑了很多，服务器压力也小了不少。这段时间为了学习股市，在上面配置了一个 &lt;a href=&#34;https://github.com/atilaahmettaner/tradingview-mcp&#34;&gt;TradingView-MCP&lt;/a&gt; 帮我获取 美股/A股 数据，还补充了一个 &lt;a href=&#34;https://github.com/ZhuLinsen/daily_stock_analysis&#34;&gt;daily_stock_analysis&lt;/a&gt; 完善A股数据，每天上午会根据前一天的股票数据，推送三个值得关注的股市。&lt;/p&gt;&#xA;&lt;h3 id=&#34;数据来源&#34;&gt;数据来源&lt;/h3&gt;&#xA;&lt;p&gt;为了让信息在墨水屏上更容易扫读，页面按“状态 → 行情 → 操作 → 持仓”的顺序组织内容：&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;模块&lt;/th&gt;&#xA;          &lt;th&gt;主要内容&lt;/th&gt;&#xA;          &lt;th&gt;展示规则&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;顶栏&lt;/td&gt;&#xA;          &lt;td&gt;页面标题、市场状态&lt;/td&gt;&#xA;          &lt;td&gt;开市市场排在前面；美股开市使用橘黄色，A 股休市使用黑色，并显示下次开市时间&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;指数条&lt;/td&gt;&#xA;          &lt;td&gt;最多 6 个市场指数&lt;/td&gt;&#xA;          &lt;td&gt;当前开市市场优先展示；市场名称沿用橘黄色 / 黑色区分&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;推荐卡&lt;/td&gt;&#xA;          &lt;td&gt;当前开市市场的候选股票&lt;/td&gt;&#xA;          &lt;td&gt;每小时刷新；美股以代码开头，A 股以中文名称开头；第二行显示技术标签和现价&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;日 K · 操作图&lt;/td&gt;&#xA;          &lt;td&gt;重点关注的股票&lt;/td&gt;&#xA;          &lt;td&gt;按飞书《股票池》中勾选的“重点关注”标记轮播；每 15 分钟切换一只，展示 40 根日 K、MA5、MA20、成本虚线和三行读数&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;持仓盈亏&lt;/td&gt;&#xA;          &lt;td&gt;收益率、大额盈亏、市值、成本、今日盈亏、已实现盈亏&lt;/td&gt;&#xA;          &lt;td&gt;按币种分别汇总&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;持仓明细&lt;/td&gt;&#xA;          &lt;td&gt;名称、代码、市值、盈亏、股数、成本&lt;/td&gt;&#xA;          &lt;td&gt;休市市场的标的增加“昨”标记，数字不使用涨跌颜色&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;底部&lt;/td&gt;&#xA;          &lt;td&gt;图例、数据源、更新时间&lt;/td&gt;&#xA;          &lt;td&gt;左侧展示“▲涨 / ▼跌”和数据源，右侧展示更新时间&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;工作坊的作品&#34;&gt;工作坊的作品&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://fifteenbao.github.io/picx-images-hosting/eink.232mpitqd5.JPG&#34; alt=&#34;获奖作品&#34;&gt;&#xA;基于已有的数据信息，叫 Hermes 根据 taiwind CSS 设计框架设计了股市信息以及盈利情况，把html用seeed官方工具映射出来。墨水屏用的是 seeed 的 7.5inch 4阶灰度屏。&#xA;得这个奖多少有投机取巧的成分，相当于找了个外包…… 奖品里面有个带摄像头的 ESP32 S3，准备参考 &lt;a href=&#34;https://github.com/kaloyaan/reframe&#34;&gt;reframe&lt;/a&gt; 把它接个墨水屏改造成拍立得。可能未来真正值钱的是想法，基础设施搭建几句话就完成了……&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

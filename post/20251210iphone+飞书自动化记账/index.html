@@ -79,7 +79,7 @@ https://botbuilder.feishu.cn/
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
@@ -146,10 +146,10 @@ https://botbuilder.feishu.cn/
 创建快捷指令 一样参考了一下50万教程，删除了截屏自动读取数字的部分，感觉怪怪的……几个数字而已……没必要，修改了几个字段名称
 把捷径中的地址修改成刚刚那个Webhook的地址
 设置触发 这里我用了侧边的操作按钮调用快捷方式，（记得打开蜂窝网络">
-  <meta itemprop="datePublished" content="2025-12-10T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-12-10T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-12-10T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-12-10T00:00:00+08:00">
   <meta itemprop="wordCount" content="32">
-  <meta itemprop="keywords" content="技术,快捷方式,Webhook,飞书,DIY,才">
+  <meta itemprop="keywords" content="技术,快捷方式,Webhook,飞书,DIY,智">
   
   <meta property="og:url" content="https://fifteenbao.com/post/20251210iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/">
   <meta property="og:site_name" content="fifteenbao">
@@ -167,14 +167,14 @@ https://botbuilder.feishu.cn/
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-12-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-10T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-12-10T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-12-10T00:00:00+08:00">
     <meta property="article:tag" content="技术">
     <meta property="article:tag" content="快捷方式">
     <meta property="article:tag" content="Webhook">
     <meta property="article:tag" content="飞书">
     <meta property="article:tag" content="DIY">
-    <meta property="article:tag" content="才">
+    <meta property="article:tag" content="智">
 
   
   
@@ -226,6 +226,12 @@ https://botbuilder.feishu.cn/
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/post/"
           >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
         >
         
         <a
@@ -306,27 +312,6 @@ https://botbuilder.feishu.cn/
       
 
 <div class="article-container">
-  
-  
-  <aside class="toc-sidebar">
-    <div class="toc-wrapper">
-      <div class="toc-header">
-        <span class="toc-title">目录</span>
-      </div>
-      <div class="toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#创建飞书多维表格">创建飞书多维表格</a></li>
-    <li><a href="#创建机器人助手">创建机器人助手</a></li>
-    <li><a href="#创建快捷指令">创建快捷指令</a></li>
-    <li><a href="#设置触发">设置触发</a></li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </aside>
-  
-
   <article class="article-content">
     <header class="mb-12">
       <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">iPhone &#43; 飞书自动化记账</h1>
@@ -348,6 +333,27 @@ https://botbuilder.feishu.cn/
       
       
     </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#创建飞书多维表格">创建飞书多维表格</a></li>
+    <li><a href="#创建机器人助手">创建机器人助手</a></li>
+    <li><a href="#创建快捷指令">创建快捷指令</a></li>
+    <li><a href="#设置触发">设置触发</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
 
     <section><p>最近又在折腾 Notion，发现之前吃灰的每日复盘自动化添加；想着改改做个自动化记账分析一下（🙏🙏🙏早日退休早日退休）；这种事情一般年底做最有热情了😅
 刚好昨天有听播客三五环讲道理飞书，以及飞书对 All in One 办公的执着；又说道不同办公软件的传播文章，《北上广深互助群》、《xxx渣男汇总》这种一般是从腾讯文档出来，《xxx教我赚了几百万》、《xxx的出轨行为》一般牛马气息颇重的一般是飞书。想到这里就顺手搜了一下，巧了不是，<a href="https://www.feishu.cn/community/article?id=7397335180702121986">飞书自动记账｜利用iPhone快捷指令+飞书实现高效记账</a>，
@@ -382,7 +388,7 @@ https://botbuilder.feishu.cn/
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">5 篇文章有相同标签组合</span>
+        <span class="post-tags-related">6 篇文章有相同标签组合</span>
         
         <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
@@ -407,8 +413,8 @@ https://botbuilder.feishu.cn/
           <span class="post-tag-name">#DIY</span>
           <span class="post-tag-count">5</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%89%8D" class="post-tag-pill no-underline">
-          <span class="post-tag-name">#才</span>
+        <a href="https://fifteenbao.com/tags/%E6%99%BA" class="post-tag-pill no-underline">
+          <span class="post-tag-name">#智</span>
           <span class="post-tag-count">0</span>
         </a>
         
@@ -452,6 +458,14 @@ https://botbuilder.feishu.cn/
 
 <script>
   (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
     
     const headings = document.querySelectorAll('article h2, article h3, article h4');
     const tocLinks = document.querySelectorAll('.toc-content a');

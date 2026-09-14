@@ -312,7 +312,7 @@ flowchart TB
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/admin.gif" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
@@ -370,8 +370,8 @@ flowchart TB
   
   <meta itemprop="name" content="包材迭代SOP">
   <meta itemprop="description" content="依旧是公司带我快速成长的日子">
-  <meta itemprop="datePublished" content="2025-12-09T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-12-09T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-12-09T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-12-09T00:00:00+08:00">
   <meta itemprop="wordCount" content="436">
   <meta itemprop="keywords" content="SOP,包装设计,才">
   
@@ -382,8 +382,8 @@ flowchart TB
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-12-09T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-12-09T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-12-09T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-12-09T00:00:00+08:00">
     <meta property="article:tag" content="SOP">
     <meta property="article:tag" content="包装设计">
     <meta property="article:tag" content="才">
@@ -429,6 +429,12 @@ flowchart TB
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/post/"
           >Blog</a
+        >
+        
+        <a
+          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
+          href="/profile/"
+          >Profile</a
         >
         
         <a
@@ -509,26 +515,6 @@ flowchart TB
       
 
 <div class="article-container">
-  
-  
-  <aside class="toc-sidebar">
-    <div class="toc-wrapper">
-      <div class="toc-header">
-        <span class="toc-title">目录</span>
-      </div>
-      <div class="toc-content">
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#制定目的">制定目的</a></li>
-    <li><a href="#版本号语义规范">版本号语义规范</a></li>
-    <li><a href="#流程图">流程图</a></li>
-  </ul>
-</nav>
-      </div>
-    </div>
-  </aside>
-  
-
   <article class="article-content">
     <header class="mb-12">
       <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">包材迭代SOP</h1>
@@ -550,6 +536,26 @@ flowchart TB
       
       
     </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">这篇写了什么</span>
+          <span class="toc-toggle" aria-hidden="true">展开</span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#制定目的">制定目的</a></li>
+    <li><a href="#版本号语义规范">版本号语义规范</a></li>
+    <li><a href="#流程图">流程图</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
 
     <section><p>包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋</p>
 <h2 id="制定目的">制定目的</h2>
@@ -884,6 +890,14 @@ flowchart TB
 
 <script>
   (function() {
+    const tocDetails = document.querySelector('.toc-wrapper');
+    if (tocDetails) {
+      const desktopToc = window.matchMedia('(min-width: 1280px)');
+      const syncTocMode = event => { tocDetails.open = event.matches; };
+      syncTocMode(desktopToc);
+      desktopToc.addEventListener('change', syncTocMode);
+    }
+
     
     const headings = document.querySelectorAll('article h2, article h3, article h4');
     const tocLinks = document.querySelectorAll('.toc-content a');
