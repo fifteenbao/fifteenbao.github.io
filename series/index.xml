@@ -2,53 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on fifteenbao</title>
-    <link>http://localhost:1313/series/</link>
+    <link>https://fifteenbao.com/series/</link>
     <description>Recent content in Series on fifteenbao</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>©2025-2026 fifteenbao</copyright>
     <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://fifteenbao.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DIY</title>
-      <link>http://localhost:1313/series/diy/</link>
+      <link>https://fifteenbao.com/series/diy/</link>
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/diy/</guid>
+      <guid>https://fifteenbao.com/series/diy/</guid>
       <description></description>
     </item>
     <item>
       <title>吨吨吨</title>
-      <link>http://localhost:1313/series/%E5%90%A8%E5%90%A8%E5%90%A8/</link>
+      <link>https://fifteenbao.com/series/%E5%90%A8%E5%90%A8%E5%90%A8/</link>
       <pubDate>Fri, 14 Aug 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/%E5%90%A8%E5%90%A8%E5%90%A8/</guid>
+      <guid>https://fifteenbao.com/series/%E5%90%A8%E5%90%A8%E5%90%A8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI笔记</title>
+      <link>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>Agents</title>
-      <link>http://localhost:1313/series/agents/</link>
+      <link>https://fifteenbao.com/series/agents/</link>
       <pubDate>Tue, 28 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/agents/</guid>
+      <guid>https://fifteenbao.com/series/agents/</guid>
       <description></description>
     </item>
     <item>
       <title>Bonflow 开发记</title>
-      <link>http://localhost:1313/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
+      <link>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
       <pubDate>Mon, 06 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
+      <guid>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>游记</title>
-      <link>http://localhost:1313/series/%E6%B8%B8%E8%AE%B0/</link>
+      <link>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</link>
       <pubDate>Sun, 29 Mar 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/%E6%B8%B8%E8%AE%B0/</guid>
+      <guid>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenClaw 尝鲜记</title>
-      <link>http://localhost:1313/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</link>
+      <link>https://fifteenbao.com/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</link>
       <pubDate>Fri, 06 Mar 2026 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</guid>
+      <guid>https://fifteenbao.com/series/openclaw-%E5%B0%9D%E9%B2%9C%E8%AE%B0/</guid>
       <description></description>
     </item>
   </channel>
