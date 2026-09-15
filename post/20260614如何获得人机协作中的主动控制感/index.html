@@ -5,7 +5,7 @@
   lang="zh"
   dir="ltr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -25,57 +25,45 @@
   
   
   
-  <meta name="description" content="昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR）这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。结果表明，在互动调整行为的能力上，人-人/机器人（HH/HR）的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。与机器人协作时，对方的&quot;意图性&quot;需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。
-Know
-📈 Solo vs. HH vs. HR 对比
+  <meta name="description" content="昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：人和 AI 一起做事时，为什么有时候会觉得自己失去了主导权？
+这个问题可以放到三种工作方式里来看：
 
-  
-      
-          对比维度
-          主要研究发现
-          关键心理机制与解释
-      
-  
-  
-      
-          任务绩效
-          1. HH &gt; Solo并非绝对：仅在团队能自发形成角色分工时才成立；否则，独自一人可能表现更好。2. Solo ≥ HH/HR：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。3. HR性能优势未统一，安全有优势：部分HH在产出上优于HR，但HR能显著降低操作风险（如改善人体工学）。4. AI组合的平均表现可能逊色：一项包含370个效应量的元分析表明，人-AI组合的平均表现要差于最佳一方（人或AI）的表现。
-          - 角色分化是HH的关键，这对HR也具指导意义。- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。- 这强调了&quot;如何合作&quot;比&quot;与谁合作&quot;更重要；以及综合考虑绩效与安全，HR有其独特价值。
-      
-      
-          心理负荷 &amp; 用户体验
-          1. HH/HR都显著优于Solo：合作普遍更能降低认知负担。2. HR在情绪和主观体验上更胜一筹：尤其在吸引力、刺激感和原创性方面评分更高，引发更强烈的情感投入。
-          HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。
-      
-      
-          信任动态
-          1. 任务复杂度是关键调节变量：人们更倾向于在非常简单或高度复杂的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。2. 信任建立过程可能相似：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。3. 信任修复存在差异：违反信任后的情绪反应在HH和HR中有所不同。
-          在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。
-      
-      
-          主动性 &amp; 自主性
-          1. HR合作伴随着控制感变化：与聊天机器人合作后转入单人任务，控制感会恢复但内在动机下降、无聊感增加。2. 常规技术与人类合作，心理成本更低：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。
-          这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。
-      
-      
-          神经活动机制
-          1. 人人协作诱发了独特脑间同步：与人合作时，大脑多个区域会出现&quot;脑间同步&quot;（BBS），产生&quot;我们模式&quot;（we-mode）。2. 这种同步在单人任务中较弱。
-          脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。
-      
-      
-          人-AI协同的局限性
-          平均而言，人-AI组合并非&quot;全能神器&quot;：一项覆盖106项研究的元分析发现，人-AI组合的平均表现显著差于最佳一方。- 决策任务中普遍存在损失：需要判断和选择的&quot;决策任务&quot;，人-AI合作常常拖后腿，导致整体表现不如最佳一方。- 内容创造任务中存在增益：在文本生成、创意构思等&quot;内容创造&quot;任务中，人-AI合作能带来增益，产生更好的效果。- 人类主导时增益明显：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行&quot;合作&quot;反而会让整体表现变差。
-          这揭示了人-AI协作的核心：关键在于&quot;何时用&quot;。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域&quot;反客为主&quot;时，可能会造成干扰。
-      
-  
+一个人单独完成任务（Human alone）；
+两个人协作完成任务（Human–Human，HH）；
+人和 AI 协作完成任务（Human–AI）。
 
-HOW
-意图可见性
-让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令
-因果透明度
-用户操作一机器人反应一 清晰映射，建立动作-结果联系
-主动沟通
-机器人主动告知意图：「我接下来要….」，而非静默执行" />
+下面先不急着下结论，而是分别看三组情况发生了什么。需要先说明的是：这里引用的不是同一项研究里完全相同的三组实验，而是把几项采用相似对照逻辑的研究放在同一个坐标系里理解。
+一、一个人工作：控制权最清楚
+在单人工作里，任务是自己接到的，步骤是自己决定的，结果也很容易归因到自己身上。
+它的优点是控制关系简单：“我想做什么→我做了什么→得到什么结果”。但代价也很明显：所有工作都由一个人承担，认知负担和操作压力会比较高。
+因此，单人并不一定做得最快，但通常最清楚自己在做什么。这种“我是行动的发起者”的感觉，就是主动控制感的基础。
+二、人和人工作：效率与“我们一起做”
+两个人协作后，任务不再是“我独自完成”，而变成“我们一起完成”。这会带来一种新的感觉：联合主体感（sense of joint agency）。它不是“我失去了控制”，而是“我和另一个人共同控制这件事”。
+一项关于协作头像机器人的实验比较了两个参与者共同操作机器人时的两种协作方式：
+
+两个人的动作融合在一起，共同影响机器人；
+两个人进行角色分工，一个人负责“到达”，另一个人负责“抓取”。
+
+对照组是每个人单独操作机器人。结果显示，在动作融合和角色分工两种协作中，参与者的联合主体感都高于单人操作。在动作融合条件下，两个人的额叶测试还观察到更高的前额脑区脑间同步。
+这说明，协作的重点不只是“多一双手”，而是让双方形成共同目标、互相预期对方的行动，并且知道自己在整个任务里负责哪一部分。
+但“人多”也不一定更高效。如果两个人做的是同一件事，反而会产生重复操作和沟通成本；只有当双方形成明确分工时，协作才更可能产生增益。
+三、人和 AI 工作：表现可能变好，也可能变差
+人-AI 协作最适合用相同的三组来比较：
+
+人单独做；
+AI 单独做；
+人和 AI 一起做。
+
+《Nature Human Behaviour》的一项元分析汇总了 106 项实验、共 370 个效应量，对比了人单独、AI 单独以及人-AI 组合的任务表现。结果并不是“人加 AI 一定更强”，而是要看任务类型。
+对比结果 1：人-AI 组合平均不如最佳的单一方
+把人-AI 组合与“人单独”和“AI 单独”中表现更好的一方比较，人-AI 组合的平均表现显著更差（Hedges&rsquo; g = -0.23）。
+也就是说，“人和 AI 一起做”并不等于自然发生协同。人可能会被 AI 的建议带偏，AI 也可能让人放弃原本更好的判断。
+对比结果 2：决策任务容易受损，内容创作更容易受益
+
+在需要判断和选择的任务里，人-AI 协作常常不如表现更好的那一方。
+在文本生成、创意构思等内容创作任务里，人-AI 协作更可能产生增益。
+
+一个可能的原因是：在决策任务中，人需要判断 AI 的意见是否可靠，这会增加一层额外的认知负担；而在内容创作中，AI 可以快速提供多个方案，人则负责筛选和修改。" />
   <meta name="author" content="fifteenbao" />
   
 
@@ -89,28 +77,28 @@ HOW
   
   
   
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/css/site.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/css/site.min.css" />
   
 
   
   
-  <script defer src="https://fifteenbao.com/js/site.min.js"></script>
+  <script defer src="http://localhost:1313/js/site.min.js"></script>
 
   
   
-  <script defer src="https://fifteenbao.com/js/heatmap.min.js"></script>
+  <script defer src="http://localhost:1313/js/heatmap.min.js"></script>
 
   
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
   
   
 
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
   
   
 
@@ -118,7 +106,7 @@ HOW
   
   <script
     defer
-    src="https://fifteenbao.com/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -130,11 +118,11 @@ HOW
   
   <link
     rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
+    href="http://localhost:1313/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
+    href="http://localhost:1313/apple-touch-icon.png"
   />
 
   
@@ -142,64 +130,13 @@ HOW
 
   
   
-  
-  
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
-  
-  
-  <meta itemprop="name" content="如何获得人机协作中的主动控制感">
-  <meta itemprop="description" content="“如何获得人机协作中的主动控制感”">
-  <meta itemprop="datePublished" content="2026-06-14T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-06-14T00:00:00+08:00">
-  <meta itemprop="wordCount" content="109">
-  <meta itemprop="keywords" content="AI,协作,人机交互,智">
-  
-  <meta property="og:url" content="https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="如何获得人机协作中的主动控制感">
-  <meta property="og:description" content="“如何获得人机协作中的主动控制感”">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-06-14T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-06-14T00:00:00+08:00">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="协作">
-    <meta property="article:tag" content="人机交互">
-    <meta property="article:tag" content="智">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="如何获得人机协作中的主动控制感">
-  <meta name="twitter:description" content="“如何获得人机协作中的主动控制感”">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/" />
-  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
         >fifteenbao</a
       >
     </div>
@@ -246,8 +183,8 @@ HOW
         
         <a
           class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          style="--url: url(http://localhost:1313/rss.svg)"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -274,8 +211,8 @@ HOW
         
         <a
           class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          style="--url: url(http://localhost:1313/rss.svg)"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -328,11 +265,13 @@ HOW
 
       
       
-      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+      <div class="post-series-list mt-3 flex flex-wrap gap-2">
         
         
-        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0">
-          <span class="post-tag-name">系列 · AI笔记</span>
+        <a class="post-series-link no-underline" href="http://localhost:1313/series/ai%E7%AC%94%E8%AE%B0">
+          <span class="post-series-label">系列</span>
+          <span class="post-series-name">AI笔记</span>
+          <span class="post-series-arrow" aria-hidden="true">↗</span>
         </a>
         
       </div>
@@ -349,27 +288,23 @@ HOW
         <div class="toc-content">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#know">Know</a>
+    <li><a href="#一一个人工作控制权最清楚">一、一个人工作：控制权最清楚</a></li>
+    <li><a href="#二人和人工作效率与我们一起做">二、人和人工作：效率与“我们一起做”</a></li>
+    <li><a href="#三人和-ai-工作表现可能变好也可能变差">三、人和 AI 工作：表现可能变好，也可能变差</a>
       <ul>
-        <li><a href="#-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</a></li>
+        <li><a href="#对比结果-1人-ai-组合平均不如最佳的单一方">对比结果 1：人-AI 组合平均不如最佳的单一方</a></li>
+        <li><a href="#对比结果-2决策任务容易受损内容创作更容易受益">对比结果 2：决策任务容易受损，内容创作更容易受益</a></li>
+        <li><a href="#对比结果-3谁更强谁就不应该被平均化">对比结果 3：谁更强，谁就不应该被“平均化”</a></li>
       </ul>
     </li>
-    <li><a href="#how">HOW</a>
+    <li><a href="#四三组对比后我们能得出什么结论">四、三组对比后，我们能得出什么结论？</a>
       <ul>
-        <li><a href="#意图可见性">意图可见性</a></li>
-        <li><a href="#因果透明度">因果透明度</a></li>
-        <li><a href="#主动沟通">主动沟通</a></li>
+        <li><a href="#1-主动控制感不是所有事都亲自做">1. 主动控制感不是“所有事都亲自做”</a></li>
+        <li><a href="#2-协作的基础是分工不是重复劳动">2. 协作的基础是分工，不是重复劳动</a></li>
+        <li><a href="#3-主动控制感来自我能理解我能干预我能负责">3. 主动控制感来自“我能理解，我能干预，我能负责”</a></li>
       </ul>
     </li>
-    <li><a href="#别让人觉得自己是旁观者">别让人觉得自己是旁观者</a>
-      <ul>
-        <li><a href="#设计人在回路节点">设计「人在回路」节点</a></li>
-        <li><a href="#保留用户的否决权">保留用户的「否决权」</a></li>
-        <li><a href="#归因反馈">归因反馈</a></li>
-        <li><a href="#避免过度自动化">避免过度自动化</a></li>
-      </ul>
-    </li>
-    <li><a href="#主动控制感低没人负责">主动控制感低=没人负责</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
   </ul>
 </nav>
         </div>
@@ -377,72 +312,68 @@ HOW
     </aside>
     
 
-    <section><p>昨天听了一个AI共创的分享会，其中 Caren老师分享了一个 关于 人机协作中的主动控制感 的主题很有意思。大概用了三组对照实验，单人（Solo）、人-人（Human-Human, HH）和人-机器人（Human-Robot, HR）这三种协作模式的对比，来讨论当人和机器人一起完成任务时，心理上会不会和与人协作有所不同。结果表明，在互动调整行为的能力上，人-人/机器人（HH/HR）的互动没有显著差异，也就是说无论对方是不是机器人，效果差异不大。与机器人协作时，对方的&quot;意图性&quot;需要被明确地感知和建构，这会深刻影响我们主观的控制感、团队的协作绩效，以及我们对整个交互过程的价值评判。</p>
-<h2 id="know">Know</h2>
-<h3 id="-solo-vs-hh-vs-hr-对比">📈 Solo vs. HH vs. HR 对比</h3>
-<table>
-  <thead>
-      <tr>
-          <th>对比维度</th>
-          <th>主要研究发现</th>
-          <th>关键心理机制与解释</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>任务绩效</strong></td>
-          <td>1. <strong>HH &gt; Solo并非绝对</strong>：仅在团队能自发形成<strong>角色分工</strong>时才成立；否则，独自一人可能表现更好。<br>2. <strong>Solo ≥ HH/HR</strong>：在简单物理任务（如三臂操作）中，单人、双人或人机团队的绩效相近。<br>3. <strong>HR性能优势未统一，安全有优势</strong>：部分HH在产出上优于HR，但HR能显著<strong>降低操作风险</strong>（如改善人体工学）。<br>4. <strong>AI组合的平均表现可能逊色</strong>：一项包含370个效应量的元分析表明，<strong>人-AI组合的平均表现要差于最佳一方（人或AI）的表现</strong>。</td>
-          <td>- <strong>角色分化</strong>是HH的关键，这对HR也具指导意义。<br>- 结果提示，对于某些物理任务，HR体验可能未能达到HH的自然流畅感。<br>- 这强调了&quot;如何合作&quot;比&quot;与谁合作&quot;更重要；以及综合考虑绩效与安全，HR有其独特价值。</td>
-      </tr>
-      <tr>
-          <td><strong>心理负荷 &amp; 用户体验</strong></td>
-          <td>1. <strong>HH/HR都显著优于Solo</strong>：合作普遍更能降低认知负担。<br>2. <strong>HR在情绪和主观体验上更胜一筹</strong>：尤其在<strong>吸引力、刺激感和原创性</strong>方面评分更高，引发更强烈的<strong>情感投入</strong>。</td>
-          <td>HR的情绪体验优势可能源于其新颖性（新奇效应）和精准的程序化互动。</td>
-      </tr>
-      <tr>
-          <td><strong>信任动态</strong></td>
-          <td>1. <strong>任务复杂度是关键调节变量</strong>：人们更倾向于在<strong>非常简单或高度复杂</strong>的任务中信任机器人，而在中等复杂度任务中信任度最低，呈现U型曲线。<br>2. <strong>信任建立过程可能相似</strong>：一项元分析显示，影响HH信任的因素（如可靠性、可预测性）也对HR的信任建立起作用。<br>3. <strong>信任修复存在差异</strong>：违反信任后的情绪反应在HH和HR中有所不同。</td>
-          <td>在简单任务中，人们不认为机器人会犯错；在复杂任务中，人们可能寻求AI的分析能力。而在中等任务中，情况不够极端，人们反而更依赖自己的判断。</td>
-      </tr>
-      <tr>
-          <td><strong>主动性 &amp; 自主性</strong></td>
-          <td>1. <strong>HR合作伴随着控制感变化</strong>：与聊天机器人合作后转入单人任务，控制感会<strong>恢复但内在动机下降、无聊感增加</strong>。<br>2. <strong>常规技术与人类合作，心理成本更低</strong>：与语音助手或人协作相比，使用常规技术的用户会感到更自由、心理成本更低。</td>
-          <td>这可能是因为与AI合作时，任务主导权部分被AI承担，让人们产生了旁观感，影响了内在动机。</td>
-      </tr>
-      <tr>
-          <td><strong>神经活动机制</strong></td>
-          <td>1. <strong>人人协作诱发了独特脑间同步</strong>：与人合作时，大脑多个区域会出现&quot;脑间同步&quot;（BBS），产生&quot;我们模式&quot;（we-mode）。<br>2. <strong>这种同步在单人任务中较弱</strong>。</td>
-          <td>脑间同步可能是人人合作时默契、高效的心理生理基础，这可能是人机协作难以复制的深层原因。</td>
-      </tr>
-      <tr>
-          <td><strong>人-AI协同的局限性</strong></td>
-          <td><strong>平均而言，人-AI组合并非&quot;全能神器&quot;</strong>：一项覆盖106项研究的元分析发现，人-AI组合的<strong>平均表现显著差于最佳一方</strong>。<br>- <strong>决策任务中普遍存在损失</strong>：需要判断和选择的&quot;决策任务&quot;，人-AI合作常常拖后腿，导致整体表现不如最佳一方。<br>- <strong>内容创造任务中存在增益</strong>：在文本生成、创意构思等&quot;内容创造&quot;任务中，人-AI合作能带来增益，产生更好的效果。<br>- <strong>人类主导时增益明显</strong>：当人类在特定任务中本就比AI强时，引入AI合作会带来好处；但如果AI本身就比人做得更好，强行&quot;合作&quot;反而会让整体表现变差。</td>
-          <td>这揭示了人-AI协作的核心：关键在于&quot;何时用&quot;。AI最适合作为创意辅助和增强工具，但当它试图在人类擅长的决策领域&quot;反客为主&quot;时，可能会造成干扰。</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="how">HOW</h2>
-<h3 id="意图可见性">意图可见性</h3>
-<p>让机器人通过行为序列展示「下一步要做什么」，而非仅执行命令</p>
-<h3 id="因果透明度">因果透明度</h3>
-<p>用户操作一机器人反应一 清晰映射，建立动作-结果联系</p>
-<h3 id="主动沟通">主动沟通</h3>
-<p>机器人主动告知意图：「我接下来要….」，而非静默执行</p>
-<h2 id="别让人觉得自己是旁观者">别让人觉得自己是旁观者</h2>
-<p>AI 越强大，用户自我主动控制感下降的风险越高</p>
-<h3 id="设计人在回路节点">设计「人在回路」节点</h3>
-<p>在关键决策点强制让用户确认，而不是全自动执行</p>
-<h3 id="保留用户的否决权">保留用户的「否决权」</h3>
-<p>让用户清楚知道自己随时可以推翻AI的建议</p>
-<h3 id="归因反馈">归因反馈</h3>
-<p>系统明确告知「这个结果是基于您的决定」，强化主导感</p>
-<h3 id="避免过度自动化">避免过度自动化</h3>
-<p>在重复操作中保留适度摩擦，维持掌控感</p>
-<h2 id="主动控制感低没人负责">主动控制感低=没人负责</h2>
-<p>当所有人都觉得&quot;反正不是我决定的&quot; 意味着出了问题就没人负责。
-解法：主动控制感设计 = 责任感设计</p>
-<p><strong>扩展阅读:</strong> <a href="https://learn.microsoft.com/zh-cn/azure/machine-learning/concept-responsible-ai?view=azureml-api-2">Microsoft Build 2026 大会 - 什么是负责任 AI？</a>
-<img src="https://learn.microsoft.com/zh-cn/azure/machine-learning/media/concept-responsible-ai/concept-responsible-ml.png?view=azureml-api-2" alt=""></p>
+    <section><p>昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：人和 AI 一起做事时，为什么有时候会觉得自己失去了主导权？</p>
+<p>这个问题可以放到三种工作方式里来看：</p>
+<ol>
+<li>一个人单独完成任务（Human alone）；</li>
+<li>两个人协作完成任务（Human–Human，HH）；</li>
+<li>人和 AI 协作完成任务（Human–AI）。</li>
+</ol>
+<p>下面先不急着下结论，而是分别看三组情况发生了什么。需要先说明的是：这里引用的不是同一项研究里完全相同的三组实验，而是把几项采用相似对照逻辑的研究放在同一个坐标系里理解。</p>
+<h2 id="一一个人工作控制权最清楚">一、一个人工作：控制权最清楚</h2>
+<p>在单人工作里，任务是自己接到的，步骤是自己决定的，结果也很容易归因到自己身上。</p>
+<p>它的优点是控制关系简单：“我想做什么→我做了什么→得到什么结果”。但代价也很明显：所有工作都由一个人承担，认知负担和操作压力会比较高。</p>
+<p>因此，单人并不一定做得最快，但通常最清楚自己在做什么。这种“我是行动的发起者”的感觉，就是主动控制感的基础。</p>
+<h2 id="二人和人工作效率与我们一起做">二、人和人工作：效率与“我们一起做”</h2>
+<p>两个人协作后，任务不再是“我独自完成”，而变成“我们一起完成”。这会带来一种新的感觉：联合主体感（sense of joint agency）。它不是“我失去了控制”，而是“我和另一个人共同控制这件事”。</p>
+<p><a href="https://onlinelibrary.wiley.com/doi/10.1002/ijop.13167">一项关于协作头像机器人的实验</a>比较了两个参与者共同操作机器人时的两种协作方式：</p>
+<ul>
+<li>两个人的动作融合在一起，共同影响机器人；</li>
+<li>两个人进行角色分工，一个人负责“到达”，另一个人负责“抓取”。</li>
+</ul>
+<p>对照组是每个人单独操作机器人。结果显示，在动作融合和角色分工两种协作中，参与者的联合主体感都高于单人操作。在动作融合条件下，两个人的额叶测试还观察到更高的前额脑区脑间同步。</p>
+<p>这说明，协作的重点不只是“多一双手”，而是让双方形成共同目标、互相预期对方的行动，并且知道自己在整个任务里负责哪一部分。</p>
+<p>但“人多”也不一定更高效。如果两个人做的是同一件事，反而会产生重复操作和沟通成本；只有当双方形成明确分工时，协作才更可能产生增益。</p>
+<h2 id="三人和-ai-工作表现可能变好也可能变差">三、人和 AI 工作：表现可能变好，也可能变差</h2>
+<p>人-AI 协作最适合用相同的三组来比较：</p>
+<ul>
+<li>人单独做；</li>
+<li>AI 单独做；</li>
+<li>人和 AI 一起做。</li>
+</ul>
+<p><a href="https://doi.org/10.1038/s41562-024-02024-1">《Nature Human Behaviour》的一项元分析</a>汇总了 106 项实验、共 370 个效应量，对比了人单独、AI 单独以及人-AI 组合的任务表现。结果并不是“人加 AI 一定更强”，而是要看任务类型。</p>
+<h3 id="对比结果-1人-ai-组合平均不如最佳的单一方">对比结果 1：人-AI 组合平均不如最佳的单一方</h3>
+<p>把人-AI 组合与“人单独”和“AI 单独”中表现更好的一方比较，人-AI 组合的平均表现显著更差（Hedges&rsquo; g = -0.23）。</p>
+<p>也就是说，“人和 AI 一起做”并不等于自然发生协同。人可能会被 AI 的建议带偏，AI 也可能让人放弃原本更好的判断。</p>
+<h3 id="对比结果-2决策任务容易受损内容创作更容易受益">对比结果 2：决策任务容易受损，内容创作更容易受益</h3>
+<ul>
+<li>在需要判断和选择的任务里，人-AI 协作常常不如表现更好的那一方。</li>
+<li>在文本生成、创意构思等内容创作任务里，人-AI 协作更可能产生增益。</li>
+</ul>
+<p>一个可能的原因是：在决策任务中，人需要判断 AI 的意见是否可靠，这会增加一层额外的认知负担；而在内容创作中，AI 可以快速提供多个方案，人则负责筛选和修改。</p>
+<h3 id="对比结果-3谁更强谁就不应该被平均化">对比结果 3：谁更强，谁就不应该被“平均化”</h3>
+<p>当人在某项任务上比 AI 强时，引入 AI 通常会带来增益；但当 AI 在这个任务上明显更强时，强行让人参与每一步，反而会拉低整体表现。</p>
+<p>所以，人-AI 协作的核心不是“人和 AI 平均分工”，而是根据任务让更擅长的一方执行主要工作，另一方在需要的地方进行补充。</p>
+<h2 id="四三组对比后我们能得出什么结论">四、三组对比后，我们能得出什么结论？</h2>
+<h3 id="1-主动控制感不是所有事都亲自做">1. 主动控制感不是“所有事都亲自做”</h3>
+<p>单人工作让人有最清晰的控制感，但也承担了全部负担。人人协作的优势在于形成联合主体感：我不是一个人做，但我清楚我在团队里负责什么。</p>
+<p>人-AI 协作也应该是这样：不是让 AI 把人变成旁观者，而是让人清楚知道自己何时发起、何时确认、何时否决。</p>
+<h3 id="2-协作的基础是分工不是重复劳动">2. 协作的基础是分工，不是重复劳动</h3>
+<p>人和人协作时，分工不清晰会造成浪费；人和 AI 协作时，也一样。不是每一步都要让人和 AI 同时参与，而是要明确：谁提出方案，谁做选择，谁对结果负责。</p>
+<h3 id="3-主动控制感来自我能理解我能干预我能负责">3. 主动控制感来自“我能理解，我能干预，我能负责”</h3>
+<p>这是人机协作中最重要的三件事：</p>
+<ul>
+<li><strong>能理解</strong>：AI 要让人知道它正在做什么、为什么这样做。</li>
+<li><strong>能干预</strong>：用户可以暂停、修改、否决 AI 的行动。</li>
+<li><strong>能负责</strong>：系统要让人清楚哪些决定是自己做的，而不是用一句“这是 AI 生成的”就把责任推开。</li>
+</ul>
+<p>如果这三点都做不到，AI 越强，人反而越像旁观者。而当这三点都能被设计出来时，人机协作才有可能真正变成“我们一起完成”。</p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/ijop.13167">Kawamata et al., Sense of joint agency and interpersonal neural synchronization for a collaborative avatar robot</a></li>
+<li><a href="https://doi.org/10.1038/s41562-024-02024-1">Vaccaro, Almaatouq &amp; Malone, When combinations of humans and AI are useful: A systematic review and meta-analysis</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9499977/">Berg et al., Interaction with a reactive partner improves learning in contrast to passive guidance</a></li>
+</ul>
 </section>
 
     
@@ -452,24 +383,24 @@ HOW
         
         <span class="post-tags-related">8 篇文章有相同标签组合</span>
         
-        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+        <a href="http://localhost:1313/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/ai" class="post-tag-pill no-underline">
           <span class="post-tag-name">#AI</span>
           <span class="post-tag-count">10</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E5%8D%8F%E4%BD%9C" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E5%8D%8F%E4%BD%9C" class="post-tag-pill no-underline">
           <span class="post-tag-name">#协作</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">1</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92" class="post-tag-pill no-underline">
           <span class="post-tag-name">#人机交互</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">2</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%99%BA" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%99%BA" class="post-tag-pill no-underline">
           <span class="post-tag-name">#智</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">14</span>
         </a>
         
       </div>
@@ -482,13 +413,13 @@ HOW
     
     <nav class="post-navigation" aria-label="文章翻页">
       
-      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20260708%E4%BC%8F%E8%A7%81%E6%B8%85%E9%85%92%E4%B9%8B%E6%97%85/" rel="prev">
+      <a class="post-nav-link post-nav-previous" href="http://localhost:1313/post/20260708%E4%BC%8F%E8%A7%81%E6%B8%85%E9%85%92%E4%B9%8B%E6%97%85/" rel="prev">
         <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
         <span class="post-nav-title">伏见清酒之旅</span>
       </a>
       
       
-      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/" rel="next">
+      <a class="post-nav-link post-nav-next" href="http://localhost:1313/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/" rel="next">
         <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
         <span class="post-nav-title">蛇口摆摊卖书记</span>
       </a>

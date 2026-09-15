@@ -5,7 +5,7 @@
   lang="zh"
   dir="ltr"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -168,28 +168,28 @@ DFM 优化（面向制造的设计）
   
   
   
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/css/site.min.css" />
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/css/site.min.css" />
   
 
   
   
-  <script defer src="https://fifteenbao.com/js/site.min.js"></script>
+  <script defer src="http://localhost:1313/js/site.min.js"></script>
 
   
   
-  <script defer src="https://fifteenbao.com/js/heatmap.min.js"></script>
+  <script defer src="http://localhost:1313/js/heatmap.min.js"></script>
 
   
   
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
+  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
   
   
 
   
   
-  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
   
   
 
@@ -197,7 +197,7 @@ DFM 优化（面向制造的设计）
   
   <script
     defer
-    src="https://fifteenbao.com/highlight.min.js"
+    src="http://localhost:1313/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
@@ -209,11 +209,11 @@ DFM 优化（面向制造的设计）
   
   <link
     rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
+    href="http://localhost:1313/favicon.ico"
   />
   <link
     rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
+    href="http://localhost:1313/apple-touch-icon.png"
   />
 
   
@@ -221,81 +221,13 @@ DFM 优化（面向制造的设计）
 
   
   
-  
-  
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
-  
-  
-  <meta itemprop="name" content="unit bot agent - 成本分析&技术选型">
-  <meta itemprop="description" content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
-DFMA 包含两个相互协同的子领域：
-子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
-目标：通过 DFA &#43; DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
-一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。">
-  <meta itemprop="datePublished" content="2026-04-17T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-04-17T00:00:00+08:00">
-  <meta itemprop="wordCount" content="528">
-  <meta itemprop="keywords" content="AI,Openclaw,智能硬件,成本分析,技术选型,扫地机器人,智">
-  
-  <meta property="og:url" content="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="unit bot agent - 成本分析&技术选型">
-  <meta property="og:description" content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
-DFMA 包含两个相互协同的子领域：
-子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
-目标：通过 DFA &#43; DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
-一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-04-17T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-04-17T00:00:00+08:00">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="Openclaw">
-    <meta property="article:tag" content="智能硬件">
-    <meta property="article:tag" content="成本分析">
-    <meta property="article:tag" content="技术选型">
-    <meta property="article:tag" content="扫地机器人">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260428%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260423ipd_agens/">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="unit bot agent - 成本分析&技术选型">
-  <meta name="twitter:description" content="DFMA 学习笔记 DFMA 全称 Design for Manufacture and Assembly（面向制造及装配的设计），是 Boothroyd-Dewhurst 公司 开发的 结构性方法，核心思路是：通过简化设计，实现低成本、高质量的生产制造。
-DFMA 包含两个相互协同的子领域：
-子领域 全称 关注点 目标 DFM Design for Manufacturing 单个零件的制造工艺性 让每个零件易于加工、成本可控 DFA Design for Assembly 零件之间的装配过程 减少零件数量、简化装配动作 核心数据：产品生命周期成本的 70%~80% 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。
-目标：通过 DFA &#43; DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。
-一、内容范围 DFA 优化（面向装配的设计） # 优化方向 说明 1 最小件为核心的合并 以减少零件数量为核心，合并可合并的零件 2 紧固件的减少 消除不必要的螺钉、螺栓、铆钉 3 自定位及防呆设计 Poka-Yoke，物理上杜绝装错 4 自固定设计 消除额外固定件，零件自身完成固定 5 防止欠约束及过约束 刚好约束，不多不少 6 单独装配动作的消除 合并步骤，减少工时 7 焊接/粘接/螺纹紧固的消除 用卡扣、压配、一体成型替代 8 解决人体工学问题 减少操作疲劳和损伤 9 标准化设计 通用零件、统一接口 DFM 优化（面向制造的设计） # 优化方向 说明 1 材料替代 更便宜、更易加工的材料 2 工艺改变 从高成本工艺转向低成本工艺 3 加工精度放宽 只保留功能必要的公差 4 表面处理简化 减少不必要的涂装/电镀 5 结构简化 减少加工步骤和装夹次数 采购降本 基于 DFM 优化结果，精确计算零部件「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/" />
-  
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
     <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
+      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="http://localhost:1313/"
         >fifteenbao</a
       >
     </div>
@@ -342,8 +274,8 @@ DFMA 包含两个相互协同的子领域：
         
         <a
           class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          style="--url: url(http://localhost:1313/rss.svg)"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -370,8 +302,8 @@ DFMA 包含两个相互协同的子领域：
         
         <a
           class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
+          style="--url: url(http://localhost:1313/rss.svg)"
+          href="http://localhost:1313/index.xml"
           target="_blank"
           rel="alternate"
         >
@@ -424,11 +356,13 @@ DFMA 包含两个相互协同的子领域：
 
       
       
-      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+      <div class="post-series-list mt-3 flex flex-wrap gap-2">
         
         
-        <a class="post-tag-pill no-underline" href="https://fifteenbao.com/series/agents">
-          <span class="post-tag-name">系列 · Agents</span>
+        <a class="post-series-link no-underline" href="http://localhost:1313/series/agents">
+          <span class="post-series-label">系列</span>
+          <span class="post-series-name">Agents</span>
+          <span class="post-series-arrow" aria-hidden="true">↗</span>
         </a>
         
       </div>
@@ -1129,38 +1063,38 @@ DFMA 包含两个相互协同的子领域：
       <div class="post-tags-header">
         <span class="post-tags-label">标签</span>
         
-        <span class="post-tags-related">8 篇文章有相同标签组合</span>
+        <span class="post-tags-related">7 篇文章有相同标签组合</span>
         
-        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
+        <a href="http://localhost:1313/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
       </div>
       <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/ai" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/ai" class="post-tag-pill no-underline">
           <span class="post-tag-name">#AI</span>
-          <span class="post-tag-count">10</span>
+          <span class="post-tag-count">9</span>
         </a>
-        <a href="https://fifteenbao.com/tags/openclaw" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/openclaw" class="post-tag-pill no-underline">
           <span class="post-tag-name">#openclaw</span>
           <span class="post-tag-count">4</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" class="post-tag-pill no-underline">
           <span class="post-tag-name">#智能硬件</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">3</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90" class="post-tag-pill no-underline">
           <span class="post-tag-name">#成本分析</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">2</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B" class="post-tag-pill no-underline">
           <span class="post-tag-name">#技术选型</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">1</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA" class="post-tag-pill no-underline">
           <span class="post-tag-name">#扫地机器人</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">2</span>
         </a>
-        <a href="https://fifteenbao.com/tags/%E6%99%BA" class="post-tag-pill no-underline">
+        <a href="http://localhost:1313/tags/%E6%99%BA" class="post-tag-pill no-underline">
           <span class="post-tag-name">#智</span>
-          <span class="post-tag-count">0</span>
+          <span class="post-tag-count">13</span>
         </a>
         
       </div>
@@ -1173,13 +1107,13 @@ DFMA 包含两个相互协同的子领域：
     
     <nav class="post-navigation" aria-label="文章翻页">
       
-      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20260423ipd_agens/" rel="prev">
+      <a class="post-nav-link post-nav-previous" href="http://localhost:1313/post/20260423ipd_agens/" rel="prev">
         <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
         <span class="post-nav-title">IPD agents实践-智能拳击硬件项目</span>
       </a>
       
       
-      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="next">
+      <a class="post-nav-link post-nav-next" href="http://localhost:1313/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="next">
         <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
         <span class="post-nav-title">我的 openclaw Agents 协作系统</span>
       </a>
