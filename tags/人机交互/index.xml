@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>人机交互 on fifteenbao</title>
-    <link>https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/</link>
+    <link>http://localhost:1313/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/</link>
     <description>Recent content in 人机交互 on fifteenbao</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>©2025-2026 fifteenbao</copyright>
     <lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何获得人机协作中的主动控制感</title>
-      <link>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link>
+      <link>http://localhost:1313/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link>
       <pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid>
+      <guid>http://localhost:1313/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid>
       <description>&lt;p&gt;昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：人和 AI 一起做事时，为什么有时候会觉得自己失去了主导权？&lt;/p&gt;&#xA;&lt;p&gt;这个问题可以放到三种工作方式里来看：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;一个人单独完成任务（Human alone）；&lt;/li&gt;&#xA;&lt;li&gt;两个人协作完成任务（Human–Human，HH）；&lt;/li&gt;&#xA;&lt;li&gt;人和 AI 协作完成任务（Human–AI）。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;下面先不急着下结论，而是分别看三组情况发生了什么。需要先说明的是：这里引用的不是同一项研究里完全相同的三组实验，而是把几项采用相似对照逻辑的研究放在同一个坐标系里理解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一一个人工作控制权最清楚&#34;&gt;一、一个人工作：控制权最清楚&lt;/h2&gt;&#xA;&lt;p&gt;在单人工作里，任务是自己接到的，步骤是自己决定的，结果也很容易归因到自己身上。&lt;/p&gt;&#xA;&lt;p&gt;它的优点是控制关系简单：“我想做什么→我做了什么→得到什么结果”。但代价也很明显：所有工作都由一个人承担，认知负担和操作压力会比较高。&lt;/p&gt;&#xA;&lt;p&gt;因此，单人并不一定做得最快，但通常最清楚自己在做什么。这种“我是行动的发起者”的感觉，就是主动控制感的基础。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二人和人工作效率与我们一起做&#34;&gt;二、人和人工作：效率与“我们一起做”&lt;/h2&gt;&#xA;&lt;p&gt;两个人协作后，任务不再是“我独自完成”，而变成“我们一起完成”。这会带来一种新的感觉：联合主体感（sense of joint agency）。它不是“我失去了控制”，而是“我和另一个人共同控制这件事”。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://onlinelibrary.wiley.com/doi/10.1002/ijop.13167&#34;&gt;一项关于协作头像机器人的实验&lt;/a&gt;比较了两个参与者共同操作机器人时的两种协作方式：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;两个人的动作融合在一起，共同影响机器人；&lt;/li&gt;&#xA;&lt;li&gt;两个人进行角色分工，一个人负责“到达”，另一个人负责“抓取”。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;对照组是每个人单独操作机器人。结果显示，在动作融合和角色分工两种协作中，参与者的联合主体感都高于单人操作。在动作融合条件下，两个人的额叶测试还观察到更高的前额脑区脑间同步。&lt;/p&gt;&#xA;&lt;p&gt;这说明，协作的重点不只是“多一双手”，而是让双方形成共同目标、互相预期对方的行动，并且知道自己在整个任务里负责哪一部分。&lt;/p&gt;&#xA;&lt;p&gt;但“人多”也不一定更高效。如果两个人做的是同一件事，反而会产生重复操作和沟通成本；只有当双方形成明确分工时，协作才更可能产生增益。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三人和-ai-工作表现可能变好也可能变差&#34;&gt;三、人和 AI 工作：表现可能变好，也可能变差&lt;/h2&gt;&#xA;&lt;p&gt;人-AI 协作最适合用相同的三组来比较：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;人单独做；&lt;/li&gt;&#xA;&lt;li&gt;AI 单独做；&lt;/li&gt;&#xA;&lt;li&gt;人和 AI 一起做。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://doi.org/10.1038/s41562-024-02024-1&#34;&gt;《Nature Human Behaviour》的一项元分析&lt;/a&gt;汇总了 106 项实验、共 370 个效应量，对比了人单独、AI 单独以及人-AI 组合的任务表现。结果并不是“人加 AI 一定更强”，而是要看任务类型。&lt;/p&gt;&#xA;&lt;h3 id=&#34;对比结果-1人-ai-组合平均不如最佳的单一方&#34;&gt;对比结果 1：人-AI 组合平均不如最佳的单一方&lt;/h3&gt;&#xA;&lt;p&gt;把人-AI 组合与“人单独”和“AI 单独”中表现更好的一方比较，人-AI 组合的平均表现显著更差（Hedges&amp;rsquo; g = -0.23）。&lt;/p&gt;&#xA;&lt;p&gt;也就是说，“人和 AI 一起做”并不等于自然发生协同。人可能会被 AI 的建议带偏，AI 也可能让人放弃原本更好的判断。&lt;/p&gt;&#xA;&lt;h3 id=&#34;对比结果-2决策任务容易受损内容创作更容易受益&#34;&gt;对比结果 2：决策任务容易受损，内容创作更容易受益&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在需要判断和选择的任务里，人-AI 协作常常不如表现更好的那一方。&lt;/li&gt;&#xA;&lt;li&gt;在文本生成、创意构思等内容创作任务里，人-AI 协作更可能产生增益。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;一个可能的原因是：在决策任务中，人需要判断 AI 的意见是否可靠，这会增加一层额外的认知负担；而在内容创作中，AI 可以快速提供多个方案，人则负责筛选和修改。&lt;/p&gt;</description>
     </item>
     <item>
       <title>CMF笔记</title>
-      <link>https://fifteenbao.com/post/20251212cmf/</link>
+      <link>http://localhost:1313/post/20251212cmf/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20251212cmf/</guid>
+      <guid>http://localhost:1313/post/20251212cmf/</guid>
       <description>&lt;h2 id=&#34;cmf-基本要素&#34;&gt;CMF 基本要素&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg&#34; alt=&#34;CMFPSE理论模型示意图&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一级结构&#34;&gt;一级结构&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mf-材料与工艺&#34;&gt;MF 材料与工艺&lt;/h3&gt;&#xA;&lt;p&gt;M（material）F（finishing）&#xA;材料与工艺，代表学科：材料与工程，为工程创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;cp-色彩与图文&#34;&gt;CP 色彩与图文&lt;/h3&gt;&#xA;&lt;p&gt;C（Color）、P（pattern）&#xA;色彩与图文，代表学科：艺术与设计，为设计创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;se-感官与情感&#34;&gt;SE 感官与情感&lt;/h3&gt;&#xA;&lt;p&gt;S（sense）、E（emotion）&#xA;感官与情感，代表学科：生理与心理，为消费价值&lt;/p&gt;&#xA;&lt;h2 id=&#34;二级结构tdm&#34;&gt;二级结构（TDM）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ttrend-趋势&#34;&gt;T：trend 趋势&lt;/h3&gt;&#xA;&lt;h3 id=&#34;ddesign-设计&#34;&gt;D：design 设计&lt;/h3&gt;&#xA;&lt;h3 id=&#34;mmanufacture-量产&#34;&gt;M：Manufacture 量产&lt;/h3&gt;&#xA;&lt;h2 id=&#34;三级结构bs&#34;&gt;三级结构（BS）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;b商业价值&#34;&gt;B：商业价值&lt;/h3&gt;&#xA;&lt;h3 id=&#34;s社会价值&#34;&gt;S：社会价值&lt;/h3&gt;</description>
     </item>
   </channel>
