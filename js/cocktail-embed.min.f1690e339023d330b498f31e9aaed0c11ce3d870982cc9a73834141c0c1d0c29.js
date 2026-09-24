@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector(".cocktail-embed iframe");if(!e)return;window.addEventListener("message",t=>{if(t.origin!==location.origin||t.source!==e.contentWindow)return;if(t.data?.type!=="mix-tonight-height")return;const n=Number(t.data.height);Number.isFinite(n)&&n>300&&n<2400&&(e.style.height=`${n+2}px`)})})()

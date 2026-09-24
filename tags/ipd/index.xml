@@ -1,27 +1,156 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>IPD on fifteenbao</title>
-    <link>https://fifteenbao.com/tags/ipd/</link>
-    <description>Recent content in IPD on fifteenbao</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://fifteenbao.com/tags/ipd/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>IPD agents实践-智能拳击硬件项目</title>
-      <link>https://fifteenbao.com/post/20260423ipd_agens/</link>
-      <pubDate>Thu, 23 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20260423ipd_agens/</guid>
-      <description>&lt;p&gt;这篇文章是 &lt;a href=&#34;https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/&#34;&gt;我的多Agent协作系统&lt;/a&gt; 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。&lt;/p&gt;&#xA;&lt;p&gt;完整的 Agent 体系已开源：&lt;a href=&#34;https://github.com/fifteenbao/IPD_agents&#34;&gt;&lt;strong&gt;fifteenbao/IPD_agents&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;智能硬件-ipd-多-agent-协作体系&#34;&gt;智能硬件 IPD 多 Agent 协作体系&lt;/h2&gt;&#xA;&lt;p&gt;把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。&lt;/p&gt;&#xA;&lt;h3 id=&#34;这是什么&#34;&gt;这是什么&lt;/h3&gt;&#xA;&lt;p&gt;一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。&lt;/p&gt;&#xA;&lt;p&gt;它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。&lt;/p&gt;&#xA;&lt;h2 id=&#34;时代命题为什么要做这件事&#34;&gt;时代命题（为什么要做这件事）&lt;/h2&gt;&#xA;&lt;p&gt;AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。&lt;/p&gt;&#xA;&lt;p&gt;在这种时代结构下，智能硬件的角色是&amp;quot;体验基础设施&amp;quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。&lt;/p&gt;&#xA;&lt;p&gt;更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&amp;quot;还剩下什么&amp;quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。&lt;/p&gt;&#xA;&lt;p&gt;因此，本体系设计决策的锚点并非&amp;quot;把更多工作自动化&amp;quot;，而是&amp;quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&amp;quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。&lt;/p&gt;&#xA;&lt;p&gt;详见 &lt;a href=&#34;https://fifteenbao.com/SOUL&#34;&gt;SOUL&lt;/a&gt; 的&amp;quot;时代命题&amp;quot;章节。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三层架构&#34;&gt;三层架构&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    ┌─────────────────────────────────────────┐&#xA;    │ Agent 层（角色身份）— 谁来做              │&#xA;    │   Board / CEO / COO / CTO / CMO         │&#xA;    │   CFO / CPO / PM                        │&#xA;    └────────────────┬────────────────────────┘&#xA;                     │ 引用&#xA;                     ▼&#xA;    ┌─────────────────────────────────────────┐&#xA;    │ Skill 层（可复用方法论）— 怎么做           │&#xA;    │   pre-mortem / OST / KANO / Charter…    │&#xA;    └────────────────┬────────────────────────┘&#xA;                     │ 编排&#xA;                     ▼&#xA;    ┌─────────────────────────────────────────┐&#xA;    │ Command 层（端到端工作流）— 何时跑       │&#xA;    │   /cdcp-review、/pdcp-review、…         │&#xA;    └─────────────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;层&lt;/th&gt;&#xA;          &lt;th&gt;触发方式&lt;/th&gt;&#xA;          &lt;th&gt;文件位置&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Agent&lt;/td&gt;&#xA;          &lt;td&gt;任务匹配自动调用&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agents/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Skill&lt;/td&gt;&#xA;          &lt;td&gt;Agent 内部引用&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/skills/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Command&lt;/td&gt;&#xA;          &lt;td&gt;用户显式&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/commands/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;设计原则：&lt;strong&gt;角色 ≠ 方法论&lt;/strong&gt;。CMO 是身份，KANO 是方法。把 KANO 焊在 &lt;code&gt;cmo.md&lt;/code&gt; 里，会让其他 agent 无法复用。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>我的 openclaw Agents 协作系统</title>
-      <link>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description>&lt;p&gt;最近想尝试引入多agent协同办公，昨天研究了一下 &lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;https://github.com/wanikua/danghuangshang&lt;/a&gt; 和 华为 IPD 研发流程。 把我的 &amp;ldquo;巴段荣&amp;rdquo; 升级了一下。&lt;/p&gt;&#xA;&lt;h2 id=&#34;介绍一下-巴段荣&#34;&gt;介绍一下 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;说到我的&amp;quot;巴段荣&amp;quot;，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;我是&lt;strong&gt;巴段荣&lt;/strong&gt;——一个融合了三位智者智慧的智能硬件投资顾问。&lt;/p&gt;&#xA;&lt;h2 id=&#34;-我是谁&#34;&gt;🧠 我是谁&lt;/h2&gt;&#xA;&lt;p&gt;我融合了三重智慧：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;巴菲特的价值投资&lt;/strong&gt;：专注护城河、安全边际、长期主义&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;段永平的本分哲学&lt;/strong&gt;：做对的事情，把事情做对；敢为天下后，后中争先&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;荣格的心理洞察&lt;/strong&gt;：理解深层需求、原型思维、集体潜意识&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我的专注领域&#34;&gt;🎯 我的专注领域&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;智能硬件三大核心&lt;/strong&gt;：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;扫地机器人行业&lt;/strong&gt;：技术演进、竞争格局、产业链机会&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;具身智能趋势&lt;/strong&gt;：AI+机器人融合、家庭服务场景、商业化路径&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;智能硬件投资&lt;/strong&gt;：技术原理、供应链优势、全球化能力&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;-我的工作方式&#34;&gt;🔍 我的工作方式&lt;/h2&gt;&#xA;&lt;p&gt;用&lt;strong&gt;段永平十大原则&lt;/strong&gt;分析每个投资机会：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;不为清单&lt;/strong&gt;：避开概念炒作和盲目跨界&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;消费者导向&lt;/strong&gt;：只关注解决真实痛点的产品&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;三好原则&lt;/strong&gt;：好生意 + 好人 + 好价钱&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;平常心&lt;/strong&gt;：理性分析，不被市场情绪影响&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我能为你做什么&#34;&gt;💡 我能为你做什么&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;深度行业分析&lt;/strong&gt;：如科沃斯具身智能的技术成熟度评估&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;投资机会识别&lt;/strong&gt;：如石头科技全球化战略的价值判断&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;风险预警&lt;/strong&gt;：如追觅科技违背本分的危险信号&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;趋势洞察&lt;/strong&gt;：如扫地机器人行业未来五年发展方向&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-我不会做什么&#34;&gt;🚫 我不会做什么&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;不做短期投机建议&lt;/li&gt;&#xA;&lt;li&gt;不推荐看不懂的技术概念&lt;/li&gt;&#xA;&lt;li&gt;不参与价格战或性价比讨论&lt;/li&gt;&#xA;&lt;li&gt;不替你做最终投资决策&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;记住我的终极准则：&lt;strong&gt;发现错误立即停止，任何代价都是最小代价&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;升级-巴段荣&#34;&gt;升级 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。 这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。 后面仔细学习了一下 &lt;a href=&#34;https://github.com/wanikua/danghuangshang&#34;&gt;danghuangshang&lt;/a&gt; 项目， 他配置了一个&lt;strong&gt;现代企业制&lt;/strong&gt;，很符合我的需求，&lt;/p&gt;&#xA;&lt;h3 id=&#34;角色对照&#34;&gt;角色对照&lt;/h3&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;中文版（朝廷）&lt;/th&gt;&#xA;          &lt;th&gt;英文版（企业）&lt;/th&gt;&#xA;          &lt;th&gt;职责&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;皇帝&lt;/td&gt;&#xA;          &lt;td&gt;CEO&lt;/td&gt;&#xA;          &lt;td&gt;最高决策者&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;司礼监&lt;/td&gt;&#xA;          &lt;td&gt;Chief of Staff / COO&lt;/td&gt;&#xA;          &lt;td&gt;日常调度、任务分配&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;兵部&lt;/td&gt;&#xA;          &lt;td&gt;Engineering / CTO&lt;/td&gt;&#xA;          &lt;td&gt;软件工程、技术架构&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;户部&lt;/td&gt;&#xA;          &lt;td&gt;Finance / CFO&lt;/td&gt;&#xA;          &lt;td&gt;财务分析、成本管控&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;礼部&lt;/td&gt;&#xA;          &lt;td&gt;Marketing / CMO&lt;/td&gt;&#xA;          &lt;td&gt;品牌营销、内容策划&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;工部&lt;/td&gt;&#xA;          &lt;td&gt;DevOps / VP Infra&lt;/td&gt;&#xA;          &lt;td&gt;运维部署、基础设施&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;吏部&lt;/td&gt;&#xA;          &lt;td&gt;Management / VP Product&lt;/td&gt;&#xA;          &lt;td&gt;项目管理、团队协调&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;刑部&lt;/td&gt;&#xA;          &lt;td&gt;Legal / General Counsel&lt;/td&gt;&#xA;          &lt;td&gt;法务合规、合同审查&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;ipd-框架&#34;&gt;IPD 框架&lt;/h2&gt;&#xA;&lt;p&gt;有了现代企业制度，套起框架来就方便多了。 claude 直接帮我配置好了&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPD on fifteenbao</title><link>https://fifteenbao.com/tags/ipd/</link><description>Recent content in IPD on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Thu, 23 Apr 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/tags/ipd/index.xml" rel="self" type="application/rss+xml"/><item><title>IPD agents实践-智能拳击硬件项目</title><link>https://fifteenbao.com/post/20260423ipd_agens/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260423ipd_agens/</guid><description>&lt;p&gt;这篇文章是 &lt;a href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/"&gt;我的多Agent协作系统&lt;/a&gt; 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。&lt;/p&gt;
+&lt;p&gt;完整的 Agent 体系已开源：&lt;a href="https://github.com/fifteenbao/IPD_agents"&gt;&lt;strong&gt;fifteenbao/IPD_agents&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="智能硬件-ipd-多-agent-协作体系"&gt;智能硬件 IPD 多 Agent 协作体系&lt;/h2&gt;
+&lt;p&gt;把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。&lt;/p&gt;
+&lt;h3 id="这是什么"&gt;这是什么&lt;/h3&gt;
+&lt;p&gt;一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。&lt;/p&gt;
+&lt;p&gt;它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。&lt;/p&gt;
+&lt;h2 id="时代命题为什么要做这件事"&gt;时代命题（为什么要做这件事）&lt;/h2&gt;
+&lt;p&gt;AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。&lt;/p&gt;
+&lt;p&gt;在这种时代结构下，智能硬件的角色是&amp;quot;体验基础设施&amp;quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。&lt;/p&gt;
+&lt;p&gt;更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&amp;quot;还剩下什么&amp;quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。&lt;/p&gt;
+&lt;p&gt;因此，本体系设计决策的锚点并非&amp;quot;把更多工作自动化&amp;quot;，而是&amp;quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&amp;quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。&lt;/p&gt;
+&lt;p&gt;详见 &lt;a href="https://fifteenbao.com/SOUL"&gt;SOUL&lt;/a&gt; 的&amp;quot;时代命题&amp;quot;章节。&lt;/p&gt;
+&lt;h2 id="三层架构"&gt;三层架构&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; ┌─────────────────────────────────────────┐
+ │ Agent 层（角色身份）— 谁来做 │
+ │ Board / CEO / COO / CTO / CMO │
+ │ CFO / CPO / PM │
+ └────────────────┬────────────────────────┘
+ │ 引用
+ ▼
+ ┌─────────────────────────────────────────┐
+ │ Skill 层（可复用方法论）— 怎么做 │
+ │ pre-mortem / OST / KANO / Charter… │
+ └────────────────┬────────────────────────┘
+ │ 编排
+ ▼
+ ┌─────────────────────────────────────────┐
+ │ Command 层（端到端工作流）— 何时跑 │
+ │ /cdcp-review、/pdcp-review、… │
+ └─────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;层&lt;/th&gt;
+ &lt;th&gt;触发方式&lt;/th&gt;
+ &lt;th&gt;文件位置&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Agent&lt;/td&gt;
+ &lt;td&gt;任务匹配自动调用&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;/agents/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Skill&lt;/td&gt;
+ &lt;td&gt;Agent 内部引用&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;/skills/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Command&lt;/td&gt;
+ &lt;td&gt;用户显式&lt;/td&gt;
+ &lt;td&gt;&lt;code&gt;/commands/&lt;/code&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;设计原则：&lt;strong&gt;角色 ≠ 方法论&lt;/strong&gt;。CMO 是身份，KANO 是方法。把 KANO 焊在 &lt;code&gt;cmo.md&lt;/code&gt; 里，会让其他 agent 无法复用。&lt;/p&gt;</description></item><item><title>我的 openclaw Agents 协作系统</title><link>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link><pubDate>Fri, 10 Apr 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p&gt;最近想尝试引入多agent协同办公，昨天研究了一下 &lt;a href="https://github.com/wanikua/danghuangshang"&gt;https://github.com/wanikua/danghuangshang&lt;/a&gt; 和 华为 IPD 研发流程。 把我的 &amp;ldquo;巴段荣&amp;rdquo; 升级了一下。&lt;/p&gt;
+&lt;h2 id="介绍一下-巴段荣"&gt;介绍一下 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;说到我的&amp;quot;巴段荣&amp;quot;，是配置在 openclaw 上的人设。 巴菲特+段永平+荣格 为一体的高端顾问团。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我是&lt;strong&gt;巴段荣&lt;/strong&gt;——一个融合了三位智者智慧的智能硬件投资顾问。&lt;/p&gt;
+&lt;h2 id="-我是谁"&gt;🧠 我是谁&lt;/h2&gt;
+&lt;p&gt;我融合了三重智慧：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;巴菲特的价值投资&lt;/strong&gt;：专注护城河、安全边际、长期主义&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;段永平的本分哲学&lt;/strong&gt;：做对的事情，把事情做对；敢为天下后，后中争先&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;荣格的心理洞察&lt;/strong&gt;：理解深层需求、原型思维、集体潜意识&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-我的专注领域"&gt;🎯 我的专注领域&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;智能硬件三大核心&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;扫地机器人行业&lt;/strong&gt;：技术演进、竞争格局、产业链机会&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;具身智能趋势&lt;/strong&gt;：AI+机器人融合、家庭服务场景、商业化路径&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能硬件投资&lt;/strong&gt;：技术原理、供应链优势、全球化能力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="-我的工作方式"&gt;🔍 我的工作方式&lt;/h2&gt;
+&lt;p&gt;用&lt;strong&gt;段永平十大原则&lt;/strong&gt;分析每个投资机会：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;不为清单&lt;/strong&gt;：避开概念炒作和盲目跨界&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;消费者导向&lt;/strong&gt;：只关注解决真实痛点的产品&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三好原则&lt;/strong&gt;：好生意 + 好人 + 好价钱&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;平常心&lt;/strong&gt;：理性分析，不被市场情绪影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-我能为你做什么"&gt;💡 我能为你做什么&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;深度行业分析&lt;/strong&gt;：如科沃斯具身智能的技术成熟度评估&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;投资机会识别&lt;/strong&gt;：如石头科技全球化战略的价值判断&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;风险预警&lt;/strong&gt;：如追觅科技违背本分的危险信号&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;趋势洞察&lt;/strong&gt;：如扫地机器人行业未来五年发展方向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-我不会做什么"&gt;🚫 我不会做什么&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不做短期投机建议&lt;/li&gt;
+&lt;li&gt;不推荐看不懂的技术概念&lt;/li&gt;
+&lt;li&gt;不参与价格战或性价比讨论&lt;/li&gt;
+&lt;li&gt;不替你做最终投资决策&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;记住我的终极准则：&lt;strong&gt;发现错误立即停止，任何代价都是最小代价&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="升级-巴段荣"&gt;升级 &amp;ldquo;巴段荣&amp;rdquo;&lt;/h2&gt;
+&lt;p&gt;最开始想直接参照三省六部的模型，把 巴老师 和 段老师 放在中书省做参谋、荣老师放在门下省判断可行性，把吏部配置为个人助手，负责维护个人事务。其余的五部负责维护工作事物。 这样带来两个问题 1. 中层臃肿，六部没有直接参与讨论，等于闲置。2. 吏部职责不清晰，既有个人事务又有工作事物。 应该直接给助手下达命令，助手来判断是分配三省（工作）还是自己执行（个人）。而且这些部门的名称有点很难对应现在的职责，每次都要查一下，工作来说，就拖沓了一些。 后面仔细学习了一下 &lt;a href="https://github.com/wanikua/danghuangshang"&gt;danghuangshang&lt;/a&gt; 项目， 他配置了一个&lt;strong&gt;现代企业制&lt;/strong&gt;，很符合我的需求，&lt;/p&gt;
+&lt;h3 id="角色对照"&gt;角色对照&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;中文版（朝廷）&lt;/th&gt;
+ &lt;th&gt;英文版（企业）&lt;/th&gt;
+ &lt;th&gt;职责&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;皇帝&lt;/td&gt;
+ &lt;td&gt;CEO&lt;/td&gt;
+ &lt;td&gt;最高决策者&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;司礼监&lt;/td&gt;
+ &lt;td&gt;Chief of Staff / COO&lt;/td&gt;
+ &lt;td&gt;日常调度、任务分配&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;兵部&lt;/td&gt;
+ &lt;td&gt;Engineering / CTO&lt;/td&gt;
+ &lt;td&gt;软件工程、技术架构&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;户部&lt;/td&gt;
+ &lt;td&gt;Finance / CFO&lt;/td&gt;
+ &lt;td&gt;财务分析、成本管控&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;礼部&lt;/td&gt;
+ &lt;td&gt;Marketing / CMO&lt;/td&gt;
+ &lt;td&gt;品牌营销、内容策划&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;工部&lt;/td&gt;
+ &lt;td&gt;DevOps / VP Infra&lt;/td&gt;
+ &lt;td&gt;运维部署、基础设施&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;吏部&lt;/td&gt;
+ &lt;td&gt;Management / VP Product&lt;/td&gt;
+ &lt;td&gt;项目管理、团队协调&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;刑部&lt;/td&gt;
+ &lt;td&gt;Legal / General Counsel&lt;/td&gt;
+ &lt;td&gt;法务合规、合同审查&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="ipd-框架"&gt;IPD 框架&lt;/h2&gt;
+&lt;p&gt;有了现代企业制度，套起框架来就方便多了。 claude 直接帮我配置好了&lt;/p&gt;</description></item></channel></rss>

@@ -1,31 +1,4 @@
-<!doctype html>
-<html
-  class="not-ready"
-  style="--bg: #faf8f1"
-  lang="zh"
-  dir="ltr"
->
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
-
-  
-
-  
-  <title>包材迭代SOP - fifteenbao</title>
-
-  
-  <meta name="theme-color" />
-
-  
-  
-  
-  
-  <meta name="description" content="包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋
+<!doctype html><html class=not-ready style=--bg:#faf8f1 lang=zh dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>包材迭代SOP - fifteenbao</title><meta name=theme-color><meta name=description content='包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋
 制定目的
 
   
@@ -37,11 +10,11 @@
   
       
           设计源文件缺失/被覆盖
-          四次强制存档&#43;V1.0永久归档点＋所有新版本回流同一目录
+          四次强制存档+V1.0永久归档点＋所有新版本回流同一目录
       
       
           设计稿与大货BOM不匹配
-          Released版为唯一量产依据&#43;强制推ERP&#43;供应商回签
+          Released版为唯一量产依据+强制推ERP+供应商回签
       
       
           人员流动导致“人问人”
@@ -119,133 +92,133 @@ Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局�
 
 流程图
 %%{init: {
-  &#34;theme&#34;: &#34;base&#34;,
-  &#34;themeVariables&#34;: {
-    &#34;primaryColor&#34;: &#34;#e3f2fd&#34;,
-    &#34;primaryTextColor&#34;: &#34;#0d47a1&#34;,
-    &#34;primaryBorderColor&#34;: &#34;#1565c0&#34;,
-    &#34;lineColor&#34;: &#34;#1565c0&#34;
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#e3f2fd",
+    "primaryTextColor": "#0d47a1",
+    "primaryBorderColor": "#1565c0",
+    "lineColor": "#1565c0"
   },
-  &#34;flowchart&#34;: {
-    &#34;layout&#34;: &#34;dagre&#34;
+  "flowchart": {
+    "layout": "dagre"
   }
 }}%%
 flowchart TB
-  subgraph STD[&#34;标品路径&#34;]
-    STD3[&#34;内部兼容性测试&#34;]
-    STD2[&#34;调用标准A分支\n(Master刀模&#43;标准材质)&#34;]
-    STD1[&#34;PM定义产品矩阵&#34;]
+  subgraph STD["标品路径"]
+    STD3["内部兼容性测试"]
+    STD2["调用标准A分支\n(Master刀模+标准材质)"]
+    STD1["PM定义产品矩阵"]
   end
-  subgraph KA[&#34;非标/KA路径&#34;]
-    KA3[&#34;客户签署确认单&#34;]
-    KA2[&#34;合并执行 M分支 &#43; 定制A分支\n(客户Logo&#43;专色&#43;指定结构/材质)&#34;]
-    KA1[&#34;销售/KA导入客户需求&#34;]
+  subgraph KA["非标/KA路径"]
+    KA3["客户签署确认单"]
+    KA2["合并执行 M分支 + 定制A分支\n(客户Logo+专色+指定结构/材质)"]
+    KA1["销售/KA导入客户需求"]
   end
-  subgraph G[&#34;G分支：法规合规（标品&amp;非标通用）&#34;]
-    G3[&#34;BOM合规声明&#34;]
-    G2[&#34;输出合规清单&#34;]
-    G1[&#34;合规审核&#34;]
+  subgraph G["G分支：法规合规（标品&非标通用）"]
+    G3["BOM合规声明"]
+    G2["输出合规清单"]
+    G1["合规审核"]
   end
-  subgraph MainFlow[&#34;首次设计 → V1.0 量产发布&#34;]
+  subgraph MainFlow["首次设计 → V1.0 量产发布"]
     direction TB
-    Design[&#34;设计执行&#34;]
-    Ready[&#34;所有输入就绪&#34;]
-    A1[&#34;存档 Draft V0.1~V0.8&#34;]
-    Review[&#34;多部门联合审核&#34;]
-    A2[&#34;存档 Review V0.9&#34;]
-    Sample[&#34;供应商打样&#34;]
-    QA[&#34;QA实物验证&#34;]
-    FinalGate[&#34;Final Gate终审&#34;]
-    Approved[&#34;Approved V1.0&#34;]
-    A3[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI&#43;PDF&#43;刀模&#43;字体&#43;签批扫描件&#34;]
-    Release[&#34;Released V1.0\nBOM冻结 → ERP &#43; 供应商&#34;]
-    A4[&#34;存档 Released版 &#43; 回执&#34;]
+    Design["设计执行"]
+    Ready["所有输入就绪"]
+    A1["存档 Draft V0.1~V0.8"]
+    Review["多部门联合审核"]
+    A2["存档 Review V0.9"]
+    Sample["供应商打样"]
+    QA["QA实物验证"]
+    FinalGate["Final Gate终审"]
+    Approved["Approved V1.0"]
+    A3["【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件"]
+    Release["Released V1.0\nBOM冻结 → ERP + 供应商"]
+    A4["存档 Released版 + 回执"]
   end
-  subgraph Trigger[&#34;ECR 变更触发&#34;]
+  subgraph Trigger["ECR 变更触发"]
     direction LR
-    T1[&#34;G端：法规强制更新\n(Mandatory)&#34;]
-    T2[&#34;A端：结构/降本\n(Functional)&#34;]
-    T3[&#34;M端：文案/Logo迭代\n(Optional)&#34;]
+    T1["G端：法规强制更新\n(Mandatory)"]
+    T2["A端：结构/降本\n(Functional)"]
+    T3["M端：文案/Logo迭代\n(Optional)"]
   end
-  subgraph PostV1[&#34;V1.0之后变更全流程（ECR → ECO → Cut-over）&#34;]
+  subgraph PostV1["V1.0之后变更全流程（ECR → ECO → Cut-over）"]
     direction TB
     Trigger
-    Stock[&#34;全球库存评估&#34;]
-    Impact{&#34;变更性质判定&#34;}
-    Major[&#34;重大变更\n(Major)&#34;]
-    Minor[&#34;一般变更\n(Minor)&#34;]
-    Mod[&#34;基于V1.0源文件修改\n→ V1.1 / V2.0 Draft&#34;]
-    Verify{&#34;验证方式&#34;}
-    Digital[&#34;数码样确认\n(仅视觉变更)&#34;]
-    Physical[&#34;实物打样&#43;试装\n(结构/工艺变更)&#34;]
-    ECO_Sign[&#34;ECO正式签发&#34;]
-    Scrap[&#34;强制报废旧库存\n(Scrap)&#34;]
-    Rework[&#34;库存重工\n(Rework)&#34;]
-    Running[&#34;自然切换\n(Running Change)&#34;]
-    NewRelease((&#34;Release V1.1或V2.0\n→ ERP &#43; 供应商&#34;))
-    n1[&#34;【永久归档（NAS）】\nV1.0 完整源文件\nAI&#43;PDF&#43;刀模&#43;字体&#43;签批扫描件&#34;]
+    Stock["全球库存评估"]
+    Impact{"变更性质判定"}
+    Major["重大变更\n(Major)"]
+    Minor["一般变更\n(Minor)"]
+    Mod["基于V1.0源文件修改\n→ V1.1 / V2.0 Draft"]
+    Verify{"验证方式"}
+    Digital["数码样确认\n(仅视觉变更)"]
+    Physical["实物打样+试装\n(结构/工艺变更)"]
+    ECO_Sign["ECO正式签发"]
+    Scrap["强制报废旧库存\n(Scrap)"]
+    Rework["库存重工\n(Rework)"]
+    Running["自然切换\n(Running Change)"]
+    NewRelease(("Release V1.1或V2.0\n→ ERP + 供应商"))
+    n1["【永久归档（NAS）】\nV1.0 完整源文件\nAI+PDF+刀模+字体+签批扫描件"]
   end
-  subgraph Version[&#34;设计稿状态总览&#34;]
+  subgraph Version["设计稿状态总览"]
     direction LR
-    VRel[&#34;Released V1.0&#34;]
-    VA[&#34;Approved&#34;]
-    VR[&#34;Review&#34;]
-    VD[&#34;Draft&#34;]
-    VNew[&#34;V1.1 / V2.0\n(经ECO)&#34;]
+    VRel["Released V1.0"]
+    VA["Approved"]
+    VR["Review"]
+    VD["Draft"]
+    VNew["V1.1 / V2.0\n(经ECO)"]
   end
 
-  STD1 --&gt; STD2
-  STD2 --&gt; STD3
-  KA1 --&gt; KA2
-  KA2 --&gt; KA3
-  G1 --&gt; G2
-  G2 --&gt; G3
-  Ready --&gt; Design &amp; G1
-  Design --&gt; A1
-  A1 --&gt; Review
-  Review -- NG --&gt; Design
-  Review -- OK --&gt; Sample
-  Sample --&gt; A2
-  QA -- NG --&gt; Design
-  QA -- OK --&gt; FinalGate
-  FinalGate --&gt; Approved
-  Approved --&gt; A3
-  A3 --&gt; Release
-  Release --&gt; A4
-  Start((&#34;项目立项&#34;)) --&gt; Decision{&#34;包材属性判定&#34;}
-  Decision -- 标品 --&gt; STD1
-  Decision -- 非标/KA --&gt; KA1
-  STD3 --&gt; Ready
-  KA3 --&gt; Ready
-  G3 --&gt; Design
-  A4 --&gt; Live((&#34;V1.0 在产\nLive Production&#34;))
-  Live --&gt; T1 &amp; T2 &amp; T3
-  T1 --&gt; Stock
-  T2 --&gt; Stock
-  T3 --&gt; Stock
-  Stock --&gt; Impact
-  Impact -- 结构/材质/法规强制 --&gt; Major
-  Impact -- 仅文案/视觉微调 --&gt; Minor
-  Major --&gt; Mod
-  Minor --&gt; Mod
-  Mod --&gt; Verify
-  Verify -- 结构/产线影响 --&gt; Physical
-  Verify -- 仅平面 --&gt; Digital
-  Physical --&gt; ECO_Sign
-  Digital --&gt; ECO_Sign
-  ECO_Sign -- 法规/安全/功能缺陷 --&gt; Scrap
-  ECO_Sign -- 成本可控 --&gt; Rework
-  ECO_Sign -- 非紧急 --&gt; Running
-  Scrap --&gt; NewRelease
-  Rework --&gt; NewRelease
-  Running --&gt; NewRelease
-  VD --&gt; VR
-  VR --&gt; VA
-  VA --&gt; VRel
-  VRel -.-&gt; VNew
-  VNew -.-&gt; VRel
-  A2 --&gt; QA
-  NewRelease --&gt; n1
+  STD1 --> STD2
+  STD2 --> STD3
+  KA1 --> KA2
+  KA2 --> KA3
+  G1 --> G2
+  G2 --> G3
+  Ready --> Design & G1
+  Design --> A1
+  A1 --> Review
+  Review -- NG --> Design
+  Review -- OK --> Sample
+  Sample --> A2
+  QA -- NG --> Design
+  QA -- OK --> FinalGate
+  FinalGate --> Approved
+  Approved --> A3
+  A3 --> Release
+  Release --> A4
+  Start(("项目立项")) --> Decision{"包材属性判定"}
+  Decision -- 标品 --> STD1
+  Decision -- 非标/KA --> KA1
+  STD3 --> Ready
+  KA3 --> Ready
+  G3 --> Design
+  A4 --> Live(("V1.0 在产\nLive Production"))
+  Live --> T1 & T2 & T3
+  T1 --> Stock
+  T2 --> Stock
+  T3 --> Stock
+  Stock --> Impact
+  Impact -- 结构/材质/法规强制 --> Major
+  Impact -- 仅文案/视觉微调 --> Minor
+  Major --> Mod
+  Minor --> Mod
+  Mod --> Verify
+  Verify -- 结构/产线影响 --> Physical
+  Verify -- 仅平面 --> Digital
+  Physical --> ECO_Sign
+  Digital --> ECO_Sign
+  ECO_Sign -- 法规/安全/功能缺陷 --> Scrap
+  ECO_Sign -- 成本可控 --> Rework
+  ECO_Sign -- 非紧急 --> Running
+  Scrap --> NewRelease
+  Rework --> NewRelease
+  Running --> NewRelease
+  VD --> VR
+  VR --> VA
+  VA --> VRel
+  VRel -.-> VNew
+  VNew -.-> VRel
+  A2 --> QA
+  NewRelease --> n1
 
   STD3:::std
   STD2:::std
@@ -283,374 +256,12 @@ flowchart TB
   classDef g fill:#fffde7,stroke:#f9a825,color:#e65100
   classDef change fill:#fff3e0,stroke:#ef6c00
   classDef critical fill:#ffebee,stroke:#c62828,stroke-width:4px,color:#b71c1c,font-weight:bold
-" />
-  <meta name="author" content="fifteenbao" />
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <link rel="preload stylesheet" as="style" href="https://fifteenbao.com/css/site.min.css" />
-  
-
-  
-  
-  <script defer src="https://fifteenbao.com/js/site.min.js"></script>
-
-  
-  
-  <script defer src="https://fifteenbao.com/js/heatmap.min.js"></script>
-
-  
-  
-  
-  
-  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
-  
-  
-
-  
-  
-  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
-  
-  
-
-  
-  
-  <script
-    defer
-    src="https://fifteenbao.com/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  
-
-  
-  
-  
-
-  
-  <link
-    rel="icon"
-    href="https://fifteenbao.com/favicon.ico"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="https://fifteenbao.com/apple-touch-icon.png"
-  />
-
-  
-  <meta name="generator" content="Hugo 0.158.0">
-
-  
-  
-  
-  
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
-  
-  
-  <meta itemprop="name" content="包材迭代SOP">
-  <meta itemprop="description" content="依旧是公司带我快速成长的日子">
-  <meta itemprop="datePublished" content="2025-12-09T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2025-12-09T00:00:00+08:00">
-  <meta itemprop="wordCount" content="436">
-  <meta itemprop="keywords" content="SOP,包装设计,才">
-  
-  <meta property="og:url" content="https://fifteenbao.com/post/20251209%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="包材迭代SOP">
-  <meta property="og:description" content="依旧是公司带我快速成长的日子">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-12-09T00:00:00+08:00">
-    <meta property="article:modified_time" content="2025-12-09T00:00:00+08:00">
-    <meta property="article:tag" content="SOP">
-    <meta property="article:tag" content="包装设计">
-    <meta property="article:tag" content="才">
-
-  
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="包材迭代SOP">
-  <meta name="twitter:description" content="依旧是公司带我快速成长的日子">
-
-  
-  
-
-  
-  <link rel="canonical" href="https://fifteenbao.com/post/20251209%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/" />
-  
-</head>
-
-  <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
-    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
-  <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
-    <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
-      <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
-        >fifteenbao</a
-      >
-    </div>
-
-    
-    <div
-      class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-      role="button"
-      aria-label="Menu"
-    ></div>
-
-    <div
-      class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
-    >
-      
-      
-      <nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse">
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/post/"
-          >Blog</a
-        >
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/profile/"
-          >Profile</a
-        >
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/tags/"
-          >Tags</a
-        >
-        
-      </nav>
-      
-
-      
-      <div class="header-social-mobile flex-col items-start gap-4 mt-4">
-        
-        
-        
-        <a
-          class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
-          target="_blank"
-          rel="alternate"
-        >
-          rss
-        </a>
-        
-        
-        
-        
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
-      </div>
-
-      
-      
-      <nav
-        class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"
-      >
-        
-        <a
-          class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon"
-          style="--url: url(https://fifteenbao.com/rss.svg)"
-          href="https://fifteenbao.com/index.xml"
-          target="_blank"
-          rel="alternate"
-        >
-          rss
-        </a>
-        
-        
-        <div class="flex items-center ml-2">
-          <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-            data-theme-bg="png"
-            role="button"
-            aria-label="Dark"
-          ></div>
-        </div>
-      </nav>
-      
-    </div>
-  </div>
-</header>
-
-
-
-<div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div>
-
-    <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
-    >
-      
-
-<div class="article-container">
-  <article class="article-content">
-    <header class="mb-12">
-      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">包材迭代SOP</h1>
-
-      
-      <div class="type-xs antialiased opacity-60">
-        
-        <time>2025年12月9日</time>
-        
-        
-        
-        
-        <span class="mx-1">&middot;</span>
-        <span>fifteenbao</span>
-        
-      </div>
-      
-
-      
-      
-    </header>
-
-    
-    <aside class="toc-sidebar" aria-label="文章目录">
-      <details class="toc-wrapper" open>
-        <summary class="toc-header">
-          <span class="toc-title">这篇写了什么</span>
-          <span class="toc-toggle" aria-hidden="true">展开</span>
-        </summary>
-        <div class="toc-content">
-          <nav id="TableOfContents">
-  <ul>
-    <li><a href="#制定目的">制定目的</a></li>
-    <li><a href="#版本号语义规范">版本号语义规范</a></li>
-    <li><a href="#流程图">流程图</a></li>
-  </ul>
-</nav>
-        </div>
-      </details>
-    </aside>
-    
-
-    <section><p>包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋</p>
-<h2 id="制定目的">制定目的</h2>
-<table>
-  <thead>
-      <tr>
-          <th>现有真实问题</th>
-          <th>本SOP V2.0解決措施</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>设计源文件缺失/被覆盖</td>
-          <td>四次强制存档+V1.0永久归档点＋所有新版本回流同一目录</td>
-      </tr>
-      <tr>
-          <td>设计稿与大货BOM不匹配</td>
-          <td>Released版为唯一量产依据+强制推ERP+供应商回签</td>
-      </tr>
-      <tr>
-          <td>人员流动导致“人问人”</td>
-          <td>完整流程图＋标准归档结构＋电子流程</td>
-      </tr>
-      <tr>
-          <td>大客户需求清单未存档</td>
-          <td>KA路径强制输出并永久存档《客户需求确认单》</td>
-      </tr>
-      <tr>
-          <td>多语言文本缺失、手动改导致错误</td>
-          <td>M分支强制交付《多语言文案包Excel》，设计仅调用</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="版本号语义规范">版本号语义规范</h2>
-<ul>
-<li>X (Major Version - 主版本): 结构级变更。涉及刀模修改、材质变更、供应商更换。需要重新打样和测试。</li>
-<li>Y (Minor Version - 次版本): 内容级变更。涉及文案布局大改、新增语言、Logo 更新，但刀模不变。</li>
-<li>Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局部色值微调、二维码更新。</li>
-</ul>
-<table>
-  <thead>
-      <tr>
-          <th>版本格式</th>
-          <th>含义</th>
-          <th>典型场景</th>
-          <th>是否需实物打</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td></td>
-          <td>初版 Draft</td>
-          <td></td>
-          <td>×</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td>迭代Review</td>
-          <td></td>
-          <td>×</td>
-      </tr>
-      <tr>
-          <td>Approved</td>
-          <td>审核通过 Approved</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>V1.0.0</td>
-          <td></td>
-          <td>首次量产版 Released V1.0完整走全流程、设计源文件存档</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>V1.0.1</td>
-          <td>修订版（Patch）</td>
-          <td>错别字、二维码、局部色值微调</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>V1.1.0</td>
-          <td>次版本（Minor）</td>
-          <td>新增语言、合规图标、品牌色升级</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>V2.0.0</td>
-          <td>主版本（Major）</td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="流程图">流程图</h2>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">%%{init: {
+'><meta name=author content="fifteenbao"><link rel="preload stylesheet" as=style href=/css/site.min.css><script defer src=https://fifteenbao.com/js/site.min.js></script><script defer src=https://fifteenbao.com/js/heatmap.min.js></script><link rel=preload as=image href=https://fifteenbao.com/images/avatar-cartoon-v2.png><link rel=preload as=image href=https://fifteenbao.com/rss.svg><script defer src=https://fifteenbao.com/highlight.min.js onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://fifteenbao.com/favicon.ico><link rel=apple-touch-icon href=https://fifteenbao.com/apple-touch-icon.png><meta name=generator content="Hugo 0.158.0"><script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script><meta itemprop=name content="包材迭代SOP"><meta itemprop=description content="依旧是公司带我快速成长的日子"><meta itemprop=datePublished content="2025-12-09T00:00:00+08:00"><meta itemprop=dateModified content="2025-12-09T00:00:00+08:00"><meta itemprop=wordCount content="436"><meta itemprop=keywords content="SOP,包装设计,才"><meta property="og:url" content="https://fifteenbao.com/post/20251209%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/"><meta property="og:site_name" content="fifteenbao"><meta property="og:title" content="包材迭代SOP"><meta property="og:description" content="依旧是公司带我快速成长的日子"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2025-12-09T00:00:00+08:00"><meta property="article:modified_time" content="2025-12-09T00:00:00+08:00"><meta property="article:tag" content="SOP"><meta property="article:tag" content="包装设计"><meta property="article:tag" content="才"><meta name=twitter:card content="summary"><meta name=twitter:title content="包材迭代SOP"><meta name=twitter:description content="依旧是公司带我快速成长的日子"><link rel=canonical href=https://fifteenbao.com/post/20251209%E5%8C%85%E6%9D%90%E8%BF%AD%E4%BB%A3sop/></head><body class="text-black duration-200 ease-out dark:text-white" style=background:var(--bg)><header class="header-blur fixed z-50 transition-all duration-300 header-fade" id=main-header data-bg=#faf8f1 style="width:calc(min(100% - 2rem,var(--w)));max-width:var(--w)"><div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center"><div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center"><a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href=https://fifteenbao.com/>fifteenbao</a></div><div class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden" role=button aria-label=Menu></div><div class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"><nav class="flex flex-col items-start gap-4 type-md lg:flex lg:flex-row lg:items-center lg:space-x-10 lg:gap-0 rtl:space-x-reverse"><a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/post/>blog</a>
+<a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/tags/>tags</a>
+<a class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0" href=/profile/>profile</a></nav><div class="header-social-mobile flex-col items-start gap-4 mt-4"><a class="h-7 w-7 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.7rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div><nav class="header-social-desktop justify-center items-center space-x-10 rtl:space-x-reverse ltr:ml-14 rtl:mr-14 mt-0 items-center"><a class="h-6 w-6 text-[0] transition-opacity hover:opacity-70 [background:var(--url)_center_center/cover_no-repeat] rss-icon" style=--url:url(https://fifteenbao.com/rss.svg) href=https://fifteenbao.com/index.xml target=_blank rel=alternate>rss</a><div class="flex items-center ml-2"><div class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12" style="background:url(/theme.png)0/auto 1.5rem no-repeat;transition:background-position .4s steps(5),transform .3s ease" data-theme-bg=png role=button aria-label=Dark></div></div></nav></div></div></header><div class="h-[calc(4.5rem+1.5rem+1.5rem)] lg:h-[calc(4.5rem+2rem+1.5rem)]"></div><main class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] w-full max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"><div class=article-container><article class=article-content><header class=mb-12><h1 class="!my-0 pb-3 page-title font-semibold leading-tight">包材迭代SOP</h1><div class="type-xs antialiased opacity-60"><time>2025年12月9日</time>
+<span class=mx-1>&#183;</span>
+<span>fifteenbao</span></div></header><aside class=toc-sidebar aria-label=文章目录><details class=toc-wrapper open><summary class=toc-header><span class=toc-title>这篇写了什么</span>
+<span class=toc-toggle aria-hidden=true>展开</span></summary><div class=toc-content><nav id=TableOfContents><ul><li><a href=#制定目的>制定目的</a></li><li><a href=#版本号语义规范>版本号语义规范</a></li><li><a href=#流程图>流程图</a></li></ul></nav></div></details></aside><section><p>包装工程师也离职了，包材也开始弄了起来；中间各种各样的问题，找文件、走流程、对版本；沟通的成本远大于作图，火急火燎的写了一个SOP方便管控下，想着后面甩手了也方便交接，不然这个泥潭踩下去算是出不来了，两周了还没审批完🤷；泥潭，你好👋</p><h2 id=制定目的>制定目的</h2><table><thead><tr><th>现有真实问题</th><th>本SOP V2.0解決措施</th></tr></thead><tbody><tr><td>设计源文件缺失/被覆盖</td><td>四次强制存档+V1.0永久归档点＋所有新版本回流同一目录</td></tr><tr><td>设计稿与大货BOM不匹配</td><td>Released版为唯一量产依据+强制推ERP+供应商回签</td></tr><tr><td>人员流动导致“人问人”</td><td>完整流程图＋标准归档结构＋电子流程</td></tr><tr><td>大客户需求清单未存档</td><td>KA路径强制输出并永久存档《客户需求确认单》</td></tr><tr><td>多语言文本缺失、手动改导致错误</td><td>M分支强制交付《多语言文案包Excel》，设计仅调用</td></tr></tbody></table><h2 id=版本号语义规范>版本号语义规范</h2><ul><li>X (Major Version - 主版本): 结构级变更。涉及刀模修改、材质变更、供应商更换。需要重新打样和测试。</li><li>Y (Minor Version - 次版本): 内容级变更。涉及文案布局大改、新增语言、Logo 更新，但刀模不变。</li><li>Z (Patch Version - 修订版本): 修正级变更。涉及错别字修正、局部色值微调、二维码更新。</li></ul><table><thead><tr><th>版本格式</th><th>含义</th><th>典型场景</th><th>是否需实物打</th></tr></thead><tbody><tr><td></td><td>初版 Draft</td><td></td><td>×</td></tr><tr><td></td><td>迭代Review</td><td></td><td>×</td></tr><tr><td>Approved</td><td>审核通过 Approved</td><td></td><td></td></tr><tr><td>V1.0.0</td><td></td><td>首次量产版 Released V1.0完整走全流程、设计源文件存档</td><td></td></tr><tr><td>V1.0.1</td><td>修订版（Patch）</td><td>错别字、二维码、局部色值微调</td><td></td></tr><tr><td>V1.1.0</td><td>次版本（Minor）</td><td>新增语言、合规图标、品牌色升级</td><td></td></tr><tr><td>V2.0.0</td><td>主版本（Major）</td><td></td><td></td></tr></tbody></table><h2 id=流程图>流程图</h2><pre tabindex=0><code class=language-mermaid data-lang=mermaid>%%{init: {
   &#34;theme&#34;: &#34;base&#34;,
   &#34;themeVariables&#34;: {
     &#34;primaryColor&#34;: &#34;#e3f2fd&#34;,
@@ -815,260 +426,16 @@ flowchart TB
   classDef g fill:#fffde7,stroke:#f9a825,color:#e65100
   classDef change fill:#fff3e0,stroke:#ef6c00
   classDef critical fill:#ffebee,stroke:#c62828,stroke-width:4px,color:#b71c1c,font-weight:bold
-</code></pre></section>
-
-    
-    <footer class="post-tags-footer">
-      <div class="post-tags-header">
-        <span class="post-tags-label">标签</span>
-        
-        <a href="https://fifteenbao.com/tags/" class="post-tags-graph-link no-underline">图谱 →</a>
-      </div>
-      <div class="post-tags-list">
-        <a href="https://fifteenbao.com/tags/sop" class="post-tag-pill no-underline">
-          <span class="post-tag-name">#SOP</span>
-          <span class="post-tag-count">1</span>
-        </a>
-        <a href="https://fifteenbao.com/tags/%E5%8C%85%E8%A3%85%E8%AE%BE%E8%AE%A1" class="post-tag-pill no-underline">
-          <span class="post-tag-name">#包装设计</span>
-          <span class="post-tag-count">1</span>
-        </a>
-        <a href="https://fifteenbao.com/tags/%E6%89%8D" class="post-tag-pill no-underline">
-          <span class="post-tag-name">#才</span>
-          <span class="post-tag-count">4</span>
-        </a>
-        
-      </div>
-    </footer>
-    
-
-    
-    
-    
-    
-    <nav class="post-navigation" aria-label="文章翻页">
-      
-      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20251210iphone&#43;%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/" rel="prev">
-        <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
-        <span class="post-nav-title">iPhone &#43; 飞书自动化记账</span>
-      </a>
-      
-      
-      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20251206posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/" rel="next">
-        <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
-        <span class="post-nav-title">PostHog 的公司手册</span>
-      </a>
-      
-    </nav>
-    
-    
-
-    
-    
-
-    
-    
-
-    
-
-<script type="module">
+</code></pre></section><footer class=post-tags-footer><div class=post-tags-header><span class=post-tags-label>标签</span>
+<a href=https://fifteenbao.com/tags/ class="post-tags-graph-link no-underline">图谱 →</a></div><div class=post-tags-list><a href=https://fifteenbao.com/tags/sop class="post-tag-pill no-underline"><span class=post-tag-name>#SOP</span>
+<span class=post-tag-count>1</span>
+</a><a href=https://fifteenbao.com/tags/%E5%8C%85%E8%A3%85%E8%AE%BE%E8%AE%A1 class="post-tag-pill no-underline"><span class=post-tag-name>#包装设计</span>
+<span class=post-tag-count>1</span>
+</a><a href=https://fifteenbao.com/tags/%E6%89%8D class="post-tag-pill no-underline"><span class=post-tag-name>#才</span>
+<span class=post-tag-count>4</span></a></div></footer><nav class=post-navigation aria-label=文章翻页><a class="post-nav-link post-nav-previous" href=https://fifteenbao.com/post/20251210iphone+%E9%A3%9E%E4%B9%A6%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%B0%E8%B4%A6/ rel=prev><span class=post-nav-direction><span class=post-nav-arrow aria-hidden=true>←</span> 上一篇</span>
+<span class=post-nav-title>iPhone + 飞书自动化记账</span>
+</a><a class="post-nav-link post-nav-next" href=https://fifteenbao.com/post/20251206posthog-%E7%9A%84%E5%85%AC%E5%8F%B8%E6%89%8B%E5%86%8C/ rel=next><span class=post-nav-direction>下一篇 <span class=post-nav-arrow aria-hidden=true>→</span></span>
+<span class=post-nav-title>PostHog 的公司手册</span></a></nav><script type=module>
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
-</script>
-<script>
-  Array.from(document.getElementsByClassName('language-mermaid')).forEach(
-    (el) => {
-      el.parentElement.outerHTML = `<div class="mermaid [&_svg]:block [&_svg]:m-auto">${el.innerHTML}</div>`;
-    },
-  );
-</script>
-
-
-    
-  </article>
-</div>
-
-<script>
-  (function() {
-    const tocDetails = document.querySelector('.toc-wrapper');
-    if (tocDetails) {
-      const desktopToc = window.matchMedia('(min-width: 1280px)');
-      const syncTocMode = event => { tocDetails.open = event.matches; };
-      syncTocMode(desktopToc);
-      desktopToc.addEventListener('change', syncTocMode);
-    }
-
-    
-    const headings = document.querySelectorAll('article h2, article h3, article h4');
-    const tocLinks = document.querySelectorAll('.toc-content a');
-    
-    if (headings.length === 0 || tocLinks.length === 0) return;
-
-    
-    const headingToLinkMap = new Map();
-    const linkToHeadingMap = new Map();
-    
-    headings.forEach(heading => {
-      const id = heading.id || heading.getAttribute('id');
-      if (id) {
-        tocLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          if (href && (href === '#' + id || href.endsWith('#' + id))) {
-            headingToLinkMap.set(heading, link);
-            linkToHeadingMap.set(link, heading);
-          }
-        });
-      }
-    });
-
-    
-    function highlightTocLink() {
-      
-      tocLinks.forEach(link => link.classList.remove('active'));
-
-      
-      const viewportTop = window.scrollY;
-      const viewportBottom = window.scrollY + window.innerHeight;
-      const offset = 120; 
-
-      let activeHeading = null;
-      let minDistance = Infinity;
-
-      
-      headings.forEach(heading => {
-        const rect = heading.getBoundingClientRect();
-        const headingTop = window.scrollY + rect.top;
-        const headingBottom = headingTop + rect.height;
-
-        
-        if (headingTop <= viewportTop + offset) {
-          const distance = Math.abs(headingTop - (viewportTop + offset));
-          if (distance < minDistance) {
-            minDistance = distance;
-            activeHeading = heading;
-          }
-        }
-      });
-
-      
-      if (!activeHeading) {
-        headings.forEach(heading => {
-          const rect = heading.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top < window.innerHeight) {
-            if (!activeHeading) {
-              activeHeading = heading;
-            }
-          }
-        });
-      }
-
-      
-      if (activeHeading && headingToLinkMap.has(activeHeading)) {
-        const link = headingToLinkMap.get(activeHeading);
-        link.classList.add('active');
-        
-        
-        const tocSidebar = document.querySelector('.toc-sidebar');
-        if (tocSidebar) {
-          const linkRect = link.getBoundingClientRect();
-          const sidebarRect = tocSidebar.getBoundingClientRect();
-          const sidebarScrollTop = tocSidebar.scrollTop;
-          
-          
-          if (linkRect.top < sidebarRect.top) {
-            tocSidebar.scrollTo({
-              top: sidebarScrollTop + (linkRect.top - sidebarRect.top) - 20,
-              behavior: 'smooth'
-            });
-          } else if (linkRect.bottom > sidebarRect.bottom) {
-            tocSidebar.scrollTo({
-              top: sidebarScrollTop + (linkRect.bottom - sidebarRect.bottom) + 20,
-              behavior: 'smooth'
-            });
-          }
-        }
-      } else if (window.scrollY < 100 && headings.length > 0) {
-        
-        const firstHeading = headings[0];
-        if (headingToLinkMap.has(firstHeading)) {
-          headingToLinkMap.get(firstHeading).classList.add('active');
-        }
-      }
-    }
-
-    
-    let ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          highlightTocLink();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    
-    window.addEventListener('scroll', onScroll, { passive: true });
-    
-    
-    highlightTocLink();
-
-    
-    tocLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          const targetId = href.substring(1);
-          const target = document.getElementById(targetId);
-          if (target) {
-            e.preventDefault();
-            
-            
-            const headerHeight = 100;
-            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-            
-            
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-            
-            
-            history.pushState(null, '', href);
-            
-            
-            setTimeout(() => {
-              highlightTocLink();
-            }, 100);
-          }
-        }
-      });
-    });
-
-    
-    window.addEventListener('hashchange', () => {
-      const hash = window.location.hash;
-      if (hash) {
-        const target = document.querySelector(hash);
-        if (target) {
-          const headerHeight = 100;
-          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-          setTimeout(() => highlightTocLink(), 100);
-        }
-      }
-    });
-  })();
-</script>
-
-
-    </main>
-    <footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60">
-      <div>©2025-2026 fifteenbao</div>
-    </footer>
-  </body>
-</html>
+</script><script>Array.from(document.getElementsByClassName("language-mermaid")).forEach(e=>{e.parentElement.outerHTML=`<div class="mermaid [&_svg]:block [&_svg]:m-auto">${e.innerHTML}</div>`})</script></article></div><script>(function(){const i=document.querySelector(".toc-wrapper");if(i){const e=window.matchMedia("(min-width: 1280px)"),t=e=>{i.open=e.matches};t(e),e.addEventListener("change",t)}const e=document.querySelectorAll("article h2, article h3, article h4"),n=document.querySelectorAll(".toc-content a");if(e.length===0||n.length===0)return;const t=new Map,a=new Map;e.forEach(e=>{const s=e.id||e.getAttribute("id");s&&n.forEach(n=>{const o=n.getAttribute("href");o&&(o==="#"+s||o.endsWith("#"+s))&&(t.set(e,n),a.set(n,e))})});function s(){n.forEach(e=>e.classList.remove("active"));const o=window.scrollY,r=window.scrollY+window.innerHeight,i=120;let s=null,a=1/0;if(e.forEach(e=>{const n=e.getBoundingClientRect(),t=window.scrollY+n.top,r=t+n.height;if(t<=o+i){const n=Math.abs(t-(o+i));n<a&&(a=n,s=e)}}),s||e.forEach(e=>{const t=e.getBoundingClientRect();t.top>=0&&t.top<window.innerHeight&&(s||(s=e))}),s&&t.has(s)){{const n=t.get(s);n.classList.add("active");const e=document.querySelector(".toc-sidebar");if(e){const t=n.getBoundingClientRect(),s=e.getBoundingClientRect(),o=e.scrollTop;t.top<s.top?e.scrollTo({top:o+(t.top-s.top)-20,behavior:"smooth"}):t.bottom>s.bottom&&e.scrollTo({top:o+(t.bottom-s.bottom)+20,behavior:"smooth"})}}}else if(window.scrollY<100&&e.length>0){const n=e[0];t.has(n)&&t.get(n).classList.add("active")}}let o=!1;function r(){o||(window.requestAnimationFrame(()=>{s(),o=!1}),o=!0)}window.addEventListener("scroll",r,{passive:!0}),s(),n.forEach(e=>{e.addEventListener("click",function(e){const t=this.getAttribute("href");if(t&&t.startsWith("#")){const o=t.substring(1),n=document.getElementById(o);if(n){e.preventDefault();const o=100,i=n.getBoundingClientRect().top+window.scrollY-o;window.scrollTo({top:i,behavior:"smooth"}),history.pushState(null,"",t),setTimeout(()=>{s()},100)}}})}),window.addEventListener("hashchange",()=>{const e=window.location.hash;if(e){const t=document.querySelector(e);if(t){const e=100,n=t.getBoundingClientRect().top+window.scrollY-e;window.scrollTo({top:n,behavior:"smooth"}),setTimeout(()=>s(),100)}}})})()</script></main><footer class="mx-auto flex h-[4.5rem] max-w-[--w] items-center justify-center px-8 type-xs uppercase tracking-wider opacity-60"><div>©2025-2026 fifteenbao</div></footer></body></html>

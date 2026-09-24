@@ -1,20 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>AI笔记 on fifteenbao</title>
-    <link>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</link>
-    <description>Recent content in AI笔记 on fifteenbao</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何获得人机协作中的主动控制感</title>
-      <link>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link>
-      <pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid>
-      <description>&lt;p&gt;昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：人和 AI 一起做事时，为什么有时候会觉得自己失去了主导权？&lt;/p&gt;&#xA;&lt;p&gt;这个问题可以放到三种工作方式里来看：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;一个人单独完成任务（Human alone）；&lt;/li&gt;&#xA;&lt;li&gt;两个人协作完成任务（Human–Human，HH）；&lt;/li&gt;&#xA;&lt;li&gt;人和 AI 协作完成任务（Human–AI）。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;下面先不急着下结论，而是分别看三组情况发生了什么。需要先说明的是：这里引用的不是同一项研究里完全相同的三组实验，而是把几项采用相似对照逻辑的研究放在同一个坐标系里理解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一一个人工作控制权最清楚&#34;&gt;一、一个人工作：控制权最清楚&lt;/h2&gt;&#xA;&lt;p&gt;在单人工作里，任务是自己接到的，步骤是自己决定的，结果也很容易归因到自己身上。&lt;/p&gt;&#xA;&lt;p&gt;它的优点是控制关系简单：“我想做什么→我做了什么→得到什么结果”。但代价也很明显：所有工作都由一个人承担，认知负担和操作压力会比较高。&lt;/p&gt;&#xA;&lt;p&gt;因此，单人并不一定做得最快，但通常最清楚自己在做什么。这种“我是行动的发起者”的感觉，就是主动控制感的基础。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二人和人工作效率与我们一起做&#34;&gt;二、人和人工作：效率与“我们一起做”&lt;/h2&gt;&#xA;&lt;p&gt;两个人协作后，任务不再是“我独自完成”，而变成“我们一起完成”。这会带来一种新的感觉：联合主体感（sense of joint agency）。它不是“我失去了控制”，而是“我和另一个人共同控制这件事”。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://onlinelibrary.wiley.com/doi/10.1002/ijop.13167&#34;&gt;一项关于协作头像机器人的实验&lt;/a&gt;比较了两个参与者共同操作机器人时的两种协作方式：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;两个人的动作融合在一起，共同影响机器人；&lt;/li&gt;&#xA;&lt;li&gt;两个人进行角色分工，一个人负责“到达”，另一个人负责“抓取”。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;对照组是每个人单独操作机器人。结果显示，在动作融合和角色分工两种协作中，参与者的联合主体感都高于单人操作。在动作融合条件下，两个人的额叶测试还观察到更高的前额脑区脑间同步。&lt;/p&gt;&#xA;&lt;p&gt;这说明，协作的重点不只是“多一双手”，而是让双方形成共同目标、互相预期对方的行动，并且知道自己在整个任务里负责哪一部分。&lt;/p&gt;&#xA;&lt;p&gt;但“人多”也不一定更高效。如果两个人做的是同一件事，反而会产生重复操作和沟通成本；只有当双方形成明确分工时，协作才更可能产生增益。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三人和-ai-工作表现可能变好也可能变差&#34;&gt;三、人和 AI 工作：表现可能变好，也可能变差&lt;/h2&gt;&#xA;&lt;p&gt;人-AI 协作最适合用相同的三组来比较：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;人单独做；&lt;/li&gt;&#xA;&lt;li&gt;AI 单独做；&lt;/li&gt;&#xA;&lt;li&gt;人和 AI 一起做。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://doi.org/10.1038/s41562-024-02024-1&#34;&gt;《Nature Human Behaviour》的一项元分析&lt;/a&gt;汇总了 106 项实验、共 370 个效应量，对比了人单独、AI 单独以及人-AI 组合的任务表现。结果并不是“人加 AI 一定更强”，而是要看任务类型。&lt;/p&gt;&#xA;&lt;h3 id=&#34;对比结果-1人-ai-组合平均不如最佳的单一方&#34;&gt;对比结果 1：人-AI 组合平均不如最佳的单一方&lt;/h3&gt;&#xA;&lt;p&gt;把人-AI 组合与“人单独”和“AI 单独”中表现更好的一方比较，人-AI 组合的平均表现显著更差（Hedges&amp;rsquo; g = -0.23）。&lt;/p&gt;&#xA;&lt;p&gt;也就是说，“人和 AI 一起做”并不等于自然发生协同。人可能会被 AI 的建议带偏，AI 也可能让人放弃原本更好的判断。&lt;/p&gt;&#xA;&lt;h3 id=&#34;对比结果-2决策任务容易受损内容创作更容易受益&#34;&gt;对比结果 2：决策任务容易受损，内容创作更容易受益&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;在需要判断和选择的任务里，人-AI 协作常常不如表现更好的那一方。&lt;/li&gt;&#xA;&lt;li&gt;在文本生成、创意构思等内容创作任务里，人-AI 协作更可能产生增益。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;一个可能的原因是：在决策任务中，人需要判断 AI 的意见是否可靠，这会增加一层额外的认知负担；而在内容创作中，AI 可以快速提供多个方案，人则负责筛选和修改。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI笔记 on fifteenbao</title><link>https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/</link><description>Recent content in AI笔记 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/series/ai%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>如何获得人机协作中的主动控制感</title><link>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link><pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid><description>&lt;p&gt;昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;当一个任务不再由自己独立完成，而是变成“和另一个人一起做”或者“和机器一起做”，我们对“这件事是我在做”的感觉会发生什么变化？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里讨论的并不是谁做得更快，而是一种更主观的体验：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我是否觉得自己的行动影响了结果？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;心理学里把这种体验叫作 &lt;strong&gt;主动控制感（sense of agency）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;比如你按下开关，灯亮了。&lt;/p&gt;
+&lt;p&gt;你知道：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;是我按下了开关，所以灯亮了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里有一条非常直接的关系：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我的意图 → 我的动作 → 结果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;但到了协作场景，事情就变复杂了。&lt;/p&gt;
+&lt;p&gt;因为除了“我”，还出现了另一个行动者。&lt;/p&gt;
+&lt;p&gt;外科医生和手术机器人、司机和自动驾驶系统、员工和 AI Agent，都面临类似的问题：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;谁发起了行动？谁影响了结果？我们是不是在共同完成这件事？&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="know我们为什么会觉得这是我做的"&gt;Know：我们为什么会觉得“这是我做的”？&lt;/h2&gt;
+&lt;p&gt;Caren 在分享里把主动控制感进一步分成了三个层次。&lt;/p&gt;
+&lt;h3 id="1-self-agency这是我做的"&gt;1. Self-agency：这是我做的&lt;/h3&gt;
+&lt;p&gt;第一层是 &lt;strong&gt;自我主动控制感（Self-agency）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;也就是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“这个动作是我发起的，这个结果是由我的行动带来的。”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个人独自完成任务时，这种关系通常非常简单。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我决定&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;↓&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我行动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;↓&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;结果发生&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以我们很容易把结果归因到自己身上。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="2-other-agency对方也在主动行动"&gt;2. Other-agency：对方也在主动行动&lt;/h3&gt;
+&lt;p&gt;进入协作之后，我们不仅判断自己的行动，还会判断另一个人的行动。&lt;/p&gt;
+&lt;p&gt;比如两个人一起搬桌子。&lt;/p&gt;
+&lt;p&gt;当对方突然抬高左边时，你不会只看到“一只手发生了运动”，而会理解：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“他准备把桌子抬起来。”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是说，我们会认为对方的动作背后存在某种意图。&lt;/p&gt;
+&lt;p&gt;这种对另一个行动者的意图归因，可以理解为 &lt;strong&gt;他人主动控制感（Other-agency）&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="3-we-agency这是我们一起做的"&gt;3. We-agency：这是我们一起做的&lt;/h3&gt;
+&lt;p&gt;还有第三种体验：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“这既不是单纯我做的，也不是单纯你做的，而是我们一起完成的。”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这就是 &lt;strong&gt;共同主动控制感（We-agency）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;它很有意思。&lt;/p&gt;
+&lt;p&gt;因为它说明：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多一个行动者，并不一定意味着自己的主动控制感被削弱。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有时候，“我在做”反而会转变成：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;“我们在做。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这也是理解人机协作很重要的一点。&lt;/p&gt;
+&lt;p&gt;真正的问题并不是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“机器参与之后，人是不是一定会失去控制？”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;“什么情况下，人会把另一个行动者真正纳入‘我们’？”&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="一个按键任务怎么研究主动控制感"&gt;一个按键任务，怎么研究“主动控制感”？&lt;/h2&gt;
+&lt;p&gt;Caren 分享的实验比较了三种条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个人独自完成任务（Solo）；&lt;/li&gt;
+&lt;li&gt;与人类伙伴共同完成任务（Human–Human，HH）；&lt;/li&gt;
+&lt;li&gt;与机器人伙伴共同完成任务（Human–Robot，HR）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;实验中，一方可以自由发起按键动作，另一方随后跟随，之后双方再交换角色。&lt;/p&gt;</description></item></channel></rss>

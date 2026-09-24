@@ -1,27 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>设计 on fifteenbao</title>
-    <link>https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/</link>
-    <description>Recent content in 设计 on fifteenbao</description>
-    <generator>Hugo</generator>
-    <language>zh-CN</language>
-    <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Fri, 12 Dec 2025 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CMF笔记</title>
-      <link>https://fifteenbao.com/post/20251212cmf/</link>
-      <pubDate>Fri, 12 Dec 2025 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20251212cmf/</guid>
-      <description>&lt;h2 id=&#34;cmf-基本要素&#34;&gt;CMF 基本要素&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg&#34; alt=&#34;CMFPSE理论模型示意图&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一级结构&#34;&gt;一级结构&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mf-材料与工艺&#34;&gt;MF 材料与工艺&lt;/h3&gt;&#xA;&lt;p&gt;M（material）F（finishing）&#xA;材料与工艺，代表学科：材料与工程，为工程创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;cp-色彩与图文&#34;&gt;CP 色彩与图文&lt;/h3&gt;&#xA;&lt;p&gt;C（Color）、P（pattern）&#xA;色彩与图文，代表学科：艺术与设计，为设计创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;se-感官与情感&#34;&gt;SE 感官与情感&lt;/h3&gt;&#xA;&lt;p&gt;S（sense）、E（emotion）&#xA;感官与情感，代表学科：生理与心理，为消费价值&lt;/p&gt;&#xA;&lt;h2 id=&#34;二级结构tdm&#34;&gt;二级结构（TDM）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ttrend-趋势&#34;&gt;T：trend 趋势&lt;/h3&gt;&#xA;&lt;h3 id=&#34;ddesign-设计&#34;&gt;D：design 设计&lt;/h3&gt;&#xA;&lt;h3 id=&#34;mmanufacture-量产&#34;&gt;M：Manufacture 量产&lt;/h3&gt;&#xA;&lt;h2 id=&#34;三级结构bs&#34;&gt;三级结构（BS）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;b商业价值&#34;&gt;B：商业价值&lt;/h3&gt;&#xA;&lt;h3 id=&#34;s社会价值&#34;&gt;S：社会价值&lt;/h3&gt;</description>
-    </item>
-    <item>
-      <title>浅浅了解下字体设计</title>
-      <link>https://fifteenbao.com/post/20230309%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
-      <pubDate>Thu, 09 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/post/20230309%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
-      <description>&lt;h2 id=&#34;字体分类&#34;&gt;字体分类&lt;/h2&gt;&#xA;&lt;h3 id=&#34;roman-typeface罗马正体衬线体&#34;&gt;Roman Typeface（罗马正体/衬线体）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Bracket Serif 括弧型衬线&lt;/li&gt;&#xA;&lt;li&gt;Hairline Serif 极细型衬线&lt;/li&gt;&#xA;&lt;li&gt;Slab Serif 粗衬线&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;sans-serifsanserif-typeface无衬线体&#34;&gt;Sans-serif（Sanserif） Typeface（无衬线体）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;script-typeface手写体&#34;&gt;Script Typeface（手写体）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;blackletter-typeface黑体哥特体破笔体&#34;&gt;Blackletter Typeface（黑体/哥特体/破笔体）&lt;/h3&gt;&#xA;&lt;h3 id=&#34;italic-typeface意大利斜体&#34;&gt;Italic Typeface（意大利斜体）&lt;/h3&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;经常被使用的几种字体&#34;&gt;经常被使用的几种字体&lt;/h2&gt;&#xA;&lt;h3 id=&#34;caslon---美国独立宣言&#34;&gt;Caslon - 美国独立宣言&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;犹豫不决时用的字体&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;garamond&#34;&gt;Garamond&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;没有个性的字体&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;courier&#34;&gt;Courier&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;最出名的粗衬线字体&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;times-roman&#34;&gt;Times Roman&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;泰晤士报字体&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;futura&#34;&gt;Futura&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;德国字体，现代主义中性风格； LV&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;helvetica&#34;&gt;Helvetica&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;最广泛使用 瑞士字体；FENDI&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;最近看了「从字体开始」这本书，The Type 编著。有意思的是感觉和印象派的发展如出一辙，字体设计的发展也体现了时代交织的另一面，例如香港颜楷的霓虹灯、字怀开口更大的英文无衬线字体的公路牌、中文识别度更高的宋体港铁、中文印刷术造成的喇叭口、&lt;strong&gt;Dyslexic&lt;/strong&gt; 给学习障碍人士设计的字体。&lt;/p&gt;&#xA;&lt;h2 id=&#34;拉丁字母的欧洲发展史&#34;&gt;拉丁字母的欧洲发展史&lt;/h2&gt;&#xA;&lt;h3 id=&#34;文艺复兴时期&#34;&gt;文艺复兴时期：&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://img1.xixik.net/cimg/084/xixik_ff9f3b5e08caf787.jpg&#34; alt=&#34;古腾堡圣经&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;看关于古腾堡的书籍，感觉欧洲的活字印刷更像独立成长起来的，很难说受到毕赣的影响，大学时期有抄写书籍的经验，最开始制作批量制作的赎罪铜镜，逐步演变成为铅字印刷。&lt;/li&gt;&#xA;&lt;li&gt;这里想说一下古滕堡大学时期要完成基础的博雅教育，取得“自由七艺大师头衔”的头衔才开始真正的学习，即神学、医学或法学。 自由七艺 &amp;ldquo;la liberalaj artoj&amp;quot;的原意是自由人应该具有的学识和应该学习的七门学科，是相对于专业的、职业的和技术性的课程而言的，即七种人文学科 &lt;strong&gt;文法、修辞、辩证&lt;/strong&gt; (合称三艺)、&lt;strong&gt;算术、几何、天文和音乐&lt;/strong&gt; (合称四艺)。 感叹一下中世纪的教育已经这么先进了吗？ By the way，在正式开始大学前有个带动物面具被凉水泼到面具软化的过程，在当时的学者眼中没有上过大学的人只是动物&amp;hellip;这该死的仪式感……&lt;/li&gt;&#xA;&lt;li&gt;1455年古腾堡用&lt;strong&gt;哥特体&lt;/strong&gt;风格的金属活字印刷了 &lt;strong&gt;42行圣经&lt;/strong&gt; （印刷一百八十份，前期有四十行和四十一行版本的调整版本），文艺复兴时期诗人皮特拉克（Petrarch）等人文主义者崇尚向古希腊罗马学习，歌颂人性的伟大。他认为哥特体难以辨别其本意也不是让人细读，而更多的展示宗教权威。圣经内页的红色首字母部分依旧采用人工书写的形式，书皮也是手工制作，所以每一本都是独一无二的，而且当时他觉得只有他们制作印刷书籍没有在书上印刷出版社。&lt;/li&gt;&#xA;&lt;li&gt;By the way，似乎纳粹也很钟情哥特体 &lt;strong&gt;Fraktur&lt;/strong&gt;，马丁·鲍曼1941年1月3日公文副本，禁止使用 Fraktur体来“代表元首” 。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;新古典主义&#34;&gt;新古典主义&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://qph.cf2.quoracdn.net/main-qimg-f1678db0d9696f634561c5c3615d798d&#34; alt=&#34;Didot字体的Vogue&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;是西方世界在19世纪对古代希腊罗马的艺术产生的复古和改造运动（介于洛可可和新艺术运动之间），路易十四执政期间，法国学者研究设计了&lt;strong&gt;国王罗马体&lt;/strong&gt;，为后世的现代衬线体做了铺垫，同样思路影响力&lt;/li&gt;&#xA;&lt;li&gt;Didot（被Vogue、时尚芭莎、ELLE、阿玛尼、巴宝莉使用）&lt;/li&gt;&#xA;&lt;li&gt;Bodoni（被华伦天奴使用）等字体的诞生&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;工业革命时期&#34;&gt;工业革命时期&lt;/h3&gt;&#xA;&lt;p&gt;工业化印刷出现了更多易读性跟高更夺人眼球的衬线体&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>设计 on fifteenbao</title><link>https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/</link><description>Recent content in 设计 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Fri, 12 Dec 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>CMF笔记</title><link>https://fifteenbao.com/post/20251212cmf/</link><pubDate>Fri, 12 Dec 2025 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20251212cmf/</guid><description>&lt;h2 id="cmf-基本要素"&gt;CMF 基本要素&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg" alt="CMFPSE理论模型示意图"&gt;&lt;/p&gt;
+&lt;h2 id="一级结构"&gt;一级结构&lt;/h2&gt;
+&lt;h3 id="mf-材料与工艺"&gt;MF 材料与工艺&lt;/h3&gt;
+&lt;p&gt;M（material）F（finishing）
+材料与工艺，代表学科：材料与工程，为工程创新价值&lt;/p&gt;
+&lt;h3 id="cp-色彩与图文"&gt;CP 色彩与图文&lt;/h3&gt;
+&lt;p&gt;C（Color）、P（pattern）
+色彩与图文，代表学科：艺术与设计，为设计创新价值&lt;/p&gt;
+&lt;h3 id="se-感官与情感"&gt;SE 感官与情感&lt;/h3&gt;
+&lt;p&gt;S（sense）、E（emotion）
+感官与情感，代表学科：生理与心理，为消费价值&lt;/p&gt;
+&lt;h2 id="二级结构tdm"&gt;二级结构（TDM）&lt;/h2&gt;
+&lt;h3 id="ttrend-趋势"&gt;T：trend 趋势&lt;/h3&gt;
+&lt;h3 id="ddesign-设计"&gt;D：design 设计&lt;/h3&gt;
+&lt;h3 id="mmanufacture-量产"&gt;M：Manufacture 量产&lt;/h3&gt;
+&lt;h2 id="三级结构bs"&gt;三级结构（BS）&lt;/h2&gt;
+&lt;h3 id="b商业价值"&gt;B：商业价值&lt;/h3&gt;
+&lt;h3 id="s社会价值"&gt;S：社会价值&lt;/h3&gt;</description></item><item><title>浅浅了解下字体设计</title><link>https://fifteenbao.com/post/20230309%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</link><pubDate>Thu, 09 Mar 2023 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20230309%E6%B5%85%E6%B5%85%E4%BA%86%E8%A7%A3%E4%B8%8B%E5%AD%97%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid><description>&lt;h2 id="字体分类"&gt;字体分类&lt;/h2&gt;
+&lt;h3 id="roman-typeface罗马正体衬线体"&gt;Roman Typeface（罗马正体/衬线体）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Bracket Serif 括弧型衬线&lt;/li&gt;
+&lt;li&gt;Hairline Serif 极细型衬线&lt;/li&gt;
+&lt;li&gt;Slab Serif 粗衬线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="sans-serifsanserif-typeface无衬线体"&gt;Sans-serif（Sanserif） Typeface（无衬线体）&lt;/h3&gt;
+&lt;h3 id="script-typeface手写体"&gt;Script Typeface（手写体）&lt;/h3&gt;
+&lt;h3 id="blackletter-typeface黑体哥特体破笔体"&gt;Blackletter Typeface（黑体/哥特体/破笔体）&lt;/h3&gt;
+&lt;h3 id="italic-typeface意大利斜体"&gt;Italic Typeface（意大利斜体）&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id="经常被使用的几种字体"&gt;经常被使用的几种字体&lt;/h2&gt;
+&lt;h3 id="caslon---美国独立宣言"&gt;Caslon - 美国独立宣言&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;犹豫不决时用的字体&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="garamond"&gt;Garamond&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;没有个性的字体&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="courier"&gt;Courier&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;最出名的粗衬线字体&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="times-roman"&gt;Times Roman&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;泰晤士报字体&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="futura"&gt;Futura&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;德国字体，现代主义中性风格； LV&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="helvetica"&gt;Helvetica&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;最广泛使用 瑞士字体；FENDI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;最近看了「从字体开始」这本书，The Type 编著。有意思的是感觉和印象派的发展如出一辙，字体设计的发展也体现了时代交织的另一面，例如香港颜楷的霓虹灯、字怀开口更大的英文无衬线字体的公路牌、中文识别度更高的宋体港铁、中文印刷术造成的喇叭口、&lt;strong&gt;Dyslexic&lt;/strong&gt; 给学习障碍人士设计的字体。&lt;/p&gt;
+&lt;h2 id="拉丁字母的欧洲发展史"&gt;拉丁字母的欧洲发展史&lt;/h2&gt;
+&lt;h3 id="文艺复兴时期"&gt;文艺复兴时期：&lt;/h3&gt;
+&lt;p&gt;&lt;img src="http://img1.xixik.net/cimg/084/xixik_ff9f3b5e08caf787.jpg" alt="古腾堡圣经"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看关于古腾堡的书籍，感觉欧洲的活字印刷更像独立成长起来的，很难说受到毕赣的影响，大学时期有抄写书籍的经验，最开始制作批量制作的赎罪铜镜，逐步演变成为铅字印刷。&lt;/li&gt;
+&lt;li&gt;这里想说一下古滕堡大学时期要完成基础的博雅教育，取得“自由七艺大师头衔”的头衔才开始真正的学习，即神学、医学或法学。 自由七艺 &amp;ldquo;la liberalaj artoj&amp;quot;的原意是自由人应该具有的学识和应该学习的七门学科，是相对于专业的、职业的和技术性的课程而言的，即七种人文学科 &lt;strong&gt;文法、修辞、辩证&lt;/strong&gt; (合称三艺)、&lt;strong&gt;算术、几何、天文和音乐&lt;/strong&gt; (合称四艺)。 感叹一下中世纪的教育已经这么先进了吗？ By the way，在正式开始大学前有个带动物面具被凉水泼到面具软化的过程，在当时的学者眼中没有上过大学的人只是动物&amp;hellip;这该死的仪式感……&lt;/li&gt;
+&lt;li&gt;1455年古腾堡用&lt;strong&gt;哥特体&lt;/strong&gt;风格的金属活字印刷了 &lt;strong&gt;42行圣经&lt;/strong&gt; （印刷一百八十份，前期有四十行和四十一行版本的调整版本），文艺复兴时期诗人皮特拉克（Petrarch）等人文主义者崇尚向古希腊罗马学习，歌颂人性的伟大。他认为哥特体难以辨别其本意也不是让人细读，而更多的展示宗教权威。圣经内页的红色首字母部分依旧采用人工书写的形式，书皮也是手工制作，所以每一本都是独一无二的，而且当时他觉得只有他们制作印刷书籍没有在书上印刷出版社。&lt;/li&gt;
+&lt;li&gt;By the way，似乎纳粹也很钟情哥特体 &lt;strong&gt;Fraktur&lt;/strong&gt;，马丁·鲍曼1941年1月3日公文副本，禁止使用 Fraktur体来“代表元首” 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="新古典主义"&gt;新古典主义&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://qph.cf2.quoracdn.net/main-qimg-f1678db0d9696f634561c5c3615d798d" alt="Didot字体的Vogue"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;是西方世界在19世纪对古代希腊罗马的艺术产生的复古和改造运动（介于洛可可和新艺术运动之间），路易十四执政期间，法国学者研究设计了&lt;strong&gt;国王罗马体&lt;/strong&gt;，为后世的现代衬线体做了铺垫，同样思路影响力&lt;/li&gt;
+&lt;li&gt;Didot（被Vogue、时尚芭莎、ELLE、阿玛尼、巴宝莉使用）&lt;/li&gt;
+&lt;li&gt;Bodoni（被华伦天奴使用）等字体的诞生&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="工业革命时期"&gt;工业革命时期&lt;/h3&gt;
+&lt;p&gt;工业化印刷出现了更多易读性跟高更夺人眼球的衬线体&lt;/p&gt;</description></item></channel></rss>
