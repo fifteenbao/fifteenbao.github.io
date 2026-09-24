@@ -1,86 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>人机交互 on fifteenbao</title><link>https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/</link><description>Recent content in 人机交互 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/index.xml" rel="self" type="application/rss+xml"/><item><title>如何获得人机协作中的主动控制感</title><link>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link><pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid><description>&lt;p&gt;昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;当一个任务不再由自己独立完成，而是变成“和另一个人一起做”或者“和机器一起做”，我们对“这件事是我在做”的感觉会发生什么变化？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这里讨论的并不是谁做得更快，而是一种更主观的体验：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我是否觉得自己的行动影响了结果？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;心理学里把这种体验叫作 &lt;strong&gt;主动控制感（sense of agency）&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;比如你按下开关，灯亮了。&lt;/p&gt;
-&lt;p&gt;你知道：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;是我按下了开关，所以灯亮了。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这里有一条非常直接的关系：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我的意图 → 我的动作 → 结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;但到了协作场景，事情就变复杂了。&lt;/p&gt;
-&lt;p&gt;因为除了“我”，还出现了另一个行动者。&lt;/p&gt;
-&lt;p&gt;外科医生和手术机器人、司机和自动驾驶系统、员工和 AI Agent，都面临类似的问题：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;谁发起了行动？谁影响了结果？我们是不是在共同完成这件事？&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id="know我们为什么会觉得这是我做的"&gt;Know：我们为什么会觉得“这是我做的”？&lt;/h2&gt;
-&lt;p&gt;Caren 在分享里把主动控制感进一步分成了三个层次。&lt;/p&gt;
-&lt;h3 id="1-self-agency这是我做的"&gt;1. Self-agency：这是我做的&lt;/h3&gt;
-&lt;p&gt;第一层是 &lt;strong&gt;自我主动控制感（Self-agency）&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;也就是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“这个动作是我发起的，这个结果是由我的行动带来的。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;一个人独自完成任务时，这种关系通常非常简单。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我决定&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;↓&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我行动&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;↓&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果发生&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;所以我们很容易把结果归因到自己身上。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id="2-other-agency对方也在主动行动"&gt;2. Other-agency：对方也在主动行动&lt;/h3&gt;
-&lt;p&gt;进入协作之后，我们不仅判断自己的行动，还会判断另一个人的行动。&lt;/p&gt;
-&lt;p&gt;比如两个人一起搬桌子。&lt;/p&gt;
-&lt;p&gt;当对方突然抬高左边时，你不会只看到“一只手发生了运动”，而会理解：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“他准备把桌子抬起来。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;也就是说，我们会认为对方的动作背后存在某种意图。&lt;/p&gt;
-&lt;p&gt;这种对另一个行动者的意图归因，可以理解为 &lt;strong&gt;他人主动控制感（Other-agency）&lt;/strong&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id="3-we-agency这是我们一起做的"&gt;3. We-agency：这是我们一起做的&lt;/h3&gt;
-&lt;p&gt;还有第三种体验：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“这既不是单纯我做的，也不是单纯你做的，而是我们一起完成的。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这就是 &lt;strong&gt;共同主动控制感（We-agency）&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;它很有意思。&lt;/p&gt;
-&lt;p&gt;因为它说明：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;多一个行动者，并不一定意味着自己的主动控制感被削弱。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;有时候，“我在做”反而会转变成：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“我们在做。”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这也是理解人机协作很重要的一点。&lt;/p&gt;
-&lt;p&gt;真正的问题并不是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“机器参与之后，人是不是一定会失去控制？”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;而是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“什么情况下，人会把另一个行动者真正纳入‘我们’？”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="一个按键任务怎么研究主动控制感"&gt;一个按键任务，怎么研究“主动控制感”？&lt;/h2&gt;
-&lt;p&gt;Caren 分享的实验比较了三种条件：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;一个人独自完成任务（Solo）；&lt;/li&gt;
-&lt;li&gt;与人类伙伴共同完成任务（Human–Human，HH）；&lt;/li&gt;
-&lt;li&gt;与机器人伙伴共同完成任务（Human–Robot，HR）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;实验中，一方可以自由发起按键动作，另一方随后跟随，之后双方再交换角色。&lt;/p&gt;</description></item><item><title>CMF笔记</title><link>https://fifteenbao.com/post/20251212cmf/</link><pubDate>Fri, 12 Dec 2025 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20251212cmf/</guid><description>&lt;h2 id="cmf-基本要素"&gt;CMF 基本要素&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg" alt="CMFPSE理论模型示意图"&gt;&lt;/p&gt;
-&lt;h2 id="一级结构"&gt;一级结构&lt;/h2&gt;
-&lt;h3 id="mf-材料与工艺"&gt;MF 材料与工艺&lt;/h3&gt;
-&lt;p&gt;M（material）F（finishing）
-材料与工艺，代表学科：材料与工程，为工程创新价值&lt;/p&gt;
-&lt;h3 id="cp-色彩与图文"&gt;CP 色彩与图文&lt;/h3&gt;
-&lt;p&gt;C（Color）、P（pattern）
-色彩与图文，代表学科：艺术与设计，为设计创新价值&lt;/p&gt;
-&lt;h3 id="se-感官与情感"&gt;SE 感官与情感&lt;/h3&gt;
-&lt;p&gt;S（sense）、E（emotion）
-感官与情感，代表学科：生理与心理，为消费价值&lt;/p&gt;
-&lt;h2 id="二级结构tdm"&gt;二级结构（TDM）&lt;/h2&gt;
-&lt;h3 id="ttrend-趋势"&gt;T：trend 趋势&lt;/h3&gt;
-&lt;h3 id="ddesign-设计"&gt;D：design 设计&lt;/h3&gt;
-&lt;h3 id="mmanufacture-量产"&gt;M：Manufacture 量产&lt;/h3&gt;
-&lt;h2 id="三级结构bs"&gt;三级结构（BS）&lt;/h2&gt;
-&lt;h3 id="b商业价值"&gt;B：商业价值&lt;/h3&gt;
-&lt;h3 id="s社会价值"&gt;S：社会价值&lt;/h3&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>人机交互 on fifteenbao</title>
+    <link>https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/</link>
+    <description>Recent content in 人机交互 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Sun, 14 Jun 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/tags/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何获得人机协作中的主动控制感</title>
+      <link>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</link>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260614%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97%E4%BA%BA%E6%9C%BA%E5%8D%8F%E4%BD%9C%E4%B8%AD%E7%9A%84%E4%B8%BB%E5%8A%A8%E6%8E%A7%E5%88%B6%E6%84%9F/</guid>
+      <description>&lt;p&gt;昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;当一个任务不再由自己独立完成，而是变成“和另一个人一起做”或者“和机器一起做”，我们对“这件事是我在做”的感觉会发生什么变化？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这里讨论的并不是谁做得更快，而是一种更主观的体验：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我是否觉得自己的行动影响了结果？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;心理学里把这种体验叫作 &lt;strong&gt;主动控制感（sense of agency）&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;比如你按下开关，灯亮了。&lt;/p&gt;&#xA;&lt;p&gt;你知道：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;是我按下了开关，所以灯亮了。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这里有一条非常直接的关系：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我的意图 → 我的动作 → 结果&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;但到了协作场景，事情就变复杂了。&lt;/p&gt;&#xA;&lt;p&gt;因为除了“我”，还出现了另一个行动者。&lt;/p&gt;&#xA;&lt;p&gt;外科医生和手术机器人、司机和自动驾驶系统、员工和 AI Agent，都面临类似的问题：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;谁发起了行动？谁影响了结果？我们是不是在共同完成这件事？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;know我们为什么会觉得这是我做的&#34;&gt;Know：我们为什么会觉得“这是我做的”？&lt;/h2&gt;&#xA;&lt;p&gt;Caren 在分享里把主动控制感进一步分成了三个层次。&lt;/p&gt;&#xA;&lt;h3 id=&#34;1-self-agency这是我做的&#34;&gt;1. Self-agency：这是我做的&lt;/h3&gt;&#xA;&lt;p&gt;第一层是 &lt;strong&gt;自我主动控制感（Self-agency）&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;也就是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;“这个动作是我发起的，这个结果是由我的行动带来的。”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;一个人独自完成任务时，这种关系通常非常简单。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我决定&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;↓&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;我行动&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;↓&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;结果发生&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;所以我们很容易把结果归因到自己身上。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-other-agency对方也在主动行动&#34;&gt;2. Other-agency：对方也在主动行动&lt;/h3&gt;&#xA;&lt;p&gt;进入协作之后，我们不仅判断自己的行动，还会判断另一个人的行动。&lt;/p&gt;&#xA;&lt;p&gt;比如两个人一起搬桌子。&lt;/p&gt;&#xA;&lt;p&gt;当对方突然抬高左边时，你不会只看到“一只手发生了运动”，而会理解：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;“他准备把桌子抬起来。”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;也就是说，我们会认为对方的动作背后存在某种意图。&lt;/p&gt;&#xA;&lt;p&gt;这种对另一个行动者的意图归因，可以理解为 &lt;strong&gt;他人主动控制感（Other-agency）&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;3-we-agency这是我们一起做的&#34;&gt;3. We-agency：这是我们一起做的&lt;/h3&gt;&#xA;&lt;p&gt;还有第三种体验：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;“这既不是单纯我做的，也不是单纯你做的，而是我们一起完成的。”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;这就是 &lt;strong&gt;共同主动控制感（We-agency）&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;它很有意思。&lt;/p&gt;&#xA;&lt;p&gt;因为它说明：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;多一个行动者，并不一定意味着自己的主动控制感被削弱。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;有时候，“我在做”反而会转变成：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;“我们在做。”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;这也是理解人机协作很重要的一点。&lt;/p&gt;&#xA;&lt;p&gt;真正的问题并不是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;“机器参与之后，人是不是一定会失去控制？”&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;而是：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;“什么情况下，人会把另一个行动者真正纳入‘我们’？”&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;一个按键任务怎么研究主动控制感&#34;&gt;一个按键任务，怎么研究“主动控制感”？&lt;/h2&gt;&#xA;&lt;p&gt;Caren 分享的实验比较了三种条件：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;一个人独自完成任务（Solo）；&lt;/li&gt;&#xA;&lt;li&gt;与人类伙伴共同完成任务（Human–Human，HH）；&lt;/li&gt;&#xA;&lt;li&gt;与机器人伙伴共同完成任务（Human–Robot，HR）。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;实验中，一方可以自由发起按键动作，另一方随后跟随，之后双方再交换角色。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CMF笔记</title>
+      <link>https://fifteenbao.com/post/20251212cmf/</link>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20251212cmf/</guid>
+      <description>&lt;h2 id=&#34;cmf-基本要素&#34;&gt;CMF 基本要素&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://pic4.zhimg.com/v2-602a1102c5c5dc77f4958d2e1f11bab9_1440w.jpg&#34; alt=&#34;CMFPSE理论模型示意图&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一级结构&#34;&gt;一级结构&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mf-材料与工艺&#34;&gt;MF 材料与工艺&lt;/h3&gt;&#xA;&lt;p&gt;M（material）F（finishing）&#xA;材料与工艺，代表学科：材料与工程，为工程创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;cp-色彩与图文&#34;&gt;CP 色彩与图文&lt;/h3&gt;&#xA;&lt;p&gt;C（Color）、P（pattern）&#xA;色彩与图文，代表学科：艺术与设计，为设计创新价值&lt;/p&gt;&#xA;&lt;h3 id=&#34;se-感官与情感&#34;&gt;SE 感官与情感&lt;/h3&gt;&#xA;&lt;p&gt;S（sense）、E（emotion）&#xA;感官与情感，代表学科：生理与心理，为消费价值&lt;/p&gt;&#xA;&lt;h2 id=&#34;二级结构tdm&#34;&gt;二级结构（TDM）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;ttrend-趋势&#34;&gt;T：trend 趋势&lt;/h3&gt;&#xA;&lt;h3 id=&#34;ddesign-设计&#34;&gt;D：design 设计&lt;/h3&gt;&#xA;&lt;h3 id=&#34;mmanufacture-量产&#34;&gt;M：Manufacture 量产&lt;/h3&gt;&#xA;&lt;h2 id=&#34;三级结构bs&#34;&gt;三级结构（BS）&lt;/h2&gt;&#xA;&lt;h3 id=&#34;b商业价值&#34;&gt;B：商业价值&lt;/h3&gt;&#xA;&lt;h3 id=&#34;s社会价值&#34;&gt;S：社会价值&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>

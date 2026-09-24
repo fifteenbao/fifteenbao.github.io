@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>德食体智才 on fifteenbao</title><link>https://fifteenbao.com/categories/</link><description>Recent content in 德食体智才 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>德</title><link>https://fifteenbao.com/categories/%E5%BE%B7/</link><pubDate>Sun, 14 Dec 2025 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/categories/%E5%BE%B7/</guid><description/></item><item><title>食</title><link>https://fifteenbao.com/categories/%E9%A3%9F/</link><pubDate>Fri, 14 Aug 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/categories/%E9%A3%9F/</guid><description/></item><item><title>体</title><link>https://fifteenbao.com/categories/%E4%BD%93/</link><pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/categories/%E4%BD%93/</guid><description/></item><item><title>智</title><link>https://fifteenbao.com/categories/%E6%99%BA/</link><pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/categories/%E6%99%BA/</guid><description/></item><item><title>才</title><link>https://fifteenbao.com/categories/%E6%89%8D/</link><pubDate>Tue, 09 Dec 2025 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/categories/%E6%89%8D/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>德食体智才 on fifteenbao</title>
+    <link>https://fifteenbao.com/categories/</link>
+    <description>Recent content in 德食体智才 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>德</title>
+      <link>https://fifteenbao.com/categories/%E5%BE%B7/</link>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/categories/%E5%BE%B7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>食</title>
+      <link>https://fifteenbao.com/categories/%E9%A3%9F/</link>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/categories/%E9%A3%9F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>体</title>
+      <link>https://fifteenbao.com/categories/%E4%BD%93/</link>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/categories/%E4%BD%93/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>智</title>
+      <link>https://fifteenbao.com/categories/%E6%99%BA/</link>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/categories/%E6%99%BA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>才</title>
+      <link>https://fifteenbao.com/categories/%E6%89%8D/</link>
+      <pubDate>Tue, 09 Dec 2025 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/categories/%E6%89%8D/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

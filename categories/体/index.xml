@@ -1,139 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>体 on fifteenbao</title><link>https://fifteenbao.com/categories/%E4%BD%93/</link><description>Recent content in 体 on fifteenbao</description><generator>Hugo</generator><language>zh-CN</language><copyright>©2025-2026 fifteenbao</copyright><lastBuildDate>Mon, 25 May 2026 00:00:00 +0800</lastBuildDate><atom:link href="https://fifteenbao.com/categories/%E4%BD%93/index.xml" rel="self" type="application/rss+xml"/><item><title>蛇口摆摊卖书记</title><link>https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/</link><pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/</guid><description>&lt;p&gt;周五和周六两天去了蛇口南海意库帮朋友摆摊，&lt;a href="https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A"&gt;&lt;strong&gt;“请慢用”阅读街&lt;/strong&gt;&lt;/a&gt;。最近越来越喜欢蛇口了，上一次在湾厦听了 Christiane M. Herr 关于&lt;a href="https://mp.weixin.qq.com/s/9h1e4oWwldXcxXsBd9ThOQ"&gt;&lt;strong&gt;亲自然设计&lt;/strong&gt;&lt;/a&gt; 和 吴文媛老师关于蛇口无车日的分享，感觉蛇口好宜居，我爱蛇口！&lt;/p&gt;
-&lt;p&gt;今年摆摊和以往比就显得自在了很多，可能和蛇口的活动一直比较松散有关系，也可能本身就有知名度的关系 不需要太多的宣传，只需要在买书的时候问一下“之前有了解过四开吗？”，“有看过哪些呢？”收集一些简单的用户画像。摊位的对面是一家男士理发店 barbershop，墙上挂满了热值，还有鱼和🐶，除了天气闷热潮湿以外，舒适程度拉满。
-最近看一些有的没的，关于AI带来的改变，我认为是削弱人对于工作的成就感，减少人在工作这件事情消耗的时间，人可能会有更多的时间去思考 “自己到底想去做什么？” ，与现实世界的交互会变得不可替代。就像周末的活动一样，线下的物理世界永远充满了迷人的魅力。&lt;/p&gt;
-&lt;p&gt;摆摊看《孢子城市》的时候，看到了一个主题 “一期一会”，意思是在茶会时领悟到这次相会无法重来，是一辈子只有一次的相会，故宾主须各尽其诚意。位置、天气、时间、不同的兴趣爱好、人物背景一起才构成了这次相遇的机会。妙不可言。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;2026-08-16更新
-今年的 unfold 又去摆摊儿玩了，翻出来看看之前写的。
-update 一些内容，吴老师上了第七期《社区》主题的杂志。
-至于一期一会，上次取伏见喝酒，听到了一个有意思的分享，类似于生死之事问佛，平常之事问神社。所以佛教主导的一期一会，更倾向于日本武士道的某种告别，来解决关于死后的问题。
-至于蛇口，这次去了海上世界艺术中心，太拉垮了……不伦不类的商业中心。想到刚刚开业的时候还过去做第一批志愿者……现在这布展哪哪都不专业……&lt;/p&gt;</description></item><item><title>IPD agents实践-智能拳击硬件项目</title><link>https://fifteenbao.com/post/20260423ipd_agens/</link><pubDate>Thu, 23 Apr 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260423ipd_agens/</guid><description>&lt;p&gt;这篇文章是 &lt;a href="https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/"&gt;我的多Agent协作系统&lt;/a&gt; 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。&lt;/p&gt;
-&lt;p&gt;完整的 Agent 体系已开源：&lt;a href="https://github.com/fifteenbao/IPD_agents"&gt;&lt;strong&gt;fifteenbao/IPD_agents&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="智能硬件-ipd-多-agent-协作体系"&gt;智能硬件 IPD 多 Agent 协作体系&lt;/h2&gt;
-&lt;p&gt;把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。&lt;/p&gt;
-&lt;h3 id="这是什么"&gt;这是什么&lt;/h3&gt;
-&lt;p&gt;一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。&lt;/p&gt;
-&lt;p&gt;它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。&lt;/p&gt;
-&lt;h2 id="时代命题为什么要做这件事"&gt;时代命题（为什么要做这件事）&lt;/h2&gt;
-&lt;p&gt;AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。&lt;/p&gt;
-&lt;p&gt;在这种时代结构下，智能硬件的角色是&amp;quot;体验基础设施&amp;quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。&lt;/p&gt;
-&lt;p&gt;更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&amp;quot;还剩下什么&amp;quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。&lt;/p&gt;
-&lt;p&gt;因此，本体系设计决策的锚点并非&amp;quot;把更多工作自动化&amp;quot;，而是&amp;quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&amp;quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。&lt;/p&gt;
-&lt;p&gt;详见 &lt;a href="https://fifteenbao.com/SOUL"&gt;SOUL&lt;/a&gt; 的&amp;quot;时代命题&amp;quot;章节。&lt;/p&gt;
-&lt;h2 id="三层架构"&gt;三层架构&lt;/h2&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; ┌─────────────────────────────────────────┐
- │ Agent 层（角色身份）— 谁来做 │
- │ Board / CEO / COO / CTO / CMO │
- │ CFO / CPO / PM │
- └────────────────┬────────────────────────┘
- │ 引用
- ▼
- ┌─────────────────────────────────────────┐
- │ Skill 层（可复用方法论）— 怎么做 │
- │ pre-mortem / OST / KANO / Charter… │
- └────────────────┬────────────────────────┘
- │ 编排
- ▼
- ┌─────────────────────────────────────────┐
- │ Command 层（端到端工作流）— 何时跑 │
- │ /cdcp-review、/pdcp-review、… │
- └─────────────────────────────────────────┘
-&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;层&lt;/th&gt;
- &lt;th&gt;触发方式&lt;/th&gt;
- &lt;th&gt;文件位置&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;Agent&lt;/td&gt;
- &lt;td&gt;任务匹配自动调用&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;/agents/&lt;/code&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Skill&lt;/td&gt;
- &lt;td&gt;Agent 内部引用&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;/skills/&lt;/code&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Command&lt;/td&gt;
- &lt;td&gt;用户显式&lt;/td&gt;
- &lt;td&gt;&lt;code&gt;/commands/&lt;/code&gt;&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;设计原则：&lt;strong&gt;角色 ≠ 方法论&lt;/strong&gt;。CMO 是身份，KANO 是方法。把 KANO 焊在 &lt;code&gt;cmo.md&lt;/code&gt; 里，会让其他 agent 无法复用。&lt;/p&gt;</description></item><item><title>湾厦两日游</title><link>https://fifteenbao.com/post/20260329%E6%B9%BE%E5%8E%A6%E4%B8%A4%E6%97%A5%E6%B8%B8/</link><pubDate>Sun, 29 Mar 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260329%E6%B9%BE%E5%8E%A6%E4%B8%A4%E6%97%A5%E6%B8%B8/</guid><description>&lt;p&gt;周日在湾厦参加了一个 《繁华与利剑》 策展人 陈嘉雯的讲座，说来搞笑，今天的展览，日历上记错了时间，昨天就来了……误打误撞听到了蛇口无车日 策展人吴文媛老师的演讲…… 有点意外之喜了。
-来晚坐在最后面看工作人员的PPT一百多页……精美程度和质量堪称一流。整个讲解也超级精彩，一些历史背景、宗教文化、展陈思路之类的，活人感满满，也是想要写一下记录的原因。&lt;/p&gt;
-&lt;h2 id="转译不是翻译"&gt;“转译不是翻译”&lt;/h2&gt;
-&lt;p&gt;这是后面圆桌讨论策展人的一个观点，做展览不是单纯的信雅达的“翻译”，而是有自己的理解思考，用自己文化视角的部分去做诠释理解消化。
-让我想起了十几年前陕历博的导游说过，陕历博是唯一一个按照年代划分展厅的展馆，一种宏大历史叙事的感觉扑面而来。以至于过了这么多年，那个蹭别人导游团偷听到描述还记忆犹新。又想起了昨天吴文媛老师说到多元并不一定是美（虽然和这个没什么关系……），多视角的人物对于历史的描述，也算是历史迷人的一部分吧，不同的视角但都产生了美。&lt;/p&gt;
-&lt;h2 id="博物馆的策展人制度"&gt;博物馆的策展人制度&lt;/h2&gt;
-&lt;p&gt;也是圆桌讨论讲到的策展人制度。意外之喜，我爱深圳！&lt;/p&gt;
-&lt;p&gt;2023年，甘肃省文物局印发了《甘肃省各级博物馆策展人制度实施办法（试行）》，对策展人的选任、团队组建、职责、展览实施和结项评估等环节都做出来明确规定。甘肃出台的政策……也是蛮意外的。发现《深圳市南山区非国有博物馆扶持办法》会按照装修布展费用50%补贴，最高100万，南头古城补贴70%……还有按照参观人数核算的运行补贴，不愧是大南山。
-又在小红书上搜了一下深圳有哪些策展人策展的活动……许知远、袁弘居然都在上面。
-多元深圳！&lt;/p&gt;
-&lt;h2 id="历史笔记"&gt;历史笔记&lt;/h2&gt;
-&lt;p&gt;展览还没去看，据说延期了，勤假还有0.9天，在考虑要不要请半天假去看展览。
-先简单记一下&lt;/p&gt;
-&lt;h3 id="最贵的"&gt;最贵的&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;贾汉基尔 （修泰姬陵那位的爸爸）的 ”命运之星“金币&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id="细密画的-火气水土-四大自然基本要素"&gt;细密画的 火、气、水、土 四大自然基本要素&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;火 - 气 - 水 - 地 = 天 - 风 - 水 - 地&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;火 = 神圣光明
-气 = 天界精神
-水 = 生命慈悲
-土 = 物质人间&lt;/p&gt;
-&lt;p&gt;在画上的表现一般是
-最上层：火/天（光明神圣）
-第二层“气/风/天空（精神界）
-第三层：水（生命、净化）
-最下层：土/地（物质、承载）&lt;/p&gt;
-&lt;h3 id="昆丹工艺"&gt;昆丹工艺&lt;/h3&gt;
-&lt;p&gt;一种珠宝加工工艺，类似于我们的景泰蓝掐丝珐琅之类的地位吧。
-必看清单：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;摩羯手镯&lt;/li&gt;
-&lt;li&gt;镶宝石盾牌&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;豆包帮我总结的：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;找太阳纹/花卉纹中心&lt;/li&gt;
-&lt;li&gt;观察宝石边缘是否有珐琅彩绘&lt;/li&gt;
-&lt;li&gt;背面/侧面 是否有珐琅彩绘&lt;/li&gt;
-&lt;li&gt;区分盾钉（四角）和盾心宝石&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;连着两天下午在蛇口闲逛，新认识了好多有意思的人，以及好喜欢蛇口的氛围。&lt;/p&gt;</description></item><item><title>大沙河公园游记</title><link>https://fifteenbao.com/post/20260316%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate><guid>https://fifteenbao.com/post/20260316%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/</guid><description>&lt;p&gt;大沙河公园，得名于大沙河。是曾经深圳的建筑垃圾填埋场，2006年改造施工变成了今天的公园。
-在深圳最喜欢的活动：逛商场、逛公园。天热逛商场，天不热逛公园。周末从 jerry老师 那里学习后，以后有的观察咯。有机会要去逛逛 “鲲鹏径一号桥”，号称全国首个兼顾人行步道和独立生态廊道的廊桥，也是国内首座复合型生态廊桥。&lt;/p&gt;
-&lt;h2 id="榕树兰花蕨类"&gt;榕树+兰花/蕨类&lt;/h2&gt;
-&lt;p&gt;雨林中的兰花、蕨类等植物为了争夺阳光水份，附生或者寄生在树木上，形成树上长树，树上长花的植物共生现象，由此形成了异彩纷呈的空中花园。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;绞杀植物&lt;/strong&gt; 主要是榕树，当榕树上的气生根紧贴在寄主树干的四周向下生长时，网状的缠绕根系将其寄主死死抱住，形成绞杀，最后将寄主树绞杀至死，寄主树被绞杀死亡后分解产生大量养分，供榕树生长。
-&lt;strong&gt;大板根&lt;/strong&gt; 是雨林植被特有的现象，许多高大的乔木如青皮、野生荔枝、红绸都具有板根现象，板根象一个支架支撑着高大的树体，有利于吸收养分和抗御热带风暴。&lt;/p&gt;
-&lt;h2 id="对生叶片-桂花"&gt;对生叶片 桂花&lt;/h2&gt;
-&lt;p&gt;叶序主要分为互生、对生和轮生三种基本类型。
-对生叶序指在茎枝的每个节上相对地着生两枚叶片，其与互生叶序的核心区别在于，对生是在同一个节部上长出两片叶子，而互生是一个节部只长一片叶子。轮生叶序则是在一个节上着生三枚或三枚以上的叶片。&lt;/p&gt;
-&lt;h2 id="叶子花-三角梅簕杜鹃"&gt;叶子花 三角梅/簕杜鹃&lt;/h2&gt;
-&lt;p&gt;深圳市花，彩色的部分是叶子，中间小小的才是花，据说是为了吸引授粉。
-&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.58hxfssrns.webp" alt="三角梅/簕杜鹃"&gt;&lt;/p&gt;
-&lt;h2 id="超好闻的-黄金香柳"&gt;超好闻的 黄金香柳&lt;/h2&gt;
-&lt;p&gt;很好味的香味！
-&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.7p45upzehw.webp" alt="黄金香柳"&gt;&lt;/p&gt;
-&lt;h2 id="一些豆角的亲戚"&gt;一些豆角的亲戚&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/3648d944ea921618f768740212ea0147.8adth0xcbo.webp" alt=""&gt;
-&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/3a630c400eb1529cda1003054727d7c6.3624rqxf32.webp" alt=""&gt;
-&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/a8b83a6ab8d6930739a3944ac6c4cad4.sziajjlwa.webp" alt=""&gt;&lt;/p&gt;
-&lt;h2 id="黄花风铃木"&gt;黄花风铃木&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.64eev91rx3.webp" alt="黄花风铃木"&gt;&lt;/p&gt;
-&lt;h2 id="一整片是一个叶子的羽状复叶"&gt;一整片是一个叶子的羽状复叶&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.41ym778sx4.webp" alt="羽状复叶"&gt;&lt;/p&gt;
-&lt;h2 id="制作好的标本"&gt;制作好的标本&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/IMG_9726.1zitj5e33g.JPG" alt="植物标本"&gt;
-&lt;img src="https://github.com/fifteenbao/picx-images-hosting/raw/master/9e955b69004734b01fd6d8f2b1304940.b9glypmu5.webp" alt="植物标本"&gt;&lt;/p&gt;
-&lt;p&gt;蛮有趣的，上周尝试用 claude code 写了一个植物养护的app，今天算了下帐，这个月已经给claude贡献七十多刀了…… 心痛。
-上午搞了一个域名，准备备个案…… 据说要一个月……
-这次逛公园还给了满多灵感的～&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>体 on fifteenbao</title>
+    <link>https://fifteenbao.com/categories/%E4%BD%93/</link>
+    <description>Recent content in 体 on fifteenbao</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>©2025-2026 fifteenbao</copyright>
+    <lastBuildDate>Mon, 25 May 2026 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://fifteenbao.com/categories/%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>蛇口摆摊卖书记</title>
+      <link>https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/</link>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260525%E8%9B%87%E5%8F%A3%E6%91%86%E6%91%8A%E5%8D%96%E4%B9%A6%E8%AE%B0/</guid>
+      <description>&lt;p&gt;周五和周六两天去了蛇口南海意库帮朋友摆摊，&lt;a href=&#34;https://mp.weixin.qq.com/s/772RmbY73fpx0lNWk1-r-A&#34;&gt;&lt;strong&gt;“请慢用”阅读街&lt;/strong&gt;&lt;/a&gt;。最近越来越喜欢蛇口了，上一次在湾厦听了 Christiane M. Herr 关于&lt;a href=&#34;https://mp.weixin.qq.com/s/9h1e4oWwldXcxXsBd9ThOQ&#34;&gt;&lt;strong&gt;亲自然设计&lt;/strong&gt;&lt;/a&gt; 和 吴文媛老师关于蛇口无车日的分享，感觉蛇口好宜居，我爱蛇口！&lt;/p&gt;&#xA;&lt;p&gt;今年摆摊和以往比就显得自在了很多，可能和蛇口的活动一直比较松散有关系，也可能本身就有知名度的关系 不需要太多的宣传，只需要在买书的时候问一下“之前有了解过四开吗？”，“有看过哪些呢？”收集一些简单的用户画像。摊位的对面是一家男士理发店 barbershop，墙上挂满了热值，还有鱼和🐶，除了天气闷热潮湿以外，舒适程度拉满。&#xA;最近看一些有的没的，关于AI带来的改变，我认为是削弱人对于工作的成就感，减少人在工作这件事情消耗的时间，人可能会有更多的时间去思考 “自己到底想去做什么？” ，与现实世界的交互会变得不可替代。就像周末的活动一样，线下的物理世界永远充满了迷人的魅力。&lt;/p&gt;&#xA;&lt;p&gt;摆摊看《孢子城市》的时候，看到了一个主题 “一期一会”，意思是在茶会时领悟到这次相会无法重来，是一辈子只有一次的相会，故宾主须各尽其诚意。位置、天气、时间、不同的兴趣爱好、人物背景一起才构成了这次相遇的机会。妙不可言。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;2026-08-16更新&#xA;今年的 unfold 又去摆摊儿玩了，翻出来看看之前写的。&#xA;update 一些内容，吴老师上了第七期《社区》主题的杂志。&#xA;至于一期一会，上次取伏见喝酒，听到了一个有意思的分享，类似于生死之事问佛，平常之事问神社。所以佛教主导的一期一会，更倾向于日本武士道的某种告别，来解决关于死后的问题。&#xA;至于蛇口，这次去了海上世界艺术中心，太拉垮了……不伦不类的商业中心。想到刚刚开业的时候还过去做第一批志愿者……现在这布展哪哪都不专业……&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IPD agents实践-智能拳击硬件项目</title>
+      <link>https://fifteenbao.com/post/20260423ipd_agens/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260423ipd_agens/</guid>
+      <description>&lt;p&gt;这篇文章是 &lt;a href=&#34;https://fifteenbao.com/post/%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/&#34;&gt;我的多Agent协作系统&lt;/a&gt; 中 IPD 体系的具体实践——用多 Agent 跑通了一款智能拳击硬件的 CDCP（概念决策评审）。&lt;/p&gt;&#xA;&lt;p&gt;完整的 Agent 体系已开源：&lt;a href=&#34;https://github.com/fifteenbao/IPD_agents&#34;&gt;&lt;strong&gt;fifteenbao/IPD_agents&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;智能硬件-ipd-多-agent-协作体系&#34;&gt;智能硬件 IPD 多 Agent 协作体系&lt;/h2&gt;&#xA;&lt;p&gt;把华为 IPD（集成产品开发）流程与现代企业治理结构融合，在 AI 时代背景下，专为智能硬件产品从立项到量产的全周期协作设计。&lt;/p&gt;&#xA;&lt;h3 id=&#34;这是什么&#34;&gt;这是什么&lt;/h3&gt;&#xA;&lt;p&gt;一个跑在 Claude Code 上的多 agent 体系。当你想做一款智能硬件产品时，它会扮演 Board / CEO / COO / CTO / CMO / CFO / CPO / PM 八个角色，按照 IPD 决策门（CDCP → PDCP → TR1-6 → GA）协作推进，并在每个关键节点产出可被投资委员会审阅的标准化文件。&lt;/p&gt;&#xA;&lt;p&gt;它不是一个「AI 助手」，而是一支有职责分工、有制衡机制、有工作流的 AI 团队。&lt;/p&gt;&#xA;&lt;h2 id=&#34;时代命题为什么要做这件事&#34;&gt;时代命题（为什么要做这件事）&lt;/h2&gt;&#xA;&lt;p&gt;AI 正系统性压缩白领工作时间，人均可支配时间结构性增加且不可逆。这部分增量时间不会回流到屏幕里——数字娱乐已接近饱和——而更可能流向线下与身体参与的活动：跑步、爬山、园艺、养宠、手工艺，以及任何以慢节奏回馈与可量化进步为核心的体验。&lt;/p&gt;&#xA;&lt;p&gt;在这种时代结构下，智能硬件的角色是&amp;quot;体验基础设施&amp;quot;：在现实活动与长期习惯之间建立可被量化、可被理解的桥梁。它通过可靠的传感、直观的反馈、与设计良好的积累路径来降低进入门槛，让用户看见成长的痕迹，从而把零散的时间转化为有意义的练习与社交资本。&lt;/p&gt;&#xA;&lt;p&gt;更深一层的命题是：如果有一天 AI 可以替代大量认知劳动与工具性任务，人类&amp;quot;还剩下什么&amp;quot;？我们的回答不是回避技术进步，而是识别并放大那些机器难以替代的方面：身体性（感受、技艺、汗水）、关系性（照料、共同体、教学）、叙事性（意义的构建与传承）、审美与判断（价值选择与风格）。这些是慢、模糊、有层次感的体验，正好与线下活动与可穿戴/环境硬件的价值相契合。&lt;/p&gt;&#xA;&lt;p&gt;因此，本体系设计决策的锚点并非&amp;quot;把更多工作自动化&amp;quot;，而是&amp;quot;把人从机械重复中解放出来，让人有更多真实体验可供塑造与度量&amp;quot;。我们的 agent 在每一步分析与建议时，都以这一张力为中心：如何用技术去放大人的能动性、维护体验的丰饶、并在商业上寻找可持续的积累路径。&lt;/p&gt;&#xA;&lt;p&gt;详见 &lt;a href=&#34;https://fifteenbao.com/SOUL&#34;&gt;SOUL&lt;/a&gt; 的&amp;quot;时代命题&amp;quot;章节。&lt;/p&gt;&#xA;&lt;h2 id=&#34;三层架构&#34;&gt;三层架构&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    ┌─────────────────────────────────────────┐&#xA;    │ Agent 层（角色身份）— 谁来做              │&#xA;    │   Board / CEO / COO / CTO / CMO         │&#xA;    │   CFO / CPO / PM                        │&#xA;    └────────────────┬────────────────────────┘&#xA;                     │ 引用&#xA;                     ▼&#xA;    ┌─────────────────────────────────────────┐&#xA;    │ Skill 层（可复用方法论）— 怎么做           │&#xA;    │   pre-mortem / OST / KANO / Charter…    │&#xA;    └────────────────┬────────────────────────┘&#xA;                     │ 编排&#xA;                     ▼&#xA;    ┌─────────────────────────────────────────┐&#xA;    │ Command 层（端到端工作流）— 何时跑       │&#xA;    │   /cdcp-review、/pdcp-review、…         │&#xA;    └─────────────────────────────────────────┘&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;层&lt;/th&gt;&#xA;          &lt;th&gt;触发方式&lt;/th&gt;&#xA;          &lt;th&gt;文件位置&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Agent&lt;/td&gt;&#xA;          &lt;td&gt;任务匹配自动调用&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/agents/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Skill&lt;/td&gt;&#xA;          &lt;td&gt;Agent 内部引用&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/skills/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Command&lt;/td&gt;&#xA;          &lt;td&gt;用户显式&lt;/td&gt;&#xA;          &lt;td&gt;&lt;code&gt;/commands/&lt;/code&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;设计原则：&lt;strong&gt;角色 ≠ 方法论&lt;/strong&gt;。CMO 是身份，KANO 是方法。把 KANO 焊在 &lt;code&gt;cmo.md&lt;/code&gt; 里，会让其他 agent 无法复用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>湾厦两日游</title>
+      <link>https://fifteenbao.com/post/20260329%E6%B9%BE%E5%8E%A6%E4%B8%A4%E6%97%A5%E6%B8%B8/</link>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260329%E6%B9%BE%E5%8E%A6%E4%B8%A4%E6%97%A5%E6%B8%B8/</guid>
+      <description>&lt;p&gt;周日在湾厦参加了一个 《繁华与利剑》 策展人 陈嘉雯的讲座，说来搞笑，今天的展览，日历上记错了时间，昨天就来了……误打误撞听到了蛇口无车日 策展人吴文媛老师的演讲…… 有点意外之喜了。&#xA;来晚坐在最后面看工作人员的PPT一百多页……精美程度和质量堪称一流。整个讲解也超级精彩，一些历史背景、宗教文化、展陈思路之类的，活人感满满，也是想要写一下记录的原因。&lt;/p&gt;&#xA;&lt;h2 id=&#34;转译不是翻译&#34;&gt;“转译不是翻译”&lt;/h2&gt;&#xA;&lt;p&gt;这是后面圆桌讨论策展人的一个观点，做展览不是单纯的信雅达的“翻译”，而是有自己的理解思考，用自己文化视角的部分去做诠释理解消化。&#xA;让我想起了十几年前陕历博的导游说过，陕历博是唯一一个按照年代划分展厅的展馆，一种宏大历史叙事的感觉扑面而来。以至于过了这么多年，那个蹭别人导游团偷听到描述还记忆犹新。又想起了昨天吴文媛老师说到多元并不一定是美（虽然和这个没什么关系……），多视角的人物对于历史的描述，也算是历史迷人的一部分吧，不同的视角但都产生了美。&lt;/p&gt;&#xA;&lt;h2 id=&#34;博物馆的策展人制度&#34;&gt;博物馆的策展人制度&lt;/h2&gt;&#xA;&lt;p&gt;也是圆桌讨论讲到的策展人制度。意外之喜，我爱深圳！&lt;/p&gt;&#xA;&lt;p&gt;2023年，甘肃省文物局印发了《甘肃省各级博物馆策展人制度实施办法（试行）》，对策展人的选任、团队组建、职责、展览实施和结项评估等环节都做出来明确规定。甘肃出台的政策……也是蛮意外的。发现《深圳市南山区非国有博物馆扶持办法》会按照装修布展费用50%补贴，最高100万，南头古城补贴70%……还有按照参观人数核算的运行补贴，不愧是大南山。&#xA;又在小红书上搜了一下深圳有哪些策展人策展的活动……许知远、袁弘居然都在上面。&#xA;多元深圳！&lt;/p&gt;&#xA;&lt;h2 id=&#34;历史笔记&#34;&gt;历史笔记&lt;/h2&gt;&#xA;&lt;p&gt;展览还没去看，据说延期了，勤假还有0.9天，在考虑要不要请半天假去看展览。&#xA;先简单记一下&lt;/p&gt;&#xA;&lt;h3 id=&#34;最贵的&#34;&gt;最贵的&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;贾汉基尔 （修泰姬陵那位的爸爸）的 ”命运之星“金币&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;细密画的-火气水土-四大自然基本要素&#34;&gt;细密画的 火、气、水、土 四大自然基本要素&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;火 - 气 - 水 - 地 = 天 - 风 - 水 - 地&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;火 = 神圣光明&#xA;气 = 天界精神&#xA;水 = 生命慈悲&#xA;土 = 物质人间&lt;/p&gt;&#xA;&lt;p&gt;在画上的表现一般是&#xA;最上层：火/天（光明神圣）&#xA;第二层“气/风/天空（精神界）&#xA;第三层：水（生命、净化）&#xA;最下层：土/地（物质、承载）&lt;/p&gt;&#xA;&lt;h3 id=&#34;昆丹工艺&#34;&gt;昆丹工艺&lt;/h3&gt;&#xA;&lt;p&gt;一种珠宝加工工艺，类似于我们的景泰蓝掐丝珐琅之类的地位吧。&#xA;必看清单：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;摩羯手镯&lt;/li&gt;&#xA;&lt;li&gt;镶宝石盾牌&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;豆包帮我总结的：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;找太阳纹/花卉纹中心&lt;/li&gt;&#xA;&lt;li&gt;观察宝石边缘是否有珐琅彩绘&lt;/li&gt;&#xA;&lt;li&gt;背面/侧面 是否有珐琅彩绘&lt;/li&gt;&#xA;&lt;li&gt;区分盾钉（四角）和盾心宝石&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;连着两天下午在蛇口闲逛，新认识了好多有意思的人，以及好喜欢蛇口的氛围。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大沙河公园游记</title>
+      <link>https://fifteenbao.com/post/20260316%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/post/20260316%E5%A4%A7%E6%B2%99%E6%B2%B3%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/</guid>
+      <description>&lt;p&gt;大沙河公园，得名于大沙河。是曾经深圳的建筑垃圾填埋场，2006年改造施工变成了今天的公园。&#xA;在深圳最喜欢的活动：逛商场、逛公园。天热逛商场，天不热逛公园。周末从 jerry老师 那里学习后，以后有的观察咯。有机会要去逛逛 “鲲鹏径一号桥”，号称全国首个兼顾人行步道和独立生态廊道的廊桥，也是国内首座复合型生态廊桥。&lt;/p&gt;&#xA;&lt;h2 id=&#34;榕树兰花蕨类&#34;&gt;榕树+兰花/蕨类&lt;/h2&gt;&#xA;&lt;p&gt;雨林中的兰花、蕨类等植物为了争夺阳光水份，附生或者寄生在树木上，形成树上长树，树上长花的植物共生现象，由此形成了异彩纷呈的空中花园。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;绞杀植物&lt;/strong&gt; 主要是榕树，当榕树上的气生根紧贴在寄主树干的四周向下生长时，网状的缠绕根系将其寄主死死抱住，形成绞杀，最后将寄主树绞杀至死，寄主树被绞杀死亡后分解产生大量养分，供榕树生长。&#xA;&lt;strong&gt;大板根&lt;/strong&gt; 是雨林植被特有的现象，许多高大的乔木如青皮、野生荔枝、红绸都具有板根现象，板根象一个支架支撑着高大的树体，有利于吸收养分和抗御热带风暴。&lt;/p&gt;&#xA;&lt;h2 id=&#34;对生叶片-桂花&#34;&gt;对生叶片 桂花&lt;/h2&gt;&#xA;&lt;p&gt;叶序主要分为互生、对生和轮生三种基本类型。&#xA;对生叶序指在茎枝的每个节上相对地着生两枚叶片，其与互生叶序的核心区别在于，对生是在同一个节部上长出两片叶子，而互生是一个节部只长一片叶子。轮生叶序则是在一个节上着生三枚或三枚以上的叶片。&lt;/p&gt;&#xA;&lt;h2 id=&#34;叶子花-三角梅簕杜鹃&#34;&gt;叶子花 三角梅/簕杜鹃&lt;/h2&gt;&#xA;&lt;p&gt;深圳市花，彩色的部分是叶子，中间小小的才是花，据说是为了吸引授粉。&#xA;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.58hxfssrns.webp&#34; alt=&#34;三角梅/簕杜鹃&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;超好闻的-黄金香柳&#34;&gt;超好闻的 黄金香柳&lt;/h2&gt;&#xA;&lt;p&gt;很好味的香味！&#xA;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.7p45upzehw.webp&#34; alt=&#34;黄金香柳&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一些豆角的亲戚&#34;&gt;一些豆角的亲戚&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/3648d944ea921618f768740212ea0147.8adth0xcbo.webp&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/3a630c400eb1529cda1003054727d7c6.3624rqxf32.webp&#34; alt=&#34;&#34;&gt;&#xA;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/a8b83a6ab8d6930739a3944ac6c4cad4.sziajjlwa.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;黄花风铃木&#34;&gt;黄花风铃木&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.64eev91rx3.webp&#34; alt=&#34;黄花风铃木&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;一整片是一个叶子的羽状复叶&#34;&gt;一整片是一个叶子的羽状复叶&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/%E6%A1%82%E8%8A%B1-%E5%AF%B9%E7%94%9F%E5%8F%B6%E7%89%87.41ym778sx4.webp&#34; alt=&#34;羽状复叶&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;制作好的标本&#34;&gt;制作好的标本&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/IMG_9726.1zitj5e33g.JPG&#34; alt=&#34;植物标本&#34;&gt;&#xA;&lt;img src=&#34;https://github.com/fifteenbao/picx-images-hosting/raw/master/9e955b69004734b01fd6d8f2b1304940.b9glypmu5.webp&#34; alt=&#34;植物标本&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;蛮有趣的，上周尝试用 claude code 写了一个植物养护的app，今天算了下帐，这个月已经给claude贡献七十多刀了…… 心痛。&#xA;上午搞了一个域名，准备备个案…… 据说要一个月……&#xA;这次逛公园还给了满多灵感的～&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
