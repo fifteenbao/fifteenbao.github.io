@@ -1,77 +1,94 @@
-/* 字号一律取 custom.css :root 的 5 档 type scale —— 这张图谱页原本自带
-   0.62 / 0.65 / 0.7 / 0.72 / 0.75 / 0.875 / 1rem / 11px / 16px 九种独立
-   字号, 全部归并到 --text-xs(辅助) 和 --text-base(面板标题/正文)两档。*/
-/* ── Full-screen graph: override main container ───────────────────────── */
-
+/* The graph is the canvas; only its two stationary overlays blur the backdrop. */
 main:has(.graph-page) {
   max-width: 100% !important;
   width: 100% !important;
   min-height: 0 !important;
+  padding: 0 !important;
 }
-
-main:has(.graph-page) ~ footer {
-  display: none;
-}
-
-/* ── Graph page wrapper ──────────────────────────────────────────────── */
-
-.graph-page {
-  margin: 0;
-  width: 100%;
-}
-
-/* ── Canvas ──────────────────────────────────────────────────────────── */
-
-#graph-canvas {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  margin-top: calc(-1 * (4.5rem + 1.5rem + 1.5rem)); /* offset header spacer */
-  overflow: hidden;
-  background: transparent;
-}
-
-@media (min-width: 1024px) {
-  #graph-canvas {
-    height: 100vh;
-    margin-top: calc(-1 * (4.5rem + 2rem + 1.5rem));
-  }
-}
-
+main:has(.graph-page) ~ footer { display: none; }
+.graph-page { position: fixed; inset: 0; margin: 0; width: 100%; }
+#graph-canvas { position: relative; width: 100%; height: 100dvh; overflow: hidden; }
 #graph { width: 100%; height: 100%; }
 
-/* ── Overlay stats (bottom-right, below zoom controls) ──────────────── */
+/* Local variations of the header material: translucent fill and a curved,
+   reflected highlight, without animated distortion or per-chip blur layers. */
+.graph-page {
+  --tag-glass-fill: var(--canvas-light);
+  --tag-glass-sheen: rgba(255, 255, 255, .38);
+  --tag-glass-bottom: rgba(255, 255, 255, .08);
+  --tag-control-fill: rgba(255, 255, 255, .26);
+  --tag-control-edge: rgba(255, 255, 255, .7);
+}
+html.dark .graph-page {
+  --tag-glass-sheen: rgba(237, 237, 237, .12);
+  --tag-glass-bottom: rgba(237, 237, 237, .025);
+  --tag-control-fill: rgba(237, 237, 237, .06);
+  --tag-control-edge: rgba(237, 237, 237, .18);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .graph-page { --tag-glass-fill: rgba(255, 255, 255, .56); }
+  html.dark .graph-page { --tag-glass-fill: rgba(34, 34, 34, .66); }
+}
+.tag-liquid {
+  background-color: var(--tag-glass-fill);
+  background-image: linear-gradient(135deg, var(--tag-glass-sheen), transparent 42%, var(--tag-glass-bottom));
+  box-shadow: inset 0 0 0 1px var(--glass-border),
+    inset 0 1px 1px var(--glass-highlight),
+    inset 0 -1px 1px var(--glass-lowlight),
+    0 12px 32px var(--glass-elevation);
+}
 
-.graph-overlay-header {
+/* One compact dock keeps statistics and controls together. */
+.graph-toolbar {
   position: absolute;
-  bottom: 60px;
-  right: 56px;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  right: calc(24px + env(safe-area-inset-right));
+  max-width: calc(100% - 48px);
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  z-index: 10;
-  pointer-events: none;
-  max-width: calc(100% - 72px);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 12px 10px 20px;
+  z-index: 20;
 }
-
-.graph-overlay-title {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
-}
-
+.graph-overlay-header { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.graph-overlay-title { font-size: var(--text-xs); font-weight: 600; color: var(--text-primary); }
 .graph-overlay-meta {
   font-size: var(--text-xs);
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-/* ── Loading ─────────────────────────────────────────────────────────── */
+#graph-controls { display: flex; gap: 6px; flex-shrink: 0; }
+.graph-ctrl-btn, .tp-close {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid var(--tag-control-edge);
+  border-radius: var(--control-radius);
+  background: var(--tag-control-fill);
+  box-shadow: inset 0 1px 0 var(--glass-lowlight);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+.graph-ctrl-btn:hover, .tp-close:hover { background-color: var(--surface-hover); }
+.graph-ctrl-btn:active, .tp-close:active { background-color: var(--accent-bg-hover); }
+.graph-ctrl-btn svg, .tp-close svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 #graph-loading {
   position: absolute;
@@ -80,181 +97,115 @@ main:has(.graph-page) ~ footer {
   align-items: center;
   justify-content: center;
   font-size: var(--text-base);
-  letter-spacing: 0.05em;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   pointer-events: none;
 }
 
-/* ── Detail panel ────────────────────────────────────────────────────── */
-
+/* A readable floating inspector stays clear of both the header and dock. */
 #tag-panel {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 260px;
-  max-height: calc(100% - 28px);
+  top: calc(120px + env(safe-area-inset-top));
+  right: calc(24px + env(safe-area-inset-right));
+  width: 304px;
+  max-height: calc(100% - 224px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   overflow-y: auto;
-  border-radius: 0;
-  padding: 14px 16px;
+  overscroll-behavior: contain;
+  padding: 20px;
   display: none;
   z-index: 20;
   scrollbar-width: thin;
-
-  background: var(--surface);
-  border: 1px solid var(--card-border);
-  color: inherit;
-  box-shadow: none;
   scrollbar-color: var(--card-border) transparent;
 }
-
+#tag-panel.visible { display: block; }
 #tag-panel::-webkit-scrollbar { width: 4px; }
 #tag-panel::-webkit-scrollbar-track { background: transparent; }
 #tag-panel::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 2px; }
-
-#tag-panel.visible {
-  display: block;
-  animation: panel-in 0.18s ease;
-}
-
-@keyframes panel-in {
-  from { opacity: 0; transform: translateX(6px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-.tp-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.tp-title {
+.tp-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+#tag-panel .tp-title {
+  margin: 0;
   font-size: var(--text-base);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
-
-.tp-meta {
-  margin-top: 3px;
-  font-size: var(--text-xs);
-  color: var(--text-secondary);
-}
-
-.tp-close {
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card-bg);
-  border: none;
-  border-radius: 50%;
-  font-size: var(--text-xs);
-  cursor: pointer;
-  transition: background 0.15s;
-  margin-left: 6px;
-  color: var(--text-secondary);
-}
-.tp-close:hover { background: var(--card-border); }
-
-.tp-view-all {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: var(--text-xs);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.15s;
-  color: var(--accent);
-}
+.tp-meta { margin-top: 4px; font-size: var(--text-xs); color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.tp-view-all { font-size: var(--text-xs); color: var(--accent); text-decoration: underline !important; text-underline-offset: 3px; }
 .tp-view-all:hover { color: var(--accent-hover); }
-
-.tp-section-title {
-  font-size: var(--text-xs);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin: 12px 0 6px;
-  color: var(--text-secondary);
-}
-
-.tp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
+.tp-section-title { font-size: var(--text-xs); font-weight: 600; margin: 24px 0 10px; color: var(--text-secondary); }
+.tp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tp-tag {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  border-radius: 99px;
-  font-size: var(--text-xs);
-  cursor: pointer;
-  transition: background 0.15s;
-  white-space: nowrap;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--tag-control-edge);
+  background: var(--tag-control-fill);
+  box-shadow: inset 0 1px 0 var(--glass-lowlight);
   color: var(--accent);
+  font: inherit;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  transition: background-color 150ms ease-out;
 }
-.tp-tag:hover { background: var(--accent-bg-hover); }
-
-.tp-tag-count { font-size: var(--text-xs); opacity: 0.6; }
-
-.tp-articles { display: flex; flex-direction: column; }
-
+.tp-tag:hover { background-color: var(--accent-bg-hover); }
+.tp-tag-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.tp-articles { display: flex; flex-direction: column; gap: 4px; }
 .tp-article {
   display: block;
-  padding: 5px 0;
-  font-size: var(--text-xs);
-  text-decoration: none;
-  border-bottom: 1px solid var(--divider);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: color 0.15s;
-  color: var(--text-secondary);
-}
-.tp-article:last-child { border-bottom: none; }
-.tp-article:hover { color: var(--accent); }
-
-/* ── Zoom controls ───────────────────────────────────────────────────── */
-
-#graph-controls {
-  position: absolute;
-  bottom: 60px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  z-index: 20;
-}
-
-.graph-ctrl-btn {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
+  padding: 10px;
+  margin-inline: -10px;
+  border-radius: var(--control-radius);
   font-size: var(--text-base);
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-  background: var(--surface);
-  border: 1px solid var(--card-border);
-  color: var(--text-secondary);
-}
-.graph-ctrl-btn:hover {
-  background: var(--card-border);
+  line-height: 1.6;
   color: var(--text-primary);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
-
-/* ── Responsive ──────────────────────────────────────────────────────── */
+.tp-article:hover { background-color: var(--surface); color: var(--accent); }
+#tag-panel :is(a, button):focus-visible, .graph-ctrl-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 @media (max-width: 640px) {
-  #tag-panel {
-    width: calc(100% - 28px);
-    top: auto;
-    bottom: 54px;
-    right: 14px;
-    max-height: 42vh;
+  .graph-toolbar {
+    left: calc(14px + env(safe-area-inset-left));
+    right: calc(14px + env(safe-area-inset-right));
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    max-width: none;
+    gap: 12px;
+    padding-inline: 16px 10px;
   }
+  #graph-controls { gap: 4px; }
+  #tag-panel {
+    width: auto;
+    top: auto;
+    left: calc(14px + env(safe-area-inset-left));
+    right: calc(14px + env(safe-area-inset-right));
+    bottom: calc(92px + env(safe-area-inset-bottom));
+    max-height: min(48dvh, calc(100dvh - 212px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .graph-ctrl-btn, .tp-close, .tp-tag { transition: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .tag-liquid { background: var(--canvas-light); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .graph-ctrl-btn, .tp-close, .tp-tag { background: var(--canvas-light); border-color: var(--card-border); }
+}
+@media (forced-colors: active) {
+  .tag-liquid, .graph-ctrl-btn, .tp-close, .tp-tag {
+    background: Canvas;
+    color: CanvasText;
+    box-shadow: none;
+    border: 1px solid CanvasText;
+  }
+  #tag-panel :is(a, button):focus-visible, .graph-ctrl-btn:focus-visible { outline-color: Highlight; }
 }

@@ -356,10 +356,10 @@
     });
 
     var html = '<div class="tp-header">'
-      + '<div><div class="tp-title">' + esc(d.name) + '</div>'
+      + '<div><h2 class="tp-title">' + esc(d.name) + '</h2>'
       + '<div class="tp-meta">' + d.count + ' 篇 · ' + connected.length + ' 个关联</div></div>'
-      + '<button class="tp-close" onclick="(function(){document.getElementById(\'tag-panel\').classList.remove(\'visible\');})()">'
-      + '✕</button></div>';
+      + '<button type="button" class="tp-close" aria-label="关闭标签详情">'
+      + '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>';
 
     if (d.url) {
       html += '<a href="' + d.url + '" class="tp-view-all">查看全部文章 →</a>';
@@ -368,8 +368,8 @@
     if (connected.length) {
       html += '<div class="tp-section-title">关联标签</div><div class="tp-tags">';
       connected.forEach(function (t) {
-        html += '<span class="tp-tag" data-id="' + escAttr(t.id) + '">'
-          + esc(t.name) + '<span class="tp-tag-count">' + t.count + '</span></span>';
+        html += '<button type="button" class="tp-tag" data-id="' + escAttr(t.id) + '">'
+          + esc(t.name) + '<span class="tp-tag-count">' + t.count + '</span></button>';
       });
       html += '</div>';
     }
@@ -383,6 +383,7 @@
     }
 
     panel.innerHTML = html;
+    panel.querySelector('.tp-close').addEventListener('click', deselect);
 
     panel.querySelectorAll('.tp-tag[data-id]').forEach(function (el) {
       el.addEventListener('click', function () {

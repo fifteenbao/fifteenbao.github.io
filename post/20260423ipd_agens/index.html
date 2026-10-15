@@ -151,20 +151,31 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
   
   
   
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
+  
+  
+  
+  <script>
+    (function () {
+      var location = window.location;
+      var productionHosts = ['fifteenbao.com', 'www.fifteenbao.com'];
+      if (location.protocol !== 'https:' || location.port ||
+          productionHosts.indexOf(location.hostname) === -1) return;
+      
+      var doNotTrack = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      if (doNotTrack === '1' || doNotTrack === 'yes') return;
+      
+      var measurementID = "G-4BYTD0RBTY";
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementID);
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementID);
+      document.head.appendChild(script);
+    })();
+  </script>
+  
   
   
   <meta itemprop="name" content="IPD agents实践-智能拳击硬件项目">
@@ -208,7 +219,7 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
-    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#f4f6fa" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
       <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
@@ -217,13 +228,16 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     </div>
 
     
-    <div
+    <button
+      type="button"
       class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-      role="button"
-      aria-label="Menu"
-    ></div>
+      aria-label="打开菜单"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+    ></button>
 
     <div
+      id="site-navigation"
       class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
     >
       
@@ -240,12 +254,6 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/lab/"
           >lab</a
-        >
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/profile/"
-          >profile</a
         >
         
       </nav>
@@ -269,13 +277,12 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
         
         
         
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
+        <button
+          type="button"
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer"
+          aria-label="深色模式"
+          aria-pressed="false"
+        ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
       </div>
 
       
@@ -296,13 +303,12 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
         
         
         <div class="flex items-center ml-2">
-          <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-            data-theme-bg="png"
-            role="button"
-            aria-label="Dark"
-          ></div>
+          <button
+            type="button"
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer"
+            aria-label="深色模式"
+            aria-pressed="false"
+          ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
         </div>
       </nav>
       
@@ -1091,13 +1097,13 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     
     <nav class="post-navigation" aria-label="文章翻页">
       
-      <a class="post-nav-link post-nav-previous" href="https://fifteenbao.com/post/20260428%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/" rel="prev">
+      <a class="post-nav-link post-nav-previous glass-surface" href="https://fifteenbao.com/post/20260428%E7%BD%91%E7%AB%99%E8%A3%85%E4%BF%AE%E5%B0%8F%E8%AE%B0/" rel="prev">
         <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
         <span class="post-nav-title">网站装修小记</span>
       </a>
       
       
-      <a class="post-nav-link post-nav-next" href="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/" rel="next">
+      <a class="post-nav-link post-nav-next glass-surface" href="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/" rel="next">
         <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
         <span class="post-nav-title">unit bot agent - 成本分析&amp;技术选型</span>
       </a>

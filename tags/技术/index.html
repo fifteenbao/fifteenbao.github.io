@@ -92,20 +92,31 @@
   
   
   
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
+  
+  
+  
+  <script>
+    (function () {
+      var location = window.location;
+      var productionHosts = ['fifteenbao.com', 'www.fifteenbao.com'];
+      if (location.protocol !== 'https:' || location.port ||
+          productionHosts.indexOf(location.hostname) === -1) return;
+      
+      var doNotTrack = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      if (doNotTrack === '1' || doNotTrack === 'yes') return;
+      
+      var measurementID = "G-4BYTD0RBTY";
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementID);
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementID);
+      document.head.appendChild(script);
+    })();
+  </script>
+  
   
   
   <meta itemprop="name" content="技术">
@@ -139,7 +150,7 @@
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
-    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#f4f6fa" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
       <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
@@ -148,13 +159,16 @@
     </div>
 
     
-    <div
+    <button
+      type="button"
       class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-      role="button"
-      aria-label="Menu"
-    ></div>
+      aria-label="打开菜单"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+    ></button>
 
     <div
+      id="site-navigation"
       class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
     >
       
@@ -171,12 +185,6 @@
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/lab/"
           >lab</a
-        >
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/profile/"
-          >profile</a
         >
         
       </nav>
@@ -200,13 +208,12 @@
         
         
         
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
+        <button
+          type="button"
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer"
+          aria-label="深色模式"
+          aria-pressed="false"
+        ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
       </div>
 
       
@@ -227,13 +234,12 @@
         
         
         <div class="flex items-center ml-2">
-          <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-            data-theme-bg="png"
-            role="button"
-            aria-label="Dark"
-          ></div>
+          <button
+            type="button"
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer"
+            aria-label="深色模式"
+            aria-pressed="false"
+          ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
         </div>
       </nav>
       
@@ -287,17 +293,17 @@
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E6%99%BA/" onclick="event.stopPropagation();">#智</a>
+      href="/tags/%E6%99%BA/">#智</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E6%8A%80%E6%9C%AF/" onclick="event.stopPropagation();">#技术</a>
+      href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/diy/" onclick="event.stopPropagation();">#DIY</a>
+      href="/tags/diy/">#DIY</a>
     
   </div>
   
@@ -323,17 +329,17 @@
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E6%8A%80%E6%9C%AF/" onclick="event.stopPropagation();">#技术</a>
+      href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/" onclick="event.stopPropagation();">#快捷方式</a>
+      href="/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">#快捷方式</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" onclick="event.stopPropagation();">#自动化</a>
+      href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/">#自动化</a>
     
   </div>
   
@@ -359,17 +365,17 @@
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E6%8A%80%E6%9C%AF/" onclick="event.stopPropagation();">#技术</a>
+      href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/" onclick="event.stopPropagation();">#快捷方式</a>
+      href="/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/">#快捷方式</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/webhook/" onclick="event.stopPropagation();">#Webhook</a>
+      href="/tags/webhook/">#Webhook</a>
     
   </div>
   
@@ -395,22 +401,24 @@
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/%E6%8A%80%E6%9C%AF/" onclick="event.stopPropagation();">#技术</a>
+      href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/tailwindcss/" onclick="event.stopPropagation();">#tailwindcss</a>
+      href="/tags/tailwindcss/">#tailwindcss</a>
     
     
     
     <a class="post-tag type-xs no-underline"
-      href="/tags/hugo/" onclick="event.stopPropagation();">#hugo</a>
+      href="/tags/hugo/">#hugo</a>
     
   </div>
   
   <a class="absolute inset-0 text-[0]" href="/post/20250107%E6%9B%B4%E6%96%B0hugo%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">更新hugo的使用方法</a>
 </section>
+
+
 
 
 

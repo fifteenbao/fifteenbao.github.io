@@ -48,7 +48,7 @@
   
   
   <script defer src="/js/plant-parallax.min.4ac4a2e3a2d2de8836d7b33466f4a3cc0b58104ad240d27301626907b1294e36.js"></script>
-  <link rel="stylesheet" href="/css/studio-home.min.48bc8e73b54cc5a8d4863b8d3ed0e9a7be721f74a0c09c74513c295a36363dfe.css" />
+  <link rel="stylesheet" href="/css/studio-home.min.72be87bca5750770a0bc868f32241805fddedbecb2fab4977d1ccfd85e962496.css" />
   
 
   
@@ -97,20 +97,31 @@
   
   
   
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( true ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4BYTD0RBTY');
-        }
-      </script>
+  
+  
+  
+  <script>
+    (function () {
+      var location = window.location;
+      var productionHosts = ['fifteenbao.com', 'www.fifteenbao.com'];
+      if (location.protocol !== 'https:' || location.port ||
+          productionHosts.indexOf(location.hostname) === -1) return;
+      
+      var doNotTrack = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      if (doNotTrack === '1' || doNotTrack === 'yes') return;
+      
+      var measurementID = "G-4BYTD0RBTY";
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', measurementID);
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementID);
+      document.head.appendChild(script);
+    })();
+  </script>
+  
   
   
   <meta itemprop="name" content="Bao&#39;s blog">
@@ -148,7 +159,7 @@
 </head>
 
   <body class="text-black duration-200 ease-out dark:text-white" style="background: var(--bg);">
-    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#faf8f1" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
+    <header class="header-blur fixed z-50 transition-all duration-300 header-fade" id="main-header" data-bg="#f4f6fa" style="width: calc(min(100% - 2rem, var(--w))); max-width: var(--w);">
   <div class="mx-auto flex h-[4.5rem] w-full px-8 lg:justify-between lg:items-center">
     <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
       <a class="-translate-y-[1px] type-md font-medium transition-opacity hover:opacity-70" href="https://fifteenbao.com/"
@@ -157,13 +168,16 @@
     </div>
 
     
-    <div
+    <button
+      type="button"
       class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-      role="button"
-      aria-label="Menu"
-    ></div>
+      aria-label="打开菜单"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+    ></button>
 
     <div
+      id="site-navigation"
       class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col items-start justify-start gap-8 pb-16 duration-200 bg-[var(--bg)] dark:bg-black lg:static lg:h-auto lg:flex-row lg:items-center lg:gap-0 lg:!bg-transparent lg:pb-0 lg:transition-none lg:flex-1 lg:justify-center"
     >
       
@@ -180,12 +194,6 @@
           class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
           href="/lab/"
           >lab</a
-        >
-        
-        <a
-          class="block w-full text-left type-base leading-[2.5rem] py-1 transition-opacity hover:opacity-70 lg:w-auto lg:font-normal lg:text-center lg:leading-[5rem] lg:py-0 "
-          href="/profile/"
-          >profile</a
         >
         
       </nav>
@@ -209,13 +217,12 @@
         
         
         
-        <div
-          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-          style="background: url('/theme.png') left center / auto 1.7rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-          data-theme-bg="png"
-          role="button"
-          aria-label="Dark"
-        ></div>
+        <button
+          type="button"
+          class="btn-dark-mobile text-[0] h-7 w-7 shrink-0 cursor-pointer"
+          aria-label="深色模式"
+          aria-pressed="false"
+        ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
       </div>
 
       
@@ -236,13 +243,12 @@
         
         
         <div class="flex items-center ml-2">
-          <div
-            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12"
-            style="background: url('/theme.png') left center / auto 1.5rem no-repeat; transition: background-position 0.4s steps(5), transform 0.3s ease;"
-            data-theme-bg="png"
-            role="button"
-            aria-label="Dark"
-          ></div>
+          <button
+            type="button"
+            class="btn-dark text-[0] h-6 w-6 shrink-0 cursor-pointer"
+            aria-label="深色模式"
+            aria-pressed="false"
+          ><svg class="theme-icon theme-sun" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg></button>
         </div>
       </nav>
       
@@ -261,85 +267,65 @@
 
 
 <section class="studio-home not-prose" aria-label="关于 fifteenbao">
+  <svg class="studio-grid" width="100%" height="100%" aria-hidden="true" focusable="false">
+    <defs><pattern id="studio-pixel-grid" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="currentColor" /></pattern></defs>
+    <rect width="100%" height="100%" fill="url(#studio-pixel-grid)" />
+  </svg>
   <div class="studio-top">
     <div class="studio-intro">
       <div class="studio-intro-label">
         <img class="studio-profile" src="/images/avatar-cartoon-v2.png" alt="fifteenbao 的头像" width="44" height="44" />
+        <h1>雷猴，我是包。</h1>
       </div>
-      <h1>雷猴，唔係包。<br>设计出身，产品在做。</h1>
-      <p>生活里的小事，值得认真折腾。</p>
-      <nav class="studio-categories" aria-label="德食体智才分类">
-        
-        
-        <a href="/categories/%E5%BE%B7/" title="偶尔想想怎么做人"><span class="studio-category-heading">德<small>4</small></span><span class="studio-category-subtitle">思考价值</span></a>
-        
-        
-        <a href="/categories/%E9%A3%9F/" title="吃点好的，喝点有的"><span class="studio-category-heading">食<small>3</small></span><span class="studio-category-subtitle">吃喝品味</span></a>
-        
-        
-        <a href="/categories/%E4%BD%93/" title="出门活动一下"><span class="studio-category-heading">体<small>4</small></span><span class="studio-category-subtitle">运动漫游</span></a>
-        
-        
-        <a href="/categories/%E6%99%BA/" title="学了，懂没懂另说"><span class="studio-category-heading">智<small>15</small></span><span class="studio-category-subtitle">产品技术</span></a>
-        
-        
-        <a href="/categories/%E6%89%8D/" title="又开始瞎折腾"><span class="studio-category-heading">才<small>4</small></span><span class="studio-category-subtitle">设计创造</span></a>
-        
-      </nav>
+      <p>我原来做设计，现在做产品。平时养养植物，也把生活里的小问题做成工具。</p>
+      
+      <p class="studio-about"><a href="/profile/">关于我 <span aria-hidden="true">→</span></a></p>
+      
+    </div>
+    <div class="studio-plants" aria-label="像素植物">
+      <div class="plant-scene">
+        <div class="plant-sticker" data-scroll-speed="0.04" style="--x:14%;--base:8%;--width:28%;--height:86%;--depth:1" tabindex="0" role="img" aria-label="琴叶榕">
+          <img src="/illustrations/plants-pixel/fig.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">琴叶榕</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.1" style="--x:0%;--base:10%;--width:23%;--height:70%;--depth:3" tabindex="0" role="img" aria-label="鹿角蕨">
+          <img src="/illustrations/plants-pixel/staghorn.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">鹿角蕨</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.06" style="--x:36%;--base:13%;--width:25%;--height:68%;--depth:1" tabindex="0" role="img" aria-label="海芋">
+          <img src="/illustrations/plants-pixel/alocasia.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">海芋</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.08" style="--x:61%;--base:10%;--width:26%;--height:58%;--depth:2" tabindex="0" role="img" aria-label="龟背竹">
+          <img src="/illustrations/plants-pixel/monstera.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">龟背竹</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.14" style="--x:51%;--base:5%;--width:22%;--height:45%;--depth:4" tabindex="0" role="img" aria-label="火鹤王">
+          <img src="/illustrations/plants-pixel/anthurium-veitchii.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">火鹤王</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.1" style="--x:79%;--base:3%;--width:22%;--height:55%;--depth:3" tabindex="0" role="img" aria-label="水晶花烛">
+          <img src="/illustrations/plants-pixel/anthurium-crystallinum.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">水晶花烛</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.28" style="--x:13%;--base:1%;--width:12%;--height:25%;--depth:6" tabindex="0" role="img" aria-label="棒槌树">
+          <img src="/illustrations/plants-pixel/pachypodium.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">棒槌树</span>
+        </div>
+        <div class="plant-sticker" data-scroll-speed="0.3" style="--x:59%;--base:0%;--width:13%;--height:18%;--depth:7" tabindex="0" role="img" aria-label="条纹十二卷">
+          <img src="/illustrations/plants-pixel/haworthia.svg" alt="" decoding="async" />
+          <span class="plant-name" aria-hidden="true">条纹十二卷</span>
+        </div>
+      </div>
     </div>
     <div class="studio-now">
-      <span class="studio-tag">最近在折腾</span>
-      <h2>照顾植物，<br>也照顾好奇心。</h2>
-      <p>我的植物养护 app <a href="https://apps.apple.com/us/app/bonflow/id6760645785" target="_blank" rel="noopener"><strong>bonflow ↗</strong></a></p>
-      <p class="studio-project">集成产品开发 <a href="https://github.com/fifteenbao/IPD_agents" target="_blank" rel="noopener"><strong>IPD_agents ↗</strong></a><br>价值工程 <a href="https://github.com/fifteenbao/unit-bot" target="_blank" rel="noopener"><strong>unit_bot ↗</strong></a></p>
-      <nav class="studio-social" aria-label="更多账号">
-                <a href="https://github.com/fifteenbao" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.instagram.com/fifteenbao" target="_blank" rel="noopener">Instagram</a>
-        <a href="/images/qrcode_for_gh_7e1d1017c95f_258.jpg" target="_blank" rel="noopener">微信公众号</a>
-        <a href="https://xhslink.cn/o/6D0hdQxANMj" target="_blank" rel="noopener">小红书</a>
-        <a href="https://www.behance.net/fifteenbao" target="_blank" rel="noopener">Behance</a>
-
-      </nav>
+      <h2 id="studio-projects-heading">最近在折腾</h2>
+      <ul class="studio-projects" aria-labelledby="studio-projects-heading" role="list">
+        <li><a href="https://apps.apple.com/us/app/bonflow/id6760645785" target="_blank" rel="noopener">bonflow · 记录植物的生长 <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://github.com/fifteenbao/IPD_agents" target="_blank" rel="noopener">IPD Agents · 探索产品开发协作 <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://github.com/fifteenbao/unit-bot" target="_blank" rel="noopener">unit_bot · 梳理产品成本与设计取舍 <span aria-hidden="true">↗</span></a></li>
+      </ul>
     </div>
-  </div>
-  <div class="studio-plants" aria-label="植物贴纸">
-    <div class="plant-scene">
-      <div class="plant-sticker" data-scroll-speed="0.04" style="--x:14%;--base:8%;--width:28%;--height:86%;--depth:1" tabindex="0" role="img" aria-label="琴叶榕">
-        <img src="/illustrations/plants-3d/fig.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">琴叶榕</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.1" style="--x:0%;--base:10%;--width:23%;--height:70%;--depth:3" tabindex="0" role="img" aria-label="鹿角蕨">
-        <img src="/illustrations/plants-3d/staghorn.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">鹿角蕨</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.06" style="--x:36%;--base:13%;--width:25%;--height:68%;--depth:1" tabindex="0" role="img" aria-label="海芋">
-        <img src="/illustrations/plants-3d/alocasia.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">海芋</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.08" style="--x:61%;--base:10%;--width:26%;--height:58%;--depth:2" tabindex="0" role="img" aria-label="龟背竹">
-        <img src="/illustrations/plants-3d/monstera.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">龟背竹</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.14" style="--x:51%;--base:5%;--width:22%;--height:45%;--depth:4" tabindex="0" role="img" aria-label="火鹤王">
-        <img src="/illustrations/plants-3d/anthurium-veitchii.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">火鹤王</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.1" style="--x:79%;--base:3%;--width:22%;--height:55%;--depth:3" tabindex="0" role="img" aria-label="水晶花烛">
-        <img src="/illustrations/plants-3d/anthurium-crystallinum.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">水晶花烛</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.28" style="--x:13%;--base:1%;--width:12%;--height:25%;--depth:6" tabindex="0" role="img" aria-label="棒槌树">
-        <img src="/illustrations/plants-3d/pachypodium.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">棒槌树</span>
-      </div>
-      <div class="plant-sticker" data-scroll-speed="0.3" style="--x:59%;--base:0%;--width:13%;--height:18%;--depth:7" tabindex="0" role="img" aria-label="条纹十二卷">
-        <img src="/illustrations/plants-3d/haworthia.webp" alt="" decoding="async" />
-        <span class="plant-name" aria-hidden="true">条纹十二卷</span>
-      </div>
-    </div>
-  </div>
-  <div class="studio-bottom">
-    <a href="#home-writing">往下翻，有新鲜事 ↓</a>
   </div>
 </section>
 <div id="home-writing" tabindex="-1"></div>
@@ -359,7 +345,7 @@
      日期数据由上面的 {{< post-dates >}} shortcode 注入。 -->
 <div id="heatmap-container">
   <div class="heatmap-header">
-    <span class="heatmap-header-title">更新日志</span>
+    <span class="heatmap-header-title">写作记录</span>
     <div class="heatmap-nav">
       <button type="button" class="heatmap-nav-btn" id="heatmap-prev" aria-label="上一年">←</button>
       <span class="heatmap-nav-year" id="heatmap-year"></span>
@@ -381,7 +367,7 @@
 </div>
 <!-- ── 最新文章 ── -->
 <div class="about-section">
-  <div class="about-section-label">最新文章</div>
+  <div class="about-section-label">最近写的</div>
 <ul class="recent-posts-list"><li>
     <a href="https://fifteenbao.com/post/20260914%E5%A2%A8%E6%B0%B4%E5%B1%8F%E6%9B%B4%E6%96%B0%E8%82%A1%E5%B8%82%E4%BF%A1%E6%81%AF/">墨水屏股市信息自动更新展示</a>
     <span class="recent-posts-date">2026年9月15日</span>
@@ -401,7 +387,7 @@
 
 </div>
 <div class="last-updated">
-  <p>最后更新：<time>2026年9月25日</time></p>
+  <p>最后更新：<time>2026年10月15日</time></p>
 </div>
 
 </div>
