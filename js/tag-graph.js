@@ -257,12 +257,13 @@
     if (!nodeEl) return;
     var dark = isDark();
     nodeEl
+      .attr('fill', nodeColor)
       .style('filter', function (d) {
-        if (d === selected) return dark ? 'url(#glow-selected)' : 'none';
-        return dark ? 'url(#glow-soft)' : 'none';
+        if (d === selected) return 'none';
+        return 'none';
       })
       .attr('stroke', function (d) {
-        if (d === selected) return '#f59e0b';
+        if (d === selected) return token('--accent');
         return nodeStroke();
       });
     linkEl.attr('stroke', function (l) {
@@ -288,10 +289,10 @@
     nodeEl
       .attr('opacity',      function (n) { return neighbors.has(n.id) ? 1 : 0.12; })
       .style('filter',      function (n) {
-        if (n.id === d.id) return dark ? 'url(#glow-selected)' : 'none';
-        return dark ? 'url(#glow-soft)' : 'none';
+        if (n.id === d.id) return 'none';
+        return 'none';
       })
-      .attr('stroke',       function (n) { return n.id === d.id ? '#f59e0b' : nodeStroke(); })
+      .attr('stroke',       function (n) { return n.id === d.id ? token('--accent') : nodeStroke(); })
       .attr('stroke-width', function (n) { return n.id === d.id ? 2.5 : 1; });
 
     linkEl
@@ -330,8 +331,8 @@
   function onHover(event, d) {
     if (d !== selected) {
       d3.select(this)
-        .style('filter', isDark() ? 'url(#glow-hover)' : 'none')
-        .attr('stroke', isDark() ? 'rgba(255,255,255,0.5)' : 'rgba(79,70,229,0.6)');
+        .style('filter', 'none')
+        .attr('stroke', token('--accent'));
     }
   }
 
@@ -421,7 +422,13 @@
     var c = document.getElementById('graph');
     if (!c) return;
     var W = c.clientWidth, H = c.clientHeight;
+    var oldW = +svg.attr('width'), oldH = +svg.attr('height');
+    var view = d3.zoomTransform(svg.node());
     svg.attr('width', W).attr('height', H);
+    svg.call(zoom.transform, d3.zoomIdentity
+      .translate(view.x + (W - oldW) * (1 - view.k) / 2,
+        view.y + (H - oldH) * (1 - view.k) / 2)
+      .scale(view.k));
     simulation
       .force('center', d3.forceCenter(W / 2, H / 2))
       .force('x', d3.forceX(W / 2).strength(0.06))

@@ -7,20 +7,27 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://fifteenbao.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://fifteenbao.com/tags/ai/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lab</title>
+      <link>https://fifteenbao.com/tags/lab/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/tags/lab/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Agents</title>
       <link>https://fifteenbao.com/tags/agents/</link>
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
       <guid>https://fifteenbao.com/tags/agents/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI</title>
-      <link>https://fifteenbao.com/tags/ai/</link>
-      <pubDate>Tue, 15 Sep 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
