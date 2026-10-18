@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>©2025-2026 fifteenbao</copyright>
-    <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://fifteenbao.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>游记</title>
+      <link>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</link>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 +0800</pubDate>
+      <guid>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>DIY</title>
       <link>https://fifteenbao.com/series/diy/</link>
@@ -42,13 +49,6 @@
       <link>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</link>
       <pubDate>Mon, 06 Apr 2026 00:00:00 +0800</pubDate>
       <guid>https://fifteenbao.com/series/bonflow-%E5%BC%80%E5%8F%91%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>游记</title>
-      <link>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</link>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 +0800</pubDate>
-      <guid>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</guid>
       <description></description>
     </item>
     <item>
