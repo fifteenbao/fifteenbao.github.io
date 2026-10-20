@@ -17,17 +17,20 @@
   
   
   
-  
     
     
+    
+      
+      
+      
+      
+    
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws: https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg=' &#39;sha256-0qsQn0KzshUJZ5AtDyqf&#43;jmbhErSCicEj7eDaea2vlk=&#39; https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws: https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'">
   <script>(function(){var e,t,n,s=document.documentElement;try{e=localStorage.getItem("theme"),e!=="dark"&&e!=="light"&&(t=localStorage.getItem("dark"),e=t==="true"?"dark":t==="false"?"light":null)}catch{}n=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),s.dataset.theme=n,s.classList.toggle("dark",n==="dark")})()</script>
   
-  
-  
-  <script defer src="/js/google-analytics.min.7bd1d79ab69f3d350d807acef6e94d870001428f751f39c9b7ecaf4293738f62.js"></script>
-  
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script>
 
   
   <title>IPD agents实践-智能拳击硬件项目 - fifteenbao</title>
@@ -71,30 +74,30 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     │   /cdcp-review、/pdcp-review、…         │
     └─────────────────────────────────────────┘
 
-  
-      
-          层
-          触发方式
-          文件位置
-      
-  
-  
-      
-          Agent
-          任务匹配自动调用
-          /agents/
-      
-      
-          Skill
-          Agent 内部引用
-          /skills/
-      
-      
-          Command
-          用户显式
-          /commands/
-      
-  
+	
+			
+					层
+					触发方式
+					文件位置
+			
+	
+	
+			
+					Agent
+					任务匹配自动调用
+					/agents/
+			
+			
+					Skill
+					Agent 内部引用
+					/skills/
+			
+			
+					Command
+					用户显式
+					/commands/
+			
+	
 
 设计原则：角色 ≠ 方法论。CMO 是身份，KANO 是方法。把 KANO 焊在 cmo.md 里，会让其他 agent 无法复用。" />
   <meta name="author" content="fifteenbao" />
@@ -157,43 +160,43 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
   />
 
   
-  <meta name="generator" content="Hugo 0.158.0">
+  <meta name="generator" content="Hugo 0.168.0">
 
   
   
   
   
-  <meta itemprop="name" content="IPD agents实践-智能拳击硬件项目">
-  <meta itemprop="description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
-  <meta itemprop="datePublished" content="2026-04-23T00:00:00+08:00">
-  <meta itemprop="dateModified" content="2026-04-23T00:00:00+08:00">
-  <meta itemprop="wordCount" content="2541">
-  <meta itemprop="keywords" content="AI,IPD,Agent,智能硬件,拳击,体">
+	<meta itemprop="name" content="IPD agents实践-智能拳击硬件项目">
+	<meta itemprop="description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
+	<meta itemprop="datePublished" content="2026-04-23T00:00:00+08:00">
+	<meta itemprop="dateModified" content="2026-04-23T00:00:00+08:00">
+	<meta itemprop="wordCount" content="2541">
+	<meta itemprop="keywords" content="AI,IPD,Agent,智能硬件,拳击,体">
   
   <meta property="og:url" content="https://fifteenbao.com/post/20260423ipd_agens/">
-  <meta property="og:site_name" content="fifteenbao">
-  <meta property="og:title" content="IPD agents实践-智能拳击硬件项目">
-  <meta property="og:description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2026-04-23T00:00:00+08:00">
-    <meta property="article:modified_time" content="2026-04-23T00:00:00+08:00">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="IPD">
-    <meta property="article:tag" content="Agent">
-    <meta property="article:tag" content="智能硬件">
-    <meta property="article:tag" content="拳击">
-    <meta property="article:tag" content="体">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260428%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/">
-      <meta property="og:see_also" content="https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+	<meta property="og:site_name" content="fifteenbao">
+	<meta property="og:title" content="IPD agents实践-智能拳击硬件项目">
+	<meta property="og:description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
+	<meta property="og:locale" content="zh_CN">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="post">
+		<meta property="article:published_time" content="2026-04-23T00:00:00+08:00">
+		<meta property="article:modified_time" content="2026-04-23T00:00:00+08:00">
+		<meta property="article:tag" content="AI">
+		<meta property="article:tag" content="IPD">
+		<meta property="article:tag" content="Agent">
+		<meta property="article:tag" content="智能硬件">
+		<meta property="article:tag" content="拳击">
+		<meta property="article:tag" content="体">
+			<meta property="og:see_also" content="https://fifteenbao.com/post/20260428%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAbom%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E5%B9%B3%E5%8F%B0/">
+			<meta property="og:see_also" content="https://fifteenbao.com/post/20260417%E5%BC%80%E5%8F%91%E8%AE%B0---%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8Bagent/">
+			<meta property="og:see_also" content="https://fifteenbao.com/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 
   
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="IPD agents实践-智能拳击硬件项目">
-  <meta name="twitter:description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="IPD agents实践-智能拳击硬件项目">
+	<meta name="twitter:description" content="用多 Agent 模拟产品开发决策门，并以智能拳击硬件完成一次概念阶段评审。">
 
   
   
@@ -331,30 +334,30 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
     │   /cdcp-review、/pdcp-review、…         │
     └─────────────────────────────────────────┘
 </code></pre><table>
-  <thead>
-      <tr>
-          <th>层</th>
-          <th>触发方式</th>
-          <th>文件位置</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Agent</td>
-          <td>任务匹配自动调用</td>
-          <td><code>/agents/</code></td>
-      </tr>
-      <tr>
-          <td>Skill</td>
-          <td>Agent 内部引用</td>
-          <td><code>/skills/</code></td>
-      </tr>
-      <tr>
-          <td>Command</td>
-          <td>用户显式</td>
-          <td><code>/commands/</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>层</th>
+					<th>触发方式</th>
+					<th>文件位置</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Agent</td>
+					<td>任务匹配自动调用</td>
+					<td><code>/agents/</code></td>
+			</tr>
+			<tr>
+					<td>Skill</td>
+					<td>Agent 内部引用</td>
+					<td><code>/skills/</code></td>
+			</tr>
+			<tr>
+					<td>Command</td>
+					<td>用户显式</td>
+					<td><code>/commands/</code></td>
+			</tr>
+	</tbody>
 </table>
 <p>设计原则：<strong>角色 ≠ 方法论</strong>。CMO 是身份，KANO 是方法。把 KANO 焊在 <code>cmo.md</code> 里，会让其他 agent 无法复用。</p>
 <h2 id="组织架构与权力体系">组织架构与权力体系</h2>
@@ -376,59 +379,59 @@ AI 正系统性压缩白领工作时间，人均可支配时间结构性增加�
 </code></pre><p><strong>制衡类比</strong>：CEO（草拟方案）→ COO（审核驳回）→ Board/IPMT（最终裁决）</p>
 <h2 id="ipd-阶段--agent-协作">IPD 阶段 × Agent 协作</h2>
 <table>
-  <thead>
-      <tr>
-          <th>阶段</th>
-          <th>决策门</th>
-          <th>主导 Agent</th>
-          <th>输入提供</th>
-          <th>审核</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>概念</td>
-          <td>CDCP</td>
-          <td>CEO</td>
-          <td>CMO + CFO + CTO</td>
-          <td>COO → Board</td>
-      </tr>
-      <tr>
-          <td>计划</td>
-          <td>PDCP</td>
-          <td>CPO</td>
-          <td>CPO（Charter+PRD）+ CTO + CFO</td>
-          <td>COO → Board</td>
-      </tr>
-      <tr>
-          <td>开发</td>
-          <td>TR1-4</td>
-          <td>CTO</td>
-          <td>PM + CTO</td>
-          <td>COO</td>
-      </tr>
-      <tr>
-          <td>验证</td>
-          <td>TR5-6</td>
-          <td>CTO</td>
-          <td>CTO + PM</td>
-          <td>COO → Board</td>
-      </tr>
-      <tr>
-          <td>发布</td>
-          <td>GA</td>
-          <td>CEO</td>
-          <td>PM</td>
-          <td>Board</td>
-      </tr>
-      <tr>
-          <td>生命周期</td>
-          <td>—</td>
-          <td>PM</td>
-          <td>CMO</td>
-          <td>CEO</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>阶段</th>
+					<th>决策门</th>
+					<th>主导 Agent</th>
+					<th>输入提供</th>
+					<th>审核</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>概念</td>
+					<td>CDCP</td>
+					<td>CEO</td>
+					<td>CMO + CFO + CTO</td>
+					<td>COO → Board</td>
+			</tr>
+			<tr>
+					<td>计划</td>
+					<td>PDCP</td>
+					<td>CPO</td>
+					<td>CPO（Charter+PRD）+ CTO + CFO</td>
+					<td>COO → Board</td>
+			</tr>
+			<tr>
+					<td>开发</td>
+					<td>TR1-4</td>
+					<td>CTO</td>
+					<td>PM + CTO</td>
+					<td>COO</td>
+			</tr>
+			<tr>
+					<td>验证</td>
+					<td>TR5-6</td>
+					<td>CTO</td>
+					<td>CTO + PM</td>
+					<td>COO → Board</td>
+			</tr>
+			<tr>
+					<td>发布</td>
+					<td>GA</td>
+					<td>CEO</td>
+					<td>PM</td>
+					<td>Board</td>
+			</tr>
+			<tr>
+					<td>生命周期</td>
+					<td>—</td>
+					<td>PM</td>
+					<td>CMO</td>
+					<td>CEO</td>
+			</tr>
+	</tbody>
 </table>
 <hr>
 <h2 id="实际案例智能拳击硬件-cdcp">实际案例：智能拳击硬件 CDCP</h2>
