@@ -12,9 +12,16 @@
 			<copyright>©2025-2026 fifteenbao</copyright>
 		
 		
-			<lastBuildDate>Mon, 19 Oct 2026 00:00:00 +0800</lastBuildDate>
+			<lastBuildDate>Mon, 26 Oct 2026 00:00:00 +0800</lastBuildDate>
 		
 			<atom:link href="https://fifteenbao.com/series/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>无用但有趣</title>
+				<link>https://fifteenbao.com/series/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3/</link>
+				<pubDate>Mon, 26 Oct 2026 00:00:00 +0800</pubDate>
+				<guid>https://fifteenbao.com/series/%E6%97%A0%E7%94%A8%E4%BD%86%E6%9C%89%E8%B6%A3/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>游记</title>
 				<link>https://fifteenbao.com/series/%E6%B8%B8%E8%AE%B0/</link>
