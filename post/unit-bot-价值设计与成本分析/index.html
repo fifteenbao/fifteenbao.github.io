@@ -1,0 +1,833 @@
+<!doctype html>
+<html
+  class="not-ready"
+  lang="zh-CN"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg='; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws:; object-src 'none'; base-uri 'self'">
+  <script>(function(){var e,t,n,s=document.documentElement;try{e=localStorage.getItem("theme"),e!=="dark"&&e!=="light"&&(t=localStorage.getItem("dark"),e=t==="true"?"dark":t==="false"?"light":null)}catch{}n=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),s.dataset.theme=n,s.classList.toggle("dark",n==="dark")})()</script>
+  
+
+  <title>unit bot — 价值设计与成本分析 · fifteenbao</title>
+  <meta name="theme-color" content="#ffffff">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/css/site.min.css" />
+  
+  
+  
+
+  
+  
+  <script defer src="/js/site.min.js"></script>
+
+  
+  
+  <script defer src="/js/heatmap.min.js"></script>
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+  <script
+    defer
+    src="/highlight.min.js"
+  ></script>
+  
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="http://localhost:1313/favicon.png"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="http://localhost:1313/favicon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.168.0">
+
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" id="main-header">
+  <div class="header-inner">
+    <a class="site-home" href="/" aria-label="fifteenbao 首页">fifteenbao</a>
+    <nav class="header-links" id="site-navigation" aria-label="主导航">
+      
+      
+      <a href="/post/" aria-current="page">Blog</a>
+      
+      <a href="/notes/">Notes</a>
+      
+      <a href="/lab/">Lab</a>
+      
+      
+      <a class="header-rss" href="/index.xml" aria-label="订阅 RSS" title="订阅 RSS">
+        <svg class="header-rss-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M1 12h3v3H1zM1 6h4v1h2v2h2v2h1v4H8v-4H7V9H5V8H1zM1 1h5v1h3v2h2v2h2v3h2v6h-2V9h-2V6H9V4H6V3H1z"/></svg>
+      </a>
+      
+    </nav>
+    <button class="theme" id="themeBtn" type="button" aria-label="切换深浅主题" aria-pressed="false">
+      <svg class="theme-icon theme-sun" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6 0h3v2H6zM6 13h3v3H6zM0 6h2v3H0zM13 6h3v3h-3zM2 2h2v2H2zM11 2h2v2h-2zM2 11h2v2H2zM11 11h2v2h-2zM5 4h5v1h1v5h-1v1H5v-1H4V5h1z"/></svg>
+      <svg class="theme-icon theme-moon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M5 1h4v2H6v2H5v4h2v2h4V9h2V7h2v4h-2v2h-3v2H5v-2H2v-3H0V5h2V3h3z"/></svg>
+    </button>
+  </div>
+</header>
+<div class="header-spacer" aria-hidden="true"></div>
+
+    <main
+      class="prose prose-neutral relative dark:prose-invert"
+    >
+      
+
+<div class="article-container">
+  <article class="article-content">
+    <header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">unit bot — 价值设计与成本分析</h1>
+
+      
+      <div class="type-xs antialiased opacity-60">
+        
+        <time>2026年4月17日</time>
+        
+        
+        
+        
+        <span class="mx-1">&middot;</span>
+        <span>fifteenbao</span>
+        
+      </div>
+      
+
+      
+      
+    </header>
+
+    
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">文章目录</span>
+          <span class="toc-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plans-分别代表什么">PLANS 分别代表什么</a></li>
+    <li><a href="#把子模块逐个拆开">把子模块逐个拆开</a>
+      <ul>
+        <li><a href="#p-现状研究">P 现状研究</a></li>
+        <li><a href="#l-精益设计">L 精益设计</a></li>
+        <li><a href="#a-先进裁剪--triz">A 先进裁剪 · TRIZ</a></li>
+        <li><a href="#n-价值创新">N 价值创新</a></li>
+        <li><a href="#s-体系建设">S 体系建设</a></li>
+        <li><a href="#九个数据库">九个数据库</a></li>
+        <li><a href="#编排和依赖">编排和依赖</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-版本最早的扫地机器人解决方案原始记录">1.0 版本：最早的扫地机器人解决方案（原始记录）</a>
+      <ul>
+        <li><a href="#成本计算-bom">成本计算 <code>/bom</code></a></li>
+        <li><a href="#降本方案-dfma">降本方案 <code>/dfma</code></a></li>
+        <li><a href="#数据库和-fcc">数据库和 <code>/fcc</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
+
+    <section><p>项目在 <a href="https://github.com/fifteenbao/unit-bot">unit-bot</a>。</p>
+<p>这篇把原来的两篇并在一起。先说现在这套 <strong>PLANS 价值设计流程</strong>：五个字母分别代表什么，再把下面的子模块拆开讲。最早那套扫地机器人的成本计算和降本方案，放在最后，当作 1.0 版本的原始记录。</p>
+<h2 id="plans-分别代表什么">PLANS 分别代表什么</h2>
+<p>这次更新明确了 <strong>PLANS 价值设计流程</strong>，将 5 个节点——现状研究、精益设计、先进裁剪 · TRIZ、价值创新、体系建设——分配为 12 个子 agent，把之前的竞品产品调研、拆机成本核算、降本优化建议脚本，分配到了 5 个对应节点下面。</p>
+<pre tabindex="0"><code>P 现状研究  →  L 精益设计  →  A 先进裁剪  →  N 价值创新  →  S 体系建设
+3 agent       2 agent (DFMA)  2 agent (TRIZ)  3 agent       2 agent
+</code></pre><p>这是一条从现状研究到体系建设的极致降本路径。</p>
+<table>
+	<thead>
+			<tr>
+					<th>阶段</th>
+					<th>全称</th>
+					<th>核心方法</th>
+					<th>关键活动</th>
+					<th>产出</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>P</td>
+					<td>现状研究</td>
+					<td>拆解分析 · 对标研究 · MVP 分析</td>
+					<td>产品定位与需求分析 → 竞品对标 → 实物拆解 → 装配流程逆向 → 质量/维修问题归集</td>
+					<td>事实基线文档、拆解报告、最少件清单、问题清单</td>
+			</tr>
+			<tr>
+					<td>L</td>
+					<td>精益设计</td>
+					<td>DFA 9 项 · DFM 5 项 · Should Cost</td>
+					<td>DFA：最小件合并→紧固件消除→防呆自定位→约束优化→装配动作精简→焊接/紧固替代→人体工学→标准化；DFM：材料替代→工艺降级→公差放宽→表面处理简化→结构简化 → 采购降本（应该成本建模）</td>
+					<td>DFA/DFM 优化方案、降本潜力估算、采购谈判数据</td>
+			</tr>
+			<tr>
+					<td>A</td>
+					<td>先进裁剪 · TRIZ</td>
+					<td>功能分析 · 三级裁剪 · 矛盾矩阵</td>
+					<td>逆向功能建模→功能价值分析→功能缺陷识别→三级裁剪（缺陷→低价值→激进替换）→TRIZ 矛盾解决（技术矛盾 39×39 / 物理矛盾分离）</td>
+					<td>裁剪路径方案、矛盾解决方向</td>
+			</tr>
+			<tr>
+					<td>N</td>
+					<td>价值创新</td>
+					<td>FOS · 专利规避 · S 曲线</td>
+					<td>跨领域功能替代搜索（FOS）→ 专利规避设计 → 四新方案（新材料/新工艺/新造型/新控制）→ 技术趋势判断</td>
+					<td>创新机会地图、替代方案池</td>
+			</tr>
+			<tr>
+					<td>S</td>
+					<td>体系建设</td>
+					<td>平台化 · 复杂性管理 · 五维成本体系</td>
+					<td>产品复杂性分析→平台化模块化设计→组织/设施/能力/数据/流程五维成本体系建设→PLANS 嵌入 NPI 流程</td>
+					<td>平台化方案、成本管理流程、组织能力固化方案</td>
+			</tr>
+	</tbody>
+</table>
+<p>这套流程是听了一场《AI 时代的产品创新与设计降本》分享之后明确下来的，主要是智慧芽利用专利数据库整合 TRIZ 流程做的。听完赶紧回来优化 <a href="https://github.com/fifteenbao/unit-bot">unit-bot</a>。L 阶段用的 DFMA，其实之前就从朱老师的《降本设计：面向产品成本的创新设计之路》改过来了，不晓得是不是国内只有他们在做这个……出现的频率也太高了。体系建设这块，还参考了 2023 年科理咨询给公司做的 workshop 资料，在原先市场数据库、拆机数据库、标准组件库的基础上，补充了材料数据库、工艺数据库、模具数据库、加工工具数据库、供应商应该成本数据库。</p>
+<h2 id="把子模块逐个拆开">把子模块逐个拆开</h2>
+<p>命令统一接受 <code>&lt;品牌&gt; &lt;型号&gt;</code> 格式，比如 <code>石头 G30 Pro</code>、<code>追觅 X50 Ultra</code>。每个 agent 单一职责，下游依赖上游产出。</p>
+<table>
+	<thead>
+			<tr>
+					<th>阶段</th>
+					<th>命令</th>
+					<th>Agent 角色</th>
+					<th>上游依赖</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>P 现状研究</td>
+					<td>/research &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>产品研究员</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/teardown &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>拆解分析师</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/issues &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>问题诊断师</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td>L 精益设计</td>
+					<td>/dfa &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>DFA 优化师</td>
+					<td>/teardown + /issues</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/dfm &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>DFM 优化师（含 Should Cost）</td>
+					<td>/teardown</td>
+			</tr>
+			<tr>
+					<td>A 先进裁剪</td>
+					<td>/function &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>功能建模师（TRIZ）</td>
+					<td>/dfa + /dfm</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/trim &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>裁剪策略师（TRIZ 矛盾）</td>
+					<td>/function</td>
+			</tr>
+			<tr>
+					<td>N 价值创新</td>
+					<td>/fos &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>功能创新搜索师</td>
+					<td>/trim</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/patent &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>专利规避师 ⚠️ 非法律意见</td>
+					<td>/fos</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/trend &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>趋势分析师（S 曲线）</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td>S 体系建设</td>
+					<td>/platform &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>平台架构师</td>
+					<td>/trim + /fos</td>
+			</tr>
+			<tr>
+					<td></td>
+					<td>/costsystem &lt;品牌&gt; &lt;型号&gt;</td>
+					<td>成本体系构建师</td>
+					<td>/trim + /fos</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="p-现状研究">P 现状研究</h3>
+<p>P 阶段只做事实，不算成本、不给优化方案：<code>/research</code> 采集产品定位、客户需求（MVP 分析）、对标竞品和关键指标；<code>/teardown</code> 记录拆解和装配流程逆向、最少件清单和装配问题；<code>/issues</code> 归集质量、维修问题和改善机会，但不给解决方案。</p>
+<h3 id="l-精益设计">L 精益设计</h3>
+<p>L 阶段要先跑过 <code>/teardown</code> 和 <code>/issues</code>。<code>/dfa</code> 做最小件合并、紧固件减少、自定位防呆、自固定、过约束和欠约束检查、装配动作消除、焊接粘接螺纹紧固替代、人体工学和标准化建议，但不做材料、工艺分析——那是 DFM 的活。<code>/dfm</code> 则做材料替代、工艺改变、加工精度放宽、表面处理简化和结构简化，反过来也不做装配分析。</p>
+<p>L 用的就是 DFMA。我先把这套方法看清楚，再写进 <code>/dfa</code> 和 <code>/dfm</code> 两个子 agent。</p>
+<p>DFMA 全称 <strong>Design for Manufacture and Assembly</strong>（面向制造及装配的设计），是 <strong>Boothroyd-Dewhurst 公司</strong> 开发的结构性方法。核心思路是：<strong>通过简化设计，实现低成本、高质量的生产制造。</strong></p>
+<p>它包含两个相互协同的子领域：</p>
+<table>
+	<thead>
+			<tr>
+					<th>子领域</th>
+					<th>全称</th>
+					<th>关注点</th>
+					<th>目标</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>DFM</td>
+					<td>Design for Manufacturing</td>
+					<td>单个零件的制造工艺性</td>
+					<td>让每个零件易于加工、成本可控</td>
+			</tr>
+			<tr>
+					<td>DFA</td>
+					<td>Design for Assembly</td>
+					<td>零件之间的装配过程</td>
+					<td>减少零件数量、简化装配动作</td>
+			</tr>
+	</tbody>
+</table>
+<p>一组很硬的数据是：产品生命周期成本的 <strong>70%~80%</strong> 在设计阶段就已锁定。设计一旦冻结，后期再改动的成本是指数级增长的——概念阶段改动成本 = 1×，模具前改动 = 10×，量产后改动 = 100×。目标也很清楚：通过 DFA + DFM 双轮驱动，消除一切不必要的复杂度和成本。这是 DFMA 方法论的核心着陆点。</p>
+<h4 id="内容范围">内容范围</h4>
+<p>DFA 优化（面向装配的设计）主要是这九项：</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>优化方向</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>最小件为核心的合并</td>
+					<td>以减少零件数量为核心，合并可合并的零件</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>紧固件的减少</td>
+					<td>消除不必要的螺钉、螺栓、铆钉</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>自定位及防呆设计</td>
+					<td>Poka-Yoke，物理上杜绝装错</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>自固定设计</td>
+					<td>消除额外固定件，零件自身完成固定</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>防止欠约束及过约束</td>
+					<td>刚好约束，不多不少</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>单独装配动作的消除</td>
+					<td>合并步骤，减少工时</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>焊接/粘接/螺纹紧固的消除</td>
+					<td>用卡扣、压配、一体成型替代</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>解决人体工学问题</td>
+					<td>减少操作疲劳和损伤</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>标准化设计</td>
+					<td>通用零件、统一接口</td>
+			</tr>
+	</tbody>
+</table>
+<p>DFM 优化（面向制造的设计）则是这五项：</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>优化方向</th>
+					<th>说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>材料替代</td>
+					<td>更便宜、更易加工的材料</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>工艺改变</td>
+					<td>从高成本工艺转向低成本工艺</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>加工精度放宽</td>
+					<td>只保留功能必要的公差</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>表面处理简化</td>
+					<td>减少不必要的涂装/电镀</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>结构简化</td>
+					<td>减少加工步骤和装夹次数</td>
+			</tr>
+	</tbody>
+</table>
+<p>采购降本跟在 DFM 后面：基于优化结果，精确计算零部件的「应该成本」（Should Cost），在供应商谈判中获得数据主动权，驱动采购价格向理论成本收敛。</p>
+<h4 id="三大降本途径">三大降本途径</h4>
+<p>DFMA 提供的是一套数据驱动的工具，降本主要走三条路。</p>
+<p>第一条是设计简化。通过分析装配环节，寻找减少零件数量的机会。做法是对现有设计做 DFA 分析，逐一审视每个零件存在的必要性，工具是 Boothroyd-Dewhurst 三问法和装配流程图。有个常被引用的案例：某产品零件数从 19 个减至 7 个，产品总成本降低 46%。</p>
+<p>第二条是材料及工艺优化。计算并比较不同工艺和材料的成本，找到直接生产环节的省钱空间，比如砂铸对压铸。关键是在概念阶段就做出正确的工艺选择，避免后期被迫接受高成本方案。</p>
+<p>第三条是商务谈判降本，也就是应该成本计算。基于材料成本 + 加工工时 + 合理利润，从零建模零件的理论成本，不再是「供应商报多少是多少」，而是拿着数据去谈判。效果是识别报价虚高、推动供应商优化、建立长期定价基准。</p>
+<p>三者的关系很清楚：设计简化解决「能不能不做」，工艺优化解决「怎么做更便宜」，应该成本解决「花多少钱才合理」——三层递进，覆盖从设计到采购的全链路降本。</p>
+<h4 id="dfa-里最管用的几条">DFA 里最管用的几条</h4>
+<p>最小化零件数量是 DFMA 中影响最大的单一技术。审视每一个零件，用的是 Boothroyd-Dewhurst 三问法：该零件是否相对相邻零件有运动？是否必须使用不同材料？是否必须分离以便装配或维修？三个问题里，只要有一个答「否」，就考虑合并或消除。行业数据表明，零件数量通常可减少 30%~70%。有个案例是原有 200+ 个零件，经过 DFA 分析后减到 80 个，装配时间缩短了 60%。</p>
+<p>装配方向上，尽量自上而下（Z 轴）堆叠，利用重力自动定位，减少翻转和重新定向，最好让所有零件在同一方向装配。电子产品里常见的「三明治」结构——底壳 → PCB → 屏幕 → 面板 → 顶壳——就是这个思路。</p>
+<p>防错设计（Poka-Yoke）是通过物理结构让错误装配变得不可能：不对称几何（USB-A 只能单向插入）、键位和缺口、倒角或喇叭口一类的导引特征，以及颜色、标识上的视觉区分。</p>
+<p>紧固件能少则少。螺钉、螺栓可以用卡扣替代，螺母加垫圈可以用压配合，金属支架可以改成一体成型的塑料结构，螺钉固定的盖板可以用活铰链。经验法则是：每个螺钉的装配时间大约 6~10 秒，一个产品有 20 颗螺钉，就意味着近 3 分钟的装配成本。</p>
+<p>再就是标准化与模块化：通用紧固件、轴承、弹簧，建一份经验证的优选零件库，公共子组件跨产品复用。汽车平台化是现成的例子，大众 MQB 平台上不同车型共享大量子组件，开发和制造成本都会下来。</p>
+<h4 id="dfm-里最管用的几条">DFM 里最管用的几条</h4>
+<p>功能公差是第一条：<strong>只在功能必要的特征上施加严格公差。</strong> 过度标注公差是最常见的成本驱动因素之一。大致的相对成本是：±0.5mm 通用加工为 1×，±0.1mm 精密加工约 3<del>5×，±0.01mm 研磨约 10</del>20×，±0.001mm 超精密加工则是 50× 以上。每次都该问一句：这个公差真的影响功能吗？还是只是习惯性标注？</p>
+<p>材料要和工艺匹配。注塑常用 ABS、PC、PP、PA，要注意均匀壁厚、拔模斜度 1°~3°、避免底切；CNC 加工避免尖内角，圆角要大于等于刀具半径，深腔用大径刀具；钣金的弯曲半径不小于板厚，孔边距也不小于板厚，避免密集孔；压铸和注塑类似，但有最小壁厚要求；3D 打印还要考虑方向效应、支撑移除和封闭空腔排粉。</p>
+<p>一个精心设计的零件可以承担多个角色，少用额外的分隔件、支架和对齐特征。比如电池仓盖同时做成加强筋，卡扣同时完成固定、定位和电气接地，外壳同时是散热器，散热鳍片一体成型。</p>
+<p>制造工艺的约束要提前当成红线，而不是事后补救：注塑要考虑模具分型面，避免倒扣落在分型方向之外；CNC 车削吃的是旋转对称，非轴对称特征就得加铣削工序；钣金冲压不能超过材料拉伸极限；铸造要保证金属能流到位，壁厚不能太薄。</p>
+<p>注塑件还要注意壁厚尽量均匀（±25% 以内）以免缩痕，每 25mm 深度至少 1° 拔模，避免尖角（圆角半径 ≥ 0.5mm），筋位厚度不超过名义壁厚的 60%，浇口不要落在外观面上。钣金件最小弯曲内半径不小于料厚，孔到折弯边的距离不小于 1.5 倍料厚加弯曲半径，还要考虑回弹，尤其是不锈钢。CNC 则是内直角加圆角、孔深孔径比一般不超过 4:1（深孔钻可到 10:1）、金属最小壁厚大约 0.8mm、塑料大约 1.5mm，并尽量一次装夹做完所有加工面。</p>
+<h4 id="什么时候做和别的工具怎么配合">什么时候做，和别的工具怎么配合</h4>
+<p>DFMA 要尽早介入，而不是设计冻结之后再当「过关审核」。越早用，收益越大。概念设计阶段做工艺路线评估和初始成本建模，详细设计阶段做零件合并、公差分析和可制造性检查，原型阶段做实物装配、工时测定和人机工程测试，供应商导入阶段则是早期供应商介入（ESI）和制造能力对齐。</p>
+<p>它和 DFMEA、PFMEA 是三位一体：DFMA 问「能不能做、能不能装」，DFMEA 问「设计哪里会出问题」，PFMEA 问「制造过程中哪里会出问题」。最好在设计评审里联动用——DFMA 优化结构和工艺，DFMEA 识别设计风险，PFMEA 保障量产可靠性。</p>
+<p>这套方法这两年也在往外延：用标准化和简化 BOM 降低对单一供应商的依赖，用对自动化更友好的设计支撑制造回流，把原则延伸到增材制造，以及在 CAD 里用软件自动检测可制造性问题。全链路数字模型若能在设计阶段就模拟制造过程，会更理想。</p>
+<p>优先级上，减少零件数量、自上而下装配和 Poka-Yoke 是最高的；功能公差、标准化、减少紧固件和模块化紧随其后；多功能零件也很有用，但通常排在这些之后。</p>
+<h3 id="a-先进裁剪--triz">A 先进裁剪 · TRIZ</h3>
+<p>A 阶段以 TRIZ 为核心，包含功能分析、裁剪（Trimming）、技术矛盾（矛盾矩阵 39×39）、物理矛盾（时间/空间/条件分离）、物场分析等工具，上游依赖 <code>/dfa</code> 和 <code>/dfm</code>。<code>/function</code> 做逆向功能建模、功能价值分析（价值/成本比）和功能缺陷识别，不做具体裁剪决策；<code>/trim</code> 负责裁剪功能缺陷和价值小于 1 的组件、规划激进裁剪路线、做技术和物理矛盾分析，以及关键功能缺陷的补救方案，但不推荐新材料、新工艺——那是 N 阶段的活。</p>
+<h3 id="n-价值创新">N 价值创新</h3>
+<p>N 阶段上游是 <code>/function</code> 和 <code>/trim</code>。<code>/fos</code> 跨领域搜索功能替代方案并筛选落实，不做专利法律判断；<code>/patent</code> 做专利检索、权利要求映射和规避方案设计，但不提供法律意见，也不判断侵权；<code>/trend</code> 做 S 曲线和技术进化趋势，规划四新设计机会，不评价具体供应商。</p>
+<h3 id="s-体系建设">S 体系建设</h3>
+<p>S 阶段依赖所有前序产出。<code>/platform</code> 做产品复杂性分析、平台化模块化方案、共用模块识别和复杂性管理流程建议，不做具体零件设计；<code>/costsystem</code> 做组织、设施（比如拆解实验室）、能力、成本数据库和流程嵌入方案（把 PLANS 嵌进 NPI），不做即时成本核算。</p>
+<h3 id="九个数据库">九个数据库</h3>
+<p>系统维护 9 个数据库，分工明确：</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>数据库</th>
+					<th>文件</th>
+					<th>回答的问题</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>①</td>
+					<td>产品规格库</td>
+					<td>data/products/products_db.json</td>
+					<td>这台机器是什么</td>
+			</tr>
+			<tr>
+					<td>②</td>
+					<td>拆机档案</td>
+					<td>data/teardowns/{slug}_*.csv、fcc/{slug}/</td>
+					<td>这台机器用了什么件</td>
+			</tr>
+			<tr>
+					<td>③</td>
+					<td>标准件库</td>
+					<td>data/lib/components_lib.csv</td>
+					<td>这类件值多少钱</td>
+			</tr>
+			<tr>
+					<td>④</td>
+					<td>材料库</td>
+					<td>data/lib/materials.csv</td>
+					<td>原材料怎么定价</td>
+			</tr>
+			<tr>
+					<td>⑤</td>
+					<td>供应商应该成本库</td>
+					<td>data/lib/suppliers.csv</td>
+					<td>谁在供货、应该成本是多少</td>
+			</tr>
+			<tr>
+					<td>⑥</td>
+					<td>工艺库</td>
+					<td>data/lib/processes.csv（待建）</td>
+					<td>这个件怎么做出来、工时多少</td>
+			</tr>
+			<tr>
+					<td>⑦</td>
+					<td>模具库</td>
+					<td>data/lib/molds.csv（待建）</td>
+					<td>模具摊销多少、寿命多少</td>
+			</tr>
+			<tr>
+					<td>⑧</td>
+					<td>加工工具库</td>
+					<td>data/lib/tooling.csv（待建）</td>
+					<td>用什么夹具/刀具、单件折旧多少</td>
+			</tr>
+			<tr>
+					<td>⑨</td>
+					<td>PLANS 研究库</td>
+					<td>data/plans/plans_db.json、{slug}/*.md</td>
+					<td>我们做过哪些降本研究</td>
+			</tr>
+	</tbody>
+</table>
+<p>⑥、⑦、⑧ 三库是 <code>/dfm</code> 应该成本建模的关键输入：</p>
+<p><strong>应该成本 = 材料（④）+ 加工工时 × 费率（⑥ 工艺）+ 模具摊销（⑦）+ 工具折旧（⑧）+ 合理利润</strong></p>
+<p>这三库的 schema 还在设计中，先以 <code>/dfm</code> 子 agent 推理加行业基准估算来填充，再逐步沉淀。</p>
+<h3 id="编排和依赖">编排和依赖</h3>
+<p>整条流水线由 <code>/plans &lt;product&gt;</code> 编排，全流程串联执行。P、L、A 依次往后递，再进入 N 和 S：</p>
+<pre tabindex="0"><code>                        ┌──────────────────────┐
+                        │   /plans &lt;product&gt;    │  ← 编排器
+                        │   全流程串联执行        │
+                        └──────────┬───────────┘
+                                   │
+            ┌──────────────────────┼──────────────────────┐
+            ▼                      ▼                      ▼
+       ┌─────────┐           ┌─────────┐           ┌─────────┐
+       │ P 阶段   │           │ L 阶段   │           │ A 阶段   │
+       │ 3 Agent │ ────────▶ │ 2 Agent │ ────────▶ │ 2 Agent │
+       └─────────┘           └─────────┘           └─────────┘
+            │                      │                      │
+            └──────────────────────┼──────────────────────┘
+                                   │
+                        ┌──────────┴───────────┐
+                        ▼                      ▼
+                   ┌─────────┐           ┌─────────┐
+                   │ N 阶段   │           │ S 阶段   │
+                   │ 3 Agent │ ────────▶ │ 2 Agent │
+                   └─────────┘           └─────────┘
+</code></pre><p>更细的数据依赖是：</p>
+<pre tabindex="0"><code>P: /research ─┬─▶ /teardown ─┬─▶ L: /dfa ──┬─▶ A: /function ──┬─▶ N: /fos ──┬─▶ S: /platform
+              │              │             │                  │             │
+              └─▶ /issues ───┘             ├─▶ /dfm ──┼──────┤             ├─▶ /patent ──┤
+                                          │          │      │             │             │
+                                          │          └─▶ /trim ───┼─────────┤             ├─▶ /costsystem
+                                          │                        │         │             │
+                                          │                        │         └─▶ /trend ───┘
+                                          │                        │
+                                          └─ 采购降本（Should Cost 谈判）◀────────┘
+</code></pre><p>每个命令都是幂等的——可以单独重新运行而不影响已产出的下游结果，只要上游输入没变。</p>
+<p><code>/plans &lt;product&gt;</code> 跑下来，各阶段的产出分别是：P 给出产品定位与对标、拆解与装配流程、问题清单，汇总成事实基线文档；L 给出 DFA/DFM 优化方案和降本潜力估算；A 给出功能价值矩阵、裁剪方案和 TRIZ 分析；N 给出替代方案池、规避方案、技术趋势和四新方向，汇成创新机会地图；S 给出平台化方案和成本体系建设方案，也就是组织能力如何固化。最终产出是一份 PLANS 综合降本报告。</p>
+<p>完整的阶段定义见仓库里的 <a href="https://github.com/fifteenbao/unit-bot/blob/main/PLANS%20%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B.md">PLANS 价值设计流程</a>，架构说明见 <a href="https://github.com/fifteenbao/unit-bot/blob/main/docs/agents_architecture.md">docs/agents_architecture.md</a>。</p>
+<h2 id="10-版本最早的扫地机器人解决方案原始记录">1.0 版本：最早的扫地机器人解决方案（原始记录）</h2>
+<p>最早做这个项目，是给扫地机器人算 BOM 成本、找降本方向。当时还没有整条 PLANS 流水线，我把 DFMA 这套方法理清之后，先做成了能算成本、给出降本方向的 agent。迭代里把能力拆成三条独立命令，各司其职：</p>
+<blockquote>
+<p><code>/bom</code> 计算成本、<code>/dfma</code> 降本方案、<code>/fcc find/ocr</code> 采集数据</p>
+</blockquote>
+<p>三条命令覆盖从「数据采集 → 成本计算 → 降本分析」的完整链路：</p>
+<table>
+	<thead>
+			<tr>
+					<th>用户</th>
+					<th>核心命令</th>
+					<th>用途</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>产品 / 成本团队</td>
+					<td>/bom 石头 G30S Pro</td>
+					<td>8 桶占比报告 + 供应链/风险提示——回答「成本是什么」</td>
+			</tr>
+			<tr>
+					<td>DFMA / 设计降本</td>
+					<td>/dfma 卧安 K10+</td>
+					<td>功能-成本矩阵 + DFMA 抓手 + 降本潜力——回答「该改什么、能省多少」</td>
+			</tr>
+			<tr>
+					<td>拆机数据采集</td>
+					<td>/fcc find + /fcc ocr</td>
+					<td>FCC 文档检索 + 视觉 OCR 识别 PCB 芯片丝印</td>
+			</tr>
+			<tr>
+					<td>数据维护</td>
+					<td>见下方数据库</td>
+					<td>维护产品库 / 拆机档案 / 标准件库</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="成本计算-bom">成本计算 <code>/bom</code></h3>
+<p>命令格式是 <code>/bom &lt;品牌&gt; &lt;型号&gt;</code>，例如：</p>
+<pre tabindex="0"><code>/bom 石头 G30S Pro
+/bom 追觅 X40 Ultra
+</code></pre><p>Agent 按 7 步流程自动执行：查已有数据、型号别名解析、补规格层、4-Stage 拆机 BOM、8 桶成本分析、供应链和风险提示、竞品差异对标。输出文件在 <code>data/teardowns/{slug}_{date}_teardown.csv</code>，控制台摘要则是 8 桶占比、BOM/MSRP 比、偏差告警、技术亮点，以及供应商和专利风险。</p>
+<p>BOM 成本按 <a href="https://github.com/fifteenbao/unit-bot/blob/main/core/bom_8bucket_framework.json">8 桶组件库定义</a> 归类，统一口径，避免计算偏差。</p>
+<table>
+	<thead>
+			<tr>
+					<th>#</th>
+					<th>桶</th>
+					<th>核心内容</th>
+					<th>行业基准</th>
+					<th>价值权重 (entry / mid / flagship)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>算力与电子</td>
+					<td>SoC · MCU · Wi-Fi/BT · PMIC · RAM/ROM · PCB · 阻容</td>
+					<td>11% (10–15%)</td>
+					<td>0.5 / 0.7 / 0.9</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>感知系统</td>
+					<td>LDS · ToF · 前视线激光 · IMU · 沿墙 · 超声波 · 碰撞</td>
+					<td>11% (10–15%)</td>
+					<td>0.6 / 0.85 / 1.0</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>动力与驱动</td>
+					<td>主机吸尘风机 · 驱动轮/履带 · 边轮 · 万向轮 · 越障升降</td>
+					<td>10% (8–13%)</td>
+					<td>0.6 / 0.75 / 0.85</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>清洁功能</td>
+					<td>拖布本体 · 滚刷 · 边扫 · 主机水箱/尘盒 · 清水泵</td>
+					<td>14% (12–16%)</td>
+					<td>0.7 / 0.9 / 1.0</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>基站系统</td>
+					<td>外壳 · 电源 · 集尘 · 清水/污水桶 · PTC · 顶杆 · PCBA</td>
+					<td>22% (18–28%) ¹</td>
+					<td>0.0 / 0.7 / 1.0</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>能源系统</td>
+					<td>锂电池包（电芯 + BMS + 封装）</td>
+					<td>8% (5–10%)</td>
+					<td>0.8 / 0.7 / 0.6</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>整机结构 CMF</td>
+					<td>上盖/底盘 · CMF 喷涂 · 模具摊销 · 紧固件</td>
+					<td>11% (9–13%)</td>
+					<td>0.5 / 0.65 / 0.8</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>MVA + 软件授权</td>
+					<td>组装+外协 · SLAM 版税 · QA · 包材 · 物流 · OS</td>
+					<td>13% (10–16%)</td>
+					<td>0.3 / 0.45 / 0.6</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>¹ 基站系统仅中档/旗舰档参与计算（entry 档权重为 0）</p>
+</blockquote>
+<h3 id="降本方案-dfma">降本方案 <code>/dfma</code></h3>
+<p><code>/dfma</code> 是从 <code>/bom</code> 里拆出来的独立能力——算清成本之后，下一步自然就是找降本空间。套用 DFMA 方法论，按 8 桶逐项给出设计抓手和降本潜力估算。</p>
+<p>命令格式是 <code>/dfma &lt;品牌&gt; &lt;型号&gt;</code>，例如：</p>
+<pre tabindex="0"><code>/dfma 卧安 K10+ Pro Combo
+/dfma 石头 G30S Pro --segment flagship
+</code></pre><p>它基于 8 桶 BOM 数据乘上用户价值权重，计算每桶的价值/成本比，再按象限输出设计建议。每个桶除了行业区间、典型物料和边界说明，还带着档位价值权重，以及该桶可用的 DFMA 设计抓手（降级、合并、工艺简化）。权重打分有一段定性说明，只供人工审核，不参与计算。入门档按低于 2000 元、无基站来看，中档大约 2000 到 4000 元，旗舰档是 4000 元以上或全功能基站。</p>
+<p>输入要求是产品已有各桶 <code>bom_cost</code> 数据，所以要先跑 <code>/bom</code> 或 <code>generate_bom_estimate</code>。输出是 8 桶矩阵（成本占比、偏差、用户价值权重、价值成本比、象限分类），加上优先降本桶清单、每桶的 DFMA 抓手，以及整机降本潜力估算（元/台）。</p>
+<p>象限规则是：</p>
+<table>
+	<thead>
+			<tr>
+					<th>象限</th>
+					<th>触发条件</th>
+					<th>行动建议</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>优先降本</td>
+					<td>偏差 &gt; +2pp 且 价值权重 &lt; 0.75</td>
+					<td>直接套用 dfma_levers 降本</td>
+			</tr>
+			<tr>
+					<td>溢价合理（需验证）</td>
+					<td>偏差 &gt; +2pp 且 价值权重 ≥ 0.75</td>
+					<td>验证用户感知，必要时降本</td>
+			</tr>
+			<tr>
+					<td>保持投入</td>
+					<td>偏差 ≤ +2pp 且 价值权重 ≥ 0.75</td>
+					<td>维持或追加（差异化卖点）</td>
+			</tr>
+			<tr>
+					<td>基准匹配</td>
+					<td>偏差 ≤ +2pp 且 价值权重 &lt; 0.75</td>
+					<td>不动</td>
+			</tr>
+	</tbody>
+</table>
+<p>价值成本比小于 0.8 优先降本，大于 1.2 可以追加投入。</p>
+<h3 id="数据库和-fcc">数据库和 <code>/fcc</code></h3>
+<p><code>/fcc</code> 分两步解耦：<code>find</code> 先查文档链接，不下载，先供人工确认质量；确认后再用 <code>ocr</code> 下载 PDF，并视觉识别 PCB 芯片丝印，产出可以直通标准件库的上游 CSV。</p>
+<p>系统当时维护三类数据库，各司其职：</p>
+<table>
+	<thead>
+			<tr>
+					<th>数据库</th>
+					<th>文件路径</th>
+					<th>角色</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>产品规格库</td>
+					<td>data/products/products.csv、products_db.json</td>
+					<td>描述「这台机器是什么」——MSRP / 规格 / 功能布尔值</td>
+			</tr>
+			<tr>
+					<td>拆机档案</td>
+					<td>data/teardowns/{slug}_{date}_teardown.csv、data/teardowns/fcc/{slug}/*</td>
+					<td>描述「这台机器用了什么件」——元器件级 BOM 清单</td>
+			</tr>
+			<tr>
+					<td>标准件库</td>
+					<td>data/lib/components_lib.csv</td>
+					<td>描述「这类件值多少钱」——跨机型聚合的权威定价表</td>
+			</tr>
+	</tbody>
+</table>
+<p>数据流向是这样的：</p>
+<pre tabindex="0"><code>① 产品库（规格层）       ──┐
+                           ├─→  /bom 8 桶成本分析  ──→  /dfma 降本建议
+② 拆机档案（实物 BOM） ──┤                          ↑
+   ↑                       │                      ③ 标准件库（查价）
+   │                       │
+/fcc ocr → fcc/*.csv ──────┘
+   │
+   └─→ build_components.py (白名单过滤) ─→ ③ 标准件库
+</code></pre><p>整个工具链的核心思路是：<strong>用结构化数据替代拍脑袋</strong>。FCC 拆机数据喂入产品库和标准件库，<code>/bom</code> 跑出 8 桶成本画像，<code>/dfma</code> 再基于成本画像输出可执行的降本建议——三步下来，一台扫地机器人的 BOM 成本和优化方向就清楚了。</p>
+</section>
+
+    
+    
+    
+    
+    <nav class="post-navigation" aria-label="文章翻页">
+      
+      <a class="post-nav-link post-nav-previous surface-panel" href="http://localhost:1313/post/20260423ipd_agens/" rel="prev">
+        <span class="post-nav-direction"><span class="post-nav-arrow" aria-hidden="true">←</span> 上一篇</span>
+        <span class="post-nav-title">IPD Agents — 智能拳击硬件实践</span>
+      </a>
+      
+      
+      <a class="post-nav-link post-nav-next surface-panel" href="http://localhost:1313/post/20260410%E6%88%91%E7%9A%84%E5%A4%9Aagent%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="next">
+        <span class="post-nav-direction">下一篇 <span class="post-nav-arrow" aria-hidden="true">→</span></span>
+        <span class="post-nav-title">OpenClaw Agents 协作系统</span>
+      </a>
+      
+    </nav>
+    
+    
+
+    
+    
+
+    
+    
+
+    
+
+    
+  </article>
+</div>
+
+
+<script defer src="/js/article-toc.min.af075623741f31973074fa473c4008620dd852750de1c369021fb32cfcb40699.js"></script>
+
+<script defer src="/js/article-tables.min.6966e8c3e48f4f0d12d9e7da3e7b4fe3a353bb8a158d773f032d4c68804890f4.js"></script>
+
+
+
+    </main>
+    <footer class="site-footer">
+      <div>©2025-2026 fifteenbao</div>
+      <nav class="footer-social" aria-label="社交账号">
+        <a href="https://github.com/fifteenbao" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.instagram.com/fifteenbao" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </footer>
+  </body>
+</html>

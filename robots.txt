@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-Disallow: /prototypes/
-
-Sitemap: https://fifteenbao.com/sitemap.xml
+Disallow: /
