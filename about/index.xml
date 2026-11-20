@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写作记录 · fifteenbao</title><link>http://localhost:1313/about/</link><description>fifteenbao 的近期文章与写作记录，分享产品、设计、技术实践和日常生活。</description><language>zh-CN</language><atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写作记录 · fifteenbao</title><link>https://fifteenbao.com/about/</link><description>fifteenbao 的近期文章与写作记录，分享产品、设计、技术实践和日常生活。</description><language>zh-CN</language><atom:link href="https://fifteenbao.com/about/index.xml" rel="self" type="application/rss+xml"/>
 
 </channel></rss>

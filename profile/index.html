@@ -4,7 +4,7 @@
   lang="zh-CN"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -17,9 +17,20 @@
   
   
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg='; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws:; object-src 'none'; base-uri 'self'">
+    
+    
+    
+      
+      
+      
+      
+    
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg=' &#39;sha256-0qsQn0KzshUJZ5AtDyqf&#43;jmbhErSCicEj7eDaea2vlk=&#39; https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws: https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'">
   <script>(function(){var e,t,n,s=document.documentElement;try{e=localStorage.getItem("theme"),e!=="dark"&&e!=="light"&&(t=localStorage.getItem("dark"),e=t==="true"?"dark":t==="false"?"light":null)}catch{}n=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),s.dataset.theme=n,s.classList.toggle("dark",n==="dark")})()</script>
   
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script>
 
   <title>Profile · fifteenbao</title>
   <meta name="theme-color" content="#ffffff">
@@ -36,6 +47,8 @@
   <link rel="preload stylesheet" as="style" href="/css/site.min.css" />
   
   
+  <link rel="stylesheet" href="/css/lab.css">
+  
   
 
   
@@ -50,13 +63,13 @@
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
   
   
 
@@ -75,11 +88,11 @@
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
 
   
@@ -121,7 +134,7 @@
     >
       
 
-<link rel="stylesheet" href="/css/profile.min.ecef1afae93693dacf2665d333dd6e2baac15e94095df6cfd2d12230506cf6d7.css" />
+<link rel="stylesheet" href="/css/profile.min.58bc37629b68a8c6e21e5010f4485bd8270286143c4ccf1341c7f5fad7af1e1f.css" />
 <div class="profile-page not-prose">
   <div class="profile-copy">
     <header class="profile-intro">
@@ -135,22 +148,74 @@
     <article id="profile-resume" class="profile-resume" aria-label="个人简历"><h2 id="关于我">关于我</h2>
 <p>雷猴，唔係包。一名从设计师转行的产品经理。</p>
 <p>最近在研究植物，也在探索如何把设计、产品开发和 AI 协作结合起来。喜欢把日常生活里遇到的问题，做成可以使用的工具。</p>
-<h2 id="最近在折腾--now">最近在折腾 / NOW</h2>
-<h3 id="bonflow">bonflow</h3>
-<p><strong>问题</strong>：换盆、修剪和施肥之后，很难把每次操作与植物后续的变化联系起来。</p>
-<p><strong>我的做法</strong>：把生长记录作为核心体验，结合端侧植物识别，做成可随手使用的 iOS App。</p>
-<p><strong>目前</strong>：App 已完成并提供下载；识别准确度和素材仍在持续校准。</p>
-<p><a href="https://apps.apple.com/us/app/bonflow/id6760645785">→ 查看 App</a> · <a href="/post/20260406app%E5%BC%80%E5%8F%91%E8%AE%B0/">阅读开发记</a></p>
-<h3 id="unit_bot">unit_bot</h3>
-<p><strong>问题</strong>：实体产品的事实研究、设计取舍和成本判断分散在不同阶段，方案很难追溯到证据。</p>
-<p><strong>我的做法</strong>：以 PLANTS 为项目、PLANS 为方法论，把现状研究、精益设计、先进裁剪、价值创新和体系建设连成五阶段流程；用 12 个分工明确的角色编排任务，保留证据引用、输入指纹和结果校验。</p>
-<p><strong>目前</strong>：通用实现已放在 <code>plants/</code>，不绑定特定模型、行业或成本分类，提供跨 Agent 任务包、项目隔离，以及 <code>should_cost</code>、<code>assembly</code>、<code>roi</code> 等确定性计算；扫地机器人保留为行业案例。</p>
-<p><a href="https://github.com/fifteenbao/unit-bot">→ 查看项目</a> · <a href="https://github.com/fifteenbao/unit-bot/tree/main/plants">查看通用实现</a> · <a href="/post/unit-bot-%E4%BB%B7%E5%80%BC%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%88%90%E6%9C%AC%E5%88%86%E6%9E%90/">阅读早期开发记</a></p>
-<h3 id="ipd-agents">IPD Agents</h3>
-<p><strong>问题</strong>：智能硬件从概念到开发涉及多角色判断，评审依据与决策过程容易散落。</p>
-<p><strong>我的做法</strong>：用角色、方法和命令组织多 Agent 协作，覆盖市场管理、需求管理、概念评审、开发验证到发布；由 COO 和 Board 对市场、技术与财务判断进行审核。</p>
-<p><strong>目前</strong>：已加入可选的 Demo 验证、TR1–6 技术评审和生命周期监控；决策框架也纳入用户主体性、全生命周期生态代价，以及收益与控制权的分配。智能拳击硬件曾用于概念阶段的 CDCP 演示。</p>
-<p><a href="https://github.com/fifteenbao/IPD_agents">→ 查看项目</a> · <a href="/post/20260423ipd_agens/">阅读早期案例</a></p>
+<h2 id="好奇心实验室">好奇心实验室</h2>
+<div class="profile-lab not-prose">
+<div class="lab-projects lab-cards">
+
+<a class="lab-project" href="https://bot.fifteenbao.com/drink/" target="_blank" rel="noopener" aria-label="调酒台，在新标签页打开">
+  <div class="lab-preview lab-preview-drink" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<path class="lab-line" d="M112 39h76l-38 43zM150 82v32m-21 0h42"/><path class="lab-fill" d="m122 50 28 30 28-30z"/><path class="lab-line" d="m155 61 31-43"/><circle class="lab-garnish" cx="188" cy="31" r="13"/><path class="lab-line" d="M227 60h47l-6 54h-35z"/><path class="lab-fill" d="M233 77h35l-4 32h-28z"/><path class="lab-line" d="m243 61-5-30"/><rect class="lab-ice" x="241" y="80" width="12" height="12" rx="2" transform="rotate(15 247 86)"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">饮品</p><div class="lab-project-heading"><h3>调酒台</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">选一款基酒、一种风格，找一杯今晚想喝的酒。配方、配比和做法都在这里。</p><p class="lab-project-detail">按基酒与风格探索</p></div>
+</a>
+
+<a class="lab-project" href="https://bot.fifteenbao.com/food/" target="_blank" rel="noopener" aria-label="吃得明白，在新标签页打开">
+  <div class="lab-preview lab-preview-food" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<rect class="lab-paper" x="103" y="20" width="120" height="102" rx="5"/><path class="lab-line" d="M121 43h62m-62 17h43m-43 17h56m-56 17h35"/><circle class="lab-lens" cx="227" cy="81" r="27"/><path class="lab-line lab-heavy" d="m247 101 22 22"/><path class="lab-check" d="m214 82 9 9 18-21"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">食品</p><div class="lab-project-heading"><h3>吃得明白</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">查产品，也查商家。把公开的食品抽检信息整理成能查询、能追溯的记录。</p><p class="lab-project-detail">抽检记录与官方来源</p></div>
+</a>
+
+<a class="lab-project" href="https://bot.fifteenbao.com/market/" target="_blank" rel="noopener" aria-label="行情看板，在新标签页打开">
+  <div class="lab-preview lab-preview-market" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<path class="lab-grid-line" d="M66 42h228M66 74h228M66 106h228"/><path class="lab-chart-area" d="m66 103 29-13 30 7 29-32 29 9 28-35 30 11 28-22 25 8v81H66z"/><path class="lab-chart" d="m66 103 29-13 30 7 29-32 29 9 28-35 30 11 28-22 25 8"/><circle class="lab-fill" cx="294" cy="36" r="5"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">金融</p><div class="lab-project-heading"><h3>行情看板</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">把 A 股、美股与市场异动放在同一张看板上，看看今天的盘面发生了什么。</p><p class="lab-project-detail">市场概况与关键指标</p></div>
+</a>
+
+<a class="lab-project" href="https://bot.fifteenbao.com/exercises/" target="_blank" rel="noopener" aria-label="动作库 · 训练计划，在新标签页打开">
+  <div class="lab-preview lab-preview-exercises" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<g transform="rotate(-18 180 70)"><path class="lab-line lab-heavy" d="M104 70h152"/><rect class="lab-weight" x="112" y="43" width="19" height="54" rx="4"/><rect class="lab-weight" x="134" y="31" width="23" height="78" rx="5"/><rect class="lab-weight" x="203" y="31" width="23" height="78" rx="5"/><rect class="lab-weight" x="229" y="43" width="19" height="54" rx="4"/></g><path class="lab-grid-line" d="M78 115h205"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">健身</p><div class="lab-project-heading"><h3>动作库 · 训练计划</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">从想练的部位和手边的器械开始，查动作、看演示，再安排自己的训练计划。</p><p class="lab-project-detail">动作筛选与训练编排</p></div>
+</a>
+
+<a class="lab-project" href="https://bot.fifteenbao.com/news/" target="_blank" rel="noopener" aria-label="NewsDaily，在新标签页打开">
+  <div class="lab-preview lab-preview-news" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<rect class="lab-paper" x="95" y="19" width="173" height="107" rx="4"/><path class="lab-line lab-heavy" d="M112 40h83"/><path class="lab-line" d="M112 51h138M112 67h64m-64 11h64m-64 11h64m-64 11h64m-64 11h110"/><rect class="lab-news-block" x="192" y="65" width="58" height="32" rx="2"/><circle class="lab-fill" cx="240" cy="39" r="5"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">资讯</p><div class="lab-project-heading"><h3>NewsDaily</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">从 AI builders 的讨论出发，挑出产品、硬件和独立开发中值得留意的消息。</p><p class="lab-project-detail">每日议题与延伸阅读</p></div>
+</a>
+
+<a class="lab-project" href="https://bot.fifteenbao.com/readflow/" target="_blank" rel="noopener" aria-label="ReadFlow，在新标签页打开">
+  <div class="lab-preview lab-preview-readflow" aria-hidden="true"><svg viewBox="0 0 360 140" focusable="false">
+
+<path class="lab-paper" d="M88 32q45-15 91 3 45-18 92-3v80q-45-15-92 3-46-18-91-3z"/><path class="lab-line" d="M179 35v80m-73-62 52 4m-52 12 52 4m-52 12 40 3m54-31 51-4m-51 20 51-4m-51 20 38-4"/><path class="lab-bookmark" d="M224 27h18v43l-9-8-9 8z"/>
+
+</svg>
+</div>
+  <div class="lab-project-body"><p class="lab-category">阅读</p><div class="lab-project-heading"><h3>ReadFlow</h3><span class="lab-open" aria-hidden="true">↗</span></div><p class="lab-project-description">把值得慢慢读的文章留下来。读过之后，再和自己的 AI 助手一起回顾与讨论。</p><p class="lab-project-detail">收藏、阅读与回顾</p></div>
+</a>
+
+</div>
+
+</div>
+
 <h2 id="工作经历">工作经历</h2>
 <h3 id="甲壳虫智能--产品经理">甲壳虫智能 · 产品经理</h3>
 <p class="profile-period"><time datetime="2024-01">2024.01</time> — 至今</p>

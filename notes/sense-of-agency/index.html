@@ -4,7 +4,7 @@
   lang="zh-CN"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -17,9 +17,20 @@
   
   
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg='; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws:; object-src 'none'; base-uri 'self'">
+    
+    
+    
+      
+      
+      
+      
+    
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg=' &#39;sha256-0qsQn0KzshUJZ5AtDyqf&#43;jmbhErSCicEj7eDaea2vlk=&#39; https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws: https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'">
   <script>(function(){var e,t,n,s=document.documentElement;try{e=localStorage.getItem("theme"),e!=="dark"&&e!=="light"&&(t=localStorage.getItem("dark"),e=t==="true"?"dark":t==="false"?"light":null)}catch{}n=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),s.dataset.theme=n,s.classList.toggle("dark",n==="dark")})()</script>
   
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script>
 
   <title>人机协作中的主动控制感 · fifteenbao</title>
   <meta name="theme-color" content="#ffffff">
@@ -52,13 +63,13 @@
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
   
   
 
@@ -77,11 +88,11 @@
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
 
   
@@ -121,9 +132,74 @@
     <main
       class="prose prose-neutral relative dark:prose-invert"
     >
+      <div class="article-container notes-article">
+<article class="article-content">
+<header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">人机协作中的主动控制感</h1>
+
       
-<article class="article-container notes-article"><header><p class="notes-eyebrow"><a href="/notes/">NOTES</a></p><h1>人机协作中的主动控制感</h1><p class="notes-dates">首次公开 2026.06.14 · 更新于 <time datetime="2026-06-14T00:00:00&#43;08:00">2026.06.14</time></p></header>
-<section class="article-content"><p>昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：</p>
+      <div class="type-xs antialiased opacity-60">
+        
+        首次公开 <time datetime="2026-06-14T00:00:00&#43;08:00">2026年6月14日</time>
+        <span class="mx-1">&middot;</span>
+        更新于 <time datetime="2026-06-14T00:00:00&#43;08:00">2026年6月14日</time>
+        
+        
+      </div>
+      
+
+      
+      
+    </header>
+
+
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">文章目录</span>
+          <span class="toc-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#know我们为什么会觉得这是我做的">Know：我们为什么会觉得“这是我做的”？</a>
+      <ul>
+        <li><a href="#1-self-agency这是我做的">1. Self-agency：这是我做的</a></li>
+        <li><a href="#2-other-agency对方也在主动行动">2. Other-agency：对方也在主动行动</a></li>
+        <li><a href="#3-we-agency这是我们一起做的">3. We-agency：这是我们一起做的</a></li>
+      </ul>
+    </li>
+    <li><a href="#一个按键任务怎么研究主动控制感">一个按键任务，怎么研究“主动控制感”？</a></li>
+    <li><a href="#solohh-和-hr-有什么不同">Solo、HH 和 HR 有什么不同？</a>
+      <ul>
+        <li><a href="#1-有了协作者之后自我主动控制感发生了变化">1. 有了协作者之后，自我主动控制感发生了变化</a></li>
+        <li><a href="#2-人类伙伴更容易被理解为一个有意图的行动者">2. 人类伙伴更容易被理解为一个“有意图的行动者”</a></li>
+        <li><a href="#3-我们一起做的感觉在人与人之间更明显">3. “我们一起做”的感觉，在人与人之间更明显</a></li>
+        <li><a href="#4-喜欢机器人不等于把它当作共同决策者">4. 喜欢机器人，不等于把它当作共同决策者</a></li>
+        <li><a href="#5-谁先行动也可能很重要">5. 谁先行动，也可能很重要</a></li>
+      </ul>
+    </li>
+    <li><a href="#how怎么让人在-ai-协作中保持主动控制感">How：怎么让人在 AI 协作中保持主动控制感？</a>
+      <ul>
+        <li><a href="#1-意图可见让我知道-ai-准备做什么">1. 意图可见：让我知道 AI 准备做什么</a></li>
+        <li><a href="#2-人在回路关键决定仍然由人发起">2. 人在回路：关键决定仍然由人发起</a></li>
+        <li><a href="#3-归因反馈让我知道自己的决定改变了什么">3. 归因反馈：让我知道自己的决定改变了什么</a></li>
+      </ul>
+    </li>
+    <li><a href="#别让用户变成旁观者">别让用户变成旁观者</a></li>
+    <li><a href="#控制权不只是我能让-ai-做什么">控制权不只是“我能让 AI 做什么”</a></li>
+    <li><a href="#主动控制感低最后可能就是没人负责">主动控制感低，最后可能就是没人负责</a></li>
+    <li><a href="#最后">最后</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+    <li><a href="#扩展阅读">扩展阅读</a></li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
+
+<section><p>昨天听了一场 AI 共创分享会，Caren 老师讲到了一个很有意思的问题：</p>
 <p><strong>当一个任务不再由自己独立完成，而是变成“和另一个人一起做”或者“和机器一起做”，我们对“这件事是我在做”的感觉会发生什么变化？</strong></p>
 <p>这里讨论的并不是谁做得更快，而是一种更主观的体验：</p>
 <p><strong>我是否觉得自己的行动影响了结果？</strong></p>
@@ -506,7 +582,7 @@ AI 根据人的意图继续执行</p>
 
 <div class="notes-connections not-prose">
 <section aria-labelledby="outgoing-title"><h2 id="outgoing-title">引用的笔记</h2><ul data-outgoing><li>暂无对其他公开笔记的引用。</li></ul></section>
-<section aria-labelledby="backlinks-title"><h2 id="backlinks-title">被以下笔记引用</h2><ul data-backlinks><li>还没有其他公开笔记引用这里。</li></ul></section>
+<section aria-labelledby="backlinks-title"><h2 id="backlinks-title">被以下笔记引用</h2><ul data-backlinks><li><a href="/notes/monkey-and-robot/">猴与机器人的修行之路</a></li></ul></section>
 </div>
 <section class="notes-graph not-prose" data-notes-graph data-source="/notes/sense-of-agency/local.json" data-center="note-sense-of-agency" aria-label="局部知识图谱">
 <h2>局部图谱</h2>
@@ -514,12 +590,16 @@ AI 根据人的意图继续执行</p>
 <div class="notes-graph-tools"><div class="notes-graph-buttons"><button type="button" data-zoom="in" aria-label="放大图谱" title="放大"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" data-zoom="out" aria-label="缩小图谱" title="缩小"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button><button type="button" data-reset aria-label="重置图谱视图" title="重置视图"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><button type="button" data-retry hidden>重试</button></div></div>
 <p class="graph-hint">点击节点阅读笔记，拖动节点调整位置。</p>
 <div class="notes-graph-canvas" role="group" aria-label="笔记引用关系图谱，每个节点都是可打开的笔记链接"></div>
-<div class="graph-selection" aria-live="polite"></div><ul class="graph-node-list" aria-label="图谱笔记"></ul>
-<noscript class="graph-fallback"><p>启用 JavaScript 可查看图谱。全部笔记：</p><ul><li><a href="/notes/monkey-and-robot/">猴与机器人的修行之路</a></li><li><a href="/notes/cocktail-basics/">调酒入门：认识六大基酒</a></li><li><a href="/notes/sense-of-agency/">人机协作中的主动控制感</a></li><li><a href="/notes/cmf/">CMF 笔记</a></li><li><a href="/notes/posthog-handbook/">PostHog 的公司手册</a></li><li><a href="/notes/duan-yongping-business-wisdom/">段永平的 10 条商业智慧</a></li><li><a href="/notes/drinks/">喝什么？</a></li><li><a href="/notes/variable-fonts/">可变字体</a></li><li><a href="/notes/typography-introduction/">字体设计入门</a></li><li><a href="/notes/design-principles/">设计准则（迪特·拉姆斯）</a></li></ul></noscript>
+<ul class="graph-node-list" aria-label="图谱笔记"></ul>
+<noscript class="graph-fallback"><p>启用 JavaScript 可查看图谱。全部笔记：</p><ul><li><a href="/notes/monkey-and-robot/">猴与机器人的修行之路</a></li><li><a href="/notes/cocktail-basics/">调酒入门：认识六大基酒</a></li><li><a href="/notes/sense-of-agency/">人机协作中的主动控制感</a></li><li><a href="/notes/cmf/">CMF 笔记</a></li><li><a href="/notes/posthog-handbook/">PostHog 的公司手册</a></li><li><a href="/notes/duan-yongping-business-wisdom/">段永平的 10 条商业智慧</a></li><li><a href="/notes/gotham-sharp-sans-optima/">Gotham｜Sharp Sans｜Optima 字体的背后</a></li><li><a href="/notes/drinks/">喝什么？</a></li><li><a href="/notes/variable-fonts/">可变字体</a></li><li><a href="/notes/typography-introduction/">字体设计入门</a></li><li><a href="/notes/design-principles/">设计准则（迪特·拉姆斯）</a></li></ul></noscript>
 </section>
 <script defer src="/vendor/d3.v7.min.js"></script><script defer src="/js/notes-graph.js"></script>
 
 </article>
+</div>
+
+<script defer src="/js/article-toc.min.af075623741f31973074fa473c4008620dd852750de1c369021fb32cfcb40699.js"></script>
+
     </main>
     <footer class="site-footer">
       <div>©2025-2026 fifteenbao</div>

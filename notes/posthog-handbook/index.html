@@ -4,7 +4,7 @@
   lang="zh-CN"
   dir="ltr"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -17,9 +17,20 @@
   
   
   
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg='; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws:; object-src 'none'; base-uri 'self'">
+    
+    
+    
+      
+      
+      
+      
+    
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-6ecYa67BxKlmp7GVlumXneSN/p4apS1Gl82u7N0MiGg=' &#39;sha256-0qsQn0KzshUJZ5AtDyqf&#43;jmbhErSCicEj7eDaea2vlk=&#39; https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; frame-src https:; connect-src 'self' ws: https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com; object-src 'none'; base-uri 'self'">
   <script>(function(){var e,t,n,s=document.documentElement;try{e=localStorage.getItem("theme"),e!=="dark"&&e!=="light"&&(t=localStorage.getItem("dark"),e=t==="true"?"dark":t==="false"?"light":null)}catch{}n=e||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),s.dataset.theme=n,s.classList.toggle("dark",n==="dark")})()</script>
   
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BYTD0RBTY"></script>
+      <script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-4BYTD0RBTY")}</script>
 
   <title>PostHog 的公司手册 · fifteenbao</title>
   <meta name="theme-color" content="#ffffff">
@@ -52,13 +63,13 @@
   
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/images/avatar-cartoon-v2.png" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/images/avatar-cartoon-v2.png" />
   
   
 
   
   
-  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  <link rel="preload" as="image" href="https://fifteenbao.com/rss.svg" />
   
   
 
@@ -77,11 +88,11 @@
   
   <link
     rel="icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
   <link
     rel="apple-touch-icon"
-    href="http://localhost:1313/favicon.png"
+    href="https://fifteenbao.com/favicon.png"
   />
 
   
@@ -121,9 +132,97 @@
     <main
       class="prose prose-neutral relative dark:prose-invert"
     >
+      <div class="article-container notes-article">
+<article class="article-content">
+<header class="mb-12">
+      <h1 class="!my-0 pb-3 page-title font-semibold leading-tight">PostHog 的公司手册</h1>
+
       
-<article class="article-container notes-article"><header><p class="notes-eyebrow"><a href="/notes/">NOTES</a></p><h1>PostHog 的公司手册</h1><p class="notes-dates">首次公开 2025.12.06 · 更新于 <time datetime="2025-12-06T00:00:00&#43;08:00">2025.12.06</time></p></header>
-<section class="article-content"><blockquote>
+      <div class="type-xs antialiased opacity-60">
+        
+        首次公开 <time datetime="2025-12-06T00:00:00&#43;08:00">2025年12月6日</time>
+        <span class="mx-1">&middot;</span>
+        更新于 <time datetime="2025-12-06T00:00:00&#43;08:00">2025年12月6日</time>
+        
+        
+      </div>
+      
+
+      
+      
+    </header>
+
+
+    <aside class="toc-sidebar" aria-label="文章目录">
+      <details class="toc-wrapper" open>
+        <summary class="toc-header">
+          <span class="toc-title">文章目录</span>
+          <span class="toc-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="toc-content">
+          <nav id="TableOfContents">
+  <ul>
+    <li><a href="#posthog-存在的意义是什么我们的使命和战略">PostHog 存在的意义是什么？我们的使命和战略</a>
+      <ul>
+        <li><a href="#我们的使命">我们的使命</a></li>
+        <li><a href="#我们的策略">我们的策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何获取用户">我们如何获取用户</a></li>
+    <li><a href="#我们为谁而建">我们为谁而建</a>
+      <ul>
+        <li><a href="#我们目前的icp">我们目前的ICP</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何让用户开心">我们如何让用户开心</a>
+      <ul>
+        <li><a href="#打造人们想要的产品">打造人们想要的产品</a></li>
+        <li><a href="#工程师与用户沟通并提供支持">工程师与用户沟通并提供支持</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何赚钱">我们如何赚钱</a>
+      <ul>
+        <li><a href="#我们的销售策略以为我们的-理想客户群体提供最佳体验-为基础">我们的销售策略以为我们的 <mark>理想客户群体提供最佳体验</mark> 为基础。</a></li>
+        <li><a href="#不要让价格成为阻碍">不要让价格成为阻碍</a></li>
+        <li><a href="#根据用户使用量收费并赋予用户控制权">根据用户使用量收费，并赋予用户控制权</a></li>
+        <li><a href="#每款产品都做到价格最低">每款产品都做到价格最低。</a></li>
+        <li><a href="#与大客户打交道的原则">与大客户打交道的原则</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们是一家业务范围广泛的公司旗下拥有多个小型团队">我们是一家业务范围广泛的公司，旗下拥有多个小型团队。</a>
+      <ul>
+        <li><a href="#速度">速度</a></li>
+        <li><a href="#小团队">小团队</a></li>
+        <li><a href="#最小层级">最小层级</a></li>
+        <li><a href="#根据你的工作内容而定的头衔">根据你的工作内容而定的头衔</a></li>
+        <li><a href="#目标设定">目标设定</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们如何打造一流的团队">我们如何打造一流的团队</a>
+      <ul>
+        <li><a href="#这里的人之所以能取得成功是因为他们具备以下性格特征">这里的人之所以能取得成功，是因为他们具备以下性格特征：</a></li>
+        <li><a href="#加入我们的绝佳和糟糕理由">加入我们的绝佳（和糟糕）理由</a></li>
+        <li><a href="#一小群更强壮的人和补偿">一小群更强壮的人和补偿</a></li>
+        <li><a href="#除了招聘之外团队建设也在不断壮大">除了招聘之外，团队建设也在不断壮大。</a></li>
+      </ul>
+    </li>
+    <li><a href="#我们重视什么">我们重视什么？</a>
+      <ul>
+        <li><a href="#你是司机">你是司机</a></li>
+        <li><a href="#公开">公开</a></li>
+        <li><a href="#多做一些怪异的事">多做一些怪异的事</a></li>
+        <li><a href="#为什么现在不行">为什么现在不行？</a></li>
+        <li><a href="#天生乐观">天生乐观</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+      </details>
+    </aside>
+    
+
+<section><blockquote>
 <p>手册地址：<a href="https://posthog.com/handbook">https://posthog.com/handbook</a></p>
 </blockquote>
 <p>现在的状态就像罗永浩学英语的时候买几麻袋励志鸡汤，学不动了就看几本打打鸡血 🤣🤣🤣</p>
@@ -404,7 +503,7 @@
 <p>作为回报，我们要求员工具备极高的责任感。要想成功，你必须有内在动力。</p>
 <p>PostHog 的优秀员工能够接受非常高的指导，并快速发货，以便尽快了解我们的计划是否能够经受住与客户的接触！</p>
 <p>做主导者意味着要亲力亲为。我们曾让非技术人员用 C++ 编写代码来开发硬件产品，我们的设计师会编写 Tailwind 和 React 代码，而不是仅仅在 Figma 中创建文件。我们的销售人员无需工程师支持就能解答技术问题——如果他们不知道答案，他们会深入学习，以便下次能够解答。我们鼓励员工掌握全栈技术，以减少依赖关系。</p>
-<p>创业不是单打独斗。我们是<a href="https://en.wikipedia.org/wiki/Ted_Lasso">《泰德·拉索》</a>（虽然我还没看完，但我希望他们能赢），不是<a href="https://en.wikipedia.org/wiki/The_Wolf_of_Wall_Street_(2013_film)">《华尔街之狼》</a>。我们希望你对公司和团队的成功负起高度责任。这意味着，当你发现问题时，要及时纠正或直接反馈——眼睁睁看着同事失败是绝对不允许的。</p>
+<p>创业不是单打独斗。我们是<a href="https://en.wikipedia.org/wiki/Ted_Lasso">《泰德·拉索》</a>（虽然我还没看完，但我希望他们能赢），不是<a href="https://en.wikipedia.org/wiki/The_Wolf_of_Wall_Street_%5c%282013_film%5c%29">《华尔街之狼》</a>。我们希望你对公司和团队的成功负起高度责任。这意味着，当你发现问题时，要及时纠正或直接反馈——眼睁睁看着同事失败是绝对不允许的。</p>
 <h3 id="公开">公开</h3>
 <p>我们所有工作的默认原则是透明。这意味着我们会公开很多信息：<a href="https://github.com/posthog/posthog">我们的代码</a>、手册、<a href="https://posthog.com/handbook/strategy/roadmap">路线图</a>、<a href="https://posthog.com/handbook/people/compensation">我们如何支付</a>（甚至<a href="https://posthog.com/handbook/people/offboarding">解雇</a>）员工、<a href="https://posthog.com/handbook/why-does-posthog-exist">我们的战略是什么</a>，以及<a href="https://posthog.com/handbook/strategy/investors">我们从哪些方面筹集了资金</a>。</p>
 <p>在公司内部，透明文化意味着管理者会告诉你直接向相关人员提出反馈意见，而不是替你解决问题；意味着在公开的 Slack 频道中调整团队；意味着提供详细的财务信息、筹款活动的实时更新以及董事会幻灯片访问权限。</p>
@@ -438,12 +537,16 @@
 <div class="notes-graph-tools"><div class="notes-graph-buttons"><button type="button" data-zoom="in" aria-label="放大图谱" title="放大"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button><button type="button" data-zoom="out" aria-label="缩小图谱" title="缩小"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button><button type="button" data-reset aria-label="重置图谱视图" title="重置视图"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><button type="button" data-retry hidden>重试</button></div></div>
 <p class="graph-hint">点击节点阅读笔记，拖动节点调整位置。</p>
 <div class="notes-graph-canvas" role="group" aria-label="笔记引用关系图谱，每个节点都是可打开的笔记链接"></div>
-<div class="graph-selection" aria-live="polite"></div><ul class="graph-node-list" aria-label="图谱笔记"></ul>
-<noscript class="graph-fallback"><p>启用 JavaScript 可查看图谱。全部笔记：</p><ul><li><a href="/notes/monkey-and-robot/">猴与机器人的修行之路</a></li><li><a href="/notes/cocktail-basics/">调酒入门：认识六大基酒</a></li><li><a href="/notes/sense-of-agency/">人机协作中的主动控制感</a></li><li><a href="/notes/cmf/">CMF 笔记</a></li><li><a href="/notes/posthog-handbook/">PostHog 的公司手册</a></li><li><a href="/notes/duan-yongping-business-wisdom/">段永平的 10 条商业智慧</a></li><li><a href="/notes/drinks/">喝什么？</a></li><li><a href="/notes/variable-fonts/">可变字体</a></li><li><a href="/notes/typography-introduction/">字体设计入门</a></li><li><a href="/notes/design-principles/">设计准则（迪特·拉姆斯）</a></li></ul></noscript>
+<ul class="graph-node-list" aria-label="图谱笔记"></ul>
+<noscript class="graph-fallback"><p>启用 JavaScript 可查看图谱。全部笔记：</p><ul><li><a href="/notes/monkey-and-robot/">猴与机器人的修行之路</a></li><li><a href="/notes/cocktail-basics/">调酒入门：认识六大基酒</a></li><li><a href="/notes/sense-of-agency/">人机协作中的主动控制感</a></li><li><a href="/notes/cmf/">CMF 笔记</a></li><li><a href="/notes/posthog-handbook/">PostHog 的公司手册</a></li><li><a href="/notes/duan-yongping-business-wisdom/">段永平的 10 条商业智慧</a></li><li><a href="/notes/gotham-sharp-sans-optima/">Gotham｜Sharp Sans｜Optima 字体的背后</a></li><li><a href="/notes/drinks/">喝什么？</a></li><li><a href="/notes/variable-fonts/">可变字体</a></li><li><a href="/notes/typography-introduction/">字体设计入门</a></li><li><a href="/notes/design-principles/">设计准则（迪特·拉姆斯）</a></li></ul></noscript>
 </section>
 <script defer src="/vendor/d3.v7.min.js"></script><script defer src="/js/notes-graph.js"></script>
 
 </article>
+</div>
+
+<script defer src="/js/article-toc.min.af075623741f31973074fa473c4008620dd852750de1c369021fb32cfcb40699.js"></script>
+
     </main>
     <footer class="site-footer">
       <div>©2025-2026 fifteenbao</div>

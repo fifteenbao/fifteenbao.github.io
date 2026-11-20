@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Series · fifteenbao</title><link>http://localhost:1313/series/</link><description>fifteenbao 的个人博客，记录产品经理的设计思考、AI 与智能硬件实践、植物养护和日常生活。</description><language>zh-CN</language><atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml"/>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Series · fifteenbao</title><link>https://fifteenbao.com/series/</link><description>fifteenbao 的个人博客，记录产品经理的设计思考、AI 与智能硬件实践、植物养护和日常生活。</description><language>zh-CN</language><atom:link href="https://fifteenbao.com/series/index.xml" rel="self" type="application/rss+xml"/>
 
 </channel></rss>
